@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://yukiyukixing.github.io/sitemap.xml
