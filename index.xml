@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jane - A super concise theme for Hugo</title>
+    <title>星空海绵 - 星空浩瀚 | 海绵吸水</title>
     <link>https://yukiyukixing.github.io/</link>
-    <description>Recent content on Jane - A super concise theme for Hugo</description>
+    <description>Recent content on 星空海绵 - 星空浩瀚 | 海绵吸水</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 04 Mar 2019 16:01:23 +0800</lastBuildDate>
@@ -254,7 +254,7 @@ And then define the link:
     </item>
     
     <item>
-      <title>About</title>
+      <title>关于</title>
       <link>https://yukiyukixing.github.io/about/</link>
       <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
       
