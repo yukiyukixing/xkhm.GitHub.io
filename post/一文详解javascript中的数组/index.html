@@ -1,0 +1,2871 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>一文详解JavaScript中的数组 - 星空海绵 - 星空浩瀚 | 海绵吸水</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="xkhm" />
+  <meta name="description" content="前言 最近在重学JS基础，然后正好学到数组这，前期是通过看视频学习的，后来发现通过看视频学习进度实在是太慢了，所以又开始看书看文档学，然后就开" />
+
+  <meta name="keywords" content="Hugo" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.0" />
+
+
+<link rel="canonical" href="https://yukiyukixing.github.io/post/%E4%B8%80%E6%96%87%E8%AF%A6%E8%A7%A3javascript%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.png"  type="image/x-icon"/>
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="一文详解JavaScript中的数组" />
+<meta property="og:description" content="前言 最近在重学JS基础，然后正好学到数组这，前期是通过看视频学习的，后来发现通过看视频学习进度实在是太慢了，所以又开始看书看文档学，然后就开" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yukiyukixing.github.io/post/%E4%B8%80%E6%96%87%E8%AF%A6%E8%A7%A3javascript%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84/" />
+<meta property="article:published_time" content="2020-12-19T12:23:51+08:00" />
+<meta property="article:modified_time" content="2020-12-19T12:23:51+08:00" />
+<meta itemprop="name" content="一文详解JavaScript中的数组">
+<meta itemprop="description" content="前言 最近在重学JS基础，然后正好学到数组这，前期是通过看视频学习的，后来发现通过看视频学习进度实在是太慢了，所以又开始看书看文档学，然后就开">
+<meta itemprop="datePublished" content="2020-12-19T12:23:51+08:00" />
+<meta itemprop="dateModified" content="2020-12-19T12:23:51+08:00" />
+<meta itemprop="wordCount" content="10306">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="一文详解JavaScript中的数组"/>
+<meta name="twitter:description" content="前言 最近在重学JS基础，然后正好学到数组这，前期是通过看视频学习的，后来发现通过看视频学习进度实在是太慢了，所以又开始看书看文档学，然后就开"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">星空海绵</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yukiyukixing.github.io/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yukiyukixing.github.io/post/">技术</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yukiyukixing.github.io/tags/">生活</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yukiyukixing.github.io/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yukiyukixing.github.io/about/">关于</a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      星空海绵
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yukiyukixing.github.io/">主页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yukiyukixing.github.io/post/">技术</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yukiyukixing.github.io/tags/">生活</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yukiyukixing.github.io/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yukiyukixing.github.io/about/">关于</a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">一文详解JavaScript中的数组</h1>
+      
+      <div class="post-meta">
+        <time datetime="2020-12-19" class="post-time">
+          2020-12-19
+        </time>
+        
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1什么是数组">（1）什么是数组？</a></li>
+    <li><a href="#2怎么创建数组">（2）怎么创建数组？</a>
+      <ul>
+        <li><a href="#对象方式创建数组">对象方式创建数组</a></li>
+        <li><a href="#字面量的方式创建数组">字面量的方式创建数组</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#1array介绍">（1）Array介绍</a></li>
+    <li><a href="#2arrayfrom">（2）Array.from()</a>
+      <ul>
+        <li><a href="#arrayfrom方法用于哪些地方">Array.from()方法用于哪些地方</a></li>
+      </ul>
+    </li>
+    <li><a href="#3arrayof">（3）Array.of()</a></li>
+    <li><a href="#4arrayisarray">（4）Array.isArray()</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#数组中的方法总览">数组中的方法总览</a></li>
+    <li><a href="#1栈和队列方法">（1）栈和队列方法</a>
+      <ul>
+        <li><a href="#push">push()</a></li>
+        <li><a href="#pop">pop()</a></li>
+        <li><a href="#unshift">unshift()</a></li>
+        <li><a href="#shift">shift()</a></li>
+      </ul>
+    </li>
+    <li><a href="#2复制和填充方法">（2）复制和填充方法</a>
+      <ul>
+        <li><a href="#copywithin">copyWithin()</a></li>
+        <li><a href="#fill">fill()</a></li>
+      </ul>
+    </li>
+    <li><a href="#3排序方法">（3）排序方法</a>
+      <ul>
+        <li><a href="#reverse">reverse()</a></li>
+        <li><a href="#sort">sort()</a></li>
+      </ul>
+    </li>
+    <li><a href="#4操作方法">（4）操作方法</a>
+      <ul>
+        <li><a href="#splice">splice()</a></li>
+        <li><a href="#slice">slice()</a></li>
+        <li><a href="#concat">concat()</a></li>
+        <li><a href="#join">join()</a></li>
+      </ul>
+    </li>
+    <li><a href="#5迭代方法">（5）迭代方法</a>
+      <ul>
+        <li><a href="#every">every()</a></li>
+        <li><a href="#some">some()</a></li>
+        <li><a href="#filter">filter()</a></li>
+        <li><a href="#map">map()</a></li>
+        <li><a href="#foreach">forEach()</a></li>
+      </ul>
+    </li>
+    <li><a href="#6迭代器方法">（6）迭代器方法</a>
+      <ul>
+        <li><a href="#keys">keys()</a></li>
+        <li><a href="#values">values()</a></li>
+        <li><a href="#entries">entries()</a></li>
+      </ul>
+    </li>
+    <li><a href="#7归并方法">（7）归并方法</a>
+      <ul>
+        <li><a href="#reduce">reduce()</a></li>
+        <li><a href="#reduceright">reduceRight()</a></li>
+      </ul>
+    </li>
+    <li><a href="#8搜索查找方法">（8）搜索查找方法</a>
+      <ul>
+        <li><a href="#indexof">indexOf()</a></li>
+        <li><a href="#lastindexof">lastIndexOf()</a></li>
+        <li><a href="#includes">includes()</a></li>
+        <li><a href="#find">find()</a></li>
+        <li><a href="#findindex">findIndex()</a></li>
+      </ul>
+    </li>
+    <li><a href="#9转换方法">（9）转换方法</a>
+      <ul>
+        <li><a href="#tosting">toSting()</a></li>
+        <li><a href="#tolocalestring">toLocaleString()</a></li>
+      </ul>
+    </li>
+    <li><a href="#10扁平化方法">（10）扁平化方法</a>
+      <ul>
+        <li><a href="#flat">flat()</a></li>
+        <li><a href="#flatmap">flatMap()</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cbfce5de99fc415dbf604a9a4c820794~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
+<h1 id="前言">前言</h1>
+<p>最近在重学JS基础，然后正好学到数组这，前期是通过看视频学习的，后来发现通过看视频学习进度实在是太慢了，所以又开始看书看文档学，然后就开始看“红宝书”（JavaScript高级程序设计）学习，看的最新的第四版的，数组这部分前期看视频学了一部分，后面又看书学了，前前后后学了有大概5天，当然是下班时间学习，学完了想写个全面的总结，然后就有了这篇文章，希望大佬们看了发现什么错误能在评论区指出，我会立马改正的。</p>
+<h1 id="1数组介绍">1.数组介绍</h1>
+<h2 id="1什么是数组">（1）什么是数组？</h2>
+<p>数组是使用单独的变量名来存储一系列的值的一个对象。</p>
+<h2 id="2怎么创建数组">（2）怎么创建数组？</h2>
+<p>创建数组有两种方式</p>
+<ol>
+<li>对象方式创建数组</li>
+<li>字面量方式创建数组
+创建数组可以通过上面这两种方式，当然也可以通过Array.of()这个函数创建数组。</li>
+</ol>
+<h3 id="对象方式创建数组">对象方式创建数组</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array();
+</code></pre></div><p><strong>Tips：</strong></p>
+<blockquote>
+<p>也可以通过下面这种方式创建数组对象</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> Array();
+</code></pre></div><p>这种方式创建数组，对象也可以通过这两种方式创建，那么这种方式与上面那种方式有什么区别呢，这两种方式创建数组的区别就是内部this指向不同，一个指向调用者，一个指向全局的window对象。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">1</span>)); <span style="color:#75715e">// [empty]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>)); <span style="color:#75715e">//  [1, 2, 3]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#66d9ef">of</span>(<span style="color:#ae81ff">1</span>)); <span style="color:#75715e">// [1]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#66d9ef">of</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>)); <span style="color:#75715e">// [1, 2, 3]
+</span></code></pre></div><p><strong>Tips：</strong></p>
+<blockquote>
+<p>第一行代码是创建了一个长度为1的数组，因为没有值，这个位置会默认被undefined填充，也就是说打印结果 <strong>[empty] =&gt; [undefined]</strong></p>
+</blockquote>
+<h3 id="字面量的方式创建数组">字面量的方式创建数组</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
+</code></pre></div><p>这种方式创建数组非常的简单便捷,所以推荐使用这种方法创建数组</p>
+<p><strong>Tips：</strong></p>
+<blockquote>
+<p>使用字面量的方式创建数组不会调用Array构造函数</p>
+</blockquote>
+<h1 id="2array对象介绍">2.Array对象介绍</h1>
+<h2 id="1array介绍">（1）Array介绍</h2>
+<p>上面我们也用了一个Array的方法,就是Array.of(),那么Array跟数组到底是什么关系呢，根据MDN上的定义：</p>
+<p><strong>JavaScript的 Array 对象是用于构造数组的全局对象，数组是类似于列表的高阶对象。</strong></p>
+<p>换句话说就是：</p>
+<p><strong>Array对象是js内置的用于构造数组的全局对象，数组身上的方法都是继承于Array对象。</strong></p>
+<p>我们来打印看下这个Array对象的结构：</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4e9ea1db2a6447e6834c33bdbe28de86~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
+<p>我们从这个打印结果可以看出Array下面主要有三个 <strong><em><strong>私有</strong></em></strong> 方法：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法名称</th>
+<th style="text-align:center">方法介绍</th>
+<th style="text-align:center">JavaScript 版本</th>
+<th style="text-align:center">是否会改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">from()</td>
+<td style="text-align:center">将类数组结构转换为数组实例</td>
+<td style="text-align:center">ES6</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">isArray()</td>
+<td style="text-align:center">判断数组是否为数组类型</td>
+<td style="text-align:center">ES6</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">of()</td>
+<td style="text-align:center">将一组参数转换为数组实例</td>
+<td style="text-align:center">ES6</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2arrayfrom">（2）Array.from()</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">object</td>
+<td style="text-align:center">必需，要转换为数组的对象</td>
+</tr>
+<tr>
+<td style="text-align:center">mapFunction</td>
+<td style="text-align:center">可选，数组中每个元素要调用的函数</td>
+</tr>
+<tr>
+<td style="text-align:center">thisValue</td>
+<td style="text-align:center">可选，映射函数(mapFunction)中的 this 对象</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">新的数组实例</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//  1.类数组对象
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
+    <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;techerM&#39;</span>,
+    <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">15</span>,
+    <span style="color:#a6e22e">length</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>
+};
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">obj</span>)); <span style="color:#75715e">// [&#34;techerM&#34;, 15]
+</span><span style="color:#75715e">// 2.字符串
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;阿星&#39;</span>;
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">str</span>)); <span style="color:#75715e">// [&#34;阿&#34;, &#34;星&#34;]
+</span><span style="color:#75715e">// 3.集合
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">s</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Set</span>().<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">1</span>)
+                 .<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">2</span>)
+                 .<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">1</span>)
+                 .<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">4</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">s</span>)); <span style="color:#75715e">// [1, 2, 4]
+</span><span style="color:#75715e">// 4.第二个参数，可操作数组中的每个元素
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbersObj</span> <span style="color:#f92672">=</span> {
+    <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,
+    <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>,
+    <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>,
+    <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>,
+    <span style="color:#a6e22e">length</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>
+};
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">numbersObj</span>,<span style="color:#a6e22e">item</span> =&gt; <span style="color:#a6e22e">item</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>));<span style="color:#75715e">//[3, 6, 9]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbersObj</span>); <span style="color:#75715e">// {0: 1, 1: 2, 2: 3, 3: 2, length: 3}
+</span><span style="color:#75715e">// 5.第三个参数，指定第二个参数（函数）中this的指向
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numArray</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>];
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;小花&#39;</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">res1</span> <span style="color:#f92672">=</span> Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">numArray</span>,<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">item</span>){
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>;
+})
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">res2</span> <span style="color:#f92672">=</span> Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">numArray</span>,<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">item</span>){
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>;
+},{<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;小丽&#39;</span>})
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">res1</span>); <span style="color:#75715e">// [&#34;小花&#34;, &#34;小花&#34;, &#34;小花&#34;]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">res2</span>); <span style="color:#75715e">// [&#34;小丽&#34;, &#34;小丽&#34;, &#34;小丽&#34;]
+</span></code></pre></div><p><strong>Tips：</strong></p>
+<blockquote>
+<p>1.Array.from()是Array对象的私有方法，并不是Array原型prototype下的方法，所以数组继承不到这个方法，数组是没有这个方法的。</p>
+</blockquote>
+<blockquote>
+<p>2.Array.from()第一个参数类数组对象的条件为：存在length属性，数据为可索引结构，例如下面这个对象就不可进行迭代，因为没有可索引结构</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;小丽&#39;</span>,
+    <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span>,
+    <span style="color:#a6e22e">length</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>
+}
+</code></pre></div><blockquote>
+<p>3.Array.from()方法不会改变原数组</p>
+</blockquote>
+<blockquote>
+<p>4.Array.from()中第3个参数设置第二个参数（函数）this的指向，不适用于箭头函数，也就是说如果你第二个参数用的箭头函数的写法，那么你设置第3个参数时将不起作用</p>
+</blockquote>
+<h3 id="arrayfrom方法用于哪些地方">Array.from()方法用于哪些地方</h3>
+<ol>
+<li>将字符串转换为数组</li>
+<li>将集合和映射转换为数组</li>
+<li>可以对现有数组进行浅复制</li>
+<li>可应用于任何符合条件（length和索引）的可迭代对象</li>
+</ol>
+<h2 id="3arrayof">（3）Array.of()</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">elementN</td>
+<td style="text-align:center">任意个参数，将按顺序成为返回数组中的元素。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">新的数组实例</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 一组参数
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#66d9ef">of</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>)); <span style="color:#75715e">//  [1, 2, 3]
+</span><span style="color:#75715e">// 通过 Array.of() 创建数组对象
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> Array.<span style="color:#66d9ef">of</span>(<span style="color:#ae81ff">1</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr</span>); <span style="color:#75715e">// [1]
+</span><span style="color:#75715e">// new Array() 创建数组对象
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr1</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">1</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr1</span>); <span style="color:#75715e">// [empty]
+</span></code></pre></div><p><strong>Tips：</strong></p>
+<blockquote>
+<p>通过Array.of()创建对象的方式弥补了通过 <strong>new Array</strong> 创建对象传一个参数创建对象的缺陷。</p>
+</blockquote>
+<h2 id="4arrayisarray">（4）Array.isArray()</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">obj</td>
+<td style="text-align:center">必需，要判断的对象。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">布尔值，如果对象是数组返回 true，否则返回 false。</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>];
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;小王&#39;</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span>;
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#a6e22e">colors</span>)); <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#a6e22e">name</span>)); <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#a6e22e">age</span>)); <span style="color:#75715e">// false
+</span></code></pre></div><h1 id="3检测数组">3.检测数组</h1>
+<p>一般我们在js中检测数据类型通常用 <strong>typeof</strong> 关键字，但是 <strong>typeof</strong> 并不能分开对象与数组，检测数组时返回的也是 <strong>object</strong>，所以我们就需要用其它的办法来区分<strong>对象</strong>与<strong>数组</strong>了。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Array.isArray()</td>
+<td style="text-align:center">返回一个布尔类型的值，是数组则返回true，反之false</td>
+</tr>
+<tr>
+<td style="text-align:center">instanceof</td>
+<td style="text-align:center">返回一个布尔类型的值，是数组则返回true，反之false</td>
+</tr>
+<tr>
+<td style="text-align:center">Object.prototype.toString.call()</td>
+<td style="text-align:center">返回详细的具体类型</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>];
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;小明&#39;</span>};
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#a6e22e">array</span>)); <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#a6e22e">obj</span>)); <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span> <span style="color:#66d9ef">instanceof</span> Array); <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">obj</span> <span style="color:#66d9ef">instanceof</span> Array); <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Object.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">toString</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">array</span>)); <span style="color:#75715e">// [object Array]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Object.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">toString</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">obj</span>)); <span style="color:#75715e">// [object Object]
+</span></code></pre></div><p>上面这个三个方法都可以用来区分<strong>对象</strong>和<strong>数组</strong>，平常我们使用还是最好使用  <strong>Array.isArray()</strong> 这个方法。</p>
+<p><strong>Tips：</strong></p>
+<blockquote>
+<p>通常我们使用instanceof是假定只有一个全局上下文，如果在多个框架页面中检测数组可能会有问题，因为我们并不能保证所有框架里的<strong>Array构造函数</strong>相同，所以最好使用<strong>Array.isArray()</strong> 这个方法判断。</p>
+</blockquote>
+<h1 id="4数组中的方法">4.数组中的方法</h1>
+<h2 id="数组中的方法总览">数组中的方法总览</h2>
+<p>首先我们从控制台打印看一下数组：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>([]);
+</code></pre></div><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7ada2a185e1648348f0a25f1577e132c~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
+<blockquote>
+<p>从上图中我们可以看到数组中有32个方法，全部是挂在数组原型 **_<em>proto</em>_** 上的,然后下面我们就来看一下这些数组方法。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">push()</td>
+<td style="text-align:center">向数组的末尾添加一个或多个元素，并返回新的长度</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">pop()</td>
+<td style="text-align:center">删除并返回数组的最后一个元素</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">unshift()</td>
+<td style="text-align:center">向数组的开头添加一个或更多元素，并返回新的长度</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">shift()</td>
+<td style="text-align:center">把数组的第一个元素从其中删除，并返回第一个元素的值</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">copyWithin()</td>
+<td style="text-align:center">浅复制数组的一部分到同一数组中的另一个位置，并返回它，不会改变原数组的长度</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">fill()</td>
+<td style="text-align:center">向一个已有的数组中插入全部或部分相同的值</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">reverse()</td>
+<td style="text-align:center">用于颠倒数组中元素的顺序</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">sort()</td>
+<td style="text-align:center">用原地算法对数组的元素进行排序，并返回数组</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">splice()</td>
+<td style="text-align:center">向/从数组中添加/删除项目，然后返回被删除的项目</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">slice()</td>
+<td style="text-align:center">可提取字符串的某个部分，并以新的字符串返回被提取的部分</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">concat()</td>
+<td style="text-align:center">用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">join()</td>
+<td style="text-align:center">将一个数组（或一个类数组对象）的所有元素连接成一个字符串并返回这个字符串</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">every()</td>
+<td style="text-align:center">对数组中每一项都运行传入的函数，如果对每一项函数都返回true，则这个方法返回true</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">some()</td>
+<td style="text-align:center">对数组中每一项都运行传入的函数，如果有一项函数返回true，则这个方法返回true</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">filter()</td>
+<td style="text-align:center">对数组每一项都运行传入的函数，函数返回true的项会组成数组之后返回</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">map()</td>
+<td style="text-align:center">对数组每一项都运行传入的函数，返回由每次函数调用的结果构成的数组</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">forEach()</td>
+<td style="text-align:center">对数组每一项都运行传入的函数，没有返回值</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">keys()</td>
+<td style="text-align:center">返回数组索引的迭代器</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">values()</td>
+<td style="text-align:center">返回数组元素的迭代器</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">entries()</td>
+<td style="text-align:center">返回 索引/值 对的迭代器</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">reduce()</td>
+<td style="text-align:center">对数组中的每个元素执行一个由您提供的reducer函数，将其结果汇总为单个返回值</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">reduceRight()</td>
+<td style="text-align:center">从数组的末尾向前将数组中的数组项做累加</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">indexOf()</td>
+<td style="text-align:center">返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">lastIndexOf()</td>
+<td style="text-align:center">返回查找元素在数组中的位置，从数组末尾开始向前查找</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">includes()</td>
+<td style="text-align:center">用来判断一个数组是否包含一个指定的值，如果包含则返回 true，否则返回false</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">find()</td>
+<td style="text-align:center">返回数组中满足提供的测试函数的第一个元素的值。否则返回 undefined</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">findIndex()</td>
+<td style="text-align:center">返回数组中满足提供的测试函数的第一个元素的索引。若没有找到对应元素则返回-1</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">toSting()</td>
+<td style="text-align:center">返回由数组中每个值的等效字符串拼接而成的一个用逗号分隔的字符串</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">toLocaleString()</td>
+<td style="text-align:center">返回一个逗号分隔的数组值的字符串</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">constructor()</td>
+<td style="text-align:center">返回数组函数的引用，也就是调用这个方法的数组本身</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">flat()</td>
+<td style="text-align:center">会按照一个可指定的深度递归遍历数组，将所有元素与遍历到的子数组中的元素合并为一个新数组返回</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">flatMap()</td>
+<td style="text-align:center">使用映射函数映射每个元素，然后将结果压缩成一个新数组</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>上面是数组中的所有方法，然后下面我们分10类来介绍这些方法。</p>
+</blockquote>
+<ul>
+<li>栈和队列方法（<strong>4个</strong>）</li>
+<li>复制和填充方法（<strong>2个</strong>）</li>
+<li>排序方法（<strong>2个</strong>）</li>
+<li>操作方法（<strong>4个</strong>）</li>
+<li>迭代方法（<strong>5个</strong>）</li>
+<li>迭代器方法（<strong>3个</strong>）</li>
+<li>归并方法（<strong>2个</strong>）</li>
+<li>搜索查找方法（<strong>5个</strong>）</li>
+<li>转换方法（<strong>2个</strong>）</li>
+<li>扁平化方法（<strong>2个</strong>）</li>
+</ul>
+<h2 id="1栈和队列方法">（1）栈和队列方法</h2>
+<blockquote>
+<p>栈是一种后进先出的数据结构，也就是最新添加的项先被删除。数据项的插入（称为<strong>推入，push</strong>）和删除（称为<strong>弹出，pop</strong>）只在栈的一个地方发生，即栈顶。js为数组提供了<strong>push()</strong> 和 <strong>pop()</strong> 方法，以实现类似栈的行为。</p>
+</blockquote>
+<h3 id="push">push()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">push()</td>
+<td style="text-align:center">向数组的末尾添加一个或多个元素</td>
+<td style="text-align:center">把指定的值添加到数组后的新长度</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">newelement1</td>
+<td style="text-align:center">必需。要添加到数组的第一个元素</td>
+</tr>
+<tr>
+<td style="text-align:center">newelement2</td>
+<td style="text-align:center">可选。要添加到数组的第二个元素</td>
+</tr>
+<tr>
+<td style="text-align:center">newelementX</td>
+<td style="text-align:center">可选。可添加多个元素</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;js&#39;</span>,<span style="color:#e6db74">&#39;css&#39;</span>,<span style="color:#e6db74">&#39;html&#39;</span>];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">&#39;go&#39;</span>,<span style="color:#e6db74">&#39;node.js&#39;</span>)); <span style="color:#75715e">// 5
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr</span>); <span style="color:#75715e">//  [&#34;js&#34;, &#34;css&#34;, &#34;html&#34;, &#34;go&#34;, &#34;node.js&#34;]
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr1</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;js&#39;</span>,<span style="color:#e6db74">&#39;css&#39;</span>,<span style="color:#e6db74">&#39;html&#39;</span>];
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;go&#39;</span>,<span style="color:#e6db74">&#39;node.js&#39;</span>];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr1</span>.<span style="color:#a6e22e">push</span>(...<span style="color:#a6e22e">array</span>)); <span style="color:#75715e">// 5
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr1</span>); <span style="color:#75715e">// [&#34;js&#34;, &#34;css&#34;, &#34;html&#34;, &#34;go&#34;, &#34;node.js&#34;]
+</span></code></pre></div><p><strong>小知识点：</strong></p>
+<blockquote>
+<p>我们也可以通过  <strong>array[array.length] = &lsquo;XXX&rsquo;</strong> 这种方式往数组后面添加元素</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;js&#39;</span>,<span style="color:#e6db74">&#39;css&#39;</span>,<span style="color:#e6db74">&#39;html&#39;</span>];
+<span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">length</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;go&#39;</span>;
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr</span>); <span style="color:#75715e">// [&#34;js&#34;, &#34;css&#34;, &#34;html&#34;, &#34;go&#34;]
+</span></code></pre></div><h3 id="pop">pop()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">pop()</td>
+<td style="text-align:center">删除并返回数组的最后一个元素</td>
+<td style="text-align:center">返回被删除的元素</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">无需传参</td>
+<td style="text-align:center">无需描述</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>,<span style="color:#e6db74">&#39;blue&#39;</span>]
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">pop</span>()); <span style="color:#75715e">// blue
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>); <span style="color:#75715e">// [&#34;red&#34;, &#34;green&#34;]
+</span></code></pre></div><p><strong>小知识点：</strong></p>
+<blockquote>
+<p>我们也可以通过  <strong>array.length = array.length - 1</strong> 这种方式从数组末尾删除元素</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>,<span style="color:#e6db74">&#39;blue&#39;</span>];
+<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>); <span style="color:#75715e">//  [&#34;red&#34;, &#34;green&#34;]
+</span></code></pre></div><p><strong>Tips：</strong></p>
+<blockquote>
+<p>push()和pop()一起使用就构成了后进先出的栈结构</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>)); <span style="color:#75715e">// 2
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>); <span style="color:#75715e">// [&#34;red&#34;, &#34;green&#34;]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">pop</span>()); <span style="color:#75715e">// green
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>); <span style="color:#75715e">// [&#34;red&#34;]
+</span></code></pre></div><h3 id="unshift">unshift()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">unshift()</td>
+<td style="text-align:center">向数组的开头添加一个或更多元素</td>
+<td style="text-align:center">把指定的值添加到数组后的新长度</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">newelement1</td>
+<td style="text-align:center">必需。向数组添加的第一个元素</td>
+</tr>
+<tr>
+<td style="text-align:center">newelement2</td>
+<td style="text-align:center">可选。向数组添加的第二个元素</td>
+</tr>
+<tr>
+<td style="text-align:center">newelementX</td>
+<td style="text-align:center">可选。可添加若干个元素</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;white&#39;</span>];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">unshift</span>(<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;blue&#39;</span>)); <span style="color:#75715e">// 3
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>); <span style="color:#75715e">// [&#34;red&#34;, &#34;blue&#34;, &#34;white&#34;]
+</span></code></pre></div><h3 id="shift">shift()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">shift()</td>
+<td style="text-align:center">把数组的第一个元素从其中删除</td>
+<td style="text-align:center">返回第一个元素的值</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">无需传参</td>
+<td style="text-align:center">无需描述</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;black&#39;</span>];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">shift</span>()); <span style="color:#75715e">// red
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>); <span style="color:#75715e">// [&#34;black&#34;]
+</span></code></pre></div><p><strong>Tips：</strong></p>
+<blockquote>
+<p>unshift()和shift()一起使用也构成了后进先出的栈结构</p>
+</blockquote>
+<blockquote>
+<p>unshift()和pop()一起使用构成了先进先出的队列结构</p>
+</blockquote>
+<blockquote>
+<p>push()和shift()一起使用也构成了先进先出的队列结构</p>
+</blockquote>
+<h2 id="2复制和填充方法">（2）复制和填充方法</h2>
+<blockquote>
+<p>ES6新增了两个方法：批量复制方法 <strong>copyWithin()</strong>,以及填充数组方法 <strong>fill()</strong>。使用这两个方法都不会改变数组的大小。同时这两个方法都是包含开始索引，不包含结束索引的。</p>
+</blockquote>
+<h3 id="copywithin">copyWithin()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">copyWithin()</td>
+<td style="text-align:center">浅复制数组的一部分到同一数组中的另一个位置</td>
+<td style="text-align:center">返回修改后的原数组</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">target</td>
+<td style="text-align:center">必需。复制到指定目标索引位置</td>
+</tr>
+<tr>
+<td style="text-align:center">start</td>
+<td style="text-align:center">可选。元素复制的起始位置</td>
+</tr>
+<tr>
+<td style="text-align:center">end</td>
+<td style="text-align:center">可选。停止复制的索引位置 (默认为 array.length)。如果为负值，表示倒数</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ints</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>];
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">copyRes</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ints</span>.<span style="color:#a6e22e">copyWithin</span>(<span style="color:#ae81ff">1</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">copyRes</span>); <span style="color:#75715e">//  [0, 0, 1]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ints</span>); <span style="color:#75715e">//  [0, 0, 1]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">copyRes</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">ints</span>); <span style="color:#75715e">// true
+</span></code></pre></div><h3 id="fill">fill()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">fill()</td>
+<td style="text-align:center">向一个已有的数组中插入全部或部分相同的值</td>
+<td style="text-align:center">返回填充后的原数组</td>
+<td style="text-align:center">√</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">value</td>
+<td style="text-align:center">必需。填充的值</td>
+</tr>
+<tr>
+<td style="text-align:center">start</td>
+<td style="text-align:center">可选。开始填充位置</td>
+</tr>
+<tr>
+<td style="text-align:center">end</td>
+<td style="text-align:center">可选。停止填充位置 (默认为 array.length)</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">zeroes</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>];
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">zeroesRes</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">zeroes</span>.<span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">5</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">zeroes</span>); <span style="color:#75715e">// [5, 5, 5, 5, 5]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">zeroesRes</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">zeroes</span>); <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">zeroes</span>.<span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">1</span>)); <span style="color:#75715e">// [5, 3, 3, 3, 3]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">zeroes</span>); <span style="color:#75715e">// [5, 3, 3, 3, 3]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">zeroes</span>.<span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>)); <span style="color:#75715e">// [5, 3, 3, 1, 1]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">zeroes</span>); <span style="color:#75715e">// [5, 3, 3, 1, 1]
+</span></code></pre></div><p><strong>Tips：</strong></p>
+<blockquote>
+<p>copyWithin()和fill()会忽略超出数组边界，零长度以及方向相反的索引范围</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ints</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>];
+<span style="color:#75715e">// 索引超出边界，忽略
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">ints</span>.<span style="color:#a6e22e">copyWithin</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">13</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ints</span>); <span style="color:#75715e">// [0,1,2,3]
+</span><span style="color:#75715e">// 索引过低，超出边界，忽略
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">ints</span>.<span style="color:#a6e22e">copyWithin</span>(<span style="color:#ae81ff">2</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">15</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">12</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ints</span>); <span style="color:#75715e">// [0,1,2,3]
+</span><span style="color:#75715e">// 索引反向，忽略
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">ints</span>.<span style="color:#a6e22e">copyWithin</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">1</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ints</span>); <span style="color:#75715e">// [0,1,2,3]
+</span><span style="color:#75715e">// 部分索引可用，填充可用索引部分
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">ints</span>.<span style="color:#a6e22e">copyWithin</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">6</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ints</span>); <span style="color:#75715e">// [0,2,3,3]
+</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">zeroes</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>];
+<span style="color:#75715e">// 当开始索引和结束索引取负值时，相当于：将开始索引和结束索引都加上 zeroes.length
+</span><span style="color:#75715e">// zeroes.fill(8,1,4);
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">zeroes</span>.<span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">8</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">4</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">zeroes</span>); <span style="color:#75715e">// [0,8,8,8,0]
+</span><span style="color:#75715e">// 索引超出边界，忽略
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">zeroes</span>.<span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">15</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">zeroes</span>); <span style="color:#75715e">// [0,8,8,8,0]
+</span><span style="color:#75715e">// 索引过低，超出边界，忽略
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">zeroes</span>.<span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">15</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">12</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">zeroes</span>); <span style="color:#75715e">// [0,8,8,8,0]
+</span><span style="color:#75715e">// 索引反向，忽略
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">zeroes</span>.<span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">1</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">zeroes</span>); <span style="color:#75715e">// [0,8,8,8,0]
+</span><span style="color:#75715e">// 部分索引可用，填充可用索引部分
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">zeroes</span>.<span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">10</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">zeroes</span>); <span style="color:#75715e">// [0, 8, 8, 1, 1]
+</span></code></pre></div><h2 id="3排序方法">（3）排序方法</h2>
+<blockquote>
+<p>数组中有两个方法可以用来对元素重新排序：<strong>reverse()</strong> 和 <strong>sort()</strong>，顾名思义，reverse()方法就是将数组元素反向排列。</p>
+</blockquote>
+<h3 id="reverse">reverse()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">reverse()</td>
+<td style="text-align:center">用于颠倒数组中元素的顺序</td>
+<td style="text-align:center">返回颠倒后的原数组</td>
+<td style="text-align:center">√</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">无需参数</td>
+<td style="text-align:center">无需描述</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">reverse</span>()); <span style="color:#75715e">// [6, 5, 4, 3, 2, 1]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">value</span>); <span style="color:#75715e">// [6, 5, 4, 3, 2, 1]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">reverse</span>() <span style="color:#f92672">===</span> <span style="color:#a6e22e">value</span>); <span style="color:#75715e">// true
+</span></code></pre></div><h3 id="sort">sort()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">sort()</td>
+<td style="text-align:center">用原地算法对数组的元素进行排序</td>
+<td style="text-align:center">返回排序后的原数组</td>
+<td style="text-align:center">√</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">sortby</td>
+<td style="text-align:center">可选。规定排序顺序。必须是函数</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>当不传参数时</strong></li>
+</ul>
+<blockquote>
+<p>默认情况下，<strong>sort()</strong> 会按照升序重新排列数组元素，既最小的值在前面，最大的值在后面。为此，<strong>sort()</strong> 会在每一项上调用<strong>String()</strong> 转型函数，然后比较字符串来决定顺序。即使数组的元素都是数值，也会把数组转换为字符串再比较排序。</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">50</span>];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">sort</span>()); <span style="color:#75715e">//  [1, 10, 16, 2, 20, 3, 5, 50, 8, 9]
+</span></code></pre></div><ul>
+<li><strong>传入比较函数</strong></li>
+</ul>
+<p>这时候排序的结果就是我们结果就是我们想要的</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">50</span>];
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">compare</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) {
+    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">a</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">b</span>) <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">a</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">b</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">sort</span>(<span style="color:#a6e22e">compare</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">value</span>); <span style="color:#75715e">// [1, 2, 3, 5, 8, 9, 10, 16, 20, 50]
+</span></code></pre></div><p>当想要结果按降序排列的话将if条件反过来即可</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">50</span>];
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">compare</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) {
+    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">a</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">b</span>) <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">a</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">b</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">sort</span>(<span style="color:#a6e22e">compare</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">value</span>); <span style="color:#75715e">// [50, 20, 16, 10, 9, 8, 5, 3, 2, 1]
+</span></code></pre></div><p>上面的代码也可简写为：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">50</span>];
+<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">?</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">value</span>); <span style="color:#75715e">// [50, 20, 16, 10, 9, 8, 5, 3, 2, 1]
+</span></code></pre></div><p>上面的代码还可简写为：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">50</span>];
+<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">b</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">a</span>); <span style="color:#75715e">// a - b 升序，b - a 降序
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">value</span>); <span style="color:#75715e">// [50, 20, 16, 10, 9, 8, 5, 3, 2, 1]
+</span></code></pre></div><ul>
+<li><strong>数组对象按某个属性排序</strong></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [
+    {<span style="color:#e6db74">&#39;name&#39;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;js&#39;</span>,<span style="color:#e6db74">&#39;grade&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">80</span>},
+    {<span style="color:#e6db74">&#39;name&#39;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;java&#39;</span>,<span style="color:#e6db74">&#39;grade&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">50</span>},
+    {<span style="color:#e6db74">&#39;name&#39;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;go&#39;</span>,<span style="color:#e6db74">&#39;grade&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">100</span>},
+]
+<span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">sort</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">grade</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">grade</span>;
+})
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>);
+<span style="color:#75715e">// [{&#39;name&#39;:&#39;go&#39;,&#39;grade&#39;:100},{&#39;name&#39;:&#39;js&#39;,&#39;grade&#39;:80},{&#39;name&#39;:&#39;java&#39;,&#39;grade&#39;:50}]
+</span></code></pre></div><ul>
+<li><strong>手写一个sort函数</strong></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sort</span>(<span style="color:#a6e22e">array</span>,<span style="color:#a6e22e">callback</span>) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">array</span>) {
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">m</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">array</span>) {
+            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">callback</span>(<span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">n</span>],<span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">m</span>]) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>){
+                <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">temp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">n</span>];
+                <span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">n</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">m</span>];
+                <span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">m</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">temp</span>;
+            }
+        }
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">array</span>;
+};
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">52</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">7</span>];
+<span style="color:#a6e22e">sort</span>(<span style="color:#a6e22e">arr</span>,<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>){
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">b</span>
+})
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr</span>); <span style="color:#75715e">// [2, 3, 7, 10, 52] 
+</span></code></pre></div><p><strong>Tips：</strong></p>
+<blockquote>
+<p>如果只是想反转数组的顺序，reverse()更简单也更快。</p>
+</blockquote>
+<h2 id="4操作方法">（4）操作方法</h2>
+<blockquote>
+<p>对于数组中的元素，我们有很多操作方法。</p>
+</blockquote>
+<h3 id="splice">splice()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">splice()</td>
+<td style="text-align:center">向/从数组中添加/删除项目</td>
+<td style="text-align:center">返回被删除元素的组成的数组</td>
+<td style="text-align:center">√</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">index</td>
+<td style="text-align:center">必需。整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置</td>
+</tr>
+<tr>
+<td style="text-align:center">howmany</td>
+<td style="text-align:center">必需。要删除的项目数量。如果设置为 0，则不会删除项目</td>
+</tr>
+<tr>
+<td style="text-align:center">index</td>
+<td style="text-align:center">可选。向数组添加的新项目</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">nums</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">10</span>];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">nums</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">2</span>)); <span style="color:#75715e">// [1, 2]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">nums</span>); <span style="color:#75715e">// [3, 4, 5, 6, 7, 8, 9, 10]
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;black&#39;</span>,<span style="color:#e6db74">&#39;white&#39;</span>)); <span style="color:#75715e">// [&#34;red&#34;]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>); <span style="color:#75715e">// [&#34;black&#34;, &#34;white&#34;, &#34;green&#34;]
+</span></code></pre></div><p><strong>Tips：</strong></p>
+<blockquote>
+<p>如果<strong>splice()</strong> 不传参数时，不会删除任何元素，返回一个空数组，当传一个参数时，从当前下标对应的元素（包含当前下标对应的元素）往后删除，返回被删除元素的组成的数组</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">nums</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">10</span>];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">nums</span>.<span style="color:#a6e22e">splice</span>()); <span style="color:#75715e">// []
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">nums</span>); <span style="color:#75715e">// [1,2,3,4,5,6,7,8,9,10]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">nums</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#ae81ff">3</span>)); <span style="color:#75715e">// [4, 5, 6, 7, 8, 9, 10]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">nums</span>); <span style="color:#75715e">// [1, 2, 3]
+</span></code></pre></div><h3 id="slice">slice()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">slice()</td>
+<td style="text-align:center">可提取字符串的某个部分</td>
+<td style="text-align:center">以新数组的形式返回被提取的部分</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">start</td>
+<td style="text-align:center">可选。规定从何处开始选取，包含这个位置</td>
+</tr>
+<tr>
+<td style="text-align:center">end</td>
+<td style="text-align:center">可选。规定从何处结束选取，不包含这个位置</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;blue&#39;</span>];
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">slice</span>();
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors3</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">1</span>);
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors4</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>); <span style="color:#75715e">//  [&#34;red&#34;, &#34;blue&#34;]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors2</span>); <span style="color:#75715e">// [&#34;red&#34;, &#34;blue&#34;]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors3</span>); <span style="color:#75715e">// [&#34;blue&#34;]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors4</span>); <span style="color:#75715e">// [&#34;red&#34;]
+</span></code></pre></div><p><strong>Tips：</strong></p>
+<blockquote>
+<p>如果<strong>slice()</strong> 的参数有负值，那么就以当前数组长度加上这个负值的结果确定位置。当数组长度加上这个负值仍然为负值，那么返回空数组。</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;blue&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>];
+<span style="color:#75715e">// 这个数组的长度为3，所以colors.slice(-3,-1) 相当于 colors.slice(0,2)
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)); <span style="color:#75715e">//  [&#34;red&#34;, &#34;blue&#34;]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">2</span>)); <span style="color:#75715e">//  [&#34;red&#34;, &#34;blue&#34;]
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 因为colors.slice(-6,-4) 加上数组长度分别为 -3，-1，所以返回空值
+</span><span style="color:#75715e">// 但是colors.slice(-6,-4) 结果并不等于 colors.slice(-3,-1)的结果
+</span><span style="color:#75715e">// 因为 colors.slice(-3,-1) 相当于 colors.slice(0,2)
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">6</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">4</span>)); <span style="color:#75715e">// []
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)); <span style="color:#75715e">// [&#34;red&#34;, &#34;blue&#34;]
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// colors.slice(-8,-1) 加上数组长度分别为 -5，2，有一部分是在数组索引范围内的
+</span><span style="color:#75715e">// 所以这部分是生效的
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">8</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)); <span style="color:#75715e">// [&#34;red&#34;, &#34;blue&#34;]
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// colors.slice(-5,2) 加上数组长度为 -2，2
+</span><span style="color:#75715e">// 但是 colors.slice(-2,2) 加上数组长度为 1，2
+</span><span style="color:#75715e">// 所以他们结果是不同的
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">2</span>)); <span style="color:#75715e">// [&#34;red&#34;, &#34;blue&#34;]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>)); <span style="color:#75715e">// [&#34;blue&#34;]
+</span></code></pre></div><h3 id="concat">concat()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">concat()</td>
+<td style="text-align:center">用于合并两个或多个数组</td>
+<td style="text-align:center">返回合并后的新创建的数组</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">arrayX</td>
+<td style="text-align:center">必需。该参数可以是具体的值，也可以是数组对象。可以是任意多个</td>
+</tr>
+</tbody>
+</table>
+<p><strong>concat不仅可以合并数组，也可以将字符串合并到数组中去</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>];
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">newColors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;brown&#39;</span>,<span style="color:#e6db74">&#39;blue&#39;</span>];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">newColors</span>)); <span style="color:#75715e">// [&#34;red&#34;, &#34;green&#34;, &#34;brown&#34;, &#34;blue&#34;]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">concat</span>([<span style="color:#e6db74">&#39;yellow&#39;</span>],<span style="color:#a6e22e">newColors</span>)); <span style="color:#75715e">// [&#34;red&#34;, &#34;green&#34;, &#34;yellow&#34;, &#34;brown&#34;, &#34;blue&#34;]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#e6db74">&#39;white&#39;</span>,<span style="color:#a6e22e">newColors</span>)); <span style="color:#75715e">// [&#34;red&#34;, &#34;green&#34;, &#34;white&#34;, &#34;brown&#34;, &#34;blue&#34;]
+</span></code></pre></div><p><strong>Tips：</strong></p>
+<blockquote>
+<p><strong>concat()</strong> 将字符串合并到数组中有点类似于<strong>push()</strong> ，但是<strong>concat()</strong> 不会改变原数组，而<strong>push()</strong> 会改变原数组，同时，<strong>concat()</strong> 的返回值是合并后的新数组，而<strong>push()</strong> 的返回值是添加元素后的原数组的长度</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#e6db74">&#39;green&#39;</span>,<span style="color:#e6db74">&#39;blue&#39;</span>)); <span style="color:#75715e">// [&#34;red&#34;, &#34;green&#34;, &#34;blue&#34;]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>); <span style="color:#75715e">// [&#34;red&#34;]
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">newColors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">&#39;green&#39;</span>,<span style="color:#e6db74">&#39;blue&#39;</span>)); <span style="color:#75715e">// 3
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>); <span style="color:#75715e">// [&#34;red&#34;, &#34;green&#34;, &#34;blue&#34;]
+</span></code></pre></div><h3 id="join">join()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">join()</td>
+<td style="text-align:center">将一个数组的所有元素连接成一个字符串并返回</td>
+<td style="text-align:center">返回连接后的字符串</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">separator</td>
+<td style="text-align:center">可选。指定要使用的分隔符。如果省略该参数，则使用逗号作为分隔符</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>,<span style="color:#e6db74">&#39;blue&#39;</span>];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">join</span>()); <span style="color:#75715e">// red,green,blue
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;,&#39;</span>)); <span style="color:#75715e">// red,green,blue
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;||&#39;</span>)); <span style="color:#75715e">// red||green||blue
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">join</span>(<span style="color:#66d9ef">undefined</span>)); <span style="color:#75715e">// red,green,blue
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">join</span>(<span style="color:#66d9ef">null</span>)); <span style="color:#75715e">// rednullgreennullblue
+</span></code></pre></div><p><strong>Tips：</strong></p>
+<blockquote>
+<p>当不给<strong>join()</strong> 传入任何参数，或者传入<strong>undefined</strong> ，则仍然使用逗号作为分隔符。如果数组中某一项是<strong>null</strong> 或<strong>undefined</strong> ，则在join() 返回的结果中会以空字符串表示。</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>,<span style="color:#e6db74">&#39;blue&#39;</span>]; 
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">join</span>(<span style="color:#66d9ef">undefined</span>)); <span style="color:#75715e">// red,green,blue
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors1</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#66d9ef">null</span>,<span style="color:#66d9ef">undefined</span>,<span style="color:#e6db74">&#39;blue&#39;</span>]; 
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors1</span>.<span style="color:#a6e22e">join</span>()); <span style="color:#75715e">// red,,,blue
+</span></code></pre></div><h2 id="5迭代方法">（5）迭代方法</h2>
+<blockquote>
+<p><strong>JavaScript</strong> 为数组定义了5个迭代方法。</p>
+</blockquote>
+<h3 id="every">every()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">every()</td>
+<td style="text-align:center">对数组中每一项都运行传入的函数，如果对 <strong>每一项</strong> 函数都返回 <strong>true</strong> ，则这个方法返回 <strong>true</strong></td>
+<td style="text-align:center">返回一个布尔类型的值</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">function(currentValue, index,arr)</td>
+<td style="text-align:center">必须。函数，数组中的每个元素都会执行这个函数</td>
+</tr>
+<tr>
+<td style="text-align:center">thisValue</td>
+<td style="text-align:center">可选。对象作为该执行回调时使用，传递给函数，用作 &ldquo;this&rdquo; 的值</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第一个参数（函数）的参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">currentValue</td>
+<td style="text-align:center">必须。当前元素的值</td>
+</tr>
+<tr>
+<td style="text-align:center">index</td>
+<td style="text-align:center">可选。当前元素的索引值</td>
+</tr>
+<tr>
+<td style="text-align:center">arr</td>
+<td style="text-align:center">可选。当前元素属于的数组对象</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>];
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">everyResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">every</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">numbers</span>) =&gt; <span style="color:#a6e22e">item</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">everyResult</span>); <span style="color:#75715e">// false
+</span></code></pre></div><p><strong>Tips：</strong></p>
+<blockquote>
+<p>若收到一个空数组，此方法在一切情况下都会返回 true</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [];
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">everyResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">every</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">numbers</span>) =&gt; <span style="color:#a6e22e">item</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">everyResult</span>); <span style="color:#75715e">// true
+</span></code></pre></div><h3 id="some">some()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">some()</td>
+<td style="text-align:center">对数组中每一项都运行传入的函数，如果 <strong>有一项</strong> 函数返回 <strong>true</strong> ，则这个方法返回 <strong>true</strong></td>
+<td style="text-align:center">返回一个布尔类型的值</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">function(currentValue, index,arr)</td>
+<td style="text-align:center">必须。函数，数组中的每个元素都会执行这个函数</td>
+</tr>
+<tr>
+<td style="text-align:center">thisValue</td>
+<td style="text-align:center">可选。对象作为该执行回调时使用，传递给函数，用作 &ldquo;this&rdquo; 的值</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第一个参数（函数）的参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">currentValue</td>
+<td style="text-align:center">必须。当前元素的值</td>
+</tr>
+<tr>
+<td style="text-align:center">index</td>
+<td style="text-align:center">可选。当前元素的索引值</td>
+</tr>
+<tr>
+<td style="text-align:center">arr</td>
+<td style="text-align:center">可选。当前元素属于的数组对象</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注：</strong> <strong>every()</strong> 和 <strong>some()</strong> 接收的参数是一样的，只是 <strong>every()</strong> 需要函数 <strong>每一项</strong> 都返回 <strong>true</strong> ，这个方法才会返回 <strong>true</strong> ，而 <strong>some()</strong> 只需要函数 <strong>某一项</strong> 返回 <strong>true</strong> ，这个方法就会返回 <strong>true</strong> 。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>];
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">everyResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">every</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">numbers</span>) =&gt; <span style="color:#a6e22e">item</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">everyResult</span>); <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">someResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">some</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">numbers</span>) =&gt; <span style="color:#a6e22e">item</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">someResult</span>); <span style="color:#75715e">// true
+</span></code></pre></div><h3 id="filter">filter()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">filter()</td>
+<td style="text-align:center">对数组每一项都运行传入的函数，函数返回 <strong>true</strong> 的项会组成数组之后返回</td>
+<td style="text-align:center">返回一个数组</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">function(currentValue, index,arr)</td>
+<td style="text-align:center">必须。函数，数组中的每个元素都会执行这个函数</td>
+</tr>
+<tr>
+<td style="text-align:center">thisValue</td>
+<td style="text-align:center">可选。对象作为该执行回调时使用，传递给函数，用作 &ldquo;this&rdquo; 的值</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第一个参数（函数）的参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">currentValue</td>
+<td style="text-align:center">必须。当前元素的值</td>
+</tr>
+<tr>
+<td style="text-align:center">index</td>
+<td style="text-align:center">可选。当前元素的索引值</td>
+</tr>
+<tr>
+<td style="text-align:center">arr</td>
+<td style="text-align:center">可选。当前元素属于的数组对象</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>];
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">filterResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">numbers</span>) =&gt; <span style="color:#a6e22e">item</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">filterResult</span>); <span style="color:#75715e">// [3, 4, 5, 4, 3]
+</span></code></pre></div><h3 id="map">map()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">map()</td>
+<td style="text-align:center">对数组每一项都运行传入的函数，返回由每次函数调用的结果构成的数组</td>
+<td style="text-align:center">返回一个数组</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">function(currentValue, index,arr)</td>
+<td style="text-align:center">必须。函数，数组中的每个元素都会执行这个函数</td>
+</tr>
+<tr>
+<td style="text-align:center">thisValue</td>
+<td style="text-align:center">可选。对象作为该执行回调时使用，传递给函数，用作 &ldquo;this&rdquo; 的值</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第一个参数（函数）的参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">currentValue</td>
+<td style="text-align:center">必须。当前元素的值</td>
+</tr>
+<tr>
+<td style="text-align:center">index</td>
+<td style="text-align:center">可选。当前元素的索引值</td>
+</tr>
+<tr>
+<td style="text-align:center">arr</td>
+<td style="text-align:center">可选。当前元素属于的数组对象</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>];
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">mapResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">number</span>) =&gt; <span style="color:#a6e22e">item</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">mapResult</span>); <span style="color:#75715e">//  [2, 4, 6, 8, 10, 8, 6, 4, 2]
+</span></code></pre></div><p><strong>Tips：</strong></p>
+<blockquote>
+<p>从上面的代码以及描述看，<strong>fliter()</strong> 和 <strong>map()</strong> 好像没什么区别，事实上，这两个方法还是有区别的，<strong>fliter()</strong> 返回的数组元素个数可能会变化，但是元素本省不会变化，也就是说 <strong>fliter()</strong> 返回的新数组一定是跟原数组一样的内容或者原数组内容的一部分，元素不会改变，而 <strong>map()</strong> 返回的新数组元素个数不变，但是按照一定的条件转换，数组元素可能会变化</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>];
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">filterResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">number</span>) =&gt; <span style="color:#a6e22e">item</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>);
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">mapResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">number</span>) =&gt; <span style="color:#a6e22e">item</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>);
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">filterResult1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">number</span>) =&gt; <span style="color:#a6e22e">item</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>);
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">mapResult1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">number</span>) =&gt; <span style="color:#a6e22e">item</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">filterResult</span>); <span style="color:#75715e">//  [1, 2, 3, 4, 5, 4, 3, 2, 1]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">mapResult</span>); <span style="color:#75715e">// [2, 4, 6, 8, 10, 8, 6, 4, 2]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">filterResult1</span>); <span style="color:#75715e">//  [3, 4, 5, 4, 3]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">mapResult1</span>); <span style="color:#75715e">//  [false, false, true, true, true, true, true, false, false]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>); <span style="color:#75715e">//  [1, 2, 3, 4, 5, 4, 3, 2, 1]
+</span></code></pre></div><h3 id="foreach">forEach()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">forEach()</td>
+<td style="text-align:center">对数组每一项都运行传入的函数，没有返回值</td>
+<td style="text-align:center">undefined</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">function(currentValue, index,arr)</td>
+<td style="text-align:center">必须。函数，数组中的每个元素都会执行这个函数</td>
+</tr>
+<tr>
+<td style="text-align:center">thisValue</td>
+<td style="text-align:center">可选。对象作为该执行回调时使用，传递给函数，用作 &ldquo;this&rdquo; 的值</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第一个参数（函数）的参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">currentValue</td>
+<td style="text-align:center">必须。当前元素的值</td>
+</tr>
+<tr>
+<td style="text-align:center">index</td>
+<td style="text-align:center">可选。当前元素的索引值</td>
+</tr>
+<tr>
+<td style="text-align:center">arr</td>
+<td style="text-align:center">可选。当前元素属于的数组对象</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>];
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">forEachResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">forEach</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">numbers</span>) =&gt; {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">item</span><span style="color:#f92672">*</span><span style="color:#ae81ff">5</span>
+});
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">forEachResult</span>); <span style="color:#75715e">// undefined
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>); <span style="color:#75715e">// [1, 2, 3, 4, 5, 4, 3, 2, 1]
+</span></code></pre></div><p>forEach()本质上就是循环遍历数组，没有返回值，也不会改变原数组。</p>
+<p><strong>总结</strong></p>
+<blockquote>
+<p>这5个迭代方法传的参数都是一样的，也都不会改变原数组。</p>
+</blockquote>
+<h2 id="6迭代器方法">（6）迭代器方法</h2>
+<blockquote>
+<p>在 <strong>ES6</strong> 中，<strong>Array</strong> 的原型上暴露了 <strong>3</strong> 个用于检索数组内容的方法，<strong>keys()</strong> 、<strong>values()</strong> 和 <strong>entries()</strong>。</p>
+</blockquote>
+<h3 id="keys">keys()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">keys()</td>
+<td style="text-align:center">返回数组索引的迭代器</td>
+<td style="text-align:center">返回一个类数组对象</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">obj</td>
+<td style="text-align:center">可选。要返回其枚举自身属性的对象</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">keys</span>()); <span style="color:#75715e">// Array Iterator {}
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">keys</span>())); <span style="color:#75715e">// [0, 1]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#66d9ef">of</span>(...<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">keys</span>())); <span style="color:#75715e">// [0, 1]
+</span></code></pre></div><h3 id="values">values()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">values()</td>
+<td style="text-align:center">返回数组元素的迭代器</td>
+<td style="text-align:center">返回一个类数组对象</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">obj</td>
+<td style="text-align:center">可选。被返回可枚举属性值的对象</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">values</span>()); <span style="color:#75715e">// Array Iterator {}
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">values</span>())); <span style="color:#75715e">//  [&#34;red&#34;, &#34;green&#34;]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#66d9ef">of</span>(...<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">values</span>())); <span style="color:#75715e">//  [&#34;red&#34;, &#34;green&#34;]
+</span></code></pre></div><h3 id="entries">entries()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">entries()</td>
+<td style="text-align:center">返回 索引/值 对的迭代器</td>
+<td style="text-align:center">返回一个类数组对象</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">obj</td>
+<td style="text-align:center">可选。被返回可枚举属性值的对象</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">entries</span>(<span style="color:#a6e22e">colors</span>)); <span style="color:#75715e">// Array Iterator {}
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">entries</span>())); <span style="color:#75715e">// [Array(2), Array(2)]
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#66d9ef">of</span>(...<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">entries</span>())); <span style="color:#75715e">// [Array(2), Array(2)]
+</span></code></pre></div><p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/000f722d46ac461faa31e0c5db37ca4d~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
+<p><strong>Tips：</strong></p>
+<blockquote>
+<p>这三个方法返回的都是一个类数组对象，都可以通过 <strong>Array.from()</strong> 或者 <strong>Array.of()加展开语法</strong> 转换成数组。</p>
+</blockquote>
+<h2 id="7归并方法">（7）归并方法</h2>
+<blockquote>
+<p><strong>JavaScript</strong> 为数组提供了两个归并方法：<strong>reduce()</strong> 和 <strong>reduceRight()</strong> 。</p>
+</blockquote>
+<h3 id="reduce">reduce()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">reduce()</td>
+<td style="text-align:center">对数组中的每个元素执行一个由您提供的reducer函数</td>
+<td style="text-align:center">函数处理的结果，可以是任何类型</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">function(currentValue, index,arr)</td>
+<td style="text-align:center">必需。用于执行每个数组元素的函数</td>
+</tr>
+<tr>
+<td style="text-align:center">initialValue</td>
+<td style="text-align:center">可选。传递给函数的初始值</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第一个参数（函数）的参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">total</td>
+<td style="text-align:center">必需。初始值, 或者计算结束后的返回值</td>
+</tr>
+<tr>
+<td style="text-align:center">currentValue</td>
+<td style="text-align:center">必需。当前元素</td>
+</tr>
+<tr>
+<td style="text-align:center">currentIndex</td>
+<td style="text-align:center">可选。当前元素的索引</td>
+</tr>
+<tr>
+<td style="text-align:center">arr</td>
+<td style="text-align:center">可选。当前元素所属的数组对象</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>];
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">prev</span>,<span style="color:#a6e22e">cur</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">array</span>) =&gt; <span style="color:#a6e22e">prev</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">cur</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">sum</span>); <span style="color:#75715e">// 9
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>); <span style="color:#75715e">//  [1, 2, 3, 2, 1]
+</span></code></pre></div><h3 id="reduceright">reduceRight()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">reduceRight()</td>
+<td style="text-align:center">从数组的末尾向前将数组中的数组项做累加</td>
+<td style="text-align:center">函数处理的结果，可以是任何类型</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">function(currentValue, index,arr)</td>
+<td style="text-align:center">必需。用于执行每个数组元素的函数</td>
+</tr>
+<tr>
+<td style="text-align:center">initialValue</td>
+<td style="text-align:center">可选。传递给函数的初始值</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第一个参数（函数）的参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">total</td>
+<td style="text-align:center">必需。初始值, 或者计算结束后的返回值</td>
+</tr>
+<tr>
+<td style="text-align:center">currentValue</td>
+<td style="text-align:center">必需。当前元素</td>
+</tr>
+<tr>
+<td style="text-align:center">currentIndex</td>
+<td style="text-align:center">可选。当前元素的索引</td>
+</tr>
+<tr>
+<td style="text-align:center">arr</td>
+<td style="text-align:center">可选。当前元素所属的数组对象</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>];
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">reduceRight</span>((<span style="color:#a6e22e">prev</span>,<span style="color:#a6e22e">cur</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">array</span>) =&gt; <span style="color:#a6e22e">prev</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">cur</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">sum</span>); <span style="color:#75715e">// 15
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>); <span style="color:#75715e">// [1, 2, 3, 4, 5]
+</span></code></pre></div><p><strong>Tips：</strong></p>
+<blockquote>
+<p>究竟是使用 <strong>reduce()</strong> 还是 <strong>reduceRight()</strong> ，只取决于遍历数组元素的方向。除此之外，这两个方法没什么区别。</p>
+</blockquote>
+<h2 id="8搜索查找方法">（8）搜索查找方法</h2>
+<blockquote>
+<p><strong>JavaScript</strong> 提供两类搜索数组的方法：按严格相等搜索和按断言函数搜索。</p>
+</blockquote>
+<p><strong>JavaScript</strong> 提供了 <strong>3</strong> 个严格相等的搜索方法：<strong>indexOf()</strong>、<strong>lastIndexOf()</strong> 和 <strong>includes()</strong></p>
+<h3 id="indexof">indexOf()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">indexOf()</td>
+<td style="text-align:center">返回在数组中可以找到一个给定元素的第一个索引</td>
+<td style="text-align:center">返回数值类型</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">searchvalue</td>
+<td style="text-align:center">必需。规定需检索的字符串值</td>
+</tr>
+<tr>
+<td style="text-align:center">fromindex</td>
+<td style="text-align:center">可选的整数参数。规定在字符串中开始检索的位置（包含这个位置）</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#ae81ff">4</span>)); <span style="color:#75715e">// 3
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>)); <span style="color:#75715e">// 3
+</span><span style="color:#75715e">// 如果没找到就返回 -1
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#ae81ff">40</span>)); <span style="color:#75715e">// -1
+</span></code></pre></div><h3 id="lastindexof">lastIndexOf()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">lastIndexOf()</td>
+<td style="text-align:center">返回查找元素在数组中的位置，从数组末尾开始向前查找</td>
+<td style="text-align:center">返回数值类型</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">searchvalue</td>
+<td style="text-align:center">必需。规定需检索的字符串值</td>
+</tr>
+<tr>
+<td style="text-align:center">fromindex</td>
+<td style="text-align:center">可选的整数参数。规定在字符串中开始检索的位置（包含这个位置）</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">lastIndexOf</span>(<span style="color:#ae81ff">4</span>)); <span style="color:#75715e">// 5
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">lastIndexOf</span>(<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">4</span>)); <span style="color:#75715e">// 3
+</span><span style="color:#75715e">// 如果没找到就返回 -1
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">lastIndexOf</span>(<span style="color:#ae81ff">40</span>)); <span style="color:#75715e">// -1
+</span></code></pre></div><h3 id="includes">includes()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">includes()</td>
+<td style="text-align:center">用来判断一个数组是否包含一个指定的值</td>
+<td style="text-align:center">返回布尔类型</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">searchvalue</td>
+<td style="text-align:center">必需。规定需检索的字符串值</td>
+</tr>
+<tr>
+<td style="text-align:center">fromindex</td>
+<td style="text-align:center">可选的整数参数。规定在字符串中开始检索的位置（包含这个位置）</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#ae81ff">4</span>)); <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">7</span>)); <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#ae81ff">40</span>)); <span style="color:#75715e">// false
+</span></code></pre></div><p><strong>JavaScript</strong> 也允许按照定义的断言函数搜索数组，<strong>find()</strong> 和 <strong>findIndex()</strong> 使用了断言函数。</p>
+<h3 id="find">find()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">find()</td>
+<td style="text-align:center">返回数组中满足提供的测试函数的第一个元素的值</td>
+<td style="text-align:center">返回符合条件的元素值，可以是任何类型</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">function(currentValue, index,arr)</td>
+<td style="text-align:center">必须。函数，数组中的每个元素都会执行这个函数</td>
+</tr>
+<tr>
+<td style="text-align:center">thisValue</td>
+<td style="text-align:center">可选。对象作为该执行回调时使用，传递给函数，用作 &ldquo;this&rdquo; 的值</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第一个参数（函数）的参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">currentValue</td>
+<td style="text-align:center">必须。当前元素的值</td>
+</tr>
+<tr>
+<td style="text-align:center">index</td>
+<td style="text-align:center">可选。当前元素的索引值</td>
+</tr>
+<tr>
+<td style="text-align:center">arr</td>
+<td style="text-align:center">可选。当前元素属于的数组对象</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">people</span> <span style="color:#f92672">=</span> [
+    {
+        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Matt&#39;</span>,
+        <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">27</span>
+    },
+    {
+        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;xiaoming&#39;</span>,
+        <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">29</span>
+    }
+];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">people</span>.<span style="color:#a6e22e">find</span>((<span style="color:#a6e22e">element</span>, <span style="color:#a6e22e">index</span>, <span style="color:#a6e22e">array</span>) =&gt; <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">28</span>)); <span style="color:#75715e">// {name: &#34;xiaoming&#34;, age: 29}
+</span></code></pre></div><h3 id="findindex">findIndex()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">findIndex()</td>
+<td style="text-align:center">返回数组中满足提供的测试函数的第一个元素的索引</td>
+<td style="text-align:center">返回一个数值类型的值</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">function(currentValue, index,arr)</td>
+<td style="text-align:center">必须。函数，数组中的每个元素都会执行这个函数</td>
+</tr>
+<tr>
+<td style="text-align:center">thisValue</td>
+<td style="text-align:center">可选。对象作为该执行回调时使用，传递给函数，用作 &ldquo;this&rdquo; 的值</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第一个参数（函数）的参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">currentValue</td>
+<td style="text-align:center">必须。当前元素的值</td>
+</tr>
+<tr>
+<td style="text-align:center">index</td>
+<td style="text-align:center">可选。当前元素的索引值</td>
+</tr>
+<tr>
+<td style="text-align:center">arr</td>
+<td style="text-align:center">可选。当前元素属于的数组对象</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">people</span> <span style="color:#f92672">=</span> [
+    {
+        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Matt&#39;</span>,
+        <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">27</span>
+    },
+    {
+        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;xiaoming&#39;</span>,
+        <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">29</span>
+    }
+];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">people</span>.<span style="color:#a6e22e">findIndex</span>((<span style="color:#a6e22e">element</span>, <span style="color:#a6e22e">index</span>, <span style="color:#a6e22e">array</span>) =&gt; <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">28</span>)); <span style="color:#75715e">// 1
+</span></code></pre></div><h2 id="9转换方法">（9）转换方法</h2>
+<blockquote>
+<p><strong>JavaScript</strong> 中所有对象都有 <strong>toSting()</strong>、<strong>toLocaleString()</strong> 和 <strong>valueOf()</strong> 方法，其中，<strong>valueOf()</strong> 返回的是数组本身。</p>
+</blockquote>
+<h3 id="tosting">toSting()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">toSting()</td>
+<td style="text-align:center">返回由数组中每个值的等效字符串拼接而成的一个用逗号分隔的字符串</td>
+<td style="text-align:center">返回字符串类型</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">无需参数</td>
+<td style="text-align:center">无需描述</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>];
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">stringNumbers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">toString</span>();
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">stringNumbers</span>); <span style="color:#75715e">// 1,2,3,4,5
+</span></code></pre></div><h3 id="tolocalestring">toLocaleString()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">toLocaleString()</td>
+<td style="text-align:center">返回一个逗号分隔的数组值的字符串</td>
+<td style="text-align:center">返回字符串类型</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">无需参数</td>
+<td style="text-align:center">无需描述</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">15000000</span>];
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">stringNumbers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">toLocaleString</span>();
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">stringNumbers</span>); <span style="color:#75715e">// 15,000,000
+</span></code></pre></div><h2 id="10扁平化方法">（10）扁平化方法</h2>
+<blockquote>
+<p><strong>JavaScript</strong> 中提供了两个数组扁平化的方法：<strong>flat()</strong> 和 <strong>flatMap()</strong></p>
+</blockquote>
+<h3 id="flat">flat()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">flat()</td>
+<td style="text-align:center">会按照一个可指定的深度递归遍历数组，将所有元素与遍历到的子数组中的元素合并为一个新数组返回</td>
+<td style="text-align:center">返回一个数组类型</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">depth</td>
+<td style="text-align:center">可选。指定要提取嵌套数组的结构深度，默认值为 1</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">8</span>,[<span style="color:#ae81ff">1</span>],[<span style="color:#ae81ff">2</span>,[<span style="color:#ae81ff">1</span>,[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">9</span>]]]]];
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">flat</span>(<span style="color:#ae81ff">2</span>));<span style="color:#75715e">// [1, 5, 9, 8, 1, 2, 1, Array(3)]
+</span><span style="color:#75715e">//使用 Infinity，可展开任意深度的嵌套数组
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">flat</span>(<span style="color:#66d9ef">Infinity</span>)); <span style="color:#75715e">//  [1, 5, 9, 8, 1, 2, 1, 1, 3, 1, 9]
+</span></code></pre></div><h3 id="flatmap">flatMap()</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">返回值</th>
+<th style="text-align:center">是否改变原数组实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">flatMap()</td>
+<td style="text-align:center">使用映射函数映射每个元素，然后将结果压缩成一个新数组</td>
+<td style="text-align:center">返回一个数组类型</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">function(currentValue, index,arr)</td>
+<td style="text-align:center">必须。函数，数组中的每个元素都会执行这个函数</td>
+</tr>
+<tr>
+<td style="text-align:center">thisValue</td>
+<td style="text-align:center">可选。对象作为该执行回调时使用，传递给函数，用作 &ldquo;this&rdquo; 的值</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第一个参数（函数）的参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">currentValue</td>
+<td style="text-align:center">必须。当前元素的值</td>
+</tr>
+<tr>
+<td style="text-align:center">index</td>
+<td style="text-align:center">可选。当前元素的索引值</td>
+</tr>
+<tr>
+<td style="text-align:center">arr</td>
+<td style="text-align:center">可选。当前元素属于的数组对象</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">8</span>];
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">flatMapRes</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">flatMap</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">array</span>) =&gt; <span style="color:#a6e22e">item</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">flatMapRes</span>); <span style="color:#75715e">// [3, 15, 27, 24]
+</span></code></pre></div><h1 id="5总结">5.总结</h1>
+<p>这篇文章断断续续的也写了好几天，感叹总结文档也是件麻烦细致活，不比学习技术知识花的时间少，但是写文档也算把学到的知识输出出来了，可能以后自己忘了，也能回头来看看，毕竟，人的记忆力是敌不过时间的，好记性不如烂笔头嘛，写文档这种东西可能还是多多益善，然后大佬们看这篇文章如果发现有不妥或者错误的地方希望能指出来，我及时改正，谢谢了，然后后续有新的东西我也会补充进来的。</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/60854fc6591d4c978418308db0d1ffe2~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">xkhm</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+      2020-12-19
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+        
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="im.xkhm@gmail.com" rel="me noopener" class="iconfont"
+      title="email"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/yukiyukixing" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.zhihu.com/people/yuki-42-63" rel="me noopener" class="iconfont"
+      title="zhihu"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M351.791182 562.469462l192.945407 0c0-45.367257-21.3871-71.939449-21.3871-71.939449L355.897709 490.530013c3.977591-82.182744 7.541767-187.659007 8.816806-226.835262l159.282726 0c0 0-0.86367-67.402109-18.578124-67.402109s-279.979646 0-279.979646 0 16.850783-88.141456 39.318494-127.053698c0 0-83.60514-4.510734-112.121614 106.962104S81.344656 355.077018 76.80834 367.390461c-4.536316 12.313443 24.62791 5.832845 36.941354 0 12.313443-5.832845 68.050885-25.924439 84.252893-103.69571l86.570681 0c1.165546 49.28652 4.596691 200.335724 3.515057 226.835262L109.86113 490.530013c-25.275663 18.147312-33.701566 71.939449-33.701566 71.939449L279.868105 562.469462c-8.497535 56.255235-23.417339 128.763642-44.275389 167.210279-33.05279 60.921511-50.55235 116.65793-169.802314 212.576513 0 0-19.442818 14.257725 40.829917 9.073656 60.273758-5.185093 117.305683-20.739347 156.840094-99.807147 20.553105-41.107233 41.805128-93.250824 58.386782-146.138358l-0.055259 0.185218 167.855986 193.263655c0 0 22.035876-51.847855 5.832845-108.880803L371.045711 650.610918l-42.1244 31.157627-0.045025 0.151449c11.69946-41.020252 20.11206-81.5749 22.726607-116.858498C351.665315 564.212152 351.72876 563.345412 351.791182 562.469462z"></path>
+  <path d="M584.918753 182.033893l0 668.840094 70.318532 0 28.807093 80.512708 121.875768-80.512708 153.600307 0L959.520453 182.033893 584.918753 182.033893zM887.150192 778.934538l-79.837326 0-99.578949 65.782216-23.537066-65.782216-24.855084 0L659.341766 256.673847l227.807403 0L887.149169 778.934538z"></path>
+</svg>
+
+    </a>
+
+
+<a href="https://yukiyukixing.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    2020
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        xkhm
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
