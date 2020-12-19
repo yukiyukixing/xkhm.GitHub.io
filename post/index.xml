@@ -6,6 +6,7 @@
     <description>Recent content in Posts on 星空海绵 - 星空浩瀚 | 海绵吸水</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <copyright>星空海绵</copyright>
     <lastBuildDate>Sat, 19 Dec 2020 12:40:48 +0800</lastBuildDate><atom:link href="https://yukiyukixing.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GithubPages&#43;Hugo从0到1搭建个人博客</title>
@@ -13,52 +14,7 @@
       <pubDate>Sat, 19 Dec 2020 12:40:48 +0800</pubDate>
       
       <guid>https://yukiyukixing.github.io/post/githubpages&#43;hugo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>TICK技术栈介绍</title>
-      <link>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BB%8B%E7%BB%8D/</link>
-      <pubDate>Sat, 19 Dec 2020 12:34:14 +0800</pubDate>
-      
-      <guid>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BB%8B%E7%BB%8D/</guid>
-      <description>1.什么是TICK技术栈？ 1.1 简介 TICK 是由 InfluxData开发的一套开源工具栈，由 Telegraf, InfluxDB, Chronograf, Kapacitor 四个工具的首字母组成。 1.2 Telegraf Telegraf是一个用</description>
-    </item>
-    
-    <item>
-      <title>TICK技术栈（三）InfluxDB安装及使用</title>
-      <link>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%89influxdb%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Sat, 19 Dec 2020 12:33:37 +0800</pubDate>
-      
-      <guid>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%89influxdb%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
-      <description>1.什么是InfluxDB？ InfluxDB是一个用Go语言开发的时序数据库，用于处理高写入和查询负载，专门为带时间戳的数据编写，对DevO</description>
-    </item>
-    
-    <item>
-      <title>TICK技术栈（二）Telegraf安装及使用</title>
-      <link>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%8Ctelegraf%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Sat, 19 Dec 2020 12:33:03 +0800</pubDate>
-      
-      <guid>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%8Ctelegraf%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
-      <description>1.什么是Telegraf？ Telegraf是一个用Go语言开发的代理程序，可用于收集和报告指标。Telegraf插件直接从其运行的系统中获</description>
-    </item>
-    
-    <item>
-      <title>Kapacitor安装及使用</title>
-      <link>https://yukiyukixing.github.io/post/kapacitor%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Sat, 19 Dec 2020 12:32:20 +0800</pubDate>
-      
-      <guid>https://yukiyukixing.github.io/post/kapacitor%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
-      <description>1.什么是Kapacitor？ Kapacitor是InfluxData开源的数据处理引擎。它可以处理来自InfluxDB的流数据和批处理数据</description>
-    </item>
-    
-    <item>
-      <title>Grafana安装及使用</title>
-      <link>https://yukiyukixing.github.io/post/grafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Sat, 19 Dec 2020 12:31:20 +0800</pubDate>
-      
-      <guid>https://yukiyukixing.github.io/post/grafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
-      <description>1.什么是Grafana？ Grafana是一款采用go语言和Angular框架编写的开源的可视化工具，主要用于大规模指标数据的可视化展示，提</description>
+      <description>前言 JS深浅拷贝 是前端面试中几乎必问的知识点，今天我也尝试着来总结一下这个知识点，如果有写的不对的地方，还请 大佬们 多加指教。</description>
     </item>
     
     <item>
@@ -77,6 +33,51 @@
       
       <guid>https://yukiyukixing.github.io/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/</guid>
       <description>前言 JS深浅拷贝 是前端面试中几乎必问的知识点，今天我也尝试着来总结一下这个知识点，如果有写的不对的地方，还请 大佬们 多加指教。 1.浅拷贝 定义：</description>
+    </item>
+    
+    <item>
+      <title>TICK技术栈（五）Kapacitor安装及使用</title>
+      <link>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%94kapacitor%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Fri, 22 Nov 2019 12:32:20 +0800</pubDate>
+      
+      <guid>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%94kapacitor%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
+      <description>1.什么是Kapacitor？ Kapacitor是InfluxData开源的数据处理引擎。它可以处理来自InfluxDB的流数据和批处理数据</description>
+    </item>
+    
+    <item>
+      <title>TICK技术栈（四）Grafana安装及使用</title>
+      <link>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E5%9B%9Bgrafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8grafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Fri, 15 Nov 2019 12:31:20 +0800</pubDate>
+      
+      <guid>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E5%9B%9Bgrafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8grafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
+      <description>1.什么是Grafana？ Grafana是一款采用go语言和Angular框架编写的开源的可视化工具，主要用于大规模指标数据的可视化展示，提</description>
+    </item>
+    
+    <item>
+      <title>TICK技术栈（三）InfluxDB安装及使用</title>
+      <link>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%89influxdb%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Thu, 07 Nov 2019 12:33:37 +0800</pubDate>
+      
+      <guid>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%89influxdb%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
+      <description>1.什么是InfluxDB？ InfluxDB是一个用Go语言开发的时序数据库，用于处理高写入和查询负载，专门为带时间戳的数据编写，对DevO</description>
+    </item>
+    
+    <item>
+      <title>TICK技术栈（二）Telegraf安装及使用</title>
+      <link>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%8Ctelegraf%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Tue, 05 Nov 2019 12:33:03 +0800</pubDate>
+      
+      <guid>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%8Ctelegraf%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
+      <description>1.什么是Telegraf？ Telegraf是一个用Go语言开发的代理程序，可用于收集和报告指标。Telegraf插件直接从其运行的系统中获</description>
+    </item>
+    
+    <item>
+      <title>TICK技术栈（一）TICK技术栈介绍</title>
+      <link>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%80tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Tue, 22 Oct 2019 12:34:14 +0800</pubDate>
+      
+      <guid>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%80tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BB%8B%E7%BB%8D/</guid>
+      <description>1.什么是TICK技术栈？ 1.1 简介 TICK 是由 InfluxData开发的一套开源工具栈，由 Telegraf, InfluxDB, Chronograf, Kapacitor 四个工具的首字母组成。 1.2 Telegraf Telegraf是一个用</description>
     </item>
     
   </channel>

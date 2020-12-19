@@ -6,10 +6,44 @@
     <description>Recent content on 星空海绵 - 星空浩瀚 | 海绵吸水</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 19 Dec 2020 12:40:48 +0800</lastBuildDate>
+    <copyright>星空海绵</copyright>
+    <lastBuildDate>Sat, 19 Dec 2020 23:01:15 +0800</lastBuildDate>
     
         <atom:link href="https://yukiyukixing.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>生活</title>
+      <link>https://yukiyukixing.github.io/life/</link>
+      <pubDate>Sat, 19 Dec 2020 22:14:17 +0800</pubDate>
+      
+      <guid>https://yukiyukixing.github.io/life/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>技术</title>
+      <link>https://yukiyukixing.github.io/technology/</link>
+      <pubDate>Sat, 19 Dec 2020 22:19:35 +0800</pubDate>
+      
+      <guid>https://yukiyukixing.github.io/technology/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>随笔</title>
+      <link>https://yukiyukixing.github.io/essay/</link>
+      <pubDate>Sat, 19 Dec 2020 22:17:09 +0800</pubDate>
+      
+      <guid>https://yukiyukixing.github.io/essay/</guid>
+      
+        <description></description>
+      
+    </item>
     
     <item>
       <title>关于</title>
@@ -32,267 +66,40 @@
     </item>
     
     <item>
+      <title>日常小记</title>
+      <link>https://yukiyukixing.github.io/essay/%E6%97%A5%E5%B8%B8%E5%B0%8F%E8%AE%B0/</link>
+      <pubDate>Sat, 19 Dec 2020 23:01:15 +0800</pubDate>
+      
+      <guid>https://yukiyukixing.github.io/essay/%E6%97%A5%E5%B8%B8%E5%B0%8F%E8%AE%B0/</guid>
+      
+        <description>&lt;h1 id=&#34;随笔&#34;&gt;随笔&lt;/h1&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>船到桥头自然直</title>
+      <link>https://yukiyukixing.github.io/life/%E8%88%B9%E5%88%B0%E6%A1%A5%E5%A4%B4%E8%87%AA%E7%84%B6%E7%9B%B4/</link>
+      <pubDate>Sat, 19 Dec 2020 22:57:52 +0800</pubDate>
+      
+      <guid>https://yukiyukixing.github.io/life/%E8%88%B9%E5%88%B0%E6%A1%A5%E5%A4%B4%E8%87%AA%E7%84%B6%E7%9B%B4/</guid>
+      
+        <description>&lt;h1 id=&#34;船到桥头自然直-all-will-be-good&#34;&gt;船到桥头自然直 All will be good&lt;/h1&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>GithubPages&#43;Hugo从0到1搭建个人博客</title>
       <link>https://yukiyukixing.github.io/post/githubpages&#43;hugo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Sat, 19 Dec 2020 12:40:48 +0800</pubDate>
       
       <guid>https://yukiyukixing.github.io/post/githubpages&#43;hugo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
       
-        <description></description>
-      
-    </item>
-    
-    <item>
-      <title>TICK技术栈介绍</title>
-      <link>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BB%8B%E7%BB%8D/</link>
-      <pubDate>Sat, 19 Dec 2020 12:34:14 +0800</pubDate>
-      
-      <guid>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BB%8B%E7%BB%8D/</guid>
-      
-        <description>&lt;h1 id=&#34;1什么是tick技术栈&#34;&gt;1.什么是TICK技术栈？&lt;/h1&gt;
-&lt;h3 id=&#34;11-简介&#34;&gt;1.1 简介&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.influxdata.com/time-series-platform/&#34;&gt;TICK&lt;/a&gt; 是由 &lt;a href=&#34;https://docs.influxdata.com/&#34;&gt;InfluxData&lt;/a&gt;开发的一套开源工具栈，由 Telegraf, InfluxDB, Chronograf, Kapacitor 四个工具的首字母组成。&lt;/p&gt;
-&lt;h3 id=&#34;12-telegraf&#34;&gt;1.2 Telegraf&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.influxdata.com/telegraf/v1.12/introduction/getting-started/&#34;&gt;Telegraf&lt;/a&gt;是一个用Go语言开发的代理程序，可用于收集和报告指标。Telegraf插件直接从其运行的系统中获取各种指标，从第三方API中提取指标，甚至通过StatsD和Kafka消费者服务来监听指标。它还具有输出插件，可以将指标发送到各种其他数据存储，服务和消息队列，包括InfluxDB，Graphite，OpenTSDB，Datadog，Librato，Kafka，MQTT，NSQ等。github地址：https://github.com/influxdata/telegraf&lt;/p&gt;
-&lt;h3 id=&#34;13-influxdb&#34;&gt;1.3 InfluxDB&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.influxdata.com/influxdb/v1.7/introduction/getting-started/&#34;&gt;InfluxDB&lt;/a&gt;是一个用Go语言开发的时序数据库，用于处理高写入和查询负载，专门为带时间戳的数据编写，对DevOps监控，IoT监控和实时分析等应用场景非常有用。通过自定义配置让InfluxDB保留规定时间内的数据，并自动从系统中删除不在规定时间内的数据，可以节省计算机上的空间。InfluxDB还提供了一种类似于SQL的查询语言来与数据进行交互，并且InfluxDB相比传统关系型数据库更关注数据的实时性和并发插入时的承受能力。github地址：https://github.com/influxdata/influxdb&lt;/p&gt;
-&lt;h3 id=&#34;14-chronograf&#34;&gt;1.4 Chronograf&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.influxdata.com/chronograf/v1.7/introduction/getting-started/&#34;&gt;Chronograf&lt;/a&gt;是InfluxData的开源可视化引擎，可让通过数据的实时可视化快速构建仪表板，但是由于Chronograf没有Grafana扩展性和易用性强，所以后面会使用了Grafana替代Chronograf。github地址：https://github.com/influxdata/chronograf&lt;/p&gt;
-&lt;h3 id=&#34;15-grafana&#34;&gt;1.5 Grafana&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://grafana.com/grafana/&#34;&gt;Grafana&lt;/a&gt;是一款采用go语言和Angular框架编写的开源的可视化工具，主要用于大规模指标数据的可视化展示，提供包括折线图，饼图，仪表盘等多种监控数据可视化UI，是网络架构和应用分析中最流行的时序数据可视化工具，支持多种不同的时序数据库数据源。github地址：https://github.com/grafana/grafana&lt;/p&gt;
-&lt;h3 id=&#34;16-kapacitor&#34;&gt;1.6 Kapacitor&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.influxdata.com/kapacitor/v1.5/introduction/getting-started/&#34;&gt;Kapacitor&lt;/a&gt;是InfluxData开源的数据处理引擎。它可以处理来自InfluxDB的流数据和批处理数据，并且用户可以用tickScript脚本来处理，监视和警报时序数据库中的时序数据。github地址：https://github.com/influxdata/kapacitor&lt;/p&gt;
-&lt;h3 id=&#34;17-小结&#34;&gt;1.7 小结&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Telegraf - 指标数据采集&lt;/li&gt;
-&lt;li&gt;InfluxDB - 数据接收和存储&lt;/li&gt;
-&lt;li&gt;Chronograf和Grafana - 数据可视化展示&lt;/li&gt;
-&lt;li&gt;Kapacitor - 时序数据的处理，监视和警报等&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;2tick技术栈应用场景&#34;&gt;2.TICK技术栈应用场景&lt;/h1&gt;
-&lt;p&gt;在近几年互联网高速发展的背景下，时序数据逐渐成为各类大型企业和各种不同领域研究的对象，对应的业务场景也应运而生，那就是监控系统，而TICK是InfluxData提供面向时序列数据的一整套的开源的高性能监控解决方案。当然也有很多大型企业自己开发搭建基于时序数据库企业级的监控系统，例如小米、阿里的饿了吗等大型企业，它们也会用到TICK技术栈或者其中的某种工具，对于一些中小型企业要做基于时序数据的监控系统，TICK技术栈可以说是一种不可多得的选择。就目前而言，TICK技术栈中的InfluxDB已经被广泛用于各行各业，应用于存储系统的监控数据，IoT行业的实时数据等场景。&lt;/p&gt;
-&lt;h1 id=&#34;3安装和部署&#34;&gt;3.安装和部署&lt;/h1&gt;
-&lt;p&gt;因为官方已经给了专业的文档，照着官网的文档进行安装部署非常的方便和简单。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;TICK套件下载安装地址：&lt;br&gt;
-&lt;a href=&#34;https://portal.influxdata.com/downloads&#34;&gt;https://portal.influxdata.com/downloads&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Telegraf官方文档地址：  &lt;a href=&#34;https://docs.influxdata.com/telegraf/v1.12/introduction/getting-started/&#34;&gt;https://docs.influxdata.com/telegraf/v1.12/introduction/getting-started/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;InfluxDB官方文档地址：&lt;br&gt;
-&lt;a href=&#34;https://docs.influxdata.com/influxdb/v1.7/introduction/getting-started/&#34;&gt;https://docs.influxdata.com/influxdb/v1.7/introduction/getting-started/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Chronograf官方文档地址：https://docs.influxdata.com/chronograf/v1.7/introduction/getting-started/&lt;/li&gt;
-&lt;li&gt;Grafana官方文档地址：&lt;br&gt;
-&lt;a href=&#34;https://grafana.com/docs/&#34;&gt;https://grafana.com/docs/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Kapacitor官方文档地址： &lt;a href=&#34;https://docs.influxdata.com/kapacitor/v1.5/introduction/getting-started/&#34;&gt;https://docs.influxdata.com/kapacitor/v1.5/introduction/getting-started/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://zhuanlan.zhihu.com/p/70674394&#34;&gt;TICK 技术栈调研&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://wiki.tankywoo.com/linux/tick-stack.html&#34;&gt;TICK技术栈&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://blog.csdn.net/lin_credible/article/details/60579738&#34;&gt;TICK技术栈 &amp;ndash; DevOps轻量级监控解决方案&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://blog.csdn.net/liuajiehe1234567/article/details/81990461&#34;&gt;TIGK技术栈 ：kapacitor（一）监控组件kapacitor初识&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;当然后续我也会继续出关于TICK每个套件的安装部署以及入门的文章，如果文中有错误或其它问题，欢迎在评论区及时指正和提出来，我会积极的进行处理的。&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>TICK技术栈（三）InfluxDB安装及使用</title>
-      <link>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%89influxdb%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Sat, 19 Dec 2020 12:33:37 +0800</pubDate>
-      
-      <guid>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%89influxdb%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
-      
-        <description>&lt;h1 id=&#34;1什么是influxdb&#34;&gt;1.什么是InfluxDB？&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.influxdata.com/influxdb/v1.7/introduction/getting-started/&#34;&gt;InfluxDB&lt;/a&gt;是一个用Go语言开发的时序数据库，用于处理高写入和查询负载，专门为带时间戳的数据编写，对DevOps监控，IoT监控和实时分析等应用场景非常有用。通过自定义配置让InfluxDB保留规定时间内的数据，并自动从系统中删除不在规定时间内的数据，可以节省计算机上的空间。InfluxDB还提供了一种类似于SQL的查询语言来与数据进行交互，并且InfluxDB相比传统关系型数据库更关注数据的实时性和并发插入时的承受能力。github地址：https://github.com/influxdata/influxdb&lt;/p&gt;
-&lt;h1 id=&#34;2influxdb如何使用&#34;&gt;2.InfluxDB如何使用？&lt;/h1&gt;
-&lt;h3 id=&#34;21安装&#34;&gt;2.1安装&lt;/h3&gt;
-&lt;p&gt;官方文档：https://docs.influxdata.com/influxdb/v1.7/introduction/getting-started/
-系统：CenterOS7.2&lt;br&gt;
-安装版本：1.7             &lt;br&gt;
-InfluxDB下载地址：https://portal.influxdata.com/downloads/        &lt;br&gt;
-首先下载你对应系统的InfluxDB版本，如果是windows的，直接下载，然后启动使用就行了：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;influxd.exe是InfluxDB的服务&lt;/li&gt;
-&lt;li&gt;influx.exe是InfluxDB的客户端&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;CenterOS7.2上安装InfluxDB：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;首先下载对应版本&lt;/li&gt;
-&lt;li&gt;运行下载命令&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;wget https://dl.influxdata.com/influxdb/releases/influxdb-1.7.8.x86_64.rpm
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;运行安装命令&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;sudo yum localinstall influxdb-1.7.8.x86_64.rpm
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;启动InfluxDB&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;sudo systemctl start influxdb
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;连接InfluxDB&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;influx -precision rfc3339
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;注意：此命令可将InfluxDB中时间换算成正常时间，但是是UTC时间，与北京时间差8小时&lt;/em&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;22influxdb的使用&#34;&gt;2.2InfluxDB的使用&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;创建数据库&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;create database dbname
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;删除数据库&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;drop database dbname
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;查看已存在的数据库信息&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;show databases
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;查看某个数据库中的所有表&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;show measurements
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;将后续的命令行操作绑定到某个数据库上面&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;use dbname
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;往库里面插入表以及数据&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;insert tableName,name=&amp;quot;温度&amp;quot; value=10
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;注意：此时InfluxDB自己会默认插入一个当前时间进去&lt;/em&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;删除表&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;delete from tableName
-&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
-&lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.influxdata.com/influxdb/v1.7/introduction/getting-started/&#34;&gt;InfluxDB官方文档&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://jasper-zhang1.gitbooks.io/influxdb/content/Introduction/getting_start.html&#34;&gt;InfluxDB中文参考文档&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;如果文中有错误或其它问题，欢迎在评论区及时指正和提出来，我会积极的进行处理的。&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>TICK技术栈（二）Telegraf安装及使用</title>
-      <link>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%8Ctelegraf%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Sat, 19 Dec 2020 12:33:03 +0800</pubDate>
-      
-      <guid>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%8Ctelegraf%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
-      
-        <description>&lt;h1 id=&#34;1什么是telegraf&#34;&gt;1.什么是Telegraf？&lt;/h1&gt;
-&lt;p&gt;Telegraf是一个用Go语言开发的代理程序，可用于收集和报告指标。Telegraf插件直接从其运行的系统中获取各种指标，从第三方API中提取指标，甚至通过StatsD和Kafka消费者服务来监听指标。它还具有输出插件，可以将指标发送到各种其他数据存储，服务和消息队列，包括InfluxDB，Graphite，OpenTSDB，Datadog，Librato，Kafka，MQTT，NSQ等。github开源地址：https://github.com/influxdata/telegraf&lt;/p&gt;
-&lt;h1 id=&#34;2telegraf如何使用&#34;&gt;2.Telegraf如何使用？&lt;/h1&gt;
-&lt;h3 id=&#34;21安装&#34;&gt;2.1安装&lt;/h3&gt;
-&lt;p&gt;官方文档地址：https://docs.influxdata.com/telegraf/v1.12/introduction/installation/
-系统：CenterOS7.2    &lt;br&gt;
-安装版本为：1.12.3 &lt;br&gt;
-telegraf下载地址：https://portal.influxdata.com/downloads/&lt;br&gt;
-找到你安装系统的对应版本：&lt;/p&gt;
-&lt;p&gt;运行下载页面提供的下载rpm文件命令：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;wget https://dl.influxdata.com/telegraf/releases/telegraf-1.12.3-1.x86_64.rpm
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;下载完成之后对应的目录会多出一个rpm的包：&lt;/p&gt;
-&lt;p&gt;然后执行下载页面提供的安装命令：
-、&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo yum localinstall telegraf-1.12.3-1.x86_64.rpm
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;22使用&#34;&gt;2.2使用&lt;/h3&gt;
-&lt;p&gt;配置：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;telegraf -sample-config -input-filter cpu:mem -output-filter influxdb &amp;gt; telegraf.conf
-&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;sudo service telegraf start
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后去查看一下安装好的influxdb数据库，发现此时多了一个数据库：&lt;/p&gt;
-&lt;h3 id=&#34;23通过grafana搭建一个服务器指标监控dashboard&#34;&gt;2.3通过grafana搭建一个服务器指标监控dashboard：&lt;/h3&gt;
-&lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/53376293&#34;&gt;Telegraf介绍&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.influxdata.com/telegraf/v1.12/&#34;&gt;Telegraf官方文档&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;如果文中有错误或其它问题，欢迎在评论区及时指正和提出来，我会积极的进行处理的。&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>Kapacitor安装及使用</title>
-      <link>https://yukiyukixing.github.io/post/kapacitor%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Sat, 19 Dec 2020 12:32:20 +0800</pubDate>
-      
-      <guid>https://yukiyukixing.github.io/post/kapacitor%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
-      
-        <description>&lt;h1 id=&#34;1什么是kapacitor&#34;&gt;1.什么是Kapacitor？&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.influxdata.com/kapacitor/v1.5/introduction/getting-started/&#34;&gt;Kapacitor&lt;/a&gt;是InfluxData开源的数据处理引擎。它可以处理来自InfluxDB的流数据和批处理数据，并且用户可以用tickScript脚本来处理，监视和警报时序数据库中的时序数据。github地址：https://github.com/influxdata/kapacitor&lt;/p&gt;
-&lt;h1 id=&#34;2kapacitor如何使用&#34;&gt;2.Kapacitor如何使用？&lt;/h1&gt;
-&lt;p&gt;官方文档：https://docs.influxdata.com/kapacitor/v1.5/introduction/getting-started/
-系统：CenterOS7.2                            &lt;br&gt;
-安装版本：1.5.3               &lt;br&gt;
-Kapacitor下载地址：https://portal.influxdata.com/downloads/&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;下载&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;因为我这边系统是CenterOS的所以选的CenterOS&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;wget https://dl.influxdata.com/kapacitor/releases/kapacitor-1.5.3.x86_64.rpm
-&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;sudo yum localinstall kapacitor-1.5.3.x86_64.rpm
-&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;sudo systemctl start kapacitor
-&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;kapacitord config &amp;gt; kapacitor.conf
-&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;sudo systemctl status kapacitor
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.influxdata.com/kapacitor/v1.5/introduction/getting-started/&#34;&gt;Kapacitor官方文档&lt;/a&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>Grafana安装及使用</title>
-      <link>https://yukiyukixing.github.io/post/grafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Sat, 19 Dec 2020 12:31:20 +0800</pubDate>
-      
-      <guid>https://yukiyukixing.github.io/post/grafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
-      
-        <description>&lt;h1 id=&#34;1什么是grafana&#34;&gt;1.什么是Grafana？&lt;/h1&gt;
-&lt;p&gt;Grafana是一款采用go语言和Angular框架编写的开源的可视化工具，主要用于大规模指标数据的可视化展示，提供包括折线图，饼图，仪表盘等多种监控数据可视化UI，是网络架构和应用分析中最流行的时序数据可视化工具，支持多种不同的时序数据库数据源。github地址：https://github.com/grafana/grafana。&lt;/p&gt;
-&lt;h1 id=&#34;2grafana如何使用&#34;&gt;2.Grafana如何使用？&lt;/h1&gt;
-&lt;h3 id=&#34;21-grafana安装&#34;&gt;2.1 Grafana安装&lt;/h3&gt;
-&lt;p&gt;Grafana官网地址：https://grafana.com/grafana/                     &lt;br&gt;
-系统：CenterOS7.2                                                    &lt;br&gt;
-Grafana下载地址：https://grafana.com/grafana/download
-首先下载你需要安装系统的对应版本的安装文件：&lt;/p&gt;
-&lt;p&gt;centos7下载安装Grafana步骤：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;wget https://dl.grafana.com/oss/release/grafana-6.3.3-1.x86_64.rpm 
-&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;sudo yum localinstall grafana-6.3.3-1.x86_64.rpm 
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;安装完成之后启动Grafana服务：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;service grafana-server start
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后在浏览器上通过ip:3000访问，默认端口3000                         &lt;br&gt;
-&lt;em&gt;注意：如果浏览器访问不了，可能是防火墙的问题，关闭防火墙即可。&lt;/em&gt;    &lt;br&gt;
-关闭防火墙命令：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;systemctl stop firewalld.service
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Grafana登陆界面(默认登录名和密码admin/admin)：&lt;/p&gt;
-&lt;h3 id=&#34;22-grafana导入仪表板&#34;&gt;2.2 Grafana导入仪表板&lt;/h3&gt;
-&lt;p&gt;仪表板地址：https://grafana.com/grafana/dashboards?dataSource=influxdb&lt;/p&gt;
-&lt;h3 id=&#34;23-grafana新建仪表板&#34;&gt;2.3 Grafana新建仪表板&lt;/h3&gt;
-&lt;h3 id=&#34;24-grafana呈现数据具体配置&#34;&gt;2.4 Grafana呈现数据具体配置&lt;/h3&gt;
-&lt;p&gt;首先我们可以用InfluxDB官方提供的数据：                               &lt;br&gt;
-文档地址：https://docs.influxdata.com/influxdb/v1.7/query_language/data_download/             &lt;br&gt;
-找到样本数据：
-按照文档操作，第一步连上InfluxDB：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;influx -import -path=NOAA_data.txt -precision=s -database=NOAA_water_database
-&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&#34;241-influxdb示例数据导入&#34;&gt;2.4.1 InfluxDB示例数据导入&lt;/h5&gt;
-&lt;h5 id=&#34;242-grafana监控示例仪表板配置&#34;&gt;2.4.2 Grafana监控示例仪表板配置&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;选择数据源&lt;/li&gt;
-&lt;li&gt;添加新的数据源&lt;/li&gt;
-&lt;li&gt;选择InfluxDB&lt;/li&gt;
-&lt;li&gt;配置数据源&lt;/li&gt;
-&lt;li&gt;点击保存，数据源配置完成&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://grafana.com/docs/&#34;&gt;Grafana文档&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://grafana.com/grafana/dashboards?dataSource=influxdb&#34;&gt;仪表板地址&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+        <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;JS深浅拷贝&lt;/strong&gt; 是前端面试中几乎必问的知识点，今天我也尝试着来总结一下这个知识点，如果有写的不对的地方，还请 &lt;strong&gt;大佬们&lt;/strong&gt; 多加指教。&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
       
     </item>
@@ -2635,6 +2442,261 @@ Grafana下载地址：https://grafana.com/grafana/download
         console.log(obj.friends); // [&amp;quot;小美&amp;quot;, &amp;quot;小丽&amp;quot;]
         console.log(obj1.friends); // [&amp;quot;小美&amp;quot;, &amp;quot;小丽&amp;quot;]
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;2深拷贝&#34;&gt;2.深拷贝&lt;/h1&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>TICK技术栈（五）Kapacitor安装及使用</title>
+      <link>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%94kapacitor%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Fri, 22 Nov 2019 12:32:20 +0800</pubDate>
+      
+      <guid>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%94kapacitor%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
+      
+        <description>&lt;h1 id=&#34;1什么是kapacitor&#34;&gt;1.什么是Kapacitor？&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.influxdata.com/kapacitor/v1.5/introduction/getting-started/&#34;&gt;Kapacitor&lt;/a&gt;是InfluxData开源的数据处理引擎。它可以处理来自InfluxDB的流数据和批处理数据，并且用户可以用tickScript脚本来处理，监视和警报时序数据库中的时序数据。github地址：https://github.com/influxdata/kapacitor&lt;/p&gt;
+&lt;h1 id=&#34;2kapacitor如何使用&#34;&gt;2.Kapacitor如何使用？&lt;/h1&gt;
+&lt;p&gt;官方文档：https://docs.influxdata.com/kapacitor/v1.5/introduction/getting-started/
+系统：CenterOS7.2                            &lt;br&gt;
+安装版本：1.5.3               &lt;br&gt;
+Kapacitor下载地址：https://portal.influxdata.com/downloads/&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;下载&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因为我这边系统是CenterOS的所以选的CenterOS&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://dl.influxdata.com/kapacitor/releases/kapacitor-1.5.3.x86_64.rpm
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;sudo yum localinstall kapacitor-1.5.3.x86_64.rpm
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;sudo systemctl start kapacitor
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;kapacitord config &amp;gt; kapacitor.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;sudo systemctl status kapacitor
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.influxdata.com/kapacitor/v1.5/introduction/getting-started/&#34;&gt;Kapacitor官方文档&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>TICK技术栈（四）Grafana安装及使用</title>
+      <link>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E5%9B%9Bgrafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8grafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Fri, 15 Nov 2019 12:31:20 +0800</pubDate>
+      
+      <guid>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E5%9B%9Bgrafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8grafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
+      
+        <description>&lt;h1 id=&#34;1什么是grafana&#34;&gt;1.什么是Grafana？&lt;/h1&gt;
+&lt;p&gt;Grafana是一款采用go语言和Angular框架编写的开源的可视化工具，主要用于大规模指标数据的可视化展示，提供包括折线图，饼图，仪表盘等多种监控数据可视化UI，是网络架构和应用分析中最流行的时序数据可视化工具，支持多种不同的时序数据库数据源。github地址：https://github.com/grafana/grafana。&lt;/p&gt;
+&lt;h1 id=&#34;2grafana如何使用&#34;&gt;2.Grafana如何使用？&lt;/h1&gt;
+&lt;h3 id=&#34;21-grafana安装&#34;&gt;2.1 Grafana安装&lt;/h3&gt;
+&lt;p&gt;Grafana官网地址：https://grafana.com/grafana/                     &lt;br&gt;
+系统：CenterOS7.2                                                    &lt;br&gt;
+Grafana下载地址：https://grafana.com/grafana/download
+首先下载你需要安装系统的对应版本的安装文件：&lt;/p&gt;
+&lt;p&gt;centos7下载安装Grafana步骤：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://dl.grafana.com/oss/release/grafana-6.3.3-1.x86_64.rpm 
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;sudo yum localinstall grafana-6.3.3-1.x86_64.rpm 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;安装完成之后启动Grafana服务：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;service grafana-server start
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后在浏览器上通过ip:3000访问，默认端口3000                         &lt;br&gt;
+&lt;em&gt;注意：如果浏览器访问不了，可能是防火墙的问题，关闭防火墙即可。&lt;/em&gt;    &lt;br&gt;
+关闭防火墙命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;systemctl stop firewalld.service
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Grafana登陆界面(默认登录名和密码admin/admin)：&lt;/p&gt;
+&lt;h3 id=&#34;22-grafana导入仪表板&#34;&gt;2.2 Grafana导入仪表板&lt;/h3&gt;
+&lt;p&gt;仪表板地址：https://grafana.com/grafana/dashboards?dataSource=influxdb&lt;/p&gt;
+&lt;h3 id=&#34;23-grafana新建仪表板&#34;&gt;2.3 Grafana新建仪表板&lt;/h3&gt;
+&lt;h3 id=&#34;24-grafana呈现数据具体配置&#34;&gt;2.4 Grafana呈现数据具体配置&lt;/h3&gt;
+&lt;p&gt;首先我们可以用InfluxDB官方提供的数据：                               &lt;br&gt;
+文档地址：https://docs.influxdata.com/influxdb/v1.7/query_language/data_download/             &lt;br&gt;
+找到样本数据：
+按照文档操作，第一步连上InfluxDB：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;influx -import -path=NOAA_data.txt -precision=s -database=NOAA_water_database
+&lt;/code&gt;&lt;/pre&gt;&lt;h5 id=&#34;241-influxdb示例数据导入&#34;&gt;2.4.1 InfluxDB示例数据导入&lt;/h5&gt;
+&lt;h5 id=&#34;242-grafana监控示例仪表板配置&#34;&gt;2.4.2 Grafana监控示例仪表板配置&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;选择数据源&lt;/li&gt;
+&lt;li&gt;添加新的数据源&lt;/li&gt;
+&lt;li&gt;选择InfluxDB&lt;/li&gt;
+&lt;li&gt;配置数据源&lt;/li&gt;
+&lt;li&gt;点击保存，数据源配置完成&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://grafana.com/docs/&#34;&gt;Grafana文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://grafana.com/grafana/dashboards?dataSource=influxdb&#34;&gt;仪表板地址&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>TICK技术栈（三）InfluxDB安装及使用</title>
+      <link>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%89influxdb%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Thu, 07 Nov 2019 12:33:37 +0800</pubDate>
+      
+      <guid>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%89influxdb%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
+      
+        <description>&lt;h1 id=&#34;1什么是influxdb&#34;&gt;1.什么是InfluxDB？&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.influxdata.com/influxdb/v1.7/introduction/getting-started/&#34;&gt;InfluxDB&lt;/a&gt;是一个用Go语言开发的时序数据库，用于处理高写入和查询负载，专门为带时间戳的数据编写，对DevOps监控，IoT监控和实时分析等应用场景非常有用。通过自定义配置让InfluxDB保留规定时间内的数据，并自动从系统中删除不在规定时间内的数据，可以节省计算机上的空间。InfluxDB还提供了一种类似于SQL的查询语言来与数据进行交互，并且InfluxDB相比传统关系型数据库更关注数据的实时性和并发插入时的承受能力。github地址：https://github.com/influxdata/influxdb&lt;/p&gt;
+&lt;h1 id=&#34;2influxdb如何使用&#34;&gt;2.InfluxDB如何使用？&lt;/h1&gt;
+&lt;h3 id=&#34;21安装&#34;&gt;2.1安装&lt;/h3&gt;
+&lt;p&gt;官方文档：https://docs.influxdata.com/influxdb/v1.7/introduction/getting-started/
+系统：CenterOS7.2&lt;br&gt;
+安装版本：1.7             &lt;br&gt;
+InfluxDB下载地址：https://portal.influxdata.com/downloads/        &lt;br&gt;
+首先下载你对应系统的InfluxDB版本，如果是windows的，直接下载，然后启动使用就行了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;influxd.exe是InfluxDB的服务&lt;/li&gt;
+&lt;li&gt;influx.exe是InfluxDB的客户端&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;CenterOS7.2上安装InfluxDB：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;首先下载对应版本&lt;/li&gt;
+&lt;li&gt;运行下载命令&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;wget https://dl.influxdata.com/influxdb/releases/influxdb-1.7.8.x86_64.rpm
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;运行安装命令&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;sudo yum localinstall influxdb-1.7.8.x86_64.rpm
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;启动InfluxDB&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;sudo systemctl start influxdb
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;连接InfluxDB&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;influx -precision rfc3339
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;注意：此命令可将InfluxDB中时间换算成正常时间，但是是UTC时间，与北京时间差8小时&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;22influxdb的使用&#34;&gt;2.2InfluxDB的使用&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;创建数据库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;create database dbname
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;删除数据库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;drop database dbname
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;查看已存在的数据库信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;show databases
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;查看某个数据库中的所有表&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;show measurements
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;将后续的命令行操作绑定到某个数据库上面&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;use dbname
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;往库里面插入表以及数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;insert tableName,name=&amp;quot;温度&amp;quot; value=10
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;注意：此时InfluxDB自己会默认插入一个当前时间进去&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;删除表&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;delete from tableName
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.influxdata.com/influxdb/v1.7/introduction/getting-started/&#34;&gt;InfluxDB官方文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jasper-zhang1.gitbooks.io/influxdb/content/Introduction/getting_start.html&#34;&gt;InfluxDB中文参考文档&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;如果文中有错误或其它问题，欢迎在评论区及时指正和提出来，我会积极的进行处理的。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>TICK技术栈（二）Telegraf安装及使用</title>
+      <link>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%8Ctelegraf%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Tue, 05 Nov 2019 12:33:03 +0800</pubDate>
+      
+      <guid>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%8Ctelegraf%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
+      
+        <description>&lt;h1 id=&#34;1什么是telegraf&#34;&gt;1.什么是Telegraf？&lt;/h1&gt;
+&lt;p&gt;Telegraf是一个用Go语言开发的代理程序，可用于收集和报告指标。Telegraf插件直接从其运行的系统中获取各种指标，从第三方API中提取指标，甚至通过StatsD和Kafka消费者服务来监听指标。它还具有输出插件，可以将指标发送到各种其他数据存储，服务和消息队列，包括InfluxDB，Graphite，OpenTSDB，Datadog，Librato，Kafka，MQTT，NSQ等。github开源地址：https://github.com/influxdata/telegraf&lt;/p&gt;
+&lt;h1 id=&#34;2telegraf如何使用&#34;&gt;2.Telegraf如何使用？&lt;/h1&gt;
+&lt;h3 id=&#34;21安装&#34;&gt;2.1安装&lt;/h3&gt;
+&lt;p&gt;官方文档地址：https://docs.influxdata.com/telegraf/v1.12/introduction/installation/
+系统：CenterOS7.2    &lt;br&gt;
+安装版本为：1.12.3 &lt;br&gt;
+telegraf下载地址：https://portal.influxdata.com/downloads/&lt;br&gt;
+找到你安装系统的对应版本：&lt;/p&gt;
+&lt;p&gt;运行下载页面提供的下载rpm文件命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://dl.influxdata.com/telegraf/releases/telegraf-1.12.3-1.x86_64.rpm
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;下载完成之后对应的目录会多出一个rpm的包：&lt;/p&gt;
+&lt;p&gt;然后执行下载页面提供的安装命令：
+、&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo yum localinstall telegraf-1.12.3-1.x86_64.rpm
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;22使用&#34;&gt;2.2使用&lt;/h3&gt;
+&lt;p&gt;配置：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;telegraf -sample-config -input-filter cpu:mem -output-filter influxdb &amp;gt; telegraf.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;sudo service telegraf start
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后去查看一下安装好的influxdb数据库，发现此时多了一个数据库：&lt;/p&gt;
+&lt;h3 id=&#34;23通过grafana搭建一个服务器指标监控dashboard&#34;&gt;2.3通过grafana搭建一个服务器指标监控dashboard：&lt;/h3&gt;
+&lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/53376293&#34;&gt;Telegraf介绍&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.influxdata.com/telegraf/v1.12/&#34;&gt;Telegraf官方文档&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果文中有错误或其它问题，欢迎在评论区及时指正和提出来，我会积极的进行处理的。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>TICK技术栈（一）TICK技术栈介绍</title>
+      <link>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%80tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Tue, 22 Oct 2019 12:34:14 +0800</pubDate>
+      
+      <guid>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%80tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BB%8B%E7%BB%8D/</guid>
+      
+        <description>&lt;h1 id=&#34;1什么是tick技术栈&#34;&gt;1.什么是TICK技术栈？&lt;/h1&gt;
+&lt;h3 id=&#34;11-简介&#34;&gt;1.1 简介&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.influxdata.com/time-series-platform/&#34;&gt;TICK&lt;/a&gt; 是由 &lt;a href=&#34;https://docs.influxdata.com/&#34;&gt;InfluxData&lt;/a&gt;开发的一套开源工具栈，由 Telegraf, InfluxDB, Chronograf, Kapacitor 四个工具的首字母组成。&lt;/p&gt;
+&lt;h3 id=&#34;12-telegraf&#34;&gt;1.2 Telegraf&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.influxdata.com/telegraf/v1.12/introduction/getting-started/&#34;&gt;Telegraf&lt;/a&gt;是一个用Go语言开发的代理程序，可用于收集和报告指标。Telegraf插件直接从其运行的系统中获取各种指标，从第三方API中提取指标，甚至通过StatsD和Kafka消费者服务来监听指标。它还具有输出插件，可以将指标发送到各种其他数据存储，服务和消息队列，包括InfluxDB，Graphite，OpenTSDB，Datadog，Librato，Kafka，MQTT，NSQ等。github地址：https://github.com/influxdata/telegraf&lt;/p&gt;
+&lt;h3 id=&#34;13-influxdb&#34;&gt;1.3 InfluxDB&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.influxdata.com/influxdb/v1.7/introduction/getting-started/&#34;&gt;InfluxDB&lt;/a&gt;是一个用Go语言开发的时序数据库，用于处理高写入和查询负载，专门为带时间戳的数据编写，对DevOps监控，IoT监控和实时分析等应用场景非常有用。通过自定义配置让InfluxDB保留规定时间内的数据，并自动从系统中删除不在规定时间内的数据，可以节省计算机上的空间。InfluxDB还提供了一种类似于SQL的查询语言来与数据进行交互，并且InfluxDB相比传统关系型数据库更关注数据的实时性和并发插入时的承受能力。github地址：https://github.com/influxdata/influxdb&lt;/p&gt;
+&lt;h3 id=&#34;14-chronograf&#34;&gt;1.4 Chronograf&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.influxdata.com/chronograf/v1.7/introduction/getting-started/&#34;&gt;Chronograf&lt;/a&gt;是InfluxData的开源可视化引擎，可让通过数据的实时可视化快速构建仪表板，但是由于Chronograf没有Grafana扩展性和易用性强，所以后面会使用了Grafana替代Chronograf。github地址：https://github.com/influxdata/chronograf&lt;/p&gt;
+&lt;h3 id=&#34;15-grafana&#34;&gt;1.5 Grafana&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://grafana.com/grafana/&#34;&gt;Grafana&lt;/a&gt;是一款采用go语言和Angular框架编写的开源的可视化工具，主要用于大规模指标数据的可视化展示，提供包括折线图，饼图，仪表盘等多种监控数据可视化UI，是网络架构和应用分析中最流行的时序数据可视化工具，支持多种不同的时序数据库数据源。github地址：https://github.com/grafana/grafana&lt;/p&gt;
+&lt;h3 id=&#34;16-kapacitor&#34;&gt;1.6 Kapacitor&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.influxdata.com/kapacitor/v1.5/introduction/getting-started/&#34;&gt;Kapacitor&lt;/a&gt;是InfluxData开源的数据处理引擎。它可以处理来自InfluxDB的流数据和批处理数据，并且用户可以用tickScript脚本来处理，监视和警报时序数据库中的时序数据。github地址：https://github.com/influxdata/kapacitor&lt;/p&gt;
+&lt;h3 id=&#34;17-小结&#34;&gt;1.7 小结&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Telegraf - 指标数据采集&lt;/li&gt;
+&lt;li&gt;InfluxDB - 数据接收和存储&lt;/li&gt;
+&lt;li&gt;Chronograf和Grafana - 数据可视化展示&lt;/li&gt;
+&lt;li&gt;Kapacitor - 时序数据的处理，监视和警报等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;2tick技术栈应用场景&#34;&gt;2.TICK技术栈应用场景&lt;/h1&gt;
+&lt;p&gt;在近几年互联网高速发展的背景下，时序数据逐渐成为各类大型企业和各种不同领域研究的对象，对应的业务场景也应运而生，那就是监控系统，而TICK是InfluxData提供面向时序列数据的一整套的开源的高性能监控解决方案。当然也有很多大型企业自己开发搭建基于时序数据库企业级的监控系统，例如小米、阿里的饿了吗等大型企业，它们也会用到TICK技术栈或者其中的某种工具，对于一些中小型企业要做基于时序数据的监控系统，TICK技术栈可以说是一种不可多得的选择。就目前而言，TICK技术栈中的InfluxDB已经被广泛用于各行各业，应用于存储系统的监控数据，IoT行业的实时数据等场景。&lt;/p&gt;
+&lt;h1 id=&#34;3安装和部署&#34;&gt;3.安装和部署&lt;/h1&gt;
+&lt;p&gt;因为官方已经给了专业的文档，照着官网的文档进行安装部署非常的方便和简单。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;TICK套件下载安装地址：&lt;br&gt;
+&lt;a href=&#34;https://portal.influxdata.com/downloads&#34;&gt;https://portal.influxdata.com/downloads&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Telegraf官方文档地址：  &lt;a href=&#34;https://docs.influxdata.com/telegraf/v1.12/introduction/getting-started/&#34;&gt;https://docs.influxdata.com/telegraf/v1.12/introduction/getting-started/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;InfluxDB官方文档地址：&lt;br&gt;
+&lt;a href=&#34;https://docs.influxdata.com/influxdb/v1.7/introduction/getting-started/&#34;&gt;https://docs.influxdata.com/influxdb/v1.7/introduction/getting-started/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Chronograf官方文档地址：https://docs.influxdata.com/chronograf/v1.7/introduction/getting-started/&lt;/li&gt;
+&lt;li&gt;Grafana官方文档地址：&lt;br&gt;
+&lt;a href=&#34;https://grafana.com/docs/&#34;&gt;https://grafana.com/docs/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Kapacitor官方文档地址： &lt;a href=&#34;https://docs.influxdata.com/kapacitor/v1.5/introduction/getting-started/&#34;&gt;https://docs.influxdata.com/kapacitor/v1.5/introduction/getting-started/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://zhuanlan.zhihu.com/p/70674394&#34;&gt;TICK 技术栈调研&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://wiki.tankywoo.com/linux/tick-stack.html&#34;&gt;TICK技术栈&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://blog.csdn.net/lin_credible/article/details/60579738&#34;&gt;TICK技术栈 &amp;ndash; DevOps轻量级监控解决方案&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://blog.csdn.net/liuajiehe1234567/article/details/81990461&#34;&gt;TIGK技术栈 ：kapacitor（一）监控组件kapacitor初识&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当然后续我也会继续出关于TICK每个套件的安装部署以及入门的文章，如果文中有错误或其它问题，欢迎在评论区及时指正和提出来，我会积极的进行处理的。&lt;/p&gt;
 </description>
       
     </item>
