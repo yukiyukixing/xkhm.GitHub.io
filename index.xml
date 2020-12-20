@@ -224,15 +224,19 @@
       
       <guid>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/</guid>
       
-        <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+        <description>&lt;blockquote&gt;
+&lt;p&gt;文章类型：个人学习笔记&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;JS深浅拷贝&lt;/strong&gt; 是前端面试中几乎必问的知识点，今天我也尝试着来总结一下这个知识点，如果有写的不对的地方，还请 &lt;strong&gt;大佬们&lt;/strong&gt; 多加指教。&lt;/p&gt;
+&lt;p&gt;友情提醒：个人学习笔记，可能有写的不对的地方，还请大佬们发现了提醒一下小弟我。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&#34;1浅拷贝&#34;&gt;1.浅拷贝&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;定义：一个对象直接拷贝已存在对象的属性的引用。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;还没开始讲这篇文章的时候，让你自己去写一个拷贝，你会怎么写？&lt;/p&gt;
+&lt;h2 id=&#34;1直接赋值&#34;&gt;（1）直接赋值&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;        let obj = {
             name: &#39;小明&#39;,
             age: 20,
@@ -240,8 +244,7 @@
         }
         let obj1 = obj;
         console.log(obj1 === obj); // true
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面这段代码是不是一个浅拷贝呢，答案是上卖弄这段代码不是一个浅拷贝我们只是新建一个变量，然后把原来obj对象直接赋值给了新的变量，我们知道对象如果要全等的话，必须对象的地址也得相等。&lt;/p&gt;
-&lt;h2 id=&#34;1借助-es6-的-objectassign-方法实现一个浅拷贝&#34;&gt;（1）借助 ES6 的 Object.assign() 方法实现一个浅拷贝&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;2借助-es6-的-objectassign-方法实现一个浅拷贝&#34;&gt;（2）借助 ES6 的 Object.assign() 方法实现一个浅拷贝&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;        let obj = {
             name: &#39;小明&#39;,
             age: 20,
@@ -252,7 +255,7 @@
         obj1.age = 10;
         console.log(obj.age); // 20
         console.log(obj1.age); // 10
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们会发现，当对象内部属性全部为基础类型时，改变新拷贝的对象属性值，并不会影响到原对象，换句话说，如果你的对象里都是基础属性，你想对他进行拷贝，使用浅拷贝即可。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们会发现，当对象内部属性全部为基础类型时，改变新拷贝的对象属性值，并不会影响到原对象，换句话说，如果你的对象里都是基础类型，你想对他进行拷贝，使用浅拷贝即可。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;        let obj = {
             name: &#39;小明&#39;,
             age: 20,
@@ -265,7 +268,7 @@
         console.log(obj.friends); // [&amp;quot;小花&amp;quot;, &amp;quot;小萌&amp;quot;]
         console.log(obj1.friends); // [&amp;quot;小花&amp;quot;, &amp;quot;小萌&amp;quot;]
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;当原对象中有属性时引用类型时，我们会发现改变新拷贝的引用类型属性值时，原对象的引用类型属性值也发生了改变，这就是拷贝的不够彻底，所以我们就需要深拷贝。&lt;/p&gt;
-&lt;h2 id=&#34;2借助-es6-的展开语法实现浅拷贝&#34;&gt;（2）借助 ES6 的展开语法实现浅拷贝&lt;/h2&gt;
+&lt;h2 id=&#34;3借助-es6-的展开语法实现浅拷贝&#34;&gt;（3）借助 ES6 的展开语法实现浅拷贝&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;        let obj = {
             name: &#39;小明&#39;,
             age: 20,
@@ -280,7 +283,7 @@
         console.log(obj1.age); // 10
         console.log(obj.friends); // [&amp;quot;小美&amp;quot;, &amp;quot;小丽&amp;quot;]
         console.log(obj1.friends); // [&amp;quot;小美&amp;quot;, &amp;quot;小丽&amp;quot;]
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;3遍历赋值的方法实现浅拷贝&#34;&gt;（3）遍历赋值的方法实现浅拷贝&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;4遍历赋值的方法实现浅拷贝&#34;&gt;（4）遍历赋值的方法实现浅拷贝&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;        let obj = {
             name: &#39;小明&#39;,
             age: 20,
@@ -299,6 +302,80 @@
         console.log(obj.friends); // [&amp;quot;小美&amp;quot;, &amp;quot;小丽&amp;quot;]
         console.log(obj1.friends); // [&amp;quot;小美&amp;quot;, &amp;quot;小丽&amp;quot;]
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;2深拷贝&#34;&gt;2.深拷贝&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;复制一个一模一样的对象，不共享内存，修改一个对象，不会影响到另一个对象&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;1利用jsonstringify&#34;&gt;（1）利用JSON.stringify()&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;        let obj = {
+            name: &#39;小明&#39;,
+            age: 20,
+            job: &#39;Software Engineer&#39;,
+            friends: [&#39;小花&#39;, &#39;小丽&#39;]
+        }
+        let obj1 = JSON.parse(JSON.stringify(obj));
+        obj1.friends[0] = &#39;小美&#39;;
+        console.log(obj.friends); // [&amp;quot;小花&amp;quot;, &amp;quot;小丽&amp;quot;]
+        console.log(obj1.friends); // [&amp;quot;小美&amp;quot;, &amp;quot;小丽&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;缺陷：处理不了function对象、undefined以及symbol类型，原因时JSON.stringify()在处理这些类型，这些类型会被忽略，不会被处理，详情见 &lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify&#34;&gt;MDN&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;2递归对每层数据实行遍历然后进行拷贝&#34;&gt;（2）递归，对每层数据实行遍历然后进行拷贝&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;        let obj = {
+            name: {
+                firstName: &#39;小&#39;,
+                lastName: &#39;星&#39;,
+            },
+            age: 25,
+            arr: [{ a: 10 }, { b: 50 }]
+        }
+        function copyObj(obj) {
+            let obj1 = Array.isArray(obj) ? [] : {};
+            for (const key in obj) {
+                if (typeof obj[key] === &#39;object&#39;) {
+                    obj1[key] = copyObj(obj[key]);
+                } else {
+                    obj1[key] = obj[key]
+                }
+            }
+            return obj1
+        }
+        let obj2 = copyObj(obj);
+        obj2.arr[0].a = 80;
+        obj2.name.firstName = &#39;王&#39;;
+        console.log(obj);
+        console.log(obj2);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/53baf66579f7458ca5b2a454a97364da~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3jquery中实现深拷贝&#34;&gt;（3）Jquery中实现深拷贝&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Jquery中实现深拷贝的原理也是递归&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;        let obj = {
+            name: {
+                firstName: &#39;小&#39;,
+                lastName: &#39;星&#39;,
+            },
+            age: 25,
+            sayName() { }
+        }
+        let obj2 = $.extend(true, {}, obj);
+        obj2.name.firstName = &#39;王&#39;;
+        console.log(obj.name.firstName); // 小
+        console.log(obj2.name.firstName); // 王
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;4lodash中的-_defaultsdeephttpswwwlodashjscomdocslodashdefaultsdeep-方法&#34;&gt;（4）Lodash中的 &lt;a href=&#34;https://www.lodashjs.com/docs/lodash.defaultsDeep&#34;&gt;_.defaultsDeep()&lt;/a&gt; 方法&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;        let obj = {
+            name: {
+                firstName: &#39;小&#39;,
+                lastName: &#39;星&#39;,
+            },
+            age: 25,
+            arr: [{ a: 10 }, { b: 50 }]
+        }
+        let obj2 = _.defaultsDeep({}, obj);
+        obj2.arr[0].a = 80;
+        obj2.name.firstName = &#39;王&#39;;
+        console.log(obj);
+        console.log(obj2);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6414d847154446c58f89ddd86fe50884~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
       
     </item>
