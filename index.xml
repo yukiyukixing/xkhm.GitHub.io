@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Sat, 19 Dec 2020 23:01:15 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 20 Dec 2020 18:12:21 +0800</lastBuildDate>
     
         <atom:link href="https://xkhm.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -73,6 +73,121 @@
       
         <description>&lt;blockquote&gt;
 &lt;p&gt;一只小透明的前端开发（待补充）&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>JS数组去重</title>
+      <link>https://xkhm.net/post/js%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/</link>
+      <pubDate>Sun, 20 Dec 2020 18:12:21 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/js%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/</guid>
+      
+        <description>&lt;blockquote&gt;
+&lt;p&gt;文章类型：个人学习笔记&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;1双循环遍历&#34;&gt;1.双循环遍历&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;        let arr = [1,5,6,1,9,9,2,1];
+        arr.map((item,index) =&amp;gt; {
+            arr.map((i,index1) =&amp;gt; {
+                if(index !== index1 &amp;amp;&amp;amp; item === i){
+                    arr.splice(index1,1);
+                }
+            })
+        })
+        console.log(arr);
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;        function unique(array){
+            for (let i = 0; i &amp;lt; array.length; i++) {
+                for(let j = i+1; j &amp;lt; array.length; j++){
+                    if(array[i] === array[j]){
+                        arr.splice(j,1);
+                    }
+                }
+            }
+            return arr;
+        }
+        console.log(unique(arr)); // [1, 5, 6, 9, 2]
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;下面一种方式更优，遍历的次数更少&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;2-es6的set&#34;&gt;2. ES6的Set&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;        let arr = [1,5,6,1,9,9,2,1];
+        function unique(arr) {
+            return Array.from(new Set(arr))
+        }
+        console.log(unique(arr)); // [1, 5, 6, 9, 2]
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;        let arr = [1, 5, 6, 1, 9, 9, 9, 9, 9, 2, 1];
+        function unique(arr) {
+            return [...new Set(arr)]
+        }
+        console.log(unique(arr)); // [1, 5, 6, 9, 2]
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;3利用indexof&#34;&gt;3.利用indexOf()&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;        let arr = [1,5,6,1,9,9,2,1];
+        function unique(arr){
+            if(!Array.isArray(arr)){
+                console.log(&#39;type error&#39;);
+                return;
+            }
+            let array = [];
+            arr.map(item =&amp;gt; {
+                if(array.indexOf(item) === -1){
+                    array.push(item)
+                }
+            })
+            return array;
+        }
+        console.log(unique(arr)); // [1, 5, 6, 9, 2]
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;4利用sort然后比较相邻元素是否相等&#34;&gt;4.利用sort(),然后比较相邻元素是否相等&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;        let arr = [1, 5, 6, 1, 9, 9, 9, 9, 9, 2, 1];
+        function unique(arr) {
+            if (!Array.isArray(arr)) {
+                console.log(&#39;type error!&#39;)
+                return;
+            }
+            arr = arr.sort()
+            let arrry = [arr[0]];
+            arr.map((item, index) =&amp;gt; {
+                if (index &amp;gt; 0 &amp;amp;&amp;amp; item !== arr[index - 1]) {
+                    arrry.push(item)
+                }
+            });
+            return arrry;
+        }
+        console.log(unique(arr)); // [1, 2, 5, 6, 9]
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;5利用filter当找到的下标不等于当前下标时就证明这个元素在前面出现过排除掉&#34;&gt;5.利用filter(),当找到的下标不等于当前下标时就证明这个元素在前面出现过，排除掉&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;        let arr = [1, 5, 6, 1, 9, 9, 9, 9, 9, 2, 1];
+        function unique(arr) {
+            if (!Array.isArray(arr)) {
+                console.log(&#39;type error!&#39;)
+                return;
+            }
+            return arr.filter((item, index) =&amp;gt; {
+                return arr.indexOf(item) === index;
+            })
+        }
+
+        console.log(unique(arr)); // [1, 5, 6, 9, 2]
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;秒啊！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;6利用reduce方法&#34;&gt;6.利用reduce()方法&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;        let arr = [1, 5, 6, 1, 9, 9, 9, 9, 9, 2, 1];
+        function unique(arr) {
+            if (!Array.isArray(arr)) {
+                console.log(&#39;type error!&#39;)
+                return;
+            }
+            return arr.reduce((prev, cur, index) =&amp;gt; prev.includes(cur) ? prev : [...prev, cur], []);
+        }
+
+        console.log(unique(arr)); // [1, 5, 6, 9, 2]
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;秀啊！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;总结：ES6下，以上几种方法首选第二种 new Set(),其次选择filter()和reduce()&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
       
