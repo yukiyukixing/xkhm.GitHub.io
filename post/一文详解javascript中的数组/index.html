@@ -22,7 +22,7 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="xkhm" />
+<meta name="author" content="XKHM" />
   <meta name="description" content="前言 最近在重学JS基础，然后正好学到数组这，前期是通过看视频学习的，后来发现通过看视频学习进度实在是太慢了，所以又开始看书看文档学，然后就开" />
 
   <meta name="keywords" content="Hugo" />
@@ -68,11 +68,11 @@
 <meta itemprop="description" content="前言 最近在重学JS基础，然后正好学到数组这，前期是通过看视频学习的，后来发现通过看视频学习进度实在是太慢了，所以又开始看书看文档学，然后就开">
 <meta itemprop="datePublished" content="2020-12-19T12:23:51+08:00" />
 <meta itemprop="dateModified" content="2020-12-19T12:23:51+08:00" />
-<meta itemprop="wordCount" content="10306">
+<meta itemprop="wordCount" content="10274">
 
 
 
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="JavaScript," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="一文详解JavaScript中的数组"/>
 <meta name="twitter:description" content="前言 最近在重学JS基础，然后正好学到数组这，前期是通过看视频学习的，后来发现通过看视频学习进度实在是太慢了，所以又开始看书看文档学，然后就开"/>
@@ -150,6 +150,13 @@
           
           
             <a class="menu-item-link" href="https://xkhm.net/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
           
         
       </li><li class="mobile-menu-item">
@@ -325,6 +332,17 @@
         
           
           
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
             <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
 
@@ -355,9 +373,11 @@
         <time datetime="2020-12-19" class="post-time">
           2020-12-19
         </time>
+        <div class="post-category">
+            <a href="https://xkhm.net/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
+            
+          </div>
         
-        <span class="more-meta"> 约10306 字 </span>
-          <span class="more-meta"> 预计阅读 21 分钟 </span>
 
         
         
@@ -488,24 +508,24 @@
 创建数组可以通过上面这两种方式，当然也可以通过Array.of()这个函数创建数组。</li>
 </ol>
 <h3 id="对象方式创建数组">对象方式创建数组</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array();
-</code></pre></div><p><strong>Tips：</strong></p>
+<pre><code class="language-code" data-lang="code">let array = new Array();
+</code></pre><p><strong>Tips：</strong></p>
 <blockquote>
 <p>也可以通过下面这种方式创建数组对象</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> Array();
-</code></pre></div><p>这种方式创建数组，对象也可以通过这两种方式创建，那么这种方式与上面那种方式有什么区别呢，这两种方式创建数组的区别就是内部this指向不同，一个指向调用者，一个指向全局的window对象。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">1</span>)); <span style="color:#75715e">// [empty]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>)); <span style="color:#75715e">//  [1, 2, 3]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#66d9ef">of</span>(<span style="color:#ae81ff">1</span>)); <span style="color:#75715e">// [1]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#66d9ef">of</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>)); <span style="color:#75715e">// [1, 2, 3]
-</span></code></pre></div><p><strong>Tips：</strong></p>
+<pre><code class="language-code" data-lang="code">let array = Array();
+</code></pre><p>这种方式创建数组，对象也可以通过这两种方式创建，那么这种方式与上面那种方式有什么区别呢，这两种方式创建数组的区别就是内部this指向不同，一个指向调用者，一个指向全局的window对象。</p>
+<pre><code class="language-code" data-lang="code">console.log(new Array(1)); // [empty]
+console.log(new Array(1,2,3)); //  [1, 2, 3]
+console.log(Array.of(1)); // [1]
+console.log(Array.of(1,2,3)); // [1, 2, 3]
+</code></pre><p><strong>Tips：</strong></p>
 <blockquote>
 <p>第一行代码是创建了一个长度为1的数组，因为没有值，这个位置会默认被undefined填充，也就是说打印结果 <strong>[empty] =&gt; [undefined]</strong></p>
 </blockquote>
 <h3 id="字面量的方式创建数组">字面量的方式创建数组</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
-</code></pre></div><p>这种方式创建数组非常的简单便捷,所以推荐使用这种方法创建数组</p>
+<pre><code class="language-Code" data-lang="Code">let arr = [];
+</code></pre><p>这种方式创建数组非常的简单便捷,所以推荐使用这种方法创建数组</p>
 <p><strong>Tips：</strong></p>
 <blockquote>
 <p>使用字面量的方式创建数组不会调用Array构造函数</p>
@@ -584,56 +604,56 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//  1.类数组对象
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
-    <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;techerM&#39;</span>,
-    <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">15</span>,
-    <span style="color:#a6e22e">length</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>
+<pre><code class="language-Code" data-lang="Code">//  1.类数组对象
+let obj = {
+    1: 'techerM',
+    2: 15,
+    length: 2
 };
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">obj</span>)); <span style="color:#75715e">// [&#34;techerM&#34;, 15]
-</span><span style="color:#75715e">// 2.字符串
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;阿星&#39;</span>;
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">str</span>)); <span style="color:#75715e">// [&#34;阿&#34;, &#34;星&#34;]
-</span><span style="color:#75715e">// 3.集合
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">s</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Set</span>().<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">1</span>)
-                 .<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">2</span>)
-                 .<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">1</span>)
-                 .<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">4</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">s</span>)); <span style="color:#75715e">// [1, 2, 4]
-</span><span style="color:#75715e">// 4.第二个参数，可操作数组中的每个元素
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbersObj</span> <span style="color:#f92672">=</span> {
-    <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>,
-    <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>,
-    <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>,
-    <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>,
-    <span style="color:#a6e22e">length</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>
+console.log(Array.from(obj)); // [&quot;techerM&quot;, 15]
+// 2.字符串
+let str = '阿星';
+console.log(Array.from(str)); // [&quot;阿&quot;, &quot;星&quot;]
+// 3.集合
+let s = new Set().add(1)
+                 .add(2)
+                 .add(1)
+                 .add(4);
+console.log(Array.from(s)); // [1, 2, 4]
+// 4.第二个参数，可操作数组中的每个元素
+let numbersObj = {
+    0:1,
+    1:2,
+    2:3,
+    3:2,
+    length: 3
 };
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">numbersObj</span>,<span style="color:#a6e22e">item</span> =&gt; <span style="color:#a6e22e">item</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>));<span style="color:#75715e">//[3, 6, 9]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbersObj</span>); <span style="color:#75715e">// {0: 1, 1: 2, 2: 3, 3: 2, length: 3}
-</span><span style="color:#75715e">// 5.第三个参数，指定第二个参数（函数）中this的指向
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numArray</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>];
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;小花&#39;</span>;
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">res1</span> <span style="color:#f92672">=</span> Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">numArray</span>,<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">item</span>){
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>;
+console.log(Array.from(numbersObj,item =&gt; item*3));//[3, 6, 9]
+console.log(numbersObj); // {0: 1, 1: 2, 2: 3, 3: 2, length: 3}
+// 5.第三个参数，指定第二个参数（函数）中this的指向
+let numArray = [1,2,3];
+var name = '小花';
+let res1 = Array.from(numArray,function(item){
+    return this.name;
 })
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">res2</span> <span style="color:#f92672">=</span> Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">numArray</span>,<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">item</span>){
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>;
-},{<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;小丽&#39;</span>})
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">res1</span>); <span style="color:#75715e">// [&#34;小花&#34;, &#34;小花&#34;, &#34;小花&#34;]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">res2</span>); <span style="color:#75715e">// [&#34;小丽&#34;, &#34;小丽&#34;, &#34;小丽&#34;]
-</span></code></pre></div><p><strong>Tips：</strong></p>
+let res2 = Array.from(numArray,function(item){
+    return this.name;
+},{name:'小丽'})
+console.log(res1); // [&quot;小花&quot;, &quot;小花&quot;, &quot;小花&quot;]
+console.log(res2); // [&quot;小丽&quot;, &quot;小丽&quot;, &quot;小丽&quot;]
+</code></pre><p><strong>Tips：</strong></p>
 <blockquote>
 <p>1.Array.from()是Array对象的私有方法，并不是Array原型prototype下的方法，所以数组继承不到这个方法，数组是没有这个方法的。</p>
 </blockquote>
 <blockquote>
 <p>2.Array.from()第一个参数类数组对象的条件为：存在length属性，数据为可索引结构，例如下面这个对象就不可进行迭代，因为没有可索引结构</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;小丽&#39;</span>,
-    <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span>,
-    <span style="color:#a6e22e">length</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>
+<pre><code class="language-Code" data-lang="Code">let obj = {
+    name: '小丽',
+    value: 100,
+    length: 2
 }
-</code></pre></div><blockquote>
+</code></pre><blockquote>
 <p>3.Array.from()方法不会改变原数组</p>
 </blockquote>
 <blockquote>
@@ -673,15 +693,15 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 一组参数
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#66d9ef">of</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>)); <span style="color:#75715e">//  [1, 2, 3]
-</span><span style="color:#75715e">// 通过 Array.of() 创建数组对象
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> Array.<span style="color:#66d9ef">of</span>(<span style="color:#ae81ff">1</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr</span>); <span style="color:#75715e">// [1]
-</span><span style="color:#75715e">// new Array() 创建数组对象
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr1</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">1</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr1</span>); <span style="color:#75715e">// [empty]
-</span></code></pre></div><p><strong>Tips：</strong></p>
+<pre><code class="language-Code" data-lang="Code">// 一组参数
+console.log(Array.of(1,2,3)); //  [1, 2, 3]
+// 通过 Array.of() 创建数组对象
+let arr = Array.of(1);
+console.log(arr); // [1]
+// new Array() 创建数组对象
+let arr1 = new Array(1);
+console.log(arr1); // [empty]
+</code></pre><p><strong>Tips：</strong></p>
 <blockquote>
 <p>通过Array.of()创建对象的方式弥补了通过 <strong>new Array</strong> 创建对象传一个参数创建对象的缺陷。</p>
 </blockquote>
@@ -712,13 +732,13 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>];
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;小王&#39;</span>;
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span>;
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#a6e22e">colors</span>)); <span style="color:#75715e">// true
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#a6e22e">name</span>)); <span style="color:#75715e">// false
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#a6e22e">age</span>)); <span style="color:#75715e">// false
-</span></code></pre></div><h1 id="3检测数组">3.检测数组</h1>
+<pre><code class="language-Code" data-lang="Code">let colors = ['red','green'];
+let name = '小王';
+let age = 18;
+console.log(Array.isArray(colors)); // true
+console.log(Array.isArray(name)); // false
+console.log(Array.isArray(age)); // false
+</code></pre><h1 id="3检测数组">3.检测数组</h1>
 <p>一般我们在js中检测数据类型通常用 <strong>typeof</strong> 关键字，但是 <strong>typeof</strong> 并不能分开对象与数组，检测数组时返回的也是 <strong>object</strong>，所以我们就需要用其它的办法来区分<strong>对象</strong>与<strong>数组</strong>了。</p>
 <table>
 <thead>
@@ -742,15 +762,15 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>];
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;小明&#39;</span>};
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#a6e22e">array</span>)); <span style="color:#75715e">// true
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#a6e22e">obj</span>)); <span style="color:#75715e">// false
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span> <span style="color:#66d9ef">instanceof</span> Array); <span style="color:#75715e">// true
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">obj</span> <span style="color:#66d9ef">instanceof</span> Array); <span style="color:#75715e">// false
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Object.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">toString</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">array</span>)); <span style="color:#75715e">// [object Array]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Object.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">toString</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">obj</span>)); <span style="color:#75715e">// [object Object]
-</span></code></pre></div><p>上面这个三个方法都可以用来区分<strong>对象</strong>和<strong>数组</strong>，平常我们使用还是最好使用  <strong>Array.isArray()</strong> 这个方法。</p>
+<pre><code class="language-Code" data-lang="Code">let array = [1,2];
+let obj = {name: '小明'};
+console.log(Array.isArray(array)); // true
+console.log(Array.isArray(obj)); // false
+console.log(array instanceof Array); // true
+console.log(obj instanceof Array); // false
+console.log(Object.prototype.toString.call(array)); // [object Array]
+console.log(Object.prototype.toString.call(obj)); // [object Object]
+</code></pre><p>上面这个三个方法都可以用来区分<strong>对象</strong>和<strong>数组</strong>，平常我们使用还是最好使用  <strong>Array.isArray()</strong> 这个方法。</p>
 <p><strong>Tips：</strong></p>
 <blockquote>
 <p>通常我们使用instanceof是假定只有一个全局上下文，如果在多个框架页面中检测数组可能会有问题，因为我们并不能保证所有框架里的<strong>Array构造函数</strong>相同，所以最好使用<strong>Array.isArray()</strong> 这个方法判断。</p>
@@ -758,8 +778,8 @@
 <h1 id="4数组中的方法">4.数组中的方法</h1>
 <h2 id="数组中的方法总览">数组中的方法总览</h2>
 <p>首先我们从控制台打印看一下数组：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>([]);
-</code></pre></div><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7ada2a185e1648348f0a25f1577e132c~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
+<pre><code class="language-Code" data-lang="Code">console.log([]);
+</code></pre><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7ada2a185e1648348f0a25f1577e132c~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
 <blockquote>
 <p>从上图中我们可以看到数组中有32个方法，全部是挂在数组原型 **_<em>proto</em>_** 上的,然后下面我们就来看一下这些数组方法。</p>
 </blockquote>
@@ -992,22 +1012,22 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;js&#39;</span>,<span style="color:#e6db74">&#39;css&#39;</span>,<span style="color:#e6db74">&#39;html&#39;</span>];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">&#39;go&#39;</span>,<span style="color:#e6db74">&#39;node.js&#39;</span>)); <span style="color:#75715e">// 5
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr</span>); <span style="color:#75715e">//  [&#34;js&#34;, &#34;css&#34;, &#34;html&#34;, &#34;go&#34;, &#34;node.js&#34;]
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr1</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;js&#39;</span>,<span style="color:#e6db74">&#39;css&#39;</span>,<span style="color:#e6db74">&#39;html&#39;</span>];
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;go&#39;</span>,<span style="color:#e6db74">&#39;node.js&#39;</span>];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr1</span>.<span style="color:#a6e22e">push</span>(...<span style="color:#a6e22e">array</span>)); <span style="color:#75715e">// 5
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr1</span>); <span style="color:#75715e">// [&#34;js&#34;, &#34;css&#34;, &#34;html&#34;, &#34;go&#34;, &#34;node.js&#34;]
-</span></code></pre></div><p><strong>小知识点：</strong></p>
+<pre><code class="language-Code" data-lang="Code">let arr = ['js','css','html'];
+console.log(arr.push('go','node.js')); // 5
+console.log(arr); //  [&quot;js&quot;, &quot;css&quot;, &quot;html&quot;, &quot;go&quot;, &quot;node.js&quot;]
+
+let arr1 = ['js','css','html'];
+let array = ['go','node.js'];
+console.log(arr1.push(...array)); // 5
+console.log(arr1); // [&quot;js&quot;, &quot;css&quot;, &quot;html&quot;, &quot;go&quot;, &quot;node.js&quot;]
+</code></pre><p><strong>小知识点：</strong></p>
 <blockquote>
 <p>我们也可以通过  <strong>array[array.length] = &lsquo;XXX&rsquo;</strong> 这种方式往数组后面添加元素</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;js&#39;</span>,<span style="color:#e6db74">&#39;css&#39;</span>,<span style="color:#e6db74">&#39;html&#39;</span>];
-<span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">length</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;go&#39;</span>;
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr</span>); <span style="color:#75715e">// [&#34;js&#34;, &#34;css&#34;, &#34;html&#34;, &#34;go&#34;]
-</span></code></pre></div><h3 id="pop">pop()</h3>
+<pre><code class="language-Code" data-lang="Code">let arr = ['js','css','html'];
+arr[arr.length] = 'go';
+console.log(arr); // [&quot;js&quot;, &quot;css&quot;, &quot;html&quot;, &quot;go&quot;]
+</code></pre><h3 id="pop">pop()</h3>
 <table>
 <thead>
 <tr>
@@ -1038,26 +1058,26 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>,<span style="color:#e6db74">&#39;blue&#39;</span>]
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">pop</span>()); <span style="color:#75715e">// blue
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>); <span style="color:#75715e">// [&#34;red&#34;, &#34;green&#34;]
-</span></code></pre></div><p><strong>小知识点：</strong></p>
+<pre><code class="language-Code" data-lang="Code">let colors = ['red','green','blue']
+console.log(colors.pop()); // blue
+console.log(colors); // [&quot;red&quot;, &quot;green&quot;]
+</code></pre><p><strong>小知识点：</strong></p>
 <blockquote>
 <p>我们也可以通过  <strong>array.length = array.length - 1</strong> 这种方式从数组末尾删除元素</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>,<span style="color:#e6db74">&#39;blue&#39;</span>];
-<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>); <span style="color:#75715e">//  [&#34;red&#34;, &#34;green&#34;]
-</span></code></pre></div><p><strong>Tips：</strong></p>
+<pre><code class="language-Code" data-lang="Code">let colors = ['red','green','blue'];
+colors.length = colors.length - 1;
+console.log(colors); //  [&quot;red&quot;, &quot;green&quot;]
+</code></pre><p><strong>Tips：</strong></p>
 <blockquote>
 <p>push()和pop()一起使用就构成了后进先出的栈结构</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>)); <span style="color:#75715e">// 2
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>); <span style="color:#75715e">// [&#34;red&#34;, &#34;green&#34;]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">pop</span>()); <span style="color:#75715e">// green
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>); <span style="color:#75715e">// [&#34;red&#34;]
-</span></code></pre></div><h3 id="unshift">unshift()</h3>
+<pre><code class="language-Code" data-lang="Code">let array = [];
+console.log(array.push('red','green')); // 2
+console.log(array); // [&quot;red&quot;, &quot;green&quot;]
+console.log(array.pop()); // green
+console.log(array); // [&quot;red&quot;]
+</code></pre><h3 id="unshift">unshift()</h3>
 <table>
 <thead>
 <tr>
@@ -1096,10 +1116,10 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;white&#39;</span>];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">unshift</span>(<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;blue&#39;</span>)); <span style="color:#75715e">// 3
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>); <span style="color:#75715e">// [&#34;red&#34;, &#34;blue&#34;, &#34;white&#34;]
-</span></code></pre></div><h3 id="shift">shift()</h3>
+<pre><code class="language-Code" data-lang="Code">let colors = ['white'];
+console.log(colors.unshift('red','blue')); // 3
+console.log(colors); // [&quot;red&quot;, &quot;blue&quot;, &quot;white&quot;]
+</code></pre><h3 id="shift">shift()</h3>
 <table>
 <thead>
 <tr>
@@ -1130,10 +1150,10 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;black&#39;</span>];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">shift</span>()); <span style="color:#75715e">// red
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>); <span style="color:#75715e">// [&#34;black&#34;]
-</span></code></pre></div><p><strong>Tips：</strong></p>
+<pre><code class="language-Code" data-lang="Code">let colors = ['red','black'];
+console.log(colors.shift()); // red
+console.log(colors); // [&quot;black&quot;]
+</code></pre><p><strong>Tips：</strong></p>
 <blockquote>
 <p>unshift()和shift()一起使用也构成了后进先出的栈结构</p>
 </blockquote>
@@ -1186,12 +1206,12 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ints</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>];
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">copyRes</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ints</span>.<span style="color:#a6e22e">copyWithin</span>(<span style="color:#ae81ff">1</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">copyRes</span>); <span style="color:#75715e">//  [0, 0, 1]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ints</span>); <span style="color:#75715e">//  [0, 0, 1]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">copyRes</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">ints</span>); <span style="color:#75715e">// true
-</span></code></pre></div><h3 id="fill">fill()</h3>
+<pre><code class="language-Code" data-lang="Code">let ints = [0,1,2];
+let copyRes = ints.copyWithin(1);
+console.log(copyRes); //  [0, 0, 1]
+console.log(ints); //  [0, 0, 1]
+console.log(copyRes === ints); // true
+</code></pre><h3 id="fill">fill()</h3>
 <table>
 <thead>
 <tr>
@@ -1232,49 +1252,49 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">zeroes</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>];
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">zeroesRes</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">zeroes</span>.<span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">5</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">zeroes</span>); <span style="color:#75715e">// [5, 5, 5, 5, 5]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">zeroesRes</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">zeroes</span>); <span style="color:#75715e">// true
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">zeroes</span>.<span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">1</span>)); <span style="color:#75715e">// [5, 3, 3, 3, 3]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">zeroes</span>); <span style="color:#75715e">// [5, 3, 3, 3, 3]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">zeroes</span>.<span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>)); <span style="color:#75715e">// [5, 3, 3, 1, 1]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">zeroes</span>); <span style="color:#75715e">// [5, 3, 3, 1, 1]
-</span></code></pre></div><p><strong>Tips：</strong></p>
+<pre><code class="language-Code" data-lang="Code">let zeroes = [0,0,0,0,0];
+let zeroesRes = zeroes.fill(5);
+console.log(zeroes); // [5, 5, 5, 5, 5]
+console.log(zeroesRes === zeroes); // true
+console.log(zeroes.fill(3,1)); // [5, 3, 3, 3, 3]
+console.log(zeroes); // [5, 3, 3, 3, 3]
+console.log(zeroes.fill(1,3,5)); // [5, 3, 3, 1, 1]
+console.log(zeroes); // [5, 3, 3, 1, 1]
+</code></pre><p><strong>Tips：</strong></p>
 <blockquote>
 <p>copyWithin()和fill()会忽略超出数组边界，零长度以及方向相反的索引范围</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ints</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>];
-<span style="color:#75715e">// 索引超出边界，忽略
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">ints</span>.<span style="color:#a6e22e">copyWithin</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">13</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ints</span>); <span style="color:#75715e">// [0,1,2,3]
-</span><span style="color:#75715e">// 索引过低，超出边界，忽略
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">ints</span>.<span style="color:#a6e22e">copyWithin</span>(<span style="color:#ae81ff">2</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">15</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">12</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ints</span>); <span style="color:#75715e">// [0,1,2,3]
-</span><span style="color:#75715e">// 索引反向，忽略
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">ints</span>.<span style="color:#a6e22e">copyWithin</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">1</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ints</span>); <span style="color:#75715e">// [0,1,2,3]
-</span><span style="color:#75715e">// 部分索引可用，填充可用索引部分
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">ints</span>.<span style="color:#a6e22e">copyWithin</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">6</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">ints</span>); <span style="color:#75715e">// [0,2,3,3]
-</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">zeroes</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>];
-<span style="color:#75715e">// 当开始索引和结束索引取负值时，相当于：将开始索引和结束索引都加上 zeroes.length
-</span><span style="color:#75715e">// zeroes.fill(8,1,4);
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">zeroes</span>.<span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">8</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">4</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">zeroes</span>); <span style="color:#75715e">// [0,8,8,8,0]
-</span><span style="color:#75715e">// 索引超出边界，忽略
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">zeroes</span>.<span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">15</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">zeroes</span>); <span style="color:#75715e">// [0,8,8,8,0]
-</span><span style="color:#75715e">// 索引过低，超出边界，忽略
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">zeroes</span>.<span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">15</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">12</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">zeroes</span>); <span style="color:#75715e">// [0,8,8,8,0]
-</span><span style="color:#75715e">// 索引反向，忽略
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">zeroes</span>.<span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">1</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">zeroes</span>); <span style="color:#75715e">// [0,8,8,8,0]
-</span><span style="color:#75715e">// 部分索引可用，填充可用索引部分
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">zeroes</span>.<span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">10</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">zeroes</span>); <span style="color:#75715e">// [0, 8, 8, 1, 1]
-</span></code></pre></div><h2 id="3排序方法">（3）排序方法</h2>
+<pre><code class="language-Code" data-lang="Code">let ints = [0,1,2,3];
+// 索引超出边界，忽略
+ints.copyWithin(1,10,13);
+console.log(ints); // [0,1,2,3]
+// 索引过低，超出边界，忽略
+ints.copyWithin(2,-15,-12);
+console.log(ints); // [0,1,2,3]
+// 索引反向，忽略
+ints.copyWithin(1,3,1);
+console.log(ints); // [0,1,2,3]
+// 部分索引可用，填充可用索引部分
+ints.copyWithin(1,2,6);
+console.log(ints); // [0,2,3,3]
+</code></pre><pre><code class="language-Code" data-lang="Code">let zeroes = [0,0,0,0,0];
+// 当开始索引和结束索引取负值时，相当于：将开始索引和结束索引都加上 zeroes.length
+// zeroes.fill(8,1,4);
+zeroes.fill(8,-4,-1);
+console.log(zeroes); // [0,8,8,8,0]
+// 索引超出边界，忽略
+zeroes.fill(1,10,15);
+console.log(zeroes); // [0,8,8,8,0]
+// 索引过低，超出边界，忽略
+zeroes.fill(1,-15,-12);
+console.log(zeroes); // [0,8,8,8,0]
+// 索引反向，忽略
+zeroes.fill(1,3,1);
+console.log(zeroes); // [0,8,8,8,0]
+// 部分索引可用，填充可用索引部分
+zeroes.fill(1,3,10);
+console.log(zeroes); // [0, 8, 8, 1, 1]
+</code></pre><h2 id="3排序方法">（3）排序方法</h2>
 <blockquote>
 <p>数组中有两个方法可以用来对元素重新排序：<strong>reverse()</strong> 和 <strong>sort()</strong>，顾名思义，reverse()方法就是将数组元素反向排列。</p>
 </blockquote>
@@ -1311,11 +1331,11 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">reverse</span>()); <span style="color:#75715e">// [6, 5, 4, 3, 2, 1]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">value</span>); <span style="color:#75715e">// [6, 5, 4, 3, 2, 1]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">reverse</span>() <span style="color:#f92672">===</span> <span style="color:#a6e22e">value</span>); <span style="color:#75715e">// true
-</span></code></pre></div><h3 id="sort">sort()</h3>
+<pre><code class="language-Code" data-lang="Code">let value = [1,2,3,4,5,6];
+console.log(value.reverse()); // [6, 5, 4, 3, 2, 1]
+console.log(value); // [6, 5, 4, 3, 2, 1]
+console.log(value.reverse() === value); // true
+</code></pre><h3 id="sort">sort()</h3>
 <table>
 <thead>
 <tr>
@@ -1354,71 +1374,71 @@
 <blockquote>
 <p>默认情况下，<strong>sort()</strong> 会按照升序重新排列数组元素，既最小的值在前面，最大的值在后面。为此，<strong>sort()</strong> 会在每一项上调用<strong>String()</strong> 转型函数，然后比较字符串来决定顺序。即使数组的元素都是数值，也会把数组转换为字符串再比较排序。</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">50</span>];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">sort</span>()); <span style="color:#75715e">//  [1, 10, 16, 2, 20, 3, 5, 50, 8, 9]
-</span></code></pre></div><ul>
+<pre><code class="language-Code" data-lang="Code">let value = [1,2,3,5,8,9,10,16,20,50];
+console.log(value.sort()); //  [1, 10, 16, 2, 20, 3, 5, 50, 8, 9]
+</code></pre><ul>
 <li><strong>传入比较函数</strong></li>
 </ul>
 <p>这时候排序的结果就是我们结果就是我们想要的</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">50</span>];
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">compare</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) {
-    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">a</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">b</span>) <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">a</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">b</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+<pre><code class="language-Code" data-lang="Code">let value = [1,2,3,5,8,9,10,16,20,50];
+function compare(a,b) {
+    if(a &lt; b) return -1
+    else if(a &gt; b) return 1
+    else return 0;
 }
-<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">sort</span>(<span style="color:#a6e22e">compare</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">value</span>); <span style="color:#75715e">// [1, 2, 3, 5, 8, 9, 10, 16, 20, 50]
-</span></code></pre></div><p>当想要结果按降序排列的话将if条件反过来即可</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">50</span>];
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">compare</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) {
-    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">a</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">b</span>) <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">a</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">b</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+value.sort(compare);
+console.log(value); // [1, 2, 3, 5, 8, 9, 10, 16, 20, 50]
+</code></pre><p>当想要结果按降序排列的话将if条件反过来即可</p>
+<pre><code class="language-Code" data-lang="Code">let value = [1,2,3,5,8,9,10,16,20,50];
+function compare(a,b) {
+    if(a &gt; b) return -1
+    else if(a &lt; b) return 1
+    else return 0;
 }
-<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">sort</span>(<span style="color:#a6e22e">compare</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">value</span>); <span style="color:#75715e">// [50, 20, 16, 10, 9, 8, 5, 3, 2, 1]
-</span></code></pre></div><p>上面的代码也可简写为：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">50</span>];
-<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">?</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">value</span>); <span style="color:#75715e">// [50, 20, 16, 10, 9, 8, 5, 3, 2, 1]
-</span></code></pre></div><p>上面的代码还可简写为：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">50</span>];
-<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">b</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">a</span>); <span style="color:#75715e">// a - b 升序，b - a 降序
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">value</span>); <span style="color:#75715e">// [50, 20, 16, 10, 9, 8, 5, 3, 2, 1]
-</span></code></pre></div><ul>
+value.sort(compare);
+console.log(value); // [50, 20, 16, 10, 9, 8, 5, 3, 2, 1]
+</code></pre><p>上面的代码也可简写为：</p>
+<pre><code class="language-Code" data-lang="Code">let value = [1,2,3,5,8,9,10,16,20,50];
+value.sort((a,b) =&gt; a &gt; b ? -1 : a &gt; b ? 1 : 0);
+console.log(value); // [50, 20, 16, 10, 9, 8, 5, 3, 2, 1]
+</code></pre><p>上面的代码还可简写为：</p>
+<pre><code class="language-Code" data-lang="Code">let value = [1,2,3,5,8,9,10,16,20,50];
+value.sort((a,b) =&gt; b - a); // a - b 升序，b - a 降序
+console.log(value); // [50, 20, 16, 10, 9, 8, 5, 3, 2, 1]
+</code></pre><ul>
 <li><strong>数组对象按某个属性排序</strong></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [
-    {<span style="color:#e6db74">&#39;name&#39;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;js&#39;</span>,<span style="color:#e6db74">&#39;grade&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">80</span>},
-    {<span style="color:#e6db74">&#39;name&#39;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;java&#39;</span>,<span style="color:#e6db74">&#39;grade&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">50</span>},
-    {<span style="color:#e6db74">&#39;name&#39;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;go&#39;</span>,<span style="color:#e6db74">&#39;grade&#39;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">100</span>},
+<pre><code class="language-Code" data-lang="Code">let array = [
+    {'name':'js','grade':80},
+    {'name':'java','grade':50},
+    {'name':'go','grade':100},
 ]
-<span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">sort</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>) {
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">grade</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">grade</span>;
+array.sort(function(a,b) {
+    return b.grade - a.grade;
 })
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>);
-<span style="color:#75715e">// [{&#39;name&#39;:&#39;go&#39;,&#39;grade&#39;:100},{&#39;name&#39;:&#39;js&#39;,&#39;grade&#39;:80},{&#39;name&#39;:&#39;java&#39;,&#39;grade&#39;:50}]
-</span></code></pre></div><ul>
+console.log(array);
+// [{'name':'go','grade':100},{'name':'js','grade':80},{'name':'java','grade':50}]
+</code></pre><ul>
 <li><strong>手写一个sort函数</strong></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sort</span>(<span style="color:#a6e22e">array</span>,<span style="color:#a6e22e">callback</span>) {
-    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">array</span>) {
-        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">m</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">array</span>) {
-            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">callback</span>(<span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">n</span>],<span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">m</span>]) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>){
-                <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">temp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">n</span>];
-                <span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">n</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">m</span>];
-                <span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">m</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">temp</span>;
+<pre><code class="language-Code" data-lang="Code">function sort(array,callback) {
+    for (const n in array) {
+        for (const m in array) {
+            if(callback(array[n],array[m]) &lt; 0){
+                const temp = array[n];
+                array[n] = array[m];
+                array[m] = temp;
             }
         }
     }
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">array</span>;
+    return array;
 };
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">52</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">7</span>];
-<span style="color:#a6e22e">sort</span>(<span style="color:#a6e22e">arr</span>,<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>){
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">b</span>
+let arr = [10,52,2,3,7];
+sort(arr,function(a,b){
+    return a - b
 })
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr</span>); <span style="color:#75715e">// [2, 3, 7, 10, 52] 
-</span></code></pre></div><p><strong>Tips：</strong></p>
+console.log(arr); // [2, 3, 7, 10, 52] 
+</code></pre><p><strong>Tips：</strong></p>
 <blockquote>
 <p>如果只是想反转数组的顺序，reverse()更简单也更快。</p>
 </blockquote>
@@ -1467,22 +1487,22 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">nums</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">10</span>];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">nums</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">2</span>)); <span style="color:#75715e">// [1, 2]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">nums</span>); <span style="color:#75715e">// [3, 4, 5, 6, 7, 8, 9, 10]
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;black&#39;</span>,<span style="color:#e6db74">&#39;white&#39;</span>)); <span style="color:#75715e">// [&#34;red&#34;]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>); <span style="color:#75715e">// [&#34;black&#34;, &#34;white&#34;, &#34;green&#34;]
-</span></code></pre></div><p><strong>Tips：</strong></p>
+<pre><code class="language-Code" data-lang="Code">let nums = [1,2,3,4,5,6,7,8,9,10];
+console.log(nums.splice(0,2)); // [1, 2]
+console.log(nums); // [3, 4, 5, 6, 7, 8, 9, 10]
+let colors = ['red','green'];
+console.log(colors.splice(0,1,'black','white')); // [&quot;red&quot;]
+console.log(colors); // [&quot;black&quot;, &quot;white&quot;, &quot;green&quot;]
+</code></pre><p><strong>Tips：</strong></p>
 <blockquote>
 <p>如果<strong>splice()</strong> 不传参数时，不会删除任何元素，返回一个空数组，当传一个参数时，从当前下标对应的元素（包含当前下标对应的元素）往后删除，返回被删除元素的组成的数组</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">nums</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">10</span>];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">nums</span>.<span style="color:#a6e22e">splice</span>()); <span style="color:#75715e">// []
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">nums</span>); <span style="color:#75715e">// [1,2,3,4,5,6,7,8,9,10]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">nums</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#ae81ff">3</span>)); <span style="color:#75715e">// [4, 5, 6, 7, 8, 9, 10]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">nums</span>); <span style="color:#75715e">// [1, 2, 3]
-</span></code></pre></div><h3 id="slice">slice()</h3>
+<pre><code class="language-Code" data-lang="Code">let nums = [1,2,3,4,5,6,7,8,9,10];
+console.log(nums.splice()); // []
+console.log(nums); // [1,2,3,4,5,6,7,8,9,10]
+console.log(nums.splice(3)); // [4, 5, 6, 7, 8, 9, 10]
+console.log(nums); // [1, 2, 3]
+</code></pre><h3 id="slice">slice()</h3>
 <table>
 <thead>
 <tr>
@@ -1519,39 +1539,39 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;blue&#39;</span>];
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">slice</span>();
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors3</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">1</span>);
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors4</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>); <span style="color:#75715e">//  [&#34;red&#34;, &#34;blue&#34;]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors2</span>); <span style="color:#75715e">// [&#34;red&#34;, &#34;blue&#34;]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors3</span>); <span style="color:#75715e">// [&#34;blue&#34;]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors4</span>); <span style="color:#75715e">// [&#34;red&#34;]
-</span></code></pre></div><p><strong>Tips：</strong></p>
+<pre><code class="language-Code" data-lang="Code">let colors = ['red','blue'];
+let colors2 = colors.slice();
+let colors3 = colors.slice(1);
+let colors4 = colors.slice(0,1);
+console.log(colors); //  [&quot;red&quot;, &quot;blue&quot;]
+console.log(colors2); // [&quot;red&quot;, &quot;blue&quot;]
+console.log(colors3); // [&quot;blue&quot;]
+console.log(colors4); // [&quot;red&quot;]
+</code></pre><p><strong>Tips：</strong></p>
 <blockquote>
 <p>如果<strong>slice()</strong> 的参数有负值，那么就以当前数组长度加上这个负值的结果确定位置。当数组长度加上这个负值仍然为负值，那么返回空数组。</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"> <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;blue&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>];
-<span style="color:#75715e">// 这个数组的长度为3，所以colors.slice(-3,-1) 相当于 colors.slice(0,2)
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)); <span style="color:#75715e">//  [&#34;red&#34;, &#34;blue&#34;]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">2</span>)); <span style="color:#75715e">//  [&#34;red&#34;, &#34;blue&#34;]
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 因为colors.slice(-6,-4) 加上数组长度分别为 -3，-1，所以返回空值
-</span><span style="color:#75715e">// 但是colors.slice(-6,-4) 结果并不等于 colors.slice(-3,-1)的结果
-</span><span style="color:#75715e">// 因为 colors.slice(-3,-1) 相当于 colors.slice(0,2)
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">6</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">4</span>)); <span style="color:#75715e">// []
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)); <span style="color:#75715e">// [&#34;red&#34;, &#34;blue&#34;]
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// colors.slice(-8,-1) 加上数组长度分别为 -5，2，有一部分是在数组索引范围内的
-</span><span style="color:#75715e">// 所以这部分是生效的
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">8</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)); <span style="color:#75715e">// [&#34;red&#34;, &#34;blue&#34;]
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// colors.slice(-5,2) 加上数组长度为 -2，2
-</span><span style="color:#75715e">// 但是 colors.slice(-2,2) 加上数组长度为 1，2
-</span><span style="color:#75715e">// 所以他们结果是不同的
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">2</span>)); <span style="color:#75715e">// [&#34;red&#34;, &#34;blue&#34;]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>)); <span style="color:#75715e">// [&#34;blue&#34;]
-</span></code></pre></div><h3 id="concat">concat()</h3>
+<pre><code class="language-Code" data-lang="Code"> let colors = ['red','blue','green'];
+// 这个数组的长度为3，所以colors.slice(-3,-1) 相当于 colors.slice(0,2)
+console.log(colors.slice(-3,-1)); //  [&quot;red&quot;, &quot;blue&quot;]
+console.log(colors.slice(0,2)); //  [&quot;red&quot;, &quot;blue&quot;]
+
+// 因为colors.slice(-6,-4) 加上数组长度分别为 -3，-1，所以返回空值
+// 但是colors.slice(-6,-4) 结果并不等于 colors.slice(-3,-1)的结果
+// 因为 colors.slice(-3,-1) 相当于 colors.slice(0,2)
+console.log(colors.slice(-6,-4)); // []
+console.log(colors.slice(-3,-1)); // [&quot;red&quot;, &quot;blue&quot;]
+
+// colors.slice(-8,-1) 加上数组长度分别为 -5，2，有一部分是在数组索引范围内的
+// 所以这部分是生效的
+console.log(colors.slice(-8,-1)); // [&quot;red&quot;, &quot;blue&quot;]
+
+// colors.slice(-5,2) 加上数组长度为 -2，2
+// 但是 colors.slice(-2,2) 加上数组长度为 1，2
+// 所以他们结果是不同的
+console.log(colors.slice(-5,2)); // [&quot;red&quot;, &quot;blue&quot;]
+console.log(colors.slice(-2,2)); // [&quot;blue&quot;]
+</code></pre><h3 id="concat">concat()</h3>
 <table>
 <thead>
 <tr>
@@ -1585,23 +1605,23 @@
 </tbody>
 </table>
 <p><strong>concat不仅可以合并数组，也可以将字符串合并到数组中去</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>];
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">newColors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;brown&#39;</span>,<span style="color:#e6db74">&#39;blue&#39;</span>];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">newColors</span>)); <span style="color:#75715e">// [&#34;red&#34;, &#34;green&#34;, &#34;brown&#34;, &#34;blue&#34;]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">concat</span>([<span style="color:#e6db74">&#39;yellow&#39;</span>],<span style="color:#a6e22e">newColors</span>)); <span style="color:#75715e">// [&#34;red&#34;, &#34;green&#34;, &#34;yellow&#34;, &#34;brown&#34;, &#34;blue&#34;]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#e6db74">&#39;white&#39;</span>,<span style="color:#a6e22e">newColors</span>)); <span style="color:#75715e">// [&#34;red&#34;, &#34;green&#34;, &#34;white&#34;, &#34;brown&#34;, &#34;blue&#34;]
-</span></code></pre></div><p><strong>Tips：</strong></p>
+<pre><code class="language-Code" data-lang="Code">let colors = ['red','green'];
+let newColors = ['brown','blue'];
+console.log(colors.concat(newColors)); // [&quot;red&quot;, &quot;green&quot;, &quot;brown&quot;, &quot;blue&quot;]
+console.log(colors.concat(['yellow'],newColors)); // [&quot;red&quot;, &quot;green&quot;, &quot;yellow&quot;, &quot;brown&quot;, &quot;blue&quot;]
+console.log(colors.concat('white',newColors)); // [&quot;red&quot;, &quot;green&quot;, &quot;white&quot;, &quot;brown&quot;, &quot;blue&quot;]
+</code></pre><p><strong>Tips：</strong></p>
 <blockquote>
 <p><strong>concat()</strong> 将字符串合并到数组中有点类似于<strong>push()</strong> ，但是<strong>concat()</strong> 不会改变原数组，而<strong>push()</strong> 会改变原数组，同时，<strong>concat()</strong> 的返回值是合并后的新数组，而<strong>push()</strong> 的返回值是添加元素后的原数组的长度</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#e6db74">&#39;green&#39;</span>,<span style="color:#e6db74">&#39;blue&#39;</span>)); <span style="color:#75715e">// [&#34;red&#34;, &#34;green&#34;, &#34;blue&#34;]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>); <span style="color:#75715e">// [&#34;red&#34;]
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">newColors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">&#39;green&#39;</span>,<span style="color:#e6db74">&#39;blue&#39;</span>)); <span style="color:#75715e">// 3
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>); <span style="color:#75715e">// [&#34;red&#34;, &#34;green&#34;, &#34;blue&#34;]
-</span></code></pre></div><h3 id="join">join()</h3>
+<pre><code class="language-Code" data-lang="Code">let colors = ['red'];
+console.log(colors.concat('green','blue')); // [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;]
+console.log(colors); // [&quot;red&quot;]
+
+let newColors = ['red'];
+console.log(colors.push('green','blue')); // 3
+console.log(colors); // [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;]
+</code></pre><h3 id="join">join()</h3>
 <table>
 <thead>
 <tr>
@@ -1634,21 +1654,21 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>,<span style="color:#e6db74">&#39;blue&#39;</span>];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">join</span>()); <span style="color:#75715e">// red,green,blue
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;,&#39;</span>)); <span style="color:#75715e">// red,green,blue
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;||&#39;</span>)); <span style="color:#75715e">// red||green||blue
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">join</span>(<span style="color:#66d9ef">undefined</span>)); <span style="color:#75715e">// red,green,blue
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">join</span>(<span style="color:#66d9ef">null</span>)); <span style="color:#75715e">// rednullgreennullblue
-</span></code></pre></div><p><strong>Tips：</strong></p>
+<pre><code class="language-Code" data-lang="Code">let colors = ['red','green','blue'];
+console.log(colors.join()); // red,green,blue
+console.log(colors.join(',')); // red,green,blue
+console.log(colors.join('||')); // red||green||blue
+console.log(colors.join(undefined)); // red,green,blue
+console.log(colors.join(null)); // rednullgreennullblue
+</code></pre><p><strong>Tips：</strong></p>
 <blockquote>
 <p>当不给<strong>join()</strong> 传入任何参数，或者传入<strong>undefined</strong> ，则仍然使用逗号作为分隔符。如果数组中某一项是<strong>null</strong> 或<strong>undefined</strong> ，则在join() 返回的结果中会以空字符串表示。</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>,<span style="color:#e6db74">&#39;blue&#39;</span>]; 
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">join</span>(<span style="color:#66d9ef">undefined</span>)); <span style="color:#75715e">// red,green,blue
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors1</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#66d9ef">null</span>,<span style="color:#66d9ef">undefined</span>,<span style="color:#e6db74">&#39;blue&#39;</span>]; 
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors1</span>.<span style="color:#a6e22e">join</span>()); <span style="color:#75715e">// red,,,blue
-</span></code></pre></div><h2 id="5迭代方法">（5）迭代方法</h2>
+<pre><code class="language-Code" data-lang="Code">let colors = ['red','green','blue']; 
+console.log(colors.join(undefined)); // red,green,blue
+let colors1 = ['red',null,undefined,'blue']; 
+console.log(colors1.join()); // red,,,blue
+</code></pre><h2 id="5迭代方法">（5）迭代方法</h2>
 <blockquote>
 <p><strong>JavaScript</strong> 为数组定义了5个迭代方法。</p>
 </blockquote>
@@ -1712,17 +1732,17 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>];
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">everyResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">every</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">numbers</span>) =&gt; <span style="color:#a6e22e">item</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">everyResult</span>); <span style="color:#75715e">// false
-</span></code></pre></div><p><strong>Tips：</strong></p>
+<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,4,5,4,3,2,1];
+let everyResult = numbers.every((item,index,numbers) =&gt; item &gt; 2);
+console.log(everyResult); // false
+</code></pre><p><strong>Tips：</strong></p>
 <blockquote>
 <p>若收到一个空数组，此方法在一切情况下都会返回 true</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [];
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">everyResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">every</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">numbers</span>) =&gt; <span style="color:#a6e22e">item</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">everyResult</span>); <span style="color:#75715e">// true
-</span></code></pre></div><h3 id="some">some()</h3>
+<pre><code class="language-Code" data-lang="Code">let numbers = [];
+let everyResult = numbers.every((item,index,numbers) =&gt; item &gt; 5);
+console.log(everyResult); // true
+</code></pre><h3 id="some">some()</h3>
 <table>
 <thead>
 <tr>
@@ -1783,12 +1803,12 @@
 </tbody>
 </table>
 <p><strong>注：</strong> <strong>every()</strong> 和 <strong>some()</strong> 接收的参数是一样的，只是 <strong>every()</strong> 需要函数 <strong>每一项</strong> 都返回 <strong>true</strong> ，这个方法才会返回 <strong>true</strong> ，而 <strong>some()</strong> 只需要函数 <strong>某一项</strong> 返回 <strong>true</strong> ，这个方法就会返回 <strong>true</strong> 。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>];
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">everyResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">every</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">numbers</span>) =&gt; <span style="color:#a6e22e">item</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">everyResult</span>); <span style="color:#75715e">// false
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">someResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">some</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">numbers</span>) =&gt; <span style="color:#a6e22e">item</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">someResult</span>); <span style="color:#75715e">// true
-</span></code></pre></div><h3 id="filter">filter()</h3>
+<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,4,5,4,3,2,1];
+let everyResult = numbers.every((item,index,numbers) =&gt; item &gt; 2);
+console.log(everyResult); // false
+let someResult = numbers.some((item,index,numbers) =&gt; item &gt; 2);
+console.log(someResult); // true
+</code></pre><h3 id="filter">filter()</h3>
 <table>
 <thead>
 <tr>
@@ -1848,10 +1868,10 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>];
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">filterResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">numbers</span>) =&gt; <span style="color:#a6e22e">item</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">filterResult</span>); <span style="color:#75715e">// [3, 4, 5, 4, 3]
-</span></code></pre></div><h3 id="map">map()</h3>
+<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,4,5,4,3,2,1];
+let filterResult = numbers.filter((item,index,numbers) =&gt; item &gt; 2);
+console.log(filterResult); // [3, 4, 5, 4, 3]
+</code></pre><h3 id="map">map()</h3>
 <table>
 <thead>
 <tr>
@@ -1911,24 +1931,24 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>];
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">mapResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">number</span>) =&gt; <span style="color:#a6e22e">item</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">mapResult</span>); <span style="color:#75715e">//  [2, 4, 6, 8, 10, 8, 6, 4, 2]
-</span></code></pre></div><p><strong>Tips：</strong></p>
+<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,4,5,4,3,2,1];
+let mapResult = numbers.map((item,index,number) =&gt; item*2);
+console.log(mapResult); //  [2, 4, 6, 8, 10, 8, 6, 4, 2]
+</code></pre><p><strong>Tips：</strong></p>
 <blockquote>
 <p>从上面的代码以及描述看，<strong>fliter()</strong> 和 <strong>map()</strong> 好像没什么区别，事实上，这两个方法还是有区别的，<strong>fliter()</strong> 返回的数组元素个数可能会变化，但是元素本省不会变化，也就是说 <strong>fliter()</strong> 返回的新数组一定是跟原数组一样的内容或者原数组内容的一部分，元素不会改变，而 <strong>map()</strong> 返回的新数组元素个数不变，但是按照一定的条件转换，数组元素可能会变化</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>];
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">filterResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">number</span>) =&gt; <span style="color:#a6e22e">item</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>);
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">mapResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">number</span>) =&gt; <span style="color:#a6e22e">item</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>);
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">filterResult1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">number</span>) =&gt; <span style="color:#a6e22e">item</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>);
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">mapResult1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">number</span>) =&gt; <span style="color:#a6e22e">item</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">filterResult</span>); <span style="color:#75715e">//  [1, 2, 3, 4, 5, 4, 3, 2, 1]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">mapResult</span>); <span style="color:#75715e">// [2, 4, 6, 8, 10, 8, 6, 4, 2]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">filterResult1</span>); <span style="color:#75715e">//  [3, 4, 5, 4, 3]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">mapResult1</span>); <span style="color:#75715e">//  [false, false, true, true, true, true, true, false, false]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>); <span style="color:#75715e">//  [1, 2, 3, 4, 5, 4, 3, 2, 1]
-</span></code></pre></div><h3 id="foreach">forEach()</h3>
+<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,4,5,4,3,2,1];
+let filterResult = numbers.filter((item,index,number) =&gt; item * 2);
+let mapResult = numbers.map((item,index,number) =&gt; item * 2);
+let filterResult1 = numbers.filter((item,index,number) =&gt; item &gt; 2);
+let mapResult1 = numbers.map((item,index,number) =&gt; item &gt; 2);
+console.log(filterResult); //  [1, 2, 3, 4, 5, 4, 3, 2, 1]
+console.log(mapResult); // [2, 4, 6, 8, 10, 8, 6, 4, 2]
+console.log(filterResult1); //  [3, 4, 5, 4, 3]
+console.log(mapResult1); //  [false, false, true, true, true, true, true, false, false]
+console.log(numbers); //  [1, 2, 3, 4, 5, 4, 3, 2, 1]
+</code></pre><h3 id="foreach">forEach()</h3>
 <table>
 <thead>
 <tr>
@@ -1988,13 +2008,13 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>];
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">forEachResult</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">forEach</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">numbers</span>) =&gt; {
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">item</span><span style="color:#f92672">*</span><span style="color:#ae81ff">5</span>
+<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,4,5,4,3,2,1];
+let forEachResult = numbers.forEach((item,index,numbers) =&gt; {
+    return item*5
 });
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">forEachResult</span>); <span style="color:#75715e">// undefined
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>); <span style="color:#75715e">// [1, 2, 3, 4, 5, 4, 3, 2, 1]
-</span></code></pre></div><p>forEach()本质上就是循环遍历数组，没有返回值，也不会改变原数组。</p>
+console.log(forEachResult); // undefined
+console.log(numbers); // [1, 2, 3, 4, 5, 4, 3, 2, 1]
+</code></pre><p>forEach()本质上就是循环遍历数组，没有返回值，也不会改变原数组。</p>
 <p><strong>总结</strong></p>
 <blockquote>
 <p>这5个迭代方法传的参数都是一样的，也都不会改变原数组。</p>
@@ -2036,11 +2056,11 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">keys</span>()); <span style="color:#75715e">// Array Iterator {}
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">keys</span>())); <span style="color:#75715e">// [0, 1]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#66d9ef">of</span>(...<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">keys</span>())); <span style="color:#75715e">// [0, 1]
-</span></code></pre></div><h3 id="values">values()</h3>
+<pre><code class="language-Code" data-lang="Code">let colors = ['red','green'];
+console.log(colors.keys()); // Array Iterator {}
+console.log(Array.from(colors.keys())); // [0, 1]
+console.log(Array.of(...colors.keys())); // [0, 1]
+</code></pre><h3 id="values">values()</h3>
 <table>
 <thead>
 <tr>
@@ -2073,11 +2093,11 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">values</span>()); <span style="color:#75715e">// Array Iterator {}
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">values</span>())); <span style="color:#75715e">//  [&#34;red&#34;, &#34;green&#34;]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#66d9ef">of</span>(...<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">values</span>())); <span style="color:#75715e">//  [&#34;red&#34;, &#34;green&#34;]
-</span></code></pre></div><h3 id="entries">entries()</h3>
+<pre><code class="language-Code" data-lang="Code">let colors = ['red','green'];
+console.log(colors.values()); // Array Iterator {}
+console.log(Array.from(colors.values())); //  [&quot;red&quot;, &quot;green&quot;]
+console.log(Array.of(...colors.values())); //  [&quot;red&quot;, &quot;green&quot;]
+</code></pre><h3 id="entries">entries()</h3>
 <table>
 <thead>
 <tr>
@@ -2110,11 +2130,11 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>,<span style="color:#e6db74">&#39;green&#39;</span>];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">entries</span>(<span style="color:#a6e22e">colors</span>)); <span style="color:#75715e">// Array Iterator {}
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">entries</span>())); <span style="color:#75715e">// [Array(2), Array(2)]
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#66d9ef">of</span>(...<span style="color:#a6e22e">colors</span>.<span style="color:#a6e22e">entries</span>())); <span style="color:#75715e">// [Array(2), Array(2)]
-</span></code></pre></div><p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/000f722d46ac461faa31e0c5db37ca4d~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
+<pre><code class="language-Code" data-lang="Code">let colors = ['red','green'];
+console.log(colors.entries(colors)); // Array Iterator {}
+console.log(Array.from(colors.entries())); // [Array(2), Array(2)]
+console.log(Array.of(...colors.entries())); // [Array(2), Array(2)]
+</code></pre><p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/000f722d46ac461faa31e0c5db37ca4d~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
 <p><strong>Tips：</strong></p>
 <blockquote>
 <p>这三个方法返回的都是一个类数组对象，都可以通过 <strong>Array.from()</strong> 或者 <strong>Array.of()加展开语法</strong> 转换成数组。</p>
@@ -2187,11 +2207,11 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>];
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">prev</span>,<span style="color:#a6e22e">cur</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">array</span>) =&gt; <span style="color:#a6e22e">prev</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">cur</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">sum</span>); <span style="color:#75715e">// 9
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>); <span style="color:#75715e">//  [1, 2, 3, 2, 1]
-</span></code></pre></div><h3 id="reduceright">reduceRight()</h3>
+<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,2,1];
+let sum = numbers.reduce((prev,cur,index,array) =&gt; prev + cur);
+console.log(sum); // 9
+console.log(numbers); //  [1, 2, 3, 2, 1]
+</code></pre><h3 id="reduceright">reduceRight()</h3>
 <table>
 <thead>
 <tr>
@@ -2255,11 +2275,11 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>];
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">reduceRight</span>((<span style="color:#a6e22e">prev</span>,<span style="color:#a6e22e">cur</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">array</span>) =&gt; <span style="color:#a6e22e">prev</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">cur</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">sum</span>); <span style="color:#75715e">// 15
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>); <span style="color:#75715e">// [1, 2, 3, 4, 5]
-</span></code></pre></div><p><strong>Tips：</strong></p>
+<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,4,5];
+let sum = numbers.reduceRight((prev,cur,index,array) =&gt; prev + cur);
+console.log(sum); // 15
+console.log(numbers); // [1, 2, 3, 4, 5]
+</code></pre><p><strong>Tips：</strong></p>
 <blockquote>
 <p>究竟是使用 <strong>reduce()</strong> 还是 <strong>reduceRight()</strong> ，只取决于遍历数组元素的方向。除此之外，这两个方法没什么区别。</p>
 </blockquote>
@@ -2305,12 +2325,12 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#ae81ff">4</span>)); <span style="color:#75715e">// 3
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>)); <span style="color:#75715e">// 3
-</span><span style="color:#75715e">// 如果没找到就返回 -1
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#ae81ff">40</span>)); <span style="color:#75715e">// -1
-</span></code></pre></div><h3 id="lastindexof">lastIndexOf()</h3>
+<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,4,5];
+console.log(numbers.indexOf(4)); // 3
+console.log(numbers.indexOf(4,3)); // 3
+// 如果没找到就返回 -1
+console.log(numbers.indexOf(40)); // -1
+</code></pre><h3 id="lastindexof">lastIndexOf()</h3>
 <table>
 <thead>
 <tr>
@@ -2347,12 +2367,12 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">lastIndexOf</span>(<span style="color:#ae81ff">4</span>)); <span style="color:#75715e">// 5
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">lastIndexOf</span>(<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">4</span>)); <span style="color:#75715e">// 3
-</span><span style="color:#75715e">// 如果没找到就返回 -1
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">lastIndexOf</span>(<span style="color:#ae81ff">40</span>)); <span style="color:#75715e">// -1
-</span></code></pre></div><h3 id="includes">includes()</h3>
+<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,4,5,4,3,2,1];
+console.log(numbers.lastIndexOf(4)); // 5
+console.log(numbers.lastIndexOf(4,4)); // 3
+// 如果没找到就返回 -1
+console.log(numbers.lastIndexOf(40)); // -1
+</code></pre><h3 id="includes">includes()</h3>
 <table>
 <thead>
 <tr>
@@ -2389,11 +2409,11 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#ae81ff">4</span>)); <span style="color:#75715e">// true
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">7</span>)); <span style="color:#75715e">// false
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#ae81ff">40</span>)); <span style="color:#75715e">// false
-</span></code></pre></div><p><strong>JavaScript</strong> 也允许按照定义的断言函数搜索数组，<strong>find()</strong> 和 <strong>findIndex()</strong> 使用了断言函数。</p>
+<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,4,5,4,3,2,1];
+console.log(numbers.includes(4)); // true
+console.log(numbers.includes(4,7)); // false
+console.log(numbers.includes(40)); // false
+</code></pre><p><strong>JavaScript</strong> 也允许按照定义的断言函数搜索数组，<strong>find()</strong> 和 <strong>findIndex()</strong> 使用了断言函数。</p>
 <h3 id="find">find()</h3>
 <table>
 <thead>
@@ -2454,18 +2474,18 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">people</span> <span style="color:#f92672">=</span> [
+<pre><code class="language-Code" data-lang="Code">const people = [
     {
-        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Matt&#39;</span>,
-        <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">27</span>
+        name: 'Matt',
+        age: 27
     },
     {
-        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;xiaoming&#39;</span>,
-        <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">29</span>
+        name: 'xiaoming',
+        age: 29
     }
 ];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">people</span>.<span style="color:#a6e22e">find</span>((<span style="color:#a6e22e">element</span>, <span style="color:#a6e22e">index</span>, <span style="color:#a6e22e">array</span>) =&gt; <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">28</span>)); <span style="color:#75715e">// {name: &#34;xiaoming&#34;, age: 29}
-</span></code></pre></div><h3 id="findindex">findIndex()</h3>
+console.log(people.find((element, index, array) =&gt; element.age &gt; 28)); // {name: &quot;xiaoming&quot;, age: 29}
+</code></pre><h3 id="findindex">findIndex()</h3>
 <table>
 <thead>
 <tr>
@@ -2525,18 +2545,18 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">people</span> <span style="color:#f92672">=</span> [
+<pre><code class="language-Code" data-lang="Code">const people = [
     {
-        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Matt&#39;</span>,
-        <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">27</span>
+        name: 'Matt',
+        age: 27
     },
     {
-        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;xiaoming&#39;</span>,
-        <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">29</span>
+        name: 'xiaoming',
+        age: 29
     }
 ];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">people</span>.<span style="color:#a6e22e">findIndex</span>((<span style="color:#a6e22e">element</span>, <span style="color:#a6e22e">index</span>, <span style="color:#a6e22e">array</span>) =&gt; <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">28</span>)); <span style="color:#75715e">// 1
-</span></code></pre></div><h2 id="9转换方法">（9）转换方法</h2>
+console.log(people.findIndex((element, index, array) =&gt; element.age &gt; 28)); // 1
+</code></pre><h2 id="9转换方法">（9）转换方法</h2>
 <blockquote>
 <p><strong>JavaScript</strong> 中所有对象都有 <strong>toSting()</strong>、<strong>toLocaleString()</strong> 和 <strong>valueOf()</strong> 方法，其中，<strong>valueOf()</strong> 返回的是数组本身。</p>
 </blockquote>
@@ -2573,10 +2593,10 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>];
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">stringNumbers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">toString</span>();
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">stringNumbers</span>); <span style="color:#75715e">// 1,2,3,4,5
-</span></code></pre></div><h3 id="tolocalestring">toLocaleString()</h3>
+<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,4,5];
+let stringNumbers = numbers.toString();
+console.log(stringNumbers); // 1,2,3,4,5
+</code></pre><h3 id="tolocalestring">toLocaleString()</h3>
 <table>
 <thead>
 <tr>
@@ -2609,10 +2629,10 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">15000000</span>];
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">stringNumbers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">toLocaleString</span>();
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">stringNumbers</span>); <span style="color:#75715e">// 15,000,000
-</span></code></pre></div><h2 id="10扁平化方法">（10）扁平化方法</h2>
+<pre><code class="language-Code" data-lang="Code">let numbers = [15000000];
+let stringNumbers = numbers.toLocaleString();
+console.log(stringNumbers); // 15,000,000
+</code></pre><h2 id="10扁平化方法">（10）扁平化方法</h2>
 <blockquote>
 <p><strong>JavaScript</strong> 中提供了两个数组扁平化的方法：<strong>flat()</strong> 和 <strong>flatMap()</strong></p>
 </blockquote>
@@ -2649,11 +2669,11 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">8</span>,[<span style="color:#ae81ff">1</span>],[<span style="color:#ae81ff">2</span>,[<span style="color:#ae81ff">1</span>,[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">9</span>]]]]];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">flat</span>(<span style="color:#ae81ff">2</span>));<span style="color:#75715e">// [1, 5, 9, 8, 1, 2, 1, Array(3)]
-</span><span style="color:#75715e">//使用 Infinity，可展开任意深度的嵌套数组
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">flat</span>(<span style="color:#66d9ef">Infinity</span>)); <span style="color:#75715e">//  [1, 5, 9, 8, 1, 2, 1, 1, 3, 1, 9]
-</span></code></pre></div><h3 id="flatmap">flatMap()</h3>
+<pre><code class="language-Code" data-lang="Code">let array = [1,5,9,8,[1],[2,[1,[1,3,[1,9]]]]];
+console.log(array.flat(2));// [1, 5, 9, 8, 1, 2, 1, Array(3)]
+//使用 Infinity，可展开任意深度的嵌套数组
+console.log(array.flat(Infinity)); //  [1, 5, 9, 8, 1, 2, 1, 1, 3, 1, 9]
+</code></pre><h3 id="flatmap">flatMap()</h3>
 <table>
 <thead>
 <tr>
@@ -2713,10 +2733,10 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">8</span>];
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">flatMapRes</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">flatMap</span>((<span style="color:#a6e22e">item</span>,<span style="color:#a6e22e">index</span>,<span style="color:#a6e22e">array</span>) =&gt; <span style="color:#a6e22e">item</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">flatMapRes</span>); <span style="color:#75715e">// [3, 15, 27, 24]
-</span></code></pre></div><h1 id="5总结">5.总结</h1>
+<pre><code class="language-Code" data-lang="Code">let array = [1,5,9,8];
+let flatMapRes = array.flatMap((item,index,array) =&gt; item * 3);
+console.log(flatMapRes); // [3, 15, 27, 24]
+</code></pre><h1 id="5总结">5.总结</h1>
 <p>这篇文章断断续续的也写了好几天，感叹总结文档也是件麻烦细致活，不比学习技术知识花的时间少，但是写文档也算把学到的知识输出出来了，可能以后自己忘了，也能回头来看看，毕竟，人的记忆力是敌不过时间的，好记性不如烂笔头嘛，写文档这种东西可能还是多多益善，然后大佬们看这篇文章如果发现有不妥或者错误的地方希望能指出来，我及时改正，谢谢了，然后后续有新的东西我也会补充进来的。</p>
 <p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/60854fc6591d4c978418308db0d1ffe2~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
 
@@ -2727,7 +2747,7 @@
 <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">文章作者</span>
-    <span class="item-content">xkhm</span>
+    <span class="item-content">XKHM</span>
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
@@ -2739,21 +2759,33 @@
   
   <p class="copyright-item">
     <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">原创文章，转载请注明文章作者和出处，谢谢！</a></span>
   </p>
 </div>
 
 
     
     
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">汤言汤语</label>
+  <div class="qr-code">
+    
+    
+    
+  </div>
+</div>
 
     <footer class="post-footer">
-      
+      <div class="post-tags">
+          <a href="https://xkhm.net/tags/javascript/">JavaScript</a>
+          
+        </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/githubpages&#43;hugo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+          <a class="prev" href="/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/">
             
             <i class="iconfont">
               <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -2763,23 +2795,10 @@
 </svg>
 
             </i>
-            <span class="prev-text nav-default">GithubPages&#43;Hugo从0到1搭建个人博客</span>
+            <span class="prev-text nav-default">JS基础之深浅拷贝</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         
-          <a class="next" href="/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/">
-            <span class="next-text nav-default">JS基础之深浅拷贝</span>
-            <span class="prev-text nav-mobile">Next</span>
-            
-            <i class="iconfont">
-              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
-</svg>
-
-            </i>
-          </a>
       </nav>
     </footer>
   </article>
@@ -2921,6 +2940,13 @@
 
 
 
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 
 
