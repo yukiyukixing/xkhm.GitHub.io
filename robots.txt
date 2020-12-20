@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://yukiyukixing.github.io/sitemap.xml
+Sitemap: https://xkhm.net/sitemap.xml

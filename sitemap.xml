@@ -1,232 +1,232 @@
-<?xml-stylesheet type="text/xsl" href="https://yukiyukixing.github.io/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="https://xkhm.net/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://yukiyukixing.github.io/life/</loc>
+    <loc>https://xkhm.net/life/</loc>
     <lastmod>2020-12-19T22:14:17+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/technology/</loc>
+    <loc>https://xkhm.net/technology/</loc>
     <lastmod>2020-12-19T22:19:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/essay/</loc>
+    <loc>https://xkhm.net/essay/</loc>
     <lastmod>2020-12-19T22:17:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/about/</loc>
+    <loc>https://xkhm.net/about/</loc>
     <lastmod>2017-08-28T21:41:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/categories/</loc>
+    <loc>https://xkhm.net/categories/</loc>
     <lastmod>2020-12-19T23:01:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/essay/</loc>
+    <loc>https://xkhm.net/essay/</loc>
     <lastmod>2020-12-19T23:01:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/tags/</loc>
+    <loc>https://xkhm.net/tags/</loc>
     <lastmod>2020-12-19T23:01:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/essay/%E6%97%A5%E5%B8%B8%E5%B0%8F%E8%AE%B0/</loc>
+    <loc>https://xkhm.net/essay/%E6%97%A5%E5%B8%B8%E5%B0%8F%E8%AE%B0/</loc>
     <lastmod>2020-12-19T23:01:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/</loc>
+    <loc>https://xkhm.net/</loc>
     <lastmod>2020-12-19T23:01:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/tags/%E9%9A%8F%E7%AC%94/</loc>
+    <loc>https://xkhm.net/tags/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2020-12-19T23:01:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/categories/%E9%9A%8F%E7%AC%94/</loc>
+    <loc>https://xkhm.net/categories/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2020-12-19T23:01:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/life/</loc>
+    <loc>https://xkhm.net/life/</loc>
     <lastmod>2020-12-19T22:57:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/tags/%E5%BA%A7%E5%8F%B3%E9%93%AD/</loc>
+    <loc>https://xkhm.net/tags/%E5%BA%A7%E5%8F%B3%E9%93%AD/</loc>
     <lastmod>2020-12-19T22:57:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/categories/%E7%94%9F%E6%B4%BB/</loc>
+    <loc>https://xkhm.net/categories/%E7%94%9F%E6%B4%BB/</loc>
     <lastmod>2020-12-19T22:57:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/life/%E8%88%B9%E5%88%B0%E6%A1%A5%E5%A4%B4%E8%87%AA%E7%84%B6%E7%9B%B4/</loc>
+    <loc>https://xkhm.net/life/%E8%88%B9%E5%88%B0%E6%A1%A5%E5%A4%B4%E8%87%AA%E7%84%B6%E7%9B%B4/</loc>
     <lastmod>2020-12-19T22:57:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/post/githubpages&#43;hugo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>https://xkhm.net/post/githubpages&#43;hugo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2020-12-19T12:40:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/tags/go/</loc>
+    <loc>https://xkhm.net/tags/go/</loc>
     <lastmod>2020-12-19T12:40:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/tags/hugo/</loc>
+    <loc>https://xkhm.net/tags/hugo/</loc>
     <lastmod>2020-12-19T12:40:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/post/</loc>
+    <loc>https://xkhm.net/post/</loc>
     <lastmod>2020-12-19T12:40:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>https://xkhm.net/tags/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2020-12-19T12:40:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://xkhm.net/tags/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2020-12-19T12:40:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/post/%E4%B8%80%E6%96%87%E8%AF%A6%E8%A7%A3javascript%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84/</loc>
+    <loc>https://xkhm.net/post/%E4%B8%80%E6%96%87%E8%AF%A6%E8%A7%A3javascript%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84/</loc>
     <lastmod>2020-12-19T12:23:51+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/</loc>
+    <loc>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/</loc>
     <lastmod>2020-12-19T12:13:20+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%94kapacitor%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</loc>
+    <loc>https://xkhm.net/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%94kapacitor%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2019-11-22T12:32:20+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/tags/tick/</loc>
+    <loc>https://xkhm.net/tags/tick/</loc>
     <lastmod>2019-11-15T12:31:20+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E5%9B%9Bgrafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8grafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</loc>
+    <loc>https://xkhm.net/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E5%9B%9Bgrafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8grafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2019-11-15T12:31:20+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%89influxdb%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</loc>
+    <loc>https://xkhm.net/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%89influxdb%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2019-11-07T12:33:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%8Ctelegraf%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</loc>
+    <loc>https://xkhm.net/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%8Ctelegraf%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2019-11-05T12:33:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/tags/grafana/</loc>
+    <loc>https://xkhm.net/tags/grafana/</loc>
     <lastmod>2019-10-22T12:34:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/tags/influxdb/</loc>
+    <loc>https://xkhm.net/tags/influxdb/</loc>
     <lastmod>2019-10-22T12:34:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/tags/kapacitor/</loc>
+    <loc>https://xkhm.net/tags/kapacitor/</loc>
     <lastmod>2019-10-22T12:34:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/tags/telegraf/</loc>
+    <loc>https://xkhm.net/tags/telegraf/</loc>
     <lastmod>2019-10-22T12:34:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%80tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BB%8B%E7%BB%8D/</loc>
+    <loc>https://xkhm.net/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%80tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BB%8B%E7%BB%8D/</loc>
     <lastmod>2019-10-22T12:34:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

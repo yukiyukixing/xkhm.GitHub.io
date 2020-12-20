@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>星空海绵 - 星空浩瀚 | 海绵吸水</title>
-    <link>https://yukiyukixing.github.io/</link>
+    <link>https://xkhm.net/</link>
     <description>Recent content on 星空海绵 - 星空浩瀚 | 海绵吸水</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
     <lastBuildDate>Sat, 19 Dec 2020 23:01:15 +0800</lastBuildDate>
     
-        <atom:link href="https://yukiyukixing.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://xkhm.net/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>生活</title>
-      <link>https://yukiyukixing.github.io/life/</link>
+      <link>https://xkhm.net/life/</link>
       <pubDate>Sat, 19 Dec 2020 22:14:17 +0800</pubDate>
       
-      <guid>https://yukiyukixing.github.io/life/</guid>
+      <guid>https://xkhm.net/life/</guid>
       
         <description></description>
       
@@ -25,10 +25,10 @@
     
     <item>
       <title>技术</title>
-      <link>https://yukiyukixing.github.io/technology/</link>
+      <link>https://xkhm.net/technology/</link>
       <pubDate>Sat, 19 Dec 2020 22:19:35 +0800</pubDate>
       
-      <guid>https://yukiyukixing.github.io/technology/</guid>
+      <guid>https://xkhm.net/technology/</guid>
       
         <description></description>
       
@@ -36,10 +36,10 @@
     
     <item>
       <title>随笔</title>
-      <link>https://yukiyukixing.github.io/essay/</link>
+      <link>https://xkhm.net/essay/</link>
       <pubDate>Sat, 19 Dec 2020 22:17:09 +0800</pubDate>
       
-      <guid>https://yukiyukixing.github.io/essay/</guid>
+      <guid>https://xkhm.net/essay/</guid>
       
         <description></description>
       
@@ -47,10 +47,10 @@
     
     <item>
       <title>关于</title>
-      <link>https://yukiyukixing.github.io/about/</link>
+      <link>https://xkhm.net/about/</link>
       <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
       
-      <guid>https://yukiyukixing.github.io/about/</guid>
+      <guid>https://xkhm.net/about/</guid>
       
         <description>&lt;p&gt;Hugo is a static site engine written in Go.&lt;/p&gt;
 &lt;p&gt;It makes use of a variety of open source projects including:&lt;/p&gt;
@@ -67,10 +67,10 @@
     
     <item>
       <title>日常小记</title>
-      <link>https://yukiyukixing.github.io/essay/%E6%97%A5%E5%B8%B8%E5%B0%8F%E8%AE%B0/</link>
+      <link>https://xkhm.net/essay/%E6%97%A5%E5%B8%B8%E5%B0%8F%E8%AE%B0/</link>
       <pubDate>Sat, 19 Dec 2020 23:01:15 +0800</pubDate>
       
-      <guid>https://yukiyukixing.github.io/essay/%E6%97%A5%E5%B8%B8%E5%B0%8F%E8%AE%B0/</guid>
+      <guid>https://xkhm.net/essay/%E6%97%A5%E5%B8%B8%E5%B0%8F%E8%AE%B0/</guid>
       
         <description>&lt;h1 id=&#34;随笔&#34;&gt;随笔&lt;/h1&gt;
 </description>
@@ -79,10 +79,10 @@
     
     <item>
       <title>船到桥头自然直</title>
-      <link>https://yukiyukixing.github.io/life/%E8%88%B9%E5%88%B0%E6%A1%A5%E5%A4%B4%E8%87%AA%E7%84%B6%E7%9B%B4/</link>
+      <link>https://xkhm.net/life/%E8%88%B9%E5%88%B0%E6%A1%A5%E5%A4%B4%E8%87%AA%E7%84%B6%E7%9B%B4/</link>
       <pubDate>Sat, 19 Dec 2020 22:57:52 +0800</pubDate>
       
-      <guid>https://yukiyukixing.github.io/life/%E8%88%B9%E5%88%B0%E6%A1%A5%E5%A4%B4%E8%87%AA%E7%84%B6%E7%9B%B4/</guid>
+      <guid>https://xkhm.net/life/%E8%88%B9%E5%88%B0%E6%A1%A5%E5%A4%B4%E8%87%AA%E7%84%B6%E7%9B%B4/</guid>
       
         <description>&lt;h1 id=&#34;船到桥头自然直-all-will-be-good&#34;&gt;船到桥头自然直 All will be good&lt;/h1&gt;
 </description>
@@ -91,10 +91,10 @@
     
     <item>
       <title>GithubPages&#43;Hugo从0到1搭建个人博客</title>
-      <link>https://yukiyukixing.github.io/post/githubpages&#43;hugo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <link>https://xkhm.net/post/githubpages&#43;hugo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Sat, 19 Dec 2020 12:40:48 +0800</pubDate>
       
-      <guid>https://yukiyukixing.github.io/post/githubpages&#43;hugo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>https://xkhm.net/post/githubpages&#43;hugo%E4%BB%8E0%E5%88%B01%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
       
         <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -106,10 +106,10 @@
     
     <item>
       <title>一文详解JavaScript中的数组</title>
-      <link>https://yukiyukixing.github.io/post/%E4%B8%80%E6%96%87%E8%AF%A6%E8%A7%A3javascript%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84/</link>
+      <link>https://xkhm.net/post/%E4%B8%80%E6%96%87%E8%AF%A6%E8%A7%A3javascript%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84/</link>
       <pubDate>Sat, 19 Dec 2020 12:23:51 +0800</pubDate>
       
-      <guid>https://yukiyukixing.github.io/post/%E4%B8%80%E6%96%87%E8%AF%A6%E8%A7%A3javascript%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84/</guid>
+      <guid>https://xkhm.net/post/%E4%B8%80%E6%96%87%E8%AF%A6%E8%A7%A3javascript%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84/</guid>
       
         <description>&lt;p&gt;&lt;img src=&#34;https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cbfce5de99fc415dbf604a9a4c820794~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
@@ -2362,10 +2362,10 @@
     
     <item>
       <title>JS基础之深浅拷贝</title>
-      <link>https://yukiyukixing.github.io/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/</link>
+      <link>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/</link>
       <pubDate>Sat, 19 Dec 2020 12:13:20 +0800</pubDate>
       
-      <guid>https://yukiyukixing.github.io/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/</guid>
+      <guid>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/</guid>
       
         <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -2448,10 +2448,10 @@
     
     <item>
       <title>TICK技术栈（五）Kapacitor安装及使用</title>
-      <link>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%94kapacitor%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
+      <link>https://xkhm.net/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%94kapacitor%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Fri, 22 Nov 2019 12:32:20 +0800</pubDate>
       
-      <guid>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%94kapacitor%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://xkhm.net/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%94kapacitor%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
       
         <description>&lt;h1 id=&#34;1什么是kapacitor&#34;&gt;1.什么是Kapacitor？&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://docs.influxdata.com/kapacitor/v1.5/introduction/getting-started/&#34;&gt;Kapacitor&lt;/a&gt;是InfluxData开源的数据处理引擎。它可以处理来自InfluxDB的流数据和批处理数据，并且用户可以用tickScript脚本来处理，监视和警报时序数据库中的时序数据。github地址：https://github.com/influxdata/kapacitor&lt;/p&gt;
@@ -2477,10 +2477,10 @@ Kapacitor下载地址：https://portal.influxdata.com/downloads/&lt;/p&gt;
     
     <item>
       <title>TICK技术栈（四）Grafana安装及使用</title>
-      <link>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E5%9B%9Bgrafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8grafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
+      <link>https://xkhm.net/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E5%9B%9Bgrafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8grafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Fri, 15 Nov 2019 12:31:20 +0800</pubDate>
       
-      <guid>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E5%9B%9Bgrafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8grafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://xkhm.net/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E5%9B%9Bgrafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8grafana%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
       
         <description>&lt;h1 id=&#34;1什么是grafana&#34;&gt;1.什么是Grafana？&lt;/h1&gt;
 &lt;p&gt;Grafana是一款采用go语言和Angular框架编写的开源的可视化工具，主要用于大规模指标数据的可视化展示，提供包括折线图，饼图，仪表盘等多种监控数据可视化UI，是网络架构和应用分析中最流行的时序数据可视化工具，支持多种不同的时序数据库数据源。github地址：https://github.com/grafana/grafana。&lt;/p&gt;
@@ -2529,10 +2529,10 @@ Grafana下载地址：https://grafana.com/grafana/download
     
     <item>
       <title>TICK技术栈（三）InfluxDB安装及使用</title>
-      <link>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%89influxdb%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
+      <link>https://xkhm.net/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%89influxdb%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Thu, 07 Nov 2019 12:33:37 +0800</pubDate>
       
-      <guid>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%89influxdb%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://xkhm.net/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%89influxdb%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
       
         <description>&lt;h1 id=&#34;1什么是influxdb&#34;&gt;1.什么是InfluxDB？&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://docs.influxdata.com/influxdb/v1.7/introduction/getting-started/&#34;&gt;InfluxDB&lt;/a&gt;是一个用Go语言开发的时序数据库，用于处理高写入和查询负载，专门为带时间戳的数据编写，对DevOps监控，IoT监控和实时分析等应用场景非常有用。通过自定义配置让InfluxDB保留规定时间内的数据，并自动从系统中删除不在规定时间内的数据，可以节省计算机上的空间。InfluxDB还提供了一种类似于SQL的查询语言来与数据进行交互，并且InfluxDB相比传统关系型数据库更关注数据的实时性和并发插入时的承受能力。github地址：https://github.com/influxdata/influxdb&lt;/p&gt;
@@ -2611,10 +2611,10 @@ InfluxDB下载地址：https://portal.influxdata.com/downloads/        &lt;br&gt
     
     <item>
       <title>TICK技术栈（二）Telegraf安装及使用</title>
-      <link>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%8Ctelegraf%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
+      <link>https://xkhm.net/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%8Ctelegraf%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Tue, 05 Nov 2019 12:33:03 +0800</pubDate>
       
-      <guid>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%8Ctelegraf%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://xkhm.net/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BA%8Ctelegraf%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</guid>
       
         <description>&lt;h1 id=&#34;1什么是telegraf&#34;&gt;1.什么是Telegraf？&lt;/h1&gt;
 &lt;p&gt;Telegraf是一个用Go语言开发的代理程序，可用于收集和报告指标。Telegraf插件直接从其运行的系统中获取各种指标，从第三方API中提取指标，甚至通过StatsD和Kafka消费者服务来监听指标。它还具有输出插件，可以将指标发送到各种其他数据存储，服务和消息队列，包括InfluxDB，Graphite，OpenTSDB，Datadog，Librato，Kafka，MQTT，NSQ等。github开源地址：https://github.com/influxdata/telegraf&lt;/p&gt;
@@ -2649,10 +2649,10 @@ telegraf下载地址：https://portal.influxdata.com/downloads/&lt;br&gt;
     
     <item>
       <title>TICK技术栈（一）TICK技术栈介绍</title>
-      <link>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%80tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BB%8B%E7%BB%8D/</link>
+      <link>https://xkhm.net/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%80tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BB%8B%E7%BB%8D/</link>
       <pubDate>Tue, 22 Oct 2019 12:34:14 +0800</pubDate>
       
-      <guid>https://yukiyukixing.github.io/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%80tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BB%8B%E7%BB%8D/</guid>
+      <guid>https://xkhm.net/post/tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%80tick%E6%8A%80%E6%9C%AF%E6%A0%88%E4%BB%8B%E7%BB%8D/</guid>
       
         <description>&lt;h1 id=&#34;1什么是tick技术栈&#34;&gt;1.什么是TICK技术栈？&lt;/h1&gt;
 &lt;h3 id=&#34;11-简介&#34;&gt;1.1 简介&lt;/h3&gt;
