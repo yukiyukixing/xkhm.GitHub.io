@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>面试 on 星空海绵 - 星空浩瀚 | 海绵吸水</title>
+    <link>https://xkhm.net/tags/%E9%9D%A2%E8%AF%95/</link>
+    <description>Recent content in 面试 on 星空海绵 - 星空浩瀚 | 海绵吸水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>星空海绵</copyright>
+    <lastBuildDate>Sun, 20 Dec 2020 23:48:22 +0800</lastBuildDate><atom:link href="https://xkhm.net/tags/%E9%9D%A2%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>面试题复习</title>
+      <link>https://xkhm.net/post/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%A4%8D%E4%B9%A0/</link>
+      <pubDate>Sun, 20 Dec 2020 23:48:22 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%A4%8D%E4%B9%A0/</guid>
+      <description>1.JS中的变量 （1）变量提升和函数提升 变量提升和函数提升的过程： 创建阶段：JS解释器会找出需要提升的变量和函数，并给他们在内存中开辟好空间</description>
+    </item>
+    
+  </channel>
+</rss>

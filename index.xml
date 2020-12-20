@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Sun, 20 Dec 2020 18:12:21 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 20 Dec 2020 23:48:22 +0800</lastBuildDate>
     
         <atom:link href="https://xkhm.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -75,6 +75,108 @@
 &lt;p&gt;一只小透明的前端开发（待补充）&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
+      
+    </item>
+    
+    <item>
+      <title>面试题复习</title>
+      <link>https://xkhm.net/post/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%A4%8D%E4%B9%A0/</link>
+      <pubDate>Sun, 20 Dec 2020 23:48:22 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%A4%8D%E4%B9%A0/</guid>
+      
+        <description>&lt;h1 id=&#34;1js中的变量&#34;&gt;1.JS中的变量&lt;/h1&gt;
+&lt;h2 id=&#34;1变量提升和函数提升&#34;&gt;（1）变量提升和函数提升&lt;/h2&gt;
+&lt;p&gt;变量提升和函数提升的过程：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;创建阶段：JS解释器会找出需要提升的变量和函数，并给他们在内存中开辟好空间，变量的话会声明并且赋值为undefined，而函数会整个存储在内存中&lt;/li&gt;
+&lt;li&gt;代码执行阶段：就可以使用上面进行提升的变量和函数了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意：let也会提升，但是let存在暂时性死区，所以在声明之前不可使用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;2letvarconst区别&#34;&gt;（2）let，var，const区别&lt;/h2&gt;
+&lt;p&gt;参考这篇文章：&lt;a href=&#34;https://www.cnblogs.com/yukixing/p/11523259.html&#34;&gt;let与var的区别&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;2applycallbind&#34;&gt;2.apply，call，bind&lt;/h1&gt;
+&lt;h2 id=&#34;1applycallbind作用&#34;&gt;（1）apply，call，bind作用&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;改变函数内部的this指向&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2applycallbind区别&#34;&gt;（2）apply，call，bind区别&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;apply接收的是一个数组类型的参数，call和bind接收的是一个参数列表&lt;/li&gt;
+&lt;li&gt;apply和call返回的是一个值结果，而bind返回的是一个函数，需要再次进行调用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;方法&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;语法&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;参数&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;返回值&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;apply&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;func.apply(thisArg, [argsArray])&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;this，数组或类数组对象&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;结果值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;call&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;function.call(thisArg, arg1, arg2, &amp;hellip;)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;this，参数列表&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;结果值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;bind&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;function.bind(thisArg, arg1, arg2, &amp;hellip;)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;this，参数列表&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;函数&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;bind()方法返回的函数没有prototype属性，为什么没有prototype属性呢，因为如果把这个返回的函数做构造函数的话，那就需要将创建对象的this指向这个函数，但是这个函数在bind调用前就将this指向调用对象了，那么创建对象时又将这个this指向创建对象，不就矛盾了吗，所以bind()返回的函数没有prototype属性。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;apply，call，bind用法展示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        let obj = {
+            age: 18,
+            job: &#39;student&#39;
+        }
+        function getInfo(name) {
+            console.log(name); // 小花
+            console.log(this.age); // 18
+            console.log(this.job); // student
+        }
+        // getInfo.apply(obj, [&#39;小花&#39;]);
+        // getInfo.call(obj, &#39;小花&#39;);
+        getInfo.bind(obj, &#39;小花&#39;)();
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;3手写apply&#34;&gt;（3）手写apply()&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;        let obj = {
+            age: 18,
+            job: &#39;student&#39;
+        }
+        function getInfo(name) {
+            console.log(name); // 小花
+            console.log(this.age); // 18
+            console.log(this.job); // student
+        }
+        Function.prototype.myApply = function (context) {
+            context = context || window;
+            context.fn = this;
+            let result;
+            if (arguments[1]) {
+                result = context.fn(...arguments[1]);
+            } else {
+                result = context.fn();
+            }
+            delete context.fn;
+            return result
+        }
+        getInfo.myApply(obj, [&#39;小花&#39;]);
+&lt;/code&gt;&lt;/pre&gt;</description>
       
     </item>
     
