@@ -9,11 +9,11 @@
     <copyright>星空海绵</copyright>
     <lastBuildDate>Sun, 20 Dec 2020 23:48:22 +0800</lastBuildDate><atom:link href="https://xkhm.net/categories/%E9%9D%A2%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>面试题复习</title>
-      <link>https://xkhm.net/post/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%A4%8D%E4%B9%A0/</link>
+      <title>js基础</title>
+      <link>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Sun, 20 Dec 2020 23:48:22 +0800</pubDate>
       
-      <guid>https://xkhm.net/post/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%A4%8D%E4%B9%A0/</guid>
+      <guid>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80/</guid>
       <description>1.JS中的变量 （1）变量提升和函数提升 变量提升和函数提升的过程： 创建阶段：JS解释器会找出需要提升的变量和函数，并给他们在内存中开辟好空间</description>
     </item>
     

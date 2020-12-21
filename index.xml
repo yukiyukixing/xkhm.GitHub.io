@@ -79,11 +79,11 @@
     </item>
     
     <item>
-      <title>面试题复习</title>
-      <link>https://xkhm.net/post/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%A4%8D%E4%B9%A0/</link>
+      <title>js基础</title>
+      <link>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Sun, 20 Dec 2020 23:48:22 +0800</pubDate>
       
-      <guid>https://xkhm.net/post/%E9%9D%A2%E8%AF%95%E9%A2%98%E5%A4%8D%E4%B9%A0/</guid>
+      <guid>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80/</guid>
       
         <description>&lt;h1 id=&#34;1js中的变量&#34;&gt;1.JS中的变量&lt;/h1&gt;
 &lt;h2 id=&#34;1变量提升和函数提升&#34;&gt;（1）变量提升和函数提升&lt;/h2&gt;
@@ -155,28 +155,162 @@
         getInfo.bind(obj, &#39;小花&#39;)();
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;3手写apply&#34;&gt;（3）手写apply()&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;        let obj = {
-            age: 18,
-            job: &#39;student&#39;
+            name: &#39;小王&#39;
         }
-        function getInfo(name) {
-            console.log(name); // 小花
-            console.log(this.age); // 18
-            console.log(this.job); // student
+        function getInfo(job) {
+            console.log(this.name);
+            console.log(job);
         }
+        // getInfo.apply();
         Function.prototype.myApply = function (context) {
             context = context || window;
             context.fn = this;
             let result;
             if (arguments[1]) {
-                result = context.fn(...arguments[1]);
+                if (Array.isArray(arguments[1])) {
+                    result = context.fn(...arguments[1]);
+                } else {
+                    console.error(&#39;Uncaught TypeError: CreateListFromArrayLike called on non-object&#39;);
+                }
+
+            } else {
+                result = context.fn()
+            }
+            delete context.fn;
+            return result;
+        }
+        getInfo.myApply(obj, [&#39;student&#39;]);
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;4手写call&#34;&gt;（4）手写call()&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;        let obj = {
+            age: 18
+        }
+        function getInfo(job, name) {
+            console.log(job);
+            console.log(name);
+            console.log(this.age);
+        }
+        // getInfo.call(obj, &#39;student&#39;);
+        Function.prototype.myCall = function (context) {
+            context = context || window;
+            context.fn = this;
+            let result;
+            if (arguments[1]) {
+                result = context.fn(...[...arguments].slice(1));
             } else {
                 result = context.fn();
             }
             delete context.fn;
-            return result
+            return result;
         }
-        getInfo.myApply(obj, [&#39;小花&#39;]);
-&lt;/code&gt;&lt;/pre&gt;</description>
+        getInfo.myCall(obj, &#39;student&#39;, &#39;小王&#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;5手写bind&#34;&gt;(5)手写bind()&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;        let obj = {
+            age: 18
+        }
+        function getInfo(job, name) {
+            console.log(job);
+            console.log(name);
+            console.log(this.age);
+        }
+        Function.prototype.myBind = function (context) {
+            if (typeof this !== &#39;function&#39;) {
+                throw new Error(&#39;调用myBind必须是函数&#39;)
+            }
+            let _this = this;
+            let args = [...arguments].slice(1);
+            return function F() {
+                return _this.apply(context, args.concat(...arguments))
+            };
+        }
+        getInfo.myBind(obj, &#39;student&#39;, &#39;小绵&#39;)();
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;3原型链&#34;&gt;3.原型链&lt;/h1&gt;
+&lt;h2 id=&#34;1对象和函数的原型&#34;&gt;（1）对象和函数的原型&lt;/h2&gt;
+&lt;p&gt;每个对象都有一个原型，但是原型没有提供可以直接访问的属性，所以浏览器实现了一个__proto__属性，可以直接访问到对象的原型，每个函数都有一个__proto__和prototype属性，当函数当对象使用时，原型是__proto__，当函数作为构造函数使用时，原型是prototype。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;当函数作为对象使用时&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;        function Demo() { }
+        Demo.__proto__.show = function () {
+            console.log(&amp;quot;__proto__show&amp;quot;);
+        }
+        Demo.prototype.read = function () {
+            console.log(&amp;quot;prototype-read&amp;quot;);
+        }
+        Demo.show();  // __proto__show
+        Demo.read(); // Demo.read is not a function
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;当函数作为构造函数使用时&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;        function Demo() { }
+        let obj = new Demo();
+        Demo.prototype.read = function () {
+            console.log(&amp;quot;read&amp;quot;);
+        }
+        Demo.__proto__.show = function () {
+            console.log(&amp;quot;show&amp;quot;);
+        }
+        obj.read(); // read
+        obj.show(); // obj.show is not a function
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;2原型链&#34;&gt;（2）原型链&lt;/h2&gt;
+&lt;p&gt;对象可以通过__proto__属性找到不属于该对象的属性，__proto__将对象连接起来组成了原型链。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        function A() { }
+        function B() { }
+        function C() { }
+        C.prototype.show = function () {
+            console.log(&#39;C构造函数&#39;);
+        }
+        B.prototype = new C();
+        A.prototype = new B();
+        let a = new A();
+        a.show(); // C构造函数
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;4如何判断对象类型&#34;&gt;4.如何判断对象类型&lt;/h1&gt;
+&lt;h2 id=&#34;1通过-objectprototypetostringcall&#34;&gt;（1）通过 Object.prototype.toString.call()&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;        let obj = {
+            age: 20
+        }
+        let arr = [15, 20, 25];
+        console.log(Object.prototype.toString.call(obj)); // [object Object]
+        console.log(Object.prototype.toString.call(arr)); // [object Array]
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;2通过instanceof&#34;&gt;（2）通过instanceof&lt;/h2&gt;
+&lt;p&gt;instanceof检测构造函数的prototype属性是不是出现在某个对象的原型链上&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        function A() { };
+        function B() { };
+        const b = new B();
+        A.prototype = b;
+        const a = new A();
+        console.dir(a instanceof A); // true
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;5箭头函数&#34;&gt;5.箭头函数&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;        var age = 10;
+        let obj = {
+            age: 20,
+            say: () =&amp;gt; {
+                return this.age;
+            }
+        }
+        console.log(obj.say()); // 10
+        let obj1 = {
+            age: 30
+        }
+        obj1 = Object.create(obj);
+        obj1.age = 30;
+        console.log(obj1.say()); // 10
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;通过上面的代码我们会发现箭头函数say中的this并不会因为调用对象的改变而改变，而是一直指向全局对象window的。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        function getName() {
+            let say = () =&amp;gt; {
+                console.log(this.age);
+            }
+            say();
+        }
+        let obj = {
+            age: 20,
+            getName: getName
+        }
+        obj.getName(); // 20
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;箭头函数没有自己的this，它只会从自己作用域链的上层继承this。&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;箭头函数中不能使用arguments和super以及new.target，同时箭头函数也不能作为构造函数。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
       
     </item>
     
