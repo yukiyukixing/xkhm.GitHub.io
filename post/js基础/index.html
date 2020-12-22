@@ -68,7 +68,7 @@
 <meta itemprop="description" content="1.JS中的变量 （1）变量提升和函数提升 变量提升和函数提升的过程： 创建阶段：JS解释器会找出需要提升的变量和函数，并给他们在内存中开辟好空间">
 <meta itemprop="datePublished" content="2020-12-20T23:48:22+08:00" />
 <meta itemprop="dateModified" content="2020-12-20T23:48:22+08:00" />
-<meta itemprop="wordCount" content="1582">
+<meta itemprop="wordCount" content="2021">
 
 
 
@@ -415,6 +415,26 @@
     <li><a href="#1通过-objectprototypetostringcall">（1）通过 Object.prototype.toString.call()</a></li>
     <li><a href="#2通过instanceof">（2）通过instanceof</a></li>
   </ul>
+
+  <ul>
+    <li><a href="#1谁调用函数函数里得this就指向谁">（1）谁调用函数，函数里得this就指向谁</a></li>
+    <li><a href="#2new构造函数创建对象时构造函数内部的this指向创建的对象">（2）new构造函数创建对象时，构造函数内部的this指向创建的对象</a></li>
+    <li><a href="#3可以通过applycallbind来改变函数内部的this指向">（3）可以通过apply，call，bind来改变函数内部的this指向</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1async和await对比promise">（1）async和await对比Promise</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1generator是es6中新增的语法和promise一样都可以用来进行异步编程">(1)generator是ES6中新增的语法，和Promise一样，都可以用来进行异步编程</a></li>
+    <li><a href="#2generator原理手写generator">（2）generator原理，手写generator</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1promise是es6中新增的语法用来解决回调地狱问题">（1）Promise是ES6中新增的语法，用来解决<strong>回调地狱</strong>问题</a></li>
+    <li><a href="#2手写promise">（2）手写Promise</a></li>
+  </ul>
 </nav>
   </div>
 </div>
@@ -646,7 +666,58 @@
 <blockquote>
 <p>箭头函数中不能使用arguments和super以及new.target，同时箭头函数也不能作为构造函数。</p>
 </blockquote>
+<h1 id="6this">6.this</h1>
+<h2 id="1谁调用函数函数里得this就指向谁">（1）谁调用函数，函数里得this就指向谁</h2>
+<pre><code>        function getAge() {
+            console.log(this.age)
+        }
+        var age = 1
+        getAge()
 
+        var obj = {
+            age: 2,
+            getAge: getAge
+        }
+        obj.getAge()
+</code></pre><h2 id="2new构造函数创建对象时构造函数内部的this指向创建的对象">（2）new构造函数创建对象时，构造函数内部的this指向创建的对象</h2>
+<h2 id="3可以通过applycallbind来改变函数内部的this指向">（3）可以通过apply，call，bind来改变函数内部的this指向</h2>
+<h1 id="7async和await">7.async和await</h1>
+<h2 id="1async和await对比promise">（1）async和await对比Promise</h2>
+<p>async和await相比Promise，优势在于处理then调用链，代码更清晰，缺点是乱用await会导致性能问题，因为await会阻塞代码。</p>
+<pre><code>        var a = 0;
+        var b = async () =&gt; {
+            a = a + await 10;
+            console.log('2', a);
+            a = (await 10) + a;
+            console.log('3', a);
+        }
+        b();
+        a++;
+        console.log('1', a);
+</code></pre><p><strong>待深入</strong></p>
+<h1 id="8generator">8.generator</h1>
+<h2 id="1generator是es6中新增的语法和promise一样都可以用来进行异步编程">(1)generator是ES6中新增的语法，和Promise一样，都可以用来进行异步编程</h2>
+<pre><code>        function* test() {
+            let a = 1 + 2;
+            yield 2;
+            yield 3;
+        }
+        let b = test();
+        console.log(b.next());
+        console.log(b.next());
+        console.log(b.next());
+</code></pre><h2 id="2generator原理手写generator">（2）generator原理，手写generator</h2>
+<h1 id="9promise">9.Promise</h1>
+<h2 id="1promise是es6中新增的语法用来解决回调地狱问题">（1）Promise是ES6中新增的语法，用来解决<strong>回调地狱</strong>问题</h2>
+<ul>
+<li>什么是回调地狱？</li>
+</ul>
+<h2 id="2手写promise">（2）手写Promise</h2>
+<h1 id="10--和--的区别">10. == 和 === 的区别</h1>
+<p>==只需要值相等即可，而 === 需要值和类型都相等</p>
+<pre><code>        console.log([] == ![]); // true
+        console.log(NaN !== NaN); // true
+</code></pre>
     </div>
 
     

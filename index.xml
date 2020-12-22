@@ -310,7 +310,58 @@
 &lt;blockquote&gt;
 &lt;p&gt;箭头函数中不能使用arguments和super以及new.target，同时箭头函数也不能作为构造函数。&lt;/p&gt;
 &lt;/blockquote&gt;
-</description>
+&lt;h1 id=&#34;6this&#34;&gt;6.this&lt;/h1&gt;
+&lt;h2 id=&#34;1谁调用函数函数里得this就指向谁&#34;&gt;（1）谁调用函数，函数里得this就指向谁&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;        function getAge() {
+            console.log(this.age)
+        }
+        var age = 1
+        getAge()
+
+        var obj = {
+            age: 2,
+            getAge: getAge
+        }
+        obj.getAge()
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;2new构造函数创建对象时构造函数内部的this指向创建的对象&#34;&gt;（2）new构造函数创建对象时，构造函数内部的this指向创建的对象&lt;/h2&gt;
+&lt;h2 id=&#34;3可以通过applycallbind来改变函数内部的this指向&#34;&gt;（3）可以通过apply，call，bind来改变函数内部的this指向&lt;/h2&gt;
+&lt;h1 id=&#34;7async和await&#34;&gt;7.async和await&lt;/h1&gt;
+&lt;h2 id=&#34;1async和await对比promise&#34;&gt;（1）async和await对比Promise&lt;/h2&gt;
+&lt;p&gt;async和await相比Promise，优势在于处理then调用链，代码更清晰，缺点是乱用await会导致性能问题，因为await会阻塞代码。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        var a = 0;
+        var b = async () =&amp;gt; {
+            a = a + await 10;
+            console.log(&#39;2&#39;, a);
+            a = (await 10) + a;
+            console.log(&#39;3&#39;, a);
+        }
+        b();
+        a++;
+        console.log(&#39;1&#39;, a);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;待深入&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;8generator&#34;&gt;8.generator&lt;/h1&gt;
+&lt;h2 id=&#34;1generator是es6中新增的语法和promise一样都可以用来进行异步编程&#34;&gt;(1)generator是ES6中新增的语法，和Promise一样，都可以用来进行异步编程&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;        function* test() {
+            let a = 1 + 2;
+            yield 2;
+            yield 3;
+        }
+        let b = test();
+        console.log(b.next());
+        console.log(b.next());
+        console.log(b.next());
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;2generator原理手写generator&#34;&gt;（2）generator原理，手写generator&lt;/h2&gt;
+&lt;h1 id=&#34;9promise&#34;&gt;9.Promise&lt;/h1&gt;
+&lt;h2 id=&#34;1promise是es6中新增的语法用来解决回调地狱问题&#34;&gt;（1）Promise是ES6中新增的语法，用来解决&lt;strong&gt;回调地狱&lt;/strong&gt;问题&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;什么是回调地狱？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2手写promise&#34;&gt;（2）手写Promise&lt;/h2&gt;
+&lt;h1 id=&#34;10--和--的区别&#34;&gt;10. == 和 === 的区别&lt;/h1&gt;
+&lt;p&gt;==只需要值相等即可，而 === 需要值和类型都相等&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        console.log([] == ![]); // true
+        console.log(NaN !== NaN); // true
+&lt;/code&gt;&lt;/pre&gt;</description>
       
     </item>
     
