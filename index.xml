@@ -97,6 +97,7 @@
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;2letvarconst区别&#34;&gt;（2）let，var，const区别&lt;/h2&gt;
 &lt;p&gt;参考这篇文章：&lt;a href=&#34;https://www.cnblogs.com/yukixing/p/11523259.html&#34;&gt;let与var的区别&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;let定义的变量不会挂载到window对象上，而是形成一个块作用域，而var定义的变量会挂在到window上&lt;/p&gt;
 &lt;h1 id=&#34;2applycallbind&#34;&gt;2.apply，call，bind&lt;/h1&gt;
 &lt;h2 id=&#34;1applycallbind作用&#34;&gt;（1）apply，call，bind作用&lt;/h2&gt;
 &lt;ul&gt;
@@ -153,6 +154,15 @@
         // getInfo.apply(obj, [&#39;小花&#39;]);
         // getInfo.call(obj, &#39;小花&#39;);
         getInfo.bind(obj, &#39;小花&#39;)();
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;        let obj = {
+            age: 18
+        }
+        function getInfo(job, height) {
+            console.log(job);
+            console.log(height);
+            console.log(this.age);
+        }
+        getInfo.bind(obj, &#39;student&#39;)(173);
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;3手写apply&#34;&gt;（3）手写apply()&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;        let obj = {
             name: &#39;小王&#39;
@@ -203,26 +213,111 @@
             return result;
         }
         getInfo.myCall(obj, &#39;student&#39;, &#39;小王&#39;);
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;5手写bind&#34;&gt;(5)手写bind()&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;5bind&#34;&gt;(5)bind()&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;bind()的使用&lt;/li&gt;
+&lt;/ul&gt;
 &lt;pre&gt;&lt;code&gt;        let obj = {
             age: 18
         }
-        function getInfo(job, name) {
+        function getInfo(job, height) {
             console.log(job);
-            console.log(name);
+            console.log(height);
             console.log(this.age);
         }
-        Function.prototype.myBind = function (context) {
-            if (typeof this !== &#39;function&#39;) {
-                throw new Error(&#39;调用myBind必须是函数&#39;)
-            }
-            let _this = this;
-            let args = [...arguments].slice(1);
-            return function F() {
-                return _this.apply(context, args.concat(...arguments))
-            };
+        getInfo.bind(obj, &#39;student&#39;)(173);
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;bind()返回的函数用new操作符调用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;        function Point(x, y) {
+            this.x = x;
+            this.y = y;
         }
-        getInfo.myBind(obj, &#39;student&#39;, &#39;小绵&#39;)();
+        Point.prototype.toString = function () {
+            return this.x + &#39;,&#39; + this.y;
+        }
+        let p = new Point(1, 2);
+        p.toString();
+        let emptyObj = {};
+        let YAxisPoint = Point.bind(emptyObj, 0);
+        let axisPoint = new YAxisPoint(5);
+        axisPoint.toString();
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Polyfill中bind()的实现&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;第一种😎😎：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        if (!Function.prototype.bind) (function () {
+            var slice = Array.prototype.slice;
+            Function.prototype.bind = function () {
+                var thatFunc = this, thatArg = arguments[0];
+                var args = slice.call(arguments, 1);
+                if (typeof thatFunc !== &#39;function&#39;) {
+                    throw new TypeError(&#39;Function.prototype.bind-&#39; +
+                        &#39;what is trying to be bound is not callable&#39;);
+                }
+                return function () {
+                    var funcArgs = args.concat(slice.call(arguments));
+                    return thatFunc.apply(thatArg, funcArgs);
+                }
+            }
+        })()	
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;仿写这种实现bind():&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        var obj = {
+            age: 25
+        }
+        function getInfo(name, job) {
+            console.log(name);
+            console.log(job);
+            console.log(this.age);
+        }
+        // getInfo.bind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;);
+        Function.prototype.myBind = function () {
+            if (typeof this !== &#39;function&#39;) {
+                throw new TypeError(&#39;调用者必须是函数&#39;)
+            }
+            var arg = arguments[0];
+            var slice = Array.prototype.slice
+            var args = slice.call(arguments, 1);
+            var _that = this;
+            return function () {
+                return _that.apply(arg, args.concat(slice.call(arguments)))
+            }
+        }
+        getInfo.myBind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面定义变量为什么要用var呢，因为用的是ES5，如果用let，都有ES6了，那我就直接用bind()了，而不是手写一个了。&lt;/p&gt;
+&lt;p&gt;我们会发现使用上面这种手写bind()不支持new调用构造函数创建新的对象&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        function Point(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+        Point.prototype.toString = function () {
+            console.log(&#39;toString方法&#39;);
+        }
+        Function.prototype.myBind = function () {
+            if (typeof this !== &#39;function&#39;) {
+                throw new TypeError(&#39;调用者必须是函数&#39;)
+            }
+            var arg = arguments[0];
+            var slice = Array.prototype.slice
+            var args = slice.call(arguments, 1);
+            var _that = this;
+            return function () {
+                return _that.apply(arg, args.concat(slice.call(arguments)))
+            }
+        }
+        let YAxisPoint = Point.myBind({}, 0);
+        let axisPoint = new YAxisPoint(5);
+        console.dir(axisPoint);
+        axisPoint.toString();
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;看下上面这个代码的axisPoint是啥&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d4e2cae6d63c4622a787e1734edb84fb~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;我们再看如果把上面代码中的myBind换成bind&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/14e226d3266743b79b34f21bb86c1cce~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;也就是说上面这种写法不支持new调用构造函数创建新的对象，所以说有了下面第二种方法。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;第二种😯😯：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;3原型链&#34;&gt;3.原型链&lt;/h1&gt;
 &lt;h2 id=&#34;1对象和函数的原型&#34;&gt;（1）对象和函数的原型&lt;/h2&gt;
 &lt;p&gt;每个对象都有一个原型，但是原型没有提供可以直接访问的属性，所以浏览器实现了一个__proto__属性，可以直接访问到对象的原型，每个函数都有一个__proto__和prototype属性，当函数当对象使用时，原型是__proto__，当函数作为构造函数使用时，原型是prototype。&lt;/p&gt;
@@ -359,9 +454,56 @@
 &lt;h2 id=&#34;2手写promise&#34;&gt;（2）手写Promise&lt;/h2&gt;
 &lt;h1 id=&#34;10--和--的区别&#34;&gt;10. == 和 === 的区别&lt;/h1&gt;
 &lt;p&gt;==只需要值相等即可，而 === 需要值和类型都相等&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;        console.log([] == ![]); // true
-        console.log(NaN !== NaN); // true
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;pre&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;11-垃圾回收&#34;&gt;11. 垃圾回收&lt;/h1&gt;
+&lt;p&gt;主要的两种标记策略：&lt;strong&gt;标记清理&lt;/strong&gt; 和 &lt;strong&gt;引用计数&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;1标记清理&#34;&gt;（1）标记清理&lt;/h2&gt;
+&lt;p&gt;JS最常用的垃圾回收策略就是标记清理。&lt;/p&gt;
+&lt;p&gt;标记方法可以有多种：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可以当变量进入上下文中，反转某一位&lt;/li&gt;
+&lt;li&gt;也可以维护“在上下文中”和“不在上下文中”这样的两个变量列表，可以把变量从一个列表移到另一个列表&lt;/li&gt;
+&lt;li&gt;其它&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;垃圾回收程序运行时，会标记内存中存储的所有变量，然后，它会将所有上下文中的变量，以及被在上下文中的变量引用的变量的标记去掉。在此之后再被加上标记的变量就是有待删除的了，原因是任何在上下文中的变量都访问不到它们了。随后垃圾回收程序做一次内存清理，销毁带标记的所有值并收回它们的内存。&lt;/p&gt;
+&lt;h2 id=&#34;2引用计数&#34;&gt;（2）引用计数&lt;/h2&gt;
+&lt;p&gt;另一种没那么常用的策略就是引用计数。&lt;/p&gt;
+&lt;p&gt;引用计数存在解决不了循环引用的问题&lt;/p&gt;
+&lt;h1 id=&#34;12闭包&#34;&gt;12.闭包&lt;/h1&gt;
+&lt;h2 id=&#34;1定义&#34;&gt;（1）定义&lt;/h2&gt;
+&lt;p&gt;函数A返回函数B，函数B中使用了函数A中的变量，函数B就被称为闭包。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        function A() {
+            let age = 10;
+            return function B() {
+                console.log(age);
+            }
+        }
+        A()();
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面这个例子age变量是存储在堆上的，因为JS的引擎可以分析出哪些变量需要存储在堆上，哪些变量需要存储在栈上。&lt;/p&gt;
+&lt;p&gt;通过闭包解决变量作用域的问题，例如：解决var没有块作用域的问题&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        for (var i = 0; i &amp;lt; 4; i++) {
+            (function (j) {
+                setTimeout(function () {
+                    console.log(j);
+                })
+            }
+            )(i)
+        }
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;2闭包的内存泄漏问题&#34;&gt;（2）闭包的内存泄漏问题&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;使用JS闭包很容易在不知不觉间造成内存泄漏问题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;        let outer = function () {
+            let name = &#39;Jake&#39;;
+            return function () {
+                return name;
+            }
+        }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面这段代码调用outer()会导致分配给name的内存被泄漏。以上代码执行后创建了一个内部闭包，只要返回的函数存在就不能清理name，因为闭包一直在引用着它，假如name的内容很大，那可能就是个大问题。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果不是某些特定任务需要使用闭包，在其它函数中创建函数是不明智的，因为闭包在处理速度和内存消耗方面对脚本性能具有负面影响。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
       
     </item>
     
