@@ -68,7 +68,7 @@
 <meta itemprop="description" content="1.JS中的变量 （1）变量提升和函数提升 变量提升和函数提升的过程： 创建阶段：JS解释器会找出需要提升的变量和函数，并给他们在内存中开辟好空间">
 <meta itemprop="datePublished" content="2020-12-20T23:48:22+08:00" />
 <meta itemprop="dateModified" content="2020-12-20T23:48:22+08:00" />
-<meta itemprop="wordCount" content="3297">
+<meta itemprop="wordCount" content="4332">
 
 
 
@@ -444,6 +444,22 @@
   <ul>
     <li><a href="#1定义">（1）定义</a></li>
     <li><a href="#2闭包的内存泄漏问题">（2）闭包的内存泄漏问题</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1为什么js是单线程的">（1）为什么JS是单线程的</a></li>
+    <li><a href="#1什么是eventloop">（1）什么是Eventloop</a></li>
+    <li><a href="#2微任务和宏任务">（2）微任务和宏任务</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1settimeout倒计时误差">（1）setTimeout倒计时误差</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1使用-es10-中的-flat">（1）使用 <strong>ES10</strong> 中的 <strong>flat()</strong></a></li>
+    <li><a href="#2递归">（2）递归</a></li>
+    <li><a href="#3">（3）</a></li>
   </ul>
 </nav>
   </div>
@@ -869,6 +885,82 @@
 <blockquote>
 <p>如果不是某些特定任务需要使用闭包，在其它函数中创建函数是不明智的，因为闭包在处理速度和内存消耗方面对脚本性能具有负面影响。</p>
 </blockquote>
+<h1 id="13基本类型和引用类型">13.基本类型和引用类型</h1>
+<p>基础类型存储在栈上，引用类型的地址存储在栈上，内容存储在堆上</p>
+<h1 id="14eventloop">14.Eventloop</h1>
+<h2 id="1为什么js是单线程的">（1）为什么JS是单线程的</h2>
+<p>作为浏览器脚本语言，JavaScript的主要用途是与用户互动，以及操作DOM。这就决定了它只能是单线程，否则的话就会出现很多复杂的同步问题。假设JS有两个线程，一个线程往某个dom节点上添加内容，一个线程删除这个节点，那么应该以哪个线程为主呢，所以JS是单线程的就不会出现这种情况。</p>
+<p>JS并发事件模型</p>
+<h2 id="1什么是eventloop">（1）什么是Eventloop</h2>
+<p>主线程从&quot;任务队列&quot;中读取事件，这个过程是循环不断的，所以整个的这种运行机制又称为Event Loop（事件循环）</p>
+<h2 id="2微任务和宏任务">（2）微任务和宏任务</h2>
+<h1 id="15回调函数">15.回调函数</h1>
+<h1 id="16settimeout">16.setTimeout</h1>
+<h2 id="1settimeout倒计时误差">（1）setTimeout倒计时误差</h2>
+<p>为什么会出现这个问题呢，从刚才上面的JS事件循环机制我们就可以了解到，只有等同步任务全部执行完了才会执行异步任务，而setTimeout是一个宏任务，那么这个问题的实际应用在哪呢，电商的秒杀倒计时，那个肯定要准确，不同用户可能因为手机的性能加载页面的时长不一样，但是秒杀时间肯定得一样，所以说我们就需要写一个相对准确的倒计时了。</p>
+<pre><code>setTimeout(() =&gt; {}, 3000);
+</code></pre><p>有一行上面这样的代码，这不是说页面打开3秒后立即执行回调函数，而是页面打开后最快3秒执行回调函数。</p>
+<pre><code>        console.log(Date());
+        setTimeout(() =&gt; {
+            console.log('我是定时器！');
+            console.log(Date());
+        }, 3000);
+        for (let i = 0; i &lt; 10000000000; i++) { }
+</code></pre><p>如果你电脑性能好的话可以跑下上面这个例子，你会发现间隔时间并不是3秒</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f09409fa20dd411a9d5e0652354caca5~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
+<p>看我这打印的结果，中间差了14秒，这是为什么呢，因为执行前面的循环花费了很长的时间，setTimeout必须等循环执行完才会去执行自己的回调函数，所以这时候这个倒计时就不准确了，就需要我们自己写一个倒计时</p>
+<pre><code>        let period = 60 * 1000 * 60 * 2,
+            startTime = new Date().getTime(),
+            count = 0,
+            end = new Date().getTime() + period,
+            interval = 1000,
+            currentInterval = interval;
+        function loop() {
+            count++;
+            let offset = new Date().getTime() - (startTime + count * interval),
+                diff = end - new Date().getTime(),
+                h = Math.floor(diff / (60 * 1000 * 60)),
+                hdiff = diff % (60 * 1000 * 60),
+                m = Math.floor(hdiff / (60 * 1000)),
+                mdiff = hdiff % (60 * 1000),
+                s = mdiff / (1000),
+                sCeil = Math.ceil(s),
+                sFloor = Math.floor(s),
+                currentInterval = interval - offset;
+            console.log('时：' + h, '分：' + m, '毫秒：' + s,
+                '秒向上取整：' + sCeil, '代码执行时间：' + offset,
+                '下次循环间隔' + currentInterval)
+            // 打印 时 分 秒 代码执行时间 下次循环间隔
+            setTimeout(loop, currentInterval)
+        }
+        loop();
+</code></pre><h1 id="17防抖节流">17.防抖节流</h1>
+<h1 id="18数组降维">18.数组降维</h1>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/flat">MDN参考</a></p>
+<h2 id="1使用-es10-中的-flat">（1）使用 <strong>ES10</strong> 中的 <strong>flat()</strong></h2>
+<pre><code>        let arr = [50, 20, [50, 10, [1, [5, [20]]]]],
+            arr1 = arr.flat(Infinity);
+        console.log(arr); // [50, 20, Array(3)]
+        console.log(arr1); //  [50, 20, 50, 10, 1, 5, 20]
+</code></pre><h2 id="2递归">（2）递归</h2>
+<pre><code>        let arr = [50, 20, [50, 10, [1, [5, [20]]]]],
+            resArray = [];
+        function flatten(array) {
+            if (Array.isArray(array) === false) {
+                throw new TypeError('参数类型错误');
+            }
+            array.forEach(item =&gt; {
+                if (Array.isArray(item)) {
+                    flatten(item);
+                } else {
+                    resArray.push(item)
+                }
+            })
+            return resArray;
+        }
+        console.log(arr); // [50, 20, Array(3)]
+        console.log(flatten(arr)); // [50, 20, 50, 10, 1, 5, 20]
+</code></pre><h2 id="3">（3）</h2>
 
     </div>
 

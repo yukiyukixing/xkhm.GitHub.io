@@ -503,6 +503,82 @@
 &lt;blockquote&gt;
 &lt;p&gt;如果不是某些特定任务需要使用闭包，在其它函数中创建函数是不明智的，因为闭包在处理速度和内存消耗方面对脚本性能具有负面影响。&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;h1 id=&#34;13基本类型和引用类型&#34;&gt;13.基本类型和引用类型&lt;/h1&gt;
+&lt;p&gt;基础类型存储在栈上，引用类型的地址存储在栈上，内容存储在堆上&lt;/p&gt;
+&lt;h1 id=&#34;14eventloop&#34;&gt;14.Eventloop&lt;/h1&gt;
+&lt;h2 id=&#34;1为什么js是单线程的&#34;&gt;（1）为什么JS是单线程的&lt;/h2&gt;
+&lt;p&gt;作为浏览器脚本语言，JavaScript的主要用途是与用户互动，以及操作DOM。这就决定了它只能是单线程，否则的话就会出现很多复杂的同步问题。假设JS有两个线程，一个线程往某个dom节点上添加内容，一个线程删除这个节点，那么应该以哪个线程为主呢，所以JS是单线程的就不会出现这种情况。&lt;/p&gt;
+&lt;p&gt;JS并发事件模型&lt;/p&gt;
+&lt;h2 id=&#34;1什么是eventloop&#34;&gt;（1）什么是Eventloop&lt;/h2&gt;
+&lt;p&gt;主线程从&amp;quot;任务队列&amp;quot;中读取事件，这个过程是循环不断的，所以整个的这种运行机制又称为Event Loop（事件循环）&lt;/p&gt;
+&lt;h2 id=&#34;2微任务和宏任务&#34;&gt;（2）微任务和宏任务&lt;/h2&gt;
+&lt;h1 id=&#34;15回调函数&#34;&gt;15.回调函数&lt;/h1&gt;
+&lt;h1 id=&#34;16settimeout&#34;&gt;16.setTimeout&lt;/h1&gt;
+&lt;h2 id=&#34;1settimeout倒计时误差&#34;&gt;（1）setTimeout倒计时误差&lt;/h2&gt;
+&lt;p&gt;为什么会出现这个问题呢，从刚才上面的JS事件循环机制我们就可以了解到，只有等同步任务全部执行完了才会执行异步任务，而setTimeout是一个宏任务，那么这个问题的实际应用在哪呢，电商的秒杀倒计时，那个肯定要准确，不同用户可能因为手机的性能加载页面的时长不一样，但是秒杀时间肯定得一样，所以说我们就需要写一个相对准确的倒计时了。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;setTimeout(() =&amp;gt; {}, 3000);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;有一行上面这样的代码，这不是说页面打开3秒后立即执行回调函数，而是页面打开后最快3秒执行回调函数。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        console.log(Date());
+        setTimeout(() =&amp;gt; {
+            console.log(&#39;我是定时器！&#39;);
+            console.log(Date());
+        }, 3000);
+        for (let i = 0; i &amp;lt; 10000000000; i++) { }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果你电脑性能好的话可以跑下上面这个例子，你会发现间隔时间并不是3秒&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f09409fa20dd411a9d5e0652354caca5~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;看我这打印的结果，中间差了14秒，这是为什么呢，因为执行前面的循环花费了很长的时间，setTimeout必须等循环执行完才会去执行自己的回调函数，所以这时候这个倒计时就不准确了，就需要我们自己写一个倒计时&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        let period = 60 * 1000 * 60 * 2,
+            startTime = new Date().getTime(),
+            count = 0,
+            end = new Date().getTime() + period,
+            interval = 1000,
+            currentInterval = interval;
+        function loop() {
+            count++;
+            let offset = new Date().getTime() - (startTime + count * interval),
+                diff = end - new Date().getTime(),
+                h = Math.floor(diff / (60 * 1000 * 60)),
+                hdiff = diff % (60 * 1000 * 60),
+                m = Math.floor(hdiff / (60 * 1000)),
+                mdiff = hdiff % (60 * 1000),
+                s = mdiff / (1000),
+                sCeil = Math.ceil(s),
+                sFloor = Math.floor(s),
+                currentInterval = interval - offset;
+            console.log(&#39;时：&#39; + h, &#39;分：&#39; + m, &#39;毫秒：&#39; + s,
+                &#39;秒向上取整：&#39; + sCeil, &#39;代码执行时间：&#39; + offset,
+                &#39;下次循环间隔&#39; + currentInterval)
+            // 打印 时 分 秒 代码执行时间 下次循环间隔
+            setTimeout(loop, currentInterval)
+        }
+        loop();
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;17防抖节流&#34;&gt;17.防抖节流&lt;/h1&gt;
+&lt;h1 id=&#34;18数组降维&#34;&gt;18.数组降维&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/flat&#34;&gt;MDN参考&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;1使用-es10-中的-flat&#34;&gt;（1）使用 &lt;strong&gt;ES10&lt;/strong&gt; 中的 &lt;strong&gt;flat()&lt;/strong&gt;&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;        let arr = [50, 20, [50, 10, [1, [5, [20]]]]],
+            arr1 = arr.flat(Infinity);
+        console.log(arr); // [50, 20, Array(3)]
+        console.log(arr1); //  [50, 20, 50, 10, 1, 5, 20]
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;2递归&#34;&gt;（2）递归&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;        let arr = [50, 20, [50, 10, [1, [5, [20]]]]],
+            resArray = [];
+        function flatten(array) {
+            if (Array.isArray(array) === false) {
+                throw new TypeError(&#39;参数类型错误&#39;);
+            }
+            array.forEach(item =&amp;gt; {
+                if (Array.isArray(item)) {
+                    flatten(item);
+                } else {
+                    resArray.push(item)
+                }
+            })
+            return resArray;
+        }
+        console.log(arr); // [50, 20, Array(3)]
+        console.log(flatten(arr)); // [50, 20, 50, 10, 1, 5, 20]
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;3&#34;&gt;（3）&lt;/h2&gt;
 </description>
       
     </item>
