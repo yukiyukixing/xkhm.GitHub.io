@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vue on 星空海绵 - 星空浩瀚 | 海绵吸水</title>
+    <link>https://xkhm.net/categories/vue/</link>
+    <description>Recent content in Vue on 星空海绵 - 星空浩瀚 | 海绵吸水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>星空海绵</copyright>
+    <lastBuildDate>Thu, 24 Dec 2020 22:16:35 +0800</lastBuildDate><atom:link href="https://xkhm.net/categories/vue/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vue从入门到出门</title>
+      <link>https://xkhm.net/post/vue%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%87%BA%E9%97%A8/</link>
+      <pubDate>Thu, 24 Dec 2020 22:16:35 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/vue%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%87%BA%E9%97%A8/</guid>
+      <description>前言：人家都开始上vue3.0了，我还在重学vue2.0，啊这🤡🤡 提醒：个人学习笔记，适合随手翻阅，精读需考量。 1.手摸手（左手摸右手）搭建</description>
+    </item>
+    
+  </channel>
+</rss>

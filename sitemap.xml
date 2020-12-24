@@ -38,7 +38,49 @@
   
   <url>
     <loc>https://xkhm.net/categories/</loc>
-    <lastmod>2020-12-20T23:48:22+08:00</lastmod>
+    <lastmod>2020-12-24T22:16:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/post/</loc>
+    <lastmod>2020-12-24T22:16:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/tags/</loc>
+    <lastmod>2020-12-24T22:16:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/tags/vue/</loc>
+    <lastmod>2020-12-24T22:16:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/categories/vue/</loc>
+    <lastmod>2020-12-24T22:16:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/post/vue%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%87%BA%E9%97%A8/</loc>
+    <lastmod>2020-12-24T22:16:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/</loc>
+    <lastmod>2020-12-24T22:16:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -52,27 +94,6 @@
   
   <url>
     <loc>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2020-12-20T23:48:22+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xkhm.net/post/</loc>
-    <lastmod>2020-12-20T23:48:22+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xkhm.net/tags/</loc>
-    <lastmod>2020-12-20T23:48:22+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xkhm.net/</loc>
     <lastmod>2020-12-20T23:48:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

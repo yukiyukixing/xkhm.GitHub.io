@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Sun, 20 Dec 2020 23:48:22 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 24 Dec 2020 22:16:35 +0800</lastBuildDate>
     
         <atom:link href="https://xkhm.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -74,6 +74,68 @@
         <description>&lt;blockquote&gt;
 &lt;p&gt;一只小透明的前端开发（待补充）&lt;/p&gt;
 &lt;/blockquote&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Vue从入门到出门</title>
+      <link>https://xkhm.net/post/vue%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%87%BA%E9%97%A8/</link>
+      <pubDate>Thu, 24 Dec 2020 22:16:35 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/vue%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%87%BA%E9%97%A8/</guid>
+      
+        <description>&lt;blockquote&gt;
+&lt;p&gt;前言：人家都开始上vue3.0了，我还在重学vue2.0，啊这🤡🤡&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;提醒：个人学习笔记，适合随手翻阅，精读需考量。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;1手摸手左手摸右手搭建一个vue的工程基于vue20&#34;&gt;1.手摸手（左手摸右手）搭建一个vue的工程，基于vue2.0&lt;/h1&gt;
+&lt;p&gt;🔞🔞🔞🔞🔞&lt;/p&gt;
+&lt;h2 id=&#34;1新建一个文件夹&#34;&gt;（1）新建一个文件夹😀😀&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/77d1cf5ccba04913bf4b636809d5ee02~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2执行-npm-install--g-vuecli-命令&#34;&gt;（2）执行 npm install -g @vue/cli 命令😋😋&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d6c5d35990e94341894ebacb68f96d9c~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3执行-vue-create-vue-demo-命令&#34;&gt;（3）执行 vue create vue-demo 命令😥😥&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e7921d90abba4179b73a61dcc1e30d36~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;
+报错了，只需要去 D:\0.node\node_global\vue.ps1 图上报错的这个文件夹中将 vue.ps1 文件删掉再次运行这个命令即可&lt;/p&gt;
+&lt;p&gt;项目搭建成功
+&lt;img src=&#34;https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/91ca1f4024d1461a8337cde50ebdf42b~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;搭建成功😄😄&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;2helloworld&#34;&gt;2.Hello,world!&lt;/h1&gt;
+&lt;p&gt;🤔🤔🤔🤔🤔&lt;/p&gt;
+&lt;h2 id=&#34;1运行-cd-vue-demo-和-npm-run-serve-&#34;&gt;（1）运行 cd vue-demo 和 npm run serve 😎😎&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c1966c4de059444cbd86605ad086e724~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;此时，按住 ctrl+鼠标点击链接 就可以访问 vue 工程启动起来的页面了&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fb3b9a4cdc6547e381f60da95f2e10f7~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;页面上没有 Hello,world! 差评😠😠&lt;/p&gt;
+&lt;h2 id=&#34;2自己写-helloworld-&#34;&gt;（2）自己写 Hello,world! 🤒🤒&lt;/h2&gt;
+&lt;p&gt;修改HelloWorld文件：
+&lt;img src=&#34;https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9f3840da6a84444195bc601d43cb4652~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;
+修改路由文件：
+&lt;img src=&#34;https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7014f9bf75db4cdb80ccc8d5dcc21757~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;
+Hello,world!
+&lt;img src=&#34;https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6dfa2ada45a846d7bbf53edb9b01a7a9~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;好了，vue 算是已经进入了解的范围了，写过HelloWorld了，学任何一门语言不写个 Hello,world! 是不完整的，傲娇的野生程序员😒😒&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;成就达成：了解Vue&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;3开始照猫画虎之-cv-大法&#34;&gt;3.开始照猫画虎之 CV 大法&lt;/h1&gt;
+&lt;p&gt;🤗🤗🤗🤗🤗&lt;/p&gt;
+&lt;h2 id=&#34;1在-compoents-下新建一个-studyvue-文件&#34;&gt;（1）在 compoents 下新建一个 Study.vue 文件&lt;/h2&gt;
+&lt;p&gt;将 HelloWorld.vue 中的文件拷贝过来，删删改改&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/29a774d3cdaa4029a32fee477997abd9~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2在-views-文件夹下新建一个-studyvue-文件&#34;&gt;（2）在 views 文件夹下新建一个 Study.vue 文件&lt;/h2&gt;
+&lt;p&gt;将 Home.vue 中的代码拷贝过来改改&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cb26fb389af7452c909ac54842b6843f~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3修改-router-下的-indexjs&#34;&gt;（3）修改 router 下的 index.js&lt;/h2&gt;
+&lt;p&gt;拷贝一下数组里的第一个对象元素，改改
+&lt;img src=&#34;https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/33ed35d599dc452ca1077cc11eb33631~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;4修改-src-根目录下的-appvue-文件&#34;&gt;（4）修改 src 根目录下的 App.vue 文件&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6f2f98e56ee7408bac64d0eb464644be~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
       
     </item>
