@@ -141,6 +141,27 @@
 &lt;blockquote&gt;
 &lt;p&gt;bind()方法返回的函数没有prototype属性，为什么没有prototype属性呢，因为如果把这个返回的函数做构造函数的话，那就需要将创建对象的this指向这个函数，但是这个函数在bind调用前就将this指向调用对象了，那么创建对象时又将这个this指向创建对象，不就矛盾了吗，所以bind()返回的函数没有prototype属性。&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;        var obj = {
+            age: 25
+        }
+        function getInfo(job, height) {
+            console.log(this);
+            this.d = 50;
+        }
+        Function.prototype.myBind = function () {
+            if (typeof this !== &#39;function&#39;) {
+                throw new TypeError(&#39;调用者必须是函数&#39;)
+            }
+            var arg = arguments[0],
+                slice = Array.prototype.slice,
+                args = slice.call(arguments, 1),
+                _that = this;
+            return function () {
+                return _that.apply(arg, args.concat(slice.call(arguments)));
+            }
+        }
+        var c = new getInfo.myBind(obj, &#39;Software Engineer&#39;); // Uncaught TypeError: 调用者必须是函数
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果bind方法作为构造函数的话，那么它里面的this就需要指向创建的对象，而bind中的this必须指向函数，所以此时就会报错。&lt;/p&gt;
 &lt;p&gt;apply，call，bind用法展示：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;        let obj = {
             age: 18,
@@ -316,8 +337,83 @@
 &lt;blockquote&gt;
 &lt;p&gt;也就是说上面这种写法不支持new调用构造函数创建新的对象，所以说有了下面第二种方法。&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意，当使用new操作符绑定构造函数时，会忽略第一个参数
+&lt;img src=&#34;https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3a9fa4cd63af47e4a5a68e1ccaace639~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;        var obj = {
+            age: 25
+        }
+        function getInfo(job, height) {
+            console.log(this); // {age: 25}
+        }
+        getInfo.bind(obj, &#39;Software Engineer&#39;)();
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以上是没有用new调用的时候，getInfo中的this是指向obj的，没问题&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        function A() {
+            this.a = 100;
+            console.log(this); // {a: 100}
+        }
+        let b = new A();
+        console.log(b); // {a: 100}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a4457b0a1ef74335bae1ae5286bb35e0~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        var obj = {
+            age: 25
+        }
+        function getInfo(job, height) {
+            console.log(this); // getInfo {}
+        }
+        var a = getInfo.bind(obj, &#39;Software Engineer&#39;);
+        var b = new a();
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以上的代码你会发现getInfo中的this并不是obj，而是getInfo对象，上面我们也看到有说，当使用new操作符号时会忽略掉第一个参数，也就是让调用bind的函数中的this指向的第一个参数被忽略掉，然后我们再想想bind的作用，不就是改变函数得this指向吗，现在第一个参数都忽略了，那么bind是不是相当于没用了，仔细想想，确实可以这个理解。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        var obj = {
+            age: 25
+        }
+        function getInfo(job, height) {
+            console.log(this); // getInfo {}
+        }
+        var a = getInfo.bind(obj, &#39;Software Engineer&#39;);
+        var b = new a();
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;        var obj = {
+            age: 25
+        }
+        function getInfo(job, height) {
+            console.log(this); // getInfo {}
+        }
+        var b = new getInfo(&#39;Software Engineer&#39;);
+        console.log(b);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;相对而言，上面这两段代码其实通过构造函数创建的b对象时一样的，也就是说当使用了new操作符号时，bind就没用，就是单纯的返回一个函数。理解了这个我们就会明白为什么之前的代码会存在不知new调用构造函数创建新对象了，那么就有了第二种方法。&lt;/p&gt;
+&lt;p&gt;当使用new调用构造函数时，构造函数中的this是指向新创建的对象的&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;第二种😯😯：&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用ES6的new.target加以理解&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        var obj = {
+            age: 25
+        }
+        function getInfo(job, height) {
+            console.log(this);
+            this.d = 50;
+        }
+        Function.prototype.myBind = function () {
+            if (typeof this !== &#39;function&#39;) {
+                throw new TypeError(&#39;调用者必须是函数&#39;)
+            }
+            var arg = arguments[0],
+                slice = Array.prototype.slice,
+                args = slice.call(arguments, 1),
+                _that = this;
+            var fn1 = {};
+            fn1 = new getInfo();
+            return function () {
+                if (new.target) {
+                    return fn1
+                } else {
+                    return _that.apply(arg, args.concat(slice.call(arguments)));
+                }
+            }
+        }
+        var c = getInfo.myBind(obj, &#39;Software Engineer&#39;);
+        var d = new c();
+        console.log(d);
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;3原型链&#34;&gt;3.原型链&lt;/h1&gt;
 &lt;h2 id=&#34;1对象和函数的原型&#34;&gt;（1）对象和函数的原型&lt;/h2&gt;
 &lt;p&gt;每个对象都有一个原型，但是原型没有提供可以直接访问的属性，所以浏览器实现了一个__proto__属性，可以直接访问到对象的原型，每个函数都有一个__proto__和prototype属性，当函数当对象使用时，原型是__proto__，当函数作为构造函数使用时，原型是prototype。&lt;/p&gt;
