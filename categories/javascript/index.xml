@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Sun, 20 Dec 2020 18:12:21 +0800</lastBuildDate><atom:link href="https://xkhm.net/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Dec 2020 08:24:35 +0800</lastBuildDate><atom:link href="https://xkhm.net/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JS基础之手写bind</title>
+      <link>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99bind/</link>
+      <pubDate>Fri, 25 Dec 2020 08:24:35 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99bind/</guid>
+      <description>文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;); bind在第一个参数之</description>
+    </item>
+    
     <item>
       <title>JS数组去重</title>
       <link>https://xkhm.net/post/js%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/</link>

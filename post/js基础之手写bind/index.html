@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>星空海绵 - 星空浩瀚 | 海绵吸水</title>
+  <title>JS基础之手写bind - 星空海绵 - 星空浩瀚 | 海绵吸水</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -22,8 +22,9 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="xkhm" />
-  <meta name="description" content="Hugo XKHM" />
+<meta name="author" content="XKHM" />
+  <meta name="description" content="文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;); bind在第一个参数之" />
+
   <meta name="keywords" content="Hugo" />
 
 
@@ -34,8 +35,8 @@
 <meta name="generator" content="Hugo 0.79.0" />
 
 
-<link rel="canonical" href="https://xkhm.net/" />
-<link href="/index.xml" rel="alternate" type="application/rss+xml" title="星空海绵 - 星空浩瀚 | 海绵吸水" />
+<link rel="canonical" href="https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99bind/" />
+
 
 
 
@@ -57,16 +58,24 @@
 
 
 
-<meta property="og:title" content="星空海绵 - 星空浩瀚 | 海绵吸水" />
-<meta property="og:description" content="Hugo XKHM" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://xkhm.net/" />
-<meta property="og:updated_time" content="2020-12-25T08:24:35+08:00" />
-<meta itemprop="name" content="星空海绵 - 星空浩瀚 | 海绵吸水">
-<meta itemprop="description" content="Hugo XKHM">
+<meta property="og:title" content="JS基础之手写bind" />
+<meta property="og:description" content="文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;); bind在第一个参数之" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99bind/" />
+<meta property="article:published_time" content="2020-12-25T08:24:35+08:00" />
+<meta property="article:modified_time" content="2020-12-25T08:24:35+08:00" />
+<meta itemprop="name" content="JS基础之手写bind">
+<meta itemprop="description" content="文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;); bind在第一个参数之">
+<meta itemprop="datePublished" content="2020-12-25T08:24:35+08:00" />
+<meta itemprop="dateModified" content="2020-12-25T08:24:35+08:00" />
+<meta itemprop="wordCount" content="1240">
+
+
+
+<meta itemprop="keywords" content="JavaScript,bind()," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="星空海绵 - 星空浩瀚 | 海绵吸水"/>
-<meta name="twitter:description" content="Hugo XKHM"/>
+<meta name="twitter:title" content="JS基础之手写bind"/>
+<meta name="twitter:description" content="文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;); bind在第一个参数之"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -242,7 +251,7 @@
   <ul id="menu" class="menu">
     
     
-        <li class="menu-item active">
+        <li class="menu-item">
         
           
           
@@ -355,90 +364,263 @@
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
-          
-<section id="posts" class="posts">
-  
-  
+          <article class="post bg-white">
     
-  
-  
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
+    <header class="post-header">
+      <h1 class="post-title">JS基础之手写bind</h1>
       
-      <a class="post-link" href="/post/%E4%B8%80%E6%96%87%E8%AF%A6%E8%A7%A3javascript%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84/">一文详解JavaScript中的数组</a>
-    </h1>
+      <div class="post-meta">
+        <time datetime="2020-12-25" class="post-time">
+          2020-12-25
+        </time>
+        <div class="post-category">
+            <a href="https://xkhm.net/categories/javascript/"> JavaScript </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
     
-    <div class="post-meta">
-      <time datetime="2020-12-19" class="post-time">
-        2020-12-19
-      </time>
-      <div class="post-category">
-          <a href="https://xkhm.net/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1thisarg">（1）thisArg</a></li>
+    <li><a href="#2arg1-arg2-">（2）arg1, arg2, &hellip;</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1不支持-new-调用-bind-返回的函数">(1)不支持 new 调用 bind() 返回的函数</a></li>
+    <li><a href="#2支持-new-调用">(2)支持 new 调用</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <blockquote>
+<p>文章类型：学习笔记</p>
+</blockquote>
+<h1 id="1bind的使用">1.bind()的使用</h1>
+<p>😏😏😏😏😏</p>
+<pre><code>        let obj = {
+            age: 18
+        }
+        function getInfo(name, job) {
+            console.log(name);
+            console.log(job);
+            console.log(this.age);
+        }
+        getInfo.bind(obj, '星空海绵')('Software Engineer');
+</code></pre><p>bind在第一个参数之后的参数，可以直接从bind()传,也可以从bind()返回的函数上传，如上代码。</p>
+<h1 id="2bind参数">2.bind()参数</h1>
+<p>🤔🤔🤔🤔🤔</p>
+<h2 id="1thisarg">（1）thisArg</h2>
+<p>bind的第一个参数是bind被函数调用时作为this参数传给调用函数。如果bind()参数列表为空，或者thisArg为null或undefined,执行作用域的this就是新函数的this。如果使用new操作符操作绑定函数，则会忽略这个thisArg参数。当使用bind在setTimeout中创建一个函数时，作为thisArg传递的任何原始值都会被转换为object。-<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind">MDN</a></p>
+<ul>
+<li>1.bind的第一个参数是bind被函数调用时作为this参数传给调用函数</li>
+</ul>
+<pre><code>        let obj = {
+            age: 18
+        }
+        function getInfo() {
+            console.log(this); // {age: 18}
+        }
+        getInfo.bind(obj)();
+</code></pre><p>此时调用函数 getInfo 中的 this 就是 bind() 中传入的 obj</p>
+<ul>
+<li>2.bind()参数列表为空，或者thisArg为null或undefined,执行作用域的this就是新函数的this</li>
+</ul>
+<pre><code>        let obj = {
+            age: 18
+        }
+        function getInfo() {
+            console.log(this); // Window {}
+        }
+        getInfo.bind()();
+        getInfo.bind(null)();
+        getInfo.bind(undefined)();
+</code></pre><p>此时bind的参数为 空 或 null 或 undefined，因为实际上 getInfo 是全局对象调用的，在这里也就是 window 对象，所以此时this就是指向 window 对象的。</p>
+<ul>
+<li><strong>3.如果使用new操作符操作绑定函数，则会忽略这个thisArg参数</strong></li>
+</ul>
+<pre><code>        let obj = {
+            age: 18
+        }
+        function getInfo() {
+            console.log(this); // getInfo {}
+        }
+        let a = getInfo.bind(obj)
+        let b = new a();
+</code></pre><p>此时不管调用的时候传不传参数 obj，getInfo 中的 this 都是指向创建对象 b 的，这里就涉及到 new 构造函数创建对象的过程了，建议精读 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new">MDN</a> 这部分。</p>
+<ul>
+<li>4.当使用bind在setTimeout中创建一个函数时，作为thisArg传递的任何原始值都会被转换为object。</li>
+</ul>
+<pre><code>        function A() {
+            this.name = '星空海绵';
+        }
+        A.prototype.say = function () {
+            setTimeout(this.read.bind(this), 1000)
+        }
+        A.prototype.read = function () {
+            console.log(this.name);
+        }
+        let b = new A();
+        b.say();
+</code></pre><p>在默认情况下，使用 setTimeout() 时，this 关键字会指向 window （或 global）对象。当类的方法中需要 this 指向类的实例时，你可能需要显式地把 this 绑定到回调函数，就不会丢失该实例的引用。</p>
+<h2 id="2arg1-arg2-">（2）arg1, arg2, &hellip;</h2>
+<p>当bind被函数调用时，传给调用函数的参数列表</p>
+<h1 id="3手写-bind">3.手写 bind()</h1>
+<p>😎😎😎😎😎</p>
+<h2 id="1不支持-new-调用-bind-返回的函数">(1)不支持 new 调用 bind() 返回的函数</h2>
+<pre><code>        var obj = {
+            age: 18
+        }
+        function getInfo(name, job) {
+            this.a = 100;
+            console.log(name); // 星空海绵
+            console.log(job); // Software Engineer
+            console.log(this.age); // undefined
+        }
+        Function.prototype.myBind = function () {
+            if(typeof this !== 'function'){
+            	throw new TypeError('调用者必须是函数')
+            }
+            var _that = this,
+                arg = arguments[0],
+                slice = Array.prototype.slice,
+                args = slice.call(arguments, 1);
+            return function () {
+                return _that.apply(arg, args.concat(slice.call(arguments)))
+            }
+        }
+
+        var a = getInfo.myBind(obj, '星空海绵');
+        var b = new a('Software Engineer');
+        console.log(b); // {}
+</code></pre><p>从上面的代码中我们可以看出来，此时当使用 new 调用时，并不会忽略掉传入的第一个参数 obj，调用函数的 this 一直是传入的第一个参数，不符合上面列举的原生的 bind() 第一个参数的第3条，当使用 new 调用时，会忽略第一个参数</p>
+<h2 id="2支持-new-调用">(2)支持 new 调用</h2>
+<pre><code>        var obj = {
+            age: 18
+        }
+        function getInfo(name, job) {
+            this.a = 100;
+            console.log(name);
+            console.log(job);
+            console.log(this.age);
+        }
+        Function.prototype.myBind = function () {
+            if (typeof this !== 'function') {
+                throw new TypeError('调用者必须是函数')
+            }
+            var _that = this,
+                arg = arguments[0],
+                slice = Array.prototype.slice,
+                args = slice.call(arguments, 1),
+                fn = function () { },
+                fn2 = function () {
+                    if (fn.prototype.isPrototypeOf(this)) {
+                        return _that.apply(this, args.concat(slice.call(arguments)))
+                    } else {
+                        return _that.apply(arg, args.concat(slice.call(arguments)))
+                    }
+                };
+            if (this.prototype) {
+                fn.prototype = this.prototype;
+            }
+            fn2.prototype = new fn();
+            return fn2;
+        }
+
+        var a = getInfo.myBind(obj, '星空海绵'),
+            b = new a('Software Engineer');
+        console.log(b); // {a: 100}
+</code></pre>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">XKHM</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2020-12-25
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">原创文章，转载请注明文章作者和出处，谢谢！</a></span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://xkhm.net/tags/javascript/">JavaScript</a>
+          <a href="https://xkhm.net/tags/bind/">bind()</a>
           
         </div>
+
       
-      
-      
-    </div>
-  </header>
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/vue%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%87%BA%E9%97%A8/">
+            <span class="next-text nav-default">Vue从入门到出门</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
   
-  <div class="post-content">
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
     
-    <div class="post-summary">
-      前言 最近在重学JS基础，然后正好学到数组这，前期是通过看视频学习的，后来发现通过看视频学习进度实在是太慢了，所以又开始看书看文档学，然后就开
-    </div>
-    <div class="read-more">
-      <a href="/post/%E4%B8%80%E6%96%87%E8%AF%A6%E8%A7%A3javascript%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
 
   
-</section>
-
-
-
-
-
-
-  
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-  <nav class="pagination">
-    <ul>
-      
-      <li >
-        <a href="/">1</a>
-      </li>
-      
-      <li  class="active" >
-        <a href="/page/2/">2</a>
-      </li>
-      
-    </ul>
-  </nav>
-
-  
-  
-
-
-
-
 
         </div>
       </div>
