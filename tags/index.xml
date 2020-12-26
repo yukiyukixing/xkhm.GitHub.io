@@ -7,22 +7,40 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Fri, 25 Dec 2020 08:24:35 +0800</lastBuildDate><atom:link href="https://xkhm.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Dec 2020 16:05:58 +0800</lastBuildDate><atom:link href="https://xkhm.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript</title>
+      <link>https://xkhm.net/tags/javascript/</link>
+      <pubDate>Sat, 26 Dec 2020 16:05:58 +0800</pubDate>
+      
+      <guid>https://xkhm.net/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Promise</title>
+      <link>https://xkhm.net/tags/promise/</link>
+      <pubDate>Sat, 26 Dec 2020 16:05:58 +0800</pubDate>
+      
+      <guid>https://xkhm.net/tags/promise/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>异步回调</title>
+      <link>https://xkhm.net/tags/%E5%BC%82%E6%AD%A5%E5%9B%9E%E8%B0%83/</link>
+      <pubDate>Sat, 26 Dec 2020 16:05:58 +0800</pubDate>
+      
+      <guid>https://xkhm.net/tags/%E5%BC%82%E6%AD%A5%E5%9B%9E%E8%B0%83/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>bind()</title>
       <link>https://xkhm.net/tags/bind/</link>
       <pubDate>Fri, 25 Dec 2020 08:24:35 +0800</pubDate>
       
       <guid>https://xkhm.net/tags/bind/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JavaScript</title>
-      <link>https://xkhm.net/tags/javascript/</link>
-      <pubDate>Fri, 25 Dec 2020 08:24:35 +0800</pubDate>
-      
-      <guid>https://xkhm.net/tags/javascript/</guid>
       <description></description>
     </item>
     

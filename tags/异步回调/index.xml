@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>异步回调 on 星空海绵 - 星空浩瀚 | 海绵吸水</title>
+    <link>https://xkhm.net/tags/%E5%BC%82%E6%AD%A5%E5%9B%9E%E8%B0%83/</link>
+    <description>Recent content in 异步回调 on 星空海绵 - 星空浩瀚 | 海绵吸水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>星空海绵</copyright>
+    <lastBuildDate>Sat, 26 Dec 2020 16:05:58 +0800</lastBuildDate><atom:link href="https://xkhm.net/tags/%E5%BC%82%E6%AD%A5%E5%9B%9E%E8%B0%83/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JS基础之Promise</title>
+      <link>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8Bpromise/</link>
+      <pubDate>Sat, 26 Dec 2020 16:05:58 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8Bpromise/</guid>
+      <description>前言：个人学习笔记，初识Promise 1.Promise解决了什么问题？ 用来解决 回调地狱 问题 回调地狱：在JS中，为了实现某些逻辑经常会写出层</description>
+    </item>
+    
+  </channel>
+</rss>

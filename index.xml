@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Fri, 25 Dec 2020 08:24:35 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 26 Dec 2020 16:05:58 +0800</lastBuildDate>
     
         <atom:link href="https://xkhm.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -74,6 +74,103 @@
         <description>&lt;blockquote&gt;
 &lt;p&gt;一只小透明的前端开发（待补充）&lt;/p&gt;
 &lt;/blockquote&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>JS基础之Promise</title>
+      <link>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8Bpromise/</link>
+      <pubDate>Sat, 26 Dec 2020 16:05:58 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8Bpromise/</guid>
+      
+        <description>&lt;blockquote&gt;
+&lt;p&gt;前言：个人学习笔记，初识Promise&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;1promise解决了什么问题&#34;&gt;1.Promise解决了什么问题？&lt;/h1&gt;
+&lt;p&gt;用来解决 &lt;strong&gt;回调地狱&lt;/strong&gt; 问题&lt;/p&gt;
+&lt;p&gt;回调地狱：在JS中，为了实现某些逻辑经常会写出层层嵌套的 &lt;strong&gt;回调函数&lt;/strong&gt;，如果嵌套过多，会极大的影响代码可读性和逻辑，这种情况被称为回调地狱。比如说把一个函数A作为回调函数，但是该函数又接收一个函数B作为参数，甚至B还能接受函数C作为参数，这样层层嵌套，人们称为&lt;strong&gt;回调地狱&lt;/strong&gt;，代码阅读性非常的差。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        let sayHello = function (name, callback) {
+            setTimeout(function () {
+                console.log(name);
+                callback();
+            }, 1000);
+        }
+        sayHello(&#39;first&#39;, function () {
+            sayHello(&#39;second&#39;, function () {
+                sayHello(&#39;third&#39;, function () {
+                    console.log(&#39;end&#39;);
+                });
+            });
+        })
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;回调函数：回调是一个函数，它作为参数传递给另一个函数，并在其父函数完成后执行。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        function doSomething(msg, callback) {
+            alert(msg);
+            if (typeof callback === &#39;function&#39;) {
+                callback();
+            }
+        }
+        doSomething(&#39;回调函数&#39;, function () {
+            alert(&#39;匿名函数实现回调&#39;);
+        });
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;回调既可以同步回调，也可以异步回调。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        // 同步回调
+        function getNodes(param, callback) {
+            let list = JSON.stringify(param);
+            if (typeof callback === &#39;function&#39;) {
+                callback(list)
+            }
+        }
+        getNodes(&#39;[1,2,3]&#39;, function (nodes) {
+            console.log(nodes);
+        });
+        //ajax回调
+        $.get(&#39;ajax/test.html&#39;, function (data) {
+            $(&#39;box&#39;).html(data);
+        })
+
+        // 点击事件回调 
+        $(&#39;#myBtn&#39;).click(function () {
+            alert(&#39;click myBtn!&#39;);
+        })
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;感受：JS虽然灵活，但是灵活的同时，带来的缺点就是，写代码的过程中需要加一些判断，比如上面这段代码中判断callback是不是函数，在别的强类型语言中，这个callback如果不是函数，可能写的时候编辑器就会直接提醒，传入参数的类型不对。所以就会出现TypeScript。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;注意回调函数中的this指向：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        var clientData = {
+            id: 096545,
+            fullName: &amp;quot;Not Set&amp;quot;,
+            setUserName: function (firstName, lastName) {
+                this.fullName = firstName + &amp;quot; &amp;quot; + lastName;
+            }
+        }
+        function getUserInput(firstName, lastName, callback) {
+            //调用回调函数存储，此时是window调用的这个传进来的函数
+            callback(firstName, lastName);
+        }
+        getUserInput(&amp;quot;Barack&amp;quot;, &amp;quot;Obama&amp;quot;, clientData.setUserName);
+        console.log(clientData.fullName);  //Not Set
+        console.log(window.fullName);  //Barack Obama
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面这段代码中回调函数的this是指向window的，此时可以使用call或apply改下this的指向&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        var clientData = {
+            id: 096545,
+            fullName: &amp;quot;Not Set&amp;quot;,
+            setUserName: function (firstName, lastName) {
+                this.fullName = firstName + &amp;quot; &amp;quot; + lastName;
+            }
+        }
+        function getUserInput(firstName, lastName, callback) {
+            //调用回调函数存储，此时是window调用的这个传进来的函数
+            callback.call(clientData, firstName, lastName);
+        }
+        getUserInput(&amp;quot;Barack&amp;quot;, &amp;quot;Obama&amp;quot;, clientData.setUserName);
+        console.log(clientData.fullName);  //Barack Obama
+        console.log(window.fullName);  //undefined
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;问题：JS底层是怎么实现异步的，相关内容：V8引擎是如何实现异步的，EventLoop相关原理深度解析,JS执行过程中的堆栈变化，异步是不是等同于并行以及其它相关底层问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;链式调用：&lt;/p&gt;
 </description>
       
     </item>
