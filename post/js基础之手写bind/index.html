@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="XKHM" />
-  <meta name="description" content="文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;); bind在第一个参数之" />
+  <meta name="description" content="文章类型：学习笔记 bind() 方法创建一个新的函数，在 bind() 被调用时，这个新函数的 this 被指定为 bind() 的第一个参数，而其余参数将作为新函数的参数，供调用时使用。 1" />
 
   <meta name="keywords" content="Hugo" />
 
@@ -59,23 +59,23 @@
 
 
 <meta property="og:title" content="JS基础之手写bind" />
-<meta property="og:description" content="文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;); bind在第一个参数之" />
+<meta property="og:description" content="文章类型：学习笔记 bind() 方法创建一个新的函数，在 bind() 被调用时，这个新函数的 this 被指定为 bind() 的第一个参数，而其余参数将作为新函数的参数，供调用时使用。 1" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99bind/" />
 <meta property="article:published_time" content="2020-12-25T08:24:35+08:00" />
 <meta property="article:modified_time" content="2020-12-25T08:24:35+08:00" />
 <meta itemprop="name" content="JS基础之手写bind">
-<meta itemprop="description" content="文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;); bind在第一个参数之">
+<meta itemprop="description" content="文章类型：学习笔记 bind() 方法创建一个新的函数，在 bind() 被调用时，这个新函数的 this 被指定为 bind() 的第一个参数，而其余参数将作为新函数的参数，供调用时使用。 1">
 <meta itemprop="datePublished" content="2020-12-25T08:24:35+08:00" />
 <meta itemprop="dateModified" content="2020-12-25T08:24:35+08:00" />
-<meta itemprop="wordCount" content="1240">
+<meta itemprop="wordCount" content="2283">
 
 
 
 <meta itemprop="keywords" content="JavaScript,bind()," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="JS基础之手写bind"/>
-<meta name="twitter:description" content="文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;); bind在第一个参数之"/>
+<meta name="twitter:description" content="文章类型：学习笔记 bind() 方法创建一个新的函数，在 bind() 被调用时，这个新函数的 this 被指定为 bind() 的第一个参数，而其余参数将作为新函数的参数，供调用时使用。 1"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -411,6 +411,9 @@
       <blockquote>
 <p>文章类型：学习笔记</p>
 </blockquote>
+<blockquote>
+<p>bind() 方法创建一个新的函数，在 bind() 被调用时，这个新函数的 this 被指定为 bind() 的第一个参数，而其余参数将作为新函数的参数，供调用时使用。</p>
+</blockquote>
 <h1 id="1bind的使用">1.bind()的使用</h1>
 <p>😏😏😏😏😏</p>
 <pre><code>        let obj = {
@@ -426,7 +429,7 @@
 <h1 id="2bind参数">2.bind()参数</h1>
 <p>🤔🤔🤔🤔🤔</p>
 <h2 id="1thisarg">（1）thisArg</h2>
-<p>bind的第一个参数是bind被函数调用时作为this参数传给调用函数。如果bind()参数列表为空，或者thisArg为null或undefined,执行作用域的this就是新函数的this。如果使用new操作符操作绑定函数，则会忽略这个thisArg参数。当使用bind在setTimeout中创建一个函数时，作为thisArg传递的任何原始值都会被转换为object。-<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind">MDN</a></p>
+<p>bind的第一个参数是bind被函数调用时作为this参数传给调用函数。如果bind()参数列表为空，或者thisArg为null或undefined, <strong>执行作用域的this</strong> 就是新函数的this。如果使用 <strong>new操作符</strong> 操作绑定函数，则会 <strong>忽略这个thisArg参数</strong> 。当使用bind在setTimeout中创建一个函数时，作为thisArg传递的任何原始值都会被转换为object。-<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind">MDN</a></p>
 <ul>
 <li>1.bind的第一个参数是bind被函数调用时作为this参数传给调用函数</li>
 </ul>
@@ -477,75 +480,136 @@
         }
         let b = new A();
         b.say();
-</code></pre><p>在默认情况下，使用 setTimeout() 时，this 关键字会指向 window （或 global）对象。当类的方法中需要 this 指向类的实例时，你可能需要显式地把 this 绑定到回调函数，就不会丢失该实例的引用。</p>
+</code></pre><p>在默认情况下，使用 <strong>setTimeout()</strong> 时，this 关键字会指向 window （或 global）对象。当类的方法中需要 this 指向类的实例时，你可能需要显式地把 this 绑定到回调函数，就不会丢失该实例的引用。</p>
 <h2 id="2arg1-arg2-">（2）arg1, arg2, &hellip;</h2>
 <p>当bind被函数调用时，传给调用函数的参数列表</p>
 <h1 id="3手写-bind">3.手写 bind()</h1>
 <p>😎😎😎😎😎</p>
 <h2 id="1不支持-new-调用-bind-返回的函数">(1)不支持 new 调用 bind() 返回的函数</h2>
-<pre><code>        var obj = {
+<pre><code>        let obj = {
             age: 18
         }
         function getInfo(name, job) {
-            this.a = 100;
-            console.log(name); // 星空海绵
-            console.log(job); // Software Engineer
-            console.log(this.age); // undefined
-        }
-        Function.prototype.myBind = function () {
-            if(typeof this !== 'function'){
-            	throw new TypeError('调用者必须是函数')
-            }
-            var _that = this,
-                arg = arguments[0],
-                slice = Array.prototype.slice,
-                args = slice.call(arguments, 1);
-            return function () {
-                return _that.apply(arg, args.concat(slice.call(arguments)))
-            }
-        }
-
-        var a = getInfo.myBind(obj, '星空海绵');
-        var b = new a('Software Engineer');
-        console.log(b); // {}
-</code></pre><p>从上面的代码中我们可以看出来，此时当使用 new 调用时，并不会忽略掉传入的第一个参数 obj，调用函数的 this 一直是传入的第一个参数，不符合上面列举的原生的 bind() 第一个参数的第3条，当使用 new 调用时，会忽略第一个参数</p>
-<h2 id="2支持-new-调用">(2)支持 new 调用</h2>
-<pre><code>        var obj = {
-            age: 18
-        }
-        function getInfo(name, job) {
-            this.a = 100;
             console.log(name);
             console.log(job);
+            console.log(this);
             console.log(this.age);
         }
-        Function.prototype.myBind = function () {
+        // getInfo.call(obj, '星空海绵', 'Software Engineer');
+        Function.prototype.myBind = function (context) {
             if (typeof this !== 'function') {
                 throw new TypeError('调用者必须是函数')
             }
             var _that = this,
-                arg = arguments[0],
+                slice = Array.prototype.slice,
+                args = slice.call(arguments, 1);
+            context = context || window;
+            return function () {
+                return _that.apply(context, args.concat(slice.call(arguments)))
+            }
+        }
+        var a = getInfo.myBind(obj, '星空海绵', 'Software Engineer'),
+            b = new a(), // 上面getInfo中的this打印结果为 obj 对象
+            c = getInfo.bind(obj, '星空海绵', 'Software Engineer'),
+            d = new c(); // 上面getInfo中的this打印结果为新创建的 d 对象
+</code></pre><p>从上面的代码中我们可以看出来，此时当使用 new 调用时，并不会忽略掉传入的第一个参数 obj，调用函数的 this 一直是传入的第一个参数，不符合上面列举的原生的 bind() 第一个参数的第3条，当使用 new 调用时，会忽略第一个参数。</p>
+<h2 id="2支持-new-调用">(2)支持 new 调用</h2>
+<blockquote>
+<p>上面第一种其实已完成了原生bind的基本功能，可以改变this指向了，但是不支持new调用的时候，那我们来思考一下为什么。</p>
+</blockquote>
+<ul>
+<li>当使用 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new">new</a> 调用我们写的myBind函数返回的函数时，这就是new通过构造函数创建一个对象的过程，<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new">MDN new创建对象过程</a>                           <br>
+1.首先创建一个空对象（{}）<br>
+2.链接该对象（设置该对象的constructor）到另一个对象<br>
+3.将步骤1新创建的对象作为this的上下文    <br>
+4.如果该函数没有返回对象，则返回this</li>
+</ul>
+<p>看了上面new创建对象的过程，主要是第3步，将新创建的对象作为this的上下文，我们再看上面的代码，返回的函数中的this如果你去打印的话发现确实是空对象，符合上面new的创建过程，但是，下面一行用apply将调用函数getInfo中的this指向改到了传入的obj，这就不对了，所以说当用new调用的时候，此时就应该忽略obj，那么我们就需要判断new调用和不调用的时候就行了，ES6中有 new.target 可以判断一个函数是否被new调用过，那么ES5中是否有方法可以判断，没有的话那么模拟一个new.target就行了</p>
+<p>用new.target的话是下面这两种写法都行：</p>
+<pre><code>        let obj = {
+            age: 18
+        }
+        function getInfo(name, job) {
+            console.log(name);
+            console.log(job);
+            console.log(this);
+            console.log(this.age);
+        }
+        // getInfo.call(obj, '星空海绵', 'Software Engineer');
+        Function.prototype.myBind = function (context) {
+            if (typeof this !== 'function') {
+                throw new TypeError('调用者必须是函数')
+            }
+            var _that = this,
                 slice = Array.prototype.slice,
                 args = slice.call(arguments, 1),
-                fn = function () { },
-                fn2 = function () {
-                    if (fn.prototype.isPrototypeOf(this)) {
-                        return _that.apply(this, args.concat(slice.call(arguments)))
-                    } else {
-                        return _that.apply(arg, args.concat(slice.call(arguments)))
-                    }
-                };
-            if (this.prototype) {
-                fn.prototype = this.prototype;
-            }
-            fn2.prototype = new fn();
-            return fn2;
-        }
+                obj = {};
+            context = context || window;
+            obj.__proto__.constructor = _that.prototype.constructor;
+            return function () {
+                if (new.target) {
+                    return _that.apply(obj, args.concat(slice.call(arguments)))
+                } else {
+                    return _that.apply(context, args.concat(slice.call(arguments)))
+                }
 
-        var a = getInfo.myBind(obj, '星空海绵'),
-            b = new a('Software Engineer');
-        console.log(b); // {a: 100}
-</code></pre>
+            }
+        }
+        var a = getInfo.myBind(obj, '星空海绵', 'Software Engineer'),
+            b = new a(), // 上面getInfo中的this打印结果为 b 对象
+            c = getInfo.bind(obj, '星空海绵', 'Software Engineer'),
+            d = new c(); // 上面getInfo中的this打印结果为新创建的 d 对象
+</code></pre><pre><code>        Function.prototype.myBind = function (context) {
+            if (typeof this !== 'function') {
+                throw new TypeError('调用者必须是函数')
+            }
+            var _that = this,
+                args = [].slice.call(arguments, 1);
+            context = context || window;
+            return function () {
+                if (new.target) {
+                    return new _that(...args.concat(...arguments))
+                } else {
+                    return _that.apply(context, args.concat([].slice.call(arguments)))
+                }
+
+            }
+        }
+</code></pre><p>不使用 ES6 的new.target:</p>
+<pre><code>        let obj = {
+            age: 18
+        }
+        function getInfo(name, job) {
+            console.log(name);
+            console.log(job);
+            console.log(this);
+            console.log(this.age);
+        }
+        // getInfo.call(obj, '星空海绵', 'Software Engineer');
+        Function.prototype.myBind = function (context) {
+            if (typeof this !== 'function') {
+                throw new TypeError('调用者必须是函数')
+            }
+            var _that = this,
+                args = [].slice.call(arguments, 1);
+            context = context || window;
+            return function F() {
+                if (this instanceof F) {
+                    return new _that(...[...args, ...arguments]);
+                }
+                return _that.apply(context, [...args, ...arguments])
+            }
+        }
+        // getInfo.myBind(obj, '星空海绵', 'Software Engineer')()
+        var a = getInfo.myBind(obj, '星空海绵', 'Software Engineer'),
+            b = new a(), // 上面getInfo中的this打印结果为 b 对象
+            c = getInfo.bind(obj, '星空海绵', 'Software Engineer'),
+            d = new c(); // 上面getInfo中的this打印结果为新创建的 d 对象
+</code></pre><p>上面代码中this如果在F构造函数的原型链上，那就证明使用new调用了myBind返回的构造函数。</p>
+<blockquote>
+<p>总结：手写bind遇到new调用的问题，关键是需要理解new调用构造函数创建对象的过程。</p>
+</blockquote>
+
     </div>
 
     
