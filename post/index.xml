@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Sat, 26 Dec 2020 16:05:58 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Dec 2020 22:59:54 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSS弹性盒子布局之Flex</title>
+      <link>https://xkhm.net/post/css%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90%E5%B8%83%E5%B1%80%E4%B9%8Bflex/</link>
+      <pubDate>Mon, 28 Dec 2020 22:59:54 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/css%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90%E5%B8%83%E5%B1%80%E4%B9%8Bflex/</guid>
+      <description>前言：flex布局永远滴神！ 1.CSS盒子弹性布局 🤤弹性布局模型中，弹性容器的子元素可以在任何方向上排布，也可以“弹性伸缩”其尺寸，既可以增</description>
+    </item>
+    
     <item>
       <title>JS基础之Promise</title>
       <link>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8Bpromise/</link>

@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Sat, 26 Dec 2020 16:05:58 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 28 Dec 2020 22:59:54 +0800</lastBuildDate>
     
         <atom:link href="https://xkhm.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -74,6 +74,130 @@
         <description>&lt;blockquote&gt;
 &lt;p&gt;一只小透明的前端开发（待补充）&lt;/p&gt;
 &lt;/blockquote&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>CSS弹性盒子布局之Flex</title>
+      <link>https://xkhm.net/post/css%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90%E5%B8%83%E5%B1%80%E4%B9%8Bflex/</link>
+      <pubDate>Mon, 28 Dec 2020 22:59:54 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/css%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90%E5%B8%83%E5%B1%80%E4%B9%8Bflex/</guid>
+      
+        <description>&lt;blockquote&gt;
+&lt;p&gt;前言：flex布局永远滴神！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;1css盒子弹性布局&#34;&gt;1.CSS盒子弹性布局&lt;/h1&gt;
+&lt;p&gt;🤤弹性布局模型中，弹性容器的子元素可以在任何方向上排布，也可以“弹性伸缩”其尺寸，既可以增加尺寸以填满未使用的空间，也可以收缩尺寸避免父元素溢出。子元素的水平对齐和垂直对齐都能很方便的进行操控。通过嵌套这些框（水平框在垂直框内，或垂直框在水平框内）可以在两个维度上构建布局。——&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout&#34;&gt;MDN CSS 弹性盒子布局&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;但是 &lt;strong&gt;flexbox&lt;/strong&gt; 本质上是一种一维的布局，是因为一个 &lt;strong&gt;flexbox&lt;/strong&gt; 一次只能处理一个维度上的元素布局，一行或者一列，以上说的通过嵌套处理两个维度上的布局本质上还是处理了两个一维的布局。作为对比的是另外一个二维布局 &lt;strong&gt;CSS Grid Layout&lt;/strong&gt;，可以同时处理行和列上的布局。——&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox&#34;&gt;MDN flex 布局的基本概念&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;2flex布局&#34;&gt;2.flex布局&lt;/h1&gt;
+&lt;p&gt;😎😎😎😎😎&lt;/p&gt;
+&lt;h2 id=&#34;21-flex布局属性&#34;&gt;2.1 flex布局属性&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;属性&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;描述&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;值&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;默认值&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;作用对象&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex-direction&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;定义了flex容器的主轴的方向(正方向或反方向)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;row，row-reverse，column，column-reverse&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;row&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex容器&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex-wrap&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;项目太大而无法全部显示在一行中，可以通过设置flex-wrap进行换行显示&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;nowrap，wrap，wrap-reverse，&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;nowrap&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex容器&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex-flow&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex-direction 和 flex-wrap 组合简写属性 flex-flow&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;上面两个属性值进行组合&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;row nowrap&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex容器&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;align-items&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex-direction 和 flex-wrap 组合简写属性 flex-flow&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;上面两个属性值进行组合&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;row nowrap&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex容器&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;justify-content&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex-direction 和 flex-wrap 组合简写属性 flex-flow&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;上面两个属性值进行组合&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;row nowrap&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex容器&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;align-content&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex-direction 和 flex-wrap 组合简写属性 flex-flow&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;上面两个属性值进行组合&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;row nowrap&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex容器&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex-grow&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;为整数时，以 flex-basis 为基础，沿主轴方向增长尺寸&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;number&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex子项上&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex-shrink&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;处理flex子项收缩的问题&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;number&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex子项上&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex-basis&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;定义flex子项的空间大小&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;auto，number&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;auto&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex子项上&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex-grow，flex-shrink，flex-basis组合简写属性&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;单元格&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;单元格&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex子项上&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;order&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex-grow，flex-shrink，flex-basis组合简写属性&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;单元格&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;单元格&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex子项上&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;align-self&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex-grow，flex-shrink，flex-basis组合简写属性&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;单元格&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;单元格&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;flex子项上&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;参考文档：&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;1.&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout&#34;&gt;CSS 弹性盒子布局&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2.&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox&#34;&gt;flex 布局的基本概念&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
       
     </item>
