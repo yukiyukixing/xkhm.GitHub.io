@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Mon, 28 Dec 2020 22:59:54 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Dec 2020 22:08:43 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSS基础</title>
+      <link>https://xkhm.net/post/css%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Tue, 29 Dec 2020 22:08:43 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/css%E5%9F%BA%E7%A1%80/</guid>
+      <description>1.盒模型 MDN 盒模型 （1）.什么是CSS 盒模型? 块级盒子（Block box）和内联盒子（inline box） 完整的 CSS 盒模型应用于块级盒子，内联</description>
+    </item>
+    
     <item>
       <title>CSS弹性盒子布局之Flex</title>
       <link>https://xkhm.net/post/css%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90%E5%B8%83%E5%B1%80%E4%B9%8Bflex/</link>

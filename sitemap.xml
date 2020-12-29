@@ -38,21 +38,49 @@
   
   <url>
     <loc>https://xkhm.net/categories/</loc>
-    <lastmod>2020-12-28T22:59:54+08:00</lastmod>
+    <lastmod>2020-12-29T22:08:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xkhm.net/tags/css/</loc>
-    <lastmod>2020-12-28T22:59:54+08:00</lastmod>
+    <lastmod>2020-12-29T22:08:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xkhm.net/categories/css/</loc>
-    <lastmod>2020-12-28T22:59:54+08:00</lastmod>
+    <lastmod>2020-12-29T22:08:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/post/css%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2020-12-29T22:08:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/post/</loc>
+    <lastmod>2020-12-29T22:08:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/tags/</loc>
+    <lastmod>2020-12-29T22:08:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/</loc>
+    <lastmod>2020-12-29T22:08:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -66,27 +94,6 @@
   
   <url>
     <loc>https://xkhm.net/tags/flex/</loc>
-    <lastmod>2020-12-28T22:59:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xkhm.net/post/</loc>
-    <lastmod>2020-12-28T22:59:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xkhm.net/tags/</loc>
-    <lastmod>2020-12-28T22:59:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xkhm.net/</loc>
     <lastmod>2020-12-28T22:59:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
