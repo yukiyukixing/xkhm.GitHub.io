@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="XKHM" />
-  <meta name="description" content="文章类型：学习笔记 bind() 方法创建一个新的函数，在 bind() 被调用时，这个新函数的 this 被指定为 bind() 的第一个参数，而其余参数将作为新函数的参数，供调用时使用。 1" />
+  <meta name="description" content="文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;); bind在第一个参数之" />
 
   <meta name="keywords" content="Hugo" />
 
@@ -59,23 +59,23 @@
 
 
 <meta property="og:title" content="JS基础之手写bind" />
-<meta property="og:description" content="文章类型：学习笔记 bind() 方法创建一个新的函数，在 bind() 被调用时，这个新函数的 this 被指定为 bind() 的第一个参数，而其余参数将作为新函数的参数，供调用时使用。 1" />
+<meta property="og:description" content="文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;); bind在第一个参数之" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99bind/" />
 <meta property="article:published_time" content="2020-12-25T08:24:35+08:00" />
 <meta property="article:modified_time" content="2020-12-25T08:24:35+08:00" />
 <meta itemprop="name" content="JS基础之手写bind">
-<meta itemprop="description" content="文章类型：学习笔记 bind() 方法创建一个新的函数，在 bind() 被调用时，这个新函数的 this 被指定为 bind() 的第一个参数，而其余参数将作为新函数的参数，供调用时使用。 1">
+<meta itemprop="description" content="文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;); bind在第一个参数之">
 <meta itemprop="datePublished" content="2020-12-25T08:24:35+08:00" />
 <meta itemprop="dateModified" content="2020-12-25T08:24:35+08:00" />
-<meta itemprop="wordCount" content="2283">
+<meta itemprop="wordCount" content="2103">
 
 
 
 <meta itemprop="keywords" content="JavaScript,bind()," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="JS基础之手写bind"/>
-<meta name="twitter:description" content="文章类型：学习笔记 bind() 方法创建一个新的函数，在 bind() 被调用时，这个新函数的 this 被指定为 bind() 的第一个参数，而其余参数将作为新函数的参数，供调用时使用。 1"/>
+<meta name="twitter:description" content="文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;); bind在第一个参数之"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -411,9 +411,6 @@
       <blockquote>
 <p>文章类型：学习笔记</p>
 </blockquote>
-<blockquote>
-<p>bind() 方法创建一个新的函数，在 bind() 被调用时，这个新函数的 this 被指定为 bind() 的第一个参数，而其余参数将作为新函数的参数，供调用时使用。</p>
-</blockquote>
 <h1 id="1bind的使用">1.bind()的使用</h1>
 <p>😏😏😏😏😏</p>
 <pre><code>        let obj = {
@@ -497,9 +494,6 @@
         }
         // getInfo.call(obj, '星空海绵', 'Software Engineer');
         Function.prototype.myBind = function (context) {
-            if (typeof this !== 'function') {
-                throw new TypeError('调用者必须是函数')
-            }
             var _that = this,
                 slice = Array.prototype.slice,
                 args = slice.call(arguments, 1);
@@ -537,9 +531,6 @@
         }
         // getInfo.call(obj, '星空海绵', 'Software Engineer');
         Function.prototype.myBind = function (context) {
-            if (typeof this !== 'function') {
-                throw new TypeError('调用者必须是函数')
-            }
             var _that = this,
                 slice = Array.prototype.slice,
                 args = slice.call(arguments, 1),
@@ -560,9 +551,6 @@
             c = getInfo.bind(obj, '星空海绵', 'Software Engineer'),
             d = new c(); // 上面getInfo中的this打印结果为新创建的 d 对象
 </code></pre><pre><code>        Function.prototype.myBind = function (context) {
-            if (typeof this !== 'function') {
-                throw new TypeError('调用者必须是函数')
-            }
             var _that = this,
                 args = [].slice.call(arguments, 1);
             context = context || window;
@@ -587,9 +575,6 @@
         }
         // getInfo.call(obj, '星空海绵', 'Software Engineer');
         Function.prototype.myBind = function (context) {
-            if (typeof this !== 'function') {
-                throw new TypeError('调用者必须是函数')
-            }
             var _that = this,
                 args = [].slice.call(arguments, 1);
             context = context || window;
