@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Tue, 29 Dec 2020 22:08:43 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 31 Dec 2020 22:06:11 +0800</lastBuildDate>
     
         <atom:link href="https://xkhm.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -74,6 +74,89 @@
         <description>&lt;blockquote&gt;
 &lt;p&gt;一只小透明的前端开发（待补充）&lt;/p&gt;
 &lt;/blockquote&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>JS之日常解题</title>
+      <link>https://xkhm.net/post/js%E4%B9%8B%E6%97%A5%E5%B8%B8%E8%A7%A3%E9%A2%98/</link>
+      <pubDate>Thu, 31 Dec 2020 22:06:11 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/js%E4%B9%8B%E6%97%A5%E5%B8%B8%E8%A7%A3%E9%A2%98/</guid>
+      
+        <description>&lt;h2 id=&#34;1取出对象中一部分放到另一个对象中&#34;&gt;1.取出对象中一部分放到另一个对象中&lt;/h2&gt;
+&lt;p&gt;今天下午在掘金摸鱼的时候，看见有一个小同学发了一个&lt;a href=&#34;https://juejin.cn/pin/6912343800257970184&#34;&gt;沸点&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ca3d8e11e36b45108118e39c3a5cd780~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;嗯嗯 ，日常要我写的话，以前可能我也会这么写，但是经过我最近一段时间的学习，我可能会用&lt;strong&gt;解构赋值&lt;/strong&gt;来写&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        const objOne = {
+            name: &#39;xiaoMing&#39;,
+            age: 18,
+            id: 1234,
+            gender: 1
+        }
+        const { name, id } = objOne;
+        const objTwo = { name, id };
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我可能会像上面这样写，这些些真的很优雅吗，我觉得跟上面那位小同学写的也没什么区别，还多一行代码，并不是一个好的方案，像我这么机灵的&lt;strong&gt;搜索引擎&lt;/strong&gt;工程师，那么我就开始&lt;strong&gt;Google&lt;/strong&gt;一下，于是找到一个&lt;a href=&#34;https://segmentfault.com/q/1010000012715651&#34;&gt;讨论贴&lt;/a&gt;，针不戳，立面果然有几种比较秒的写法，显得有点高端。&lt;/p&gt;
+&lt;h2 id=&#34;1第一种&#34;&gt;（1）第一种&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;        const objOne = {
+            name: &#39;xiaoMing&#39;,
+            age: 18,
+            id: 1234,
+            gender: 1
+        }
+        const { age, gender, ...objTwo } = objOne;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这种也是利用的对象解构，把剩余的值赋给了objTwo，但是如果我原对象中有30个属性，我只需要取两个呢，那我岂不是得写很多。&lt;/p&gt;
+&lt;h2 id=&#34;2第二种&#34;&gt;（2）第二种&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;        const objOne = {
+            name: &#39;xiaoMing&#39;,
+            age: 18,
+            id: 1234,
+            gender: 1
+        }
+        const objTwo = (({ name, id }) =&amp;gt; ({ name, id }))(objOne)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面这种也是解构，不过这里用了一个立即执行函数，还是比较秒的，但是本质上还是解构的思想，跟上面的有同样的问题，假如我要取28个属性呢，那岂不是要写很多。&lt;/p&gt;
+&lt;h2 id=&#34;3第三种&#34;&gt;（3）第三种&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;        const objOne = {
+            name: &#39;xiaoMing&#39;,
+            age: 18,
+            id: 1234,
+            gender: 1
+        }
+        const pick = (obj, arr) =&amp;gt; arr.reduce((iter, val) =&amp;gt;
+            (val in obj &amp;amp;&amp;amp; (iter[val] = obj[val]), iter), {});
+
+        const objTwo = pick(objOne, [&#39;name&#39;, &#39;id&#39;]);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这种刚看是不是还有点不明白，首先箭头函数箭头后面不写大括号{}的时候，会自动return，这是箭头函数带的特性，再就是 &lt;strong&gt;(val in obj &amp;amp;&amp;amp; (iter[val] = obj[val]), iter)&lt;/strong&gt; 这一句代码是不是看着有点不是很懂，前面倒是知道，就是判断，那这个逗号是什么意思呢，其实我刚看也没看懂，就直接翻了一下 &lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comma_Operator&#34;&gt;逗号操作符&amp;ndash;MDN&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;MDN 前端滴神 yyds&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;逗号操作符  对它的每个操作数求值（从左到右），并返回最后一个操作数的值。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;也就是说上面这一行代码会返回每次的操作结果，然后用这个操作结果再进行下一次操作，上面的代码也就相当于：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        const objOne = {
+            name: &#39;xiaoMing&#39;,
+            age: 18,
+            id: 1234,
+            gender: 1
+        }
+        const pick = (obj, arr) =&amp;gt; arr.reduce((iter, val) =&amp;gt; {
+            if (val in obj &amp;amp;&amp;amp; (iter[val] = obj[val])) {
+                return iter
+            }
+        }, {});
+        const objTwo = pick(objOne, [&#39;name&#39;, &#39;id&#39;]);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;但是上面用逗号写的确实会更简洁，对不懂逗号操作符的人来说可能不是很明了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;上面这三种写法相对而言比之前看着高大上一点，只是CodeReview的时候看着没那么呆🤗🤗，显得拉风一点，照日常来说，写出解构就行了，但是你要是会什么奇技淫巧也可以写出来，CodeReview同事看着这代码如果他不懂的话直呼大神，要是看懂了可能会发出一声惊叹，秒啊，也有可能是，就这？，花里胡哨，不如最开始的直接取过来赋值，简洁明了，立马看懂😏😏&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;2判断一个变量同时等于多个数值&#34;&gt;2.判断一个变量同时等于多个数值&lt;/h1&gt;
+&lt;p&gt;这是今天看B站上的一个&lt;a href=&#34;https://www.bilibili.com/video/BV1aV41187cU&#34;&gt;UP&lt;/a&gt;的视频里面，UP提出来的，当然之前我也看到过，只是没有仔细的研究，只是今天看视频又看见了，想着连着上面那一题一起记录一下吧，毕竟好记性不如烂笔头嘛🤔🤔&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        if (a == 1 &amp;amp;&amp;amp; a == 2 &amp;amp;&amp;amp; a == 3) {
+            console.log(&#39;星空海绵&#39;);
+        }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面写一段是什么代码可以让这个判断成立，执行打印的代码，首先一看到这个题目，大家应该想到，想要这个判断成立，a肯定得是一个变化得值，每使用一次就加1，那么这个判断才有可能成立，好了，怎样让这个判断成立的思路已经有了，现在的问题就是怎么让a每使用一次就加1呢。&lt;/p&gt;
 </description>
       
     </item>

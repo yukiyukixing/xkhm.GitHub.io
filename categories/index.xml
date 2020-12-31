@@ -7,22 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Tue, 29 Dec 2020 22:08:43 +0800</lastBuildDate><atom:link href="https://xkhm.net/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 31 Dec 2020 22:06:11 +0800</lastBuildDate><atom:link href="https://xkhm.net/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript</title>
+      <link>https://xkhm.net/categories/javascript/</link>
+      <pubDate>Thu, 31 Dec 2020 22:06:11 +0800</pubDate>
+      
+      <guid>https://xkhm.net/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>CSS</title>
       <link>https://xkhm.net/categories/css/</link>
       <pubDate>Tue, 29 Dec 2020 22:08:43 +0800</pubDate>
       
       <guid>https://xkhm.net/categories/css/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JavaScript</title>
-      <link>https://xkhm.net/categories/javascript/</link>
-      <pubDate>Sat, 26 Dec 2020 16:05:58 +0800</pubDate>
-      
-      <guid>https://xkhm.net/categories/javascript/</guid>
       <description></description>
     </item>
     

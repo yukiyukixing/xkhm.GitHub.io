@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Tue, 29 Dec 2020 22:08:43 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 31 Dec 2020 22:06:11 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JS之日常解题</title>
+      <link>https://xkhm.net/post/js%E4%B9%8B%E6%97%A5%E5%B8%B8%E8%A7%A3%E9%A2%98/</link>
+      <pubDate>Thu, 31 Dec 2020 22:06:11 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/js%E4%B9%8B%E6%97%A5%E5%B8%B8%E8%A7%A3%E9%A2%98/</guid>
+      <description>1.取出对象中一部分放到另一个对象中 今天下午在掘金摸鱼的时候，看见有一个小同学发了一个沸点 嗯嗯 ，日常要我写的话，以前可能我也会这么写，但是经</description>
+    </item>
+    
     <item>
       <title>CSS基础</title>
       <link>https://xkhm.net/post/css%E5%9F%BA%E7%A1%80/</link>
