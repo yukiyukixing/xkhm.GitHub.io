@@ -100,7 +100,7 @@
         }
         const { name, id } = objOne;
         const objTwo = { name, id };
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我可能会像上面这样写，这些些真的很优雅吗，我觉得跟上面那位小同学写的也没什么区别，还多一行代码，并不是一个好的方案，像我这么机灵的&lt;strong&gt;搜索引擎&lt;/strong&gt;工程师，那么我就开始&lt;strong&gt;Google&lt;/strong&gt;一下，于是找到一个&lt;a href=&#34;https://segmentfault.com/q/1010000012715651&#34;&gt;讨论贴&lt;/a&gt;，针不戳，立面果然有几种比较秒的写法，显得有点高端。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我可能会像上面这样写，这些些真的很优雅吗，我觉得跟上面那位小同学写的也没什么区别，还多一行代码，并不是一个好的方案，像我这么机灵的&lt;strong&gt;搜索引擎&lt;/strong&gt;工程师，那么我就开始&lt;strong&gt;Google&lt;/strong&gt;一下，于是找到一个&lt;a href=&#34;https://segmentfault.com/q/1010000012715651&#34;&gt;讨论贴&lt;/a&gt;，针不戳，里面果然有几种比较秒的写法，显得有点高端。&lt;/p&gt;
 &lt;h2 id=&#34;1第一种&#34;&gt;（1）第一种&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;        const objOne = {
             name: &#39;xiaoMing&#39;,
