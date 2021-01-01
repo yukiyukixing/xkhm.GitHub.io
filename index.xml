@@ -85,7 +85,10 @@
       
       <guid>https://xkhm.net/post/js%E4%B9%8B%E6%97%A5%E5%B8%B8%E8%A7%A3%E9%A2%98/</guid>
       
-        <description>&lt;h2 id=&#34;1取出对象中一部分放到另一个对象中&#34;&gt;1.取出对象中一部分放到另一个对象中&lt;/h2&gt;
+        <description>&lt;blockquote&gt;
+&lt;p&gt;前言：好记性不如烂笔头，知识来自于点点滴滴的记录&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;1取出对象中一部分放到另一个对象中&#34;&gt;1.取出对象中一部分放到另一个对象中&lt;/h2&gt;
 &lt;p&gt;今天下午在掘金摸鱼的时候，看见有一个小同学发了一个&lt;a href=&#34;https://juejin.cn/pin/6912343800257970184&#34;&gt;沸点&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ca3d8e11e36b45108118e39c3a5cd780~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;嗯嗯 ，日常要我写的话，以前可能我也会这么写，但是经过我最近一段时间的学习，我可能会用&lt;strong&gt;解构赋值&lt;/strong&gt;来写&lt;/p&gt;
@@ -156,7 +159,78 @@
 &lt;pre&gt;&lt;code&gt;        if (a == 1 &amp;amp;&amp;amp; a == 2 &amp;amp;&amp;amp; a == 3) {
             console.log(&#39;星空海绵&#39;);
         }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面写一段是什么代码可以让这个判断成立，执行打印的代码，首先一看到这个题目，大家应该想到，想要这个判断成立，a肯定得是一个变化得值，每使用一次就加1，那么这个判断才有可能成立，好了，怎样让这个判断成立的思路已经有了，现在的问题就是怎么让a每使用一次就加1呢。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面写一段是什么代码可以让这个判断成立，执行打印的代码，首先一看到这个题目，大家应该想到，想要这个判断成立，a肯定得是一个变化得值，每使用一次就加1，那么这个判断才有可能成立，好了，怎样让这个判断成立的思路已经有了，现在的问题就是怎么让a每使用一次就加1呢。
+首先我们来看一下&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/%E7%9B%B8%E7%AD%89&#34;&gt; == &lt;/a&gt;操作符成立的条件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1.如果两个操作数都是对象，则仅当两个操作数都引用同一个对象时才返回true。&lt;/li&gt;
+&lt;li&gt;2.如果一个操作数是null，另一个操作数是undefined，则返回true。&lt;/li&gt;
+&lt;li&gt;3.如果两个操作数是不同类型的，就会尝试在比较之前将它们转换为相同类型：
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 1.当数字与字符串进行比较时，会尝试将字符串转换为数字值。&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 2.如果操作数之一是Boolean，则将布尔操作数转换为1或0。true转成1，false转成0。&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 3.如果操作数之一是对象，另一个是数字或字符串，会尝试使用对象的valueOf()和toString()方法将对象转换为原始值。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;4.如果操作数具有相同的类型，则将它们进行如下比较：
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 1.String：true仅当两个操作数具有相同顺序的相同字符时才返回。&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 2.Number：true仅当两个操作数具有相同的值时才返回。+0并被-0视为相同的值。如果任一操作数为NaN，则返回false。&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 3.Boolean：true仅当操作数为两个true或两个false时才返回true。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;== 运算符与 === 运算符之间的区别： === 运算符不尝试类型转换。相反， === 运算符始终将不同类型的操作数视为不同。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;1第一种解法&#34;&gt;（1）第一种解法&lt;/h2&gt;
+&lt;p&gt;看到上面 == 运算符的相关成立条件后，我们再来分析上面这一题，当 a 是 number 类型时，只有每次访问后都加1上面的判断才会成立。那么我们看下上面的代码，这个a没用var或者let及const定义，那就是隐式变量，当然我们也可在上面定义a，就单纯这个式子而言，a是隐式变量，隐式变量再浏览器中是挂在全局对象window下面的，也就是说a是window对象下的一个属性，然后对象有一个 &lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty&#34;&gt;Object.defineProperty()&lt;/a&gt; 方法，这个方法能定义和修改一个对象上的属性，并且返回此对象。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        let _default = 0
+        Object.defineProperty(window, &#39;a&#39;, {
+            get() {
+                return ++_default;
+            }
+        })
+        if (a == 1 &amp;amp;&amp;amp; a == 2 &amp;amp;&amp;amp; a == 3) {
+            console.log(&#39;星空海绵&#39;);
+        }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;此时通过上面这段代码我们发现这个判断成立，此时如果我们把 == 改成 === 成立吗，照样是成立的，因为此时a每次增加1并保持自己的类型为number，也就是说上面这段代码不仅适用于 == ，同时也适用于 === 。&lt;/p&gt;
+&lt;h2 id=&#34;2第二种解法&#34;&gt;（2）第二种解法&lt;/h2&gt;
+&lt;p&gt;看到上面 == 运算符的介绍，我们发现 &lt;strong&gt;如果操作数之一是对象，另一个是数字或字符串，会尝试使用对象的valueOf()和toString()方法将对象转换为原始值。&lt;/strong&gt; 有这么一个规则，也就是说假如现在上面的a是对象的话，会尝试使用valueOf方法和toSting方法，那么我们去修改这两个方法中的其中一个行吗&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        let a = {
+            _default: 0,
+            valueOf: function () {
+                return ++this._default;
+            }
+        }
+        if (a == 1 &amp;amp;&amp;amp; a == 2 &amp;amp;&amp;amp; a == 3) {
+            console.log(&#39;星空海绵&#39;);
+        }
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;        let a = {
+            _default: 0,
+            toString: function () {
+                return ++this._default;
+            }
+        }
+        if (a == 1 &amp;amp;&amp;amp; a == 2 &amp;amp;&amp;amp; a == 3) {
+            console.log(&#39;星空海绵&#39;);
+        }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以上两种方法都可以，一个是重写a对象的valueOf方法，一个是重写对象的toString()方法。&lt;/p&gt;
+&lt;h1 id=&#34;3深入类型转换&#34;&gt;3.深入类型转换&lt;/h1&gt;
+&lt;p&gt;首先上题目&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        console.log(({} + {}).length);
+        console.log(([] + []).length);
+        console.log(([] + {}).length);
+        console.log((function () { }).length);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面这4个console分别打印什么，首先第一个其实是两个空对象相加，那么空对象怎么相加呢，它们会自动转成字符串相加，也就是调用toString方法，也就是说{}.toSting(),那么这个结果是什么呢，这个结果是 [object object]，此时你是不是想到了判断类型的 Object.prototype.toString.call() ,既然知道原理了，那第一个console的答案就是 &amp;ldquo;[object object]&amp;quot;+&amp;quot;[object object]&amp;quot;,也就是30，
+第二个可能不用说大家都知道是0，因为[]空数组转换成数值类型是0，根据上面两题我们知道这个答案是 0+&amp;quot;[object object]&amp;quot;，也就是15，那么最后一题呢，我们不妨打印 console.dir(function () { }); 看一下，发现这个里面带了一个length属性，那么这个length属性是什么呢，其实是参数列表的个数，相当于 arguments.length,所以最后一个的结果也是0。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        console.log(({} + {}).length); // 30
+        console.log(([] + []).length); // 0
+        console.log(([] + {}).length); // 15
+        console.log((function () { }).length); // 0
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;只是日常看到的，试着自己理解一下，我并不在乎这些题目是不是面试官为了装逼出出来难为面试者的，我只是看见了觉得好奇记录一下，请大佬们别打我！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;完！&lt;/strong&gt;&lt;/p&gt;
 </description>
       
     </item>

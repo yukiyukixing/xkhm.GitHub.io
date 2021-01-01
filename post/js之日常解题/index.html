@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="XKHM" />
-  <meta name="description" content="1.取出对象中一部分放到另一个对象中 今天下午在掘金摸鱼的时候，看见有一个小同学发了一个沸点 嗯嗯 ，日常要我写的话，以前可能我也会这么写，但是经" />
+  <meta name="description" content="前言：好记性不如烂笔头，知识来自于点点滴滴的记录 1.取出对象中一部分放到另一个对象中 今天下午在掘金摸鱼的时候，看见有一个小同学发了一个沸点 嗯" />
 
   <meta name="keywords" content="Hugo" />
 
@@ -59,23 +59,23 @@
 
 
 <meta property="og:title" content="JS之日常解题" />
-<meta property="og:description" content="1.取出对象中一部分放到另一个对象中 今天下午在掘金摸鱼的时候，看见有一个小同学发了一个沸点 嗯嗯 ，日常要我写的话，以前可能我也会这么写，但是经" />
+<meta property="og:description" content="前言：好记性不如烂笔头，知识来自于点点滴滴的记录 1.取出对象中一部分放到另一个对象中 今天下午在掘金摸鱼的时候，看见有一个小同学发了一个沸点 嗯" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xkhm.net/post/js%E4%B9%8B%E6%97%A5%E5%B8%B8%E8%A7%A3%E9%A2%98/" />
 <meta property="article:published_time" content="2020-12-31T22:06:11+08:00" />
 <meta property="article:modified_time" content="2020-12-31T22:06:11+08:00" />
 <meta itemprop="name" content="JS之日常解题">
-<meta itemprop="description" content="1.取出对象中一部分放到另一个对象中 今天下午在掘金摸鱼的时候，看见有一个小同学发了一个沸点 嗯嗯 ，日常要我写的话，以前可能我也会这么写，但是经">
+<meta itemprop="description" content="前言：好记性不如烂笔头，知识来自于点点滴滴的记录 1.取出对象中一部分放到另一个对象中 今天下午在掘金摸鱼的时候，看见有一个小同学发了一个沸点 嗯">
 <meta itemprop="datePublished" content="2020-12-31T22:06:11+08:00" />
 <meta itemprop="dateModified" content="2020-12-31T22:06:11+08:00" />
-<meta itemprop="wordCount" content="1233">
+<meta itemprop="wordCount" content="2887">
 
 
 
 <meta itemprop="keywords" content="JavaScript,题目," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="JS之日常解题"/>
-<meta name="twitter:description" content="1.取出对象中一部分放到另一个对象中 今天下午在掘金摸鱼的时候，看见有一个小同学发了一个沸点 嗯嗯 ，日常要我写的话，以前可能我也会这么写，但是经"/>
+<meta name="twitter:description" content="前言：好记性不如烂笔头，知识来自于点点滴滴的记录 1.取出对象中一部分放到另一个对象中 今天下午在掘金摸鱼的时候，看见有一个小同学发了一个沸点 嗯"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -399,13 +399,21 @@
     <li><a href="#2第二种">（2）第二种</a></li>
     <li><a href="#3第三种">（3）第三种</a></li>
   </ul>
+
+  <ul>
+    <li><a href="#1第一种解法">（1）第一种解法</a></li>
+    <li><a href="#2第二种解法">（2）第二种解法</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      <h2 id="1取出对象中一部分放到另一个对象中">1.取出对象中一部分放到另一个对象中</h2>
+      <blockquote>
+<p>前言：好记性不如烂笔头，知识来自于点点滴滴的记录</p>
+</blockquote>
+<h2 id="1取出对象中一部分放到另一个对象中">1.取出对象中一部分放到另一个对象中</h2>
 <p>今天下午在掘金摸鱼的时候，看见有一个小同学发了一个<a href="https://juejin.cn/pin/6912343800257970184">沸点</a></p>
 <p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ca3d8e11e36b45108118e39c3a5cd780~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
 <p>嗯嗯 ，日常要我写的话，以前可能我也会这么写，但是经过我最近一段时间的学习，我可能会用<strong>解构赋值</strong>来写</p>
@@ -476,7 +484,78 @@
 <pre><code>        if (a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3) {
             console.log('星空海绵');
         }
-</code></pre><p>上面写一段是什么代码可以让这个判断成立，执行打印的代码，首先一看到这个题目，大家应该想到，想要这个判断成立，a肯定得是一个变化得值，每使用一次就加1，那么这个判断才有可能成立，好了，怎样让这个判断成立的思路已经有了，现在的问题就是怎么让a每使用一次就加1呢。</p>
+</code></pre><p>上面写一段是什么代码可以让这个判断成立，执行打印的代码，首先一看到这个题目，大家应该想到，想要这个判断成立，a肯定得是一个变化得值，每使用一次就加1，那么这个判断才有可能成立，好了，怎样让这个判断成立的思路已经有了，现在的问题就是怎么让a每使用一次就加1呢。
+首先我们来看一下<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/%E7%9B%B8%E7%AD%89"> == </a>操作符成立的条件：</p>
+<ul>
+<li>1.如果两个操作数都是对象，则仅当两个操作数都引用同一个对象时才返回true。</li>
+<li>2.如果一个操作数是null，另一个操作数是undefined，则返回true。</li>
+<li>3.如果两个操作数是不同类型的，就会尝试在比较之前将它们转换为相同类型：
+<ul>
+<li><input disabled="" type="checkbox"> 1.当数字与字符串进行比较时，会尝试将字符串转换为数字值。</li>
+<li><input disabled="" type="checkbox"> 2.如果操作数之一是Boolean，则将布尔操作数转换为1或0。true转成1，false转成0。</li>
+<li><input disabled="" type="checkbox"> 3.如果操作数之一是对象，另一个是数字或字符串，会尝试使用对象的valueOf()和toString()方法将对象转换为原始值。</li>
+</ul>
+</li>
+<li>4.如果操作数具有相同的类型，则将它们进行如下比较：
+<ul>
+<li><input disabled="" type="checkbox"> 1.String：true仅当两个操作数具有相同顺序的相同字符时才返回。</li>
+<li><input disabled="" type="checkbox"> 2.Number：true仅当两个操作数具有相同的值时才返回。+0并被-0视为相同的值。如果任一操作数为NaN，则返回false。</li>
+<li><input disabled="" type="checkbox"> 3.Boolean：true仅当操作数为两个true或两个false时才返回true。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>== 运算符与 === 运算符之间的区别： === 运算符不尝试类型转换。相反， === 运算符始终将不同类型的操作数视为不同。</p>
+</blockquote>
+<h2 id="1第一种解法">（1）第一种解法</h2>
+<p>看到上面 == 运算符的相关成立条件后，我们再来分析上面这一题，当 a 是 number 类型时，只有每次访问后都加1上面的判断才会成立。那么我们看下上面的代码，这个a没用var或者let及const定义，那就是隐式变量，当然我们也可在上面定义a，就单纯这个式子而言，a是隐式变量，隐式变量再浏览器中是挂在全局对象window下面的，也就是说a是window对象下的一个属性，然后对象有一个 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty">Object.defineProperty()</a> 方法，这个方法能定义和修改一个对象上的属性，并且返回此对象。</p>
+<pre><code>        let _default = 0
+        Object.defineProperty(window, 'a', {
+            get() {
+                return ++_default;
+            }
+        })
+        if (a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3) {
+            console.log('星空海绵');
+        }
+</code></pre><p>此时通过上面这段代码我们发现这个判断成立，此时如果我们把 == 改成 === 成立吗，照样是成立的，因为此时a每次增加1并保持自己的类型为number，也就是说上面这段代码不仅适用于 == ，同时也适用于 === 。</p>
+<h2 id="2第二种解法">（2）第二种解法</h2>
+<p>看到上面 == 运算符的介绍，我们发现 <strong>如果操作数之一是对象，另一个是数字或字符串，会尝试使用对象的valueOf()和toString()方法将对象转换为原始值。</strong> 有这么一个规则，也就是说假如现在上面的a是对象的话，会尝试使用valueOf方法和toSting方法，那么我们去修改这两个方法中的其中一个行吗</p>
+<pre><code>        let a = {
+            _default: 0,
+            valueOf: function () {
+                return ++this._default;
+            }
+        }
+        if (a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3) {
+            console.log('星空海绵');
+        }
+</code></pre><pre><code>        let a = {
+            _default: 0,
+            toString: function () {
+                return ++this._default;
+            }
+        }
+        if (a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3) {
+            console.log('星空海绵');
+        }
+</code></pre><p>以上两种方法都可以，一个是重写a对象的valueOf方法，一个是重写对象的toString()方法。</p>
+<h1 id="3深入类型转换">3.深入类型转换</h1>
+<p>首先上题目</p>
+<pre><code>        console.log(({} + {}).length);
+        console.log(([] + []).length);
+        console.log(([] + {}).length);
+        console.log((function () { }).length);
+</code></pre><p>上面这4个console分别打印什么，首先第一个其实是两个空对象相加，那么空对象怎么相加呢，它们会自动转成字符串相加，也就是调用toString方法，也就是说{}.toSting(),那么这个结果是什么呢，这个结果是 [object object]，此时你是不是想到了判断类型的 Object.prototype.toString.call() ,既然知道原理了，那第一个console的答案就是 &ldquo;[object object]&quot;+&quot;[object object]&quot;,也就是30，
+第二个可能不用说大家都知道是0，因为[]空数组转换成数值类型是0，根据上面两题我们知道这个答案是 0+&quot;[object object]&quot;，也就是15，那么最后一题呢，我们不妨打印 console.dir(function () { }); 看一下，发现这个里面带了一个length属性，那么这个length属性是什么呢，其实是参数列表的个数，相当于 arguments.length,所以最后一个的结果也是0。</p>
+<pre><code>        console.log(({} + {}).length); // 30
+        console.log(([] + []).length); // 0
+        console.log(([] + {}).length); // 15
+        console.log((function () { }).length); // 0
+</code></pre><blockquote>
+<p>只是日常看到的，试着自己理解一下，我并不在乎这些题目是不是面试官为了装逼出出来难为面试者的，我只是看见了觉得好奇记录一下，请大佬们别打我！</p>
+</blockquote>
+<p><strong>完！</strong></p>
 
     </div>
 
@@ -622,7 +701,7 @@
     &copy;
     
       2019 -
-    2020
+    2021
     <span class="heart">
       
       <i class="iconfont">
