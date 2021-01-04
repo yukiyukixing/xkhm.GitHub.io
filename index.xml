@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Mon, 04 Jan 2021 08:30:30 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 04 Jan 2021 19:44:36 +0800</lastBuildDate>
     
         <atom:link href="https://xkhm.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -128,6 +128,482 @@
       
         <description>&lt;blockquote&gt;
 &lt;p&gt;一只小透明的前端开发（待补充）&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Vue2从入门到CV</title>
+      <link>https://xkhm.net/post/vue2%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0cv/</link>
+      <pubDate>Mon, 04 Jan 2021 19:44:36 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/vue2%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0cv/</guid>
+      
+        <description>&lt;h1 id=&#34;1vue是什么&#34;&gt;1.Vue是什么？&lt;/h1&gt;
+&lt;p&gt;Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的&lt;strong&gt;渐进式框架&lt;/strong&gt;。与其它大型框架不同的是，Vue 被设计为可以&lt;strong&gt;自底向上逐层应用&lt;/strong&gt;。&lt;strong&gt;Vue 的核心库只关注视图层&lt;/strong&gt;，不仅易于上手，还&lt;strong&gt;便于与第三方库或既有项目整合&lt;/strong&gt;。另一方面，当与&lt;strong&gt;现代化的工具链以及各种支持类库结合使用&lt;/strong&gt;时，Vue 也完全能够为复杂的单页应用提供驱动。&lt;/p&gt;
+&lt;p&gt;Vue.js 的核心是一个允许采用简洁的模板语法来声明式地&lt;strong&gt;将数据渲染进 DOM 的系统&lt;/strong&gt;。&lt;/p&gt;
+&lt;h1 id=&#34;2特点&#34;&gt;2.特点&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;1.html内容可以是变量 {{}}&lt;/li&gt;
+&lt;li&gt;2.属性内容也可以是变量 v-bind 缩写： :&lt;/li&gt;
+&lt;li&gt;3.可以通过指令控制显示隐藏 v-if&lt;/li&gt;
+&lt;li&gt;4.绑定数组元素来渲染列表 v-for&lt;/li&gt;
+&lt;li&gt;5.给dom绑定方法v-on 缩写 @  数据驱动视图改变&lt;/li&gt;
+&lt;li&gt;6.表单状态和应用状态之间双向绑定 v-model&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;3组件化构建应用&#34;&gt;3.组件化构建应用&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;组件系统是 Vue 的另一个重要概念&lt;/strong&gt;，因为它是一种抽象，&lt;strong&gt;允许我们使用小型、独立和通常可复用的组件构建大型应用&lt;/strong&gt;。仔细想想，几乎任意类型的应用界面都可以抽象为一个&lt;strong&gt;组件树&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;组件使用：&lt;/p&gt;
+&lt;p&gt;1.注册 Vue.component()&lt;/p&gt;
+&lt;p&gt;组件数据传输：&lt;/p&gt;
+&lt;p&gt;1.父组件将数据传输给子组件 props&lt;/p&gt;
+&lt;p&gt;2.props相当于在模板（子组件）上挂了一个可以进行数据绑定的属性（个人理解）&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lang&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;charset&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;viewport&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;Document&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;app-2&amp;#34;&lt;/span&gt;&amp;gt;
+        &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;ol&lt;/span&gt;&amp;gt;
+            &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!-- 创建一个 todo-item 组件的实例 --&amp;gt;&lt;/span&gt;
+            &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;todo-item&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;v-for&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;item in groceryList&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;:todo&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;item&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;:key&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;item.id&amp;#34;&lt;/span&gt;&amp;gt;
+
+            &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;todo-item&lt;/span&gt;&amp;gt;
+        &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;ol&lt;/span&gt;&amp;gt;
+    &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;./vue.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;Vue&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;component&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;todo-item&amp;#39;&lt;/span&gt;, {
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;props&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;todo&amp;#39;&lt;/span&gt;],
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;template&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;li&amp;gt;{{ todo.text }}&amp;lt;/li&amp;gt;&amp;#39;&lt;/span&gt;
+        })
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;app2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Vue&lt;/span&gt;({
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;el&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;#app-2&amp;#39;&lt;/span&gt;,
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+                &lt;span style=&#34;color:#a6e22e&#34;&gt;groceryList&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; [
+                    { &lt;span style=&#34;color:#a6e22e&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;text&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;西红柿&amp;#39;&lt;/span&gt; },
+                    { &lt;span style=&#34;color:#a6e22e&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;text&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;茄子&amp;#39;&lt;/span&gt; },
+                    { &lt;span style=&#34;color:#a6e22e&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;text&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;西瓜&amp;#39;&lt;/span&gt; }
+                ]
+            }
+        })
+    &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;个人理解：这个例子就相当于props属性值todo挂在template上作为一个可以进行数据绑定的属性，绑定的数据在template定义的html内容中可以使用。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h1 id=&#34;4vue组件化与自定义元素的关系&#34;&gt;4.Vue组件化与自定义元素的关系&lt;/h1&gt;
+&lt;p&gt;组件思想参考自定义元素Web组件规范，但是与自定义元素还是有区别：&lt;/p&gt;
+&lt;p&gt;1.Web Components 规范已经完成并通过，但未被所有浏览器原生实现。目前 Safari 10.1+、Chrome 54+ 和 Firefox 63+ 原生支持 Web Components。相比之下，Vue 组件不需要任何 polyfill，并且在所有支持的浏览器 (IE9 及更高版本) 之下表现一致。必要时，&lt;strong&gt;Vue 组件也可以包装于原生自定义元素之内。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;2.Vue 组件提供了纯自定义元素所不具备的一些重要功能，&lt;strong&gt;最突出的是跨组件数据流、自定义事件通信以及构建工具集成。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;虽然 Vue 内部没有使用自定义元素，不过在应用使用自定义元素、或以自定义元素形式发布时，&lt;strong&gt;依然有很好的互操作性。Vue CLI 也支持将 Vue 组件构建成为原生的自定义元素。&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;5vue实例&#34;&gt;5.Vue实例&lt;/h1&gt;
+&lt;h2 id=&#34;1vue实例介绍&#34;&gt;（1）Vue实例介绍&lt;/h2&gt;
+&lt;p&gt;每个 &lt;strong&gt;Vue 应用&lt;/strong&gt; 都是通过用 &lt;strong&gt;Vue 函数&lt;/strong&gt; 创建一个新的 &lt;strong&gt;Vue 实例&lt;/strong&gt; 开始的。一个 &lt;strong&gt;Vue 应用&lt;/strong&gt; 由一个通过 &lt;strong&gt;new Vue&lt;/strong&gt; 创建的根 &lt;strong&gt;Vue 实例&lt;/strong&gt;，以及可选的嵌套的、可复用的&lt;strong&gt;组件树&lt;/strong&gt;组成。&lt;/p&gt;
+&lt;p&gt;虽然没有完全遵循 &lt;strong&gt;MVVM 模型&lt;/strong&gt;，但是 &lt;strong&gt;Vue 的设计&lt;/strong&gt;也受到了它的启发。因此在文档中经常会使用 &lt;strong&gt;vm (ViewModel 的缩写)&lt;/strong&gt; 这个变量名表示 &lt;strong&gt;Vue 实例&lt;/strong&gt;。当创建一个 &lt;strong&gt;Vue 实例&lt;/strong&gt; 时，你可以传入一个&lt;strong&gt;选项对象&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;2vue实例数据挂载&#34;&gt;（2）Vue实例数据挂载&lt;/h2&gt;
+&lt;p&gt;当一个 &lt;strong&gt;Vue 实例&lt;/strong&gt;被创建时，它将 &lt;strong&gt;data 对象&lt;/strong&gt; 中的所有的 &lt;strong&gt;property&lt;/strong&gt; 加入到 &lt;strong&gt;Vue 的响应式系统&lt;/strong&gt;中。当这些 &lt;strong&gt;property&lt;/strong&gt; 的值发生改变时，&lt;strong&gt;视图将会产生“响应”&lt;/strong&gt;，即匹配更新为新的值。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;// 我们的数据对象
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; }
+
+  &lt;span style=&#34;color:#75715e&#34;&gt;// 该对象被加入到一个 Vue 实例中
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;vm&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Vue&lt;/span&gt;({
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;
+  })
+
+  &lt;span style=&#34;color:#75715e&#34;&gt;// 获得这个实例上的 property
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;// 返回源数据中对应的字段
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;vm&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// =&amp;gt; true
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#75715e&#34;&gt;// 设置 property 也会影响到原始数据
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;vm&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// =&amp;gt; 2
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#75715e&#34;&gt;// ……反之亦然
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;vm&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// =&amp;gt; 3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;我们是不是可以猜测一下Vue内部是按照下面这样处理的呢：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lang&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;&amp;gt;
+
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;charset&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;viewport&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;Document&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;A&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;obj&lt;/span&gt;) {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;__proto__&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;obj&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;
+        }
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;
+        }
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;vm&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;A&lt;/span&gt;({
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;
+        })
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;vm&lt;/span&gt;);
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt;);
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;vm&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt;);
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;vm&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt;);
+    &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
+
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;当这些数据改变时，视图会进行重渲染。值得注意的是只有当实例被创建时就已经存在于 data 中的 property 才是响应式的。也就是说如果你添加一个新的 property，将不会触发任何视图的更新。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意：使用 Object.freeze()，这会阻止修改现有的 property，也意味着响应系统无法再追踪变化。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;除了数据 property，Vue 实例还暴露了一些有用的实例 property 与方法。它们都有前缀 $，以便与用户定义的 property 区分开来,这些方法可以用来操作实例的属性。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;3生命周期&#34;&gt;（3）生命周期&lt;/h2&gt;
+&lt;p&gt;每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置 &lt;strong&gt;数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM&lt;/strong&gt; 等。同时在这个过程中也会运行一些叫做&lt;strong&gt;生命周期钩子的函数&lt;/strong&gt;，这给了用户在不同阶段添加自己的代码的机会。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;img src=&#34;https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/834579665f494f66a1da0cf45c0635c7~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h1 id=&#34;6vue模板语法&#34;&gt;6.Vue模板语法&lt;/h1&gt;
+&lt;p&gt;Vue.js 使用了基于 HTML 的模板语法，允许开发者&lt;strong&gt;声明式地将 DOM 绑定至底层 Vue 实例&lt;/strong&gt;的数据。所有 Vue.js 的模板都是合法的 HTML，所以能被遵循规范的浏览器和 HTML 解析器解析。&lt;/p&gt;
+&lt;p&gt;在底层的实现上，&lt;strong&gt;Vue 将模板编译成虚拟 DOM 渲染函数&lt;/strong&gt;。结合响应系统，&lt;strong&gt;Vue 能够智能地计算出最少需要重新渲染多少组件，并把 DOM 操作次数减到最少。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果你熟悉 &lt;strong&gt;虚拟 DOM&lt;/strong&gt; 并且&lt;strong&gt;偏爱 JavaScript 的原始力量&lt;/strong&gt;，你也可以不用模板，直接写&lt;strong&gt;渲染 (render) 函数，使用可选的 JSX 语法。&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;1-mustache语法-双大括号&#34;&gt;（1） “Mustache”语法 (双大括号)&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-code&#34; data-lang=&#34;code&#34;&gt;&amp;lt;span&amp;gt;Message: {{ msg }}&amp;lt;/span&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Mustache 标签将会被替代为对应数据对象上 msg property 的值。无论何时，绑定的数据对象上 msg property 发生了改变，插值处的内容都会更新。&lt;/p&gt;
+&lt;p&gt;通过使用 v-once 指令，你也能执行一次性地插值，当数据改变时，插值处的内容不会更新。但请留心这会影响到该节点上的其它数据绑定：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-code&#34; data-lang=&#34;code&#34;&gt;&amp;lt;span v-once&amp;gt;这个将不会改变: {{ msg }}&amp;lt;/span&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注意：可以用 v-once 优化更新性能 -&amp;gt; 重要&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;2原始-html&#34;&gt;（2）原始 HTML&lt;/h1&gt;
+&lt;p&gt;双大括号会将数据解释为普通文本，而非 HTML 代码。为了输出真正的 HTML，你需要使用 v-html 指令：&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;pre&gt;&lt;code class=&#34;language-code&#34; data-lang=&#34;code&#34;&gt;  &amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+
+&amp;lt;head&amp;gt;
+  &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
+  &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt;
+  &amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+
+&amp;lt;body&amp;gt;
+  &amp;lt;div id=&amp;quot;app&amp;quot; v-once&amp;gt;
+      &amp;lt;p&amp;gt;{{ text }}&amp;lt;/p&amp;gt;
+      &amp;lt;p&amp;gt;&amp;lt;span v-html=&amp;quot;text&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;
+  &amp;lt;/div&amp;gt;
+  &amp;lt;script src=&amp;quot;./vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+  &amp;lt;script&amp;gt;
+
+      let app = new Vue({
+          el: &#39;#app&#39;,
+          data: {
+              text: &#39;Hello&amp;lt;i&amp;gt;你好&amp;lt;/i&amp;gt;&#39;
+          }
+      })
+  &amp;lt;/script&amp;gt;
+&amp;lt;/body&amp;gt;
+
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;结果：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e991c97e6c4a4f4c90adce232c6a337e~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;从上面这个例子可以看出双大括号并不能渲染标签内容&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意：这个 span 的内容将会被替换成为 property 值 rawHtml，直接作为 HTML——会忽略解析 property 值中的数据绑定。注意，你不能使用 v-html 来复合局部模板，因为 Vue 不是基于字符串的模板引擎。反之，对于用户界面 (UI)，组件更适合作为可重用和可组合的基本单位。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;重要：你的站点上动态渲染的任意 HTML 可能会非常危险，因为它很容易导致 XSS 攻击。请只对可信内容使用 HTML 插值，绝不要对用户提供的内容使用插值。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;3attribute属性绑定&#34;&gt;（3）Attribute属性绑定&lt;/h2&gt;
+&lt;p&gt;Mustache 语法不能作用在 HTML attribute 上，遇到这种情况应该使用 v-bind 指令：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-code&#34; data-lang=&#34;code&#34;&gt;&amp;lt;div v-bind:id=&amp;quot;dynamicId&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果 attribute 值为null，undefined，false，attribute不会包含在被渲染的dom中。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;绑定样式的时候注意，Vue有单独绑定style和class的规则。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;4使用-javascript-表达式&#34;&gt;（4）使用 JavaScript 表达式&lt;/h2&gt;
+&lt;p&gt;这些表达式会在所属 Vue 实例的数据作用域下作为 JavaScript 被解析。有个限制就是，每个绑定都只能包含单个表达式，所以下面的例子都不会生效。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-code&#34; data-lang=&#34;code&#34;&gt;&amp;lt;!-- 这是语句，不是表达式 --&amp;gt;
+{{ var a = 1 }}
+
+&amp;lt;!-- 流控制也不会生效，请使用三元表达式 --&amp;gt;
+{{ if (ok) { return message } }}
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;模板表达式都被放在沙盒中，只能访问全局变量的一个白名单，如 Math 和 Date 。你不应该在模板表达式中试图访问用户定义的全局变量。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;5指令&#34;&gt;（5）指令&lt;/h2&gt;
+&lt;p&gt;指令 (Directives) 是带有 v- 前缀的特殊 &lt;strong&gt;attribute&lt;/strong&gt;。指令 attribute 的值预期是单个 &lt;strong&gt;JavaScript 表达式&lt;/strong&gt; (v-for 是例外情况，稍后我们再讨论)。指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM。回顾我们在介绍中看到的例子：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-code&#34; data-lang=&#34;code&#34;&gt;&amp;lt;p v-if=&amp;quot;seen&amp;quot;&amp;gt;现在你看到我了&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;6参数&#34;&gt;（6）参数&lt;/h2&gt;
+&lt;p&gt;一些指令能够接收一个“参数”，在指令名称之后以冒号表示。例如，v-bind 指令可以用于响应式地更新 HTML attribute：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;v-bind:href&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;url&amp;#34;&lt;/span&gt;&amp;gt;...&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;a&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;另一个例子是 v-on 指令，它用于监听 DOM 事件：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;v-on:click&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;doSomething&amp;#34;&lt;/span&gt;&amp;gt;...&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;a&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在这里参数是监听的事件名。我们也会更详细地讨论事件处理。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意：这里提到的v-bind和v-on语法，后面跟的属性是传给它们的参数&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;7动态参数&#34;&gt;（7）动态参数&lt;/h2&gt;
+&lt;p&gt;从 2.6.0 开始，可以用方括号括起来的 JavaScript 表达式作为一个指令的参数：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!--
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;注意，参数表达式的写法存在一些约束，如之后的“对动态参数表达式的约束”章节所述。
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;--&amp;gt;&lt;/span&gt;
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;v-bind:&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;attributeName&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;]=&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;url&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#34;&lt;/span&gt;&amp;gt; ... &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;a&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;同样地，你可以使用动态参数为一个动态的事件名绑定处理函数：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;v-on:&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;eventName&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;]=&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;doSomething&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#34;&lt;/span&gt;&amp;gt; ... &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;a&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;对动态参数的值的约束：动态参数预期会求出一个字符串，异常情况下值为 null。这个特殊的 null 值可以被显性地用于移除绑定。任何其它非字符串类型的值都将会触发一个警告。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;对动态参数表达式的约束:动态参数表达式有一些语法约束，因为某些字符，如空格和引号，放在 HTML attribute 名里是无效的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!-- 这会触发一个编译警告 --&amp;gt;&lt;/span&gt;
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;v-bind:&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;[&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;foo&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;bar&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;]=&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#34;&lt;/span&gt;&amp;gt; ... &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;a&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;变通的办法是使用没有空格或引号的表达式，或用计算属性替代这种复杂表达式。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在 DOM 中使用模板时 (直接在一个 HTML 文件里撰写模板)，还需要避免使用大写字符来命名键名，因为浏览器会把 attribute 名全部强制转为小写：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!--
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;在 DOM 中使用模板时这段代码会被转换为 `v-bind:[someattr]`。
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;除非在实例中有一个名为“someattr”的 property，否则代码不会工作。
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;--&amp;gt;&lt;/span&gt;
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;v-bind:&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;someAttr&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;]=&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#34;&lt;/span&gt;&amp;gt; ... &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;a&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;个人理解：动态参数使用得得当的话在写业务的时候作用应该非常大&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;8修饰符&#34;&gt;（8）修饰符&lt;/h2&gt;
+&lt;p&gt;修饰符 (modifier) 是以半角句号 . 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定。例如，.prevent 修饰符告诉 v-on 指令对于触发的事件调用 event.preventDefault()：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;form&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;v-on:submit&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;prevent&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;onSubmit&amp;#34;&lt;/span&gt;&amp;gt;...&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;form&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在接下来对 v-on 和 v-for 等功能的探索中，你会看到修饰符的其它例子。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;inspiration：程序员还是需要会“偷懒”的，能少些一个字符就少写一个字符，程序简洁也很重要。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;9缩写&#34;&gt;（9）缩写&lt;/h2&gt;
+&lt;p&gt;v-bind 缩写： :&lt;/p&gt;
+&lt;p&gt;v-on 缩写： @&lt;/p&gt;
+&lt;h1 id=&#34;7计算器和侦听属性&#34;&gt;7.计算器和侦听属性&lt;/h1&gt;
+&lt;h2 id=&#34;1计算属性&#34;&gt;（1）计算属性&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;什么样的表达式写到Mustache语法中，什么样的表达式需要用到计算属性，注意区分使用。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;模板内的表达式非常便利，但是设计它们的初衷是用于简单运算的。在模板中放入太多的逻辑会让模板过重且难以维护。例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;example&amp;#34;&lt;/span&gt;&amp;gt;
+  {{ message.split(&amp;#39;&amp;#39;).reverse().join(&amp;#39;&amp;#39;) }}
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在这个地方，模板不再是简单的声明式逻辑。你必须看一段时间才能意识到，这里是想要显示变量 message 的翻转字符串。当你想要在模板中的多处包含此翻转字符串时，就会更加难以处理。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;所以，&lt;strong&gt;对于任何复杂逻辑，你都应当使用计算属性。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lang&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;&amp;gt;
+
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;charset&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;viewport&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;Document&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;example&amp;#34;&lt;/span&gt;&amp;gt;
+        &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;Original message: &amp;#34;{{ message }}&amp;#34;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;
+        &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;Computed reversed message: &amp;#34;{{ reversedMessage }}&amp;#34;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;
+    &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;./vue.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;vm&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Vue&lt;/span&gt;({
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;el&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;#example&amp;#39;&lt;/span&gt;,
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+                &lt;span style=&#34;color:#a6e22e&#34;&gt;message&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Hello&amp;#39;&lt;/span&gt;
+            },
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;computed&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+                &lt;span style=&#34;color:#75715e&#34;&gt;// 计算属性的 getter
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#a6e22e&#34;&gt;reversedMessage&lt;/span&gt;() {
+                    &lt;span style=&#34;color:#75715e&#34;&gt;// `this` 指向 vm 实例
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;message&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;split&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;reverse&lt;/span&gt;().&lt;span style=&#34;color:#a6e22e&#34;&gt;join&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
+                }
+            }
+        })
+    &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
+
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;而且最妙的是我们已经以声明的方式创建了这种依赖关系：计算属性的 getter 函数是没有副作用 (side effect) 的，这使它更易于测试和理解。计算属性也是双向绑定。&lt;/p&gt;
+&lt;h2 id=&#34;2计算属性缓存-vs-方法&#34;&gt;（2）计算属性缓存 vs 方法&lt;/h2&gt;
+&lt;p&gt;我们可以将同一函数定义为一个方法而不是一个计算属性。两种方式的最终结果确实是完全相同的。然而，&lt;strong&gt;不同的是计算属性是基于它们的响应式依赖进行缓存的。&lt;/strong&gt; 只在相关响应式依赖发生改变时它们才会重新求值。这就意味着只要 message 还没有发生改变，多次访问 reversedMessage 计算属性会立即返回之前的计算结果，而不必再次执行函数。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-code&#34; data-lang=&#34;code&#34;&gt;&amp;lt;p&amp;gt;Reversed message: &amp;quot;{{ reversedMessage() }}&amp;quot;&amp;lt;/p&amp;gt;
+// 在组件中
+methods: {
+  reversedMessage: function () {
+    return this.message.split(&#39;&#39;).reverse().join(&#39;&#39;)
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;我们为什么需要缓存？假设我们有一个性能开销比较大的计算属性 A，它需要遍历一个巨大的数组并做大量的计算。然后我们可能有其他的计算属性依赖于 A。如果没有缓存，我们将不可避免的多次执行 A 的 getter！如果你不希望有缓存，请用方法来替代。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;个人理解：使用component计算属性会有缓存，不会每次去调用函数，而使用methods会每次去调用函数。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lang&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;&amp;gt;
+
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;charset&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;viewport&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;Document&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;example&amp;#34;&lt;/span&gt;&amp;gt;
+        &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;Original message: &amp;#34;{{ message }}&amp;#34;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;
+        &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;Computed reversed message: &amp;#34;{{ reversedMessage }}&amp;#34;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;
+        &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;Computed reversed message: &amp;#34;{{ reversedMessage }}&amp;#34;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;
+        &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;Computed reversed message: &amp;#34;{{ reversedMessage }}&amp;#34;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;
+    &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;./vue.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;vm&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Vue&lt;/span&gt;({
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;el&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;#example&amp;#39;&lt;/span&gt;,
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+                &lt;span style=&#34;color:#a6e22e&#34;&gt;message&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Hello&amp;#39;&lt;/span&gt;
+            },
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;computed&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+                &lt;span style=&#34;color:#a6e22e&#34;&gt;reversedMessage&lt;/span&gt;() {
+                    &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;computed&amp;#39;&lt;/span&gt;);
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;message&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;split&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;reverse&lt;/span&gt;().&lt;span style=&#34;color:#a6e22e&#34;&gt;join&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
+                }
+            }
+        })
+    &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
+
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这段代码只会打印一次computed。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lang&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;&amp;gt;
+
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;charset&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;viewport&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;Document&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;example&amp;#34;&lt;/span&gt;&amp;gt;
+        &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;Original message: &amp;#34;{{ message }}&amp;#34;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;
+        &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;Computed reversed message: &amp;#34;{{ reversedMessage() }}&amp;#34;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;
+        &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;Computed reversed message: &amp;#34;{{ reversedMessage() }}&amp;#34;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;
+        &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;Computed reversed message: &amp;#34;{{ reversedMessage() }}&amp;#34;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;
+    &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;./vue.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;vm&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Vue&lt;/span&gt;({
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;el&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;#example&amp;#39;&lt;/span&gt;,
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+                &lt;span style=&#34;color:#a6e22e&#34;&gt;message&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Hello&amp;#39;&lt;/span&gt;
+            },
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;methods&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+                &lt;span style=&#34;color:#a6e22e&#34;&gt;reversedMessage&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; () {
+                    &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;methods&amp;#39;&lt;/span&gt;);
+                    &lt;span style=&#34;color:#75715e&#34;&gt;// `this` 指向 vm 实例
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;message&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;split&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;reverse&lt;/span&gt;().&lt;span style=&#34;color:#a6e22e&#34;&gt;join&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
+                }
+            }
+        })
+    &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
+
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上面这段代码会打印三次 methods&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;3计算属性-vs-侦听属性&#34;&gt;（3）计算属性 vs 侦听属性&lt;/h2&gt;
+&lt;p&gt;Vue 提供了一种更通用的方式来观察和响应 Vue 实例上的数据变动：侦听属性。当你有一些数据需要随着其它数据变动而变动时，你很容易滥用 watch——特别是如果你之前使用过 AngularJS。然而，通常更好的做法是使用计算属性而不是命令式的 watch 回调。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lang&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;&amp;gt;
+
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;charset&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;viewport&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;Document&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;demo&amp;#34;&lt;/span&gt;&amp;gt;{{ fullName }}&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;./vue.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;vm&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Vue&lt;/span&gt;({
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;el&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;#demo&amp;#39;&lt;/span&gt;,
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+                &lt;span style=&#34;color:#a6e22e&#34;&gt;firstName&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Foo&amp;#39;&lt;/span&gt;,
+                &lt;span style=&#34;color:#a6e22e&#34;&gt;lastName&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Bar&amp;#39;&lt;/span&gt;
+            },
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;computed&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+                &lt;span style=&#34;color:#a6e22e&#34;&gt;fullName&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; () {
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;firstName&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;lastName&lt;/span&gt;
+                }
+            }
+        })
+    &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
+
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lang&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;&amp;gt;
+
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;charset&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;viewport&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;Document&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;demo&amp;#34;&lt;/span&gt;&amp;gt;{{ fullName }}&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;./vue.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;vm&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Vue&lt;/span&gt;({
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;el&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;#demo&amp;#39;&lt;/span&gt;,
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+                &lt;span style=&#34;color:#a6e22e&#34;&gt;firstName&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Foo&amp;#39;&lt;/span&gt;,
+                &lt;span style=&#34;color:#a6e22e&#34;&gt;lastName&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Bar&amp;#39;&lt;/span&gt;,
+                &lt;span style=&#34;color:#a6e22e&#34;&gt;fullName&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Foo Bar&amp;#39;&lt;/span&gt;
+            },
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;watch&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+                &lt;span style=&#34;color:#a6e22e&#34;&gt;firstName&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;val&lt;/span&gt;) {
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;fullName&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;val&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;lastName&lt;/span&gt;
+                },
+                &lt;span style=&#34;color:#a6e22e&#34;&gt;lastName&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;val&lt;/span&gt;) {
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;fullName&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;firstName&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;val&lt;/span&gt;
+                }
+            }
+        })
+    &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
+
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;在这个例子中，上面的computed写法&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意：什么时候使用computed，什么时候使用watch，需要知道区别。&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
       
@@ -1796,169 +2272,6 @@ Hello,world!
       <guid>https://xkhm.net/lifecontent/%E8%88%B9%E5%88%B0%E6%A1%A5%E5%A4%B4%E8%87%AA%E7%84%B6%E7%9B%B4/</guid>
       
         <description>&lt;h1 id=&#34;船到桥头自然直-all-will-be-good&#34;&gt;船到桥头自然直 All will be good&lt;/h1&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>JS基础之深浅拷贝</title>
-      <link>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/</link>
-      <pubDate>Sat, 19 Dec 2020 12:23:51 +0800</pubDate>
-      
-      <guid>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/</guid>
-      
-        <description>&lt;blockquote&gt;
-&lt;p&gt;文章类型：个人学习笔记&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;友情提醒：个人学习笔记，可能有写的不对的地方，还请大佬们发现了提醒一下小弟我。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;1浅拷贝&#34;&gt;1.浅拷贝&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;定义：一个对象直接拷贝已存在对象的属性的引用。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;还没开始讲这篇文章的时候，让你自己去写一个拷贝，你会怎么写？&lt;/p&gt;
-&lt;h2 id=&#34;1直接赋值&#34;&gt;（1）直接赋值&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;        let obj = {
-            name: &#39;小明&#39;,
-            age: 20,
-            job: &#39;Software Engineer&#39;
-        }
-        let obj1 = obj;
-        console.log(obj1 === obj); // true
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;2借助-es6-的-objectassign-方法实现一个浅拷贝&#34;&gt;（2）借助 ES6 的 Object.assign() 方法实现一个浅拷贝&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;        let obj = {
-            name: &#39;小明&#39;,
-            age: 20,
-            job: &#39;Software Engineer&#39;
-        }
-        let obj1 = Object.assign({}, obj);
-        console.log(obj1 === obj); // false
-        obj1.age = 10;
-        console.log(obj.age); // 20
-        console.log(obj1.age); // 10
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们会发现，当对象内部属性全部为基础类型时，改变新拷贝的对象属性值，并不会影响到原对象，换句话说，如果你的对象里都是基础类型，你想对他进行拷贝，使用浅拷贝即可。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;        let obj = {
-            name: &#39;小明&#39;,
-            age: 20,
-            job: &#39;Software Engineer&#39;,
-            friends: [&#39;小花&#39;, &#39;小丽&#39;]
-        }
-        let obj1 = Object.assign({}, obj);
-        console.log(obj1 === obj); // false
-        obj1.friends[1] = &#39;小萌&#39;;
-        console.log(obj.friends); // [&amp;quot;小花&amp;quot;, &amp;quot;小萌&amp;quot;]
-        console.log(obj1.friends); // [&amp;quot;小花&amp;quot;, &amp;quot;小萌&amp;quot;]
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;当原对象中有属性时引用类型时，我们会发现改变新拷贝的引用类型属性值时，原对象的引用类型属性值也发生了改变，这就是拷贝的不够彻底，所以我们就需要深拷贝。&lt;/p&gt;
-&lt;h2 id=&#34;3借助-es6-的展开语法实现浅拷贝&#34;&gt;（3）借助 ES6 的展开语法实现浅拷贝&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;        let obj = {
-            name: &#39;小明&#39;,
-            age: 20,
-            job: &#39;Software Engineer&#39;,
-            friends: [&#39;小花&#39;, &#39;小丽&#39;]
-        }
-        let obj1 = { ...obj };
-        console.log(obj1 === obj);
-        obj1.age = 10;
-        obj.friends[0] = &#39;小美&#39;;
-        console.log(obj.age); // 20
-        console.log(obj1.age); // 10
-        console.log(obj.friends); // [&amp;quot;小美&amp;quot;, &amp;quot;小丽&amp;quot;]
-        console.log(obj1.friends); // [&amp;quot;小美&amp;quot;, &amp;quot;小丽&amp;quot;]
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;4遍历赋值的方法实现浅拷贝&#34;&gt;（4）遍历赋值的方法实现浅拷贝&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;        let obj = {
-            name: &#39;小明&#39;,
-            age: 20,
-            job: &#39;Software Engineer&#39;,
-            friends: [&#39;小花&#39;, &#39;小丽&#39;]
-        }
-        let obj1 = {};
-        for (const item of Object.entries(obj)) {
-            obj1[item[0]] = item[1];
-        }
-        console.log(obj1 === obj);
-        obj1.age = 10;
-        obj.friends[0] = &#39;小美&#39;;
-        console.log(obj.age); // 20
-        console.log(obj1.age); // 10
-        console.log(obj.friends); // [&amp;quot;小美&amp;quot;, &amp;quot;小丽&amp;quot;]
-        console.log(obj1.friends); // [&amp;quot;小美&amp;quot;, &amp;quot;小丽&amp;quot;]
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;2深拷贝&#34;&gt;2.深拷贝&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;复制一个一模一样的对象，不共享内存，修改一个对象，不会影响到另一个对象&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;1利用jsonstringify&#34;&gt;（1）利用JSON.stringify()&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;        let obj = {
-            name: &#39;小明&#39;,
-            age: 20,
-            job: &#39;Software Engineer&#39;,
-            friends: [&#39;小花&#39;, &#39;小丽&#39;]
-        }
-        let obj1 = JSON.parse(JSON.stringify(obj));
-        obj1.friends[0] = &#39;小美&#39;;
-        console.log(obj.friends); // [&amp;quot;小花&amp;quot;, &amp;quot;小丽&amp;quot;]
-        console.log(obj1.friends); // [&amp;quot;小美&amp;quot;, &amp;quot;小丽&amp;quot;]
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;p&gt;缺陷：处理不了function对象、undefined以及symbol类型，原因时JSON.stringify()在处理这些类型，这些类型会被忽略，不会被处理，详情见 &lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify&#34;&gt;MDN&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;2递归对每层数据实行遍历然后进行拷贝&#34;&gt;（2）递归，对每层数据实行遍历然后进行拷贝&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;        let obj = {
-            name: {
-                firstName: &#39;小&#39;,
-                lastName: &#39;星&#39;,
-            },
-            age: 25,
-            arr: [{ a: 10 }, { b: 50 }]
-        }
-        function copyObj(obj) {
-            let obj1 = Array.isArray(obj) ? [] : {};
-            for (const key in obj) {
-                if (typeof obj[key] === &#39;object&#39;) {
-                    obj1[key] = copyObj(obj[key]);
-                } else {
-                    obj1[key] = obj[key]
-                }
-            }
-            return obj1
-        }
-        let obj2 = copyObj(obj);
-        obj2.arr[0].a = 80;
-        obj2.name.firstName = &#39;王&#39;;
-        console.log(obj);
-        console.log(obj2);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/53baf66579f7458ca5b2a454a97364da~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;3jquery中实现深拷贝&#34;&gt;（3）Jquery中实现深拷贝&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Jquery中实现深拷贝的原理也是递归&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;        let obj = {
-            name: {
-                firstName: &#39;小&#39;,
-                lastName: &#39;星&#39;,
-            },
-            age: 25,
-            sayName() { }
-        }
-        let obj2 = $.extend(true, {}, obj);
-        obj2.name.firstName = &#39;王&#39;;
-        console.log(obj.name.firstName); // 小
-        console.log(obj2.name.firstName); // 王
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;4lodash中的-_defaultsdeephttpswwwlodashjscomdocslodashdefaultsdeep-方法&#34;&gt;（4）Lodash中的 &lt;a href=&#34;https://www.lodashjs.com/docs/lodash.defaultsDeep&#34;&gt;_.defaultsDeep()&lt;/a&gt; 方法&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;        let obj = {
-            name: {
-                firstName: &#39;小&#39;,
-                lastName: &#39;星&#39;,
-            },
-            age: 25,
-            arr: [{ a: 10 }, { b: 50 }]
-        }
-        let obj2 = _.defaultsDeep({}, obj);
-        obj2.arr[0].a = 80;
-        obj2.name.firstName = &#39;王&#39;;
-        console.log(obj);
-        console.log(obj2);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6414d847154446c58f89ddd86fe50884~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
       
     </item>

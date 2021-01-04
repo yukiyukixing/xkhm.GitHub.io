@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Vue2从入门到CV - 星空海绵 - 星空浩瀚 | 海绵吸水</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="XKHM" />
+  <meta name="description" content="1.Vue是什么？ Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应" />
+
+  <meta name="keywords" content="Hugo" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.0" />
+
+
+<link rel="canonical" href="https://xkhm.net/post/vue2%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0cv/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.png"  type="image/x-icon"/>
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="Vue2从入门到CV" />
+<meta property="og:description" content="1.Vue是什么？ Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xkhm.net/post/vue2%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0cv/" />
+<meta property="article:published_time" content="2021-01-04T19:44:36+08:00" />
+<meta property="article:modified_time" content="2021-01-04T19:44:36+08:00" />
+<meta itemprop="name" content="Vue2从入门到CV">
+<meta itemprop="description" content="1.Vue是什么？ Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应">
+<meta itemprop="datePublished" content="2021-01-04T19:44:36+08:00" />
+<meta itemprop="dateModified" content="2021-01-04T19:44:36+08:00" />
+<meta itemprop="wordCount" content="4867">
+
+
+
+<meta itemprop="keywords" content="Vue,JavaScript,面试,CV工程师,提桶," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Vue2从入门到CV"/>
+<meta name="twitter:description" content="1.Vue是什么？ Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">星空海绵</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/">首页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/treasury/">细品</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/interview/">提桶</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/life/">生活</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/technology/">技术</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      星空海绵
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/">首页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/treasury/">细品</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/interview/">提桶</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/life/">生活</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/technology/">技术</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Vue2从入门到CV</h1>
+      
+      <div class="post-meta">
+        <time datetime="2021-01-04" class="post-time">
+          2021-01-04
+        </time>
+        <div class="post-category">
+            <a href="https://xkhm.net/categories/vue/"> Vue </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1vue实例介绍">（1）Vue实例介绍</a></li>
+    <li><a href="#2vue实例数据挂载">（2）Vue实例数据挂载</a></li>
+    <li><a href="#3生命周期">（3）生命周期</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#3attribute属性绑定">（3）Attribute属性绑定</a></li>
+    <li><a href="#4使用-javascript-表达式">（4）使用 JavaScript 表达式</a></li>
+    <li><a href="#5指令">（5）指令</a></li>
+    <li><a href="#6参数">（6）参数</a></li>
+    <li><a href="#7动态参数">（7）动态参数</a></li>
+    <li><a href="#8修饰符">（8）修饰符</a></li>
+    <li><a href="#9缩写">（9）缩写</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1计算属性">（1）计算属性</a></li>
+    <li><a href="#2计算属性缓存-vs-方法">（2）计算属性缓存 vs 方法</a></li>
+    <li><a href="#3计算属性-vs-侦听属性">（3）计算属性 vs 侦听属性</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <h1 id="1vue是什么">1.Vue是什么？</h1>
+<p>Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的<strong>渐进式框架</strong>。与其它大型框架不同的是，Vue 被设计为可以<strong>自底向上逐层应用</strong>。<strong>Vue 的核心库只关注视图层</strong>，不仅易于上手，还<strong>便于与第三方库或既有项目整合</strong>。另一方面，当与<strong>现代化的工具链以及各种支持类库结合使用</strong>时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
+<p>Vue.js 的核心是一个允许采用简洁的模板语法来声明式地<strong>将数据渲染进 DOM 的系统</strong>。</p>
+<h1 id="2特点">2.特点</h1>
+<ul>
+<li>1.html内容可以是变量 {{}}</li>
+<li>2.属性内容也可以是变量 v-bind 缩写： :</li>
+<li>3.可以通过指令控制显示隐藏 v-if</li>
+<li>4.绑定数组元素来渲染列表 v-for</li>
+<li>5.给dom绑定方法v-on 缩写 @  数据驱动视图改变</li>
+<li>6.表单状态和应用状态之间双向绑定 v-model</li>
+</ul>
+<h1 id="3组件化构建应用">3.组件化构建应用</h1>
+<p><strong>组件系统是 Vue 的另一个重要概念</strong>，因为它是一种抽象，<strong>允许我们使用小型、独立和通常可复用的组件构建大型应用</strong>。仔细想想，几乎任意类型的应用界面都可以抽象为一个<strong>组件树</strong>。</p>
+<p>组件使用：</p>
+<p>1.注册 Vue.component()</p>
+<p>组件数据传输：</p>
+<p>1.父组件将数据传输给子组件 props</p>
+<p>2.props相当于在模板（子组件）上挂了一个可以进行数据绑定的属性（个人理解）</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app-2&#34;</span>&gt;
+        &lt;<span style="color:#f92672">ol</span>&gt;
+            <span style="color:#75715e">&lt;!-- 创建一个 todo-item 组件的实例 --&gt;</span>
+            &lt;<span style="color:#f92672">todo-item</span> <span style="color:#a6e22e">v-for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item in groceryList&#34;</span> <span style="color:#a6e22e">:todo</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item&#34;</span> <span style="color:#a6e22e">:key</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item.id&#34;</span>&gt;
+
+            &lt;/<span style="color:#f92672">todo-item</span>&gt;
+        &lt;/<span style="color:#f92672">ol</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./vue.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span>&gt;
+        <span style="color:#a6e22e">Vue</span>.<span style="color:#a6e22e">component</span>(<span style="color:#e6db74">&#39;todo-item&#39;</span>, {
+            <span style="color:#a6e22e">props</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;todo&#39;</span>],
+            <span style="color:#a6e22e">template</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&lt;li&gt;{{ todo.text }}&lt;/li&gt;&#39;</span>
+        })
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">app2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vue</span>({
+            <span style="color:#a6e22e">el</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#app-2&#39;</span>,
+            <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {
+                <span style="color:#a6e22e">groceryList</span><span style="color:#f92672">:</span> [
+                    { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;西红柿&#39;</span> },
+                    { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;茄子&#39;</span> },
+                    { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;西瓜&#39;</span> }
+                ]
+            }
+        })
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><blockquote>
+<p>个人理解：这个例子就相当于props属性值todo挂在template上作为一个可以进行数据绑定的属性，绑定的数据在template定义的html内容中可以使用。</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<h1 id="4vue组件化与自定义元素的关系">4.Vue组件化与自定义元素的关系</h1>
+<p>组件思想参考自定义元素Web组件规范，但是与自定义元素还是有区别：</p>
+<p>1.Web Components 规范已经完成并通过，但未被所有浏览器原生实现。目前 Safari 10.1+、Chrome 54+ 和 Firefox 63+ 原生支持 Web Components。相比之下，Vue 组件不需要任何 polyfill，并且在所有支持的浏览器 (IE9 及更高版本) 之下表现一致。必要时，<strong>Vue 组件也可以包装于原生自定义元素之内。</strong></p>
+<p>2.Vue 组件提供了纯自定义元素所不具备的一些重要功能，<strong>最突出的是跨组件数据流、自定义事件通信以及构建工具集成。</strong></p>
+<p>虽然 Vue 内部没有使用自定义元素，不过在应用使用自定义元素、或以自定义元素形式发布时，<strong>依然有很好的互操作性。Vue CLI 也支持将 Vue 组件构建成为原生的自定义元素。</strong></p>
+<h1 id="5vue实例">5.Vue实例</h1>
+<h2 id="1vue实例介绍">（1）Vue实例介绍</h2>
+<p>每个 <strong>Vue 应用</strong> 都是通过用 <strong>Vue 函数</strong> 创建一个新的 <strong>Vue 实例</strong> 开始的。一个 <strong>Vue 应用</strong> 由一个通过 <strong>new Vue</strong> 创建的根 <strong>Vue 实例</strong>，以及可选的嵌套的、可复用的<strong>组件树</strong>组成。</p>
+<p>虽然没有完全遵循 <strong>MVVM 模型</strong>，但是 <strong>Vue 的设计</strong>也受到了它的启发。因此在文档中经常会使用 <strong>vm (ViewModel 的缩写)</strong> 这个变量名表示 <strong>Vue 实例</strong>。当创建一个 <strong>Vue 实例</strong> 时，你可以传入一个<strong>选项对象</strong>。</p>
+<h2 id="2vue实例数据挂载">（2）Vue实例数据挂载</h2>
+<p>当一个 <strong>Vue 实例</strong>被创建时，它将 <strong>data 对象</strong> 中的所有的 <strong>property</strong> 加入到 <strong>Vue 的响应式系统</strong>中。当这些 <strong>property</strong> 的值发生改变时，<strong>视图将会产生“响应”</strong>，即匹配更新为新的值。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">  <span style="color:#75715e">// 我们的数据对象
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> }
+
+  <span style="color:#75715e">// 该对象被加入到一个 Vue 实例中
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">vm</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vue</span>({
+    <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">data</span>
+  })
+
+  <span style="color:#75715e">// 获得这个实例上的 property
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 返回源数据中对应的字段
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">vm</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">a</span> <span style="color:#75715e">// =&gt; true
+</span><span style="color:#75715e"></span>
+  <span style="color:#75715e">// 设置 property 也会影响到原始数据
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">vm</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+  <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">a</span> <span style="color:#75715e">// =&gt; 2
+</span><span style="color:#75715e"></span>
+  <span style="color:#75715e">// ……反之亦然
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+  <span style="color:#a6e22e">vm</span>.<span style="color:#a6e22e">a</span> <span style="color:#75715e">// =&gt; 3
+</span></code></pre></div><p>我们是不是可以猜测一下Vue内部是按照下面这样处理的呢：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">script</span>&gt;
+        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">A</span>(<span style="color:#a6e22e">obj</span>) {
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">__proto__</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">data</span>
+        }
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {
+            <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">200</span>
+        }
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vm</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">A</span>({
+            <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">data</span>
+        })
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">vm</span>);
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">a</span>);
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">vm</span>.<span style="color:#a6e22e">a</span>);
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">vm</span>.<span style="color:#a6e22e">a</span>);
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>当这些数据改变时，视图会进行重渲染。值得注意的是只有当实例被创建时就已经存在于 data 中的 property 才是响应式的。也就是说如果你添加一个新的 property，将不会触发任何视图的更新。</p>
+<blockquote>
+<p>注意：使用 Object.freeze()，这会阻止修改现有的 property，也意味着响应系统无法再追踪变化。</p>
+</blockquote>
+<blockquote>
+<p>除了数据 property，Vue 实例还暴露了一些有用的实例 property 与方法。它们都有前缀 $，以便与用户定义的 property 区分开来,这些方法可以用来操作实例的属性。</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<h2 id="3生命周期">（3）生命周期</h2>
+<p>每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置 <strong>数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM</strong> 等。同时在这个过程中也会运行一些叫做<strong>生命周期钩子的函数</strong>，这给了用户在不同阶段添加自己的代码的机会。</p>
+<!-- raw HTML omitted -->
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/834579665f494f66a1da0cf45c0635c7~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
+<!-- raw HTML omitted -->
+<h1 id="6vue模板语法">6.Vue模板语法</h1>
+<p>Vue.js 使用了基于 HTML 的模板语法，允许开发者<strong>声明式地将 DOM 绑定至底层 Vue 实例</strong>的数据。所有 Vue.js 的模板都是合法的 HTML，所以能被遵循规范的浏览器和 HTML 解析器解析。</p>
+<p>在底层的实现上，<strong>Vue 将模板编译成虚拟 DOM 渲染函数</strong>。结合响应系统，<strong>Vue 能够智能地计算出最少需要重新渲染多少组件，并把 DOM 操作次数减到最少。</strong></p>
+<p>如果你熟悉 <strong>虚拟 DOM</strong> 并且<strong>偏爱 JavaScript 的原始力量</strong>，你也可以不用模板，直接写<strong>渲染 (render) 函数，使用可选的 JSX 语法。</strong></p>
+<h1 id="1-mustache语法-双大括号">（1） “Mustache”语法 (双大括号)</h1>
+<pre><code class="language-code" data-lang="code">&lt;span&gt;Message: {{ msg }}&lt;/span&gt;
+</code></pre><p>Mustache 标签将会被替代为对应数据对象上 msg property 的值。无论何时，绑定的数据对象上 msg property 发生了改变，插值处的内容都会更新。</p>
+<p>通过使用 v-once 指令，你也能执行一次性地插值，当数据改变时，插值处的内容不会更新。但请留心这会影响到该节点上的其它数据绑定：</p>
+<pre><code class="language-code" data-lang="code">&lt;span v-once&gt;这个将不会改变: {{ msg }}&lt;/span&gt;
+</code></pre><blockquote>
+<p><strong>注意：可以用 v-once 优化更新性能 -&gt; 重要</strong></p>
+</blockquote>
+<h1 id="2原始-html">（2）原始 HTML</h1>
+<p>双大括号会将数据解释为普通文本，而非 HTML 代码。为了输出真正的 HTML，你需要使用 v-html 指令：</p>
+<!-- raw HTML omitted -->
+<pre><code class="language-code" data-lang="code">  &lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div id=&quot;app&quot; v-once&gt;
+      &lt;p&gt;{{ text }}&lt;/p&gt;
+      &lt;p&gt;&lt;span v-html=&quot;text&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;./vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+
+      let app = new Vue({
+          el: '#app',
+          data: {
+              text: 'Hello&lt;i&gt;你好&lt;/i&gt;'
+          }
+      })
+  &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre><p>结果：</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e991c97e6c4a4f4c90adce232c6a337e~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
+<p>从上面这个例子可以看出双大括号并不能渲染标签内容</p>
+<!-- raw HTML omitted -->
+<blockquote>
+<p>注意：这个 span 的内容将会被替换成为 property 值 rawHtml，直接作为 HTML——会忽略解析 property 值中的数据绑定。注意，你不能使用 v-html 来复合局部模板，因为 Vue 不是基于字符串的模板引擎。反之，对于用户界面 (UI)，组件更适合作为可重用和可组合的基本单位。</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong>重要：你的站点上动态渲染的任意 HTML 可能会非常危险，因为它很容易导致 XSS 攻击。请只对可信内容使用 HTML 插值，绝不要对用户提供的内容使用插值。</strong></p>
+</blockquote>
+</blockquote>
+<h2 id="3attribute属性绑定">（3）Attribute属性绑定</h2>
+<p>Mustache 语法不能作用在 HTML attribute 上，遇到这种情况应该使用 v-bind 指令：</p>
+<pre><code class="language-code" data-lang="code">&lt;div v-bind:id=&quot;dynamicId&quot;&gt;&lt;/div&gt;
+</code></pre><p>如果 attribute 值为null，undefined，false，attribute不会包含在被渲染的dom中。</p>
+<blockquote>
+<p>绑定样式的时候注意，Vue有单独绑定style和class的规则。</p>
+</blockquote>
+<h2 id="4使用-javascript-表达式">（4）使用 JavaScript 表达式</h2>
+<p>这些表达式会在所属 Vue 实例的数据作用域下作为 JavaScript 被解析。有个限制就是，每个绑定都只能包含单个表达式，所以下面的例子都不会生效。</p>
+<pre><code class="language-code" data-lang="code">&lt;!-- 这是语句，不是表达式 --&gt;
+{{ var a = 1 }}
+
+&lt;!-- 流控制也不会生效，请使用三元表达式 --&gt;
+{{ if (ok) { return message } }}
+</code></pre><blockquote>
+<p>模板表达式都被放在沙盒中，只能访问全局变量的一个白名单，如 Math 和 Date 。你不应该在模板表达式中试图访问用户定义的全局变量。</p>
+</blockquote>
+<h2 id="5指令">（5）指令</h2>
+<p>指令 (Directives) 是带有 v- 前缀的特殊 <strong>attribute</strong>。指令 attribute 的值预期是单个 <strong>JavaScript 表达式</strong> (v-for 是例外情况，稍后我们再讨论)。指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM。回顾我们在介绍中看到的例子：</p>
+<pre><code class="language-code" data-lang="code">&lt;p v-if=&quot;seen&quot;&gt;现在你看到我了&lt;/p&gt;
+</code></pre><h2 id="6参数">（6）参数</h2>
+<p>一些指令能够接收一个“参数”，在指令名称之后以冒号表示。例如，v-bind 指令可以用于响应式地更新 HTML attribute：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">v-bind:href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;url&#34;</span>&gt;...&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p>另一个例子是 v-on 指令，它用于监听 DOM 事件：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">v-on:click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;doSomething&#34;</span>&gt;...&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p>在这里参数是监听的事件名。我们也会更详细地讨论事件处理。</p>
+<blockquote>
+<p>注意：这里提到的v-bind和v-on语法，后面跟的属性是传给它们的参数</p>
+</blockquote>
+<h2 id="7动态参数">（7）动态参数</h2>
+<p>从 2.6.0 开始，可以用方括号括起来的 JavaScript 表达式作为一个指令的参数：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!--
+</span><span style="color:#75715e">注意，参数表达式的写法存在一些约束，如之后的“对动态参数表达式的约束”章节所述。
+</span><span style="color:#75715e">--&gt;</span>
+&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">v-bind:</span><span style="color:#960050;background-color:#1e0010">[</span><span style="color:#a6e22e">attributeName</span><span style="color:#960050;background-color:#1e0010">]=&#34;</span><span style="color:#a6e22e">url</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt; ... &lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p>同样地，你可以使用动态参数为一个动态的事件名绑定处理函数：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">v-on:</span><span style="color:#960050;background-color:#1e0010">[</span><span style="color:#a6e22e">eventName</span><span style="color:#960050;background-color:#1e0010">]=&#34;</span><span style="color:#a6e22e">doSomething</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt; ... &lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><blockquote>
+<p>对动态参数的值的约束：动态参数预期会求出一个字符串，异常情况下值为 null。这个特殊的 null 值可以被显性地用于移除绑定。任何其它非字符串类型的值都将会触发一个警告。</p>
+</blockquote>
+<blockquote>
+<p>对动态参数表达式的约束:动态参数表达式有一些语法约束，因为某些字符，如空格和引号，放在 HTML attribute 名里是无效的。</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- 这会触发一个编译警告 --&gt;</span>
+&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">v-bind:</span><span style="color:#960050;background-color:#1e0010">[&#39;</span><span style="color:#a6e22e">foo</span><span style="color:#960050;background-color:#1e0010">&#39;</span> <span style="color:#960050;background-color:#1e0010">+</span> <span style="color:#a6e22e">bar</span><span style="color:#960050;background-color:#1e0010">]=&#34;</span><span style="color:#a6e22e">value</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt; ... &lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p>变通的办法是使用没有空格或引号的表达式，或用计算属性替代这种复杂表达式。</p>
+<blockquote>
+<p>在 DOM 中使用模板时 (直接在一个 HTML 文件里撰写模板)，还需要避免使用大写字符来命名键名，因为浏览器会把 attribute 名全部强制转为小写：</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!--
+</span><span style="color:#75715e">在 DOM 中使用模板时这段代码会被转换为 `v-bind:[someattr]`。
+</span><span style="color:#75715e">除非在实例中有一个名为“someattr”的 property，否则代码不会工作。
+</span><span style="color:#75715e">--&gt;</span>
+&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">v-bind:</span><span style="color:#960050;background-color:#1e0010">[</span><span style="color:#a6e22e">someAttr</span><span style="color:#960050;background-color:#1e0010">]=&#34;</span><span style="color:#a6e22e">value</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt; ... &lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><blockquote>
+<p>个人理解：动态参数使用得得当的话在写业务的时候作用应该非常大</p>
+</blockquote>
+<h2 id="8修饰符">（8）修饰符</h2>
+<p>修饰符 (modifier) 是以半角句号 . 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定。例如，.prevent 修饰符告诉 v-on 指令对于触发的事件调用 event.preventDefault()：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">v-on:submit</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">prevent</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;onSubmit&#34;</span>&gt;...&lt;/<span style="color:#f92672">form</span>&gt;
+</code></pre></div><p>在接下来对 v-on 和 v-for 等功能的探索中，你会看到修饰符的其它例子。</p>
+<blockquote>
+<p>inspiration：程序员还是需要会“偷懒”的，能少些一个字符就少写一个字符，程序简洁也很重要。</p>
+</blockquote>
+<h2 id="9缩写">（9）缩写</h2>
+<p>v-bind 缩写： :</p>
+<p>v-on 缩写： @</p>
+<h1 id="7计算器和侦听属性">7.计算器和侦听属性</h1>
+<h2 id="1计算属性">（1）计算属性</h2>
+<blockquote>
+<p>什么样的表达式写到Mustache语法中，什么样的表达式需要用到计算属性，注意区分使用。</p>
+</blockquote>
+<p>模板内的表达式非常便利，但是设计它们的初衷是用于简单运算的。在模板中放入太多的逻辑会让模板过重且难以维护。例如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;example&#34;</span>&gt;
+  {{ message.split(&#39;&#39;).reverse().join(&#39;&#39;) }}
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><p>在这个地方，模板不再是简单的声明式逻辑。你必须看一段时间才能意识到，这里是想要显示变量 message 的翻转字符串。当你想要在模板中的多处包含此翻转字符串时，就会更加难以处理。</p>
+<blockquote>
+<p>所以，<strong>对于任何复杂逻辑，你都应当使用计算属性。</strong></p>
+</blockquote>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">  <span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;example&#34;</span>&gt;
+        &lt;<span style="color:#f92672">p</span>&gt;Original message: &#34;{{ message }}&#34;&lt;/<span style="color:#f92672">p</span>&gt;
+        &lt;<span style="color:#f92672">p</span>&gt;Computed reversed message: &#34;{{ reversedMessage }}&#34;&lt;/<span style="color:#f92672">p</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./vue.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span>&gt;
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">vm</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vue</span>({
+            <span style="color:#a6e22e">el</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#example&#39;</span>,
+            <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {
+                <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Hello&#39;</span>
+            },
+            <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+                <span style="color:#75715e">// 计算属性的 getter
+</span><span style="color:#75715e"></span>                <span style="color:#a6e22e">reversedMessage</span>() {
+                    <span style="color:#75715e">// `this` 指向 vm 实例
+</span><span style="color:#75715e"></span>                    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">message</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;&#39;</span>).<span style="color:#a6e22e">reverse</span>().<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;&#39;</span>)
+                }
+            }
+        })
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><!-- raw HTML omitted -->
+<p>而且最妙的是我们已经以声明的方式创建了这种依赖关系：计算属性的 getter 函数是没有副作用 (side effect) 的，这使它更易于测试和理解。计算属性也是双向绑定。</p>
+<h2 id="2计算属性缓存-vs-方法">（2）计算属性缓存 vs 方法</h2>
+<p>我们可以将同一函数定义为一个方法而不是一个计算属性。两种方式的最终结果确实是完全相同的。然而，<strong>不同的是计算属性是基于它们的响应式依赖进行缓存的。</strong> 只在相关响应式依赖发生改变时它们才会重新求值。这就意味着只要 message 还没有发生改变，多次访问 reversedMessage 计算属性会立即返回之前的计算结果，而不必再次执行函数。</p>
+<pre><code class="language-code" data-lang="code">&lt;p&gt;Reversed message: &quot;{{ reversedMessage() }}&quot;&lt;/p&gt;
+// 在组件中
+methods: {
+  reversedMessage: function () {
+    return this.message.split('').reverse().join('')
+  }
+}
+</code></pre><blockquote>
+<p>我们为什么需要缓存？假设我们有一个性能开销比较大的计算属性 A，它需要遍历一个巨大的数组并做大量的计算。然后我们可能有其他的计算属性依赖于 A。如果没有缓存，我们将不可避免的多次执行 A 的 getter！如果你不希望有缓存，请用方法来替代。</p>
+</blockquote>
+<blockquote>
+<p>个人理解：使用component计算属性会有缓存，不会每次去调用函数，而使用methods会每次去调用函数。</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">  <span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;example&#34;</span>&gt;
+        &lt;<span style="color:#f92672">p</span>&gt;Original message: &#34;{{ message }}&#34;&lt;/<span style="color:#f92672">p</span>&gt;
+        &lt;<span style="color:#f92672">p</span>&gt;Computed reversed message: &#34;{{ reversedMessage }}&#34;&lt;/<span style="color:#f92672">p</span>&gt;
+        &lt;<span style="color:#f92672">p</span>&gt;Computed reversed message: &#34;{{ reversedMessage }}&#34;&lt;/<span style="color:#f92672">p</span>&gt;
+        &lt;<span style="color:#f92672">p</span>&gt;Computed reversed message: &#34;{{ reversedMessage }}&#34;&lt;/<span style="color:#f92672">p</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./vue.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span>&gt;
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">vm</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vue</span>({
+            <span style="color:#a6e22e">el</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#example&#39;</span>,
+            <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {
+                <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Hello&#39;</span>
+            },
+            <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+                <span style="color:#a6e22e">reversedMessage</span>() {
+                    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;computed&#39;</span>);
+                    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">message</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;&#39;</span>).<span style="color:#a6e22e">reverse</span>().<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;&#39;</span>)
+                }
+            }
+        })
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>这段代码只会打印一次computed。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">  <span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;example&#34;</span>&gt;
+        &lt;<span style="color:#f92672">p</span>&gt;Original message: &#34;{{ message }}&#34;&lt;/<span style="color:#f92672">p</span>&gt;
+        &lt;<span style="color:#f92672">p</span>&gt;Computed reversed message: &#34;{{ reversedMessage() }}&#34;&lt;/<span style="color:#f92672">p</span>&gt;
+        &lt;<span style="color:#f92672">p</span>&gt;Computed reversed message: &#34;{{ reversedMessage() }}&#34;&lt;/<span style="color:#f92672">p</span>&gt;
+        &lt;<span style="color:#f92672">p</span>&gt;Computed reversed message: &#34;{{ reversedMessage() }}&#34;&lt;/<span style="color:#f92672">p</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./vue.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span>&gt;
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">vm</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vue</span>({
+            <span style="color:#a6e22e">el</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#example&#39;</span>,
+            <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {
+                <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Hello&#39;</span>
+            },
+            <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+                <span style="color:#a6e22e">reversedMessage</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
+                    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;methods&#39;</span>);
+                    <span style="color:#75715e">// `this` 指向 vm 实例
+</span><span style="color:#75715e"></span>                    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">message</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;&#39;</span>).<span style="color:#a6e22e">reverse</span>().<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;&#39;</span>)
+                }
+            }
+        })
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>上面这段代码会打印三次 methods</p>
+<!-- raw HTML omitted -->
+<h2 id="3计算属性-vs-侦听属性">（3）计算属性 vs 侦听属性</h2>
+<p>Vue 提供了一种更通用的方式来观察和响应 Vue 实例上的数据变动：侦听属性。当你有一些数据需要随着其它数据变动而变动时，你很容易滥用 watch——特别是如果你之前使用过 AngularJS。然而，通常更好的做法是使用计算属性而不是命令式的 watch 回调。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;demo&#34;</span>&gt;{{ fullName }}&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./vue.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span>&gt;
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">vm</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vue</span>({
+            <span style="color:#a6e22e">el</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#demo&#39;</span>,
+            <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {
+                <span style="color:#a6e22e">firstName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Foo&#39;</span>,
+                <span style="color:#a6e22e">lastName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Bar&#39;</span>
+            },
+            <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+                <span style="color:#a6e22e">fullName</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
+                    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">firstName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">lastName</span>
+                }
+            }
+        })
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;demo&#34;</span>&gt;{{ fullName }}&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./vue.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span>&gt;
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">vm</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vue</span>({
+            <span style="color:#a6e22e">el</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#demo&#39;</span>,
+            <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {
+                <span style="color:#a6e22e">firstName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Foo&#39;</span>,
+                <span style="color:#a6e22e">lastName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Bar&#39;</span>,
+                <span style="color:#a6e22e">fullName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Foo Bar&#39;</span>
+            },
+            <span style="color:#a6e22e">watch</span><span style="color:#f92672">:</span> {
+                <span style="color:#a6e22e">firstName</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">val</span>) {
+                    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">fullName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">val</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">lastName</span>
+                },
+                <span style="color:#a6e22e">lastName</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">val</span>) {
+                    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">fullName</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">firstName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">val</span>
+                }
+            }
+        })
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><!-- raw HTML omitted -->
+<p>在这个例子中，上面的computed写法</p>
+<blockquote>
+<p>注意：什么时候使用computed，什么时候使用watch，需要知道区别。</p>
+</blockquote>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">XKHM</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2021-01-04
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">原创文章，转载请注明文章作者和出处，谢谢！</a></span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://xkhm.net/tags/vue/">Vue</a>
+          <a href="https://xkhm.net/tags/javascript/">JavaScript</a>
+          <a href="https://xkhm.net/tags/%E9%9D%A2%E8%AF%95/">面试</a>
+          <a href="https://xkhm.net/tags/cv%E5%B7%A5%E7%A8%8B%E5%B8%88/">CV工程师</a>
+          <a href="https://xkhm.net/tags/%E6%8F%90%E6%A1%B6/">提桶</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/js%E9%9D%A2%E8%AF%95%E9%A2%98%E5%A4%8D%E4%B9%A0/">
+            <span class="next-text nav-default">JS面试题复习</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="im.xkhm@gmail.com" rel="me noopener" class="iconfont"
+      title="email"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/yukiyukixing" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.zhihu.com/people/yuki-42-63" rel="me noopener" class="iconfont"
+      title="zhihu"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M351.791182 562.469462l192.945407 0c0-45.367257-21.3871-71.939449-21.3871-71.939449L355.897709 490.530013c3.977591-82.182744 7.541767-187.659007 8.816806-226.835262l159.282726 0c0 0-0.86367-67.402109-18.578124-67.402109s-279.979646 0-279.979646 0 16.850783-88.141456 39.318494-127.053698c0 0-83.60514-4.510734-112.121614 106.962104S81.344656 355.077018 76.80834 367.390461c-4.536316 12.313443 24.62791 5.832845 36.941354 0 12.313443-5.832845 68.050885-25.924439 84.252893-103.69571l86.570681 0c1.165546 49.28652 4.596691 200.335724 3.515057 226.835262L109.86113 490.530013c-25.275663 18.147312-33.701566 71.939449-33.701566 71.939449L279.868105 562.469462c-8.497535 56.255235-23.417339 128.763642-44.275389 167.210279-33.05279 60.921511-50.55235 116.65793-169.802314 212.576513 0 0-19.442818 14.257725 40.829917 9.073656 60.273758-5.185093 117.305683-20.739347 156.840094-99.807147 20.553105-41.107233 41.805128-93.250824 58.386782-146.138358l-0.055259 0.185218 167.855986 193.263655c0 0 22.035876-51.847855 5.832845-108.880803L371.045711 650.610918l-42.1244 31.157627-0.045025 0.151449c11.69946-41.020252 20.11206-81.5749 22.726607-116.858498C351.665315 564.212152 351.72876 563.345412 351.791182 562.469462z"></path>
+  <path d="M584.918753 182.033893l0 668.840094 70.318532 0 28.807093 80.512708 121.875768-80.512708 153.600307 0L959.520453 182.033893 584.918753 182.033893zM887.150192 778.934538l-79.837326 0-99.578949 65.782216-23.537066-65.782216-24.855084 0L659.341766 256.673847l227.807403 0L887.149169 778.934538z"></path>
+</svg>
+
+    </a>
+
+
+<a href="https://xkhm.net/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2019 -
+    2021
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        星空海绵
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
