@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>JavaScript异步编程 - 星空海绵 - 星空浩瀚 | 海绵吸水</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="XKHM" />
+  <meta name="description" content="1.什么是异步？ (1)异步的作用 在前端编程中（甚至后端有时也是这样），我们在处理一些简短、快速的操作时，例如计算 1 &#43; 1 的结果，往往在主线程中" />
+
+  <meta name="keywords" content="Hugo" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.0" />
+
+
+<link rel="canonical" href="https://xkhm.net/post/javascript%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.png"  type="image/x-icon"/>
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="JavaScript异步编程" />
+<meta property="og:description" content="1.什么是异步？ (1)异步的作用 在前端编程中（甚至后端有时也是这样），我们在处理一些简短、快速的操作时，例如计算 1 &#43; 1 的结果，往往在主线程中" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xkhm.net/post/javascript%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/" />
+<meta property="article:published_time" content="2021-01-04T22:56:54+08:00" />
+<meta property="article:modified_time" content="2021-01-04T22:56:54+08:00" />
+<meta itemprop="name" content="JavaScript异步编程">
+<meta itemprop="description" content="1.什么是异步？ (1)异步的作用 在前端编程中（甚至后端有时也是这样），我们在处理一些简短、快速的操作时，例如计算 1 &#43; 1 的结果，往往在主线程中">
+<meta itemprop="datePublished" content="2021-01-04T22:56:54+08:00" />
+<meta itemprop="dateModified" content="2021-01-04T22:56:54+08:00" />
+<meta itemprop="wordCount" content="5705">
+
+
+
+<meta itemprop="keywords" content="JavaScript,异步编程,Event Loop,事件循环,宏任务,微任务," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JavaScript异步编程"/>
+<meta name="twitter:description" content="1.什么是异步？ (1)异步的作用 在前端编程中（甚至后端有时也是这样），我们在处理一些简短、快速的操作时，例如计算 1 &#43; 1 的结果，往往在主线程中"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">星空海绵</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/">首页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/treasury/">细品</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/interview/">提桶</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/life/">生活</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/technology/">技术</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      星空海绵
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/">首页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/treasury/">细品</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/interview/">提桶</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/life/">生活</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/technology/">技术</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">JavaScript异步编程</h1>
+      
+      <div class="post-meta">
+        <time datetime="2021-01-04" class="post-time">
+          2021-01-04
+        </time>
+        <div class="post-category">
+            <a href="https://xkhm.net/categories/javascript/"> JavaScript </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1异步的作用">(1)异步的作用</a></li>
+    <li><a href="#2异步的概念">(2)异步的概念</a></li>
+    <li><a href="#3阻塞">(3)阻塞</a></li>
+    <li><a href="#4线程">(4)线程</a></li>
+    <li><a href="#5js单线程">(5)JS单线程</a></li>
+    <li><a href="#6web-workers">(6)Web workers</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1异步callbacks">（1）异步callbacks</a></li>
+    <li><a href="#2promises">（2）Promises</a></li>
+    <li><a href="#3promises-对比-callbacks">（3）Promises 对比 callbacks</a></li>
+    <li><a href="#4事件队列">（4）事件队列</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#3事件循环特性">（3）事件循环特性</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1宏任务">（1）宏任务</a></li>
+    <li><a href="#2微任务">（2）微任务</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1js执行机制说一下event-loop事件循环">（1）js执行机制，说一下event loop（事件循环）</a></li>
+    <li><a href="#2为什么要引入微任务只有一种类型的任务不行么">（2）为什么要引入微任务，只有一种类型的任务不行么？</a></li>
+    <li><a href="#3宏任务和微任务有哪些">（3）宏任务和微任务有哪些？</a></li>
+    <li><a href="#4promise和settimeout有什么区别他们怎么执行什么是宏任务什么是微任务执行顺序又是怎么样的">（4）promise和setTimeout有什么区别，他们怎么执行，什么是宏任务什么是微任务，执行顺序又是怎么样的？</a></li>
+    <li><a href="#5settimeout和setinterval区别如何互相实现">（5）setTimeout和setInterval区别，如何互相实现？</a></li>
+    <li><a href="#6浏览器的事件循环和-nodejs-事件循环的区别">（6）浏览器的事件循环和 nodejs 事件循环的区别</a></li>
+    <li><a href="#7用-javascript-的异步实现-sleep-函数">（7）用 JavaScript 的异步实现 sleep 函数</a></li>
+    <li><a href="#8回调函数实现的机制是">（8）回调函数实现的机制是？</a></li>
+    <li><a href="#9为什么要使用回调函数">（9）为什么要使用回调函数？</a></li>
+    <li><a href="#10什么是回调函数">（10）什么是回调函数？</a></li>
+    <li><a href="#10实现一个带并发限制的异步调度器scheduler保证同时运行的任务最多有两个">（10）实现一个带并发限制的异步调度器Scheduler,保证同时运行的任务最多有两个</a></li>
+    <li><a href="#11异步加载js简述异步加载的几种方式">（11）异步加载js，简述异步加载的几种方式</a></li>
+    <li><a href="#12async-和-defer-的不同">（12）async 和 defer 的不同？</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <h1 id="1什么是异步">1.什么是异步？</h1>
+<h2 id="1异步的作用">(1)异步的作用</h2>
+<p>在前端编程中（甚至后端有时也是这样），我们在处理一些简短、快速的操作时，例如计算 1 + 1 的结果，往往在主线程中就可以完成。主线程作为一个线程，不能够同时接受多方面的请求。所以，当一个事件没有结束时，界面将无法处理其他请求。</p>
+<p>现在有一个按钮，如果我们设置它的 onclick 事件为一个死循环，那么当这个按钮按下，整个网页将失去响应。</p>
+<p>为了避免这种情况的发生，我们常常用子线程来完成一些可能消耗时间足够长以至于被用户察觉的事情，比如读取一个大文件或者发出一个网络请求。 <strong>因为子线程独立于主线程，所以即使出现阻塞也不会影响主线程的运行。</strong> 但是子线程有一个局限：一旦发射了以后就会与主线程失去同步，我们无法确定它的结束，如果结束之后需要处理一些事情，比如处理来自服务器的信息，我们是无法将它合并到主线程中去的。</p>
+<p>为了解决这个问题，JavaScript 中的异步操作函数往往通过回调函数来实现异步任务的结果处理。
+—— <a href="https://www.runoob.com/js/js-async.html">JavaScript 异步编程</a></p>
+<h2 id="2异步的概念">(2)异步的概念</h2>
+<p>通常来说，程序都是顺序执行，同一时刻只会发生一件事情，如果一个函数依赖于另一个函数的结果，它只能等待那个函数结束才能继续执行。—— <a href="https://developer.mozilla.org/zh-CN/docs/learn/JavaScript/%E5%BC%82%E6%AD%A5/%E6%A6%82%E5%BF%B5">通用异步编程概念</a></p>
+<p>异步：异步就是从主线程发射一个子线程来完成任务。—— <a href="https://www.runoob.com/js/js-async.html">JavaScript 异步编程</a></p>
+<h2 id="3阻塞">(3)阻塞</h2>
+<p>异步技术非常有用，特别是在web编程。当浏览器里面的一个web应用进行密集运算还没有把控制权返回给浏览器的时候，整个浏览器就像冻僵了一样，这叫做阻塞；这时候浏览器无法继续处理用户的输入并执行其他任务，直到web应用交回处理器的控制。</p>
+<p>为什么会出现上面这样阻塞的情况呢，原因就是JS是单线程的。</p>
+<h2 id="4线程">(4)线程</h2>
+<p>一个线程是一个基本的处理过程，程序用它来完成任务。每个线程一次只能执行一个任务:</p>
+<pre><code class="language-code" data-lang="code">Task A --&gt; Task B --&gt; Task C
+</code></pre><p>但是现在的计算机大都有多个内核（core），因此可以同时执行多个任务。支持多线程的编程语言可以使用计算机的多个内核，发挥多内核的作用，同时完成多个任务:</p>
+<pre><code class="language-code" data-lang="code">Thread 1: Task A --&gt; Task B
+Thread 2: Task C --&gt; Task D
+</code></pre><h2 id="5js单线程">(5)JS单线程</h2>
+<p>JavaScript 传统上是单线程的。即使有多个内核，也只能在单一线程上运行多个任务，此线程称为主线程（main thread）。</p>
+<p>因为JS是单线程的，所以会导致代码阻塞，影响用户体验，于是JS获得一些工具来解决这个问题。通过 <strong>Web workers</strong> 可以把一些任务交给一个名为worker的单独的线程，这样就可以同时运行多个JavaScript代码块。一般来说，用一个worker来运行一个耗时的任务，主线程就可以处理用户的交互（避免了阻塞）。</p>
+<blockquote>
+<p>理解：这样就相当于JS是双线程的，有两个线程可以执行任务了，一个<strong>主线程(Main thread)</strong>,一个 <strong>worker 线程</strong>。</p>
+</blockquote>
+<pre><code class="language-code" data-lang="code">Main thread: Task A --&gt; Task C
+Worker thread: Expensive task B
+</code></pre><h2 id="6web-workers">(6)Web workers</h2>
+<p>主线程和 worker 线程相互之间使用 <strong>postMessage()</strong> 方法来发送信息, 并且通过 <strong>onmessage</strong> 这个 event handler来接收信息（传递的信息包含在 Message 这个事件的data属性内) 。数据的交互方式为<strong>传递副本</strong>，而<strong>不是直接共享数据。</strong></p>
+<blockquote>
+<p>worker 不能做渲染，只能做算术这种苦活。</p>
+</blockquote>
+<p>另外当一个函数依赖于几个在它之前运行的过程的结果，这就会成为问题。</p>
+<p>在这种情况下，比如说Task A 正在从服务器上获取一个图片之类的资源，Task B 准备在图片上加一个滤镜。如果开始运行Task A 后立即尝试运行Task B，你将会得到一个错误，因为图像还没有获取到。</p>
+<p>为了解决这些问题，浏览器允许我们异步运行某些操作。像Promises 这样的功能就允许让一些操作运行 (比如：从服务器上获取图片)，然后等待直到结果返回，再运行其他的操作。</p>
+<p>由于操作发生在其他地方，因此在处理异步操作的时候，主线程不会被阻塞。</p>
+<p>经常用到异步的业务：从网络获取文件，访问数据库，从网络摄像头获得视频流，或者向VR头罩广播图像。</p>
+<h1 id="2异步编程在js中的实现">2.异步编程在JS中的实现</h1>
+<p>在JavaScript代码中，你经常会遇到两种<a href="https://developer.mozilla.org/zh-CN/docs/learn/JavaScript/%E5%BC%82%E6%AD%A5/%E7%AE%80%E4%BB%8B">异步编程</a>风格：老派callbacks，新派promise。下面就来分别介绍。</p>
+<h2 id="1异步callbacks">（1）异步callbacks</h2>
+<p><strong>异步callbacks 其实就是函数</strong>，只不过是<strong>作为参数传递</strong>给那些在<strong>后台执行的其他函数</strong>，当那些后台运行的代码结束，就调用callbacks函数，通知你工作已经完成。</p>
+<p>也存在同步的回调函数，例如Array.prototype.forEach() ：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">gods</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Apollo&#39;</span>, <span style="color:#e6db74">&#39;Artemis&#39;</span>, <span style="color:#e6db74">&#39;Ares&#39;</span>, <span style="color:#e6db74">&#39;Zeus&#39;</span>];
+
+<span style="color:#a6e22e">gods</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">eachName</span>, <span style="color:#a6e22e">index</span>){
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">index</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;. &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">eachName</span>);
+});
+</code></pre></div><p>在上面这个例子中，我们遍历一个希腊神的数组，并在控制台中打印索引和值。forEach() 需要的参数是一个回调函数，回调函数本身带有两个参数，数组元素和索引值。它无需等待任何事情，立即运行。</p>
+<h2 id="2promises">（2）Promises</h2>
+<p>Promises 是新派的异步代码，现代的web APIs经常用到。本质上，这是浏览器说“我保证尽快给您答复”的方式，因此得名“promise”，可以理解为浏览器给的一个承诺。</p>
+<h2 id="3promises-对比-callbacks">（3）Promises 对比 callbacks</h2>
+<p>promises与旧式callbacks有一些相似之处。它们本质上是一个返回的对象，您可以将回调函数附加到该对象上，而不必将回调作为参数传递给另一个函数。</p>
+<p>Promise相对于callbacks优点：</p>
+<p>1.您可以使用多个then()操作将多个异步操作链接在一起，并将其中一个操作的结果作为输入传递给下一个操作。这种链接方式对回调来说要难得多，会使回调以混乱的“末日金字塔”告终。 (也称为回调地狱)。</p>
+<p>2.Promise总是严格按照它们放置在事件队列中的顺序调用。</p>
+<p>3.错误处理要好得多——所有的错误都由块末尾的一个.catch()块处理，而不是在“金字塔”的每一层单独处理。</p>
+<h2 id="4事件队列">（4）事件队列</h2>
+<p>像promise这样的异步操作被放入事件队列中，事件队列在主线程完成处理后运行，这样它们就不会阻止后续JavaScript代码的运行。排队操作将尽快完成，然后将结果返回到JavaScript环境。</p>
+<h1 id="3事件循环">3.事件循环</h1>
+<h1 id="1事件循环的概念">（1）事件循环的概念</h1>
+<p>JavaScript有一个基于事件循环的并发模型，事件循环负责执行代码、收集和处理事件以及执行队列中的子任务。这个模型与其它语言中的模型截然不同，比如 C 和 Java。</p>
+<p>js引擎遇到一个异步事件后并不会一直等待其返回结果，而是会将这个事件挂起，继续执行执行栈中的其他任务。当一个异步事件返回结果后，js会将这个事件加入与当前执行栈不同的另一个队列，我们称之为事件队列。被放入事件队列不会立刻执行其回调，而是等待当前执行栈中的所有任务都执行完毕， 主线程处于闲置状态时，主线程会去查找事件队列是否有任务。如果有，那么主线程会从中取出排在第一位的事件，并把这个事件对应的回调放入执行栈中，然后执行其中的同步代码&hellip;，如此反复，这样就形成了一个无限的循环。这就是这个过程被称为“事件循环（Event Loop）”的原因。</p>
+<h1 id="2运行时">（2）运行时</h1>
+<p>接下来的内容解释了这个理论模型。现代JavaScript引擎实现并着重优化了以下描述的这些语义。
+<img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7a7f86b5997c407689071801ff455cb5~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
+<p>1.栈</p>
+<p>函数调用形成了一个由若干帧组成的栈。</p>
+<p>2.堆</p>
+<p>对象被分配在堆中，堆是一个用来表示一大块（通常是非结构化的）内存区域的计算机术语。</p>
+<p>3.队列</p>
+<p>一个 JavaScript 运行时包含了一个待处理消息的消息队列。每一个消息都关联着一个用以处理这个消息的回调函数。</p>
+<p>在 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF"><strong>事件循环</strong></a> 期间的某个时刻，运行时会从最先进入队列的消息开始处理队列中的消息。被处理的消息会被移出队列，并作为输入参数来调用与之关联的函数。正如前面所提到的，调用一个函数总是会为其创造一个新的栈帧。函数的处理会一直进行到执行栈再次为空为止；然后事件循环将会处理队列中的下一个消息（如果还有的话）。</p>
+<p>之所以称之为 事件循环，是因为它经常按照类似如下的方式来被实现：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">waitForMessage</span>()) {
+  <span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">processNextMessage</span>();
+}
+</code></pre></div><h2 id="3事件循环特性">（3）事件循环特性</h2>
+<p>1.执行至完成</p>
+<p>每一个消息完整地执行后，其它消息才会被执行。这为程序的分析提供了一些优秀的特性，包括：当一个函数执行时，它不会被抢占，只有在它运行完毕之后才会去运行任何其他的代码，才能修改这个函数操作的数据。</p>
+<p>缺点：这个模型的一个缺点在于当一个消息需要太长时间才能处理完毕时，Web应用程序就无法处理与用户的交互，例如点击或滚动。为了缓解这个问题，浏览器一般会弹出一个“这个脚本运行时间过长”的对话框。一个良好的习惯是缩短单个消息处理时间，并在可能的情况下将一个消息裁剪成多个消息</p>
+<p>2.添加消息</p>
+<p>在浏览器里，每当一个事件发生并且有一个事件监听器绑定在该事件上时，一个消息就会被添加进消息队列。如果没有事件监听器，这个事件将会丢失。所以当一个带有点击事件处理器的元素被点击时，就会像其他事件一样产生一个类似的消息。</p>
+<p>函数 setTimeout 接受两个参数：待加入队列的消息和一个时间值（可选，默认为 0）。这个时间值代表了消息被实际加入到队列的最小延迟时间。如果队列中没有其它消息并且栈为空，在这段延迟时间过去之后，消息会被马上处理。但是，如果有其它消息，setTimeout 消息必须等待其它消息处理完。因此第二个参数仅仅表示最少延迟时间，而非确切的等待时间。</p>
+<p>3.零延迟</p>
+<p>零延迟并不意味着回调会立即执行。以 0 为第二参数调用 setTimeout 并不表示在 0 毫秒后就立即调用回调函数，知识表示最小延迟时间。其等待的时间取决于队列里待处理的消息数量。</p>
+<p>4.多个运行时互相通信</p>
+<p>一个 web worker 或者一个跨域的 iframe 都有自己的栈、堆和消息队列。两个不同的运行时只能通过 postMessage 方法进行通信。如果另一个运行时侦听 message 事件，则此方法会向该运行时添加消息。</p>
+<p>5.永不阻塞</p>
+<p>JavaScript的事件循环模型与许多其他语言不同的一个非常有趣的特性是，它永不阻塞。 处理 I/O 通常通过事件和回调来执行，所以当一个应用正等待一个 IndexedDB 查询返回或者一个 XHR 请求返回时，它仍然可以处理其它事情，比如用户输入。</p>
+<h1 id="4宏任务macro-task与微任务micro-task">4.宏任务macro task与微任务micro task</h1>
+<h2 id="1宏任务">（1）宏任务</h2>
+<p>setInterval()，setTimeout()，requestAnimationFrame属于宏任务</p>
+<h2 id="2微任务">（2）微任务</h2>
+<p>new Promise()，new MutaionObserver()属于微任务</p>
+<p>在一个事件循环中，异步事件返回结果后会被放到一个任务队列中。然而，根据这个异步事件的类型，这个事件实际上会被对应的宏任务队列或者微任务队列中去。并且在当前执行栈为空的时候，主线程会 查看微任务队列是否有事件存在。如果不存在，那么再去宏任务队列中取出一个事件并把对应的回到加入当前执行栈；如果存在，则会依次执行队列中事件对应的回调，直到微任务队列为空，然后去宏任务队列中取出最前面的一个事件，把对应的回调加入当前执行栈&hellip;如此反复，进入循环。</p>
+<blockquote>
+<p>微任务会在宏任务之前处理 <del>看来JS也会利用时间管理中的两分钟法则啊</del></p>
+</blockquote>
+<blockquote>
+<p>当当前执行栈执行完毕时会立刻先处理所有微任务队列中的事件，然后再去宏任务队列中取出一个事件。同一次事件循环中，微任务永远在宏任务之前执行。</p>
+</blockquote>
+<h1 id="5node环境下的事件循环">5.node环境下的事件循环</h1>
+<h1 id="1node环境与浏览器环境差异">（1）node环境与浏览器环境差异</h1>
+<p>在node中，事件循环表现出的状态与浏览器中大致相同。不同的是node中有一套自己的模型。node中事件循环的实现是依靠的libuv引擎。我们知道node选择chrome v8引擎作为js解释器，v8引擎将js代码分析后去调用对应的node api，而这些api最后则由libuv引擎驱动，执行对应的任务，并把不同的事件放在不同的队列中等待主线程执行。 因此实际上node中的事件循环存在于libuv引擎中。&ndash;<a href="https://zhuanlan.zhihu.com/p/33058983">详解JavaScript中的Event Loop（事件循环）机制</a></p>
+<h1 id="6涉及到的面试题">6.涉及到的面试题</h1>
+<h2 id="1js执行机制说一下event-loop事件循环">（1）js执行机制，说一下event loop（事件循环）</h2>
+<p>1.Javascript是单线程的，所有的同步任务都会在主线程中执行</p>
+<p>2.主线程之外，还有一个任务队列。每当一个异步任务有结果了，就往任务队列里塞一个事件。 当主线程中的任务，都执行完之后，系统会 “依次” 读取任务队列里的事件。与之相对应的异步任务进入主线程，开始执行</p>
+<p>3.异步任务之间，会存在差异，所以它们执行的优先级也会有区别。大致分为 微任务（micro task，如：Promise、MutaionObserver等）和宏任务（macro task，如：setTimeout、setInterval、I/O等）。同一次事件循环中，微任务永远在宏任务之前执行</p>
+<p>4.主线程会不断重复上面的步骤，直到执行完所有任务</p>
+<h2 id="2为什么要引入微任务只有一种类型的任务不行么">（2）为什么要引入微任务，只有一种类型的任务不行么？</h2>
+<p>页面渲染事件，各种IO的完成事件等随时被添加到任务队列中，一直会保持先进先出的原则执行，我们不能准确地控制这些事件被添加到任务队列中的位置。但是这个时候突然有高优先级的任务需要尽快执行，那么一种类型的任务就不合适了，所以引入了微任务队列。</p>
+<h2 id="3宏任务和微任务有哪些">（3）宏任务和微任务有哪些？</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">id</th>
+<th style="text-align:center">宏任务</th>
+<th style="text-align:center">微任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">script(整体代码)</td>
+<td style="text-align:center">new Promise().then(回调)</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">setTimeout()</td>
+<td style="text-align:center">MutationObserver(html5 新特性)</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">setInterval()</td>
+<td style="text-align:center">process.nextTick</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">postMessage</td>
+<td style="text-align:center">Object.observe</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">I/O</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">UI rendering</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">setImmediate</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="4promise和settimeout有什么区别他们怎么执行什么是宏任务什么是微任务执行顺序又是怎么样的">（4）promise和setTimeout有什么区别，他们怎么执行，什么是宏任务什么是微任务，执行顺序又是怎么样的？</h2>
+<p>参考：<a href="https://www.jianshu.com/p/23fad3814398">高频面试题：JavaScript事件循环机制解析</a></p>
+<h2 id="5settimeout和setinterval区别如何互相实现">（5）setTimeout和setInterval区别，如何互相实现？</h2>
+<h2 id="6浏览器的事件循环和-nodejs-事件循环的区别">（6）浏览器的事件循环和 nodejs 事件循环的区别</h2>
+<h2 id="7用-javascript-的异步实现-sleep-函数">（7）用 JavaScript 的异步实现 sleep 函数</h2>
+<h2 id="8回调函数实现的机制是">（8）回调函数实现的机制是？</h2>
+<h2 id="9为什么要使用回调函数">（9）为什么要使用回调函数？</h2>
+<h2 id="10什么是回调函数">（10）什么是回调函数？</h2>
+<h2 id="10实现一个带并发限制的异步调度器scheduler保证同时运行的任务最多有两个">（10）实现一个带并发限制的异步调度器Scheduler,保证同时运行的任务最多有两个</h2>
+<h2 id="11异步加载js简述异步加载的几种方式">（11）异步加载js，简述异步加载的几种方式</h2>
+<h2 id="12async-和-defer-的不同">（12）async 和 defer 的不同？</h2>
+<p>笔试题说结果：</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">  <span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#f92672">&lt;!</span><span style="color:#a6e22e">DOCTYPE</span> <span style="color:#a6e22e">html</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span><span style="color:#f92672">&gt;</span>
+
+<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">head</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">title</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Document</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/title&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/head&gt;</span>
+
+<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">body</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">async1</span>() {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;async1 start&#39;</span>); <span style="color:#75715e">// 2
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">async2</span>();
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;async1 end&#39;</span>); <span style="color:#75715e">// 7 micro2
+</span><span style="color:#75715e"></span>        }
+        <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">async2</span>() {
+            <span style="color:#75715e">//async2做出如下更改：
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">new</span> Promise(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">resolve</span>) {
+                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;promise1&#39;</span>); <span style="color:#75715e">// 3
+</span><span style="color:#75715e"></span>                <span style="color:#a6e22e">resolve</span>();
+            }).<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span> () {
+                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;promise2&#39;</span>); <span style="color:#75715e">// 6 micro1
+</span><span style="color:#75715e"></span>            });
+        }
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;script start&#39;</span>); <span style="color:#75715e">// 1
+</span><span style="color:#75715e"></span>
+        <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span> () {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;setTimeout&#39;</span>); <span style="color:#75715e">// 9
+</span><span style="color:#75715e"></span>        }, <span style="color:#ae81ff">0</span>)
+        <span style="color:#a6e22e">async1</span>();
+
+        <span style="color:#66d9ef">new</span> Promise(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">resolve</span>) {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;promise3&#39;</span>); <span style="color:#75715e">// 4
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">resolve</span>();
+        }).<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span> () {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;promise4&#39;</span>); <span style="color:#75715e">// micro3
+</span><span style="color:#75715e"></span>        });
+
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;script end&#39;</span>); <span style="color:#75715e">// 5
+</span><span style="color:#75715e"></span>    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">  <span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">script</span>&gt;
+        <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">async1</span>() {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;async1 start&#39;</span>); <span style="color:#75715e">// 2
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">async2</span>();
+            <span style="color:#75715e">//更改如下：
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span> () {
+                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;setTimeout1&#39;</span>) <span style="color:#75715e">// 8 macro3
+</span><span style="color:#75715e"></span>            }, <span style="color:#ae81ff">0</span>)
+        }
+        <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">async2</span>() {
+            <span style="color:#75715e">//更改如下：
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span> () {
+                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;setTimeout2&#39;</span>) <span style="color:#75715e">// 7 macro2
+</span><span style="color:#75715e"></span>            }, <span style="color:#ae81ff">0</span>)
+        }
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;script start&#39;</span>); <span style="color:#75715e">// 1
+</span><span style="color:#75715e"></span>
+        <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span> () {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;setTimeout3&#39;</span>); <span style="color:#75715e">// 6 macro1
+</span><span style="color:#75715e"></span>        }, <span style="color:#ae81ff">0</span>)
+        <span style="color:#a6e22e">async1</span>();
+
+        <span style="color:#66d9ef">new</span> Promise(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">resolve</span>) {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;promise1&#39;</span>); <span style="color:#75715e">// 3
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">resolve</span>();
+        }).<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span> () {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;promise2&#39;</span>); <span style="color:#75715e">// 5 micro1 
+</span><span style="color:#75715e"></span>        });
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;script end&#39;</span>); <span style="color:#75715e">// 4
+</span><span style="color:#75715e"></span>    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">  <span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">script</span>&gt;
+        <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">a1</span>() {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;a1 start&#39;</span>) <span style="color:#75715e">// 2
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">a2</span>()
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;a1 end&#39;</span>) <span style="color:#75715e">// 7 micro2
+</span><span style="color:#75715e"></span>        }
+        <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">a2</span>() {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;a2&#39;</span>) <span style="color:#75715e">// 3
+</span><span style="color:#75715e"></span>        }
+
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;script start&#39;</span>) <span style="color:#75715e">// 1
+</span><span style="color:#75715e"></span>
+        <span style="color:#a6e22e">setTimeout</span>(() =&gt; {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;setTimeout&#39;</span>) <span style="color:#75715e">// 10 macro1
+</span><span style="color:#75715e"></span>        }, <span style="color:#ae81ff">0</span>)
+
+        Promise.<span style="color:#a6e22e">resolve</span>().<span style="color:#a6e22e">then</span>(() =&gt; {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;promise1&#39;</span>) <span style="color:#75715e">// 6 micro1 
+</span><span style="color:#75715e"></span>        })
+
+        <span style="color:#a6e22e">a1</span>()
+
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">promise2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Promise((<span style="color:#a6e22e">resolve</span>) =&gt; {
+            <span style="color:#a6e22e">resolve</span>(<span style="color:#e6db74">&#39;promise2.then&#39;</span>)
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;promise2&#39;</span>) <span style="color:#75715e">// 4
+</span><span style="color:#75715e"></span>        })
+
+        <span style="color:#a6e22e">promise2</span>.<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">res</span>) =&gt; {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">res</span>) <span style="color:#75715e">// 8 micro3
+</span><span style="color:#75715e"></span>            Promise.<span style="color:#a6e22e">resolve</span>().<span style="color:#a6e22e">then</span>(() =&gt; {
+                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;promise3&#39;</span>) <span style="color:#75715e">// 9 micro4
+</span><span style="color:#75715e"></span>            })
+        })
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;script end&#39;</span>) <span style="color:#75715e">// 5
+</span><span style="color:#75715e"></span>    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><!-- raw HTML omitted -->
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">XKHM</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2021-01-04
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">原创文章，转载请注明文章作者和出处，谢谢！</a></span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://xkhm.net/tags/javascript/">JavaScript</a>
+          <a href="https://xkhm.net/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/">异步编程</a>
+          <a href="https://xkhm.net/tags/event-loop/">Event Loop</a>
+          <a href="https://xkhm.net/tags/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/">事件循环</a>
+          <a href="https://xkhm.net/tags/%E5%AE%8F%E4%BB%BB%E5%8A%A1/">宏任务</a>
+          <a href="https://xkhm.net/tags/%E5%BE%AE%E4%BB%BB%E5%8A%A1/">微任务</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/vue2%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0cv/">
+            <span class="next-text nav-default">Vue2从入门到CV</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="im.xkhm@gmail.com" rel="me noopener" class="iconfont"
+      title="email"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/yukiyukixing" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.zhihu.com/people/yuki-42-63" rel="me noopener" class="iconfont"
+      title="zhihu"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M351.791182 562.469462l192.945407 0c0-45.367257-21.3871-71.939449-21.3871-71.939449L355.897709 490.530013c3.977591-82.182744 7.541767-187.659007 8.816806-226.835262l159.282726 0c0 0-0.86367-67.402109-18.578124-67.402109s-279.979646 0-279.979646 0 16.850783-88.141456 39.318494-127.053698c0 0-83.60514-4.510734-112.121614 106.962104S81.344656 355.077018 76.80834 367.390461c-4.536316 12.313443 24.62791 5.832845 36.941354 0 12.313443-5.832845 68.050885-25.924439 84.252893-103.69571l86.570681 0c1.165546 49.28652 4.596691 200.335724 3.515057 226.835262L109.86113 490.530013c-25.275663 18.147312-33.701566 71.939449-33.701566 71.939449L279.868105 562.469462c-8.497535 56.255235-23.417339 128.763642-44.275389 167.210279-33.05279 60.921511-50.55235 116.65793-169.802314 212.576513 0 0-19.442818 14.257725 40.829917 9.073656 60.273758-5.185093 117.305683-20.739347 156.840094-99.807147 20.553105-41.107233 41.805128-93.250824 58.386782-146.138358l-0.055259 0.185218 167.855986 193.263655c0 0 22.035876-51.847855 5.832845-108.880803L371.045711 650.610918l-42.1244 31.157627-0.045025 0.151449c11.69946-41.020252 20.11206-81.5749 22.726607-116.858498C351.665315 564.212152 351.72876 563.345412 351.791182 562.469462z"></path>
+  <path d="M584.918753 182.033893l0 668.840094 70.318532 0 28.807093 80.512708 121.875768-80.512708 153.600307 0L959.520453 182.033893 584.918753 182.033893zM887.150192 778.934538l-79.837326 0-99.578949 65.782216-23.537066-65.782216-24.855084 0L659.341766 256.673847l227.807403 0L887.149169 778.934538z"></path>
+</svg>
+
+    </a>
+
+
+<a href="https://xkhm.net/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2019 -
+    2021
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        星空海绵
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
