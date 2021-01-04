@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Thu, 31 Dec 2020 22:06:11 +0800</lastBuildDate><atom:link href="https://xkhm.net/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Jan 2021 08:30:30 +0800</lastBuildDate><atom:link href="https://xkhm.net/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JS面试题复习</title>
+      <link>https://xkhm.net/post/js%E9%9D%A2%E8%AF%95%E9%A2%98%E5%A4%8D%E4%B9%A0/</link>
+      <pubDate>Mon, 04 Jan 2021 08:30:30 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/js%E9%9D%A2%E8%AF%95%E9%A2%98%E5%A4%8D%E4%B9%A0/</guid>
+      <description>1.对象 （1）深浅拷贝 1.浅拷贝（4种） （1）直接赋值 let obj = { name: &#39;XKHM&#39;, age: 25, job: &#39;Software Engineer&#39; } let obj1 = obj; console.log(obj1 === obj); （2）Object.assign() Object.assign() 方法用于将</description>
+    </item>
+    
     <item>
       <title>JS之日常解题</title>
       <link>https://xkhm.net/post/js%E4%B9%8B%E6%97%A5%E5%B8%B8%E8%A7%A3%E9%A2%98/</link>

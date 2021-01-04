@@ -7,22 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Sun, 03 Jan 2021 13:54:24 +0800</lastBuildDate><atom:link href="https://xkhm.net/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Jan 2021 08:30:30 +0800</lastBuildDate><atom:link href="https://xkhm.net/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript</title>
+      <link>https://xkhm.net/categories/javascript/</link>
+      <pubDate>Mon, 04 Jan 2021 08:30:30 +0800</pubDate>
+      
+      <guid>https://xkhm.net/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>学习</title>
       <link>https://xkhm.net/categories/%E5%AD%A6%E4%B9%A0/</link>
       <pubDate>Sun, 03 Jan 2021 13:54:24 +0800</pubDate>
       
       <guid>https://xkhm.net/categories/%E5%AD%A6%E4%B9%A0/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JavaScript</title>
-      <link>https://xkhm.net/categories/javascript/</link>
-      <pubDate>Thu, 31 Dec 2020 22:06:11 +0800</pubDate>
-      
-      <guid>https://xkhm.net/categories/javascript/</guid>
       <description></description>
     </item>
     
