@@ -478,12 +478,7 @@ Worker thread: Expensive task B
       
       <guid>https://xkhm.net/post/vue2%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0cv/</guid>
       
-        <description>&lt;hr&gt;
-&lt;h1 id=&#34;主题列表juejin-github-smartblue-cyanosis-channing-cyan-fancy-hydrogen-condensed-night-purple-greenwillow-v-green-vue-pro-healer-readable-mk-cute-jzman-geek-black-awesome-green&#34;&gt;主题列表：juejin, github, smartblue, cyanosis, channing-cyan, fancy, hydrogen, condensed-night-purple, greenwillow, v-green, vue-pro, healer-readable, mk-cute, jzman, geek-black, awesome-green&lt;/h1&gt;
-&lt;h1 id=&#34;贡献主题httpsgithubcomxitujuejin-markdown-themes&#34;&gt;贡献主题：https://github.com/xitu/juejin-markdown-themes&lt;/h1&gt;
-&lt;h2 id=&#34;highlight&#34;&gt;theme: jzman
-highlight:&lt;/h2&gt;
-&lt;blockquote&gt;
+        <description>&lt;blockquote&gt;
 &lt;p&gt;前言：学习笔记，CV即指CV Vue的官方文档，也指 CV 网上的Vue业务代码😎😎&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&#34;1vue是什么&#34;&gt;1.Vue是什么？&lt;/h1&gt;
@@ -2638,7 +2633,283 @@ methods: {
 &lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
 &lt;p&gt;问题：JS底层是怎么实现异步的，相关内容：V8引擎是如何实现异步的，EventLoop相关原理深度解析,JS执行过程中的堆栈变化，异步是不是等同于并行以及其它相关底层问题。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;链式调用：&lt;/p&gt;
+&lt;p&gt;链式调用：同一对象多次其属性或方法的时候，我们需要多次书写对象进行“.” 或 () 操作；链式调用是一种简化此过程的一种编码方式，使代码简洁、易读。&lt;/p&gt;
+&lt;p&gt;函数柯里化：&lt;/p&gt;
+&lt;h1 id=&#34;2promise使用&#34;&gt;2.Promise使用&lt;/h1&gt;
+&lt;p&gt;资料相关：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1.&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Using_promises&#34;&gt;使用 Promise&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2.&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise&#34;&gt;Promise&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Promise是一个对象，代表一个异步操作的最终完结或失败。&lt;/p&gt;
+&lt;h2 id=&#34;1promise特点&#34;&gt;（1）Promise特点&lt;/h2&gt;
+&lt;p&gt;1.在本轮 事件循环 运行完成之前，回调函数是不会被调用的。&lt;/p&gt;
+&lt;p&gt;2.即使异步操作已经完成（成功或失败），在这之后通过 then() 添加的回调函数也会被调用。&lt;/p&gt;
+&lt;p&gt;3.通过多次调用 then() 可以添加多个回调函数，它们会按照插入顺序进行执行。&lt;/p&gt;
+&lt;p&gt;4.Promise 很棒的一点就是链式调用（chaining）（Promise可以是使用链式调用）&lt;/p&gt;
+&lt;h2 id=&#34;2链式调用&#34;&gt;（2）链式调用&lt;/h2&gt;
+&lt;p&gt;连续执行两个或者多个异步操作是一个常见的需求，在上一个操作执行成功之后，开始下一个的操作，并带着上一步操作所返回的结果。我们可以通过创造一个 Promise 链来实现这种需求。基本上，每一个 Promise 都代表了链中另一个异步过程的完成。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意：一定要有返回值，否则，callback 将无法获取上一个 Promise 的结果。(如果使用箭头函数，() =&amp;gt; x 比 () =&amp;gt; { return x; } 更简洁一些，但后一种保留 return 的写法才支持使用多个语句。）。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;3catch-的后续链式操作&#34;&gt;(3)Catch 的后续链式操作&lt;/h2&gt;
+&lt;p&gt;有可能会在一个回调失败之后继续使用链式操作，即，使用一个 catch，这对于在链式操作中抛出一个失败之后，再次进行新的操作会很有用。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Promise((&lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;) =&amp;gt; {
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;初始化&amp;#39;&lt;/span&gt;);
+
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;();
+        })
+            .&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(() =&amp;gt; {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;throw&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Error(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;有哪里不对了&amp;#39;&lt;/span&gt;);
+
+                &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;执行「这个」”&amp;#39;&lt;/span&gt;);
+            })
+            .&lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt;(() =&amp;gt; {
+                &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;执行「那个」&amp;#39;&lt;/span&gt;);
+            })
+            .&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(() =&amp;gt; {
+                &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;执行「这个」，无论前面发生了什么&amp;#39;&lt;/span&gt;);
+            });
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;打印结果：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f4cc42c8fb93435aa1093e628e760435~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意：因为抛出了错误 有哪里不对了，所以前一个 执行「这个」 没有被输出。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;4错误传递&#34;&gt;（4）错误传递&lt;/h2&gt;
+&lt;p&gt;通常，一遇到异常抛出，浏览器就会顺着 Promise 链寻找下一个 onRejected 失败回调函数或者由 .catch() 指定的回调函数。这和以下同步代码的工作原理（执行过程）非常相似。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;通过捕获所有的错误，甚至抛出异常和程序错误，Promise 解决了回调地狱的基本缺陷。这对于构建异步操作的基础功能而言是很有必要的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;5promise-拒绝事件&#34;&gt;（5）Promise 拒绝事件&lt;/h2&gt;
+&lt;p&gt;当 &lt;strong&gt;Promise&lt;/strong&gt; 被拒绝时，会有下文所述的两个事件之一被派发到&lt;strong&gt;全局作用域&lt;/strong&gt;（通常而言，就是window；如果是在 web worker 中使用的话，就是 Worker 或者其他 worker-based 接口）。&lt;/p&gt;
+&lt;h3 id=&#34;1rejectionhandled&#34;&gt;（1）rejectionhandled&lt;/h3&gt;
+&lt;p&gt;当 Promise 被拒绝、并且在 reject 函数处理该 rejection 之后会派发此事件。&lt;/p&gt;
+&lt;h3 id=&#34;2unhandledrejection&#34;&gt;（2）unhandledrejection&lt;/h3&gt;
+&lt;p&gt;当 Promise 被拒绝，但没有提供 reject 函数来处理该 rejection 时，会派发此事件。&lt;/p&gt;
+&lt;p&gt;以上两种情况中，PromiseRejectionEvent 事件都有两个属性，一个是 promise 属性，该属性指向被驳回的 Promise，另一个是 reason 属性，该属性用来说明 Promise 被驳回的原因。&lt;/p&gt;
+&lt;p&gt;因此，我们可以通过以上事件为 Promise 失败时提供补偿处理，也有利于调试 Promise 相关的问题。在每一个上下文中，该处理都是全局的，因此不管源码如何，所有的错误都会在同一个处理函数中被捕捉并处理。&lt;/p&gt;
+&lt;p&gt;一个特别有用的例子：当你使用 Node.js 时，有些依赖模块可能会有未被处理的 rejected promises，这些都会在运行时打印到控制台。你可以在自己的代码中捕捉这些信息，然后添加与 unhandledrejection 相应的处理函数来做分析和处理，或只是为了让你的输出更整洁。举例如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;window.&lt;span style=&#34;color:#a6e22e&#34;&gt;addEventListener&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;unhandledrejection&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;event&lt;/span&gt; =&amp;gt; {
+  &lt;span style=&#34;color:#75715e&#34;&gt;/* 你可以在这里添加一些代码，以便检查
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;     event.promise 中的 promise 和
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;     event.reason 中的 rejection 原因 */&lt;/span&gt;
+
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;event&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;preventDefault&lt;/span&gt;();
+}, &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;调用 event 的 preventDefault() 方法是为了告诉 JavaScript 引擎当 Promise 被拒绝时不要执行默认操作，默认操作一般会包含把错误打印到控制台，Node 就是如此的。&lt;/p&gt;
+&lt;p&gt;理想情况下，在忽略这些事件之前，我们应该检查所有被拒绝的 Promise，来确认这不是代码中的 bug。&lt;/p&gt;
+&lt;h2 id=&#34;6在旧式回调-api-中创建-promise&#34;&gt;（6）在旧式回调 API 中创建 Promise&lt;/h2&gt;
+&lt;p&gt;理想状态下，所有的异步函数都已经返回 Promise 了。但有一些 API 仍然使用旧方式来传入的成功（或者失败）的回调。典型的例子就是 setTimeout() 函数：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;setTimeout&lt;/span&gt;(() =&amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;saySomething&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;10 seconds passed&amp;#34;&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;10000&lt;/span&gt;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;混用旧式回调和 Promise 可能会造成运行时序问题。如果 saySomething 函数失败了，或者包含了编程错误，那就没有办法捕获它了。这得怪 setTimeout。&lt;/p&gt;
+&lt;p&gt;幸运地是，我们可以用 Promise 来封装它。最好的做法是，将这些有问题的函数封装起来，留在底层，并且永远不要再直接调用它们：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;wait&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ms&lt;/span&gt; =&amp;gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Promise(&lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt; =&amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;setTimeout&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;ms&lt;/span&gt;));
+
+&lt;span style=&#34;color:#a6e22e&#34;&gt;wait&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;10000&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(() =&amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;saySomething&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;10 seconds&amp;#34;&lt;/span&gt;)).&lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;failureCallback&lt;/span&gt;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;通常，Promise 的构造器接收一个执行函数(executor)，我们可以在这个执行函数里手动地 resolve 和 reject 一个 Promise。既然 setTimeout 并不会真的执行失败，那么我们可以在这种情况下忽略 reject。&lt;/p&gt;
+&lt;h2 id=&#34;7组合&#34;&gt;（7）组合&lt;/h2&gt;
+&lt;p&gt;Promise.resolve() 和 Promise.reject() 是手动创建一个已经 resolve 或者 reject 的 Promise 快捷方法。它们有时很有用。&lt;/p&gt;
+&lt;p&gt;Promise.all() 和 Promise.race() 是并行运行异步操作的两个组合式工具。&lt;/p&gt;
+&lt;p&gt;我们可以发起并行操作，然后等多个操作全部结束后进行下一步操作，如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;Promise.&lt;span style=&#34;color:#a6e22e&#34;&gt;all&lt;/span&gt;([&lt;span style=&#34;color:#a6e22e&#34;&gt;func1&lt;/span&gt;(), &lt;span style=&#34;color:#a6e22e&#34;&gt;func2&lt;/span&gt;(), &lt;span style=&#34;color:#a6e22e&#34;&gt;func3&lt;/span&gt;()])
+.&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(([&lt;span style=&#34;color:#a6e22e&#34;&gt;result1&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;result2&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;result3&lt;/span&gt;]) =&amp;gt; { &lt;span style=&#34;color:#75715e&#34;&gt;/* use result1, result2 and result3 */&lt;/span&gt; });
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;可以使用一些聪明的 JavaScript 写法实现时序组合：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;func1&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;func2&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;func3&lt;/span&gt;].&lt;span style=&#34;color:#a6e22e&#34;&gt;reduce&lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;f&lt;/span&gt;) =&amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;f&lt;/span&gt;), Promise.&lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;())
+.&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;result3&lt;/span&gt; =&amp;gt; { &lt;span style=&#34;color:#75715e&#34;&gt;/* use result3 */&lt;/span&gt; });
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;通常，我们递归调用一个由异步函数组成的数组时，相当于一个 Promise 链：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;Promise.&lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;().&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;func1&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;func2&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;func3&lt;/span&gt;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;我们也可以写成可复用的函数形式，这在函数式编程中极为普遍：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;applyAsync&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;acc&lt;/span&gt;,&lt;span style=&#34;color:#a6e22e&#34;&gt;val&lt;/span&gt;) =&amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;acc&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;val&lt;/span&gt;);
+&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;composeAsync&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (...&lt;span style=&#34;color:#a6e22e&#34;&gt;funcs&lt;/span&gt;) =&amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt; =&amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;funcs&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;reduce&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;applyAsync&lt;/span&gt;, Promise.&lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt;));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;composeAsync() 函数将会接受任意数量的函数作为其参数，并返回一个新的函数，该函数接受一个通过 composition pipeline 传入的初始值。这对我们来说非常有益，因为任一函数可以是异步或同步的，它们能被保证按顺序执行：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;transformData&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;composeAsync&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;func1&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;func2&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;func3&lt;/span&gt;);
+&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;result3&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;transformData&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在 ECMAScript 2017 标准中, 时序组合可以通过使用 async/await 而变得更简单：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;result&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;f&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;of&lt;/span&gt; [&lt;span style=&#34;color:#a6e22e&#34;&gt;func1&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;func2&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;func3&lt;/span&gt;]) {
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;result&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;f&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;result&lt;/span&gt;);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;8时序&#34;&gt;8.时序&lt;/h2&gt;
+&lt;p&gt;为了避免意外，即使是一个已经变成 resolve 状态的 Promise，传递给 then() 的函数也总是会被异步调用。&lt;/p&gt;
+&lt;h2 id=&#34;9嵌套&#34;&gt;9.嵌套&lt;/h2&gt;
+&lt;p&gt;简便的 Promise 链式编程最好保持扁平化，不要嵌套 Promise，因为嵌套经常会是粗心导致的。可查阅下一节的常见错误中的例子。&lt;/p&gt;
+&lt;h2 id=&#34;10常见错误&#34;&gt;10.常见错误&lt;/h2&gt;
+&lt;p&gt;在编写 Promise 链时，需要注意以下示例中展示的几个错误：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// 错误示例，包含 3 个问题！
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;doSomething&lt;/span&gt;().&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;result&lt;/span&gt;) {
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;doSomethingElse&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;result&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;// 没有返回 Promise 以及没有必要的嵌套 Promise
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  .&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;newResult&lt;/span&gt; =&amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;doThirdThing&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;newResult&lt;/span&gt;));
+}).&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(() =&amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;doFourthThing&lt;/span&gt;());
+&lt;span style=&#34;color:#75715e&#34;&gt;// 最后，是没有使用 catch 终止 Promise 调用链，可能导致没有捕获的异常
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;一个好的经验法则是总是返回或终止 Promise 链，并且一旦你得到一个新的 Promise，返回它。下面是修改后的平面化的代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;doSomething&lt;/span&gt;()
+.&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;result&lt;/span&gt;) {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;doSomethingElse&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;result&lt;/span&gt;);
+})
+.&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;newResult&lt;/span&gt; =&amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;doThirdThing&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;newResult&lt;/span&gt;))
+.&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(() =&amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;doFourthThing&lt;/span&gt;())
+.&lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt; =&amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;使用 async/await 可以解决以上大多数错误，使用 async/await 时，最常见的语法错误就是忘记了 await 关键字。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;3promise&#34;&gt;3.Promise&lt;/h1&gt;
+&lt;p&gt;一个Promise对象在被创建出来的时候，不一定值是什么，异步方法并不会立即返回最终的值，而是会返回一个 promise，以便在未来某个时候把值交给使用者。&lt;/p&gt;
+&lt;h2 id=&#34;1promise状态&#34;&gt;（1）Promise状态&lt;/h2&gt;
+&lt;p&gt;1.待定（pending）：初始状态，既没有兑现，也没有拒绝。
+2.已兑现（fulfilled）：意味着操作成功完成。
+3.已拒绝（rejected）：意味着操作失败。&lt;/p&gt;
+&lt;p&gt;因为 Promise.prototype.then 和  Promise.prototype.catch 方法返回的是 promise， 所以它们可以被链式调用。&lt;/p&gt;
+&lt;p&gt;resolved：
+已决议（resolved），它表示 promise 已经处于已敲定(settled)状态，或者为了匹配另一个 promise 的状态被&amp;quot;锁定&amp;quot;了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意：resolved不在Promise的三种状态之中&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;2promise构造函数&#34;&gt;（2）Promise()构造函数&lt;/h2&gt;
+&lt;p&gt;用于包装还没有添加 promise 支持的函数。&lt;/p&gt;
+&lt;h1 id=&#34;4promise方法&#34;&gt;4.Promise方法&lt;/h1&gt;
+&lt;h2 id=&#34;1promiseall&#34;&gt;（1）Promise.all()&lt;/h2&gt;
+&lt;p&gt;只有当参数里的所有异步操作都返回成功的时候，Promise.all()才会返回成功，否则，有一个错误，就会返回错误。&lt;/p&gt;
+&lt;p&gt;语法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;Promise.&lt;span style=&#34;color:#a6e22e&#34;&gt;all&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;iterable&lt;/span&gt;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;参数：&lt;/p&gt;
+&lt;p&gt;一个可迭代对象，如 Array 或 String。&lt;/p&gt;
+&lt;p&gt;返回值：&lt;/p&gt;
+&lt;p&gt;1.传入空的可迭代对象时，返回一个已完成状态的Promise&lt;/p&gt;
+&lt;p&gt;2.传入的参数不包含Promise，返回一个异步完成的Promise&lt;/p&gt;
+&lt;p&gt;3.其它情况下返回一个处理中（pending）的Promise&lt;/p&gt;
+&lt;p&gt;使用：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;p1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Promise.&lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;p2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1337&lt;/span&gt;;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;p3&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Promise((&lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;) =&amp;gt; {
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;setTimeout&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;foo&amp;#39;&lt;/span&gt;);
+        });
+
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;dir&lt;/span&gt;(Promise.&lt;span style=&#34;color:#a6e22e&#34;&gt;all&lt;/span&gt;([&lt;span style=&#34;color:#a6e22e&#34;&gt;p3&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;p1&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;p2&lt;/span&gt;]).&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;values&lt;/span&gt; =&amp;gt; {
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;values&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;// [3, 1337, &amp;#34;foo&amp;#34;]
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        }));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Promise.&lt;span style=&#34;color:#a6e22e&#34;&gt;all&lt;/span&gt;([&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;]);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;p2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Promise.&lt;span style=&#34;color:#a6e22e&#34;&gt;all&lt;/span&gt;([&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, Promise.&lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;444&lt;/span&gt;)]);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;p3&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Promise.&lt;span style=&#34;color:#a6e22e&#34;&gt;all&lt;/span&gt;([&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, Promise.&lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;555&lt;/span&gt;)]);
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;setTimeout&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; () {
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;);
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;p2&lt;/span&gt;);
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;p3&lt;/span&gt;);
+        });
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;2promiseallsettled&#34;&gt;（2）Promise.allSettled()&lt;/h2&gt;
+&lt;p&gt;该Promise.allSettled()方法返回一个在所有给定的promise都已经fulfilled或rejected后的promise，并带有一个对象数组，每个对象表示对应的promise结果。&lt;/p&gt;
+&lt;p&gt;当您有多个彼此不依赖的异步任务成功完成时，或者您总是想知道每个promise的结果时，通常使用它。&lt;/p&gt;
+&lt;p&gt;参数：&lt;/p&gt;
+&lt;p&gt;一个可迭代的对象，例如Array，其中每个成员都是Promise。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意：此方法需要谷歌76版本以上才会支持&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;3promiseany&#34;&gt;（3）Promise.any()&lt;/h2&gt;
+&lt;p&gt;只要Promise中有一个返回成功就返回成功，所有的都失败才会返回失败，跟 Promise.all()方法正好相反， any 方法和 all 方法有点类似于或和且的关系。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此方法需要谷歌85版本以上才会支持&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;4promiserace&#34;&gt;（4）Promise.race()&lt;/h2&gt;
+&lt;p&gt;Promise.race(iterable) 方法返回一个 promise，一旦迭代器中的某个promise解决或拒绝，返回的 promise就会解决或拒绝。&lt;/p&gt;
+&lt;p&gt;只要可迭代对象中有一个返回，Promise.race()就会立马返回这个状态的值，返回的也是一个Promise&lt;/p&gt;
+&lt;h2 id=&#34;5promisereject&#34;&gt;（5）Promise.reject()&lt;/h2&gt;
+&lt;p&gt;Promise.reject()方法返回一个带有拒绝原因的Promise对象。&lt;/p&gt;
+&lt;p&gt;参数：&lt;/p&gt;
+&lt;p&gt;reason：表示Promise被拒绝的原因。&lt;/p&gt;
+&lt;p&gt;返回值：一个给定原因了的被拒绝的 Promise。&lt;/p&gt;
+&lt;h2 id=&#34;6promiseresolve&#34;&gt;（6）Promise.resolve()&lt;/h2&gt;
+&lt;p&gt;Promise.resolve(value)方法返回一个以给定值解析后的Promise 对象。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;警告：不要在解析为自身的thenable 上调用Promise.resolve。这将导致无限递归，因为它试图展平无限嵌套的promise。一个例子是将它与Angular中的异步管道一起使用。在此处了解更多信息。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;参数:&lt;/p&gt;
+&lt;p&gt;value：将被Promise对象解析的参数，也可以是一个Promise对象，或者是一个thenable。&lt;/p&gt;
+&lt;p&gt;返回值：&lt;/p&gt;
+&lt;p&gt;返回一个带着给定值解析过的Promise对象，如果参数本身就是一个Promise对象，则直接返回这个Promise对象。&lt;/p&gt;
+&lt;h1 id=&#34;5promise原型&#34;&gt;5.Promise原型&lt;/h1&gt;
+&lt;h2 id=&#34;1promiseprototypecatch&#34;&gt;（1）Promise.prototype.catch()&lt;/h2&gt;
+&lt;p&gt;添加一个拒绝(rejection) 回调到当前 promise, 返回一个新的promise。当这个回调函数被调用，新 promise 将以它的返回值来resolve，否则如果当前promise 进入fulfilled状态，则以当前promise的完成结果作为新promise的完成结果。返回一个Promise，所以catch后面可以继续使用then。&lt;/p&gt;
+&lt;h2 id=&#34;2promiseprototypethen&#34;&gt;（2）Promise.prototype.then()&lt;/h2&gt;
+&lt;p&gt;添加解决(fulfillment)和拒绝(rejection)回调到当前 promise, 返回一个新的 promise, 将以回调的返回值来resolve.&lt;/p&gt;
+&lt;p&gt;then() 方法返回一个 Promise。它最多需要有两个参数：Promise 的成功和失败情况的回调函数。&lt;/p&gt;
+&lt;h2 id=&#34;3promiseprototypefinally&#34;&gt;（3）Promise.prototype.finally()&lt;/h2&gt;
+&lt;p&gt;finally() 方法返回一个Promise。在promise结束时，无论结果是fulfilled或者是rejected，都会执行指定的回调函数。这为在Promise是否成功完成后都需要执行的代码提供了一种方式。
+这避免了同样的语句需要在then()和catch()中各写一次的情况。&lt;/p&gt;
+&lt;p&gt;返回值：&lt;/p&gt;
+&lt;p&gt;返回一个设置了 finally 回调函数的Promise对象。&lt;/p&gt;
+&lt;h1 id=&#34;6创建promise&#34;&gt;6.创建Promise&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;myFirstPromise&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Promise((&lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;) =&amp;gt; {
+  &lt;span style=&#34;color:#75715e&#34;&gt;// ?做一些异步操作，最终会调用下面两者之一:
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;//
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;//   resolve(someValue); // fulfilled
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;// ?或
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;//   reject(&amp;#34;failure reason&amp;#34;); // rejected
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;7asyncawait&#34;&gt;7.async/await&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/async_function&#34;&gt;async函数&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;async/await时ES8新增的&lt;/p&gt;
+&lt;h1 id=&#34;8generator-和-yield&#34;&gt;8.generator 和 yield&lt;/h1&gt;
+&lt;h1 id=&#34;9trycatch&#34;&gt;9.try&amp;hellip;catch&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/try...catch&#34;&gt;try&amp;hellip;catch&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;3涉及到的面试题&#34;&gt;3.涉及到的面试题&lt;/h1&gt;
+&lt;h2 id=&#34;1promisethen里抛出的错误能否被trycatch捕获为什么&#34;&gt;（1）Promise.then里抛出的错误能否被try&amp;hellip;catch捕获，为什么？&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;不能，因为try catch只能处理同步的错误，对异步错误没有办法捕获&lt;/p&gt;
+&lt;p&gt;try catch为什么不能捕获异步错误？&lt;/p&gt;
+&lt;p&gt;因为try执行时从上到下的，异步代码没有返回，try&amp;hellip;catch 怎么捕获&lt;/p&gt;
+&lt;p&gt;then 的第二个参数和使用 catch 的区别&lt;/p&gt;
+&lt;p&gt;主要区别就是，如果在 then 的第一个函数里抛出了异常，后面的 catch 能捕获到，而第二个函数捕获不到&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Promise(&lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt; =&amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;123&lt;/span&gt;))
+            .&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt; =&amp;gt; {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;throw&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Error()
+            }, &lt;span style=&#34;color:#a6e22e&#34;&gt;e&lt;/span&gt; =&amp;gt; {
+                &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;256&lt;/span&gt;);
+                &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;e&lt;/span&gt;);
+            }).&lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;e&lt;/span&gt; =&amp;gt; {
+                &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;458&lt;/span&gt;);
+                &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;e&lt;/span&gt;);
+            })
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;也就是说 then 里面抛出的还是需要后面的catch去捕获，而then的第二个参数回调函数是在之前返回的结果为 rejected 时调用的&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;那 then 之后的错误如何捕获呢。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main3&lt;/span&gt;() {
+  Promise.&lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(() =&amp;gt; {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; {
+      &lt;span style=&#34;color:#66d9ef&#34;&gt;throw&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Error(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;then&amp;#39;&lt;/span&gt;);
+    } &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;e&lt;/span&gt;) {
+      &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;e&lt;/span&gt;;
+    }
+  }).&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;e&lt;/span&gt; =&amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;e&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;message&lt;/span&gt;));
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;只能是在回调函数内部 catch 错误，并把错误信息返回，error 会传递到下一个 then 的回调。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;拓展：promise 内部的错误不会冒泡出来，而是被 promise 吃掉了，只有通过 promise.catch 才可以捕获，所以用 Promise 一定要写 catch 啊。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;2你怎么解决回掉地狱的问题你对proxy和promise的理解在哪里用到过&#34;&gt;（2）你怎么解决“回掉地狱”的问题？你对Proxy，和Promise的理解，在哪里用到过？&lt;/h2&gt;
+&lt;h2 id=&#34;3请手写实现一个-promise&#34;&gt;（3）请手写实现一个 promise？&lt;/h2&gt;
+&lt;h2 id=&#34;4淘宝等网站的倒计时功能如何实现&#34;&gt;（4）淘宝等网站的倒计时功能如何实现？&lt;/h2&gt;
+&lt;h2 id=&#34;5写一个-promise-重试函数可以设置时间间隔和次数&#34;&gt;（5）写一个 promise 重试函数，可以设置时间间隔和次数&lt;/h2&gt;
+&lt;h2 id=&#34;6手写-promiseall&#34;&gt;（6）手写 Promise.all&lt;/h2&gt;
+&lt;h2 id=&#34;7手写并发&#34;&gt;（7）手写并发&lt;/h2&gt;
+&lt;h2 id=&#34;8promise讲解all和race的作用&#34;&gt;（8）promise讲解，all和race的作用&lt;/h2&gt;
+&lt;h2 id=&#34;9promise输出&#34;&gt;（9）promise输出&lt;/h2&gt;
+&lt;h2 id=&#34;10迭代器的yield-和-yield的区别还有promise的race&#34;&gt;（10）迭代器的，yield 和 yield*的区别。还有promise的race。&lt;/h2&gt;
+&lt;h2 id=&#34;11promise的日常应用&#34;&gt;（11）promise的日常应用&lt;/h2&gt;
+&lt;h2 id=&#34;12简单描述一下promise并说明如何在外部进行resolve&#34;&gt;（12）简单描述一下promise，并说明如何在外部进行resolve()&lt;/h2&gt;
+&lt;h2 id=&#34;13promise的作用及用法以及内部实现原理&#34;&gt;（13）Promise的作用及用法以及内部实现原理？&lt;/h2&gt;
+&lt;h2 id=&#34;14说一下你对-generator-的了解&#34;&gt;（14）说一下你对 generator 的了解？&lt;/h2&gt;
+&lt;h2 id=&#34;15promisethenthen-promisecatchthen-ok-不&#34;&gt;（15）promise.then().then() ，promise.catch().then() ok 不？&lt;/h2&gt;
+&lt;h2 id=&#34;16js实现带并发限制的调度器其实就是使用promise限制并发&#34;&gt;（16）js实现带并发限制的调度器，其实就是使用promise限制并发&lt;/h2&gt;
+&lt;h2 id=&#34;17如何理解-promisepromise-对象的含义&#34;&gt;（17）如何理解 Promise？Promise 对象的含义？&lt;/h2&gt;
+&lt;h2 id=&#34;18对async和await的理解&#34;&gt;（18）对async和await的理解&lt;/h2&gt;
+&lt;h2 id=&#34;19vue-promise原理&#34;&gt;（19）vue promise原理&lt;/h2&gt;
+&lt;h2 id=&#34;20vue-promise-同时发起&#34;&gt;（20）vue promise 同时发起&lt;/h2&gt;
+&lt;h2 id=&#34;21js-并发请求&#34;&gt;（21）js 并发请求&lt;/h2&gt;
+&lt;h2 id=&#34;22如何破坏promise链&#34;&gt;（22）如何破坏promise链？&lt;/h2&gt;
+&lt;h2 id=&#34;23catch-之后的-then-还会执行吗&#34;&gt;（23）catch 之后的 then 还会执行吗？&lt;/h2&gt;
+&lt;p&gt;会继续执行，因为catch方法返回的是promise，所以后续的then还会继续执行，当然如果在catch中手动返回 Promise.reject()，那后续的then就不会被调用了。&lt;/p&gt;
 </description>
       
     </item>
