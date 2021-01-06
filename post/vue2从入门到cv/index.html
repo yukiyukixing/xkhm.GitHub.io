@@ -68,7 +68,7 @@
 <meta itemprop="description" content="前言：学习笔记，CV即指CV Vue的官方文档，也指 CV 网上的Vue业务代码😎😎 1.Vue是什么？ Vue (读音 /vjuː/，类似于 view) 是一套用于构建用">
 <meta itemprop="datePublished" content="2021-01-04T19:44:36+08:00" />
 <meta itemprop="dateModified" content="2021-01-04T19:44:36+08:00" />
-<meta itemprop="wordCount" content="13751">
+<meta itemprop="wordCount" content="14058">
 
 
 
@@ -527,6 +527,8 @@
     <li><a href="#6使用事件抛出一个值">（6）使用事件抛出一个值</a></li>
     <li><a href="#7在组件上使用-v-model">（7）在组件上使用 v-model</a></li>
     <li><a href="#8通过插槽分发内容slot">（8）通过插槽分发内容（slot）</a></li>
+    <li><a href="#9动态组件">（9）动态组件</a></li>
+    <li><a href="#10解析-dom-模板时的注意事项">（10）解析 DOM 模板时的注意事项</a></li>
   </ul>
 </nav>
   </div>
@@ -2461,6 +2463,24 @@ methods: {
 
 &lt;/<span style="color:#f92672">html</span>&gt;
 </code></pre></div><!-- raw HTML omitted -->
+<h2 id="9动态组件">（9）动态组件</h2>
+<p>有的时候，在不同组件之间进行动态切换是非常有用的，比如导航栏tab切换：</p>
+<p><a href="https://cn.vuejs.org/v2/guide/components-dynamic-async.html">动态组件</a></p>
+<h2 id="10解析-dom-模板时的注意事项">（10）解析 DOM 模板时的注意事项</h2>
+<p>有些 HTML 元素，诸如 ul、ol、table 和 select，对于哪些元素可以出现在其内部是有严格限制的。而有些元素，诸如 li、tr 和 option，只能出现在其它某些特定的元素内部。</p>
+<p>这会导致我们使用这些有约束条件的元素时遇到一些问题。例如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">table</span>&gt;
+  &lt;<span style="color:#f92672">blog-post-row</span>&gt;&lt;/<span style="color:#f92672">blog-post-row</span>&gt;
+&lt;/<span style="color:#f92672">table</span>&gt;
+</code></pre></div><p>这个自定义组件 <!-- raw HTML omitted --> 会被作为无效的内容提升到外部，并导致最终渲染结果出错。幸好这个特殊的 is attribute 给了我们一个变通的办法：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">table</span>&gt;
+  &lt;<span style="color:#f92672">tr</span> <span style="color:#a6e22e">is</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;blog-post-row&#34;</span>&gt;&lt;/<span style="color:#f92672">tr</span>&gt;
+&lt;/<span style="color:#f92672">table</span>&gt;
+</code></pre></div><p>需要注意的是如果我们从以下来源使用模板的话，这条限制是不存在的：</p>
+<p>字符串 (例如：template: &lsquo;&hellip;')
+单文件组件 (.vue)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/x-template&#34;</span>&gt;
+</code></pre></div><h1 id="14深入响应式原理">14.深入响应式原理</h1>
 
     </div>
 
