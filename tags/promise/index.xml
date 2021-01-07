@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Sat, 26 Dec 2020 16:05:58 +0800</lastBuildDate><atom:link href="https://xkhm.net/tags/promise/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Jan 2021 21:50:29 +0800</lastBuildDate><atom:link href="https://xkhm.net/tags/promise/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>手写Promise</title>
+      <link>https://xkhm.net/post/%E6%89%8B%E5%86%99promise/</link>
+      <pubDate>Thu, 07 Jan 2021 21:50:29 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/%E6%89%8B%E5%86%99promise/</guid>
+      <description>1.PromiseA+规范 参考文章： 1.Promise核心 （1）Promise状态 1.pending：待定 2.fulFilled：已解决 3.</description>
+    </item>
+    
     <item>
       <title>JS基础之Promise</title>
       <link>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8Bpromise/</link>

@@ -7,22 +7,49 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Mon, 04 Jan 2021 22:56:54 +0800</lastBuildDate><atom:link href="https://xkhm.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Jan 2021 21:50:29 +0800</lastBuildDate><atom:link href="https://xkhm.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript</title>
+      <link>https://xkhm.net/tags/javascript/</link>
+      <pubDate>Thu, 07 Jan 2021 21:50:29 +0800</pubDate>
+      
+      <guid>https://xkhm.net/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Promise</title>
+      <link>https://xkhm.net/tags/promise/</link>
+      <pubDate>Thu, 07 Jan 2021 21:50:29 +0800</pubDate>
+      
+      <guid>https://xkhm.net/tags/promise/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>手写Promise</title>
+      <link>https://xkhm.net/tags/%E6%89%8B%E5%86%99promise/</link>
+      <pubDate>Thu, 07 Jan 2021 21:50:29 +0800</pubDate>
+      
+      <guid>https://xkhm.net/tags/%E6%89%8B%E5%86%99promise/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>提桶</title>
+      <link>https://xkhm.net/tags/%E6%8F%90%E6%A1%B6/</link>
+      <pubDate>Thu, 07 Jan 2021 21:50:29 +0800</pubDate>
+      
+      <guid>https://xkhm.net/tags/%E6%8F%90%E6%A1%B6/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Event Loop</title>
       <link>https://xkhm.net/tags/event-loop/</link>
       <pubDate>Mon, 04 Jan 2021 22:56:54 +0800</pubDate>
       
       <guid>https://xkhm.net/tags/event-loop/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JavaScript</title>
-      <link>https://xkhm.net/tags/javascript/</link>
-      <pubDate>Mon, 04 Jan 2021 22:56:54 +0800</pubDate>
-      
-      <guid>https://xkhm.net/tags/javascript/</guid>
       <description></description>
     </item>
     
@@ -77,15 +104,6 @@
       <pubDate>Mon, 04 Jan 2021 19:44:36 +0800</pubDate>
       
       <guid>https://xkhm.net/tags/vue/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>提桶</title>
-      <link>https://xkhm.net/tags/%E6%8F%90%E6%A1%B6/</link>
-      <pubDate>Mon, 04 Jan 2021 19:44:36 +0800</pubDate>
-      
-      <guid>https://xkhm.net/tags/%E6%8F%90%E6%A1%B6/</guid>
       <description></description>
     </item>
     
@@ -153,15 +171,6 @@
     </item>
     
     <item>
-      <title>Promise</title>
-      <link>https://xkhm.net/tags/promise/</link>
-      <pubDate>Sat, 26 Dec 2020 16:05:58 +0800</pubDate>
-      
-      <guid>https://xkhm.net/tags/promise/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>异步回调</title>
       <link>https://xkhm.net/tags/%E5%BC%82%E6%AD%A5%E5%9B%9E%E8%B0%83/</link>
       <pubDate>Sat, 26 Dec 2020 16:05:58 +0800</pubDate>
@@ -176,15 +185,6 @@
       <pubDate>Fri, 25 Dec 2020 08:24:35 +0800</pubDate>
       
       <guid>https://xkhm.net/tags/bind/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>数组</title>
-      <link>https://xkhm.net/tags/%E6%95%B0%E7%BB%84/</link>
-      <pubDate>Sun, 20 Dec 2020 18:12:21 +0800</pubDate>
-      
-      <guid>https://xkhm.net/tags/%E6%95%B0%E7%BB%84/</guid>
       <description></description>
     </item>
     

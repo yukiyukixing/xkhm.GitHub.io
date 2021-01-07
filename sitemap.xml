@@ -52,7 +52,70 @@
   
   <url>
     <loc>https://xkhm.net/categories/</loc>
-    <lastmod>2021-01-04T22:56:54+08:00</lastmod>
+    <lastmod>2021-01-07T21:50:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/tags/javascript/</loc>
+    <lastmod>2021-01-07T21:50:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/categories/javascript/</loc>
+    <lastmod>2021-01-07T21:50:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/post/</loc>
+    <lastmod>2021-01-07T21:50:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/tags/promise/</loc>
+    <lastmod>2021-01-07T21:50:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/tags/</loc>
+    <lastmod>2021-01-07T21:50:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/tags/%E6%89%8B%E5%86%99promise/</loc>
+    <lastmod>2021-01-07T21:50:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/post/%E6%89%8B%E5%86%99promise/</loc>
+    <lastmod>2021-01-07T21:50:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/tags/%E6%8F%90%E6%A1%B6/</loc>
+    <lastmod>2021-01-07T21:50:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/</loc>
+    <lastmod>2021-01-07T21:50:29+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -65,35 +128,7 @@
   </url>
   
   <url>
-    <loc>https://xkhm.net/tags/javascript/</loc>
-    <lastmod>2021-01-04T22:56:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xkhm.net/categories/javascript/</loc>
-    <lastmod>2021-01-04T22:56:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://xkhm.net/post/javascript%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2021-01-04T22:56:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xkhm.net/post/</loc>
-    <lastmod>2021-01-04T22:56:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xkhm.net/tags/</loc>
     <lastmod>2021-01-04T22:56:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -128,13 +163,6 @@
   </url>
   
   <url>
-    <loc>https://xkhm.net/</loc>
-    <lastmod>2021-01-04T22:56:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://xkhm.net/tags/cv%E5%B7%A5%E7%A8%8B%E5%B8%88/</loc>
     <lastmod>2021-01-04T19:44:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -157,13 +185,6 @@
   
   <url>
     <loc>https://xkhm.net/post/vue2%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0cv/</loc>
-    <lastmod>2021-01-04T19:44:36+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xkhm.net/tags/%E6%8F%90%E6%A1%B6/</loc>
     <lastmod>2021-01-04T19:44:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -269,13 +290,6 @@
   
   <url>
     <loc>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8Bpromise/</loc>
-    <lastmod>2020-12-26T16:05:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xkhm.net/tags/promise/</loc>
     <lastmod>2020-12-26T16:05:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
