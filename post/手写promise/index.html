@@ -68,7 +68,7 @@
 <meta itemprop="description" content="文章类型：个人学习笔记 1.PromiseA&#43;规范 参考文章： 1.Promise核心 2.Promises/A&#43;规范 3.Promises/A&#43;规范">
 <meta itemprop="datePublished" content="2021-01-07T21:50:29+08:00" />
 <meta itemprop="dateModified" content="2021-01-07T21:50:29+08:00" />
-<meta itemprop="wordCount" content="2222">
+<meta itemprop="wordCount" content="3421">
 
 
 
@@ -439,6 +439,8 @@
     <li><a href="#2规范">（2）规范</a>
       <ul>
         <li><a href="#21-promise状态">2.1. Promise状态</a></li>
+        <li><a href="#22-then方法">2.2. then方法</a></li>
+        <li><a href="#23-promise-解决程序">2.3. Promise 解决程序</a></li>
       </ul>
     </li>
   </ul>
@@ -763,7 +765,7 @@
 </code></pre></div><h1 id="5promisea规范">5.Promise/A+规范</h1>
 <p>原文地址：<a href="https://promisesaplus.com/">Promise/A+规范</a></p>
 <blockquote>
-<p><del>提醒：翻译是采用个人理解+谷歌翻译</del></p>
+<p><del>提醒：翻译是采用个人理解+谷歌翻译逐字逐句翻译</del></p>
 </blockquote>
 <h2 id="1术语">（1）术语：</h2>
 <p>1.1. <strong>“promise”</strong> 是一个带有符合此行为规范 <strong>then</strong> 方法的对象（object）或函数（function）。</p>
@@ -797,6 +799,141 @@
 </li>
 </ul>
 <p>在此，“不能更改”意味着恒等不变（即：===），但并不表示更深层次的不可改变。</p>
+<h3 id="22-then方法">2.2. then方法</h3>
+<p>一个 <strong>Promise</strong> 必须提供一个 <strong>then</strong> 方法用来访问 <strong>当前值</strong>、最终的 <strong>value值</strong> 或 <strong>reason</strong>。</p>
+<p>一个 <strong>Promise</strong> 的 <strong>then</strong> 方法接收两个参数：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">promise</span>.<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">onFulfilled</span>, <span style="color:#a6e22e">onRejected</span>)
+</code></pre></div><p><strong>2.2.1.</strong> <strong>onFulfilled</strong> 和 <strong>onRejected</strong> 都是可选参数：</p>
+<ul>
+<li>
+<p>2.2.1.1. 如果 <strong>onFulfilled</strong> 不是函数，则必须将其忽略。</p>
+</li>
+<li>
+<p>2.2.1.2. 如果 <strong>onRejected</strong> 不是函数，则必须将其忽略。</p>
+</li>
+</ul>
+<p><strong>2.2.2.</strong> 如果 <strong>onFulfilled</strong> 是一个函数：</p>
+<ul>
+<li>
+<p>2.2.2.1. 必须在 <strong>promise</strong> 实现 <strong>fulFilled</strong> 状态后调用它，它的第一个参数是 <strong>promise</strong> 的值。</p>
+</li>
+<li>
+<p>2.2.2.2. 不能在 <strong>promise</strong> 实现 <strong>fulFilled</strong> 状态前调用它。</p>
+</li>
+<li>
+<p>2.2.2.3. 它不能被调用超过一次</p>
+</li>
+</ul>
+<p><strong>2.2.3.</strong>  如果 <strong>onRejected</strong> 是一个函数：</p>
+<ul>
+<li>
+<p>2.2.3.1. 必须在 <strong>promise</strong> 实现 <strong>rejected</strong> 状态后调用它，它的第一个参数是 <strong>reason</strong>。</p>
+</li>
+<li>
+<p>2.2.3.2.  不能在 <strong>promise</strong> 实现 <strong>rejected</strong> 状态前调用它。</p>
+</li>
+<li>
+<p>2.2.3.3. 它不能被调用超过一次</p>
+</li>
+</ul>
+<p><strong>2.2.4.</strong> <strong>onFulfilled</strong> 或 <strong>onRejected</strong> 不能在执行上下文堆栈仅包含平台代码之前调用。<strong>[3.1]</strong></p>
+<p><strong>2.2.5.</strong> <strong>onFulfilled</strong> 和 <strong>onRejected</strong> 必须作为函数调用（即 没有 <strong>this</strong> 值）。<strong>[3.2]</strong></p>
+<p><strong>2.2.6.</strong> then 可能在同一个 promise 中被多次调用。</p>
+<ul>
+<li>
+<p>2.2.6.1. 如果当 <strong>promise</strong> 是 <strong>fulFilled</strong> 状态时，所有 <strong>then</strong> 各自的 <strong>onFulfilled</strong> 回调必须按照其被 <strong>then</strong> 发起调用的顺序执行。</p>
+</li>
+<li>
+<p>2.2.6.2.  如果当 <strong>promise</strong> 是 <strong>rejected</strong> 状态时，所有 <strong>then</strong> 各自的 <strong>onRejected</strong> 回调必须按照其被 <strong>then</strong> 发起调用的顺序执行。</p>
+</li>
+</ul>
+<p><strong>2.2.7.</strong> <strong>then</strong> 必须返回一个 <strong>promise</strong> <strong>[3.3]</strong> 。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">promise2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">promise1</span>.<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">onFulfilled</span>, <span style="color:#a6e22e">onRejected</span>);
+</code></pre></div><ul>
+<li>2.2.7.1. 如果 <strong>onFulfilled</strong> 或 <strong>onRejected</strong> 返回一个 value <strong>x</strong>，运行 promise 解决程序：</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">[[<span style="color:#a6e22e">Resolve</span>]](<span style="color:#a6e22e">promise2</span>, <span style="color:#a6e22e">x</span>)
+</code></pre></div><ul>
+<li>
+<p>2.2.7.2. 如果 <strong>onFulfilled</strong> 或 <strong>onRejected</strong> 抛出异常 <strong>e</strong> ，<strong>promise2</strong> 必须执行 <strong>rejected</strong> 将 <strong>e</strong> 作为 <strong>reason</strong> 的值。</p>
+</li>
+<li>
+<p>2.2.7.3. 如果 <strong>onFulfilled</strong> 不是一个函数并且 <strong>promise1</strong> 是 <strong>fulFilled</strong> 状态，<strong>promise2</strong> 必须是 <strong>fulFilled</strong> 状态且带着 <strong>promise1</strong> 同样的值。</p>
+</li>
+<li>
+<p>2.2.7.4. 如果 <strong>onRejected</strong> 不是一个函数并且 <strong>promise1</strong> 是 <strong>rejected</strong> 状态，<strong>promise2</strong> 必须是 <strong>rejected</strong> 状态且带着 <strong>promise1</strong> 同样的 <strong>reason</strong>。</p>
+</li>
+</ul>
+<h3 id="23-promise-解决程序">2.3. Promise 解决程序</h3>
+<p>Promise 解决程序是一个抽象操作表现为输入一个 <strong>promise</strong> 和一个 <strong>value值</strong>，我们用 <strong>[[Resolve]](promise, x)</strong> 表示，如果 <strong>x</strong> 是一个 <strong>thenable</strong>，它试图使 <strong>promise</strong> 采用 <strong>x</strong> 的状态，假设 <strong>x</strong> 的行为和 <strong>promise</strong> 类似。否则，它带着一个 value <strong>x</strong> 使 <strong>promise</strong> 转为 <strong>fulfilled</strong> 状态。</p>
+<p>这种对于 <strong>thenable</strong> 的处理就允许 <strong>promise</strong> 实现互操作，只要他们暴露一个符合 <strong>Promises/A+</strong> 的 <strong>then</strong> 方法。它也允许<strong>Promises/A+</strong> 实现使用合理的 <strong>then</strong> 方法“整合”不合格的实现。</p>
+<p>要运行 <strong>[[Resolve]]（promise，x）</strong>，请执行以下步骤：</p>
+<p><strong>2.3.1.</strong> 如果 <strong>promise</strong> 和 <strong>x</strong> 指向同一个对象，<strong>promise</strong> 带着一个 <strong>TypeError</strong> 作为 <strong>reason</strong> 执行 <strong>reject</strong>。</p>
+<p><strong>2.3.2.</strong> 如果 <strong>x</strong> 是一个 <strong>promise</strong> ，采用它的状态 <strong>[3.4]</strong> ：</p>
+<ul>
+<li>
+<p>2.3.2.1。 如果 <strong>x</strong> 是 <strong>pending</strong> 状态，<strong>promise</strong> 必须保持 <strong>pending</strong> 状态直到 x 是 <strong>fulFilled</strong> 状态或 <strong>rejected</strong> 状态。</p>
+</li>
+<li>
+<p>2.3.2.2. 如果当 x 是 <strong>fulfilled</strong> 状态，带着同样的 <strong>value</strong> 让 <strong>promise</strong> 变成 <strong>fulFilled</strong> 状态。</p>
+</li>
+<li>
+<p>2.3.2.3. 如果当 x 是 <strong>rejected</strong> 状态，带着同样的 <strong>reason</strong> 让 <strong>promise</strong> 变成 <strong>rejected</strong> 状态。</p>
+</li>
+</ul>
+<p><strong>2.3.3.</strong> 除此之外，如果 <strong>x</strong> 是一个对象或函数：</p>
+<ul>
+<li>
+<p>2.3.3.1. 将 <strong>x.then</strong> 赋值给 <strong>then</strong>。<strong>[3.5]</strong></p>
+</li>
+<li>
+<p>2.3.3.2. 如果使用属性 <strong>x.then</strong> 引发抛出异常 <strong>e</strong>，带着 <strong>e</strong>  作为 <strong>reason</strong> 让 <strong>promise</strong> 变成 <strong>rejected</strong> 状态。</p>
+</li>
+<li>
+<p>2.3.3.3. 如果 <strong>then</strong> 是一个函数，用 <strong>x</strong> 作为 <strong>this</strong> 调用它，第一个参数 <strong>resolvePromise</strong>，第二个参数 <strong>rejectPromise</strong>，如下：</p>
+</li>
+<li>
+<ul>
+<li>2.3.3.3.1. 如果当 <strong>resolvePromise</strong> 带着一个 value <strong>y</strong> 被调用，执行 <strong>[[Resolve]](promise, y)</strong>。</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>2.3.3.3.2. 如果当 <strong>rejectPromise</strong> 带着一个 reason <strong>r</strong> 被调用，带着 <strong>r</strong>  作为 <strong>reason</strong> 让 <strong>promise</strong> 变成 <strong>rejected</strong> 状态。</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>2.3.3.3.3. 如果同时调用 <strong>resolvePromise</strong> 和 <strong>rejectPromise</strong> ，或者对同一参数进行了多次调用，则第一个调用优先，而所有其他调用均被忽略。</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>2.3.3.3.4. 如果调用 <strong>then</strong> 抛出异常 <strong>e</strong>：</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>2.3.3.3.4.1. 如果 <strong>resolvePromise</strong> 或 <strong>rejectPromise</strong>已经被调用，请忽略它。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>2.3.3.3.4.2. 否则，带着 <strong>e</strong>  作为 <strong>reason</strong> 让 <strong>promise</strong> 变成 <strong>rejected</strong> 状态。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>2.3.3.4. 如果 then 不是一个函数，带着 <strong>x</strong> 作为 <strong>value</strong> 让 <strong>promise</strong> 变成 <strong>fulFilled</strong> 状态。</p>
+</li>
+</ul>
 
     </div>
 
