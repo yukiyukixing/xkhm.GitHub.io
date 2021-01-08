@@ -140,9 +140,14 @@
       
       <guid>https://xkhm.net/post/%E6%89%8B%E5%86%99promise/</guid>
       
-        <description>&lt;h1 id=&#34;1promisea规范&#34;&gt;1.PromiseA+规范&lt;/h1&gt;
+        <description>&lt;blockquote&gt;
+&lt;p&gt;文章类型：个人学习笔记&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;1promisea规范&#34;&gt;1.PromiseA+规范&lt;/h1&gt;
 &lt;p&gt;参考文章：&lt;/p&gt;
 &lt;p&gt;1.&lt;a href=&#34;https://houdunren.gitee.io/note/js/17%20Promise%E6%A0%B8%E5%BF%83.html#%E8%B5%B7%E6%AD%A5%E6%9E%84%E5%BB%BA&#34;&gt;Promise核心&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2.&lt;a href=&#34;https://github.com/promises-aplus/promises-spec&#34;&gt;Promises/A+规范&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;3.&lt;a href=&#34;https://promisesaplus.com/&#34;&gt;Promises/A+规范&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;1promise状态&#34;&gt;（1）Promise状态&lt;/h2&gt;
 &lt;p&gt;1.pending：待定&lt;/p&gt;
 &lt;p&gt;2.fulFilled：已解决&lt;/p&gt;
@@ -225,6 +230,11 @@
 &lt;p&gt;提醒：&lt;/p&gt;
 &lt;p&gt;（1）then的时候需要处理Promise的三种状态，包括pending状态&lt;/p&gt;
 &lt;p&gt;（2）如果then本身在没经过处理的情况下就返回的是Promise，需要单独处理&lt;/p&gt;
+&lt;h1 id=&#34;3promise解决过程&#34;&gt;3.Promise解决过程&lt;/h1&gt;
+&lt;p&gt;Promise解决程序是一个抽象的操作，其需输入一个 promise 和一个值，我们表示为 [[Resolve]](promise, x)&lt;/p&gt;
+&lt;p&gt;1.如果Promise和x指向同一对象，以 TypeError 为据因拒绝执行 promise&lt;/p&gt;
+&lt;p&gt;2.如果 x 为 promise ，接受其状态&lt;/p&gt;
+&lt;p&gt;3.抑或 x 为对象或者函数&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;
         &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MyPromise&lt;/span&gt; {
@@ -313,6 +323,172 @@
             }
         }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MyPromise&lt;/span&gt; {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;PENDING&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;pending&amp;#39;&lt;/span&gt;;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;FULFILLED&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;fulFilled&amp;#39;&lt;/span&gt;;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;REJECTED&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;rejected&amp;#39;&lt;/span&gt;;
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;constructor&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;executor&lt;/span&gt;) {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;status&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MyPromise&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;PENDING&lt;/span&gt;;
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;null&lt;/span&gt;;
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;callback&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [];
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; {
+                    &lt;span style=&#34;color:#75715e&#34;&gt;// 这个地方this.resolve只是拿到resolve方法，并不是this调用的
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                    &lt;span style=&#34;color:#75715e&#34;&gt;// 事实上是全局对象调用的，但是class里面默认是严格模式
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                    &lt;span style=&#34;color:#75715e&#34;&gt;// 如果不改变resolve的内部this指向，他的this是undefined
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                    &lt;span style=&#34;color:#a6e22e&#34;&gt;executor&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;bind&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;), &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;bind&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;));
+                } &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;) {
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;)
+                }
+            }
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt;) {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;status&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MyPromise&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;PENDING&lt;/span&gt;) {
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;status&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MyPromise&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;FULFILLED&lt;/span&gt;;
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt;;
+                    &lt;span style=&#34;color:#a6e22e&#34;&gt;setTimeout&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt; =&amp;gt; {
+                        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;callback&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;forEach&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;callFn&lt;/span&gt; =&amp;gt; {
+                            &lt;span style=&#34;color:#a6e22e&#34;&gt;callFn&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;onFulfilled&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt;)
+                        });
+                    })
+                }
+            }
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt;) {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;status&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MyPromise&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;PENDING&lt;/span&gt;) {
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;status&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MyPromise&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;REJECTED&lt;/span&gt;;
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt;;
+                    &lt;span style=&#34;color:#a6e22e&#34;&gt;setTimeout&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt; =&amp;gt; {
+                        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;callback&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;forEach&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;callFn&lt;/span&gt; =&amp;gt; {
+                            &lt;span style=&#34;color:#a6e22e&#34;&gt;callFn&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;onRejected&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt;)
+                        });
+                    })
+                }
+            }
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;onFulfilled&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;onRejected&lt;/span&gt;) {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;typeof&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;onFulfilled&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;function&amp;#39;&lt;/span&gt;) {
+                    &lt;span style=&#34;color:#a6e22e&#34;&gt;onFulfilled&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt; =&amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt;;
+                }
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;typeof&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;onRejected&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;function&amp;#39;&lt;/span&gt;) {
+                    &lt;span style=&#34;color:#a6e22e&#34;&gt;onRejected&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt; =&amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt;;
+                }
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;promise&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MyPromise&lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;) =&amp;gt; {
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;status&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MyPromise&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;PENDING&lt;/span&gt;) {
+                        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;callback&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;push&lt;/span&gt;({
+                            &lt;span style=&#34;color:#a6e22e&#34;&gt;onFulfilled&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt; =&amp;gt; {
+                                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;parse&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;promise&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;onFulfilled&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt;), &lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;)
+                            },
+                            &lt;span style=&#34;color:#a6e22e&#34;&gt;onRejected&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt; =&amp;gt; {
+                                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;parse&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;promise&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;onRejected&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt;), &lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;)
+                            }
+                        })
+                    }
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;status&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MyPromise&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;FULFILLED&lt;/span&gt;) {
+                        &lt;span style=&#34;color:#a6e22e&#34;&gt;setTimeout&lt;/span&gt;(() =&amp;gt; {
+                            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;parse&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;promise&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;onFulfilled&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt;), &lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;)
+                        })
+                    }
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;status&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MyPromise&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;REJECTED&lt;/span&gt;) {
+                        &lt;span style=&#34;color:#a6e22e&#34;&gt;setTimeout&lt;/span&gt;(() =&amp;gt; {
+                            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;parse&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;promise&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;onRejected&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt;), &lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;)
+                        })
+                    }
+                });
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;promise&lt;/span&gt;;
+            }
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;parse&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;promise&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;) {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;promise&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;) {
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;throw&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;TypeError&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;then返回的promise不能是跟then相同的Promise&amp;#39;&lt;/span&gt;);
+                }
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; {
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;instanceof&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MyPromise&lt;/span&gt;) {
+                        &lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;)
+                    } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+                        &lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;)
+                    }
+                } &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;) {
+                    &lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;)
+                }
+            }
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt;) {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MyPromise&lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;) =&amp;gt; {
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;instanceof&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MyPromise&lt;/span&gt;) {
+                        &lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;);
+                    } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+                        &lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt;);
+                    }
+                })
+            }
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;reason&lt;/span&gt;) {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MyPromise&lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;) =&amp;gt; {
+                    &lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;reason&lt;/span&gt;);
+                })
+            }
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;all&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;promises&lt;/span&gt;) {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;resolves&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [];
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MyPromise&lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;) =&amp;gt; {
+                    &lt;span style=&#34;color:#a6e22e&#34;&gt;promises&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;forEach&lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;promise&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;index&lt;/span&gt;) =&amp;gt; {
+                        &lt;span style=&#34;color:#a6e22e&#34;&gt;promise&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt; =&amp;gt; {
+                            &lt;span style=&#34;color:#a6e22e&#34;&gt;resolves&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;push&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt;)
+                            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;resolves&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;promises&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;) {
+                                &lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;resolves&lt;/span&gt;);
+                            }
+                        }, &lt;span style=&#34;color:#a6e22e&#34;&gt;reason&lt;/span&gt; =&amp;gt; {
+                            &lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;reason&lt;/span&gt;);
+                        })
+                    })
+                })
+            }
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;race&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;promises&lt;/span&gt;) {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MyPromise&lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;) =&amp;gt; {
+                    &lt;span style=&#34;color:#a6e22e&#34;&gt;promises&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;forEach&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;promise&lt;/span&gt; =&amp;gt; {
+                        &lt;span style=&#34;color:#a6e22e&#34;&gt;promise&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt; =&amp;gt; {
+                            &lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt;)
+                        })
+                    })
+                })
+            }
+        } 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;h1 id=&#34;4测试&#34;&gt;4.测试&lt;/h1&gt;
+&lt;p&gt;使用 &lt;a href=&#34;https://github.com/promises-aplus/promises-tests&#34;&gt;Promise/A+ 测试工具&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;npm install promises-aplus-tests -g
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;npx promises-aplus-tests promise.js
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;5promisea规范&#34;&gt;5.Promise/A+规范&lt;/h1&gt;
+&lt;p&gt;原文地址：&lt;a href=&#34;https://promisesaplus.com/&#34;&gt;Promise/A+规范&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;del&gt;提醒：翻译是采用个人理解+谷歌翻译&lt;/del&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;1术语&#34;&gt;（1）术语：&lt;/h2&gt;
+&lt;p&gt;1.1. &lt;strong&gt;“promise”&lt;/strong&gt; 是一个带有符合此行为规范 &lt;strong&gt;then&lt;/strong&gt; 方法的对象（object）或函数（function）。&lt;/p&gt;
+&lt;p&gt;1.2. &lt;strong&gt;“thenable”&lt;/strong&gt; 是定义 &lt;strong&gt;then&lt;/strong&gt; 方法的一个对象（object）或函数（function）。&lt;/p&gt;
+&lt;p&gt;1.3. &lt;strong&gt;“value”&lt;/strong&gt; 可以是任何&lt;strong&gt;合法&lt;/strong&gt;的 &lt;strong&gt;JavaScript&lt;/strong&gt; 值（包括 &lt;strong&gt;undefined&lt;/strong&gt;，&lt;strong&gt;thenable&lt;/strong&gt;，&lt;strong&gt;promise&lt;/strong&gt;）。&lt;/p&gt;
+&lt;p&gt;1.4. &lt;strong&gt;“exception”&lt;/strong&gt; 是被 &lt;strong&gt;throw&lt;/strong&gt; 语句抛出的值。&lt;/p&gt;
+&lt;p&gt;1.5. &lt;strong&gt;“reason”&lt;/strong&gt; 是表明 promise 为什么被拒绝的值。&lt;/p&gt;
+&lt;h2 id=&#34;2规范&#34;&gt;（2）规范&lt;/h2&gt;
+&lt;h3 id=&#34;21-promise状态&#34;&gt;2.1. Promise状态&lt;/h3&gt;
+&lt;p&gt;一个 &lt;strong&gt;promise&lt;/strong&gt; 必须处于以下三种状态之一：&lt;strong&gt;pending&lt;/strong&gt;，&lt;strong&gt;fulFilled&lt;/strong&gt;，或 &lt;strong&gt;rejected&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2.1.1.&lt;/strong&gt; 当 &lt;strong&gt;promise&lt;/strong&gt; 为 &lt;strong&gt;pending&lt;/strong&gt; 状态时：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2.1.1.1. 可能会转换为 &lt;strong&gt;fulFilled状态&lt;/strong&gt; 或 &lt;strong&gt;rejected状态&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2.1.2.&lt;/strong&gt; 当 &lt;strong&gt;promise&lt;/strong&gt; 为 &lt;strong&gt;fulFilled&lt;/strong&gt; 状态时：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;2.1.2.1. 不能转换为任何其它状态。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;2.1.2.2. 必须有一个 &lt;strong&gt;value&lt;/strong&gt; 值，且该 &lt;strong&gt;value&lt;/strong&gt; 值不能更改。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2.1.3.&lt;/strong&gt; 当 &lt;strong&gt;promise&lt;/strong&gt; 为 &lt;strong&gt;rejected&lt;/strong&gt; 状态时：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;2.1.3.1. 不能转换为任何其它状态。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;2.1.3.2.  必须有一个 &lt;strong&gt;reason&lt;/strong&gt; 值，且该 &lt;strong&gt;reason&lt;/strong&gt; 值不能更改。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在此，“不能更改”意味着恒等不变（即：===），但并不表示更深层次的不可改变。&lt;/p&gt;
 </description>
       
     </item>
