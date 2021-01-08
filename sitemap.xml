@@ -52,7 +52,63 @@
   
   <url>
     <loc>https://xkhm.net/categories/</loc>
-    <lastmod>2021-01-07T21:50:29+08:00</lastmod>
+    <lastmod>2021-01-08T19:13:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/tags/node.js/</loc>
+    <lastmod>2021-01-08T19:13:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/categories/node.js/</loc>
+    <lastmod>2021-01-08T19:13:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/post/node%E6%96%87%E4%BB%B6%E5%A4%B9%E8%AF%BB%E5%8F%96/</loc>
+    <lastmod>2021-01-08T19:13:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/post/</loc>
+    <lastmod>2021-01-08T19:13:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/tags/</loc>
+    <lastmod>2021-01-08T19:13:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2021-01-08T19:13:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/tags/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/</loc>
+    <lastmod>2021-01-08T19:13:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/</loc>
+    <lastmod>2021-01-08T19:13:51+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -72,21 +128,7 @@
   </url>
   
   <url>
-    <loc>https://xkhm.net/post/</loc>
-    <lastmod>2021-01-07T21:50:29+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://xkhm.net/tags/promise/</loc>
-    <lastmod>2021-01-07T21:50:29+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xkhm.net/tags/</loc>
     <lastmod>2021-01-07T21:50:29+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -108,13 +150,6 @@
   
   <url>
     <loc>https://xkhm.net/tags/%E6%8F%90%E6%A1%B6/</loc>
-    <lastmod>2021-01-07T21:50:29+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xkhm.net/</loc>
     <lastmod>2021-01-07T21:50:29+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -143,13 +178,6 @@
   
   <url>
     <loc>https://xkhm.net/tags/%E5%AE%8F%E4%BB%BB%E5%8A%A1/</loc>
-    <lastmod>2021-01-04T22:56:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xkhm.net/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2021-01-04T22:56:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

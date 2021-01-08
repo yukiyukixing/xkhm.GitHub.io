@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>文件读取 on 星空海绵 - 星空浩瀚 | 海绵吸水</title>
+    <link>https://xkhm.net/tags/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/</link>
+    <description>Recent content in 文件读取 on 星空海绵 - 星空浩瀚 | 海绵吸水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>星空海绵</copyright>
+    <lastBuildDate>Fri, 08 Jan 2021 19:13:51 +0800</lastBuildDate><atom:link href="https://xkhm.net/tags/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Node文件夹读取</title>
+      <link>https://xkhm.net/post/node%E6%96%87%E4%BB%B6%E5%A4%B9%E8%AF%BB%E5%8F%96/</link>
+      <pubDate>Fri, 08 Jan 2021 19:13:51 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/node%E6%96%87%E4%BB%B6%E5%A4%B9%E8%AF%BB%E5%8F%96/</guid>
+      <description>1.第一版本，读取某个固定文件目录下的文件，写成接口 初版本1.1 缺点：文件更新了，接口不会更新 let path = require(&amp;#34;path&amp;#34;); let fs = require(&amp;#34;fs&amp;#34;); let http= require(&amp;#34;http&amp;#34;); fs.readFile(&amp;#39;./config.json&amp;#39;, (err, data) =&amp;gt; { if (err) throw err; let fileDir =</description>
+    </item>
+    
+  </channel>
+</rss>

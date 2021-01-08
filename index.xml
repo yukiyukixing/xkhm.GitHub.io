@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Thu, 07 Jan 2021 21:50:29 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 08 Jan 2021 19:13:51 +0800</lastBuildDate>
     
         <atom:link href="https://xkhm.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -130,6 +130,111 @@
 &lt;p&gt;一只小透明的前端开发（待补充）&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
+      
+    </item>
+    
+    <item>
+      <title>Node文件夹读取</title>
+      <link>https://xkhm.net/post/node%E6%96%87%E4%BB%B6%E5%A4%B9%E8%AF%BB%E5%8F%96/</link>
+      <pubDate>Fri, 08 Jan 2021 19:13:51 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/node%E6%96%87%E4%BB%B6%E5%A4%B9%E8%AF%BB%E5%8F%96/</guid>
+      
+        <description>&lt;h1 id=&#34;1第一版本读取某个固定文件目录下的文件写成接口&#34;&gt;1.第一版本，读取某个固定文件目录下的文件，写成接口&lt;/h1&gt;
+&lt;p&gt;初版本1.1&lt;/p&gt;
+&lt;p&gt;缺点：文件更新了，接口不会更新&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;path&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;require&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;path&amp;#34;&lt;/span&gt;);
+&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fs&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;require&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fs&amp;#34;&lt;/span&gt;);
+&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;http&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;require&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http&amp;#34;&lt;/span&gt;);
+
+&lt;span style=&#34;color:#a6e22e&#34;&gt;fs&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;readFile&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;./config.json&amp;#39;&lt;/span&gt;, (&lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;) =&amp;gt; {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;throw&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fileDir&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;JSON&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;parse&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;toString&lt;/span&gt;()).&lt;span style=&#34;color:#a6e22e&#34;&gt;fileDirectory&lt;/span&gt;;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;fs&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;readdir&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;fileDir&lt;/span&gt;,(&lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;,&lt;span style=&#34;color:#a6e22e&#34;&gt;files&lt;/span&gt;) =&amp;gt; {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;throw&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;JSON&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;stringify&lt;/span&gt;({&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;data&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;files&lt;/span&gt;});
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;serve&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;http&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;createServer&lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;request&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;response&lt;/span&gt;) =&amp;gt; {
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;response&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;writeHead&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;, {
+                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Access-Control-Allow-Origin&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;*&amp;#39;&lt;/span&gt;,
+                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;application/json; charset=utf-8&amp;#39;&lt;/span&gt;
+            });
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;response&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;end&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;);
+        });
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;serve&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;listen&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;5000&lt;/span&gt;);
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;http://127.0.0.1:5000&amp;#39;&lt;/span&gt;);
+    });
+})
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;2第二版本&#34;&gt;2.第二版本&lt;/h1&gt;
+&lt;p&gt;版本1.2，解决上面文件夹目录更新不刷新的问题&lt;/p&gt;
+&lt;p&gt;缺点：回调嵌套过深，建议采用Promise或者async/await写法&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;path&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;require&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;path&amp;#34;&lt;/span&gt;);
+&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fs&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;require&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fs&amp;#34;&lt;/span&gt;);
+&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;http&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;require&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http&amp;#34;&lt;/span&gt;);
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;serve&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;http&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;createServer&lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;request&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;response&lt;/span&gt;) =&amp;gt; {
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;response&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;writeHead&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;, {
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Access-Control-Allow-Origin&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;*&amp;#39;&lt;/span&gt;,
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;application/json; charset=utf-8&amp;#39;&lt;/span&gt;
+    });
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;fs&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;readFile&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;./config.json&amp;#39;&lt;/span&gt;, (&lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;) =&amp;gt; {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;throw&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fileDir&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;JSON&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;parse&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;toString&lt;/span&gt;()).&lt;span style=&#34;color:#a6e22e&#34;&gt;fileDirectory&lt;/span&gt;;
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;fs&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;readdir&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;fileDir&lt;/span&gt;,(&lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;,&lt;span style=&#34;color:#a6e22e&#34;&gt;files&lt;/span&gt;) =&amp;gt; {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;throw&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;JSON&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;stringify&lt;/span&gt;({&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;data&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;files&lt;/span&gt;});
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;response&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;end&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;);
+        });
+    }) 
+});
+&lt;span style=&#34;color:#a6e22e&#34;&gt;serve&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;listen&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;5000&lt;/span&gt;);
+&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;http://127.0.0.1:5000&amp;#39;&lt;/span&gt;);
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;3第三版本&#34;&gt;3.第三版本&lt;/h1&gt;
+&lt;p&gt;增加需求，可读取文件夹下的文件夹，文件夹下面还可以有文件夹，套娃结构，类似于编辑文档的功能&lt;/p&gt;
+&lt;p&gt;分析：存数据的数据类型如何设计&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;blockquote&gt;
+&lt;p&gt;问题：node写的get接口用浏览器访问会默认请求两次，因为浏览器会请求图标&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://imgkr2.cn-bj.ufileos.com/812dc279-84cc-4b5a-8801-beaf89dfb4e3.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&amp;amp;Signature=BMVRoPV9e2cnTQurLApo1a3fQa0%253D&amp;amp;Expires=1610182157&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;遇到问题，因为文件是异步读取的，而且因为是深层嵌套的，递归的，应该读取完成再发消息告诉读取方法外面，我读完了，但是现在因为是异步+递归的，好像没办法知道啥时候递归结束 &lt;del&gt;暂时没想到办法判断啥时候递归结束了&lt;/del&gt; ，所以说得把异步读取改成同步读取，但是如果文件夹结构很深的话，是不是会很慢呢，所以应该怎么做呢，异步读取，读一级返回一级，是不是应该这么做呢，这么做的话前端如何加载呢，有待思考。&lt;/p&gt;
+&lt;p&gt;异步读取代码半成品 &lt;del&gt;因为写不下去了&lt;/del&gt; 但是这个异步读取等递归完，其实跟同步效果是一样的：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fs&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;require&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fs&amp;#34;&lt;/span&gt;);
+&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;http&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;require&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http&amp;#34;&lt;/span&gt;);
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;serve&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;http&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;createServer&lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;response&lt;/span&gt;) =&amp;gt; {
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;response&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;writeHead&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;, {
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Access-Control-Allow-Origin&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;*&amp;#39;&lt;/span&gt;,
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;application/json; charset=utf-8&amp;#39;&lt;/span&gt;
+    });
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;filesAll&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [];
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;fs&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;readFile&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;./config.json&amp;#39;&lt;/span&gt;, (&lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;) =&amp;gt; {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;throw&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;pathfileDir&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;JSON&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;parse&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;toString&lt;/span&gt;()).&lt;span style=&#34;color:#a6e22e&#34;&gt;fileDirectory&lt;/span&gt;;   
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;readFileDir&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;dir&lt;/span&gt;){
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;fs&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;readdir&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;dir&lt;/span&gt;,(&lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;,&lt;span style=&#34;color:#a6e22e&#34;&gt;files&lt;/span&gt;) =&amp;gt; {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;throw&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;;
+                &lt;span style=&#34;color:#a6e22e&#34;&gt;files&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;forEach&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;item&lt;/span&gt; =&amp;gt; {
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;fs&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;lstatSync&lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;dir&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;item&lt;/span&gt;)).&lt;span style=&#34;color:#a6e22e&#34;&gt;isDirectory&lt;/span&gt;()){
+                        &lt;span style=&#34;color:#a6e22e&#34;&gt;readFileDir&lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;dir&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;item&lt;/span&gt;));
+                    }&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;{
+                        &lt;span style=&#34;color:#a6e22e&#34;&gt;filesAll&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;push&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;item&lt;/span&gt;);
+                    }
+                })
+            });
+        }
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;readFileDir&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;pathfileDir&lt;/span&gt;);
+        &lt;span style=&#34;color:#75715e&#34;&gt;// let data = JSON.stringify({&amp;#34;data&amp;#34;: filesAll});
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;response&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;end&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;);
+    })
+    
+});
+
+&lt;span style=&#34;color:#a6e22e&#34;&gt;serve&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;listen&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;5000&lt;/span&gt;);
+&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;http://127.0.0.1:5000&amp;#39;&lt;/span&gt;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
       
     </item>
     
@@ -4587,121 +4692,6 @@ Hello,world!
         console.log(arr); // [50, 20, Array(3)]
         console.log(flatten(arr)); // [50, 20, 50, 10, 1, 5, 20]
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;3&#34;&gt;（3）&lt;/h2&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>JS数组去重</title>
-      <link>https://xkhm.net/post/js%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/</link>
-      <pubDate>Sun, 20 Dec 2020 18:12:21 +0800</pubDate>
-      
-      <guid>https://xkhm.net/post/js%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/</guid>
-      
-        <description>&lt;blockquote&gt;
-&lt;p&gt;文章类型：个人学习笔记&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;1双循环遍历&#34;&gt;1.双循环遍历&lt;/h1&gt;
-&lt;pre&gt;&lt;code&gt;        let arr = [1,5,6,1,9,9,2,1];
-        arr.map((item,index) =&amp;gt; {
-            arr.map((i,index1) =&amp;gt; {
-                if(index !== index1 &amp;amp;&amp;amp; item === i){
-                    arr.splice(index1,1);
-                }
-            })
-        })
-        console.log(arr);
-&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;        function unique(array){
-            for (let i = 0; i &amp;lt; array.length; i++) {
-                for(let j = i+1; j &amp;lt; array.length; j++){
-                    if(array[i] === array[j]){
-                        arr.splice(j,1);
-                    }
-                }
-            }
-            return arr;
-        }
-        console.log(unique(arr)); // [1, 5, 6, 9, 2]
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;p&gt;下面一种方式更优，遍历的次数更少&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;2-es6的set&#34;&gt;2. ES6的Set&lt;/h1&gt;
-&lt;pre&gt;&lt;code&gt;        let arr = [1,5,6,1,9,9,2,1];
-        function unique(arr) {
-            return Array.from(new Set(arr))
-        }
-        console.log(unique(arr)); // [1, 5, 6, 9, 2]
-&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;        let arr = [1, 5, 6, 1, 9, 9, 9, 9, 9, 2, 1];
-        function unique(arr) {
-            return [...new Set(arr)]
-        }
-        console.log(unique(arr)); // [1, 5, 6, 9, 2]
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;3利用indexof&#34;&gt;3.利用indexOf()&lt;/h1&gt;
-&lt;pre&gt;&lt;code&gt;        let arr = [1,5,6,1,9,9,2,1];
-        function unique(arr){
-            if(!Array.isArray(arr)){
-                console.log(&#39;type error&#39;);
-                return;
-            }
-            let array = [];
-            arr.map(item =&amp;gt; {
-                if(array.indexOf(item) === -1){
-                    array.push(item)
-                }
-            })
-            return array;
-        }
-        console.log(unique(arr)); // [1, 5, 6, 9, 2]
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;4利用sort然后比较相邻元素是否相等&#34;&gt;4.利用sort(),然后比较相邻元素是否相等&lt;/h1&gt;
-&lt;pre&gt;&lt;code&gt;        let arr = [1, 5, 6, 1, 9, 9, 9, 9, 9, 2, 1];
-        function unique(arr) {
-            if (!Array.isArray(arr)) {
-                console.log(&#39;type error!&#39;)
-                return;
-            }
-            arr = arr.sort()
-            let arrry = [arr[0]];
-            arr.map((item, index) =&amp;gt; {
-                if (index &amp;gt; 0 &amp;amp;&amp;amp; item !== arr[index - 1]) {
-                    arrry.push(item)
-                }
-            });
-            return arrry;
-        }
-        console.log(unique(arr)); // [1, 2, 5, 6, 9]
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;5利用filter当找到的下标不等于当前下标时就证明这个元素在前面出现过排除掉&#34;&gt;5.利用filter(),当找到的下标不等于当前下标时就证明这个元素在前面出现过，排除掉&lt;/h1&gt;
-&lt;pre&gt;&lt;code&gt;        let arr = [1, 5, 6, 1, 9, 9, 9, 9, 9, 2, 1];
-        function unique(arr) {
-            if (!Array.isArray(arr)) {
-                console.log(&#39;type error!&#39;)
-                return;
-            }
-            return arr.filter((item, index) =&amp;gt; {
-                return arr.indexOf(item) === index;
-            })
-        }
-
-        console.log(unique(arr)); // [1, 5, 6, 9, 2]
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;p&gt;秒啊！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;6利用reduce方法&#34;&gt;6.利用reduce()方法&lt;/h1&gt;
-&lt;pre&gt;&lt;code&gt;        let arr = [1, 5, 6, 1, 9, 9, 9, 9, 9, 2, 1];
-        function unique(arr) {
-            if (!Array.isArray(arr)) {
-                console.log(&#39;type error!&#39;)
-                return;
-            }
-            return arr.reduce((prev, cur, index) =&amp;gt; prev.includes(cur) ? prev : [...prev, cur], []);
-        }
-
-        console.log(unique(arr)); // [1, 5, 6, 9, 2]
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;p&gt;秀啊！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;总结：ES6下，以上几种方法首选第二种 new Set(),其次选择filter()和reduce()&lt;/p&gt;
-&lt;/blockquote&gt;
 </description>
       
     </item>
