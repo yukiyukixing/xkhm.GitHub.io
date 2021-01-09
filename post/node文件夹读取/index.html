@@ -68,7 +68,7 @@
 <meta itemprop="description" content="1.第一版本，读取某个固定文件目录下的文件，写成接口 初版本1.1 缺点：文件更新了，接口不会更新 let path = require(&#34;path&#34;); let fs = require(&#34;fs&#34;); let http= require(&#34;http&#34;); fs.readFile(&#39;./config.json&#39;, (err, data) =&gt; { if (err) throw err; let fileDir =">
 <meta itemprop="datePublished" content="2021-01-08T19:13:51+08:00" />
 <meta itemprop="dateModified" content="2021-01-08T19:13:51+08:00" />
-<meta itemprop="wordCount" content="628">
+<meta itemprop="wordCount" content="798">
 
 
 
@@ -528,6 +528,41 @@
 
 <span style="color:#a6e22e">serve</span>.<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">5000</span>);
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;http://127.0.0.1:5000&#39;</span>);
+</code></pre></div><h1 id="4第四版本">4.第四版本</h1>
+<p>将端口提取出来，并打包成windows，linux，mac平台可直接执行的文件</p>
+<p>待做，将代码改成Promise或async/await形式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+	<span style="color:#f92672">&#34;fileDirectory&#34;</span>: <span style="color:#e6db74">&#34;E:/GIS项目视频资料/读文件&#34;</span>,
+	<span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#e6db74">&#34;5000&#34;</span>
+}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;fs&#34;</span>);
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">http</span><span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;http&#34;</span>);
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">configData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">readFileSync</span>(<span style="color:#e6db74">&#39;./config.json&#39;</span>);
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pathfileDir</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">configData</span>.<span style="color:#a6e22e">toString</span>()).<span style="color:#a6e22e">fileDirectory</span>;   
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">port</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">configData</span>.<span style="color:#a6e22e">toString</span>()).<span style="color:#a6e22e">port</span>;   
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">serve</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">createServer</span>((<span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">response</span>) =&gt; {
+    <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">200</span>, {
+        <span style="color:#e6db74">&#39;Access-Control-Allow-Origin&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;*&#39;</span>,
+        <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json; charset=utf-8&#39;</span>
+    });
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">filesAll</span> <span style="color:#f92672">=</span> [];  
+        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">readFileDir</span>(<span style="color:#a6e22e">dir</span>){
+            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">filesDir</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">readdirSync</span>(<span style="color:#a6e22e">dir</span>);
+            <span style="color:#a6e22e">filesDir</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">item</span> =&gt; {
+                <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">lstatSync</span>((<span style="color:#a6e22e">dir</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#39;/&#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">item</span>)).<span style="color:#a6e22e">isDirectory</span>()){
+                    <span style="color:#a6e22e">readFileDir</span>((<span style="color:#a6e22e">dir</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#39;/&#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">item</span>));
+                }<span style="color:#66d9ef">else</span>{
+                    <span style="color:#a6e22e">filesAll</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">item</span>);
+                }
+            })
+        }
+        <span style="color:#a6e22e">readFileDir</span>(<span style="color:#a6e22e">pathfileDir</span>);
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">fileData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({<span style="color:#e6db74">&#34;data&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">filesAll</span>});
+        <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">end</span>(<span style="color:#a6e22e">fileData</span>);
+});
+<span style="color:#a6e22e">serve</span>.<span style="color:#a6e22e">listen</span>(<span style="color:#a6e22e">port</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;http://127.0.0.1:&#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">port</span>);
 </code></pre></div>
     </div>
 
