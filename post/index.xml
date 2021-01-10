@@ -19,10 +19,10 @@
     
     <item>
       <title>手写Promise</title>
-      <link>https://xkhm.net/post/%E6%89%8B%E5%86%99promise/</link>
+      <link>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99promise/</link>
       <pubDate>Thu, 07 Jan 2021 21:50:29 +0800</pubDate>
       
-      <guid>https://xkhm.net/post/%E6%89%8B%E5%86%99promise/</guid>
+      <guid>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99promise/</guid>
       <description>文章类型：个人学习笔记 手写 Promise 的前提是了解 Promise/A+ 规范，不说倒背如流，但是基本的点还是需要掌握的。 1.Promise/A+规范 原文地址：Promis</description>
     </item>
     

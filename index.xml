@@ -275,10 +275,10 @@
     
     <item>
       <title>手写Promise</title>
-      <link>https://xkhm.net/post/%E6%89%8B%E5%86%99promise/</link>
+      <link>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99promise/</link>
       <pubDate>Thu, 07 Jan 2021 21:50:29 +0800</pubDate>
       
-      <guid>https://xkhm.net/post/%E6%89%8B%E5%86%99promise/</guid>
+      <guid>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99promise/</guid>
       
         <description>&lt;blockquote&gt;
 &lt;p&gt;文章类型：个人学习笔记&lt;/p&gt;
@@ -388,7 +388,7 @@
 &lt;p&gt;2.2.7.4. 如果 &lt;strong&gt;onRejected&lt;/strong&gt; 不是一个函数并且 &lt;strong&gt;promise1&lt;/strong&gt; 是 &lt;strong&gt;rejected&lt;/strong&gt; 状态，&lt;strong&gt;promise2&lt;/strong&gt; 必须是 &lt;strong&gt;rejected&lt;/strong&gt; 状态且带着 &lt;strong&gt;promise1&lt;/strong&gt; 同样的 &lt;strong&gt;reason&lt;/strong&gt;。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;23-promise-解决程序&#34;&gt;2.3. Promise 解决程序&lt;/h3&gt;
+&lt;h3 id=&#34;23-promise-执行程序-解决程序&#34;&gt;2.3. Promise 执行程序 &lt;del&gt;（解决程序）&lt;/del&gt;&lt;/h3&gt;
 &lt;p&gt;Promise 解决程序是一个抽象操作表现为输入一个 &lt;strong&gt;promise&lt;/strong&gt; 和一个 &lt;strong&gt;value值&lt;/strong&gt;，我们用 &lt;strong&gt;[[Resolve]](promise, x)&lt;/strong&gt; 表示，如果 &lt;strong&gt;x&lt;/strong&gt; 是一个 &lt;strong&gt;thenable&lt;/strong&gt;，它试图使 &lt;strong&gt;promise&lt;/strong&gt; 采用 &lt;strong&gt;x&lt;/strong&gt; 的状态，假设 &lt;strong&gt;x&lt;/strong&gt; 的行为和 &lt;strong&gt;promise&lt;/strong&gt; 类似。否则，它带着一个 value &lt;strong&gt;x&lt;/strong&gt; 使 &lt;strong&gt;promise&lt;/strong&gt; 转为 &lt;strong&gt;fulfilled&lt;/strong&gt; 状态。&lt;/p&gt;
 &lt;p&gt;这种对于 &lt;strong&gt;thenable&lt;/strong&gt; 的处理就允许 &lt;strong&gt;promise&lt;/strong&gt; 实现互操作，只要他们暴露一个符合 &lt;strong&gt;Promises/A+&lt;/strong&gt; 的 &lt;strong&gt;then&lt;/strong&gt; 方法。它也允许&lt;strong&gt;Promises/A+&lt;/strong&gt; 实现使用合理的 &lt;strong&gt;then&lt;/strong&gt; 方法“整合”不合格的实现。&lt;/p&gt;
 &lt;p&gt;要运行 &lt;strong&gt;[[Resolve]]（promise，x）&lt;/strong&gt;，请执行以下步骤：&lt;/p&gt;
@@ -466,6 +466,8 @@
 &lt;h3 id=&#34;34-通常只有-x-来自当前的实现才知道它是一个真正的-promise--本节允许使用特定的实现的方式来采用已知符合-promise-的状态&#34;&gt;3.4. 通常，只有 &lt;strong&gt;x&lt;/strong&gt; 来自当前的实现，才知道它是一个真正的 &lt;strong&gt;promise&lt;/strong&gt; 。 本节允许使用特定的实现的方式来采用已知符合 &lt;strong&gt;promise&lt;/strong&gt; 的状态。&lt;/h3&gt;
 &lt;h3 id=&#34;35-首先存储对-xthen-的引用然后测试该引用然后调用该引用的过程避免了对-xthen-属性的多次访问-此类预防措施对于确保访问者属性的一致性非常重要因为访问者属性的值在两次检索之间可能会发生变化&#34;&gt;3.5. 首先存储对 &lt;strong&gt;x.then&lt;/strong&gt; 的引用，然后测试该引用，然后调用该引用的过程避免了对 &lt;strong&gt;x.then&lt;/strong&gt; 属性的多次访问。 此类预防措施对于确保访问者属性的一致性非常重要，因为访问者属性的值在两次检索之间可能会发生变化。&lt;/h3&gt;
 &lt;h3 id=&#34;36-实现不应在可建立链的深度上设置任意限制并假定超出该任意限制则递归将是无限的-只有真正的循环才应该导致-typeerror--如果遇到无限多个不同的罐头则永远递归是正确的行为&#34;&gt;3.6. 实现不应在可建立链的深度上设置任意限制，并假定超出该任意限制，则递归将是无限的。 只有真正的循环才应该导致 &lt;strong&gt;TypeError&lt;/strong&gt; 。 如果遇到无限多个不同的罐头，则永远递归是正确的行为。&lt;/h3&gt;
+&lt;h2 id=&#34;3总结&#34;&gt;（3）总结&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3414b60993e34a9993edb8c7f55e3f2d~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;2对照promisea规范手写-promise&#34;&gt;2.对照PromiseA+规范手写 Promise&lt;/h1&gt;
 &lt;h2 id=&#34;1promise-状态&#34;&gt;（1）Promise 状态&lt;/h2&gt;
 &lt;p&gt;1.pending：待定&lt;/p&gt;
