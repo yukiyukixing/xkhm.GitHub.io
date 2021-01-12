@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>归档 - 星空海绵 - 星空浩瀚 | 海绵吸水</title>
+  <title>定型数组 - 星空海绵 - 星空浩瀚 | 海绵吸水</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -22,8 +22,9 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="xkhm" />
-  <meta name="description" content="Hugo XKHM" />
+<meta name="author" content="XKHM" />
+  <meta name="description" content="1.定型数组 定型数组是ES新增的结构，目的是提升向原生库传输数据的效率。本质上是一种包含数值类型的数组。 （1）历史 随着浏览器的流行，需要使用" />
+
   <meta name="keywords" content="Hugo" />
 
 
@@ -34,8 +35,8 @@
 <meta name="generator" content="Hugo 0.79.0" />
 
 
-<link rel="canonical" href="https://xkhm.net/post/" />
-<link href="/post/index.xml" rel="alternate" type="application/rss+xml" title="星空海绵 - 星空浩瀚 | 海绵吸水" />
+<link rel="canonical" href="https://xkhm.net/post/%E5%AE%9A%E5%9E%8B%E6%95%B0%E7%BB%84/" />
+
 
 
 
@@ -57,16 +58,24 @@
 
 
 
-<meta property="og:title" content="Posts" />
-<meta property="og:description" content="Hugo XKHM" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://xkhm.net/post/" />
-<meta property="og:updated_time" content="2021-01-12T21:21:51+08:00" />
-<meta itemprop="name" content="Posts">
-<meta itemprop="description" content="Hugo XKHM">
+<meta property="og:title" content="定型数组" />
+<meta property="og:description" content="1.定型数组 定型数组是ES新增的结构，目的是提升向原生库传输数据的效率。本质上是一种包含数值类型的数组。 （1）历史 随着浏览器的流行，需要使用" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xkhm.net/post/%E5%AE%9A%E5%9E%8B%E6%95%B0%E7%BB%84/" />
+<meta property="article:published_time" content="2021-01-12T21:21:51+08:00" />
+<meta property="article:modified_time" content="2021-01-12T21:21:51+08:00" />
+<meta itemprop="name" content="定型数组">
+<meta itemprop="description" content="1.定型数组 定型数组是ES新增的结构，目的是提升向原生库传输数据的效率。本质上是一种包含数值类型的数组。 （1）历史 随着浏览器的流行，需要使用">
+<meta itemprop="datePublished" content="2021-01-12T21:21:51+08:00" />
+<meta itemprop="dateModified" content="2021-01-12T21:21:51+08:00" />
+<meta itemprop="wordCount" content="780">
+
+
+
+<meta itemprop="keywords" content="JavaScript,WebGL,定型数组,数组," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="Hugo XKHM"/>
+<meta name="twitter:title" content="定型数组"/>
+<meta name="twitter:description" content="1.定型数组 定型数组是ES新增的结构，目的是提升向原生库传输数据的效率。本质上是一种包含数值类型的数组。 （1）历史 随着浏览器的流行，需要使用"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -322,7 +331,7 @@
 
       </li>
     
-        <li class="menu-item active">
+        <li class="menu-item">
         
           
           
@@ -391,180 +400,147 @@
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">定型数组</h1>
+      
+      <div class="post-meta">
+        <time datetime="2021-01-12" class="post-time">
+          2021-01-12
+        </time>
+        <div class="post-category">
+            <a href="https://xkhm.net/categories/javascript/"> JavaScript </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1历史">（1）历史</a>
+      <ul>
+        <li><a href="#1webgl">1.WebGL</a></li>
+        <li><a href="#2定型数组">2.定型数组</a></li>
+      </ul>
+    </li>
+    <li><a href="#2arraybuffer">（2）ArrayBuffer</a></li>
+    <li><a href="#3dataview">（3）DataView</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <h1 id="1定型数组">1.定型数组</h1>
+<p>定型数组是ES新增的结构，目的是<strong>提升向原生库传输数据的效率</strong>。本质上是一种包含数值类型的数组。</p>
+<h2 id="1历史">（1）历史</h2>
+<p>随着浏览器的流行，需要使用浏览器来运行复杂的3D程序以及渲染复杂的图形。</p>
+<h3 id="1webgl">1.WebGL</h3>
+<p>JS API基于OpenGL ES2.0规范定义了一套新的可以处理复杂图形和3D程序的API，被命名为WebGL。早期版本中，JS的数组与原生数组之前不匹配，会出现性能问题，JS默认双精度浮点格式传递它们的数值，而到WebGL这边使用时，需要进行转换，需要花费大量的时间。</p>
+<h3 id="2定型数组">2.定型数组</h3>
+<p>为了解决上面这个问题，Mozilla实现了 <strong>CanvasFloatArray</strong>**
+CanvasFloatArray**，这是一个提供JS接口的、C语言风格的浮点值数组，这个类型能直接传给图形程序API，最终，**CanvasFloatArray** 变成了 **Float32Array**，也是定型数组中可用的第一个“类型”。</p>
+<h2 id="2arraybuffer">（2）ArrayBuffer</h2>
+<p><strong>Float32Array</strong> 实际上是一种“视图”，可以允许JS运行时访问一块名为 <strong>ArrayBuffer</strong> 的预分配内存。<strong>ArrayBuffer</strong> 是所有定型数组及视图引用的基本单位。</p>
+<blockquote>
+<p>tips：SharedArrayBuffer是ArrayBuffer的一个变体，可以无须复制就在执行上下文间传递。</p>
+</blockquote>
+<p><strong>ArrayBuffer</strong> 是一个普通的JS构造函数，可以用于在内存中分配特定数量的字节空间。<strong>ArrayBuffer</strong> 一经创建就不能再调整它的大小，但是可以使用 <strong>slice()</strong> 复制其全部或者部分到新的一个实例中。</p>
+<p>不能仅通过 <strong>ArrayBuffer</strong> 的应用就读取或写入内容。要读取或写入 <strong>ArrayBuffer</strong>，就必须通过视图。视图有不同的类型，但引用的都是 <strong>ArrayBuffer</strong> 中存储的二进制数据。</p>
+<h2 id="3dataview">（3）DataView</h2>
+<p>第一种允许你读写 <strong>ArrayBuffer</strong> 的视图是 <strong>DataView</strong>。这个视图专为文件I/O和网络I/O设计，其API支持对缓冲数据的高度控制，但是型比喻其他类型的视图性能差一些。<strong>DataView</strong> 对缓冲内容没有任何预设，也不能迭代。</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">XKHM</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2021-01-12
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">原创文章，转载请注明文章作者和出处，谢谢！</a></span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://xkhm.net/tags/javascript/">JavaScript</a>
+          <a href="https://xkhm.net/tags/webgl/">WebGL</a>
+          <a href="https://xkhm.net/tags/%E5%AE%9A%E5%9E%8B%E6%95%B0%E7%BB%84/">定型数组</a>
+          <a href="https://xkhm.net/tags/%E6%95%B0%E7%BB%84/">数组</a>
           
-<section id="archive" class="archive">
-    <div class="archive-title">
-      <span class="archive-post-counter">
-          17 posts In Total
-      </span>
-    </div>
-    
-      <div class="collection-title">
-        <h2 class="archive-year">2021</h2>
-      </div>
+        </div>
 
-    <div class="archive-post">
-      <time datetime="2021-01-12" class="archive-post-time">
-        2021-01-12
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/%E5%AE%9A%E5%9E%8B%E6%95%B0%E7%BB%84/" class="archive-post-link">
-          定型数组
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2021-01-08" class="archive-post-time">
-        2021-01-08
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/node%E6%96%87%E4%BB%B6%E5%A4%B9%E8%AF%BB%E5%8F%96/" class="archive-post-link">
-          Node文件夹读取
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2021-01-07" class="archive-post-time">
-        2021-01-07
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99promise/" class="archive-post-link">
-          手写Promise
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2021-01-04" class="archive-post-time">
-        2021-01-04
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/javascript%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/" class="archive-post-link">
-          JavaScript异步编程
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2021-01-04" class="archive-post-time">
-        2021-01-04
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/vue2%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0cv/" class="archive-post-link">
-          Vue2从入门到CV
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2021-01-04" class="archive-post-time">
-        2021-01-04
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/js%E9%9D%A2%E8%AF%95%E9%A2%98%E5%A4%8D%E4%B9%A0/" class="archive-post-link">
-          JS面试题复习
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2021-01-03" class="archive-post-time">
-        2021-01-03
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E5%92%8C%E6%95%88%E7%8E%87/" class="archive-post-link">
-          时间管理和效率
-        </a>
-      </span>
-    </div>
-    
-      <div class="collection-title">
-        <h2 class="archive-year">2020</h2>
-      </div>
-
-    <div class="archive-post">
-      <time datetime="2020-12-31" class="archive-post-time">
-        2020-12-31
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/js%E4%B9%8B%E6%97%A5%E5%B8%B8%E8%A7%A3%E9%A2%98/" class="archive-post-link">
-          JS之日常解题
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2020-12-29" class="archive-post-time">
-        2020-12-29
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/css%E5%9F%BA%E7%A1%80/" class="archive-post-link">
-          CSS基础
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2020-12-28" class="archive-post-time">
-        2020-12-28
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/css%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90%E5%B8%83%E5%B1%80%E4%B9%8Bflex/" class="archive-post-link">
-          CSS弹性盒子布局之Flex
-        </a>
-      </span>
-    </div></section>
-
-
-
-
-
-
-  
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-  <nav class="pagination">
-    <ul>
       
-      <li  class="active" >
-        <a href="/post/">1</a>
-      </li>
-      
-      <li >
-        <a href="/post/page/2/">2</a>
-      </li>
-      
-    </ul>
-  </nav>
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/node%E6%96%87%E4%BB%B6%E5%A4%B9%E8%AF%BB%E5%8F%96/">
+            <span class="next-text nav-default">Node文件夹读取</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
 
   
   
 
+  
+  
 
+  
 
+  
+  
 
+  
+
+  
+
+  
+
+    
+
+  
 
         </div>
       </div>

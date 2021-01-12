@@ -52,7 +52,70 @@
   
   <url>
     <loc>https://xkhm.net/categories/</loc>
-    <lastmod>2021-01-08T19:13:51+08:00</lastmod>
+    <lastmod>2021-01-12T21:21:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/tags/javascript/</loc>
+    <lastmod>2021-01-12T21:21:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/categories/javascript/</loc>
+    <lastmod>2021-01-12T21:21:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/post/</loc>
+    <lastmod>2021-01-12T21:21:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/tags/</loc>
+    <lastmod>2021-01-12T21:21:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/tags/webgl/</loc>
+    <lastmod>2021-01-12T21:21:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/tags/%E5%AE%9A%E5%9E%8B%E6%95%B0%E7%BB%84/</loc>
+    <lastmod>2021-01-12T21:21:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/post/%E5%AE%9A%E5%9E%8B%E6%95%B0%E7%BB%84/</loc>
+    <lastmod>2021-01-12T21:21:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/tags/%E6%95%B0%E7%BB%84/</loc>
+    <lastmod>2021-01-12T21:21:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/</loc>
+    <lastmod>2021-01-12T21:21:51+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -79,20 +142,6 @@
   </url>
   
   <url>
-    <loc>https://xkhm.net/post/</loc>
-    <lastmod>2021-01-08T19:13:51+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xkhm.net/tags/</loc>
-    <lastmod>2021-01-08T19:13:51+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://xkhm.net/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2021-01-08T19:13:51+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -102,27 +151,6 @@
   <url>
     <loc>https://xkhm.net/tags/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/</loc>
     <lastmod>2021-01-08T19:13:51+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xkhm.net/</loc>
-    <lastmod>2021-01-08T19:13:51+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xkhm.net/tags/javascript/</loc>
-    <lastmod>2021-01-07T21:50:29+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xkhm.net/categories/javascript/</loc>
-    <lastmod>2021-01-07T21:50:29+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -367,13 +395,6 @@
   
   <url>
     <loc>https://xkhm.net/post/js%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/</loc>
-    <lastmod>2020-12-20T18:12:21+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xkhm.net/tags/%E6%95%B0%E7%BB%84/</loc>
     <lastmod>2020-12-20T18:12:21+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

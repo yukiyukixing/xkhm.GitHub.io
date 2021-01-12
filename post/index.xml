@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Fri, 08 Jan 2021 19:13:51 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Jan 2021 21:21:51 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>定型数组</title>
+      <link>https://xkhm.net/post/%E5%AE%9A%E5%9E%8B%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Tue, 12 Jan 2021 21:21:51 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/%E5%AE%9A%E5%9E%8B%E6%95%B0%E7%BB%84/</guid>
+      <description>1.定型数组 定型数组是ES新增的结构，目的是提升向原生库传输数据的效率。本质上是一种包含数值类型的数组。 （1）历史 随着浏览器的流行，需要使用</description>
+    </item>
+    
     <item>
       <title>Node文件夹读取</title>
       <link>https://xkhm.net/post/node%E6%96%87%E4%BB%B6%E5%A4%B9%E8%AF%BB%E5%8F%96/</link>

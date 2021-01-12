@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Thu, 07 Jan 2021 21:50:29 +0800</lastBuildDate><atom:link href="https://xkhm.net/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Jan 2021 21:21:51 +0800</lastBuildDate><atom:link href="https://xkhm.net/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>定型数组</title>
+      <link>https://xkhm.net/post/%E5%AE%9A%E5%9E%8B%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Tue, 12 Jan 2021 21:21:51 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/%E5%AE%9A%E5%9E%8B%E6%95%B0%E7%BB%84/</guid>
+      <description>1.定型数组 定型数组是ES新增的结构，目的是提升向原生库传输数据的效率。本质上是一种包含数值类型的数组。 （1）历史 随着浏览器的流行，需要使用</description>
+    </item>
+    
     <item>
       <title>手写Promise</title>
       <link>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99promise/</link>
