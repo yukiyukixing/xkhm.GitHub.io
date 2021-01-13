@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="XKHM" />
-  <meta name="description" content="主题列表：juejin, github, smartblue, cyanosis, channing-cyan, fancy, hydrogen, condensed-night-purple, greenwillow, v-green, vue-pro, healer-readable, mk-cute, jzman, geek-black, awesome-green 贡献主题：https://github.com/xitu/juejin-markdow" />
+  <meta name="description" content="1.对象 （1）深浅拷贝 只会拷贝对象的第一层 1.浅拷贝（4种） （1）直接赋值 let obj = { name: &amp;#39;XKHM&amp;#39;, age: 25, job: &amp;#39;Software Engineer&amp;#39; } let obj1 = obj; console.log(obj1 === obj); （2）Object.assi" />
 
   <meta name="keywords" content="Hugo" />
 
@@ -59,23 +59,23 @@
 
 
 <meta property="og:title" content="JS面试题复习" />
-<meta property="og:description" content="主题列表：juejin, github, smartblue, cyanosis, channing-cyan, fancy, hydrogen, condensed-night-purple, greenwillow, v-green, vue-pro, healer-readable, mk-cute, jzman, geek-black, awesome-green 贡献主题：https://github.com/xitu/juejin-markdow" />
+<meta property="og:description" content="1.对象 （1）深浅拷贝 只会拷贝对象的第一层 1.浅拷贝（4种） （1）直接赋值 let obj = { name: &#39;XKHM&#39;, age: 25, job: &#39;Software Engineer&#39; } let obj1 = obj; console.log(obj1 === obj); （2）Object.assi" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xkhm.net/post/js%E9%9D%A2%E8%AF%95%E9%A2%98%E5%A4%8D%E4%B9%A0/" />
 <meta property="article:published_time" content="2021-01-04T08:30:30+08:00" />
 <meta property="article:modified_time" content="2021-01-04T08:30:30+08:00" />
 <meta itemprop="name" content="JS面试题复习">
-<meta itemprop="description" content="主题列表：juejin, github, smartblue, cyanosis, channing-cyan, fancy, hydrogen, condensed-night-purple, greenwillow, v-green, vue-pro, healer-readable, mk-cute, jzman, geek-black, awesome-green 贡献主题：https://github.com/xitu/juejin-markdow">
+<meta itemprop="description" content="1.对象 （1）深浅拷贝 只会拷贝对象的第一层 1.浅拷贝（4种） （1）直接赋值 let obj = { name: &#39;XKHM&#39;, age: 25, job: &#39;Software Engineer&#39; } let obj1 = obj; console.log(obj1 === obj); （2）Object.assi">
 <meta itemprop="datePublished" content="2021-01-04T08:30:30+08:00" />
 <meta itemprop="dateModified" content="2021-01-04T08:30:30+08:00" />
-<meta itemprop="wordCount" content="2491">
+<meta itemprop="wordCount" content="2669">
 
 
 
 <meta itemprop="keywords" content="JavaScript,面试," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="JS面试题复习"/>
-<meta name="twitter:description" content="主题列表：juejin, github, smartblue, cyanosis, channing-cyan, fancy, hydrogen, condensed-night-purple, greenwillow, v-green, vue-pro, healer-readable, mk-cute, jzman, geek-black, awesome-green 贡献主题：https://github.com/xitu/juejin-markdow"/>
+<meta name="twitter:description" content="1.对象 （1）深浅拷贝 只会拷贝对象的第一层 1.浅拷贝（4种） （1）直接赋值 let obj = { name: &#39;XKHM&#39;, age: 25, job: &#39;Software Engineer&#39; } let obj1 = obj; console.log(obj1 === obj); （2）Object.assi"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -430,11 +430,6 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#highlight">theme: jzman
-highlight:</a></li>
-  </ul>
-
-  <ul>
     <li><a href="#1深浅拷贝">（1）深浅拷贝</a></li>
     <li><a href="#2new">（2）new</a>
       <ul>
@@ -467,12 +462,7 @@ highlight:</a></li>
 
     
     <div class="post-content">
-      <hr>
-<h1 id="主题列表juejin-github-smartblue-cyanosis-channing-cyan-fancy-hydrogen-condensed-night-purple-greenwillow-v-green-vue-pro-healer-readable-mk-cute-jzman-geek-black-awesome-green">主题列表：juejin, github, smartblue, cyanosis, channing-cyan, fancy, hydrogen, condensed-night-purple, greenwillow, v-green, vue-pro, healer-readable, mk-cute, jzman, geek-black, awesome-green</h1>
-<h1 id="贡献主题httpsgithubcomxitujuejin-markdown-themes">贡献主题：https://github.com/xitu/juejin-markdown-themes</h1>
-<h2 id="highlight">theme: jzman
-highlight:</h2>
-<h1 id="1对象">1.对象</h1>
+      <h1 id="1对象">1.对象</h1>
 <h2 id="1深浅拷贝">（1）深浅拷贝</h2>
 <blockquote>
 <p>只会拷贝对象的第一层</p>
@@ -813,7 +803,8 @@ highlight:</h2>
         <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">instance1</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">B</span>(<span style="color:#e6db74">&#39;海绵&#39;</span>);
         <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">instance</span>.<span style="color:#a6e22e">getName</span>()); <span style="color:#75715e">// 星空
 </span><span style="color:#75715e"></span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">instance1</span>.<span style="color:#a6e22e">getName</span>()); <span style="color:#75715e">// 海绵
-</span></code></pre></div><h3 id="4原型式继承">4.原型式继承</h3>
+</span></code></pre></div><p>缺点：存在效率问题，父类构造函数始终会被调用两次。</p>
+<h3 id="4原型式继承">4.原型式继承</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">A</span>(<span style="color:#a6e22e">showName</span>) {
             <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">showName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">showName</span>;
         }
@@ -830,8 +821,62 @@ highlight:</h2>
         <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">instance</span>.<span style="color:#a6e22e">showName</span>); <span style="color:#75715e">// 星空
 </span><span style="color:#75715e"></span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">instance1</span>.<span style="color:#a6e22e">showName</span>); <span style="color:#75715e">// 海绵
 </span></code></pre></div><p>缺点：原型式继承和原型链继承缺点一样，原型中包含的引用值会在实例间共享。</p>
+<p>优点：适合不需要单独创建构造函数，但是需要对象间共享信息的场景。</p>
 <h3 id="5寄生式继承">5.寄生式继承</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">object</span>(<span style="color:#a6e22e">o</span>) {
+            <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">F</span>() { };
+            <span style="color:#a6e22e">F</span>.<span style="color:#a6e22e">prototype</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">o</span>;
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">F</span>();
+        }
+        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">createAnother</span>(<span style="color:#a6e22e">original</span>) {
+            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">clone</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">object</span>(<span style="color:#a6e22e">original</span>);
+            <span style="color:#a6e22e">clone</span>.<span style="color:#a6e22e">sayHi</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;hi&#39;</span>);
+            }
+            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">clone</span>
+        }
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">person</span> <span style="color:#f92672">=</span> {
+            <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Nicholas&#39;</span>,
+            <span style="color:#a6e22e">friends</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;星空&#39;</span>, <span style="color:#e6db74">&#39;海绵&#39;</span>]
+        }
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">anotherPerson</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createAnother</span>(<span style="color:#a6e22e">person</span>);
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">anotherPerson1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createAnother</span>(<span style="color:#a6e22e">person</span>);
+        <span style="color:#a6e22e">anotherPerson</span>.<span style="color:#a6e22e">friends</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;阿星&#39;</span>;
+        <span style="color:#a6e22e">anotherPerson</span>.<span style="color:#a6e22e">sayHi</span>();
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">anotherPerson</span>);
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">anotherPerson1</span>);
+</code></pre></div><p>缺点：寄生式继承给对象添加函数导致函数难以重用。</p>
 <h3 id="6寄生式组合继承">6.寄生式组合继承</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">object</span>(<span style="color:#a6e22e">o</span>) {
+            <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">F</span>() { };
+            <span style="color:#a6e22e">F</span>.<span style="color:#a6e22e">prototype</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">o</span>;
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">F</span>();
+        }
+
+        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">inheritPrototype</span>(<span style="color:#a6e22e">B</span>, <span style="color:#a6e22e">A</span>) {
+            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">prototype</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">object</span>(<span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">prototype</span>);
+            <span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">constructor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">B</span>;
+            <span style="color:#a6e22e">B</span>.<span style="color:#a6e22e">prototype</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">prototype</span>;
+        }
+
+        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">A</span>(<span style="color:#a6e22e">name</span>) {
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">name</span>;
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>, <span style="color:#e6db74">&#39;green&#39;</span>];
+        }
+        <span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">sayName</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>);
+        }
+        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">B</span>(<span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">age</span>) {
+            <span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">call</span>(<span style="color:#66d9ef">this</span>, <span style="color:#a6e22e">name</span>);
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">age</span>;
+        }
+        <span style="color:#a6e22e">inheritPrototype</span>(<span style="color:#a6e22e">B</span>, <span style="color:#a6e22e">A</span>);
+        <span style="color:#a6e22e">B</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">sayAge</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">age</span>);
+        }
+</code></pre></div><blockquote>
+<p>寄生式组合继承是引用类型继承的最佳模式</p>
+</blockquote>
 
     </div>
 

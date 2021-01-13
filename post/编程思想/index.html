@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>归档 - 星空海绵 - 星空浩瀚 | 海绵吸水</title>
+  <title>编程思想 - 星空海绵 - 星空浩瀚 | 海绵吸水</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -22,8 +22,9 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="xkhm" />
-  <meta name="description" content="Hugo XKHM" />
+<meta name="author" content="XKHM" />
+  <meta name="description" content="1.JS中继承有什么作用 需要让JS中的对象能连起来 受Java抽象化思想的影响，设计出了继承， 编码过程中可扩展性非常重要，后面新需求扩展写出的" />
+
   <meta name="keywords" content="Hugo" />
 
 
@@ -34,8 +35,8 @@
 <meta name="generator" content="Hugo 0.79.0" />
 
 
-<link rel="canonical" href="https://xkhm.net/post/" />
-<link href="/post/index.xml" rel="alternate" type="application/rss+xml" title="星空海绵 - 星空浩瀚 | 海绵吸水" />
+<link rel="canonical" href="https://xkhm.net/post/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/" />
+
 
 
 
@@ -57,16 +58,24 @@
 
 
 
-<meta property="og:title" content="Posts" />
-<meta property="og:description" content="Hugo XKHM" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://xkhm.net/post/" />
-<meta property="og:updated_time" content="2021-01-13T22:06:38+08:00" />
-<meta itemprop="name" content="Posts">
-<meta itemprop="description" content="Hugo XKHM">
+<meta property="og:title" content="编程思想" />
+<meta property="og:description" content="1.JS中继承有什么作用 需要让JS中的对象能连起来 受Java抽象化思想的影响，设计出了继承， 编码过程中可扩展性非常重要，后面新需求扩展写出的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xkhm.net/post/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/" />
+<meta property="article:published_time" content="2021-01-13T22:06:38+08:00" />
+<meta property="article:modified_time" content="2021-01-13T22:06:38+08:00" />
+<meta itemprop="name" content="编程思想">
+<meta itemprop="description" content="1.JS中继承有什么作用 需要让JS中的对象能连起来 受Java抽象化思想的影响，设计出了继承， 编码过程中可扩展性非常重要，后面新需求扩展写出的">
+<meta itemprop="datePublished" content="2021-01-13T22:06:38+08:00" />
+<meta itemprop="dateModified" content="2021-01-13T22:06:38+08:00" />
+<meta itemprop="wordCount" content="411">
+
+
+
+<meta itemprop="keywords" content="编程思想,面向对象,面向过程," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="Hugo XKHM"/>
+<meta name="twitter:title" content="编程思想"/>
+<meta name="twitter:description" content="1.JS中继承有什么作用 需要让JS中的对象能连起来 受Java抽象化思想的影响，设计出了继承， 编码过程中可扩展性非常重要，后面新需求扩展写出的"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -322,7 +331,7 @@
 
       </li>
     
-        <li class="menu-item active">
+        <li class="menu-item">
         
           
           
@@ -391,180 +400,166 @@
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">编程思想</h1>
+      
+      <div class="post-meta">
+        <time datetime="2021-01-13" class="post-time">
+          2021-01-13
+        </time>
+        <div class="post-category">
+            <a href="https://xkhm.net/categories/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/"> 编程思想 </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-js用new创建对象实例间的属性是不共享的">1. JS用new创建对象，实例间的属性是不共享的</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <h1 id="1js中继承有什么作用">1.JS中继承有什么作用</h1>
+<p>需要让JS中的对象能连起来</p>
+<p>受Java抽象化思想的影响，设计出了继承，</p>
+<p>编码过程中可扩展性非常重要，后面新需求扩展写出的新代码不影响以前的代码，降低增加需求带来的修改难度</p>
+<h2 id="1-js用new创建对象实例间的属性是不共享的">1. JS用new创建对象，实例间的属性是不共享的</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Dog</span>() {
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;小黑&#39;</span>;
+        }
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">dog1</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Dog</span>();
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">dog2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Dog</span>();
+        <span style="color:#a6e22e">dog1</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;大黄&#39;</span>;
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">dog1</span>.<span style="color:#a6e22e">name</span>); <span style="color:#75715e">// 大黄
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">dog2</span>.<span style="color:#a6e22e">name</span>); <span style="color:#75715e">// 小黑
+</span></code></pre></div><p>某些情况下，数据不能共享，就是一种资源浪费</p>
+<h1 id="2例子">2.例子</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#75715e">// 1.需求1
+</span><span style="color:#75715e">// 根据客人购买的商品单价和数量生成所购商品的价格
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 客人购买商品的数量
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">goodsAmount</span> <span style="color:#f92672">=</span> {
+    <span style="color:#e6db74">&#39;方便面&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>,
+    <span style="color:#e6db74">&#39;火腿肠&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
+    <span style="color:#e6db74">&#39;牙刷&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
+    <span style="color:#e6db74">&#39;纸巾&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>
+}
+
+<span style="color:#75715e">// 客人购买商品的单价
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">goodsPrice</span> <span style="color:#f92672">=</span> {
+    <span style="color:#e6db74">&#39;方便面&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>,
+    <span style="color:#e6db74">&#39;火腿肠&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
+    <span style="color:#e6db74">&#39;牙刷&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>,
+    <span style="color:#e6db74">&#39;纸巾&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">6</span>
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">totalPrice</span>() {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">goodsAmount</span>).<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">cur</span>) =&gt;
+        <span style="color:#a6e22e">acc</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">goodsPrice</span>[<span style="color:#a6e22e">cur</span>] <span style="color:#f92672">*</span> <span style="color:#a6e22e">goodsAmount</span>[<span style="color:#a6e22e">cur</span>], <span style="color:#ae81ff">0</span>
+    )
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">totalPrice</span>);
+}
+<span style="color:#a6e22e">totalPrice</span>();
+</code></pre></div><p>遇到一个问题：</p>
+<p><img src="https://static01.imgkr.com/temp/588f3445e9df4d16856c19c412b1f551.png" alt=""></p>
+<p>多运行几次会发现结果出人意料</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">XKHM</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2021-01-13
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">原创文章，转载请注明文章作者和出处，谢谢！</a></span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://xkhm.net/tags/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/">编程思想</a>
+          <a href="https://xkhm.net/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
+          <a href="https://xkhm.net/tags/%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B/">面向过程</a>
           
-<section id="archive" class="archive">
-    <div class="archive-title">
-      <span class="archive-post-counter">
-          18 posts In Total
-      </span>
-    </div>
-    
-      <div class="collection-title">
-        <h2 class="archive-year">2021</h2>
-      </div>
+        </div>
 
-    <div class="archive-post">
-      <time datetime="2021-01-13" class="archive-post-time">
-        2021-01-13
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/" class="archive-post-link">
-          编程思想
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2021-01-12" class="archive-post-time">
-        2021-01-12
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/%E5%AE%9A%E5%9E%8B%E6%95%B0%E7%BB%84/" class="archive-post-link">
-          定型数组
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2021-01-08" class="archive-post-time">
-        2021-01-08
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/node%E6%96%87%E4%BB%B6%E5%A4%B9%E8%AF%BB%E5%8F%96/" class="archive-post-link">
-          Node文件夹读取
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2021-01-07" class="archive-post-time">
-        2021-01-07
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99promise/" class="archive-post-link">
-          手写Promise
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2021-01-04" class="archive-post-time">
-        2021-01-04
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/javascript%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/" class="archive-post-link">
-          JavaScript异步编程
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2021-01-04" class="archive-post-time">
-        2021-01-04
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/vue2%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0cv/" class="archive-post-link">
-          Vue2从入门到CV
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2021-01-04" class="archive-post-time">
-        2021-01-04
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/js%E9%9D%A2%E8%AF%95%E9%A2%98%E5%A4%8D%E4%B9%A0/" class="archive-post-link">
-          JS面试题复习
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2021-01-03" class="archive-post-time">
-        2021-01-03
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E5%92%8C%E6%95%88%E7%8E%87/" class="archive-post-link">
-          时间管理和效率
-        </a>
-      </span>
-    </div>
-    
-      <div class="collection-title">
-        <h2 class="archive-year">2020</h2>
-      </div>
-
-    <div class="archive-post">
-      <time datetime="2020-12-31" class="archive-post-time">
-        2020-12-31
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/js%E4%B9%8B%E6%97%A5%E5%B8%B8%E8%A7%A3%E9%A2%98/" class="archive-post-link">
-          JS之日常解题
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2020-12-29" class="archive-post-time">
-        2020-12-29
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/css%E5%9F%BA%E7%A1%80/" class="archive-post-link">
-          CSS基础
-        </a>
-      </span>
-    </div></section>
-
-
-
-
-
-
-  
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-  <nav class="pagination">
-    <ul>
       
-      <li  class="active" >
-        <a href="/post/">1</a>
-      </li>
-      
-      <li >
-        <a href="/post/page/2/">2</a>
-      </li>
-      
-    </ul>
-  </nav>
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/%E5%AE%9A%E5%9E%8B%E6%95%B0%E7%BB%84/">
+            <span class="next-text nav-default">定型数组</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
 
   
   
 
+  
+  
 
+  
 
+  
+  
 
+  
+
+  
+
+  
+
+    
+
+  
 
         </div>
       </div>

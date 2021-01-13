@@ -41,7 +41,7 @@
       <pubDate>Mon, 04 Jan 2021 08:30:30 +0800</pubDate>
       
       <guid>https://xkhm.net/post/js%E9%9D%A2%E8%AF%95%E9%A2%98%E5%A4%8D%E4%B9%A0/</guid>
-      <description>主题列表：juejin, github, smartblue, cyanosis, channing-cyan, fancy, hydrogen, condensed-night-purple, greenwillow, v-green, vue-pro, healer-readable, mk-cute, jzman, geek-black, awesome-green 贡献主题：https://github.com/xitu/juejin-markdow</description>
+      <description>1.对象 （1）深浅拷贝 只会拷贝对象的第一层 1.浅拷贝（4种） （1）直接赋值 let obj = { name: &amp;#39;XKHM&amp;#39;, age: 25, job: &amp;#39;Software Engineer&amp;#39; } let obj1 = obj; console.log(obj1 === obj); （2）Object.assi</description>
     </item>
     
     <item>
