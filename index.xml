@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Wed, 13 Jan 2021 22:06:38 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 14 Jan 2021 08:35:17 +0800</lastBuildDate>
     
         <atom:link href="https://xkhm.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -130,6 +130,46 @@
 &lt;p&gt;一只小透明的前端开发（待补充）&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
+      
+    </item>
+    
+    <item>
+      <title>JS基础之继承</title>
+      <link>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E7%BB%A7%E6%89%BF/</link>
+      <pubDate>Thu, 14 Jan 2021 08:35:17 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E7%BB%A7%E6%89%BF/</guid>
+      
+        <description>&lt;h1 id=&#34;1继承&#34;&gt;1.继承&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// 1. 原型链继承
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;A&lt;/span&gt;() { }
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;B&lt;/span&gt;() { }
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;B&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;prototype&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;A&lt;/span&gt;();
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;B&lt;/span&gt;();
+
+        &lt;span style=&#34;color:#75715e&#34;&gt;// 2. 经典继承
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;A&lt;/span&gt;() { }
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;B&lt;/span&gt;() {
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;A&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;call&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;)
+        }
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;B&lt;/span&gt;();
+
+        &lt;span style=&#34;color:#75715e&#34;&gt;// 3.组合继承
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;A&lt;/span&gt;() { }
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;B&lt;/span&gt;() {
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;A&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;call&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;)
+        }
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;B&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;prototype&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;A&lt;/span&gt;();
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;B&lt;/span&gt;()
+
+        &lt;span style=&#34;color:#75715e&#34;&gt;// 4.原型式继承
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;object&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;o&lt;/span&gt;) {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;F&lt;/span&gt;() { }
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;F&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;prototype&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;o&lt;/span&gt;;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;F&lt;/span&gt;();
+        }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
       
     </item>
     
@@ -4434,203 +4474,6 @@ methods: {
 &lt;h2 id=&#34;22如何破坏promise链&#34;&gt;（22）如何破坏promise链？&lt;/h2&gt;
 &lt;h2 id=&#34;23catch-之后的-then-还会执行吗&#34;&gt;（23）catch 之后的 then 还会执行吗？&lt;/h2&gt;
 &lt;p&gt;会继续执行，因为catch方法返回的是promise，所以后续的then还会继续执行，当然如果在catch中手动返回 Promise.reject()，那后续的then就不会被调用了。&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>JS基础之手写bind</title>
-      <link>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99bind/</link>
-      <pubDate>Fri, 25 Dec 2020 08:24:35 +0800</pubDate>
-      
-      <guid>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99bind/</guid>
-      
-        <description>&lt;blockquote&gt;
-&lt;p&gt;文章类型：学习笔记&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;1bind的使用&#34;&gt;1.bind()的使用&lt;/h1&gt;
-&lt;p&gt;😏😏😏😏😏&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;        let obj = {
-            age: 18
-        }
-        function getInfo(name, job) {
-            console.log(name);
-            console.log(job);
-            console.log(this.age);
-        }
-        getInfo.bind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;bind在第一个参数之后的参数，可以直接从bind()传,也可以从bind()返回的函数上传，如上代码。&lt;/p&gt;
-&lt;h1 id=&#34;2bind参数&#34;&gt;2.bind()参数&lt;/h1&gt;
-&lt;p&gt;🤔🤔🤔🤔🤔&lt;/p&gt;
-&lt;h2 id=&#34;1thisarg&#34;&gt;（1）thisArg&lt;/h2&gt;
-&lt;p&gt;bind的第一个参数是bind被函数调用时作为this参数传给调用函数。如果bind()参数列表为空，或者thisArg为null或undefined, &lt;strong&gt;执行作用域的this&lt;/strong&gt; 就是新函数的this。如果使用 &lt;strong&gt;new操作符&lt;/strong&gt; 操作绑定函数，则会 &lt;strong&gt;忽略这个thisArg参数&lt;/strong&gt; 。当使用bind在setTimeout中创建一个函数时，作为thisArg传递的任何原始值都会被转换为object。-&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind&#34;&gt;MDN&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;1.bind的第一个参数是bind被函数调用时作为this参数传给调用函数&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;        let obj = {
-            age: 18
-        }
-        function getInfo() {
-            console.log(this); // {age: 18}
-        }
-        getInfo.bind(obj)();
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;此时调用函数 getInfo 中的 this 就是 bind() 中传入的 obj&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;2.bind()参数列表为空，或者thisArg为null或undefined,执行作用域的this就是新函数的this&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;        let obj = {
-            age: 18
-        }
-        function getInfo() {
-            console.log(this); // Window {}
-        }
-        getInfo.bind()();
-        getInfo.bind(null)();
-        getInfo.bind(undefined)();
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;此时bind的参数为 空 或 null 或 undefined，因为实际上 getInfo 是全局对象调用的，在这里也就是 window 对象，所以此时this就是指向 window 对象的。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;3.如果使用new操作符操作绑定函数，则会忽略这个thisArg参数&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;        let obj = {
-            age: 18
-        }
-        function getInfo() {
-            console.log(this); // getInfo {}
-        }
-        let a = getInfo.bind(obj)
-        let b = new a();
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;此时不管调用的时候传不传参数 obj，getInfo 中的 this 都是指向创建对象 b 的，这里就涉及到 new 构造函数创建对象的过程了，建议精读 &lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new&#34;&gt;MDN&lt;/a&gt; 这部分。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;4.当使用bind在setTimeout中创建一个函数时，作为thisArg传递的任何原始值都会被转换为object。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;        function A() {
-            this.name = &#39;星空海绵&#39;;
-        }
-        A.prototype.say = function () {
-            setTimeout(this.read.bind(this), 1000)
-        }
-        A.prototype.read = function () {
-            console.log(this.name);
-        }
-        let b = new A();
-        b.say();
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在默认情况下，使用 &lt;strong&gt;setTimeout()&lt;/strong&gt; 时，this 关键字会指向 window （或 global）对象。当类的方法中需要 this 指向类的实例时，你可能需要显式地把 this 绑定到回调函数，就不会丢失该实例的引用。&lt;/p&gt;
-&lt;h2 id=&#34;2arg1-arg2-&#34;&gt;（2）arg1, arg2, &amp;hellip;&lt;/h2&gt;
-&lt;p&gt;当bind被函数调用时，传给调用函数的参数列表&lt;/p&gt;
-&lt;h1 id=&#34;3手写-bind&#34;&gt;3.手写 bind()&lt;/h1&gt;
-&lt;p&gt;😎😎😎😎😎&lt;/p&gt;
-&lt;h2 id=&#34;1不支持-new-调用-bind-返回的函数&#34;&gt;(1)不支持 new 调用 bind() 返回的函数&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;        let obj = {
-            age: 18
-        }
-        function getInfo(name, job) {
-            console.log(name);
-            console.log(job);
-            console.log(this);
-            console.log(this.age);
-        }
-        // getInfo.call(obj, &#39;星空海绵&#39;, &#39;Software Engineer&#39;);
-        Function.prototype.myBind = function (context) {
-            var _that = this,
-                slice = Array.prototype.slice,
-                args = slice.call(arguments, 1);
-            context = context || window;
-            return function () {
-                return _that.apply(context, args.concat(slice.call(arguments)))
-            }
-        }
-        var a = getInfo.myBind(obj, &#39;星空海绵&#39;, &#39;Software Engineer&#39;),
-            b = new a(), // 上面getInfo中的this打印结果为 obj 对象
-            c = getInfo.bind(obj, &#39;星空海绵&#39;, &#39;Software Engineer&#39;),
-            d = new c(); // 上面getInfo中的this打印结果为新创建的 d 对象
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;从上面的代码中我们可以看出来，此时当使用 new 调用时，并不会忽略掉传入的第一个参数 obj，调用函数的 this 一直是传入的第一个参数，不符合上面列举的原生的 bind() 第一个参数的第3条，当使用 new 调用时，会忽略第一个参数。&lt;/p&gt;
-&lt;h2 id=&#34;2支持-new-调用&#34;&gt;(2)支持 new 调用&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;上面第一种其实已完成了原生bind的基本功能，可以改变this指向了，但是不支持new调用的时候，那我们来思考一下为什么。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;当使用 &lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new&#34;&gt;new&lt;/a&gt; 调用我们写的myBind函数返回的函数时，这就是new通过构造函数创建一个对象的过程，&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new&#34;&gt;MDN new创建对象过程&lt;/a&gt;                           &lt;br&gt;
-1.首先创建一个空对象（{}）&lt;br&gt;
-2.链接该对象（设置该对象的constructor）到另一个对象&lt;br&gt;
-3.将步骤1新创建的对象作为this的上下文    &lt;br&gt;
-4.如果该函数没有返回对象，则返回this&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;看了上面new创建对象的过程，主要是第3步，将新创建的对象作为this的上下文，我们再看上面的代码，返回的函数中的this如果你去打印的话发现确实是空对象，符合上面new的创建过程，但是，下面一行用apply将调用函数getInfo中的this指向改到了传入的obj，这就不对了，所以说当用new调用的时候，此时就应该忽略obj，那么我们就需要判断new调用和不调用的时候就行了，ES6中有 new.target 可以判断一个函数是否被new调用过，那么ES5中是否有方法可以判断，没有的话那么模拟一个new.target就行了&lt;/p&gt;
-&lt;p&gt;用new.target的话是下面这两种写法都行：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;        let obj = {
-            age: 18
-        }
-        function getInfo(name, job) {
-            console.log(name);
-            console.log(job);
-            console.log(this);
-            console.log(this.age);
-        }
-        // getInfo.call(obj, &#39;星空海绵&#39;, &#39;Software Engineer&#39;);
-        Function.prototype.myBind = function (context) {
-            var _that = this,
-                slice = Array.prototype.slice,
-                args = slice.call(arguments, 1),
-                obj = {};
-            context = context || window;
-            obj.__proto__.constructor = _that.prototype.constructor;
-            return function () {
-                if (new.target) {
-                    return _that.apply(obj, args.concat(slice.call(arguments)))
-                } else {
-                    return _that.apply(context, args.concat(slice.call(arguments)))
-                }
-
-            }
-        }
-        var a = getInfo.myBind(obj, &#39;星空海绵&#39;, &#39;Software Engineer&#39;),
-            b = new a(), // 上面getInfo中的this打印结果为 b 对象
-            c = getInfo.bind(obj, &#39;星空海绵&#39;, &#39;Software Engineer&#39;),
-            d = new c(); // 上面getInfo中的this打印结果为新创建的 d 对象
-&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;        Function.prototype.myBind = function (context) {
-            var _that = this,
-                args = [].slice.call(arguments, 1);
-            context = context || window;
-            return function () {
-                if (new.target) {
-                    return new _that(...args.concat(...arguments))
-                } else {
-                    return _that.apply(context, args.concat([].slice.call(arguments)))
-                }
-
-            }
-        }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;不使用 ES6 的new.target:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;        let obj = {
-            age: 18
-        }
-        function getInfo(name, job) {
-            console.log(name);
-            console.log(job);
-            console.log(this);
-            console.log(this.age);
-        }
-        // getInfo.call(obj, &#39;星空海绵&#39;, &#39;Software Engineer&#39;);
-        Function.prototype.myBind = function (context) {
-            var _that = this,
-                args = [].slice.call(arguments, 1);
-            context = context || window;
-            return function F() {
-                if (this instanceof F) {
-                    return new _that(...[...args, ...arguments]);
-                }
-                return _that.apply(context, [...args, ...arguments])
-            }
-        }
-        // getInfo.myBind(obj, &#39;星空海绵&#39;, &#39;Software Engineer&#39;)()
-        var a = getInfo.myBind(obj, &#39;星空海绵&#39;, &#39;Software Engineer&#39;),
-            b = new a(), // 上面getInfo中的this打印结果为 b 对象
-            c = getInfo.bind(obj, &#39;星空海绵&#39;, &#39;Software Engineer&#39;),
-            d = new c(); // 上面getInfo中的this打印结果为新创建的 d 对象
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面代码中this如果在F构造函数的原型链上，那就证明使用new调用了myBind返回的构造函数。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;总结：手写bind遇到new调用的问题，关键是需要理解new调用构造函数创建对象的过程。&lt;/p&gt;
-&lt;/blockquote&gt;
 </description>
       
     </item>

@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Wed, 13 Jan 2021 22:06:38 +0800</lastBuildDate><atom:link href="https://xkhm.net/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Jan 2021 08:35:17 +0800</lastBuildDate><atom:link href="https://xkhm.net/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JS基础之继承</title>
+      <link>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E7%BB%A7%E6%89%BF/</link>
+      <pubDate>Thu, 14 Jan 2021 08:35:17 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E7%BB%A7%E6%89%BF/</guid>
+      <description>1.继承 // 1. 原型链继承 function A() { } function B() { } B.prototype = new A(); let a = new B(); // 2. 经典继承 function A() { } function B() { A.call(this) } let a = new B(); // 3.组合继承 function A() { } function B() { A.call(this) } B.prototype = new A(); let a</description>
+    </item>
+    
     <item>
       <title>编程思想</title>
       <link>https://xkhm.net/post/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/</link>
