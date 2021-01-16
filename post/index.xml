@@ -23,7 +23,7 @@
       <pubDate>Thu, 14 Jan 2021 08:35:17 +0800</pubDate>
       
       <guid>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E7%BB%A7%E6%89%BF/</guid>
-      <description>1.继承 // 1. 原型链继承 function A() { } function B() { } B.prototype = new A(); let a = new B(); // 2. 经典继承 function A() { } function B() { A.call(this) } let a = new B(); // 3.组合继承 function A() { } function B() { A.call(this) } B.prototype = new A(); let a</description>
+      <description>1.原型链继承 // 1. 原型链继承 function A() { } function B() { } B.prototype = new A(); let a = new B(); 缺点：1.原型中包含的引用值会在实例间共享2.子类型在实例化时不能给父类型构造</description>
     </item>
     
     <item>

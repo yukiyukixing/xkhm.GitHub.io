@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="XKHM" />
-  <meta name="description" content="1.继承 // 1. 原型链继承 function A() { } function B() { } B.prototype = new A(); let a = new B(); // 2. 经典继承 function A() { } function B() { A.call(this) } let a = new B(); // 3.组合继承 function A() { } function B() { A.call(this) } B.prototype = new A(); let a" />
+  <meta name="description" content="1.原型链继承 // 1. 原型链继承 function A() { } function B() { } B.prototype = new A(); let a = new B(); 缺点：1.原型中包含的引用值会在实例间共享2.子类型在实例化时不能给父类型构造" />
 
   <meta name="keywords" content="Hugo" />
 
@@ -59,23 +59,23 @@
 
 
 <meta property="og:title" content="JS基础之继承" />
-<meta property="og:description" content="1.继承 // 1. 原型链继承 function A() { } function B() { } B.prototype = new A(); let a = new B(); // 2. 经典继承 function A() { } function B() { A.call(this) } let a = new B(); // 3.组合继承 function A() { } function B() { A.call(this) } B.prototype = new A(); let a" />
+<meta property="og:description" content="1.原型链继承 // 1. 原型链继承 function A() { } function B() { } B.prototype = new A(); let a = new B(); 缺点：1.原型中包含的引用值会在实例间共享2.子类型在实例化时不能给父类型构造" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E7%BB%A7%E6%89%BF/" />
 <meta property="article:published_time" content="2021-01-14T08:35:17+08:00" />
 <meta property="article:modified_time" content="2021-01-14T08:35:17+08:00" />
 <meta itemprop="name" content="JS基础之继承">
-<meta itemprop="description" content="1.继承 // 1. 原型链继承 function A() { } function B() { } B.prototype = new A(); let a = new B(); // 2. 经典继承 function A() { } function B() { A.call(this) } let a = new B(); // 3.组合继承 function A() { } function B() { A.call(this) } B.prototype = new A(); let a">
+<meta itemprop="description" content="1.原型链继承 // 1. 原型链继承 function A() { } function B() { } B.prototype = new A(); let a = new B(); 缺点：1.原型中包含的引用值会在实例间共享2.子类型在实例化时不能给父类型构造">
 <meta itemprop="datePublished" content="2021-01-14T08:35:17+08:00" />
 <meta itemprop="dateModified" content="2021-01-14T08:35:17+08:00" />
-<meta itemprop="wordCount" content="95">
+<meta itemprop="wordCount" content="581">
 
 
 
 <meta itemprop="keywords" content="JavaScript,面向对象,继承," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="JS基础之继承"/>
-<meta name="twitter:description" content="1.继承 // 1. 原型链继承 function A() { } function B() { } B.prototype = new A(); let a = new B(); // 2. 经典继承 function A() { } function B() { A.call(this) } let a = new B(); // 3.组合继承 function A() { } function B() { A.call(this) } B.prototype = new A(); let a"/>
+<meta name="twitter:description" content="1.原型链继承 // 1. 原型链继承 function A() { } function B() { } B.prototype = new A(); let a = new B(); 缺点：1.原型中包含的引用值会在实例间共享2.子类型在实例化时不能给父类型构造"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -434,36 +434,111 @@
 
     
     <div class="post-content">
-      <h1 id="1继承">1.继承</h1>
+      <h1 id="1原型链继承">1.原型链继承</h1>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">        <span style="color:#75715e">// 1. 原型链继承
 </span><span style="color:#75715e"></span>        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">A</span>() { }
         <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">B</span>() { }
         <span style="color:#a6e22e">B</span>.<span style="color:#a6e22e">prototype</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">A</span>();
         <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">B</span>();
-
-        <span style="color:#75715e">// 2. 经典继承
-</span><span style="color:#75715e"></span>
-        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">A</span>() { }
+</code></pre></div><blockquote>
+<p>缺点：<!-- raw HTML omitted -->1.原型中包含的引用值会在实例间共享<!-- raw HTML omitted -->2.子类型在实例化时不能给父类型构造函数传参</p>
+</blockquote>
+<h1 id="2盗用构造函数继承经典继承">2.盗用构造函数继承（经典继承）</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">        <span style="color:#75715e">// 2. 经典继承
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">A</span>(<span style="color:#a6e22e">params</span>) { }
         <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">B</span>() {
-            <span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">call</span>(<span style="color:#66d9ef">this</span>)
+            <span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">call</span>(<span style="color:#66d9ef">this</span>, <span style="color:#a6e22e">params</span>)
         }
         <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">B</span>();
-
-        <span style="color:#75715e">// 3.组合继承
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">A</span>() { }
+</code></pre></div><blockquote>
+<p>缺点：1.子类不能访问父类原型上定义的方法</p>
+</blockquote>
+<h1 id="3组合继承">3.组合继承</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">        <span style="color:#75715e">// 3.组合继承
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">A</span>(<span style="color:#a6e22e">params</span>) { }
         <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">B</span>() {
-            <span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">call</span>(<span style="color:#66d9ef">this</span>)
+            <span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">call</span>(<span style="color:#66d9ef">this</span>, <span style="color:#a6e22e">params</span>)
         }
         <span style="color:#a6e22e">B</span>.<span style="color:#a6e22e">prototype</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">A</span>();
         <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">B</span>()
-
-        <span style="color:#75715e">// 4.原型式继承
+</code></pre></div><blockquote>
+<p>缺点：1.存在效率问题，父类构造函数始终会被调用两次</p>
+</blockquote>
+<h1 id="4原型式继承">4.原型式继承</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">        <span style="color:#75715e">// 4.原型式继承
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
+            <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;星空海绵&#39;</span>,
+            <span style="color:#a6e22e">getName</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
+                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>
+            }
+        }
+        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">object</span>(<span style="color:#a6e22e">o</span>) {
+            <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">F</span>() { }
+            <span style="color:#a6e22e">F</span>.<span style="color:#a6e22e">prototype</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">o</span>;
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">F</span>();
+        }
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">object</span>(<span style="color:#a6e22e">obj</span>);
+</code></pre></div><blockquote>
+<p>Object.create的原理就是原型式继承</p>
+</blockquote>
+<blockquote>
+<p>缺点：原型式继承和原型链继承缺点一样，原型中包含的引用值会在实例间共享。</p>
+</blockquote>
+<blockquote>
+<p>优点：适合不需要单独创建构造函数，但是需要对象间共享信息的场景。</p>
+</blockquote>
+<h1 id="5寄生式继承">5.寄生式继承</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">        <span style="color:#75715e">// 5.寄生式继承
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
+            <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;星空海绵&#39;</span>
+        }
+        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">object</span>(<span style="color:#a6e22e">o</span>) {
+            <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">F</span>() { }
+            <span style="color:#a6e22e">F</span>.<span style="color:#a6e22e">prototype</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">o</span>;
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">F</span>();
+        }
+        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">A</span>(<span style="color:#a6e22e">o</span>) {
+            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">clone</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">object</span>(<span style="color:#a6e22e">o</span>);
+            <span style="color:#a6e22e">clone</span>.<span style="color:#a6e22e">getName</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>
+            }
+            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">clone</span>
+        }
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">A</span>(<span style="color:#a6e22e">obj</span>);
+</code></pre></div><blockquote>
+<p>缺点：寄生式继承给对象添加的函数会导致函数难以重用</p>
+</blockquote>
+<h1 id="6寄生式组合继承">6.寄生式组合继承</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">        <span style="color:#75715e">// 6.寄生式组合继承
 </span><span style="color:#75715e"></span>        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">object</span>(<span style="color:#a6e22e">o</span>) {
             <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">F</span>() { }
             <span style="color:#a6e22e">F</span>.<span style="color:#a6e22e">prototype</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">o</span>;
             <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">F</span>();
         }
-</code></pre></div>
+        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">inheritPrototype</span>(<span style="color:#a6e22e">B</span>, <span style="color:#a6e22e">A</span>) {
+            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">prototype</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">object</span>(<span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">prototype</span>);
+            <span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">constructor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">B</span>;
+            <span style="color:#a6e22e">B</span>.<span style="color:#a6e22e">prototype</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">prototype</span>;
+        }
+        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">A</span>(<span style="color:#a6e22e">params</span>) { }
+        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">B</span>() {
+            <span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">call</span>(<span style="color:#66d9ef">this</span>, <span style="color:#a6e22e">params</span>)
+        }
+        <span style="color:#a6e22e">inheritPrototype</span>(<span style="color:#a6e22e">B</span>, <span style="color:#a6e22e">A</span>);
+</code></pre></div><blockquote>
+<p>寄生式组合继承可以算是引用类型的最佳模式</p>
+</blockquote>
+<h1 id="7类继承">7.类继承</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">        <span style="color:#75715e">// 7.类继承
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">A</span>() {
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;星空海绵&#39;</span>
+        }
+        <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">B</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">A</span> { }
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">B</span>()
+</code></pre></div><blockquote>
+<p>ES6新增的语法，背后使用的依然是原型链。</p>
+</blockquote>
+
     </div>
 
     
