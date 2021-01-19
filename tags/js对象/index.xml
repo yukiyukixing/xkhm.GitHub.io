@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JS对象 on 星空海绵 - 星空浩瀚 | 海绵吸水</title>
+    <link>https://xkhm.net/tags/js%E5%AF%B9%E8%B1%A1/</link>
+    <description>Recent content in JS对象 on 星空海绵 - 星空浩瀚 | 海绵吸水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>星空海绵</copyright>
+    <lastBuildDate>Tue, 19 Jan 2021 21:53:51 +0800</lastBuildDate><atom:link href="https://xkhm.net/tags/js%E5%AF%B9%E8%B1%A1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JS基础之Proxy</title>
+      <link>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8Bproxy/</link>
+      <pubDate>Tue, 19 Jan 2021 21:53:51 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8Bproxy/</guid>
+      <description>前言：学完补充 参考资料： 1.Proxy 2.Proxy() 构造器 1.介绍 首先我们在学Proxy之前我们思考一下，以前我们不是有 Object.defineProperty() 方法吗，为什么又出现了一个类似功能的 Proxy ,一</description>
+    </item>
+    
+  </channel>
+</rss>

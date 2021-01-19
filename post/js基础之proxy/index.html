@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>星空海绵 - 星空浩瀚 | 海绵吸水</title>
+  <title>JS基础之Proxy - 星空海绵 - 星空浩瀚 | 海绵吸水</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -22,8 +22,9 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="xkhm" />
-  <meta name="description" content="Hugo XKHM" />
+<meta name="author" content="XKHM" />
+  <meta name="description" content="前言：学完补充 参考资料： 1.Proxy 2.Proxy() 构造器 1.介绍 首先我们在学Proxy之前我们思考一下，以前我们不是有 Object.defineProperty() 方法吗，为什么又出现了一个类似功能的 Proxy ,一" />
+
   <meta name="keywords" content="Hugo" />
 
 
@@ -34,8 +35,8 @@
 <meta name="generator" content="Hugo 0.79.0" />
 
 
-<link rel="canonical" href="https://xkhm.net/" />
-<link href="/index.xml" rel="alternate" type="application/rss+xml" title="星空海绵 - 星空浩瀚 | 海绵吸水" />
+<link rel="canonical" href="https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8Bproxy/" />
+
 
 
 
@@ -57,16 +58,24 @@
 
 
 
-<meta property="og:title" content="星空海绵 - 星空浩瀚 | 海绵吸水" />
-<meta property="og:description" content="Hugo XKHM" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://xkhm.net/" />
-<meta property="og:updated_time" content="2021-01-19T21:53:51+08:00" />
-<meta itemprop="name" content="星空海绵 - 星空浩瀚 | 海绵吸水">
-<meta itemprop="description" content="Hugo XKHM">
+<meta property="og:title" content="JS基础之Proxy" />
+<meta property="og:description" content="前言：学完补充 参考资料： 1.Proxy 2.Proxy() 构造器 1.介绍 首先我们在学Proxy之前我们思考一下，以前我们不是有 Object.defineProperty() 方法吗，为什么又出现了一个类似功能的 Proxy ,一" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8Bproxy/" />
+<meta property="article:published_time" content="2021-01-19T21:53:51+08:00" />
+<meta property="article:modified_time" content="2021-01-19T21:53:51+08:00" />
+<meta itemprop="name" content="JS基础之Proxy">
+<meta itemprop="description" content="前言：学完补充 参考资料： 1.Proxy 2.Proxy() 构造器 1.介绍 首先我们在学Proxy之前我们思考一下，以前我们不是有 Object.defineProperty() 方法吗，为什么又出现了一个类似功能的 Proxy ,一">
+<meta itemprop="datePublished" content="2021-01-19T21:53:51+08:00" />
+<meta itemprop="dateModified" content="2021-01-19T21:53:51+08:00" />
+<meta itemprop="wordCount" content="617">
+
+
+
+<meta itemprop="keywords" content="Proxy,JS对象,对象代理,JavaScript," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="星空海绵 - 星空浩瀚 | 海绵吸水"/>
-<meta name="twitter:description" content="Hugo XKHM"/>
+<meta name="twitter:title" content="JS基础之Proxy"/>
+<meta name="twitter:description" content="前言：学完补充 参考资料： 1.Proxy 2.Proxy() 构造器 1.介绍 首先我们在学Proxy之前我们思考一下，以前我们不是有 Object.defineProperty() 方法吗，为什么又出现了一个类似功能的 Proxy ,一"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -256,7 +265,7 @@
   <ul id="menu" class="menu">
     
     
-        <li class="menu-item active">
+        <li class="menu-item">
         
           
           
@@ -391,238 +400,194 @@
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
-          
-<section id="posts" class="posts">
-  
-  
+          <article class="post bg-white">
     
-  
-  
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
+    <header class="post-header">
+      <h1 class="post-title">JS基础之Proxy</h1>
       
-      <a class="post-link" href="/post/js%E5%9F%BA%E7%A1%80%E4%B9%8Bproxy/">JS基础之Proxy</a>
-    </h1>
+      <div class="post-meta">
+        <time datetime="2021-01-19" class="post-time">
+          2021-01-19
+        </time>
+        <div class="post-category">
+            <a href="https://xkhm.net/categories/javascript/"> JavaScript </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
     
-    <div class="post-meta">
-      <time datetime="2021-01-19" class="post-time">
-        2021-01-19
-      </time>
-      <div class="post-category">
-          <a href="https://xkhm.net/categories/javascript/"> JavaScript </a>
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1语法">（1）语法</a></li>
+    <li><a href="#2参数">（2）参数</a></li>
+    <li><a href="#3方法">（3）方法</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <blockquote>
+<p>前言：学完补充</p>
+</blockquote>
+<p>参考资料：</p>
+<ul>
+<li>
+<p>1.<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy">Proxy</a></p>
+</li>
+<li>
+<p>2.<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy/Proxy">Proxy() 构造器</a></p>
+</li>
+</ul>
+<h1 id="1介绍">1.介绍</h1>
+<blockquote>
+<p>首先我们在学<strong>Proxy</strong>之前我们思考一下，以前我们不是有 <strong>Object.defineProperty()</strong> 方法吗，为什么又出现了一个类似功能的 <strong>Proxy</strong> ,一般出现这种情况的基本上都是前者又某些不可弥补的缺点，所以出现了后者进行弥补加强，那么问题来了，为什么不优化前者，而是提出一个新的东西来呢，这个我也不知道，可能前者在优化的时候会出现某些问题，或者是说前者已经标准化了，再改的话会影响到之前使用这个方法的项目，所以就用了一个新的东西。</p>
+</blockquote>
+<p><a href="https://www.cnblogs.com/leftJS/p/11099478.html">Proxy相比于defineProperty的优势</a></p>
+<p>我们先来打印看下Proxy这个对象</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">dir</span>(Proxy);
+</code></pre></div><p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0859536b79f74ed68d9f73c7165e4acd~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
+<p>通过打印我们能看到Proxy就是一个普通的构造函数，但是注意Proxy下面有一个私有的 <strong>revocable</strong> 方法。</p>
+<blockquote>
+<p>Proxy对象用于创建一个对象的代理，从而实现基本操作的拦截和自定义（如属性查找，赋值，枚举，函数调用等）。</p>
+</blockquote>
+<h1 id="2语法参数方法">2.语法、参数、方法</h1>
+<h2 id="1语法">（1）语法</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Proxy(<span style="color:#a6e22e">target</span>, <span style="color:#a6e22e">handler</span>)
+</code></pre></div><h2 id="2参数">（2）参数</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>target</strong></td>
+<td style="text-align:center"><strong>要使用 Proxy 包装的目标对象（可以是任何类型的对象，包括原生数组，函数，甚至另一个代理）。</strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>handler</strong></td>
+<td style="text-align:center"><strong>一个通常以函数作为属性的对象，各属性中的函数分别定义了在执行各种操作时代理 p 的行为。</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>个人理解：<strong>hander</strong>就是用来劫持被代理对象的方法的</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handler</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">get</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">obj</span>, <span style="color:#a6e22e">prop</span>) {
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">prop</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">prop</span>] <span style="color:#f92672">:</span> <span style="color:#ae81ff">37</span>
+    }
+}
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Proxy({}, <span style="color:#a6e22e">handler</span>);
+<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">undefined</span>;
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">b</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;c&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">p</span>, <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">a</span>);
+</code></pre></div><!-- raw HTML omitted -->
+<blockquote>
+<p>思考：能不能用Proxy实现以下判断成立</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">3</span>) {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;星空海绵&#39;</span>);
+}
+</code></pre></div><h2 id="3方法">（3）方法</h2>
+<p><strong>Proxy.revocable()</strong> 创建一个可撤销的Proxy对象。</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">XKHM</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2021-01-19
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">原创文章，转载请注明文章作者和出处，谢谢！</a></span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://xkhm.net/tags/proxy/">Proxy</a>
+          <a href="https://xkhm.net/tags/js%E5%AF%B9%E8%B1%A1/">JS对象</a>
+          <a href="https://xkhm.net/tags/%E5%AF%B9%E8%B1%A1%E4%BB%A3%E7%90%86/">对象代理</a>
+          <a href="https://xkhm.net/tags/javascript/">JavaScript</a>
           
         </div>
+
       
-      
-      
-    </div>
-  </header>
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/%E4%BB%8E%E4%B8%80%E5%9C%BA%E6%AF%94%E8%B5%9B%E5%BC%80%E5%A7%8B%E5%A4%A7%E8%AF%9Djs%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+            <span class="next-text nav-default">从一场比赛开始大话JS面向对象</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
   
-  <div class="post-content">
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
     
-    <div class="post-summary">
-      前言：学完补充 参考资料： 1.Proxy 2.Proxy() 构造器 1.介绍 首先我们在学Proxy之前我们思考一下，以前我们不是有 Object.defineProperty() 方法吗，为什么又出现了一个类似功能的 Proxy ,一
-    </div>
-    <div class="read-more">
-      <a href="/post/js%E5%9F%BA%E7%A1%80%E4%B9%8Bproxy/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
 
   
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/%E4%BB%8E%E4%B8%80%E5%9C%BA%E6%AF%94%E8%B5%9B%E5%BC%80%E5%A7%8B%E5%A4%A7%E8%AF%9Djs%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">从一场比赛开始大话JS面向对象</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2021-01-14" class="post-time">
-        2021-01-14
-      </time>
-      <div class="post-category">
-          <a href="https://xkhm.net/categories/javascript/"> JavaScript </a>
-          
-        </div>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      前言：最近在看JS对象相关的东西，看到继承那，想继承到底有什么用，就搜了一下，搜到了下面这个故事，然后突发奇想，想着能不能用JS实现一下呢，
-    </div>
-    <div class="read-more">
-      <a href="/post/%E4%BB%8E%E4%B8%80%E5%9C%BA%E6%AF%94%E8%B5%9B%E5%BC%80%E5%A7%8B%E5%A4%A7%E8%AF%9Djs%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E7%BB%A7%E6%89%BF/">JS基础之继承</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2021-01-14" class="post-time">
-        2021-01-14
-      </time>
-      <div class="post-category">
-          <a href="https://xkhm.net/categories/javascript/"> JavaScript </a>
-          
-        </div>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      1.原型链继承 // 1. 原型链继承 function A() { } function B() { } B.prototype = new A(); let a = new B(); 缺点：1.原型中包含的引用值会在实例间共享2.子类型在实例化时不能给父类型构造
-    </div>
-    <div class="read-more">
-      <a href="/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E7%BB%A7%E6%89%BF/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/">编程思想</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2021-01-13" class="post-time">
-        2021-01-13
-      </time>
-      <div class="post-category">
-          <a href="https://xkhm.net/categories/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/"> 编程思想 </a>
-          
-        </div>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      1.JS中继承有什么作用 需要让JS中的对象能连起来 受Java抽象化思想的影响，设计出了继承， 编码过程中可扩展性非常重要，后面新需求扩展写出的
-    </div>
-    <div class="read-more">
-      <a href="/post/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/%E5%AE%9A%E5%9E%8B%E6%95%B0%E7%BB%84/">定型数组</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2021-01-12" class="post-time">
-        2021-01-12
-      </time>
-      <div class="post-category">
-          <a href="https://xkhm.net/categories/javascript/"> JavaScript </a>
-          
-        </div>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      1.定型数组 定型数组是ES新增的结构，目的是提升向原生库传输数据的效率。本质上是一种包含数值类型的数组。 （1）历史 随着浏览器的流行，需要使用
-    </div>
-    <div class="read-more">
-      <a href="/post/%E5%AE%9A%E5%9E%8B%E6%95%B0%E7%BB%84/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-</section>
-
-
-
-
-
-
-  
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-  <nav class="pagination">
-    <ul>
-      
-      <li  class="active" >
-        <a href="/">1</a>
-      </li>
-      
-      <li >
-        <a href="/page/2/">2</a>
-      </li>
-      
-      <li >
-        <a href="/page/3/">3</a>
-      </li>
-      
-      <li >
-        <a href="/page/4/">4</a>
-      </li>
-      
-      <li >
-        <a href="/page/5/">5</a>
-      </li>
-      
-    </ul>
-  </nav>
-
-  
-  
-
-
-
-
 
         </div>
       </div>

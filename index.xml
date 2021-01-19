@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Thu, 14 Jan 2021 23:14:19 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 19 Jan 2021 21:53:51 +0800</lastBuildDate>
     
         <atom:link href="https://xkhm.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -129,6 +129,87 @@
         <description>&lt;blockquote&gt;
 &lt;p&gt;一只小透明的前端开发（待补充）&lt;/p&gt;
 &lt;/blockquote&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>JS基础之Proxy</title>
+      <link>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8Bproxy/</link>
+      <pubDate>Tue, 19 Jan 2021 21:53:51 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8Bproxy/</guid>
+      
+        <description>&lt;blockquote&gt;
+&lt;p&gt;前言：学完补充&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;参考资料：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;1.&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy&#34;&gt;Proxy&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;2.&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy/Proxy&#34;&gt;Proxy() 构造器&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;1介绍&#34;&gt;1.介绍&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;首先我们在学&lt;strong&gt;Proxy&lt;/strong&gt;之前我们思考一下，以前我们不是有 &lt;strong&gt;Object.defineProperty()&lt;/strong&gt; 方法吗，为什么又出现了一个类似功能的 &lt;strong&gt;Proxy&lt;/strong&gt; ,一般出现这种情况的基本上都是前者又某些不可弥补的缺点，所以出现了后者进行弥补加强，那么问题来了，为什么不优化前者，而是提出一个新的东西来呢，这个我也不知道，可能前者在优化的时候会出现某些问题，或者是说前者已经标准化了，再改的话会影响到之前使用这个方法的项目，所以就用了一个新的东西。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/leftJS/p/11099478.html&#34;&gt;Proxy相比于defineProperty的优势&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;我们先来打印看下Proxy这个对象&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;dir&lt;/span&gt;(Proxy);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0859536b79f74ed68d9f73c7165e4acd~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;通过打印我们能看到Proxy就是一个普通的构造函数，但是注意Proxy下面有一个私有的 &lt;strong&gt;revocable&lt;/strong&gt; 方法。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Proxy对象用于创建一个对象的代理，从而实现基本操作的拦截和自定义（如属性查找，赋值，枚举，函数调用等）。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;2语法参数方法&#34;&gt;2.语法、参数、方法&lt;/h1&gt;
+&lt;h2 id=&#34;1语法&#34;&gt;（1）语法&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Proxy(&lt;span style=&#34;color:#a6e22e&#34;&gt;target&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;handler&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;2参数&#34;&gt;（2）参数&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;参数&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;target&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;要使用 Proxy 包装的目标对象（可以是任何类型的对象，包括原生数组，函数，甚至另一个代理）。&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;handler&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;一个通常以函数作为属性的对象，各属性中的函数分别定义了在执行各种操作时代理 p 的行为。&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;个人理解：&lt;strong&gt;hander&lt;/strong&gt;就是用来劫持被代理对象的方法的&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;handler&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;get&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;obj&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;prop&lt;/span&gt;) {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;prop&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;obj&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;obj&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;prop&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;37&lt;/span&gt;
+    }
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Proxy({}, &lt;span style=&#34;color:#a6e22e&#34;&gt;handler&lt;/span&gt;);
+&lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;b&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;undefined&lt;/span&gt;;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;b&lt;/span&gt;);
+&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;c&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;blockquote&gt;
+&lt;p&gt;思考：能不能用Proxy实现以下判断成立&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;) {
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;星空海绵&amp;#39;&lt;/span&gt;);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;3方法&#34;&gt;（3）方法&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Proxy.revocable()&lt;/strong&gt; 创建一个可撤销的Proxy对象。&lt;/p&gt;
 </description>
       
     </item>
@@ -4867,130 +4948,6 @@ methods: {
 &lt;li&gt;
 &lt;p&gt;animation / keyframes&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>CSS弹性盒子布局之Flex</title>
-      <link>https://xkhm.net/post/css%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90%E5%B8%83%E5%B1%80%E4%B9%8Bflex/</link>
-      <pubDate>Mon, 28 Dec 2020 22:59:54 +0800</pubDate>
-      
-      <guid>https://xkhm.net/post/css%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90%E5%B8%83%E5%B1%80%E4%B9%8Bflex/</guid>
-      
-        <description>&lt;blockquote&gt;
-&lt;p&gt;前言：flex布局永远滴神！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;1css盒子弹性布局&#34;&gt;1.CSS盒子弹性布局&lt;/h1&gt;
-&lt;p&gt;🤤弹性布局模型中，弹性容器的子元素可以在任何方向上排布，也可以“弹性伸缩”其尺寸，既可以增加尺寸以填满未使用的空间，也可以收缩尺寸避免父元素溢出。子元素的水平对齐和垂直对齐都能很方便的进行操控。通过嵌套这些框（水平框在垂直框内，或垂直框在水平框内）可以在两个维度上构建布局。——&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout&#34;&gt;MDN CSS 弹性盒子布局&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;但是 &lt;strong&gt;flexbox&lt;/strong&gt; 本质上是一种一维的布局，是因为一个 &lt;strong&gt;flexbox&lt;/strong&gt; 一次只能处理一个维度上的元素布局，一行或者一列，以上说的通过嵌套处理两个维度上的布局本质上还是处理了两个一维的布局。作为对比的是另外一个二维布局 &lt;strong&gt;CSS Grid Layout&lt;/strong&gt;，可以同时处理行和列上的布局。——&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox&#34;&gt;MDN flex 布局的基本概念&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;2flex布局&#34;&gt;2.flex布局&lt;/h1&gt;
-&lt;p&gt;😎😎😎😎😎&lt;/p&gt;
-&lt;h2 id=&#34;21-flex布局属性&#34;&gt;2.1 flex布局属性&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;属性&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;描述&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;值&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;默认值&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;作用对象&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex-direction&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;定义了flex容器的主轴的方向(正方向或反方向)&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;row，row-reverse，column，column-reverse&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;row&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex容器&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex-wrap&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;项目太大而无法全部显示在一行中，可以通过设置flex-wrap进行换行显示&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;nowrap，wrap，wrap-reverse，&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;nowrap&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex容器&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex-flow&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex-direction 和 flex-wrap 组合简写属性 flex-flow&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;上面两个属性值进行组合&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;row nowrap&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex容器&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;align-items&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex-direction 和 flex-wrap 组合简写属性 flex-flow&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;上面两个属性值进行组合&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;row nowrap&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex容器&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;justify-content&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex-direction 和 flex-wrap 组合简写属性 flex-flow&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;上面两个属性值进行组合&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;row nowrap&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex容器&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;align-content&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex-direction 和 flex-wrap 组合简写属性 flex-flow&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;上面两个属性值进行组合&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;row nowrap&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex容器&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex-grow&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;为整数时，以 flex-basis 为基础，沿主轴方向增长尺寸&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;number&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex子项上&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex-shrink&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;处理flex子项收缩的问题&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;number&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex子项上&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex-basis&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;定义flex子项的空间大小&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;auto，number&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;auto&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex子项上&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex-grow，flex-shrink，flex-basis组合简写属性&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;单元格&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;单元格&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex子项上&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;order&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex-grow，flex-shrink，flex-basis组合简写属性&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;单元格&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;单元格&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex子项上&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;align-self&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex-grow，flex-shrink，flex-basis组合简写属性&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;单元格&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;单元格&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;flex子项上&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;参考文档：&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;1.&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout&#34;&gt;CSS 弹性盒子布局&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;2.&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox&#34;&gt;flex 布局的基本概念&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
       
