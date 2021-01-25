@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Mon, 25 Jan 2021 21:58:47 +0800</lastBuildDate><atom:link href="https://xkhm.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Jan 2021 07:41:58 +0800</lastBuildDate><atom:link href="https://xkhm.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>日常感悟</title>
+      <link>https://xkhm.net/tags/%E6%97%A5%E5%B8%B8%E6%84%9F%E6%82%9F/</link>
+      <pubDate>Tue, 26 Jan 2021 07:41:58 +0800</pubDate>
+      
+      <guid>https://xkhm.net/tags/%E6%97%A5%E5%B8%B8%E6%84%9F%E6%82%9F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>读书</title>
+      <link>https://xkhm.net/tags/%E8%AF%BB%E4%B9%A6/</link>
+      <pubDate>Tue, 26 Jan 2021 07:41:58 +0800</pubDate>
+      
+      <guid>https://xkhm.net/tags/%E8%AF%BB%E4%B9%A6/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>windows</title>
       <link>https://xkhm.net/tags/windows/</link>
@@ -167,24 +185,6 @@
       <pubDate>Thu, 07 Jan 2021 21:50:29 +0800</pubDate>
       
       <guid>https://xkhm.net/tags/%E6%89%8B%E5%86%99promise/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>提桶</title>
-      <link>https://xkhm.net/tags/%E6%8F%90%E6%A1%B6/</link>
-      <pubDate>Thu, 07 Jan 2021 21:50:29 +0800</pubDate>
-      
-      <guid>https://xkhm.net/tags/%E6%8F%90%E6%A1%B6/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Event Loop</title>
-      <link>https://xkhm.net/tags/event-loop/</link>
-      <pubDate>Mon, 04 Jan 2021 22:56:54 +0800</pubDate>
-      
-      <guid>https://xkhm.net/tags/event-loop/</guid>
       <description></description>
     </item>
     
