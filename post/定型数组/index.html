@@ -68,7 +68,7 @@
 <meta itemprop="description" content="1.定型数组 定型数组是ES新增的结构，目的是提升向原生库传输数据的效率。本质上是一种包含数值类型的数组。 （1）历史 随着浏览器的流行，需要使用">
 <meta itemprop="datePublished" content="2021-01-12T21:21:51+08:00" />
 <meta itemprop="dateModified" content="2021-01-12T21:21:51+08:00" />
-<meta itemprop="wordCount" content="780">
+<meta itemprop="wordCount" content="781">
 
 
 
@@ -453,7 +453,7 @@
 <p>JS API基于OpenGL ES2.0规范定义了一套新的可以处理复杂图形和3D程序的API，被命名为WebGL。早期版本中，JS的数组与原生数组之前不匹配，会出现性能问题，JS默认双精度浮点格式传递它们的数值，而到WebGL这边使用时，需要进行转换，需要花费大量的时间。</p>
 <h3 id="2定型数组">2.定型数组</h3>
 <p>为了解决上面这个问题，Mozilla实现了 <strong>CanvasFloatArray</strong>**
-CanvasFloatArray**，这是一个提供JS接口的、C语言风格的浮点值数组，这个类型能直接传给图形程序API，最终，**CanvasFloatArray** 变成了 **Float32Array**，也是定型数组中可用的第一个“类型”。</p>
+CanvasFloatArray**，这是一个提供JS接口的、C语言风格的浮点值数组，这个类型能直接传给图形程序API，最终，**CanvasFloatArray** 变成了 **Float32Array**，也是定型数组中可用的第一个“类型”。测</p>
 <h2 id="2arraybuffer">（2）ArrayBuffer</h2>
 <p><strong>Float32Array</strong> 实际上是一种“视图”，可以允许JS运行时访问一块名为 <strong>ArrayBuffer</strong> 的预分配内存。<strong>ArrayBuffer</strong> 是所有定型数组及视图引用的基本单位。</p>
 <blockquote>

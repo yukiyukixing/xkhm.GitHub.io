@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Tue, 26 Jan 2021 07:41:58 +0800</lastBuildDate><atom:link href="https://xkhm.net/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Feb 2021 21:16:30 +0800</lastBuildDate><atom:link href="https://xkhm.net/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript</title>
+      <link>https://xkhm.net/categories/javascript/</link>
+      <pubDate>Tue, 02 Feb 2021 21:16:30 +0800</pubDate>
+      
+      <guid>https://xkhm.net/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>日常感悟</title>
       <link>https://xkhm.net/categories/%E6%97%A5%E5%B8%B8%E6%84%9F%E6%82%9F/</link>
@@ -23,15 +32,6 @@
       <pubDate>Mon, 25 Jan 2021 21:58:47 +0800</pubDate>
       
       <guid>https://xkhm.net/categories/windows/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JavaScript</title>
-      <link>https://xkhm.net/categories/javascript/</link>
-      <pubDate>Tue, 19 Jan 2021 21:53:51 +0800</pubDate>
-      
-      <guid>https://xkhm.net/categories/javascript/</guid>
       <description></description>
     </item>
     
