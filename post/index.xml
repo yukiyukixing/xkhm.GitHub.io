@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Tue, 02 Feb 2021 21:16:30 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Feb 2021 18:41:11 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>什么是前端？</title>
+      <link>https://xkhm.net/post/%E4%BB%80%E4%B9%88%E6%98%AF%E5%89%8D%E7%AB%AF/</link>
+      <pubDate>Sun, 07 Feb 2021 18:41:11 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/%E4%BB%80%E4%B9%88%E6%98%AF%E5%89%8D%E7%AB%AF/</guid>
+      <description>前言：做前端的你是否再某一刻思考过这个问题，什么是前端？并且你自己能给出一个自己觉得OK的答案吗？ 我是看见大漠老师前端路上的旅行这篇文章，我</description>
+    </item>
+    
     <item>
       <title>JS过滤树形结构数据</title>
       <link>https://xkhm.net/post/js%E8%BF%87%E6%BB%A4%E6%A0%91%E5%BD%A2%E7%BB%93%E6%9E%84%E6%95%B0%E6%8D%AE/</link>
@@ -177,15 +186,6 @@
       
       <guid>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99bind/</guid>
       <description>文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;); bind在第一个参数之</description>
-    </item>
-    
-    <item>
-      <title>Vue从入门到出门</title>
-      <link>https://xkhm.net/post/vue%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%87%BA%E9%97%A8/</link>
-      <pubDate>Thu, 24 Dec 2020 22:16:35 +0800</pubDate>
-      
-      <guid>https://xkhm.net/post/vue%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%87%BA%E9%97%A8/</guid>
-      <description>前言：人家都开始上vue3.0了，我还在重学vue2.0，啊这🤡🤡 提醒：个人学习笔记，适合随手翻阅，精读需考量。 1.手摸手（左手摸右手）搭建</description>
     </item>
     
   </channel>
