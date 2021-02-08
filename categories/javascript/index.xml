@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Tue, 02 Feb 2021 21:16:30 +0800</lastBuildDate><atom:link href="https://xkhm.net/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Feb 2021 11:01:09 +0800</lastBuildDate><atom:link href="https://xkhm.net/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>后生可畏</title>
+      <link>https://xkhm.net/post/%E5%90%8E%E7%94%9F%E5%8F%AF%E7%95%8F/</link>
+      <pubDate>Mon, 08 Feb 2021 11:01:09 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/%E5%90%8E%E7%94%9F%E5%8F%AF%E7%95%8F/</guid>
+      <description>做猿和做人有趣很重要 函数式编程永远滴神 当年咱在十里八乡，那可是有名的俊后生。 let slogan = { lastSentance: &amp;#39;牛年掘金沸点游&amp;#39;, nextSentance: &amp;#39;成为大</description>
+    </item>
+    
     <item>
       <title>JS过滤树形结构数据</title>
       <link>https://xkhm.net/post/js%E8%BF%87%E6%BB%A4%E6%A0%91%E5%BD%A2%E7%BB%93%E6%9E%84%E6%95%B0%E6%8D%AE/</link>
