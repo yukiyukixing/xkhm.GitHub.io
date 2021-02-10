@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Tue, 09 Feb 2021 10:27:32 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Feb 2021 20:04:58 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>学习方法论</title>
+      <link>https://xkhm.net/post/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E8%AE%BA/</link>
+      <pubDate>Wed, 10 Feb 2021 20:04:58 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E8%AE%BA/</guid>
+      <description>待更新 待思考总结</description>
+    </item>
+    
     <item>
       <title>面试分析和项目分析</title>
       <link>https://xkhm.net/post/%E9%9D%A2%E8%AF%95%E5%88%86%E6%9E%90%E5%92%8C%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/</link>
@@ -177,15 +186,6 @@
       
       <guid>https://xkhm.net/post/css%E5%9F%BA%E7%A1%80/</guid>
       <description>1.盒模型 MDN 盒模型 （1）.什么是CSS 盒模型? 块级盒子（Block box）和内联盒子（inline box） 完整的 CSS 盒模型应用于块级盒子，内联</description>
-    </item>
-    
-    <item>
-      <title>CSS弹性盒子布局之Flex</title>
-      <link>https://xkhm.net/post/css%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90%E5%B8%83%E5%B1%80%E4%B9%8Bflex/</link>
-      <pubDate>Mon, 28 Dec 2020 22:59:54 +0800</pubDate>
-      
-      <guid>https://xkhm.net/post/css%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90%E5%B8%83%E5%B1%80%E4%B9%8Bflex/</guid>
-      <description>前言：flex布局永远滴神！ 1.CSS盒子弹性布局 🤤弹性布局模型中，弹性容器的子元素可以在任何方向上排布，也可以“弹性伸缩”其尺寸，既可以增</description>
     </item>
     
   </channel>
