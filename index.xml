@@ -353,6 +353,7 @@ npm install --save-dev ts-loader
 &lt;blockquote&gt;
 &lt;p&gt;本质就是webpack中有模块专门对页面更新做了监听，只要代码修改就对页面中修改的那块做出更新，当然实现中肯定加入了很多小细节。&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;完！&lt;/strong&gt;&lt;/p&gt;
 </description>
       
     </item>
