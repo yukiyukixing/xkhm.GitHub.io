@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>打包工具 on 星空海绵 - 星空浩瀚 | 海绵吸水</title>
+    <link>https://xkhm.net/tags/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 打包工具 on 星空海绵 - 星空浩瀚 | 海绵吸水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>星空海绵</copyright>
+    <lastBuildDate>Fri, 19 Feb 2021 16:06:51 +0800</lastBuildDate><atom:link href="https://xkhm.net/tags/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>前端工程化之webpack4概念</title>
+      <link>https://xkhm.net/post/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%B9%8Bwebpack4%E6%A6%82%E5%BF%B5/</link>
+      <pubDate>Fri, 19 Feb 2021 16:06:51 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%B9%8Bwebpack4%E6%A6%82%E5%BF%B5/</guid>
+      <description>下定决心，就勇往直前。 webpack概念学习掌握。 webpack4官方文档 1.webpack是什么？ webpack是一个现代的JavaScr</description>
+    </item>
+    
+  </channel>
+</rss>

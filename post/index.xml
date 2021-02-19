@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Wed, 10 Feb 2021 20:04:58 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Feb 2021 16:06:51 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>前端工程化之webpack4概念</title>
+      <link>https://xkhm.net/post/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%B9%8Bwebpack4%E6%A6%82%E5%BF%B5/</link>
+      <pubDate>Fri, 19 Feb 2021 16:06:51 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%B9%8Bwebpack4%E6%A6%82%E5%BF%B5/</guid>
+      <description>下定决心，就勇往直前。 webpack概念学习掌握。 webpack4官方文档 1.webpack是什么？ webpack是一个现代的JavaScr</description>
+    </item>
+    
     <item>
       <title>学习方法论</title>
       <link>https://xkhm.net/post/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E8%AE%BA/</link>
@@ -177,15 +186,6 @@
       
       <guid>https://xkhm.net/post/js%E4%B9%8B%E6%97%A5%E5%B8%B8%E8%A7%A3%E9%A2%98/</guid>
       <description>前言：好记性不如烂笔头，知识来自于点点滴滴的记录 1.取出对象中一部分放到另一个对象中 今天下午在掘金摸鱼的时候，看见有一个小同学发了一个沸点 嗯</description>
-    </item>
-    
-    <item>
-      <title>CSS基础</title>
-      <link>https://xkhm.net/post/css%E5%9F%BA%E7%A1%80/</link>
-      <pubDate>Tue, 29 Dec 2020 22:08:43 +0800</pubDate>
-      
-      <guid>https://xkhm.net/post/css%E5%9F%BA%E7%A1%80/</guid>
-      <description>1.盒模型 MDN 盒模型 （1）.什么是CSS 盒模型? 块级盒子（Block box）和内联盒子（inline box） 完整的 CSS 盒模型应用于块级盒子，内联</description>
     </item>
     
   </channel>
