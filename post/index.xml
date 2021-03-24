@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Fri, 19 Feb 2021 16:06:51 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Mar 2021 00:21:10 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>进一寸有一寸的欢喜，怕什么真理无穷</title>
+      <link>https://xkhm.net/post/%E8%BF%9B%E4%B8%80%E5%AF%B8%E6%9C%89%E4%B8%80%E5%AF%B8%E7%9A%84%E6%AC%A2%E5%96%9C%E6%80%95%E4%BB%80%E4%B9%88%E7%9C%9F%E7%90%86%E6%97%A0%E7%A9%B7/</link>
+      <pubDate>Thu, 25 Mar 2021 00:21:10 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/%E8%BF%9B%E4%B8%80%E5%AF%B8%E6%9C%89%E4%B8%80%E5%AF%B8%E7%9A%84%E6%AC%A2%E5%96%9C%E6%80%95%E4%BB%80%E4%B9%88%E7%9C%9F%E7%90%86%E6%97%A0%E7%A9%B7/</guid>
+      <description>不忘初心，方得始终。</description>
+    </item>
+    
     <item>
       <title>前端工程化之webpack4概念</title>
       <link>https://xkhm.net/post/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%B9%8Bwebpack4%E6%A6%82%E5%BF%B5/</link>
@@ -177,15 +186,6 @@
       
       <guid>https://xkhm.net/post/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E5%92%8C%E6%95%88%E7%8E%87/</guid>
       <description>前言，一般情况下，当一个人想更优秀时，他就会去学习怎样在有限的时间里可以处理更多的事情，这就涉及到了时间管理和效率的问题，我最近也一直在思考</description>
-    </item>
-    
-    <item>
-      <title>JS之日常解题</title>
-      <link>https://xkhm.net/post/js%E4%B9%8B%E6%97%A5%E5%B8%B8%E8%A7%A3%E9%A2%98/</link>
-      <pubDate>Thu, 31 Dec 2020 22:06:11 +0800</pubDate>
-      
-      <guid>https://xkhm.net/post/js%E4%B9%8B%E6%97%A5%E5%B8%B8%E8%A7%A3%E9%A2%98/</guid>
-      <description>前言：好记性不如烂笔头，知识来自于点点滴滴的记录 1.取出对象中一部分放到另一个对象中 今天下午在掘金摸鱼的时候，看见有一个小同学发了一个沸点 嗯</description>
     </item>
     
   </channel>

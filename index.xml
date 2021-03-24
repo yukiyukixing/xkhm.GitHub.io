@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Fri, 19 Feb 2021 16:06:51 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 25 Mar 2021 00:21:10 +0800</lastBuildDate>
     
         <atom:link href="https://xkhm.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -131,6 +131,20 @@
       
         <description>&lt;blockquote&gt;
 &lt;p&gt;一个有趣有梦想的前端海绵星人🐱‍🚀🐱‍🚀🐱‍🚀🐱‍🚀🐱‍🚀❤🧡💛💙💚💜🖤❣💕💞💓💗💖💘💝💟💌。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>进一寸有一寸的欢喜，怕什么真理无穷</title>
+      <link>https://xkhm.net/post/%E8%BF%9B%E4%B8%80%E5%AF%B8%E6%9C%89%E4%B8%80%E5%AF%B8%E7%9A%84%E6%AC%A2%E5%96%9C%E6%80%95%E4%BB%80%E4%B9%88%E7%9C%9F%E7%90%86%E6%97%A0%E7%A9%B7/</link>
+      <pubDate>Thu, 25 Mar 2021 00:21:10 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/%E8%BF%9B%E4%B8%80%E5%AF%B8%E6%9C%89%E4%B8%80%E5%AF%B8%E7%9A%84%E6%AC%A2%E5%96%9C%E6%80%95%E4%BB%80%E4%B9%88%E7%9C%9F%E7%90%86%E6%97%A0%E7%A9%B7/</guid>
+      
+        <description>&lt;blockquote&gt;
+&lt;p&gt;不忘初心，方得始终。&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
       
@@ -1610,35 +1624,6 @@ npm install --save-dev ts-loader
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;遇到一个问题：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://static01.imgkr.com/temp/588f3445e9df4d16856c19c412b1f551.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;多运行几次会发现结果出人意料&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>定型数组</title>
-      <link>https://xkhm.net/post/%E5%AE%9A%E5%9E%8B%E6%95%B0%E7%BB%84/</link>
-      <pubDate>Tue, 12 Jan 2021 21:21:51 +0800</pubDate>
-      
-      <guid>https://xkhm.net/post/%E5%AE%9A%E5%9E%8B%E6%95%B0%E7%BB%84/</guid>
-      
-        <description>&lt;h1 id=&#34;1定型数组&#34;&gt;1.定型数组&lt;/h1&gt;
-&lt;p&gt;定型数组是ES新增的结构，目的是&lt;strong&gt;提升向原生库传输数据的效率&lt;/strong&gt;。本质上是一种包含数值类型的数组。&lt;/p&gt;
-&lt;h2 id=&#34;1历史&#34;&gt;（1）历史&lt;/h2&gt;
-&lt;p&gt;随着浏览器的流行，需要使用浏览器来运行复杂的3D程序以及渲染复杂的图形。&lt;/p&gt;
-&lt;h3 id=&#34;1webgl&#34;&gt;1.WebGL&lt;/h3&gt;
-&lt;p&gt;JS API基于OpenGL ES2.0规范定义了一套新的可以处理复杂图形和3D程序的API，被命名为WebGL。早期版本中，JS的数组与原生数组之前不匹配，会出现性能问题，JS默认双精度浮点格式传递它们的数值，而到WebGL这边使用时，需要进行转换，需要花费大量的时间。&lt;/p&gt;
-&lt;h3 id=&#34;2定型数组&#34;&gt;2.定型数组&lt;/h3&gt;
-&lt;p&gt;为了解决上面这个问题，Mozilla实现了 &lt;strong&gt;CanvasFloatArray&lt;/strong&gt;**
-CanvasFloatArray**，这是一个提供JS接口的、C语言风格的浮点值数组，这个类型能直接传给图形程序API，最终，**CanvasFloatArray** 变成了 **Float32Array**，也是定型数组中可用的第一个“类型”。测&lt;/p&gt;
-&lt;h2 id=&#34;2arraybuffer&#34;&gt;（2）ArrayBuffer&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Float32Array&lt;/strong&gt; 实际上是一种“视图”，可以允许JS运行时访问一块名为 &lt;strong&gt;ArrayBuffer&lt;/strong&gt; 的预分配内存。&lt;strong&gt;ArrayBuffer&lt;/strong&gt; 是所有定型数组及视图引用的基本单位。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;tips：SharedArrayBuffer是ArrayBuffer的一个变体，可以无须复制就在执行上下文间传递。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;ArrayBuffer&lt;/strong&gt; 是一个普通的JS构造函数，可以用于在内存中分配特定数量的字节空间。&lt;strong&gt;ArrayBuffer&lt;/strong&gt; 一经创建就不能再调整它的大小，但是可以使用 &lt;strong&gt;slice()&lt;/strong&gt; 复制其全部或者部分到新的一个实例中。&lt;/p&gt;
-&lt;p&gt;不能仅通过 &lt;strong&gt;ArrayBuffer&lt;/strong&gt; 的应用就读取或写入内容。要读取或写入 &lt;strong&gt;ArrayBuffer&lt;/strong&gt;，就必须通过视图。视图有不同的类型，但引用的都是 &lt;strong&gt;ArrayBuffer&lt;/strong&gt; 中存储的二进制数据。&lt;/p&gt;
-&lt;h2 id=&#34;3dataview&#34;&gt;（3）DataView&lt;/h2&gt;
-&lt;p&gt;第一种允许你读写 &lt;strong&gt;ArrayBuffer&lt;/strong&gt; 的视图是 &lt;strong&gt;DataView&lt;/strong&gt;。这个视图专为文件I/O和网络I/O设计，其API支持对缓冲数据的高度控制，但是型比喻其他类型的视图性能差一些。&lt;strong&gt;DataView&lt;/strong&gt; 对缓冲内容没有任何预设，也不能迭代。&lt;/p&gt;
 </description>
       
     </item>

@@ -7,22 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Fri, 19 Feb 2021 16:06:51 +0800</lastBuildDate><atom:link href="https://xkhm.net/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Mar 2021 00:21:10 +0800</lastBuildDate><atom:link href="https://xkhm.net/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>前端工程化</title>
-      <link>https://xkhm.net/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/</link>
-      <pubDate>Fri, 19 Feb 2021 16:06:51 +0800</pubDate>
+      <title>Believe</title>
+      <link>https://xkhm.net/categories/believe/</link>
+      <pubDate>Thu, 25 Mar 2021 00:21:10 +0800</pubDate>
       
-      <guid>https://xkhm.net/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/</guid>
+      <guid>https://xkhm.net/categories/believe/</guid>
       <description></description>
     </item>
     
     <item>
       <title>学习</title>
       <link>https://xkhm.net/categories/%E5%AD%A6%E4%B9%A0/</link>
-      <pubDate>Wed, 10 Feb 2021 20:04:58 +0800</pubDate>
+      <pubDate>Thu, 25 Mar 2021 00:21:10 +0800</pubDate>
       
       <guid>https://xkhm.net/categories/%E5%AD%A6%E4%B9%A0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>前端工程化</title>
+      <link>https://xkhm.net/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/</link>
+      <pubDate>Fri, 19 Feb 2021 16:06:51 +0800</pubDate>
+      
+      <guid>https://xkhm.net/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/</guid>
       <description></description>
     </item>
     
