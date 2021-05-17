@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Thu, 25 Mar 2021 00:21:10 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 17 May 2021 08:15:54 +0800</lastBuildDate>
     
         <atom:link href="https://xkhm.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -131,6 +131,80 @@
       
         <description>&lt;blockquote&gt;
 &lt;p&gt;一个有趣有梦想的前端海绵星人🐱‍🚀🐱‍🚀🐱‍🚀🐱‍🚀🐱‍🚀❤🧡💛💙💚💜🖤❣💕💞💓💗💖💘💝💟💌。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>跟着尤大学前端，行！</title>
+      <link>https://xkhm.net/post/%E8%B7%9F%E7%9D%80%E5%B0%A4%E5%A4%A7%E5%AD%A6%E5%89%8D%E7%AB%AF%E8%A1%8C/</link>
+      <pubDate>Mon, 17 May 2021 08:15:54 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/%E8%B7%9F%E7%9D%80%E5%B0%A4%E5%A4%A7%E5%AD%A6%E5%89%8D%E7%AB%AF%E8%A1%8C/</guid>
+      
+        <description>&lt;blockquote&gt;
+&lt;p&gt;个人记录。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;1简介&#34;&gt;1.简介&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;冥冥之中自有安排，突然不知从哪看见尤大的直播链接，晚上准时收看，结果感受颇深，我还记了一些笔记，总体来说还是不错的。尤大这名字一摆出来，也知道不会错。学艺术史的尤大，写出Vue，还是很强大的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;2提问环节&#34;&gt;2.提问环节&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;以问答的形式让尤大为我们前端开发者解惑&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;1vite能不能取代webpack&#34;&gt;1.vite能不能取代webpack？&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在大部分场景中webpack是可以被vite取代的，但是一些边边角角上和一些定制化方面，vite还是取代不了webpack。vite需要使用在支持ES6的浏览器上。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;rollup和vite的插件可以共用。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;2前端程序员需不需自己造轮子&#34;&gt;2.前端程序员需不需自己造轮子？&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;前端程序员需要自己造轮子，但是不要想着一步登天，先写个能跑得起来得，然后再慢慢优化修改加新的需求。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;3针对学不动了这点尤大怎么看&#34;&gt;3.针对学不动了这点，尤大怎么看？&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;想要吃饭就得学啊。2到3天可以学会Vue3。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;4面试为什么会问源码&#34;&gt;4.面试为什么会问源码？&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;因为市场太卷了，可以看看尤大的微型Vue3教学。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;面试就是人家需要知道，如果抛给你一个问题，你有没有足够的技术去解决这个问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;5怎么看css-in-js&#34;&gt;5.怎么看CSS IN JS？&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;性能不行，还不如tailwind css。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;6工程化方面&#34;&gt;6.工程化方面？&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;最有效，最合适的就是好的，因为完美的东西是稀缺的，做工程需要考虑取舍。如果看别人的工程，你可以需要想想为什么他这个地方要这样做，可能有些时候你都觉得低级，但是你要想下他面临什么问题。有时候傻的不是别人，而是你自己。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;7proxy&#34;&gt;7.Proxy&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Proxy是原对象的拷贝。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;8尤大职业历程&#34;&gt;8.尤大职业历程&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2年谷歌，2年创业公司，自由开发者至今。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;9推荐的书籍&#34;&gt;9.推荐的书籍&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1.&lt;a href=&#34;https://www.amazon.com/Effective-JavaScript-Specific-Software-Development/dp/0321812182&#34;&gt;Effective JavaScript&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2.&lt;a href=&#34;https://exploringjs.com/&#34;&gt;Exploring JS: JavaScript books for programmers&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;3总结&#34;&gt;3.总结&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;关注前端圈，尤大，黄轶，大圣，霍春阳，小野森森，工业聚。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;关注自己的职业方向。&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
       
@@ -1568,62 +1642,6 @@ npm install --save-dev ts-loader
 &lt;p&gt;ES6新增的语法，背后使用的依然是原型链。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;完！&lt;/strong&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>编程思想</title>
-      <link>https://xkhm.net/post/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/</link>
-      <pubDate>Wed, 13 Jan 2021 22:06:38 +0800</pubDate>
-      
-      <guid>https://xkhm.net/post/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/</guid>
-      
-        <description>&lt;h1 id=&#34;1js中继承有什么作用&#34;&gt;1.JS中继承有什么作用&lt;/h1&gt;
-&lt;p&gt;需要让JS中的对象能连起来&lt;/p&gt;
-&lt;p&gt;受Java抽象化思想的影响，设计出了继承，&lt;/p&gt;
-&lt;p&gt;编码过程中可扩展性非常重要，后面新需求扩展写出的新代码不影响以前的代码，降低增加需求带来的修改难度&lt;/p&gt;
-&lt;h2 id=&#34;1-js用new创建对象实例间的属性是不共享的&#34;&gt;1. JS用new创建对象，实例间的属性是不共享的&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Dog&lt;/span&gt;() {
-            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;小黑&amp;#39;&lt;/span&gt;;
-        }
-        &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dog1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Dog&lt;/span&gt;();
-        &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dog2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Dog&lt;/span&gt;();
-        &lt;span style=&#34;color:#a6e22e&#34;&gt;dog1&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;大黄&amp;#39;&lt;/span&gt;;
-        &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;dog1&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;// 大黄
-&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;dog2&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;// 小黑
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;某些情况下，数据不能共享，就是一种资源浪费&lt;/p&gt;
-&lt;h1 id=&#34;2例子&#34;&gt;2.例子&lt;/h1&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// 1.需求1
-&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// 根据客人购买的商品单价和数量生成所购商品的价格
-&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color:#75715e&#34;&gt;// 客人购买商品的数量
-&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;goodsAmount&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
-    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;方便面&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;,
-    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;火腿肠&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;,
-    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;牙刷&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;,
-    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;纸巾&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;
-}
-
-&lt;span style=&#34;color:#75715e&#34;&gt;// 客人购买商品的单价
-&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;goodsPrice&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
-    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;方便面&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;,
-    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;火腿肠&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;,
-    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;牙刷&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;,
-    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;纸巾&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;
-}
-
-&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;totalPrice&lt;/span&gt;() {
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;totalPrice&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Object.&lt;span style=&#34;color:#a6e22e&#34;&gt;keys&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;goodsAmount&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;reduce&lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;acc&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;cur&lt;/span&gt;) =&amp;gt;
-        &lt;span style=&#34;color:#a6e22e&#34;&gt;acc&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;goodsPrice&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;cur&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;goodsAmount&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;cur&lt;/span&gt;], &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
-    )
-    &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;totalPrice&lt;/span&gt;);
-}
-&lt;span style=&#34;color:#a6e22e&#34;&gt;totalPrice&lt;/span&gt;();
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;遇到一个问题：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://static01.imgkr.com/temp/588f3445e9df4d16856c19c412b1f551.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;多运行几次会发现结果出人意料&lt;/p&gt;
 </description>
       
     </item>
