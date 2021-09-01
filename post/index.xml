@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Mon, 17 May 2021 08:15:54 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Sep 2021 23:29:36 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>对工作与生活的思考</title>
+      <link>https://xkhm.net/post/%E5%AF%B9%E5%B7%A5%E4%BD%9C%E4%B8%8E%E7%94%9F%E6%B4%BB%E7%9A%84%E6%80%9D%E8%80%83/</link>
+      <pubDate>Wed, 01 Sep 2021 23:29:36 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/%E5%AF%B9%E5%B7%A5%E4%BD%9C%E4%B8%8E%E7%94%9F%E6%B4%BB%E7%9A%84%E6%80%9D%E8%80%83/</guid>
+      <description>最近老是想寻找工作与生活的平衡点，为什么是最近呢？因为我换工作了，从待了3年的公司跳出来了，跳到了另一家新 的公司，开启了新的职业生涯。跳槽，</description>
+    </item>
+    
     <item>
       <title>跟着尤大学前端，行！</title>
       <link>https://xkhm.net/post/%E8%B7%9F%E7%9D%80%E5%B0%A4%E5%A4%A7%E5%AD%A6%E5%89%8D%E7%AB%AF%E8%A1%8C/</link>
@@ -177,15 +186,6 @@
       
       <guid>https://xkhm.net/post/vue2%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0cv/</guid>
       <description>前言：学习笔记，CV即指CV Vue的官方文档，也指 CV 网上的Vue业务代码😎😎 1.Vue是什么？ Vue (读音 /vjuː/，类似于 view) 是一套用于构建用</description>
-    </item>
-    
-    <item>
-      <title>JS面试题复习</title>
-      <link>https://xkhm.net/post/js%E9%9D%A2%E8%AF%95%E9%A2%98%E5%A4%8D%E4%B9%A0/</link>
-      <pubDate>Mon, 04 Jan 2021 08:30:30 +0800</pubDate>
-      
-      <guid>https://xkhm.net/post/js%E9%9D%A2%E8%AF%95%E9%A2%98%E5%A4%8D%E4%B9%A0/</guid>
-      <description>1.对象 （1）深浅拷贝 只会拷贝对象的第一层 1.浅拷贝（4种） （1）直接赋值 let obj = { name: &amp;#39;XKHM&amp;#39;, age: 25, job: &amp;#39;Software Engineer&amp;#39; } let obj1 = obj; console.log(obj1 === obj); （2）Object.assi</description>
     </item>
     
   </channel>
