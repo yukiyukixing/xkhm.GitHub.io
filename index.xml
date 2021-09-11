@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Wed, 01 Sep 2021 23:29:36 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 11 Sep 2021 15:22:39 +0800</lastBuildDate>
     
         <atom:link href="https://xkhm.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -149,6 +149,26 @@
         <description>&lt;blockquote&gt;
 &lt;p&gt;一个追寻有趣有意义有习惯的前端海绵星人。&lt;/p&gt;
 &lt;/blockquote&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>探索 尝试 意义 生活 思考</title>
+      <link>https://xkhm.net/post/%E6%8E%A2%E7%B4%A2-%E5%B0%9D%E8%AF%95-%E6%84%8F%E4%B9%89-%E7%94%9F%E6%B4%BB-%E6%80%9D%E8%80%83/</link>
+      <pubDate>Sat, 11 Sep 2021 15:22:39 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/%E6%8E%A2%E7%B4%A2-%E5%B0%9D%E8%AF%95-%E6%84%8F%E4%B9%89-%E7%94%9F%E6%B4%BB-%E6%80%9D%E8%80%83/</guid>
+      
+        <description>&lt;p&gt;这一周我感觉我的状态并不是很好，但是不包括今天和明天，就是说已经过去的上班日来说，今天的状态还是非常好的，
+很不错的。就过去的这一周来说，从9月6号周一开始，周一早上莫名其妙的睡晚了，然后上班被迫请假半天，然后周二周三打游戏看视频，也没什么意思，在探索自己到底该干些什么事情，然后做什么事情才是有意义的，也在探索，然后这周周一到周五也并没有早睡早起，而是晚睡晚起，早上也没吃早餐，这是很不好的。但是这周还是在思考中挣扎，到底该做些什么有意义的事情，做视频？写剧本？考研？理想是什么？会一直在北京待着？还是去我比较喜欢的四川？还是回老家省会合肥？未来会是怎样？会不会有爱情，家庭？又怎么看待即将奔3的年龄？然后什么时候能达到年薪百万？等等这些问题都是我需要思考的，然后我也在探索，该做一件什么样的事情，而且是我愿意和喜欢去做的，并且还非常有意义的事情，同时又要是我还比较擅长的事情，在思考到底是一件什么事情呢，目前还没有答案。&lt;/p&gt;
+&lt;p&gt;然后这周比较好的事情就是演讲完了，感觉身上顿时轻松了不少，甩掉了一个大包袱，人顿时轻松很多，没有那么大的压
+力了，然后想做什么就做什么，想看书就看书，想学习就学习，这就很舒服。然后关于状态恢复到之前的状态，还在慢慢恢复，之前的状态就是每天看书，周一到周五是每天看书1小时，周末每天读书2小时，然后偶数天健身，早上早起吃早餐学习，周六周日做计划和总结，然后外加思考。还是非常想回到之前这样的状态的，但是最近看书什么的还是落下了。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;还是很期待回到之前的状态，要不然真的感觉生活真的是很无聊的一件事情。有梦想有目标的活着才是快乐的事情，要不
+然真的是有点行尸走肉的感觉，有思想的活着才是有意义的。&lt;/p&gt;
+&lt;p&gt;还是在思考应该去做一件什么样的事情，才是我应该去做的，然后后续也会去尝试，去体验，毕竟人生还有一件非常非常
+重要的事情，那就是在路上，只要你一直在路上，你的人生就谈不上枯燥无味和无聊，前几天看见一句话有趣都藏在无聊的日子里，这句话感觉对也不对，无聊的日子里何来的有趣，所有的日子都是有趣的，那么有趣到底是什么呢？所以说想做什么就尝试去做吧，结果肯定是好的，但行好事，莫问前程。然后只要下定决心去做一件事情，肯定是能做好的，太多这样的经验了，比如登录公司的邮箱，之前也尝试过，但是是抱着试试的心态，然后今天是真的需要，因为公司电脑没带回来，需要发周报邮件，必需登录上，结果花点时间真的就登录上了，所以说，时间真的是一个小天使，能解决一切问题。然后还有就是如果迷茫那就多读点书，多看看别人的生活吧。然后想做的事情，列一个清单一个一个的去做吧，怕什么真理无穷，进一步有一步的欢喜，All will be good。还有最近换了一个好看的VSCode字体，也算是一个生活中的小确幸吧。&lt;/p&gt;
 </description>
       
     </item>
@@ -952,87 +972,6 @@ npm install --save-dev ts-loader
 &lt;p&gt;6.三指单击打开系统搜索应用窗口，包括控制面板，资源管理器，系统自带浏览器，图片等等&lt;/p&gt;
 &lt;p&gt;7.四指向上多任务视图，向下显示桌面，左右切换桌面&lt;/p&gt;
 &lt;p&gt;8.四指单击打开操作中心&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>JS基础之Proxy</title>
-      <link>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8Bproxy/</link>
-      <pubDate>Tue, 19 Jan 2021 21:53:51 +0800</pubDate>
-      
-      <guid>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8Bproxy/</guid>
-      
-        <description>&lt;blockquote&gt;
-&lt;p&gt;前言：学完补充&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;参考资料：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;1.&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy&#34;&gt;Proxy&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;2.&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy/Proxy&#34;&gt;Proxy() 构造器&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;1介绍&#34;&gt;1.介绍&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;首先我们在学&lt;strong&gt;Proxy&lt;/strong&gt;之前我们思考一下，以前我们不是有 &lt;strong&gt;Object.defineProperty()&lt;/strong&gt; 方法吗，为什么又出现了一个类似功能的 &lt;strong&gt;Proxy&lt;/strong&gt; ,一般出现这种情况的基本上都是前者又某些不可弥补的缺点，所以出现了后者进行弥补加强，那么问题来了，为什么不优化前者，而是提出一个新的东西来呢，这个我也不知道，可能前者在优化的时候会出现某些问题，或者是说前者已经标准化了，再改的话会影响到之前使用这个方法的项目，所以就用了一个新的东西。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/leftJS/p/11099478.html&#34;&gt;Proxy相比于defineProperty的优势&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;我们先来打印看下Proxy这个对象&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;dir&lt;/span&gt;(Proxy);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0859536b79f74ed68d9f73c7165e4acd~tplv-k3u1fbpfcp-watermark.image&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;通过打印我们能看到Proxy就是一个普通的构造函数，但是注意Proxy下面有一个私有的 &lt;strong&gt;revocable&lt;/strong&gt; 方法。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Proxy对象用于创建一个对象的代理，从而实现基本操作的拦截和自定义（如属性查找，赋值，枚举，函数调用等）。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;2语法参数方法&#34;&gt;2.语法、参数、方法&lt;/h1&gt;
-&lt;h2 id=&#34;1语法&#34;&gt;（1）语法&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Proxy(&lt;span style=&#34;color:#a6e22e&#34;&gt;target&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;handler&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;2参数&#34;&gt;（2）参数&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;参数&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;说明&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;target&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;要使用 Proxy 包装的目标对象（可以是任何类型的对象，包括原生数组，函数，甚至另一个代理）。&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;handler&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;一个通常以函数作为属性的对象，各属性中的函数分别定义了在执行各种操作时代理 p 的行为。&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;blockquote&gt;
-&lt;p&gt;个人理解：&lt;strong&gt;hander&lt;/strong&gt;就是用来劫持被代理对象的方法的&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;handler&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
-    &lt;span style=&#34;color:#a6e22e&#34;&gt;get&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;obj&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;prop&lt;/span&gt;) {
-        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;prop&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;obj&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;obj&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;prop&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;37&lt;/span&gt;
-    }
-}
-
-&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Proxy({}, &lt;span style=&#34;color:#a6e22e&#34;&gt;handler&lt;/span&gt;);
-&lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
-&lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;b&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;undefined&lt;/span&gt;;
-&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;b&lt;/span&gt;);
-&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;c&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt;);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
-&lt;blockquote&gt;
-&lt;p&gt;思考：能不能用Proxy实现以下判断成立&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;) {
-    &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;星空海绵&amp;#39;&lt;/span&gt;);
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;3方法&#34;&gt;（3）方法&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Proxy.revocable()&lt;/strong&gt; 创建一个可撤销的Proxy对象。&lt;/p&gt;
 </description>
       
     </item>
