@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Wed, 29 Sep 2021 07:55:39 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Nov 2021 00:43:35 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2021年前瞻总结</title>
+      <link>https://xkhm.net/post/2021%E5%B9%B4%E5%89%8D%E7%9E%BB%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Sun, 21 Nov 2021 00:43:35 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/2021%E5%B9%B4%E5%89%8D%E7%9E%BB%E6%80%BB%E7%BB%93/</guid>
+      <description>1.当前时间节点 为什么是当前这个时间节点(2021.10.08)做2021年的前瞻总结？为什么不等到年底？ 因为有些思考，有些规划，有些总结。</description>
+    </item>
+    
     <item>
       <title>对职业规划的思考</title>
       <link>https://xkhm.net/post/%E5%AF%B9%E8%81%8C%E4%B8%9A%E8%A7%84%E5%88%92%E7%9A%84%E6%80%9D%E8%80%83/</link>
@@ -177,15 +186,6 @@
       
       <guid>https://xkhm.net/post/node%E6%96%87%E4%BB%B6%E5%A4%B9%E8%AF%BB%E5%8F%96/</guid>
       <description>1.第一版本，读取某个固定文件目录下的文件，写成接口 初版本1.1 缺点：文件更新了，接口不会更新 let path = require(&amp;#34;path&amp;#34;); let fs = require(&amp;#34;fs&amp;#34;); let http= require(&amp;#34;http&amp;#34;); fs.readFile(&amp;#39;./config.json&amp;#39;, (err, data) =&amp;gt; { if (err) throw err; let fileDir =</description>
-    </item>
-    
-    <item>
-      <title>手写Promise</title>
-      <link>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99promise/</link>
-      <pubDate>Thu, 07 Jan 2021 21:50:29 +0800</pubDate>
-      
-      <guid>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99promise/</guid>
-      <description>文章类型：个人学习笔记 手写 Promise 的前提是了解 Promise/A+ 规范，不说倒背如流，但是基本的点还是需要掌握的。 1.Promise/A+规范 原文地址：Promis</description>
     </item>
     
   </channel>
