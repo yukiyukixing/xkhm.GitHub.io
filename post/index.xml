@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Sat, 18 Dec 2021 17:45:51 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Jan 2022 23:09:30 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>改变 2021年终总结</title>
+      <link>https://xkhm.net/post/%E6%94%B9%E5%8F%98-2021%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Wed, 05 Jan 2022 23:09:30 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/%E6%94%B9%E5%8F%98-2021%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
+      <description>theme: condensed-night-purple highlight: ascetic 如果2021年有关键词，那就是改变。 &amp;ndash;2021.12.05 1.前言 这篇文章在12月的时候我就想写了，然后想着12月还没过完呢，2021还在呢，我都没过完</description>
+    </item>
+    
     <item>
       <title>生活、工作、意义、追求</title>
       <link>https://xkhm.net/post/%E7%94%9F%E6%B4%BB%E5%B7%A5%E4%BD%9C%E6%84%8F%E4%B9%89%E8%BF%BD%E6%B1%82/</link>
@@ -177,15 +186,6 @@
       
       <guid>https://xkhm.net/post/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/</guid>
       <description>1.JS中继承有什么作用 需要让JS中的对象能连起来 受Java抽象化思想的影响，设计出了继承， 编码过程中可扩展性非常重要，后面新需求扩展写出的</description>
-    </item>
-    
-    <item>
-      <title>定型数组</title>
-      <link>https://xkhm.net/post/%E5%AE%9A%E5%9E%8B%E6%95%B0%E7%BB%84/</link>
-      <pubDate>Tue, 12 Jan 2021 21:21:51 +0800</pubDate>
-      
-      <guid>https://xkhm.net/post/%E5%AE%9A%E5%9E%8B%E6%95%B0%E7%BB%84/</guid>
-      <description>1.定型数组 定型数组是ES新增的结构，目的是提升向原生库传输数据的效率。本质上是一种包含数值类型的数组。 （1）历史 随着浏览器的流行，需要使用</description>
     </item>
     
   </channel>
