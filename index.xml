@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Wed, 05 Jan 2022 23:09:30 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 30 Dec 2022 18:58:13 +0800</lastBuildDate>
     
         <atom:link href="https://xkhm.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -149,6 +149,42 @@
         <description>&lt;blockquote&gt;
 &lt;p&gt;一个追寻有趣有意义有习惯的前端海绵星人。&lt;/p&gt;
 &lt;/blockquote&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>计划 2022年终总结</title>
+      <link>https://xkhm.net/post/%E8%AE%A1%E5%88%92-2022%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Fri, 30 Dec 2022 18:58:13 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/%E8%AE%A1%E5%88%92-2022%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
+      
+        <description>&lt;p&gt;&lt;img src=&#34;../../images/2022/%E5%A4%B4%E5%9B%BE1.png&#34; alt=&#34;头图1.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;去年我&lt;a href=&#34;https://xkhm.net/post/%E6%94%B9%E5%8F%98-2021%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/&#34;&gt;年终总结&lt;/a&gt;的关键词是&lt;strong&gt;改变&lt;/strong&gt;，而今年年初我给我定的2022年的关键词就是&lt;strong&gt;计划&lt;/strong&gt;。想着今年每个月定计划，每天定计划生活，结果就是并没有实行计划生活，以前咋样生活，今年还是咋样生活。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;1前言&#34;&gt;1.前言&lt;/h1&gt;
+&lt;p&gt;本来今年年中的时候，我想写篇年中总结的，结果各种拖拉就一直没写，到年底了，年终总结肯定还是得写的,好好总结一下走过的这个2022。
+今年还不像去年，去年年终总结的时候，还是有几件能摆上台面上的事：例如跳槽成功，一年里每天坚持记录生活，还有坚持读书，而今年呢，读书还是坚持了，但是阅读时间还没去年的阅读时间多呢。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;看着我2022年年初列的2022年的目标，好像没有完全完成的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;del&gt;- 1.存钱，今年又是没存到钱的一年，等个年终奖过年吧。&lt;/del&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2.&lt;del&gt;早睡早起&lt;/del&gt;，好像并没有一整年都早睡早起，不过倒是想明白早睡早起的原理，这项2023年可以继续坚持实施，规律的生活节奏还是很重要的，让我们能拥有一个强健的身体。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;del&gt;- 3.健身，今年好像没怎么健身，年底一上称，重了10斤，这我真的不能接受，啊啊啊啊。&lt;/del&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;4.&lt;del&gt;读书不低于40本&lt;/del&gt;。年底满打满算才读了25本，这项没有完成。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;del&gt;- 5.找女朋友，年年计划里都有，但是年年都是没有完成这项。&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;- 6.其他的什么涨薪跳槽啊，考驾照啊，都没完成。&lt;/del&gt;&lt;/p&gt;
+&lt;h1 id=&#34;2生活&#34;&gt;2.生活&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;今年生活里的重点大概应该是读书了，虽然说今年的读书时间可能没有去年多，但是在我的生活中还是占了很大一块时间的。2022年已经读完的书的书单。&lt;a href=&#34;https://github.com/yukiyukixing/books-2022&#34;&gt;2022年读书记录&lt;/a&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;../../images/2022/%E4%B9%A6%E5%8D%95.png&#34; alt=&#34;书单.png&#34;&gt;&lt;/p&gt;
 </description>
       
     </item>
@@ -972,53 +1008,6 @@ npm install --save-dev ts-loader
 &lt;p&gt;良好的基本功+丰富的项目经验+优秀的思考能力很关键。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;待完善！&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>后生可畏</title>
-      <link>https://xkhm.net/post/%E5%90%8E%E7%94%9F%E5%8F%AF%E7%95%8F/</link>
-      <pubDate>Mon, 08 Feb 2021 11:01:09 +0800</pubDate>
-      
-      <guid>https://xkhm.net/post/%E5%90%8E%E7%94%9F%E5%8F%AF%E7%95%8F/</guid>
-      
-        <description>&lt;blockquote&gt;
-&lt;p&gt;做猿和做人有趣很重要&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;函数式编程永远滴神&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;blockquote&gt;
-&lt;p&gt;当年咱在十里八乡，那可是有名的俊后生。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;slogan&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
-    &lt;span style=&#34;color:#a6e22e&#34;&gt;lastSentance&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;牛年掘金沸点游&amp;#39;&lt;/span&gt;,
-    &lt;span style=&#34;color:#a6e22e&#34;&gt;nextSentance&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;成为大佬不用愁&amp;#39;&lt;/span&gt;,
-    &lt;span style=&#34;color:#a6e22e&#34;&gt;summary&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;街溜子&amp;#39;&lt;/span&gt;
-}
-&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;becomeBoss&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;slogan&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;way&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;action&lt;/span&gt;) {
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;way&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;juejin&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;action&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;execute&amp;#39;&lt;/span&gt;) {
-        &lt;span style=&#34;color:#a6e22e&#34;&gt;format&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;slogan&lt;/span&gt;);
-    } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
-        &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;快上掘金！&amp;#39;&lt;/span&gt;);
-    }
-}
-&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;format&lt;/span&gt;({ &lt;span style=&#34;color:#a6e22e&#34;&gt;lastSentance&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;nextSentance&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;summary&lt;/span&gt; }) {
-    &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;    &amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;summary&lt;/span&gt;);
-    (&lt;span style=&#34;color:#a6e22e&#34;&gt;lastSentance&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nextSentance&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;split&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;forEach&lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;item&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;index&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;arr&lt;/span&gt;) =&amp;gt; {
-        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;index&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lastSentance&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;) {
-            &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;item&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;         &amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;arr&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;index&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;);
-        }
-    })
-}
-&lt;span style=&#34;color:#a6e22e&#34;&gt;becomeBoss&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;slogan&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;juejin&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;execute&amp;#39;&lt;/span&gt;);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;完！&lt;/p&gt;
 </description>
       
     </item>

@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Wed, 05 Jan 2022 23:09:30 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Dec 2022 18:58:13 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>计划 2022年终总结</title>
+      <link>https://xkhm.net/post/%E8%AE%A1%E5%88%92-2022%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Fri, 30 Dec 2022 18:58:13 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/%E8%AE%A1%E5%88%92-2022%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
+      <description>去年我年终总结的关键词是改变，而今年年初我给我定的2022年的关键词就是计划。想着今年每个月定计划，每天定计划生活，结果就是并没有实行计划生</description>
+    </item>
+    
     <item>
       <title>改变 2021年终总结</title>
       <link>https://xkhm.net/post/%E6%94%B9%E5%8F%98-2021%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
@@ -177,15 +186,6 @@
       
       <guid>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E7%BB%A7%E6%89%BF/</guid>
       <description>1.原型链继承 // 1. 原型链继承 function A() { } function B() { } B.prototype = new A(); let a = new B(); 缺点：1.原型中包含的引用值会在实例间共享2.子类型在实例化时不能给父类型构造</description>
-    </item>
-    
-    <item>
-      <title>编程思想</title>
-      <link>https://xkhm.net/post/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/</link>
-      <pubDate>Wed, 13 Jan 2021 22:06:38 +0800</pubDate>
-      
-      <guid>https://xkhm.net/post/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/</guid>
-      <description>1.JS中继承有什么作用 需要让JS中的对象能连起来 受Java抽象化思想的影响，设计出了继承， 编码过程中可扩展性非常重要，后面新需求扩展写出的</description>
     </item>
     
   </channel>
