@@ -58,28 +58,63 @@
   </url>
   
   <url>
-    <loc>https://xkhm.net/tags/2022/</loc>
-    <lastmod>2022-12-30T17:33:46+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://xkhm.net/categories/</loc>
-    <lastmod>2022-12-30T17:33:46+08:00</lastmod>
+    <lastmod>2023-02-04T20:29:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xkhm.net/post/</loc>
-    <lastmod>2022-12-30T17:33:46+08:00</lastmod>
+    <lastmod>2023-02-04T20:29:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xkhm.net/tags/</loc>
+    <lastmod>2023-02-04T20:29:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/tags/%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2023-02-04T20:29:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/post/%E5%8D%9A%E5%AE%A2%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97/</loc>
+    <lastmod>2023-02-04T20:29:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/tags/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2023-02-04T20:29:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/categories/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2023-02-04T20:29:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/</loc>
+    <lastmod>2023-02-04T20:29:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/tags/2022/</loc>
     <lastmod>2022-12-30T17:33:46+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -101,13 +136,6 @@
   
   <url>
     <loc>https://xkhm.net/categories/%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2022-12-30T17:33:46+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xkhm.net/</loc>
     <lastmod>2022-12-30T17:33:46+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
