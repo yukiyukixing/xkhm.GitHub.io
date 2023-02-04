@@ -5,13 +5,13 @@
     <link>https://xkhm.net/tags/webpack/</link>
     <description>Recent content in webpack on 星空海绵 - 星空浩瀚 | 海绵吸水</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>zh-cn</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Fri, 19 Feb 2021 16:06:51 +0800</lastBuildDate><atom:link href="https://xkhm.net/tags/webpack/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Feb 2021 16:00:46 +0800</lastBuildDate><atom:link href="https://xkhm.net/tags/webpack/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>前端工程化之webpack4概念</title>
       <link>https://xkhm.net/post/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%B9%8Bwebpack4%E6%A6%82%E5%BF%B5/</link>
-      <pubDate>Fri, 19 Feb 2021 16:06:51 +0800</pubDate>
+      <pubDate>Fri, 19 Feb 2021 16:00:46 +0800</pubDate>
       
       <guid>https://xkhm.net/post/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%B9%8Bwebpack4%E6%A6%82%E5%BF%B5/</guid>
       <description>下定决心，就勇往直前。 webpack概念学习掌握。 webpack4官方文档 1.webpack是什么？ webpack是一个现代的JavaScr</description>

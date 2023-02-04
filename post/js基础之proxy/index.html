@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -25,7 +25,7 @@
 <meta name="author" content="XKHM" />
   <meta name="description" content="前言：学完补充 参考资料： 1.Proxy 2.Proxy() 构造器 1.介绍 首先我们在学Proxy之前我们思考一下，以前我们不是有 Object.defineProperty() 方法吗，为什么又出现了一个类似功能的 Proxy ,一" />
 
-  <meta name="keywords" content="Hugo" />
+  <meta name="keywords" content="Hugo, 星空海绵, 前端, 工程师" />
 
 
 
@@ -41,7 +41,8 @@
 
 
 
-<link rel="icon" href="/favicon.png"  type="image/x-icon"/>
+<link rel="icon" href="/favicon.png" type="image/x-icon"/>
+
 
 
 
@@ -68,7 +69,7 @@
 <meta itemprop="description" content="前言：学完补充 参考资料： 1.Proxy 2.Proxy() 构造器 1.介绍 首先我们在学Proxy之前我们思考一下，以前我们不是有 Object.defineProperty() 方法吗，为什么又出现了一个类似功能的 Proxy ,一">
 <meta itemprop="datePublished" content="2021-01-19T21:53:51+08:00" />
 <meta itemprop="dateModified" content="2021-01-19T21:53:51+08:00" />
-<meta itemprop="wordCount" content="617">
+<meta itemprop="wordCount" content="633">
 
 
 
@@ -86,6 +87,17 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-K0V0BST0TH', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -149,7 +161,21 @@
         
           
           
-            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
         
       </li><li class="mobile-menu-item">
@@ -171,20 +197,6 @@
           
           
             <a class="menu-item-link" href="https://xkhm.net/tags/">标签</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
         
       </li>
@@ -342,7 +354,29 @@
         
           
           
-            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
 
         
@@ -382,28 +416,6 @@
 
       </li>
     
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
-          
-
-        
-
-      </li>
-    
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
-          
-
-        
-
-      </li>
-    
 
     
     
@@ -431,7 +443,8 @@
             <a href="https://xkhm.net/categories/javascript/"> JavaScript </a>
             
           </div>
-        
+        <span class="more-meta"> 约 633 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
         
@@ -476,16 +489,30 @@
 </blockquote>
 <p><a href="https://www.cnblogs.com/leftJS/p/11099478.html">Proxy相比于defineProperty的优势</a></p>
 <p>我们先来打印看下Proxy这个对象</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">dir</span>(Proxy);
-</code></pre></div><p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0859536b79f74ed68d9f73c7165e4acd~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nb">Proxy</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0859536b79f74ed68d9f73c7165e4acd~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
 <p>通过打印我们能看到Proxy就是一个普通的构造函数，但是注意Proxy下面有一个私有的 <strong>revocable</strong> 方法。</p>
 <blockquote>
 <p>Proxy对象用于创建一个对象的代理，从而实现基本操作的拦截和自定义（如属性查找，赋值，枚举，函数调用等）。</p>
 </blockquote>
 <h1 id="2语法参数方法">2.语法、参数、方法</h1>
 <h2 id="1语法">（1）语法</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Proxy(<span style="color:#a6e22e">target</span>, <span style="color:#a6e22e">handler</span>)
-</code></pre></div><h2 id="2参数">（2）参数</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kr">const</span> <span class="nx">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Proxy</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">handler</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2参数">（2）参数</h2>
 <table>
 <thead>
 <tr>
@@ -508,49 +535,57 @@
 <p>个人理解：<strong>hander</strong>就是用来劫持被代理对象的方法的</p>
 </blockquote>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handler</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">get</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">obj</span>, <span style="color:#a6e22e">prop</span>) {
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">prop</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">prop</span>] <span style="color:#f92672">:</span> <span style="color:#ae81ff">37</span>
-    }
-}
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kr">const</span> <span class="nx">handler</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">get</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">prop</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">prop</span> <span class="k">in</span> <span class="nx">obj</span> <span class="o">?</span> <span class="nx">obj</span><span class="p">[</span><span class="nx">prop</span><span class="p">]</span> <span class="o">:</span> <span class="mi">37</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Proxy({}, <span style="color:#a6e22e">handler</span>);
-<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">undefined</span>;
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">b</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;c&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">p</span>, <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">a</span>);
-</code></pre></div><!-- raw HTML omitted -->
+<span class="kr">const</span> <span class="nx">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Proxy</span><span class="p">({},</span> <span class="nx">handler</span><span class="p">);</span>
+<span class="nx">p</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nx">p</span><span class="p">.</span><span class="nx">b</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">a</span><span class="p">,</span> <span class="nx">p</span><span class="p">.</span><span class="nx">b</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;c&#39;</span> <span class="k">in</span> <span class="nx">p</span><span class="p">,</span> <span class="nx">p</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <blockquote>
 <p>思考：能不能用Proxy实现以下判断成立</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">3</span>) {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;星空海绵&#39;</span>);
-}
-</code></pre></div><h2 id="3方法">（3）方法</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">===</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nx">a</span> <span class="o">===</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="nx">a</span> <span class="o">===</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;星空海绵&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="3方法">（3）方法</h2>
 <p><strong>Proxy.revocable()</strong> 创建一个可撤销的Proxy对象。</p>
 
     </div>
 
     
     
-<div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">文章作者</span>
-    <span class="item-content">XKHM</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">上次更新</span>
-    <span class="item-content">
-      2021-01-19
-      
-    </span>
-  </p>
-  
-  <p class="copyright-item">
-    <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">原创文章，转载请注明文章作者和出处，谢谢！</a></span>
-  </p>
-</div>
 
 
     
@@ -578,13 +613,13 @@
 </svg>
 
             </i>
-            <span class="prev-text nav-default">Windows触摸板操作指南</span>
-            <span class="prev-text nav-mobile">Prev</span>
+            <span class="prev-text nav-default" style="position: relative;top: -2px;">Windows触摸板操作指南</span>
+            <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
           <a class="next" href="/post/%E4%BB%8E%E4%B8%80%E5%9C%BA%E6%AF%94%E8%B5%9B%E5%BC%80%E5%A7%8B%E5%A4%A7%E8%AF%9Djs%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
-            <span class="next-text nav-default">从一场比赛开始大话JS面向对象</span>
-            <span class="prev-text nav-mobile">Next</span>
+            <span class="next-text nav-default" style="position: relative;top: -3px;">从一场比赛开始大话JS面向对象</span>
+            <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
               <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -605,20 +640,19 @@
   
   
 
-  
 
-  
-  
 
-  
 
-  
 
-  
 
-    
 
-  
+
+
+
+
+
+
+
 
         </div>
       </div>
@@ -672,23 +706,17 @@
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
-  </span>
-
+  
+  
   <span class="copyright-year">
     &copy;
     
-      2019 -
-    2022
+    2019 -
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -701,16 +729,18 @@
 
       </i>
     </span><span class="author">
-        星空海绵
-        
-      </span></span>
-
+      星空海绵
+      
+    </span></span>
   
-  
-
-  
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
 </div>
-
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -753,6 +783,8 @@
 
 
 
+
+  <script async src="//changkun.de/urlstat/client.js"></script>
 
 
 

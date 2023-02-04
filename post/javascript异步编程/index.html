@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -25,7 +25,7 @@
 <meta name="author" content="XKHM" />
   <meta name="description" content="1.什么是异步？ (1)异步的作用 在前端编程中（甚至后端有时也是这样），我们在处理一些简短、快速的操作时，例如计算 1 &#43; 1 的结果，往往在主线程中" />
 
-  <meta name="keywords" content="Hugo" />
+  <meta name="keywords" content="Hugo, 星空海绵, 前端, 工程师" />
 
 
 
@@ -41,7 +41,8 @@
 
 
 
-<link rel="icon" href="/favicon.png"  type="image/x-icon"/>
+<link rel="icon" href="/favicon.png" type="image/x-icon"/>
+
 
 
 
@@ -68,7 +69,7 @@
 <meta itemprop="description" content="1.什么是异步？ (1)异步的作用 在前端编程中（甚至后端有时也是这样），我们在处理一些简短、快速的操作时，例如计算 1 &#43; 1 的结果，往往在主线程中">
 <meta itemprop="datePublished" content="2021-01-04T22:56:54+08:00" />
 <meta itemprop="dateModified" content="2021-01-04T22:56:54+08:00" />
-<meta itemprop="wordCount" content="5705">
+<meta itemprop="wordCount" content="5868">
 
 
 
@@ -86,6 +87,17 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-K0V0BST0TH', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -149,7 +161,21 @@
         
           
           
-            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
         
       </li><li class="mobile-menu-item">
@@ -171,20 +197,6 @@
           
           
             <a class="menu-item-link" href="https://xkhm.net/tags/">标签</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
         
       </li>
@@ -342,7 +354,29 @@
         
           
           
-            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
 
         
@@ -382,28 +416,6 @@
 
       </li>
     
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
-          
-
-        
-
-      </li>
-    
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
-          
-
-        
-
-      </li>
-    
 
     
     
@@ -431,7 +443,8 @@
             <a href="https://xkhm.net/categories/javascript/"> JavaScript </a>
             
           </div>
-        
+        <span class="more-meta"> 约 5868 字 </span>
+          <span class="more-meta"> 预计阅读 12 分钟 </span>
 
         
         
@@ -508,19 +521,42 @@
 <p>为什么会出现上面这样阻塞的情况呢，原因就是JS是单线程的。</p>
 <h2 id="4线程">(4)线程</h2>
 <p>一个线程是一个基本的处理过程，程序用它来完成任务。每个线程一次只能执行一个任务:</p>
-<pre><code class="language-code" data-lang="code">Task A --&gt; Task B --&gt; Task C
-</code></pre><p>但是现在的计算机大都有多个内核（core），因此可以同时执行多个任务。支持多线程的编程语言可以使用计算机的多个内核，发挥多内核的作用，同时完成多个任务:</p>
-<pre><code class="language-code" data-lang="code">Thread 1: Task A --&gt; Task B
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Task A --&gt; Task B --&gt; Task C
+</code></pre></td></tr></table>
+</div>
+</div><p>但是现在的计算机大都有多个内核（core），因此可以同时执行多个任务。支持多线程的编程语言可以使用计算机的多个内核，发挥多内核的作用，同时完成多个任务:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Thread 1: Task A --&gt; Task B
 Thread 2: Task C --&gt; Task D
-</code></pre><h2 id="5js单线程">(5)JS单线程</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="5js单线程">(5)JS单线程</h2>
 <p>JavaScript 传统上是单线程的。即使有多个内核，也只能在单一线程上运行多个任务，此线程称为主线程（main thread）。</p>
 <p>因为JS是单线程的，所以会导致代码阻塞，影响用户体验，于是JS获得一些工具来解决这个问题。通过 <strong>Web workers</strong> 可以把一些任务交给一个名为worker的单独的线程，这样就可以同时运行多个JavaScript代码块。一般来说，用一个worker来运行一个耗时的任务，主线程就可以处理用户的交互（避免了阻塞）。</p>
 <blockquote>
 <p>理解：这样就相当于JS是双线程的，有两个线程可以执行任务了，一个<strong>主线程(Main thread)</strong>,一个 <strong>worker 线程</strong>。</p>
 </blockquote>
-<pre><code class="language-code" data-lang="code">Main thread: Task A --&gt; Task C
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Main thread: Task A --&gt; Task C
 Worker thread: Expensive task B
-</code></pre><h2 id="6web-workers">(6)Web workers</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="6web-workers">(6)Web workers</h2>
 <p>主线程和 worker 线程相互之间使用 <strong>postMessage()</strong> 方法来发送信息, 并且通过 <strong>onmessage</strong> 这个 event handler来接收信息（传递的信息包含在 Message 这个事件的data属性内) 。数据的交互方式为<strong>传递副本</strong>，而<strong>不是直接共享数据。</strong></p>
 <blockquote>
 <p>worker 不能做渲染，只能做算术这种苦活。</p>
@@ -535,12 +571,23 @@ Worker thread: Expensive task B
 <h2 id="1异步callbacks">（1）异步callbacks</h2>
 <p><strong>异步callbacks 其实就是函数</strong>，只不过是<strong>作为参数传递</strong>给那些在<strong>后台执行的其他函数</strong>，当那些后台运行的代码结束，就调用callbacks函数，通知你工作已经完成。</p>
 <p>也存在同步的回调函数，例如Array.prototype.forEach() ：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">gods</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Apollo&#39;</span>, <span style="color:#e6db74">&#39;Artemis&#39;</span>, <span style="color:#e6db74">&#39;Ares&#39;</span>, <span style="color:#e6db74">&#39;Zeus&#39;</span>];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kr">const</span> <span class="nx">gods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Apollo&#39;</span><span class="p">,</span> <span class="s1">&#39;Artemis&#39;</span><span class="p">,</span> <span class="s1">&#39;Ares&#39;</span><span class="p">,</span> <span class="s1">&#39;Zeus&#39;</span><span class="p">];</span>
 
-<span style="color:#a6e22e">gods</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">eachName</span>, <span style="color:#a6e22e">index</span>){
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">index</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;. &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">eachName</span>);
-});
-</code></pre></div><p>在上面这个例子中，我们遍历一个希腊神的数组，并在控制台中打印索引和值。forEach() 需要的参数是一个回调函数，回调函数本身带有两个参数，数组元素和索引值。它无需等待任何事情，立即运行。</p>
+<span class="nx">gods</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">eachName</span><span class="p">,</span> <span class="nx">index</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">index</span> <span class="o">+</span> <span class="s1">&#39;. &#39;</span> <span class="o">+</span> <span class="nx">eachName</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在上面这个例子中，我们遍历一个希腊神的数组，并在控制台中打印索引和值。forEach() 需要的参数是一个回调函数，回调函数本身带有两个参数，数组元素和索引值。它无需等待任何事情，立即运行。</p>
 <h2 id="2promises">（2）Promises</h2>
 <p>Promises 是新派的异步代码，现代的web APIs经常用到。本质上，这是浏览器说“我保证尽快给您答复”的方式，因此得名“promise”，可以理解为浏览器给的一个承诺。</p>
 <h2 id="3promises-对比-callbacks">（3）Promises 对比 callbacks</h2>
@@ -566,10 +613,19 @@ Worker thread: Expensive task B
 <p>一个 JavaScript 运行时包含了一个待处理消息的消息队列。每一个消息都关联着一个用以处理这个消息的回调函数。</p>
 <p>在 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF"><strong>事件循环</strong></a> 期间的某个时刻，运行时会从最先进入队列的消息开始处理队列中的消息。被处理的消息会被移出队列，并作为输入参数来调用与之关联的函数。正如前面所提到的，调用一个函数总是会为其创造一个新的栈帧。函数的处理会一直进行到执行栈再次为空为止；然后事件循环将会处理队列中的下一个消息（如果还有的话）。</p>
 <p>之所以称之为 事件循环，是因为它经常按照类似如下的方式来被实现：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">waitForMessage</span>()) {
-  <span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">processNextMessage</span>();
-}
-</code></pre></div><h2 id="3事件循环特性">（3）事件循环特性</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="k">while</span> <span class="p">(</span><span class="nx">queue</span><span class="p">.</span><span class="nx">waitForMessage</span><span class="p">())</span> <span class="p">{</span>
+  <span class="nx">queue</span><span class="p">.</span><span class="nx">processNextMessage</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="3事件循环特性">（3）事件循环特性</h2>
 <p>1.执行至完成</p>
 <p>每一个消息完整地执行后，其它消息才会被执行。这为程序的分析提供了一些优秀的特性，包括：当一个函数执行时，它不会被抢占，只有在它运行完毕之后才会去运行任何其他的代码，才能修改这个函数操作的数据。</p>
 <p>缺点：这个模型的一个缺点在于当一个消息需要太长时间才能处理完毕时，Web应用程序就无法处理与用户的交互，例如点击或滚动。为了缓解这个问题，浏览器一般会弹出一个“这个脚本运行时间过长”的对话框。一个良好的习惯是缩短单个消息处理时间，并在可能的情况下将一个消息裁剪成多个消息</p>
@@ -665,184 +721,334 @@ Worker thread: Expensive task B
 <h2 id="12async-和-defer-的不同">（12）async 和 defer 的不同？</h2>
 <p>笔试题说结果：</p>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">  <span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">  <span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
 
-&lt;<span style="color:#f92672">head</span>&gt;
-    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
-    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
-    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
-&lt;/<span style="color:#f92672">head</span>&gt;
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 
-&lt;<span style="color:#f92672">body</span>&gt;
-    &lt;<span style="color:#f92672">script</span>&gt;
-<span style="color:#f92672">&lt;!</span><span style="color:#a6e22e">DOCTYPE</span> <span style="color:#a6e22e">html</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span><span style="color:#f92672">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">html</span> <span class="nx">lang</span><span class="o">=</span><span class="s2">&#34;en&#34;</span><span class="o">&gt;</span>
 
-<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">head</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">title</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Document</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/title&gt;</span>
-<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/head&gt;</span>
+<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="s2">&#34;UTF-8&#34;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&#34;viewport&#34;</span> <span class="nx">content</span><span class="o">=</span><span class="s2">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">Document</span><span class="o">&lt;</span><span class="err">/title&gt;</span>
+<span class="o">&lt;</span><span class="err">/head&gt;</span>
 
-<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">body</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">async1</span>() {
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;async1 start&#39;</span>); <span style="color:#75715e">// 2
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">async2</span>();
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;async1 end&#39;</span>); <span style="color:#75715e">// 7 micro2
-</span><span style="color:#75715e"></span>        }
-        <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">async2</span>() {
-            <span style="color:#75715e">//async2做出如下更改：
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">new</span> Promise(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">resolve</span>) {
-                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;promise1&#39;</span>); <span style="color:#75715e">// 3
-</span><span style="color:#75715e"></span>                <span style="color:#a6e22e">resolve</span>();
-            }).<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span> () {
-                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;promise2&#39;</span>); <span style="color:#75715e">// 6 micro1
-</span><span style="color:#75715e"></span>            });
-        }
-        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;script start&#39;</span>); <span style="color:#75715e">// 1
-</span><span style="color:#75715e"></span>
-        <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span> () {
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;setTimeout&#39;</span>); <span style="color:#75715e">// 9
-</span><span style="color:#75715e"></span>        }, <span style="color:#ae81ff">0</span>)
-        <span style="color:#a6e22e">async1</span>();
+<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+        <span class="kr">async</span> <span class="kd">function</span> <span class="nx">async1</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;async1 start&#39;</span><span class="p">);</span> <span class="c1">// 2
+</span><span class="c1"></span>            <span class="kr">await</span> <span class="nx">async2</span><span class="p">();</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;async1 end&#39;</span><span class="p">);</span> <span class="c1">// 7 micro2
+</span><span class="c1"></span>        <span class="p">}</span>
+        <span class="kr">async</span> <span class="kd">function</span> <span class="nx">async2</span><span class="p">()</span> <span class="p">{</span>
+            <span class="c1">//async2做出如下更改：
+</span><span class="c1"></span>            <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resolve</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;promise1&#39;</span><span class="p">);</span> <span class="c1">// 3
+</span><span class="c1"></span>                <span class="nx">resolve</span><span class="p">();</span>
+            <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;promise2&#39;</span><span class="p">);</span> <span class="c1">// 6 micro1
+</span><span class="c1"></span>            <span class="p">});</span>
+        <span class="p">}</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;script start&#39;</span><span class="p">);</span> <span class="c1">// 1
+</span><span class="c1"></span>
+        <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;setTimeout&#39;</span><span class="p">);</span> <span class="c1">// 9
+</span><span class="c1"></span>        <span class="p">},</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="nx">async1</span><span class="p">();</span>
 
-        <span style="color:#66d9ef">new</span> Promise(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">resolve</span>) {
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;promise3&#39;</span>); <span style="color:#75715e">// 4
-</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">resolve</span>();
-        }).<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span> () {
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;promise4&#39;</span>); <span style="color:#75715e">// micro3
-</span><span style="color:#75715e"></span>        });
+        <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resolve</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;promise3&#39;</span><span class="p">);</span> <span class="c1">// 4
+</span><span class="c1"></span>            <span class="nx">resolve</span><span class="p">();</span>
+        <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;promise4&#39;</span><span class="p">);</span> <span class="c1">// micro3
+</span><span class="c1"></span>        <span class="p">});</span>
 
-        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;script end&#39;</span>); <span style="color:#75715e">// 5
-</span><span style="color:#75715e"></span>    &lt;/<span style="color:#f92672">script</span>&gt;
-&lt;/<span style="color:#f92672">body</span>&gt;
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;script end&#39;</span><span class="p">);</span> <span class="c1">// 5
+</span><span class="c1"></span>    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 
-&lt;/<span style="color:#f92672">html</span>&gt;
-    &lt;/<span style="color:#f92672">script</span>&gt;
-&lt;/<span style="color:#f92672">body</span>&gt;
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 
-&lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></div><!-- raw HTML omitted -->
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">  <span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">  <span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
 
-&lt;<span style="color:#f92672">head</span>&gt;
-    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
-    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
-    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
-&lt;/<span style="color:#f92672">head</span>&gt;
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 
-&lt;<span style="color:#f92672">body</span>&gt;
-    &lt;<span style="color:#f92672">script</span>&gt;
-        <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">async1</span>() {
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;async1 start&#39;</span>); <span style="color:#75715e">// 2
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">async2</span>();
-            <span style="color:#75715e">//更改如下：
-</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span> () {
-                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;setTimeout1&#39;</span>) <span style="color:#75715e">// 8 macro3
-</span><span style="color:#75715e"></span>            }, <span style="color:#ae81ff">0</span>)
-        }
-        <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">async2</span>() {
-            <span style="color:#75715e">//更改如下：
-</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span> () {
-                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;setTimeout2&#39;</span>) <span style="color:#75715e">// 7 macro2
-</span><span style="color:#75715e"></span>            }, <span style="color:#ae81ff">0</span>)
-        }
-        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;script start&#39;</span>); <span style="color:#75715e">// 1
-</span><span style="color:#75715e"></span>
-        <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span> () {
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;setTimeout3&#39;</span>); <span style="color:#75715e">// 6 macro1
-</span><span style="color:#75715e"></span>        }, <span style="color:#ae81ff">0</span>)
-        <span style="color:#a6e22e">async1</span>();
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="kr">async</span> <span class="kd">function</span> <span class="nx">async1</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;async1 start&#39;</span><span class="p">);</span> <span class="c1">// 2
+</span><span class="c1"></span>            <span class="kr">await</span> <span class="nx">async2</span><span class="p">();</span>
+            <span class="c1">//更改如下：
+</span><span class="c1"></span>            <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;setTimeout1&#39;</span><span class="p">)</span> <span class="c1">// 8 macro3
+</span><span class="c1"></span>            <span class="p">},</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="kr">async</span> <span class="kd">function</span> <span class="nx">async2</span><span class="p">()</span> <span class="p">{</span>
+            <span class="c1">//更改如下：
+</span><span class="c1"></span>            <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;setTimeout2&#39;</span><span class="p">)</span> <span class="c1">// 7 macro2
+</span><span class="c1"></span>            <span class="p">},</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;script start&#39;</span><span class="p">);</span> <span class="c1">// 1
+</span><span class="c1"></span>
+        <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;setTimeout3&#39;</span><span class="p">);</span> <span class="c1">// 6 macro1
+</span><span class="c1"></span>        <span class="p">},</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="nx">async1</span><span class="p">();</span>
 
-        <span style="color:#66d9ef">new</span> Promise(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">resolve</span>) {
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;promise1&#39;</span>); <span style="color:#75715e">// 3
-</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">resolve</span>();
-        }).<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span> () {
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;promise2&#39;</span>); <span style="color:#75715e">// 5 micro1 
-</span><span style="color:#75715e"></span>        });
-        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;script end&#39;</span>); <span style="color:#75715e">// 4
-</span><span style="color:#75715e"></span>    &lt;/<span style="color:#f92672">script</span>&gt;
-&lt;/<span style="color:#f92672">body</span>&gt;
+        <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resolve</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;promise1&#39;</span><span class="p">);</span> <span class="c1">// 3
+</span><span class="c1"></span>            <span class="nx">resolve</span><span class="p">();</span>
+        <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;promise2&#39;</span><span class="p">);</span> <span class="c1">// 5 micro1 
+</span><span class="c1"></span>        <span class="p">});</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;script end&#39;</span><span class="p">);</span> <span class="c1">// 4
+</span><span class="c1"></span>    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 
-&lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></div><!-- raw HTML omitted -->
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">  <span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">  <span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
 
-&lt;<span style="color:#f92672">head</span>&gt;
-    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
-    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
-    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
-&lt;/<span style="color:#f92672">head</span>&gt;
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 
-&lt;<span style="color:#f92672">body</span>&gt;
-    &lt;<span style="color:#f92672">script</span>&gt;
-        <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">a1</span>() {
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;a1 start&#39;</span>) <span style="color:#75715e">// 2
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">a2</span>()
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;a1 end&#39;</span>) <span style="color:#75715e">// 7 micro2
-</span><span style="color:#75715e"></span>        }
-        <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">a2</span>() {
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;a2&#39;</span>) <span style="color:#75715e">// 3
-</span><span style="color:#75715e"></span>        }
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="kr">async</span> <span class="kd">function</span> <span class="nx">a1</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;a1 start&#39;</span><span class="p">)</span> <span class="c1">// 2
+</span><span class="c1"></span>            <span class="kr">await</span> <span class="nx">a2</span><span class="p">()</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;a1 end&#39;</span><span class="p">)</span> <span class="c1">// 7 micro2
+</span><span class="c1"></span>        <span class="p">}</span>
+        <span class="kr">async</span> <span class="kd">function</span> <span class="nx">a2</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;a2&#39;</span><span class="p">)</span> <span class="c1">// 3
+</span><span class="c1"></span>        <span class="p">}</span>
 
-        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;script start&#39;</span>) <span style="color:#75715e">// 1
-</span><span style="color:#75715e"></span>
-        <span style="color:#a6e22e">setTimeout</span>(() =&gt; {
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;setTimeout&#39;</span>) <span style="color:#75715e">// 10 macro1
-</span><span style="color:#75715e"></span>        }, <span style="color:#ae81ff">0</span>)
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;script start&#39;</span><span class="p">)</span> <span class="c1">// 1
+</span><span class="c1"></span>
+        <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;setTimeout&#39;</span><span class="p">)</span> <span class="c1">// 10 macro1
+</span><span class="c1"></span>        <span class="p">},</span> <span class="mi">0</span><span class="p">)</span>
 
-        Promise.<span style="color:#a6e22e">resolve</span>().<span style="color:#a6e22e">then</span>(() =&gt; {
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;promise1&#39;</span>) <span style="color:#75715e">// 6 micro1 
-</span><span style="color:#75715e"></span>        })
+        <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">().</span><span class="nx">then</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;promise1&#39;</span><span class="p">)</span> <span class="c1">// 6 micro1 
+</span><span class="c1"></span>        <span class="p">})</span>
 
-        <span style="color:#a6e22e">a1</span>()
+        <span class="nx">a1</span><span class="p">()</span>
 
-        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">promise2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Promise((<span style="color:#a6e22e">resolve</span>) =&gt; {
-            <span style="color:#a6e22e">resolve</span>(<span style="color:#e6db74">&#39;promise2.then&#39;</span>)
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;promise2&#39;</span>) <span style="color:#75715e">// 4
-</span><span style="color:#75715e"></span>        })
+        <span class="kd">let</span> <span class="nx">promise2</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">resolve</span><span class="p">(</span><span class="s1">&#39;promise2.then&#39;</span><span class="p">)</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;promise2&#39;</span><span class="p">)</span> <span class="c1">// 4
+</span><span class="c1"></span>        <span class="p">})</span>
 
-        <span style="color:#a6e22e">promise2</span>.<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">res</span>) =&gt; {
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">res</span>) <span style="color:#75715e">// 8 micro3
-</span><span style="color:#75715e"></span>            Promise.<span style="color:#a6e22e">resolve</span>().<span style="color:#a6e22e">then</span>(() =&gt; {
-                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;promise3&#39;</span>) <span style="color:#75715e">// 9 micro4
-</span><span style="color:#75715e"></span>            })
-        })
-        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;script end&#39;</span>) <span style="color:#75715e">// 5
-</span><span style="color:#75715e"></span>    &lt;/<span style="color:#f92672">script</span>&gt;
-&lt;/<span style="color:#f92672">body</span>&gt;
+        <span class="nx">promise2</span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="c1">// 8 micro3
+</span><span class="c1"></span>            <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">().</span><span class="nx">then</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;promise3&#39;</span><span class="p">)</span> <span class="c1">// 9 micro4
+</span><span class="c1"></span>            <span class="p">})</span>
+        <span class="p">})</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;script end&#39;</span><span class="p">)</span> <span class="c1">// 5
+</span><span class="c1"></span>    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 
-&lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></div><!-- raw HTML omitted -->
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 
     </div>
 
     
     
-<div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">文章作者</span>
-    <span class="item-content">XKHM</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">上次更新</span>
-    <span class="item-content">
-      2021-01-04
-      
-    </span>
-  </p>
-  
-  <p class="copyright-item">
-    <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">原创文章，转载请注明文章作者和出处，谢谢！</a></span>
-  </p>
-</div>
 
 
     
@@ -872,13 +1078,13 @@ Worker thread: Expensive task B
 </svg>
 
             </i>
-            <span class="prev-text nav-default">手写Promise</span>
-            <span class="prev-text nav-mobile">Prev</span>
+            <span class="prev-text nav-default" style="position: relative;top: -2px;">手写Promise</span>
+            <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
           <a class="next" href="/post/vue2%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0cv/">
-            <span class="next-text nav-default">Vue2从入门到CV</span>
-            <span class="prev-text nav-mobile">Next</span>
+            <span class="next-text nav-default" style="position: relative;top: -3px;">Vue2从入门到CV</span>
+            <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
               <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -899,20 +1105,19 @@ Worker thread: Expensive task B
   
   
 
-  
 
-  
-  
 
-  
 
-  
 
-  
 
-    
 
-  
+
+
+
+
+
+
+
 
         </div>
       </div>
@@ -966,23 +1171,17 @@ Worker thread: Expensive task B
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
-  </span>
-
+  
+  
   <span class="copyright-year">
     &copy;
     
-      2019 -
-    2022
+    2019 -
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -995,16 +1194,18 @@ Worker thread: Expensive task B
 
       </i>
     </span><span class="author">
-        星空海绵
-        
-      </span></span>
-
+      星空海绵
+      
+    </span></span>
   
-  
-
-  
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
 </div>
-
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -1047,6 +1248,8 @@ Worker thread: Expensive task B
 
 
 
+
+  <script async src="//changkun.de/urlstat/client.js"></script>
 
 
 

@@ -5,7 +5,7 @@
     <link>https://xkhm.net/categories/javascript/</link>
     <description>Recent content in JavaScript on 星空海绵 - 星空浩瀚 | 海绵吸水</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>zh-cn</language>
     <copyright>星空海绵</copyright>
     <lastBuildDate>Mon, 08 Feb 2021 11:01:09 +0800</lastBuildDate><atom:link href="https://xkhm.net/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -14,7 +14,7 @@
       <pubDate>Mon, 08 Feb 2021 11:01:09 +0800</pubDate>
       
       <guid>https://xkhm.net/post/%E5%90%8E%E7%94%9F%E5%8F%AF%E7%95%8F/</guid>
-      <description>做猿和做人有趣很重要 函数式编程永远滴神 当年咱在十里八乡，那可是有名的俊后生。 let slogan = { lastSentance: &amp;#39;牛年掘金沸点游&amp;#39;, nextSentance: &amp;#39;成为大</description>
+      <description>做猿和做人有趣很重要 函数式编程永远滴神 当年咱在十里八乡，那可是有名的俊后生。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 let slogan = { lastSentance: &amp;#39;牛</description>
     </item>
     
     <item>
@@ -50,7 +50,7 @@
       <pubDate>Thu, 14 Jan 2021 08:35:17 +0800</pubDate>
       
       <guid>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E7%BB%A7%E6%89%BF/</guid>
-      <description>1.原型链继承 // 1. 原型链继承 function A() { } function B() { } B.prototype = new A(); let a = new B(); 缺点：1.原型中包含的引用值会在实例间共享2.子类型在实例化时不能给父类型构造</description>
+      <description>1.原型链继承 1 2 3 4 5 // 1. 原型链继承 function A() { } function B() { } B.prototype = new A(); let a = new B(); 缺点：1.原型中包含的引用值会在实例间共享2.子类型在实例化时不能给</description>
     </item>
     
     <item>
@@ -86,7 +86,7 @@
       <pubDate>Mon, 04 Jan 2021 08:30:30 +0800</pubDate>
       
       <guid>https://xkhm.net/post/js%E9%9D%A2%E8%AF%95%E9%A2%98%E5%A4%8D%E4%B9%A0/</guid>
-      <description>1.对象 （1）深浅拷贝 只会拷贝对象的第一层 1.浅拷贝（4种） （1）直接赋值 let obj = { name: &amp;#39;XKHM&amp;#39;, age: 25, job: &amp;#39;Software Engineer&amp;#39; } let obj1 = obj; console.log(obj1 === obj); （2）Object.assi</description>
+      <description>1.对象 （1）深浅拷贝 只会拷贝对象的第一层 1.浅拷贝（4种） （1）直接赋值 1 2 3 4 5 6 7 let obj = { name: &amp;#39;XKHM&amp;#39;, age: 25, job: &amp;#39;Software Engineer&amp;#39; } let obj1 = obj; console.log(obj1 === obj); （2）Obje</description>
     </item>
     
     <item>
@@ -113,7 +113,7 @@
       <pubDate>Fri, 25 Dec 2020 08:24:35 +0800</pubDate>
       
       <guid>https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99bind/</guid>
-      <description>文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;); bind在第一个参数之</description>
+      <description>文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 1 2 3 4 5 6 7 8 9 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &amp;#39;星空海绵&amp;#39;)(&amp;#39</description>
     </item>
     
     <item>
@@ -122,7 +122,7 @@
       <pubDate>Sun, 20 Dec 2020 18:12:21 +0800</pubDate>
       
       <guid>https://xkhm.net/post/js%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/</guid>
-      <description>文章类型：个人学习笔记 1.双循环遍历 let arr = [1,5,6,1,9,9,2,1]; arr.map((item,index) =&amp;gt; { arr.map((i,index1) =&amp;gt; { if(index !== index1 &amp;amp;&amp;amp; item === i){ arr.splice(index1,1); } }) }) console.log(arr); function unique(array){ for (let i = 0; i &amp;lt; array.length; i++) { for(let j = i+1; j &amp;lt; array.length; j++){ if(array[i] === array[j]){ arr.splice(j,1); } } } return arr; }</description>
+      <description>文章类型：个人学习笔记 1.双循环遍历 1 2 3 4 5 6 7 8 9 let arr = [1,5,6,1,9,9,2,1]; arr.map((item,index) =&amp;gt; { arr.map((i,index1) =&amp;gt; { if(index !== index1 &amp;amp;&amp;amp; item === i){ arr.splice(index1,1); } }) }) console.log(arr); 1 2 3 4 5 6 7 8 9 10 11 function unique(array){ for (let i = 0; i &amp;lt; array.length;</description>
     </item>
     
   </channel>

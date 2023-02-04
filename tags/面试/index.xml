@@ -5,7 +5,7 @@
     <link>https://xkhm.net/tags/%E9%9D%A2%E8%AF%95/</link>
     <description>Recent content in 面试 on 星空海绵 - 星空浩瀚 | 海绵吸水</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>zh-cn</language>
     <copyright>星空海绵</copyright>
     <lastBuildDate>Tue, 09 Feb 2021 10:27:32 +0800</lastBuildDate><atom:link href="https://xkhm.net/tags/%E9%9D%A2%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -32,7 +32,7 @@
       <pubDate>Mon, 04 Jan 2021 08:30:30 +0800</pubDate>
       
       <guid>https://xkhm.net/post/js%E9%9D%A2%E8%AF%95%E9%A2%98%E5%A4%8D%E4%B9%A0/</guid>
-      <description>1.对象 （1）深浅拷贝 只会拷贝对象的第一层 1.浅拷贝（4种） （1）直接赋值 let obj = { name: &amp;#39;XKHM&amp;#39;, age: 25, job: &amp;#39;Software Engineer&amp;#39; } let obj1 = obj; console.log(obj1 === obj); （2）Object.assi</description>
+      <description>1.对象 （1）深浅拷贝 只会拷贝对象的第一层 1.浅拷贝（4种） （1）直接赋值 1 2 3 4 5 6 7 let obj = { name: &amp;#39;XKHM&amp;#39;, age: 25, job: &amp;#39;Software Engineer&amp;#39; } let obj1 = obj; console.log(obj1 === obj); （2）Obje</description>
     </item>
     
     <item>

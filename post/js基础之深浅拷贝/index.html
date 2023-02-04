@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -25,7 +25,7 @@
 <meta name="author" content="XKHM" />
   <meta name="description" content="文章类型：个人学习笔记 前言 友情提醒：个人学习笔记，可能有写的不对的地方，还请大佬们发现了提醒一下小弟我。 1.浅拷贝 定义：一个对象直接拷贝已存" />
 
-  <meta name="keywords" content="Hugo" />
+  <meta name="keywords" content="Hugo, 星空海绵, 前端, 工程师" />
 
 
 
@@ -41,7 +41,8 @@
 
 
 
-<link rel="icon" href="/favicon.png"  type="image/x-icon"/>
+<link rel="icon" href="/favicon.png" type="image/x-icon"/>
+
 
 
 
@@ -68,7 +69,7 @@
 <meta itemprop="description" content="文章类型：个人学习笔记 前言 友情提醒：个人学习笔记，可能有写的不对的地方，还请大佬们发现了提醒一下小弟我。 1.浅拷贝 定义：一个对象直接拷贝已存">
 <meta itemprop="datePublished" content="2020-12-19T12:23:51+08:00" />
 <meta itemprop="dateModified" content="2020-12-19T15:23:51+08:00" />
-<meta itemprop="wordCount" content="1223">
+<meta itemprop="wordCount" content="1525">
 
 
 
@@ -86,6 +87,17 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-K0V0BST0TH', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -149,7 +161,21 @@
         
           
           
-            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
         
       </li><li class="mobile-menu-item">
@@ -171,20 +197,6 @@
           
           
             <a class="menu-item-link" href="https://xkhm.net/tags/">标签</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
         
       </li>
@@ -342,7 +354,29 @@
         
           
           
-            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
 
         
@@ -382,28 +416,6 @@
 
       </li>
     
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
-          
-
-        
-
-      </li>
-    
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
-          
-
-        
-
-      </li>
-    
 
     
     
@@ -431,7 +443,8 @@
             <a href="https://xkhm.net/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
             
           </div>
-        
+        <span class="more-meta"> 约 1525 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
 
         
         
@@ -479,58 +492,145 @@
 </blockquote>
 <p>还没开始讲这篇文章的时候，让你自己去写一个拷贝，你会怎么写？</p>
 <h2 id="1直接赋值">（1）直接赋值</h2>
-<pre><code>        let obj = {
-            name: '小明',
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let obj = {
+            name: &#39;小明&#39;,
             age: 20,
-            job: 'Software Engineer'
+            job: &#39;Software Engineer&#39;
         }
         let obj1 = obj;
         console.log(obj1 === obj); // true
-</code></pre><h2 id="2借助-es6-的-objectassign-方法实现一个浅拷贝">（2）借助 ES6 的 Object.assign() 方法实现一个浅拷贝</h2>
-<pre><code>        let obj = {
-            name: '小明',
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2借助-es6-的-objectassign-方法实现一个浅拷贝">（2）借助 ES6 的 Object.assign() 方法实现一个浅拷贝</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let obj = {
+            name: &#39;小明&#39;,
             age: 20,
-            job: 'Software Engineer'
+            job: &#39;Software Engineer&#39;
         }
         let obj1 = Object.assign({}, obj);
         console.log(obj1 === obj); // false
         obj1.age = 10;
         console.log(obj.age); // 20
         console.log(obj1.age); // 10
-</code></pre><p>我们会发现，当对象内部属性全部为基础类型时，改变新拷贝的对象属性值，并不会影响到原对象，换句话说，如果你的对象里都是基础类型，你想对他进行拷贝，使用浅拷贝即可。</p>
-<pre><code>        let obj = {
-            name: '小明',
+</code></pre></td></tr></table>
+</div>
+</div><p>我们会发现，当对象内部属性全部为基础类型时，改变新拷贝的对象属性值，并不会影响到原对象，换句话说，如果你的对象里都是基础类型，你想对他进行拷贝，使用浅拷贝即可。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let obj = {
+            name: &#39;小明&#39;,
             age: 20,
-            job: 'Software Engineer',
-            friends: ['小花', '小丽']
+            job: &#39;Software Engineer&#39;,
+            friends: [&#39;小花&#39;, &#39;小丽&#39;]
         }
         let obj1 = Object.assign({}, obj);
         console.log(obj1 === obj); // false
-        obj1.friends[1] = '小萌';
-        console.log(obj.friends); // [&quot;小花&quot;, &quot;小萌&quot;]
-        console.log(obj1.friends); // [&quot;小花&quot;, &quot;小萌&quot;]
-</code></pre><p>当原对象中有属性时引用类型时，我们会发现改变新拷贝的引用类型属性值时，原对象的引用类型属性值也发生了改变，这就是拷贝的不够彻底，所以我们就需要深拷贝。</p>
+        obj1.friends[1] = &#39;小萌&#39;;
+        console.log(obj.friends); // [&#34;小花&#34;, &#34;小萌&#34;]
+        console.log(obj1.friends); // [&#34;小花&#34;, &#34;小萌&#34;]
+</code></pre></td></tr></table>
+</div>
+</div><p>当原对象中有属性时引用类型时，我们会发现改变新拷贝的引用类型属性值时，原对象的引用类型属性值也发生了改变，这就是拷贝的不够彻底，所以我们就需要深拷贝。</p>
 <h2 id="3借助-es6-的展开语法实现浅拷贝">（3）借助 ES6 的展开语法实现浅拷贝</h2>
-<pre><code>        let obj = {
-            name: '小明',
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let obj = {
+            name: &#39;小明&#39;,
             age: 20,
-            job: 'Software Engineer',
-            friends: ['小花', '小丽']
+            job: &#39;Software Engineer&#39;,
+            friends: [&#39;小花&#39;, &#39;小丽&#39;]
         }
         let obj1 = { ...obj };
         console.log(obj1 === obj);
         obj1.age = 10;
-        obj.friends[0] = '小美';
+        obj.friends[0] = &#39;小美&#39;;
         console.log(obj.age); // 20
         console.log(obj1.age); // 10
-        console.log(obj.friends); // [&quot;小美&quot;, &quot;小丽&quot;]
-        console.log(obj1.friends); // [&quot;小美&quot;, &quot;小丽&quot;]
-</code></pre><h2 id="4遍历赋值的方法实现浅拷贝">（4）遍历赋值的方法实现浅拷贝</h2>
-<pre><code>        let obj = {
-            name: '小明',
+        console.log(obj.friends); // [&#34;小美&#34;, &#34;小丽&#34;]
+        console.log(obj1.friends); // [&#34;小美&#34;, &#34;小丽&#34;]
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="4遍历赋值的方法实现浅拷贝">（4）遍历赋值的方法实现浅拷贝</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let obj = {
+            name: &#39;小明&#39;,
             age: 20,
-            job: 'Software Engineer',
-            friends: ['小花', '小丽']
+            job: &#39;Software Engineer&#39;,
+            friends: [&#39;小花&#39;, &#39;小丽&#39;]
         }
         let obj1 = {};
         for (const item of Object.entries(obj)) {
@@ -538,34 +638,80 @@
         }
         console.log(obj1 === obj);
         obj1.age = 10;
-        obj.friends[0] = '小美';
+        obj.friends[0] = &#39;小美&#39;;
         console.log(obj.age); // 20
         console.log(obj1.age); // 10
-        console.log(obj.friends); // [&quot;小美&quot;, &quot;小丽&quot;]
-        console.log(obj1.friends); // [&quot;小美&quot;, &quot;小丽&quot;]
-</code></pre><h1 id="2深拷贝">2.深拷贝</h1>
+        console.log(obj.friends); // [&#34;小美&#34;, &#34;小丽&#34;]
+        console.log(obj1.friends); // [&#34;小美&#34;, &#34;小丽&#34;]
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="2深拷贝">2.深拷贝</h1>
 <blockquote>
 <p>复制一个一模一样的对象，不共享内存，修改一个对象，不会影响到另一个对象</p>
 </blockquote>
 <h2 id="1利用jsonstringify">（1）利用JSON.stringify()</h2>
-<pre><code>        let obj = {
-            name: '小明',
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let obj = {
+            name: &#39;小明&#39;,
             age: 20,
-            job: 'Software Engineer',
-            friends: ['小花', '小丽']
+            job: &#39;Software Engineer&#39;,
+            friends: [&#39;小花&#39;, &#39;小丽&#39;]
         }
         let obj1 = JSON.parse(JSON.stringify(obj));
-        obj1.friends[0] = '小美';
-        console.log(obj.friends); // [&quot;小花&quot;, &quot;小丽&quot;]
-        console.log(obj1.friends); // [&quot;小美&quot;, &quot;小丽&quot;]
-</code></pre><blockquote>
+        obj1.friends[0] = &#39;小美&#39;;
+        console.log(obj.friends); // [&#34;小花&#34;, &#34;小丽&#34;]
+        console.log(obj1.friends); // [&#34;小美&#34;, &#34;小丽&#34;]
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
 <p>缺陷：处理不了function对象、undefined以及symbol类型，原因时JSON.stringify()在处理这些类型，这些类型会被忽略，不会被处理，详情见 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify">MDN</a></p>
 </blockquote>
 <h2 id="2递归对每层数据实行遍历然后进行拷贝">（2）递归，对每层数据实行遍历然后进行拷贝</h2>
-<pre><code>        let obj = {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let obj = {
             name: {
-                firstName: '小',
-                lastName: '星',
+                firstName: &#39;小&#39;,
+                lastName: &#39;星&#39;,
             },
             age: 25,
             arr: [{ a: 10 }, { b: 50 }]
@@ -573,7 +719,7 @@
         function copyObj(obj) {
             let obj1 = Array.isArray(obj) ? [] : {};
             for (const key in obj) {
-                if (typeof obj[key] === 'object') {
+                if (typeof obj[key] === &#39;object&#39;) {
                     obj1[key] = copyObj(obj[key]);
                 } else {
                     obj1[key] = obj[key]
@@ -583,64 +729,85 @@
         }
         let obj2 = copyObj(obj);
         obj2.arr[0].a = 80;
-        obj2.name.firstName = '王';
+        obj2.name.firstName = &#39;王&#39;;
         console.log(obj);
         console.log(obj2);
-</code></pre><p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/53baf66579f7458ca5b2a454a97364da~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/53baf66579f7458ca5b2a454a97364da~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
 <h2 id="3jquery中实现深拷贝">（3）Jquery中实现深拷贝</h2>
 <blockquote>
 <p>Jquery中实现深拷贝的原理也是递归</p>
 </blockquote>
-<pre><code>        let obj = {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let obj = {
             name: {
-                firstName: '小',
-                lastName: '星',
+                firstName: &#39;小&#39;,
+                lastName: &#39;星&#39;,
             },
             age: 25,
             sayName() { }
         }
         let obj2 = $.extend(true, {}, obj);
-        obj2.name.firstName = '王';
+        obj2.name.firstName = &#39;王&#39;;
         console.log(obj.name.firstName); // 小
         console.log(obj2.name.firstName); // 王
-</code></pre><h2 id="4lodash中的-_defaultsdeephttpswwwlodashjscomdocslodashdefaultsdeep-方法">（4）Lodash中的 <a href="https://www.lodashjs.com/docs/lodash.defaultsDeep">_.defaultsDeep()</a> 方法</h2>
-<pre><code>        let obj = {
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="4lodash中的-_defaultsdeephttpswwwlodashjscomdocslodashdefaultsdeep-方法">（4）Lodash中的 <a href="https://www.lodashjs.com/docs/lodash.defaultsDeep">_.defaultsDeep()</a> 方法</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let obj = {
             name: {
-                firstName: '小',
-                lastName: '星',
+                firstName: &#39;小&#39;,
+                lastName: &#39;星&#39;,
             },
             age: 25,
             arr: [{ a: 10 }, { b: 50 }]
         }
         let obj2 = _.defaultsDeep({}, obj);
         obj2.arr[0].a = 80;
-        obj2.name.firstName = '王';
+        obj2.name.firstName = &#39;王&#39;;
         console.log(obj);
         console.log(obj2);
-</code></pre><p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6414d847154446c58f89ddd86fe50884~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6414d847154446c58f89ddd86fe50884~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
 
     </div>
 
     
     
-<div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">文章作者</span>
-    <span class="item-content">XKHM</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">上次更新</span>
-    <span class="item-content">
-      2020-12-19
-      
-    </span>
-  </p>
-  
-  <p class="copyright-item">
-    <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">原创文章，转载请注明文章作者和出处，谢谢！</a></span>
-  </p>
-</div>
 
 
     
@@ -665,13 +832,13 @@
 </svg>
 
             </i>
-            <span class="prev-text nav-default">JS数组去重</span>
-            <span class="prev-text nav-mobile">Prev</span>
+            <span class="prev-text nav-default" style="position: relative;top: -2px;">JS数组去重</span>
+            <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
           <a class="next" href="/post/%E4%B8%80%E6%96%87%E8%AF%A6%E8%A7%A3javascript%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84/">
-            <span class="next-text nav-default">一文详解JavaScript中的数组</span>
-            <span class="prev-text nav-mobile">Next</span>
+            <span class="next-text nav-default" style="position: relative;top: -3px;">一文详解JavaScript中的数组</span>
+            <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
               <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -692,20 +859,19 @@
   
   
 
-  
 
-  
-  
 
-  
 
-  
 
-  
 
-    
 
-  
+
+
+
+
+
+
+
 
         </div>
       </div>
@@ -759,23 +925,17 @@
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
-  </span>
-
+  
+  
   <span class="copyright-year">
     &copy;
     
-      2019 -
-    2022
+    2019 -
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -788,16 +948,18 @@
 
       </i>
     </span><span class="author">
-        星空海绵
-        
-      </span></span>
-
+      星空海绵
+      
+    </span></span>
   
-  
-
-  
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
 </div>
-
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -840,6 +1002,8 @@
 
 
 
+
+  <script async src="//changkun.de/urlstat/client.js"></script>
 
 
 

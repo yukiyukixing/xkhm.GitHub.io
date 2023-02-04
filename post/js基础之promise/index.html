@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -25,7 +25,7 @@
 <meta name="author" content="XKHM" />
   <meta name="description" content="前言：个人学习笔记，初识Promise 1.Promise解决了什么问题？ 用来解决 回调地狱 问题 回调地狱：在JS中，为了实现某些逻辑经常会写出层" />
 
-  <meta name="keywords" content="Hugo" />
+  <meta name="keywords" content="Hugo, 星空海绵, 前端, 工程师" />
 
 
 
@@ -41,7 +41,8 @@
 
 
 
-<link rel="icon" href="/favicon.png"  type="image/x-icon"/>
+<link rel="icon" href="/favicon.png" type="image/x-icon"/>
+
 
 
 
@@ -68,7 +69,7 @@
 <meta itemprop="description" content="前言：个人学习笔记，初识Promise 1.Promise解决了什么问题？ 用来解决 回调地狱 问题 回调地狱：在JS中，为了实现某些逻辑经常会写出层">
 <meta itemprop="datePublished" content="2020-12-26T16:05:58+08:00" />
 <meta itemprop="dateModified" content="2020-12-26T16:05:58+08:00" />
-<meta itemprop="wordCount" content="6384">
+<meta itemprop="wordCount" content="6567">
 
 
 
@@ -86,6 +87,17 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-K0V0BST0TH', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -149,7 +161,21 @@
         
           
           
-            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
         
       </li><li class="mobile-menu-item">
@@ -171,20 +197,6 @@
           
           
             <a class="menu-item-link" href="https://xkhm.net/tags/">标签</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
         
       </li>
@@ -342,7 +354,29 @@
         
           
           
-            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
 
         
@@ -382,28 +416,6 @@
 
       </li>
     
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
-          
-
-        
-
-      </li>
-    
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
-          
-
-        
-
-      </li>
-    
 
     
     
@@ -431,7 +443,8 @@
             <a href="https://xkhm.net/categories/javascript/"> JavaScript </a>
             
           </div>
-        
+        <span class="more-meta"> 约 6567 字 </span>
+          <span class="more-meta"> 预计阅读 14 分钟 </span>
 
         
         
@@ -522,83 +535,182 @@
 <h1 id="1promise解决了什么问题">1.Promise解决了什么问题？</h1>
 <p>用来解决 <strong>回调地狱</strong> 问题</p>
 <p>回调地狱：在JS中，为了实现某些逻辑经常会写出层层嵌套的 <strong>回调函数</strong>，如果嵌套过多，会极大的影响代码可读性和逻辑，这种情况被称为回调地狱。比如说把一个函数A作为回调函数，但是该函数又接收一个函数B作为参数，甚至B还能接受函数C作为参数，这样层层嵌套，人们称为<strong>回调地狱</strong>，代码阅读性非常的差。</p>
-<pre><code>        let sayHello = function (name, callback) {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let sayHello = function (name, callback) {
             setTimeout(function () {
                 console.log(name);
                 callback();
             }, 1000);
         }
-        sayHello('first', function () {
-            sayHello('second', function () {
-                sayHello('third', function () {
-                    console.log('end');
+        sayHello(&#39;first&#39;, function () {
+            sayHello(&#39;second&#39;, function () {
+                sayHello(&#39;third&#39;, function () {
+                    console.log(&#39;end&#39;);
                 });
             });
         })
-</code></pre><p>回调函数：回调是一个函数，它作为参数传递给另一个函数，并在其父函数完成后执行。</p>
-<pre><code>        function doSomething(msg, callback) {
+</code></pre></td></tr></table>
+</div>
+</div><p>回调函数：回调是一个函数，它作为参数传递给另一个函数，并在其父函数完成后执行。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        function doSomething(msg, callback) {
             alert(msg);
-            if (typeof callback === 'function') {
+            if (typeof callback === &#39;function&#39;) {
                 callback();
             }
         }
-        doSomething('回调函数', function () {
-            alert('匿名函数实现回调');
+        doSomething(&#39;回调函数&#39;, function () {
+            alert(&#39;匿名函数实现回调&#39;);
         });
-</code></pre><p>回调既可以同步回调，也可以异步回调。</p>
-<pre><code>        // 同步回调
+</code></pre></td></tr></table>
+</div>
+</div><p>回调既可以同步回调，也可以异步回调。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        // 同步回调
         function getNodes(param, callback) {
             let list = JSON.stringify(param);
-            if (typeof callback === 'function') {
+            if (typeof callback === &#39;function&#39;) {
                 callback(list)
             }
         }
-        getNodes('[1,2,3]', function (nodes) {
+        getNodes(&#39;[1,2,3]&#39;, function (nodes) {
             console.log(nodes);
         });
         //ajax回调
-        $.get('ajax/test.html', function (data) {
-            $('box').html(data);
+        $.get(&#39;ajax/test.html&#39;, function (data) {
+            $(&#39;box&#39;).html(data);
         })
 
         // 点击事件回调 
-        $('#myBtn').click(function () {
-            alert('click myBtn!');
+        $(&#39;#myBtn&#39;).click(function () {
+            alert(&#39;click myBtn!&#39;);
         })
-</code></pre><blockquote>
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
 <p>感受：JS虽然灵活，但是灵活的同时，带来的缺点就是，写代码的过程中需要加一些判断，比如上面这段代码中判断callback是不是函数，在别的强类型语言中，这个callback如果不是函数，可能写的时候编辑器就会直接提醒，传入参数的类型不对。所以就会出现TypeScript。</p>
 </blockquote>
 <p>注意回调函数中的this指向：</p>
-<pre><code>        var clientData = {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        var clientData = {
             id: 096545,
-            fullName: &quot;Not Set&quot;,
+            fullName: &#34;Not Set&#34;,
             setUserName: function (firstName, lastName) {
-                this.fullName = firstName + &quot; &quot; + lastName;
+                this.fullName = firstName + &#34; &#34; + lastName;
             }
         }
         function getUserInput(firstName, lastName, callback) {
             //调用回调函数存储，此时是window调用的这个传进来的函数
             callback(firstName, lastName);
         }
-        getUserInput(&quot;Barack&quot;, &quot;Obama&quot;, clientData.setUserName);
+        getUserInput(&#34;Barack&#34;, &#34;Obama&#34;, clientData.setUserName);
         console.log(clientData.fullName);  //Not Set
         console.log(window.fullName);  //Barack Obama
-</code></pre><p>上面这段代码中回调函数的this是指向window的，此时可以使用call或apply改下this的指向</p>
-<pre><code>        var clientData = {
+</code></pre></td></tr></table>
+</div>
+</div><p>上面这段代码中回调函数的this是指向window的，此时可以使用call或apply改下this的指向</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        var clientData = {
             id: 096545,
-            fullName: &quot;Not Set&quot;,
+            fullName: &#34;Not Set&#34;,
             setUserName: function (firstName, lastName) {
-                this.fullName = firstName + &quot; &quot; + lastName;
+                this.fullName = firstName + &#34; &#34; + lastName;
             }
         }
         function getUserInput(firstName, lastName, callback) {
             //调用回调函数存储，此时是window调用的这个传进来的函数
             callback.call(clientData, firstName, lastName);
         }
-        getUserInput(&quot;Barack&quot;, &quot;Obama&quot;, clientData.setUserName);
+        getUserInput(&#34;Barack&#34;, &#34;Obama&#34;, clientData.setUserName);
         console.log(clientData.fullName);  //Barack Obama
         console.log(window.fullName);  //undefined
-</code></pre><blockquote>
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
 <p>问题：JS底层是怎么实现异步的，相关内容：V8引擎是如何实现异步的，EventLoop相关原理深度解析,JS执行过程中的堆栈变化，异步是不是等同于并行以及其它相关底层问题。</p>
 </blockquote>
 <p>链式调用：同一对象多次其属性或方法的时候，我们需要多次书写对象进行“.” 或 () 操作；链式调用是一种简化此过程的一种编码方式，使代码简洁、易读。</p>
@@ -622,23 +734,45 @@
 </blockquote>
 <h2 id="3catch-的后续链式操作">(3)Catch 的后续链式操作</h2>
 <p>有可能会在一个回调失败之后继续使用链式操作，即，使用一个 catch，这对于在链式操作中抛出一个失败之后，再次进行新的操作会很有用。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">        <span style="color:#66d9ef">new</span> Promise((<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) =&gt; {
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;初始化&#39;</span>);
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript">        <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;初始化&#39;</span><span class="p">);</span>
 
-            <span style="color:#a6e22e">resolve</span>();
-        })
-            .<span style="color:#a6e22e">then</span>(() =&gt; {
-                <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#39;有哪里不对了&#39;</span>);
+            <span class="nx">resolve</span><span class="p">();</span>
+        <span class="p">})</span>
+            <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;有哪里不对了&#39;</span><span class="p">);</span>
 
-                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;执行「这个」”&#39;</span>);
-            })
-            .<span style="color:#66d9ef">catch</span>(() =&gt; {
-                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;执行「那个」&#39;</span>);
-            })
-            .<span style="color:#a6e22e">then</span>(() =&gt; {
-                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;执行「这个」，无论前面发生了什么&#39;</span>);
-            });
-</code></pre></div><p>打印结果：</p>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;执行「这个」”&#39;</span><span class="p">);</span>
+            <span class="p">})</span>
+            <span class="p">.</span><span class="k">catch</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;执行「那个」&#39;</span><span class="p">);</span>
+            <span class="p">})</span>
+            <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;执行「这个」，无论前面发生了什么&#39;</span><span class="p">);</span>
+            <span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>打印结果：</p>
 <p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f4cc42c8fb93435aa1093e628e760435~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
 <blockquote>
 <p>注意：因为抛出了错误 有哪里不对了，所以前一个 执行「这个」 没有被输出。</p>
@@ -657,68 +791,172 @@
 <p>以上两种情况中，PromiseRejectionEvent 事件都有两个属性，一个是 promise 属性，该属性指向被驳回的 Promise，另一个是 reason 属性，该属性用来说明 Promise 被驳回的原因。</p>
 <p>因此，我们可以通过以上事件为 Promise 失败时提供补偿处理，也有利于调试 Promise 相关的问题。在每一个上下文中，该处理都是全局的，因此不管源码如何，所有的错误都会在同一个处理函数中被捕捉并处理。</p>
 <p>一个特别有用的例子：当你使用 Node.js 时，有些依赖模块可能会有未被处理的 rejected promises，这些都会在运行时打印到控制台。你可以在自己的代码中捕捉这些信息，然后添加与 unhandledrejection 相应的处理函数来做分析和处理，或只是为了让你的输出更整洁。举例如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;unhandledrejection&#34;</span>, <span style="color:#a6e22e">event</span> =&gt; {
-  <span style="color:#75715e">/* 你可以在这里添加一些代码，以便检查
-</span><span style="color:#75715e">     event.promise 中的 promise 和
-</span><span style="color:#75715e">     event.reason 中的 rejection 原因 */</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;unhandledrejection&#34;</span><span class="p">,</span> <span class="nx">event</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="cm">/* 你可以在这里添加一些代码，以便检查
+</span><span class="cm">     event.promise 中的 promise 和
+</span><span class="cm">     event.reason 中的 rejection 原因 */</span>
 
-  <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">preventDefault</span>();
-}, <span style="color:#66d9ef">false</span>);
-</code></pre></div><p>调用 event 的 preventDefault() 方法是为了告诉 JavaScript 引擎当 Promise 被拒绝时不要执行默认操作，默认操作一般会包含把错误打印到控制台，Node 就是如此的。</p>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+<span class="p">},</span> <span class="kc">false</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>调用 event 的 preventDefault() 方法是为了告诉 JavaScript 引擎当 Promise 被拒绝时不要执行默认操作，默认操作一般会包含把错误打印到控制台，Node 就是如此的。</p>
 <p>理想情况下，在忽略这些事件之前，我们应该检查所有被拒绝的 Promise，来确认这不是代码中的 bug。</p>
 <h2 id="6在旧式回调-api-中创建-promise">（6）在旧式回调 API 中创建 Promise</h2>
 <p>理想状态下，所有的异步函数都已经返回 Promise 了。但有一些 API 仍然使用旧方式来传入的成功（或者失败）的回调。典型的例子就是 setTimeout() 函数：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">setTimeout</span>(() =&gt; <span style="color:#a6e22e">saySomething</span>(<span style="color:#e6db74">&#34;10 seconds passed&#34;</span>), <span style="color:#ae81ff">10000</span>);
-</code></pre></div><p>混用旧式回调和 Promise 可能会造成运行时序问题。如果 saySomething 函数失败了，或者包含了编程错误，那就没有办法捕获它了。这得怪 setTimeout。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="nx">saySomething</span><span class="p">(</span><span class="s2">&#34;10 seconds passed&#34;</span><span class="p">),</span> <span class="mi">10000</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>混用旧式回调和 Promise 可能会造成运行时序问题。如果 saySomething 函数失败了，或者包含了编程错误，那就没有办法捕获它了。这得怪 setTimeout。</p>
 <p>幸运地是，我们可以用 Promise 来封装它。最好的做法是，将这些有问题的函数封装起来，留在底层，并且永远不要再直接调用它们：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">wait</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ms</span> =&gt; <span style="color:#66d9ef">new</span> Promise(<span style="color:#a6e22e">resolve</span> =&gt; <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">ms</span>));
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kr">const</span> <span class="nx">wait</span> <span class="o">=</span> <span class="nx">ms</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="p">=&gt;</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">ms</span><span class="p">));</span>
 
-<span style="color:#a6e22e">wait</span>(<span style="color:#ae81ff">10000</span>).<span style="color:#a6e22e">then</span>(() =&gt; <span style="color:#a6e22e">saySomething</span>(<span style="color:#e6db74">&#34;10 seconds&#34;</span>)).<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">failureCallback</span>);
-</code></pre></div><p>通常，Promise 的构造器接收一个执行函数(executor)，我们可以在这个执行函数里手动地 resolve 和 reject 一个 Promise。既然 setTimeout 并不会真的执行失败，那么我们可以在这种情况下忽略 reject。</p>
+<span class="nx">wait</span><span class="p">(</span><span class="mi">10000</span><span class="p">).</span><span class="nx">then</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="nx">saySomething</span><span class="p">(</span><span class="s2">&#34;10 seconds&#34;</span><span class="p">)).</span><span class="k">catch</span><span class="p">(</span><span class="nx">failureCallback</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>通常，Promise 的构造器接收一个执行函数(executor)，我们可以在这个执行函数里手动地 resolve 和 reject 一个 Promise。既然 setTimeout 并不会真的执行失败，那么我们可以在这种情况下忽略 reject。</p>
 <h2 id="7组合">（7）组合</h2>
 <p>Promise.resolve() 和 Promise.reject() 是手动创建一个已经 resolve 或者 reject 的 Promise 快捷方法。它们有时很有用。</p>
 <p>Promise.all() 和 Promise.race() 是并行运行异步操作的两个组合式工具。</p>
 <p>我们可以发起并行操作，然后等多个操作全部结束后进行下一步操作，如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">Promise.<span style="color:#a6e22e">all</span>([<span style="color:#a6e22e">func1</span>(), <span style="color:#a6e22e">func2</span>(), <span style="color:#a6e22e">func3</span>()])
-.<span style="color:#a6e22e">then</span>(([<span style="color:#a6e22e">result1</span>, <span style="color:#a6e22e">result2</span>, <span style="color:#a6e22e">result3</span>]) =&gt; { <span style="color:#75715e">/* use result1, result2 and result3 */</span> });
-</code></pre></div><p>可以使用一些聪明的 JavaScript 写法实现时序组合：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">[<span style="color:#a6e22e">func1</span>, <span style="color:#a6e22e">func2</span>, <span style="color:#a6e22e">func3</span>].<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">p</span>, <span style="color:#a6e22e">f</span>) =&gt; <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">f</span>), Promise.<span style="color:#a6e22e">resolve</span>())
-.<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">result3</span> =&gt; { <span style="color:#75715e">/* use result3 */</span> });
-</code></pre></div><p>通常，我们递归调用一个由异步函数组成的数组时，相当于一个 Promise 链：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">Promise.<span style="color:#a6e22e">resolve</span>().<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">func1</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">func2</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">func3</span>);
-</code></pre></div><p>我们也可以写成可复用的函数形式，这在函数式编程中极为普遍：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">applyAsync</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">acc</span>,<span style="color:#a6e22e">val</span>) =&gt; <span style="color:#a6e22e">acc</span>.<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">val</span>);
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">composeAsync</span> <span style="color:#f92672">=</span> (...<span style="color:#a6e22e">funcs</span>) =&gt; <span style="color:#a6e22e">x</span> =&gt; <span style="color:#a6e22e">funcs</span>.<span style="color:#a6e22e">reduce</span>(<span style="color:#a6e22e">applyAsync</span>, Promise.<span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">x</span>));
-</code></pre></div><p>composeAsync() 函数将会接受任意数量的函数作为其参数，并返回一个新的函数，该函数接受一个通过 composition pipeline 传入的初始值。这对我们来说非常有益，因为任一函数可以是异步或同步的，它们能被保证按顺序执行：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">transformData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">composeAsync</span>(<span style="color:#a6e22e">func1</span>, <span style="color:#a6e22e">func2</span>, <span style="color:#a6e22e">func3</span>);
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">result3</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">transformData</span>(<span style="color:#a6e22e">data</span>);
-</code></pre></div><p>在 ECMAScript 2017 标准中, 时序组合可以通过使用 async/await 而变得更简单：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span>;
-<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">f</span> <span style="color:#66d9ef">of</span> [<span style="color:#a6e22e">func1</span>, <span style="color:#a6e22e">func2</span>, <span style="color:#a6e22e">func3</span>]) {
-  <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">result</span>);
-}
-</code></pre></div><h2 id="8时序">8.时序</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span><span class="nx">func1</span><span class="p">(),</span> <span class="nx">func2</span><span class="p">(),</span> <span class="nx">func3</span><span class="p">()])</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(([</span><span class="nx">result1</span><span class="p">,</span> <span class="nx">result2</span><span class="p">,</span> <span class="nx">result3</span><span class="p">])</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="cm">/* use result1, result2 and result3 */</span> <span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>可以使用一些聪明的 JavaScript 写法实现时序组合：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="p">[</span><span class="nx">func1</span><span class="p">,</span> <span class="nx">func2</span><span class="p">,</span> <span class="nx">func3</span><span class="p">].</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">p</span><span class="p">,</span> <span class="nx">f</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">p</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">f</span><span class="p">),</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">())</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result3</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="cm">/* use result3 */</span> <span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>通常，我们递归调用一个由异步函数组成的数组时，相当于一个 Promise 链：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">func1</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">func2</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">func3</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>我们也可以写成可复用的函数形式，这在函数式编程中极为普遍：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kr">const</span> <span class="nx">applyAsync</span> <span class="o">=</span> <span class="p">(</span><span class="nx">acc</span><span class="p">,</span><span class="nx">val</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">acc</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">val</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">composeAsync</span> <span class="o">=</span> <span class="p">(...</span><span class="nx">funcs</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">x</span> <span class="p">=&gt;</span> <span class="nx">funcs</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">applyAsync</span><span class="p">,</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">x</span><span class="p">));</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>composeAsync() 函数将会接受任意数量的函数作为其参数，并返回一个新的函数，该函数接受一个通过 composition pipeline 传入的初始值。这对我们来说非常有益，因为任一函数可以是异步或同步的，它们能被保证按顺序执行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kr">const</span> <span class="nx">transformData</span> <span class="o">=</span> <span class="nx">composeAsync</span><span class="p">(</span><span class="nx">func1</span><span class="p">,</span> <span class="nx">func2</span><span class="p">,</span> <span class="nx">func3</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">result3</span> <span class="o">=</span> <span class="nx">transformData</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在 ECMAScript 2017 标准中, 时序组合可以通过使用 async/await 而变得更简单：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kd">let</span> <span class="nx">result</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kr">const</span> <span class="nx">f</span> <span class="k">of</span> <span class="p">[</span><span class="nx">func1</span><span class="p">,</span> <span class="nx">func2</span><span class="p">,</span> <span class="nx">func3</span><span class="p">])</span> <span class="p">{</span>
+  <span class="nx">result</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">f</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="8时序">8.时序</h2>
 <p>为了避免意外，即使是一个已经变成 resolve 状态的 Promise，传递给 then() 的函数也总是会被异步调用。</p>
 <h2 id="9嵌套">9.嵌套</h2>
 <p>简便的 Promise 链式编程最好保持扁平化，不要嵌套 Promise，因为嵌套经常会是粗心导致的。可查阅下一节的常见错误中的例子。</p>
 <h2 id="10常见错误">10.常见错误</h2>
 <p>在编写 Promise 链时，需要注意以下示例中展示的几个错误：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#75715e">// 错误示例，包含 3 个问题！
-</span><span style="color:#75715e"></span>
-<span style="color:#a6e22e">doSomething</span>().<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">result</span>) {
-  <span style="color:#a6e22e">doSomethingElse</span>(<span style="color:#a6e22e">result</span>) <span style="color:#75715e">// 没有返回 Promise 以及没有必要的嵌套 Promise
-</span><span style="color:#75715e"></span>  .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">newResult</span> =&gt; <span style="color:#a6e22e">doThirdThing</span>(<span style="color:#a6e22e">newResult</span>));
-}).<span style="color:#a6e22e">then</span>(() =&gt; <span style="color:#a6e22e">doFourthThing</span>());
-<span style="color:#75715e">// 最后，是没有使用 catch 终止 Promise 调用链，可能导致没有捕获的异常
-</span></code></pre></div><p>一个好的经验法则是总是返回或终止 Promise 链，并且一旦你得到一个新的 Promise，返回它。下面是修改后的平面化的代码：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">doSomething</span>()
-.<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">result</span>) {
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">doSomethingElse</span>(<span style="color:#a6e22e">result</span>);
-})
-.<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">newResult</span> =&gt; <span style="color:#a6e22e">doThirdThing</span>(<span style="color:#a6e22e">newResult</span>))
-.<span style="color:#a6e22e">then</span>(() =&gt; <span style="color:#a6e22e">doFourthThing</span>())
-.<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">error</span> =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">error</span>));
-</code></pre></div><blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="c1">// 错误示例，包含 3 个问题！
+</span><span class="c1"></span>
+<span class="nx">doSomething</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">doSomethingElse</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="c1">// 没有返回 Promise 以及没有必要的嵌套 Promise
+</span><span class="c1"></span>  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">newResult</span> <span class="p">=&gt;</span> <span class="nx">doThirdThing</span><span class="p">(</span><span class="nx">newResult</span><span class="p">));</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="nx">doFourthThing</span><span class="p">());</span>
+<span class="c1">// 最后，是没有使用 catch 终止 Promise 调用链，可能导致没有捕获的异常
+</span></code></pre></td></tr></table>
+</div>
+</div><p>一个好的经验法则是总是返回或终止 Promise 链，并且一旦你得到一个新的 Promise，返回它。下面是修改后的平面化的代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">doSomething</span><span class="p">()</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">doSomethingElse</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">newResult</span> <span class="p">=&gt;</span> <span class="nx">doThirdThing</span><span class="p">(</span><span class="nx">newResult</span><span class="p">))</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="nx">doFourthThing</span><span class="p">())</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">));</span>
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
 <p>使用 async/await 可以解决以上大多数错误，使用 async/await 时，最常见的语法错误就是忘记了 await 关键字。</p>
 </blockquote>
 <h1 id="3promise">3.Promise</h1>
@@ -739,32 +977,68 @@
 <h2 id="1promiseall">（1）Promise.all()</h2>
 <p>只有当参数里的所有异步操作都返回成功的时候，Promise.all()才会返回成功，否则，有一个错误，就会返回错误。</p>
 <p>语法：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">Promise.<span style="color:#a6e22e">all</span>(<span style="color:#a6e22e">iterable</span>);
-</code></pre></div><p>参数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">iterable</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>参数：</p>
 <p>一个可迭代对象，如 Array 或 String。</p>
 <p>返回值：</p>
 <p>1.传入空的可迭代对象时，返回一个已完成状态的Promise</p>
 <p>2.传入的参数不包含Promise，返回一个异步完成的Promise</p>
 <p>3.其它情况下返回一个处理中（pending）的Promise</p>
 <p>使用：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p1</span> <span style="color:#f92672">=</span> Promise.<span style="color:#a6e22e">resolve</span>(<span style="color:#ae81ff">3</span>);
-        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p2</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1337</span>;
-        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p3</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Promise((<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) =&gt; {
-            <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">resolve</span>, <span style="color:#ae81ff">100</span>, <span style="color:#e6db74">&#39;foo&#39;</span>);
-        });
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript">        <span class="kd">var</span> <span class="nx">p1</span> <span class="o">=</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">p2</span> <span class="o">=</span> <span class="mi">1337</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">p3</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">);</span>
+        <span class="p">});</span>
 
-        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">dir</span>(Promise.<span style="color:#a6e22e">all</span>([<span style="color:#a6e22e">p3</span>, <span style="color:#a6e22e">p1</span>, <span style="color:#a6e22e">p2</span>]).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">values</span> =&gt; {
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">values</span>); <span style="color:#75715e">// [3, 1337, &#34;foo&#34;]
-</span><span style="color:#75715e"></span>        }));
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> Promise.<span style="color:#a6e22e">all</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]);
-        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p2</span> <span style="color:#f92672">=</span> Promise.<span style="color:#a6e22e">all</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, Promise.<span style="color:#a6e22e">resolve</span>(<span style="color:#ae81ff">444</span>)]);
-        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p3</span> <span style="color:#f92672">=</span> Promise.<span style="color:#a6e22e">all</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, Promise.<span style="color:#a6e22e">reject</span>(<span style="color:#ae81ff">555</span>)]);
-        <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span> () {
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">p</span>);
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">p2</span>);
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">p3</span>);
-        });
-</code></pre></div><h2 id="2promiseallsettled">（2）Promise.allSettled()</h2>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span><span class="nx">p3</span><span class="p">,</span> <span class="nx">p1</span><span class="p">,</span> <span class="nx">p2</span><span class="p">]).</span><span class="nx">then</span><span class="p">(</span><span class="nx">values</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">values</span><span class="p">);</span> <span class="c1">// [3, 1337, &#34;foo&#34;]
+</span><span class="c1"></span>        <span class="p">}));</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript">        <span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
+        <span class="kd">var</span> <span class="nx">p2</span> <span class="o">=</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="mi">444</span><span class="p">)]);</span>
+        <span class="kd">var</span> <span class="nx">p3</span> <span class="o">=</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="mi">555</span><span class="p">)]);</span>
+        <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">p</span><span class="p">);</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">p2</span><span class="p">);</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">p3</span><span class="p">);</span>
+        <span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2promiseallsettled">（2）Promise.allSettled()</h2>
 <p>该Promise.allSettled()方法返回一个在所有给定的promise都已经fulfilled或rejected后的promise，并带有一个对象数组，每个对象表示对应的promise结果。</p>
 <p>当您有多个彼此不依赖的异步任务成功完成时，或者您总是想知道每个promise的结果时，通常使用它。</p>
 <p>参数：</p>
@@ -806,14 +1080,27 @@
 <p>返回值：</p>
 <p>返回一个设置了 finally 回调函数的Promise对象。</p>
 <h1 id="6创建promise">6.创建Promise</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">myFirstPromise</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Promise((<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) =&gt; {
-  <span style="color:#75715e">// ?做一些异步操作，最终会调用下面两者之一:
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//   resolve(someValue); // fulfilled
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// ?或
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//   reject(&#34;failure reason&#34;); // rejected
-</span><span style="color:#75715e"></span>});
-</code></pre></div><h1 id="7asyncawait">7.async/await</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kr">const</span> <span class="nx">myFirstPromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// ?做一些异步操作，最终会调用下面两者之一:
+</span><span class="c1"></span>  <span class="c1">//
+</span><span class="c1"></span>  <span class="c1">//   resolve(someValue); // fulfilled
+</span><span class="c1"></span>  <span class="c1">// ?或
+</span><span class="c1"></span>  <span class="c1">//   reject(&#34;failure reason&#34;); // rejected
+</span><span class="c1"></span><span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="7asyncawait">7.async/await</h1>
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/async_function">async函数</a></p>
 <p>async/await时ES8新增的</p>
 <h1 id="8generator-和-yield">8.generator 和 yield</h1>
@@ -827,30 +1114,61 @@
 <p>因为try执行时从上到下的，异步代码没有返回，try&hellip;catch 怎么捕获</p>
 <p>then 的第二个参数和使用 catch 的区别</p>
 <p>主要区别就是，如果在 then 的第一个函数里抛出了异常，后面的 catch 能捕获到，而第二个函数捕获不到</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">        <span style="color:#66d9ef">new</span> Promise(<span style="color:#a6e22e">resolve</span> =&gt; <span style="color:#a6e22e">resolve</span>(<span style="color:#ae81ff">123</span>))
-            .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">_</span> =&gt; {
-                <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error()
-            }, <span style="color:#a6e22e">e</span> =&gt; {
-                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">256</span>);
-                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">e</span>);
-            }).<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">e</span> =&gt; {
-                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">458</span>);
-                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">e</span>);
-            })
-</code></pre></div><blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript">        <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="p">=&gt;</span> <span class="nx">resolve</span><span class="p">(</span><span class="mi">123</span><span class="p">))</span>
+            <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">_</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">()</span>
+            <span class="p">},</span> <span class="nx">e</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">256</span><span class="p">);</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+            <span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">458</span><span class="p">);</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+            <span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
 <p>也就是说 then 里面抛出的还是需要后面的catch去捕获，而then的第二个参数回调函数是在之前返回的结果为 rejected 时调用的</p>
 </blockquote>
 <p>那 then 之后的错误如何捕获呢。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">main3</span>() {
-  Promise.<span style="color:#a6e22e">resolve</span>(<span style="color:#66d9ef">true</span>).<span style="color:#a6e22e">then</span>(() =&gt; {
-    <span style="color:#66d9ef">try</span> {
-      <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#39;then&#39;</span>);
-    } <span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">e</span>) {
-      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">e</span>;
-    }
-  }).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">e</span> =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">message</span>));
-}
-</code></pre></div><p>只能是在回调函数内部 catch 错误，并把错误信息返回，error 会传递到下一个 then 的回调。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kd">function</span> <span class="nx">main3</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="nx">then</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;then&#39;</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">e</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="nx">e</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>只能是在回调函数内部 catch 错误，并把错误信息返回，error 会传递到下一个 then 的回调。</p>
 <blockquote>
 <p>拓展：promise 内部的错误不会冒泡出来，而是被 promise 吃掉了，只有通过 promise.catch 才可以捕获，所以用 Promise 一定要写 catch 啊。</p>
 </blockquote>
@@ -883,24 +1201,6 @@
 
     
     
-<div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">文章作者</span>
-    <span class="item-content">XKHM</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">上次更新</span>
-    <span class="item-content">
-      2020-12-26
-      
-    </span>
-  </p>
-  
-  <p class="copyright-item">
-    <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">原创文章，转载请注明文章作者和出处，谢谢！</a></span>
-  </p>
-</div>
 
 
     
@@ -927,13 +1227,13 @@
 </svg>
 
             </i>
-            <span class="prev-text nav-default">CSS弹性盒子布局之Flex</span>
-            <span class="prev-text nav-mobile">Prev</span>
+            <span class="prev-text nav-default" style="position: relative;top: -2px;">CSS弹性盒子布局之Flex</span>
+            <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
           <a class="next" href="/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99bind/">
-            <span class="next-text nav-default">JS基础之手写bind</span>
-            <span class="prev-text nav-mobile">Next</span>
+            <span class="next-text nav-default" style="position: relative;top: -3px;">JS基础之手写bind</span>
+            <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
               <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -954,20 +1254,19 @@
   
   
 
-  
 
-  
-  
 
-  
 
-  
 
-  
 
-    
 
-  
+
+
+
+
+
+
+
 
         </div>
       </div>
@@ -1021,23 +1320,17 @@
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
-  </span>
-
+  
+  
   <span class="copyright-year">
     &copy;
     
-      2019 -
-    2022
+    2019 -
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -1050,16 +1343,18 @@
 
       </i>
     </span><span class="author">
-        星空海绵
-        
-      </span></span>
-
+      星空海绵
+      
+    </span></span>
   
-  
-
-  
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
 </div>
-
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -1102,6 +1397,8 @@
 
 
 
+
+  <script async src="//changkun.de/urlstat/client.js"></script>
 
 
 

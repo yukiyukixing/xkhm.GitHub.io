@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -25,7 +25,7 @@
 <meta name="author" content="XKHM" />
   <meta name="description" content="1.JS中的变量 （1）变量提升和函数提升 变量提升和函数提升的过程： 创建阶段：JS解释器会找出需要提升的变量和函数，并给他们在内存中开辟好空间" />
 
-  <meta name="keywords" content="Hugo" />
+  <meta name="keywords" content="Hugo, 星空海绵, 前端, 工程师" />
 
 
 
@@ -41,7 +41,8 @@
 
 
 
-<link rel="icon" href="/favicon.png"  type="image/x-icon"/>
+<link rel="icon" href="/favicon.png" type="image/x-icon"/>
+
 
 
 
@@ -68,7 +69,7 @@
 <meta itemprop="description" content="1.JS中的变量 （1）变量提升和函数提升 变量提升和函数提升的过程： 创建阶段：JS解释器会找出需要提升的变量和函数，并给他们在内存中开辟好空间">
 <meta itemprop="datePublished" content="2020-12-20T23:48:22+08:00" />
 <meta itemprop="dateModified" content="2020-12-20T23:48:22+08:00" />
-<meta itemprop="wordCount" content="5125">
+<meta itemprop="wordCount" content="5709">
 
 
 
@@ -86,6 +87,17 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-K0V0BST0TH', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -149,7 +161,21 @@
         
           
           
-            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
         
       </li><li class="mobile-menu-item">
@@ -171,20 +197,6 @@
           
           
             <a class="menu-item-link" href="https://xkhm.net/tags/">标签</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
         
       </li>
@@ -342,7 +354,29 @@
         
           
           
-            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
 
         
@@ -382,28 +416,6 @@
 
       </li>
     
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
-          
-
-        
-
-      </li>
-    
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
-          
-
-        
-
-      </li>
-    
 
     
     
@@ -431,7 +443,8 @@
             <a href="https://xkhm.net/categories/%E9%9D%A2%E8%AF%95/"> 面试 </a>
             
           </div>
-        
+        <span class="more-meta"> 约 5709 字 </span>
+          <span class="more-meta"> 预计阅读 12 分钟 </span>
 
         
         
@@ -577,7 +590,31 @@
 <blockquote>
 <p>bind()方法返回的函数没有prototype属性，为什么没有prototype属性呢，因为如果把这个返回的函数做构造函数的话，那就需要将创建对象的this指向这个函数，但是这个函数在bind调用前就将this指向调用对象了，那么创建对象时又将这个this指向创建对象，不就矛盾了吗，所以bind()返回的函数没有prototype属性。</p>
 </blockquote>
-<pre><code>        var obj = {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        var obj = {
             age: 25
         }
         function getInfo(job, height) {
@@ -585,8 +622,8 @@
             this.d = 50;
         }
         Function.prototype.myBind = function () {
-            if (typeof this !== 'function') {
-                throw new TypeError('调用者必须是函数')
+            if (typeof this !== &#39;function&#39;) {
+                throw new TypeError(&#39;调用者必须是函数&#39;)
             }
             var arg = arguments[0],
                 slice = Array.prototype.slice,
@@ -596,22 +633,55 @@
                 return _that.apply(arg, args.concat(slice.call(arguments)));
             }
         }
-        var c = new getInfo.myBind(obj, 'Software Engineer'); // Uncaught TypeError: 调用者必须是函数
-</code></pre><p>如果bind方法作为构造函数的话，那么它里面的this就需要指向创建的对象，而bind中的this必须指向函数，所以此时就会报错。</p>
+        var c = new getInfo.myBind(obj, &#39;Software Engineer&#39;); // Uncaught TypeError: 调用者必须是函数
+</code></pre></td></tr></table>
+</div>
+</div><p>如果bind方法作为构造函数的话，那么它里面的this就需要指向创建的对象，而bind中的this必须指向函数，所以此时就会报错。</p>
 <p>apply，call，bind用法展示：</p>
-<pre><code>        let obj = {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let obj = {
             age: 18,
-            job: 'student'
+            job: &#39;student&#39;
         }
         function getInfo(name) {
             console.log(name); // 小花
             console.log(this.age); // 18
             console.log(this.job); // student
         }
-        // getInfo.apply(obj, ['小花']);
-        // getInfo.call(obj, '小花');
-        getInfo.bind(obj, '小花')();
-</code></pre><pre><code>        let obj = {
+        // getInfo.apply(obj, [&#39;小花&#39;]);
+        // getInfo.call(obj, &#39;小花&#39;);
+        getInfo.bind(obj, &#39;小花&#39;)();
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let obj = {
             age: 18
         }
         function getInfo(job, height) {
@@ -619,10 +689,42 @@
             console.log(height);
             console.log(this.age);
         }
-        getInfo.bind(obj, 'student')(173);
-</code></pre><h2 id="3手写apply">（3）手写apply()</h2>
-<pre><code>        let obj = {
-            name: '小王'
+        getInfo.bind(obj, &#39;student&#39;)(173);
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="3手写apply">（3）手写apply()</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let obj = {
+            name: &#39;小王&#39;
         }
         function getInfo(job) {
             console.log(this.name);
@@ -637,7 +739,7 @@
                 if (Array.isArray(arguments[1])) {
                     result = context.fn(...arguments[1]);
                 } else {
-                    console.error('Uncaught TypeError: CreateListFromArrayLike called on non-object');
+                    console.error(&#39;Uncaught TypeError: CreateListFromArrayLike called on non-object&#39;);
                 }
 
             } else {
@@ -646,9 +748,37 @@
             delete context.fn;
             return result;
         }
-        getInfo.myApply(obj, ['student']);
-</code></pre><h2 id="4手写call">（4）手写call()</h2>
-<pre><code>        let obj = {
+        getInfo.myApply(obj, [&#39;student&#39;]);
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="4手写call">（4）手写call()</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let obj = {
             age: 18
         }
         function getInfo(job, name) {
@@ -656,7 +786,7 @@
             console.log(name);
             console.log(this.age);
         }
-        // getInfo.call(obj, 'student');
+        // getInfo.call(obj, &#39;student&#39;);
         Function.prototype.myCall = function (context) {
             context = context || window;
             context.fn = this;
@@ -669,12 +799,27 @@
             delete context.fn;
             return result;
         }
-        getInfo.myCall(obj, 'student', '小王');
-</code></pre><h2 id="5bind">(5)bind()</h2>
+        getInfo.myCall(obj, &#39;student&#39;, &#39;小王&#39;);
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="5bind">(5)bind()</h2>
 <ul>
 <li>bind()的使用</li>
 </ul>
-<pre><code>        let obj = {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let obj = {
             age: 18
         }
         function getInfo(job, height) {
@@ -682,16 +827,35 @@
             console.log(height);
             console.log(this.age);
         }
-        getInfo.bind(obj, 'student')(173);
-</code></pre><ul>
+        getInfo.bind(obj, &#39;student&#39;)(173);
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>bind()返回的函数用new操作符调用</li>
 </ul>
-<pre><code>        function Point(x, y) {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        function Point(x, y) {
             this.x = x;
             this.y = y;
         }
         Point.prototype.toString = function () {
-            return this.x + ',' + this.y;
+            return this.x + &#39;,&#39; + this.y;
         }
         let p = new Point(1, 2);
         p.toString();
@@ -699,18 +863,39 @@
         let YAxisPoint = Point.bind(emptyObj, 0);
         let axisPoint = new YAxisPoint(5);
         axisPoint.toString();
-</code></pre><ul>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>Polyfill中bind()的实现</li>
 </ul>
 <p><strong>第一种😎😎：</strong></p>
-<pre><code>        if (!Function.prototype.bind) (function () {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        if (!Function.prototype.bind) (function () {
             var slice = Array.prototype.slice;
             Function.prototype.bind = function () {
                 var thatFunc = this, thatArg = arguments[0];
                 var args = slice.call(arguments, 1);
-                if (typeof thatFunc !== 'function') {
-                    throw new TypeError('Function.prototype.bind-' +
-                        'what is trying to be bound is not callable');
+                if (typeof thatFunc !== &#39;function&#39;) {
+                    throw new TypeError(&#39;Function.prototype.bind-&#39; +
+                        &#39;what is trying to be bound is not callable&#39;);
                 }
                 return function () {
                     var funcArgs = args.concat(slice.call(arguments));
@@ -718,8 +903,36 @@
                 }
             }
         })()	
-</code></pre><p>仿写这种实现bind():</p>
-<pre><code>        var obj = {
+</code></pre></td></tr></table>
+</div>
+</div><p>仿写这种实现bind():</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        var obj = {
             age: 25
         }
         function getInfo(name, job) {
@@ -727,10 +940,10 @@
             console.log(job);
             console.log(this.age);
         }
-        // getInfo.bind(obj, '星空海绵')('Software Engineer');
+        // getInfo.bind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;);
         Function.prototype.myBind = function () {
-            if (typeof this !== 'function') {
-                throw new TypeError('调用者必须是函数')
+            if (typeof this !== &#39;function&#39;) {
+                throw new TypeError(&#39;调用者必须是函数&#39;)
             }
             var arg = arguments[0];
             var slice = Array.prototype.slice
@@ -740,19 +953,48 @@
                 return _that.apply(arg, args.concat(slice.call(arguments)))
             }
         }
-        getInfo.myBind(obj, '星空海绵')('Software Engineer');
-</code></pre><p>上面定义变量为什么要用var呢，因为用的是ES5，如果用let，都有ES6了，那我就直接用bind()了，而不是手写一个了。</p>
+        getInfo.myBind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;);
+</code></pre></td></tr></table>
+</div>
+</div><p>上面定义变量为什么要用var呢，因为用的是ES5，如果用let，都有ES6了，那我就直接用bind()了，而不是手写一个了。</p>
 <p>我们会发现使用上面这种手写bind()不支持new调用构造函数创建新的对象</p>
-<pre><code>        function Point(x, y) {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        function Point(x, y) {
             this.x = x;
             this.y = y;
         }
         Point.prototype.toString = function () {
-            console.log('toString方法');
+            console.log(&#39;toString方法&#39;);
         }
         Function.prototype.myBind = function () {
-            if (typeof this !== 'function') {
-                throw new TypeError('调用者必须是函数')
+            if (typeof this !== &#39;function&#39;) {
+                throw new TypeError(&#39;调用者必须是函数&#39;)
             }
             var arg = arguments[0];
             var slice = Array.prototype.slice
@@ -766,7 +1008,9 @@
         let axisPoint = new YAxisPoint(5);
         console.dir(axisPoint);
         axisPoint.toString();
-</code></pre><p>看下上面这个代码的axisPoint是啥</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>看下上面这个代码的axisPoint是啥</p>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d4e2cae6d63c4622a787e1734edb84fb~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
 <p>我们再看如果把上面代码中的myBind换成bind</p>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/14e226d3266743b79b34f21bb86c1cce~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
@@ -777,52 +1021,158 @@
 <p>注意，当使用new操作符绑定构造函数时，会忽略第一个参数
 <img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3a9fa4cd63af47e4a5a68e1ccaace639~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
 </blockquote>
-<pre><code>        var obj = {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        var obj = {
             age: 25
         }
         function getInfo(job, height) {
             console.log(this); // {age: 25}
         }
-        getInfo.bind(obj, 'Software Engineer')();
-</code></pre><p>以上是没有用new调用的时候，getInfo中的this是指向obj的，没问题</p>
-<pre><code>        function A() {
+        getInfo.bind(obj, &#39;Software Engineer&#39;)();
+</code></pre></td></tr></table>
+</div>
+</div><p>以上是没有用new调用的时候，getInfo中的this是指向obj的，没问题</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        function A() {
             this.a = 100;
             console.log(this); // {a: 100}
         }
         let b = new A();
         console.log(b); // {a: 100}
-</code></pre><p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a4457b0a1ef74335bae1ae5286bb35e0~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
-<pre><code>        var obj = {
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a4457b0a1ef74335bae1ae5286bb35e0~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        var obj = {
             age: 25
         }
         function getInfo(job, height) {
             console.log(this); // getInfo {}
         }
-        var a = getInfo.bind(obj, 'Software Engineer');
+        var a = getInfo.bind(obj, &#39;Software Engineer&#39;);
         var b = new a();
-</code></pre><p>以上的代码你会发现getInfo中的this并不是obj，而是getInfo对象，上面我们也看到有说，当使用new操作符号时会忽略掉第一个参数，也就是让调用bind的函数中的this指向的第一个参数被忽略掉，然后我们再想想bind的作用，不就是改变函数得this指向吗，现在第一个参数都忽略了，那么bind是不是相当于没用了，仔细想想，确实可以这个理解。</p>
-<pre><code>        var obj = {
+</code></pre></td></tr></table>
+</div>
+</div><p>以上的代码你会发现getInfo中的this并不是obj，而是getInfo对象，上面我们也看到有说，当使用new操作符号时会忽略掉第一个参数，也就是让调用bind的函数中的this指向的第一个参数被忽略掉，然后我们再想想bind的作用，不就是改变函数得this指向吗，现在第一个参数都忽略了，那么bind是不是相当于没用了，仔细想想，确实可以这个理解。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        var obj = {
             age: 25
         }
         function getInfo(job, height) {
             console.log(this); // getInfo {}
         }
-        var a = getInfo.bind(obj, 'Software Engineer');
+        var a = getInfo.bind(obj, &#39;Software Engineer&#39;);
         var b = new a();
-</code></pre><pre><code>        var obj = {
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        var obj = {
             age: 25
         }
         function getInfo(job, height) {
             console.log(this); // getInfo {}
         }
-        var b = new getInfo('Software Engineer');
+        var b = new getInfo(&#39;Software Engineer&#39;);
         console.log(b);
-</code></pre><p>相对而言，上面这两段代码其实通过构造函数创建的b对象时一样的，也就是说当使用了new操作符号时，bind就没用，就是单纯的返回一个函数。理解了这个我们就会明白为什么之前的代码会存在不知new调用构造函数创建新对象了，那么就有了第二种方法。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>相对而言，上面这两段代码其实通过构造函数创建的b对象时一样的，也就是说当使用了new操作符号时，bind就没用，就是单纯的返回一个函数。理解了这个我们就会明白为什么之前的代码会存在不知new调用构造函数创建新对象了，那么就有了第二种方法。</p>
 <p>当使用new调用构造函数时，构造函数中的this是指向新创建的对象的</p>
 <p><strong>第二种😯😯：</strong></p>
-<pre><code>
-</code></pre><p>使用ES6的new.target加以理解</p>
-<pre><code>        var obj = {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">
+</code></pre></td></tr></table>
+</div>
+</div><p>使用ES6的new.target加以理解</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        var obj = {
             age: 25
         }
         function getInfo(job, height) {
@@ -830,8 +1180,8 @@
             this.d = 50;
         }
         Function.prototype.myBind = function () {
-            if (typeof this !== 'function') {
-                throw new TypeError('调用者必须是函数')
+            if (typeof this !== &#39;function&#39;) {
+                throw new TypeError(&#39;调用者必须是函数&#39;)
             }
             var arg = arguments[0],
                 slice = Array.prototype.slice,
@@ -847,67 +1197,158 @@
                 }
             }
         }
-        var c = getInfo.myBind(obj, 'Software Engineer');
+        var c = getInfo.myBind(obj, &#39;Software Engineer&#39;);
         var d = new c();
         console.log(d);
-</code></pre><h1 id="3原型链">3.原型链</h1>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="3原型链">3.原型链</h1>
 <h2 id="1对象和函数的原型">（1）对象和函数的原型</h2>
 <p>每个对象都有一个原型，但是原型没有提供可以直接访问的属性，所以浏览器实现了一个__proto__属性，可以直接访问到对象的原型，每个函数都有一个__proto__和prototype属性，当函数当对象使用时，原型是__proto__，当函数作为构造函数使用时，原型是prototype。</p>
 <ul>
 <li>当函数作为对象使用时</li>
 </ul>
-<pre><code>        function Demo() { }
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        function Demo() { }
         Demo.__proto__.show = function () {
-            console.log(&quot;__proto__show&quot;);
+            console.log(&#34;__proto__show&#34;);
         }
         Demo.prototype.read = function () {
-            console.log(&quot;prototype-read&quot;);
+            console.log(&#34;prototype-read&#34;);
         }
         Demo.show();  // __proto__show
         Demo.read(); // Demo.read is not a function
-</code></pre><ul>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>当函数作为构造函数使用时</li>
 </ul>
-<pre><code>        function Demo() { }
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        function Demo() { }
         let obj = new Demo();
         Demo.prototype.read = function () {
-            console.log(&quot;read&quot;);
+            console.log(&#34;read&#34;);
         }
         Demo.__proto__.show = function () {
-            console.log(&quot;show&quot;);
+            console.log(&#34;show&#34;);
         }
         obj.read(); // read
         obj.show(); // obj.show is not a function
-</code></pre><h2 id="2原型链">（2）原型链</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2原型链">（2）原型链</h2>
 <p>对象可以通过__proto__属性找到不属于该对象的属性，__proto__将对象连接起来组成了原型链。</p>
-<pre><code>        function A() { }
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        function A() { }
         function B() { }
         function C() { }
         C.prototype.show = function () {
-            console.log('C构造函数');
+            console.log(&#39;C构造函数&#39;);
         }
         B.prototype = new C();
         A.prototype = new B();
         let a = new A();
         a.show(); // C构造函数
-</code></pre><h1 id="4如何判断对象类型">4.如何判断对象类型</h1>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="4如何判断对象类型">4.如何判断对象类型</h1>
 <h2 id="1通过-objectprototypetostringcall">（1）通过 Object.prototype.toString.call()</h2>
-<pre><code>        let obj = {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let obj = {
             age: 20
         }
         let arr = [15, 20, 25];
         console.log(Object.prototype.toString.call(obj)); // [object Object]
         console.log(Object.prototype.toString.call(arr)); // [object Array]
-</code></pre><h2 id="2通过instanceof">（2）通过instanceof</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2通过instanceof">（2）通过instanceof</h2>
 <p>instanceof检测构造函数的prototype属性是不是出现在某个对象的原型链上</p>
-<pre><code>        function A() { };
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        function A() { };
         function B() { };
         const b = new B();
         A.prototype = b;
         const a = new A();
         console.dir(a instanceof A); // true
-</code></pre><h1 id="5箭头函数">5.箭头函数</h1>
-<pre><code>        var age = 10;
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="5箭头函数">5.箭头函数</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        var age = 10;
         let obj = {
             age: 20,
             say: () =&gt; {
@@ -921,8 +1362,25 @@
         obj1 = Object.create(obj);
         obj1.age = 30;
         console.log(obj1.say()); // 10
-</code></pre><p>通过上面的代码我们会发现箭头函数say中的this并不会因为调用对象的改变而改变，而是一直指向全局对象window的。</p>
-<pre><code>        function getName() {
+</code></pre></td></tr></table>
+</div>
+</div><p>通过上面的代码我们会发现箭头函数say中的this并不会因为调用对象的改变而改变，而是一直指向全局对象window的。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        function getName() {
             let say = () =&gt; {
                 console.log(this.age);
             }
@@ -933,13 +1391,30 @@
             getName: getName
         }
         obj.getName(); // 20
-</code></pre><p><strong>箭头函数没有自己的this，它只会从自己作用域链的上层继承this。</strong></p>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>箭头函数没有自己的this，它只会从自己作用域链的上层继承this。</strong></p>
 <blockquote>
 <p>箭头函数中不能使用arguments和super以及new.target，同时箭头函数也不能作为构造函数。</p>
 </blockquote>
 <h1 id="6this">6.this</h1>
 <h2 id="1谁调用函数函数里得this就指向谁">（1）谁调用函数，函数里得this就指向谁</h2>
-<pre><code>        function getAge() {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        function getAge() {
             console.log(this.age)
         }
         var age = 1
@@ -950,25 +1425,56 @@
             getAge: getAge
         }
         obj.getAge()
-</code></pre><h2 id="2new构造函数创建对象时构造函数内部的this指向创建的对象">（2）new构造函数创建对象时，构造函数内部的this指向创建的对象</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2new构造函数创建对象时构造函数内部的this指向创建的对象">（2）new构造函数创建对象时，构造函数内部的this指向创建的对象</h2>
 <h2 id="3可以通过applycallbind来改变函数内部的this指向">（3）可以通过apply，call，bind来改变函数内部的this指向</h2>
 <h1 id="7async和await">7.async和await</h1>
 <h2 id="1async和await对比promise">（1）async和await对比Promise</h2>
 <p>async和await相比Promise，优势在于处理then调用链，代码更清晰，缺点是乱用await会导致性能问题，因为await会阻塞代码。</p>
-<pre><code>        var a = 0;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        var a = 0;
         var b = async () =&gt; {
             a = a + await 10;
-            console.log('2', a);
+            console.log(&#39;2&#39;, a);
             a = (await 10) + a;
-            console.log('3', a);
+            console.log(&#39;3&#39;, a);
         }
         b();
         a++;
-        console.log('1', a);
-</code></pre><p><strong>待深入</strong></p>
+        console.log(&#39;1&#39;, a);
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>待深入</strong></p>
 <h1 id="8generator">8.generator</h1>
 <h2 id="1generator是es6中新增的语法和promise一样都可以用来进行异步编程">(1)generator是ES6中新增的语法，和Promise一样，都可以用来进行异步编程</h2>
-<pre><code>        function* test() {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        function* test() {
             let a = 1 + 2;
             yield 2;
             yield 3;
@@ -977,7 +1483,9 @@
         console.log(b.next());
         console.log(b.next());
         console.log(b.next());
-</code></pre><h2 id="2generator原理手写generator">（2）generator原理，手写generator</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2generator原理手写generator">（2）generator原理，手写generator</h2>
 <h1 id="9promise">9.Promise</h1>
 <h2 id="1promise是es6中新增的语法用来解决回调地狱问题">（1）Promise是ES6中新增的语法，用来解决<strong>回调地狱</strong>问题</h2>
 <ul>
@@ -986,8 +1494,15 @@
 <h2 id="2手写promise">（2）手写Promise</h2>
 <h1 id="10--和--的区别">10. == 和 === 的区别</h1>
 <p>==只需要值相等即可，而 === 需要值和类型都相等</p>
-<pre><code>
-</code></pre><h1 id="11-垃圾回收">11. 垃圾回收</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="11-垃圾回收">11. 垃圾回收</h1>
 <p>主要的两种标记策略：<strong>标记清理</strong> 和 <strong>引用计数</strong></p>
 <h2 id="1标记清理">（1）标记清理</h2>
 <p>JS最常用的垃圾回收策略就是标记清理。</p>
@@ -1004,16 +1519,41 @@
 <h1 id="12闭包">12.闭包</h1>
 <h2 id="1定义">（1）定义</h2>
 <p>函数A返回函数B，函数B中使用了函数A中的变量，函数B就被称为闭包。</p>
-<pre><code>        function A() {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        function A() {
             let age = 10;
             return function B() {
                 console.log(age);
             }
         }
         A()();
-</code></pre><p>上面这个例子age变量是存储在堆上的，因为JS的引擎可以分析出哪些变量需要存储在堆上，哪些变量需要存储在栈上。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>上面这个例子age变量是存储在堆上的，因为JS的引擎可以分析出哪些变量需要存储在堆上，哪些变量需要存储在栈上。</p>
 <p>通过闭包解决变量作用域的问题，例如：解决var没有块作用域的问题</p>
-<pre><code>        for (var i = 0; i &lt; 4; i++) {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        for (var i = 0; i &lt; 4; i++) {
             (function (j) {
                 setTimeout(function () {
                     console.log(j);
@@ -1021,17 +1561,31 @@
             }
             )(i)
         }
-</code></pre><h2 id="2闭包的内存泄漏问题">（2）闭包的内存泄漏问题</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2闭包的内存泄漏问题">（2）闭包的内存泄漏问题</h2>
 <ul>
 <li>使用JS闭包很容易在不知不觉间造成内存泄漏问题</li>
 </ul>
-<pre><code>        let outer = function () {
-            let name = 'Jake';
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let outer = function () {
+            let name = &#39;Jake&#39;;
             return function () {
                 return name;
             }
         }
-</code></pre><p>上面这段代码调用outer()会导致分配给name的内存被泄漏。以上代码执行后创建了一个内部闭包，只要返回的函数存在就不能清理name，因为闭包一直在引用着它，假如name的内容很大，那可能就是个大问题。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>上面这段代码调用outer()会导致分配给name的内存被泄漏。以上代码执行后创建了一个内部闭包，只要返回的函数存在就不能清理name，因为闭包一直在引用着它，假如name的内容很大，那可能就是个大问题。</p>
 <blockquote>
 <p>如果不是某些特定任务需要使用闭包，在其它函数中创建函数是不明智的，因为闭包在处理速度和内存消耗方面对脚本性能具有负面影响。</p>
 </blockquote>
@@ -1048,18 +1602,66 @@
 <h1 id="16settimeout">16.setTimeout</h1>
 <h2 id="1settimeout倒计时误差">（1）setTimeout倒计时误差</h2>
 <p>为什么会出现这个问题呢，从刚才上面的JS事件循环机制我们就可以了解到，只有等同步任务全部执行完了才会执行异步任务，而setTimeout是一个宏任务，那么这个问题的实际应用在哪呢，电商的秒杀倒计时，那个肯定要准确，不同用户可能因为手机的性能加载页面的时长不一样，但是秒杀时间肯定得一样，所以说我们就需要写一个相对准确的倒计时了。</p>
-<pre><code>setTimeout(() =&gt; {}, 3000);
-</code></pre><p>有一行上面这样的代码，这不是说页面打开3秒后立即执行回调函数，而是页面打开后最快3秒执行回调函数。</p>
-<pre><code>        console.log(Date());
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">setTimeout(() =&gt; {}, 3000);
+</code></pre></td></tr></table>
+</div>
+</div><p>有一行上面这样的代码，这不是说页面打开3秒后立即执行回调函数，而是页面打开后最快3秒执行回调函数。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        console.log(Date());
         setTimeout(() =&gt; {
-            console.log('我是定时器！');
+            console.log(&#39;我是定时器！&#39;);
             console.log(Date());
         }, 3000);
         for (let i = 0; i &lt; 10000000000; i++) { }
-</code></pre><p>如果你电脑性能好的话可以跑下上面这个例子，你会发现间隔时间并不是3秒</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>如果你电脑性能好的话可以跑下上面这个例子，你会发现间隔时间并不是3秒</p>
 <p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f09409fa20dd411a9d5e0652354caca5~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
 <p>看我这打印的结果，中间差了14秒，这是为什么呢，因为执行前面的循环花费了很长的时间，setTimeout必须等循环执行完才会去执行自己的回调函数，所以这时候这个倒计时就不准确了，就需要我们自己写一个倒计时</p>
-<pre><code>        let period = 60 * 1000 * 60 * 2,
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let period = 60 * 1000 * 60 * 2,
             startTime = new Date().getTime(),
             count = 0,
             end = new Date().getTime() + period,
@@ -1077,27 +1679,60 @@
                 sCeil = Math.ceil(s),
                 sFloor = Math.floor(s),
                 currentInterval = interval - offset;
-            console.log('时：' + h, '分：' + m, '毫秒：' + s,
-                '秒向上取整：' + sCeil, '代码执行时间：' + offset,
-                '下次循环间隔' + currentInterval)
+            console.log(&#39;时：&#39; + h, &#39;分：&#39; + m, &#39;毫秒：&#39; + s,
+                &#39;秒向上取整：&#39; + sCeil, &#39;代码执行时间：&#39; + offset,
+                &#39;下次循环间隔&#39; + currentInterval)
             // 打印 时 分 秒 代码执行时间 下次循环间隔
             setTimeout(loop, currentInterval)
         }
         loop();
-</code></pre><h1 id="17防抖节流">17.防抖节流</h1>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="17防抖节流">17.防抖节流</h1>
 <h1 id="18数组降维">18.数组降维</h1>
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/flat">MDN参考</a></p>
 <h2 id="1使用-es10-中的-flat">（1）使用 <strong>ES10</strong> 中的 <strong>flat()</strong></h2>
-<pre><code>        let arr = [50, 20, [50, 10, [1, [5, [20]]]]],
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let arr = [50, 20, [50, 10, [1, [5, [20]]]]],
             arr1 = arr.flat(Infinity);
         console.log(arr); // [50, 20, Array(3)]
         console.log(arr1); //  [50, 20, 50, 10, 1, 5, 20]
-</code></pre><h2 id="2递归">（2）递归</h2>
-<pre><code>        let arr = [50, 20, [50, 10, [1, [5, [20]]]]],
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2递归">（2）递归</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let arr = [50, 20, [50, 10, [1, [5, [20]]]]],
             resArray = [];
         function flatten(array) {
             if (Array.isArray(array) === false) {
-                throw new TypeError('参数类型错误');
+                throw new TypeError(&#39;参数类型错误&#39;);
             }
             array.forEach(item =&gt; {
                 if (Array.isArray(item)) {
@@ -1110,30 +1745,14 @@
         }
         console.log(arr); // [50, 20, Array(3)]
         console.log(flatten(arr)); // [50, 20, 50, 10, 1, 5, 20]
-</code></pre><h2 id="3">（3）</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="3">（3）</h2>
 
     </div>
 
     
     
-<div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">文章作者</span>
-    <span class="item-content">XKHM</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">上次更新</span>
-    <span class="item-content">
-      2020-12-20
-      
-    </span>
-  </p>
-  
-  <p class="copyright-item">
-    <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">原创文章，转载请注明文章作者和出处，谢谢！</a></span>
-  </p>
-</div>
 
 
     
@@ -1159,13 +1778,13 @@
 </svg>
 
             </i>
-            <span class="prev-text nav-default">Vue从入门到出门</span>
-            <span class="prev-text nav-mobile">Prev</span>
+            <span class="prev-text nav-default" style="position: relative;top: -2px;">Vue从入门到出门</span>
+            <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
           <a class="next" href="/post/js%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/">
-            <span class="next-text nav-default">JS数组去重</span>
-            <span class="prev-text nav-mobile">Next</span>
+            <span class="next-text nav-default" style="position: relative;top: -3px;">JS数组去重</span>
+            <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
               <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -1186,20 +1805,19 @@
   
   
 
-  
 
-  
-  
 
-  
 
-  
 
-  
 
-    
 
-  
+
+
+
+
+
+
+
 
         </div>
       </div>
@@ -1253,23 +1871,17 @@
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
-  </span>
-
+  
+  
   <span class="copyright-year">
     &copy;
     
-      2019 -
-    2022
+    2019 -
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -1282,16 +1894,18 @@
 
       </i>
     </span><span class="author">
-        星空海绵
-        
-      </span></span>
-
+      星空海绵
+      
+    </span></span>
   
-  
-
-  
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
 </div>
-
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -1334,6 +1948,8 @@
 
 
 
+
+  <script async src="//changkun.de/urlstat/client.js"></script>
 
 
 

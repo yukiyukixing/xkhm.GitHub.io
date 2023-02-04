@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -25,7 +25,7 @@
 <meta name="author" content="XKHM" />
   <meta name="description" content="前言：最近在看JS对象相关的东西，看到继承那，想继承到底有什么用，就搜了一下，搜到了下面这个故事，然后突发奇想，想着能不能用JS实现一下呢，" />
 
-  <meta name="keywords" content="Hugo" />
+  <meta name="keywords" content="Hugo, 星空海绵, 前端, 工程师" />
 
 
 
@@ -41,7 +41,8 @@
 
 
 
-<link rel="icon" href="/favicon.png"  type="image/x-icon"/>
+<link rel="icon" href="/favicon.png" type="image/x-icon"/>
+
 
 
 
@@ -68,7 +69,7 @@
 <meta itemprop="description" content="前言：最近在看JS对象相关的东西，看到继承那，想继承到底有什么用，就搜了一下，搜到了下面这个故事，然后突发奇想，想着能不能用JS实现一下呢，">
 <meta itemprop="datePublished" content="2021-01-14T23:14:19+08:00" />
 <meta itemprop="dateModified" content="2021-01-14T23:14:19+08:00" />
-<meta itemprop="wordCount" content="4837">
+<meta itemprop="wordCount" content="5252">
 
 
 
@@ -86,6 +87,17 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-K0V0BST0TH', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -149,7 +161,21 @@
         
           
           
-            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
         
       </li><li class="mobile-menu-item">
@@ -171,20 +197,6 @@
           
           
             <a class="menu-item-link" href="https://xkhm.net/tags/">标签</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
         
       </li>
@@ -342,7 +354,29 @@
         
           
           
-            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
 
         
@@ -382,28 +416,6 @@
 
       </li>
     
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
-          
-
-        
-
-      </li>
-    
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
-          
-
-        
-
-      </li>
-    
 
     
     
@@ -431,7 +443,8 @@
             <a href="https://xkhm.net/categories/javascript/"> JavaScript </a>
             
           </div>
-        
+        <span class="more-meta"> 约 5252 字 </span>
+          <span class="more-meta"> 预计阅读 11 分钟 </span>
 
         
         
@@ -505,58 +518,120 @@
 </blockquote>
 <p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5b9241a1e1744290be108309d28e86ef~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
 <h3 id="老过">老过</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#75715e">// 面向过程思想 JS老过
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 1.需求1
-</span><span style="color:#75715e">// 根据客人购买的商品单价和数量生成所购商品的价格
-</span><span style="color:#75715e">// 客人购买商品的数量
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">goodsAmount</span> <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#39;方便面&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>,
-    <span style="color:#e6db74">&#39;火腿肠&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
-    <span style="color:#e6db74">&#39;牙刷&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
-    <span style="color:#e6db74">&#39;纸巾&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>
-}
-<span style="color:#75715e">// 客人购买商品的单价，假设所有商品单价都是存在的
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">goodsPrice</span> <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#39;方便面&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>,
-    <span style="color:#e6db74">&#39;火腿肠&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
-    <span style="color:#e6db74">&#39;牙刷&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>,
-    <span style="color:#e6db74">&#39;纸巾&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">6</span>
-}
-<span style="color:#75715e">// 求客人购买商品总价的函数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">totalPrice</span>() {
-    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">goodsAmount</span>).<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">cur</span>) =&gt; {
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">acc</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">goodsPrice</span>[<span style="color:#a6e22e">cur</span>] <span style="color:#f92672">*</span> <span style="color:#a6e22e">goodsAmount</span>[<span style="color:#a6e22e">cur</span>]
-    }, <span style="color:#ae81ff">0</span>);
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">totalPrice</span>;
-}
-</code></pre></div><h3 id="阿对">阿对</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#75715e">// 面向对象思想 JS阿对
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 1.需求1
-</span><span style="color:#75715e">// 根据客人购买的商品单价和数量生成所购商品的价格
-</span><span style="color:#75715e">// 客人购买商品的数量
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">goodsAmount</span> <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#39;方便面&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>,
-    <span style="color:#e6db74">&#39;火腿肠&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
-    <span style="color:#e6db74">&#39;牙刷&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
-    <span style="color:#e6db74">&#39;纸巾&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>
-}
-<span style="color:#75715e">// 客人购买商品的单价，所有商品单价都是存在的
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">goodsPrice</span> <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#39;方便面&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>,
-    <span style="color:#e6db74">&#39;火腿肠&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
-    <span style="color:#e6db74">&#39;牙刷&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>,
-    <span style="color:#e6db74">&#39;纸巾&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">6</span>
-}
-<span style="color:#75715e">// 求客人购买商品总价的函数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">totalPrice</span>() {
-    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">goodsAmount</span>).<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">cur</span>) =&gt; {
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">acc</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">goodsPrice</span>[<span style="color:#a6e22e">cur</span>] <span style="color:#f92672">*</span> <span style="color:#a6e22e">goodsAmount</span>[<span style="color:#a6e22e">cur</span>]
-    }, <span style="color:#ae81ff">0</span>);
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">totalPrice</span>;
-}
-</code></pre></div><blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="c1">// 面向过程思想 JS老过
+</span><span class="c1"></span>
+<span class="c1">// 1.需求1
+</span><span class="c1">// 根据客人购买的商品单价和数量生成所购商品的价格
+</span><span class="c1">// 客人购买商品的数量
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">goodsAmount</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;方便面&#39;</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;火腿肠&#39;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s1">&#39;牙刷&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">&#39;纸巾&#39;</span><span class="o">:</span> <span class="mi">10</span>
+<span class="p">}</span>
+<span class="c1">// 客人购买商品的单价，假设所有商品单价都是存在的
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">goodsPrice</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;方便面&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;火腿肠&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">&#39;牙刷&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;纸巾&#39;</span><span class="o">:</span> <span class="mi">6</span>
+<span class="p">}</span>
+<span class="c1">// 求客人购买商品总价的函数
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">totalPrice</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">totalPrice</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">goodsAmount</span><span class="p">).</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">acc</span> <span class="o">+=</span> <span class="nx">goodsPrice</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span> <span class="o">*</span> <span class="nx">goodsAmount</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span>
+    <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">totalPrice</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="阿对">阿对</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="c1">// 面向对象思想 JS阿对
+</span><span class="c1"></span>
+<span class="c1">// 1.需求1
+</span><span class="c1">// 根据客人购买的商品单价和数量生成所购商品的价格
+</span><span class="c1">// 客人购买商品的数量
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">goodsAmount</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;方便面&#39;</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;火腿肠&#39;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s1">&#39;牙刷&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">&#39;纸巾&#39;</span><span class="o">:</span> <span class="mi">10</span>
+<span class="p">}</span>
+<span class="c1">// 客人购买商品的单价，所有商品单价都是存在的
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">goodsPrice</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;方便面&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;火腿肠&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">&#39;牙刷&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;纸巾&#39;</span><span class="o">:</span> <span class="mi">6</span>
+<span class="p">}</span>
+<span class="c1">// 求客人购买商品总价的函数
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">totalPrice</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">totalPrice</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">goodsAmount</span><span class="p">).</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">acc</span> <span class="o">+=</span> <span class="nx">goodsPrice</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span> <span class="o">*</span> <span class="nx">goodsAmount</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span>
+    <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">totalPrice</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
 <p>第一回合老过和阿对竟然写出了一模一样的代码，看来是同一个培训班出身啊，师出同门啊。</p>
 </blockquote>
 <h2 id="2第二回合需求2">2.第二回合（需求2）</h2>
@@ -568,89 +643,178 @@
 <blockquote>
 <p>老过微微一笑，很快在之前的代码上加了一个判断，便完成了老板的需求，啪一下，很快啊。</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#75715e">// 面向过程思想 JS老过
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 1.需求1
-</span><span style="color:#75715e">// 根据客人购买的商品单价和数量生成所购商品的价格
-</span><span style="color:#75715e">// 客人购买商品的数量
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">goodsAmount</span> <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#39;方便面&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>,
-    <span style="color:#e6db74">&#39;火腿肠&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
-    <span style="color:#e6db74">&#39;牙刷&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
-    <span style="color:#e6db74">&#39;纸巾&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>
-}
-<span style="color:#75715e">// 客人购买商品的单价，假设所有商品单价都是存在的
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">goodsPrice</span> <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#39;方便面&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>,
-    <span style="color:#e6db74">&#39;火腿肠&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
-    <span style="color:#e6db74">&#39;牙刷&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>,
-    <span style="color:#e6db74">&#39;纸巾&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">6</span>
-}
-<span style="color:#75715e">// 求客人购买商品总价的函数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">totalPrice</span>() {
-    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">goodsAmount</span>).<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">cur</span>) =&gt; {
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">acc</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">goodsPrice</span>[<span style="color:#a6e22e">cur</span>] <span style="color:#f92672">*</span> <span style="color:#a6e22e">goodsAmount</span>[<span style="color:#a6e22e">cur</span>]
-    }, <span style="color:#ae81ff">0</span>);
-    <span style="color:#75715e">// 假设七夕节是阳历的1月1日啊
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 因为农历不好算，这里重新定义一下七夕节
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">getCurrentDate</span>() <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;1/1&#39;</span>) {
-        <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.77</span>
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">totalPrice</span>;
-}
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="c1">// 面向过程思想 JS老过
+</span><span class="c1"></span>
+<span class="c1">// 1.需求1
+</span><span class="c1">// 根据客人购买的商品单价和数量生成所购商品的价格
+</span><span class="c1">// 客人购买商品的数量
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">goodsAmount</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;方便面&#39;</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;火腿肠&#39;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s1">&#39;牙刷&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">&#39;纸巾&#39;</span><span class="o">:</span> <span class="mi">10</span>
+<span class="p">}</span>
+<span class="c1">// 客人购买商品的单价，假设所有商品单价都是存在的
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">goodsPrice</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;方便面&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;火腿肠&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">&#39;牙刷&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;纸巾&#39;</span><span class="o">:</span> <span class="mi">6</span>
+<span class="p">}</span>
+<span class="c1">// 求客人购买商品总价的函数
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">totalPrice</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">totalPrice</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">goodsAmount</span><span class="p">).</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">acc</span> <span class="o">+=</span> <span class="nx">goodsPrice</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span> <span class="o">*</span> <span class="nx">goodsAmount</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span>
+    <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="c1">// 假设七夕节是阳历的1月1日啊
+</span><span class="c1"></span>    <span class="c1">// 因为农历不好算，这里重新定义一下七夕节
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">getCurrentDate</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;1/1&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">totalPrice</span> <span class="o">=</span> <span class="nx">totalPrice</span> <span class="o">*</span> <span class="mf">0.77</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">totalPrice</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span style="color:#75715e">// 以下均为辅助方法
-</span><span style="color:#75715e">// 获取当前日期方法
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getCurrentDate</span>() {
-    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date();
-    <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMonth</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getDate</span>()
-}
-</code></pre></div><h3 id="阿对-1">阿对</h3>
+<span class="c1">// 以下均为辅助方法
+</span><span class="c1">// 获取当前日期方法
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">getCurrentDate</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="阿对-1">阿对</h3>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b05b50a60467401a81f5037fa2dec9ad~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
 <blockquote>
 <p>阿对眉头一皱发现问题并不简单，老板这老小子一向不讲武德，各种新需求，看来我得防着点。</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#75715e">// 面向对象思想 JS阿对
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 1.需求1
-</span><span style="color:#75715e">// 根据客人购买的商品单价和数量生成所购商品的价格
-</span><span style="color:#75715e">// 客人购买商品的数量
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">goodsAmount</span> <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#39;方便面&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>,
-    <span style="color:#e6db74">&#39;火腿肠&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
-    <span style="color:#e6db74">&#39;牙刷&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
-    <span style="color:#e6db74">&#39;纸巾&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>
-}
-<span style="color:#75715e">// 客人购买商品的单价，所有商品单价都是存在的
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">goodsPrice</span> <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#39;方便面&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>,
-    <span style="color:#e6db74">&#39;火腿肠&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
-    <span style="color:#e6db74">&#39;牙刷&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>,
-    <span style="color:#e6db74">&#39;纸巾&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">6</span>
-}
-<span style="color:#75715e">// 求客人购买商品总价的函数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">totalPrice</span>() {
-    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">goodsAmount</span>).<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">cur</span>) =&gt; {
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">acc</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">goodsPrice</span>[<span style="color:#a6e22e">cur</span>] <span style="color:#f92672">*</span> <span style="color:#a6e22e">goodsAmount</span>[<span style="color:#a6e22e">cur</span>]
-    }, <span style="color:#ae81ff">0</span>);
-    <span style="color:#75715e">// 需求2：调用七夕打77折活动的函数
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">tanabata</span>(<span style="color:#a6e22e">totalPrice</span>);
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">totalPrice</span>;
-}
-<span style="color:#75715e">// 需求2：处理七夕打77折活动的函数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">tanabata</span>(<span style="color:#a6e22e">price</span>) {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">getCurrentDate</span>() <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;1/1&#39;</span>) {
-        <span style="color:#a6e22e">price</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">price</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.77</span>
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">price</span>;
-}
-<span style="color:#75715e">// 以下均为辅助方法
-</span><span style="color:#75715e">// 获取当前日期方法
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getCurrentDate</span>() {
-    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date();
-    <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMonth</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getDate</span>()
-}
-</code></pre></div><p>老过：
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="c1">// 面向对象思想 JS阿对
+</span><span class="c1"></span>
+<span class="c1">// 1.需求1
+</span><span class="c1">// 根据客人购买的商品单价和数量生成所购商品的价格
+</span><span class="c1">// 客人购买商品的数量
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">goodsAmount</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;方便面&#39;</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;火腿肠&#39;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s1">&#39;牙刷&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">&#39;纸巾&#39;</span><span class="o">:</span> <span class="mi">10</span>
+<span class="p">}</span>
+<span class="c1">// 客人购买商品的单价，所有商品单价都是存在的
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">goodsPrice</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;方便面&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;火腿肠&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">&#39;牙刷&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;纸巾&#39;</span><span class="o">:</span> <span class="mi">6</span>
+<span class="p">}</span>
+<span class="c1">// 求客人购买商品总价的函数
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">totalPrice</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">totalPrice</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">goodsAmount</span><span class="p">).</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">acc</span> <span class="o">+=</span> <span class="nx">goodsPrice</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span> <span class="o">*</span> <span class="nx">goodsAmount</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span>
+    <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="c1">// 需求2：调用七夕打77折活动的函数
+</span><span class="c1"></span>    <span class="nx">totalPrice</span> <span class="o">=</span> <span class="nx">tanabata</span><span class="p">(</span><span class="nx">totalPrice</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">totalPrice</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// 需求2：处理七夕打77折活动的函数
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">tanabata</span><span class="p">(</span><span class="nx">price</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">getCurrentDate</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;1/1&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">price</span> <span class="o">=</span> <span class="nx">price</span> <span class="o">*</span> <span class="mf">0.77</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">price</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// 以下均为辅助方法
+</span><span class="c1">// 获取当前日期方法
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">getCurrentDate</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>老过：
 <img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6aac84c2018f46a2916271ccb1f54cd4~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
 <blockquote>
 <p>第二回合结束，老过小胜一筹，老过已经开始幻想自己将来，坐在按摩椅上的舒服日子了。然而此时老板的内心：这么简单就能让你们拿走自动按摩椅，那我这老板早就亏的坐公交车了，年轻人，too young too simple。</p>
@@ -668,68 +832,135 @@
 <p>吐槽归吐槽</p>
 <p>为了按摩椅</p>
 <p>只能继续干了</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#75715e">// 面向过程思想 JS老过
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 1.需求1
-</span><span style="color:#75715e">// 根据客人购买的商品单价和数量生成所购商品的价格
-</span><span style="color:#75715e">// 客人购买商品的数量
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">goodsAmount</span> <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#39;方便面&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>,
-    <span style="color:#e6db74">&#39;火腿肠&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
-    <span style="color:#e6db74">&#39;牙刷&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
-    <span style="color:#e6db74">&#39;纸巾&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>
-}
-<span style="color:#75715e">// 客人购买商品的单价，假设所有商品单价都是存在的
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">goodsPrice</span> <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#39;方便面&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>,
-    <span style="color:#e6db74">&#39;火腿肠&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
-    <span style="color:#e6db74">&#39;牙刷&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>,
-    <span style="color:#e6db74">&#39;纸巾&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">6</span>
-}
-<span style="color:#75715e">// 求客人购买商品总价的函数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">totalPrice</span>() {
-    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">goodsAmount</span>).<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">cur</span>) =&gt; {
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">acc</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">goodsPrice</span>[<span style="color:#a6e22e">cur</span>] <span style="color:#f92672">*</span> <span style="color:#a6e22e">goodsAmount</span>[<span style="color:#a6e22e">cur</span>]
-    }, <span style="color:#ae81ff">0</span>);
-    <span style="color:#75715e">// 假设七夕节是阳历的1月1日啊
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 因为农历不好算，这里重新定义一下七夕节
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">getCurrentDate</span>() <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;1/1&#39;</span>) {
-        <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.77</span>
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">getCurrentDate</span>() <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;1/2&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">399</span>) {
-        <span style="color:#75715e">// 处理中秋节满减的判断
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 假设中秋节为阳历的1月2日啊
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 因为农历不好算，这里重新定义一下中秋节
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">-=</span> <span style="color:#ae81ff">100</span>;
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">getCurrentDate</span>() <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;1/3&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">randomNum</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">9</span>) <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
-        <span style="color:#75715e">// 处理国庆节随机免单
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 假设国庆节为阳历的1月3日啊
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 因为农历不好算，这里重新定义一下国庆节
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">totalPrice</span>;
-}
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="c1">// 面向过程思想 JS老过
+</span><span class="c1"></span>
+<span class="c1">// 1.需求1
+</span><span class="c1">// 根据客人购买的商品单价和数量生成所购商品的价格
+</span><span class="c1">// 客人购买商品的数量
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">goodsAmount</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;方便面&#39;</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;火腿肠&#39;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s1">&#39;牙刷&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">&#39;纸巾&#39;</span><span class="o">:</span> <span class="mi">10</span>
+<span class="p">}</span>
+<span class="c1">// 客人购买商品的单价，假设所有商品单价都是存在的
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">goodsPrice</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;方便面&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;火腿肠&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">&#39;牙刷&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;纸巾&#39;</span><span class="o">:</span> <span class="mi">6</span>
+<span class="p">}</span>
+<span class="c1">// 求客人购买商品总价的函数
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">totalPrice</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">totalPrice</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">goodsAmount</span><span class="p">).</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">acc</span> <span class="o">+=</span> <span class="nx">goodsPrice</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span> <span class="o">*</span> <span class="nx">goodsAmount</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span>
+    <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="c1">// 假设七夕节是阳历的1月1日啊
+</span><span class="c1"></span>    <span class="c1">// 因为农历不好算，这里重新定义一下七夕节
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">getCurrentDate</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;1/1&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">totalPrice</span> <span class="o">=</span> <span class="nx">totalPrice</span> <span class="o">*</span> <span class="mf">0.77</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">getCurrentDate</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;1/2&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">totalPrice</span> <span class="o">&gt;=</span> <span class="mi">399</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 处理中秋节满减的判断
+</span><span class="c1"></span>        <span class="c1">// 假设中秋节为阳历的1月2日啊
+</span><span class="c1"></span>        <span class="c1">// 因为农历不好算，这里重新定义一下中秋节
+</span><span class="c1"></span>        <span class="nx">totalPrice</span> <span class="o">-=</span> <span class="mi">100</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">getCurrentDate</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;1/3&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">totalPrice</span> <span class="o">&lt;=</span> <span class="mi">100</span> <span class="o">&amp;&amp;</span> <span class="nx">randomNum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 处理国庆节随机免单
+</span><span class="c1"></span>        <span class="c1">// 假设国庆节为阳历的1月3日啊
+</span><span class="c1"></span>        <span class="c1">// 因为农历不好算，这里重新定义一下国庆节
+</span><span class="c1"></span>        <span class="nx">totalPrice</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">totalPrice</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span style="color:#75715e">// 以下均为辅助方法
-</span><span style="color:#75715e">// 获取当前日期方法
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getCurrentDate</span>() {
-    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date();
-    <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMonth</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getDate</span>()
-}
-<span style="color:#75715e">//生成从minNum到maxNum的随机数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">randomNum</span>(<span style="color:#a6e22e">minNum</span>, <span style="color:#a6e22e">maxNum</span>) {
-    <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">arguments</span>.<span style="color:#a6e22e">length</span>) {
-        <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
-            <span style="color:#66d9ef">return</span> parseInt(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> <span style="color:#a6e22e">minNum</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>);
-            <span style="color:#66d9ef">break</span>;
-        <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>
-            <span style="color:#66d9ef">return</span> parseInt(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> (<span style="color:#a6e22e">maxNum</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">minNum</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">minNum</span>, <span style="color:#ae81ff">10</span>);
-            <span style="color:#66d9ef">break</span>;
-        <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
-            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-            <span style="color:#66d9ef">break</span>;
-    }
-}
-</code></pre></div><p>看着越来越复杂的 <strong>totalPrice</strong> 函数</p>
+<span class="c1">// 以下均为辅助方法
+</span><span class="c1">// 获取当前日期方法
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">getCurrentDate</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="c1">//生成从minNum到maxNum的随机数
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">randomNum</span><span class="p">(</span><span class="nx">minNum</span><span class="p">,</span> <span class="nx">maxNum</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+            <span class="k">return</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">minNum</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+            <span class="k">return</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="nx">maxNum</span> <span class="o">-</span> <span class="nx">minNum</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nx">minNum</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">default</span><span class="o">:</span>
+            <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>看着越来越复杂的 <strong>totalPrice</strong> 函数</p>
 <p>老过眉头紧锁他深知事情远没有结束</p>
 <p>果然老板的按摩椅是白嫖不了的</p>
 <p>中秋和国庆一过</p>
@@ -739,78 +970,155 @@
 <blockquote>
 <p>阿对看到老板的新需求，微微一笑，果然不出我所料，老板这老小子果然不讲武德，幸好我阿对也是有备而来。</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#75715e">// 面向对象思想 JS阿对
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 1.需求1
-</span><span style="color:#75715e">// 根据客人购买的商品单价和数量生成所购商品的价格
-</span><span style="color:#75715e">// 客人购买商品的数量
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">goodsAmount</span> <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#39;方便面&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>,
-    <span style="color:#e6db74">&#39;火腿肠&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
-    <span style="color:#e6db74">&#39;牙刷&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
-    <span style="color:#e6db74">&#39;纸巾&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>
-}
-<span style="color:#75715e">// 客人购买商品的单价，所有商品单价都是存在的
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">goodsPrice</span> <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#39;方便面&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>,
-    <span style="color:#e6db74">&#39;火腿肠&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
-    <span style="color:#e6db74">&#39;牙刷&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>,
-    <span style="color:#e6db74">&#39;纸巾&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">6</span>
-}
-<span style="color:#75715e">// 求客人购买商品总价的函数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">totalPrice</span>() {
-    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">goodsAmount</span>).<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">cur</span>) =&gt; {
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">acc</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">goodsPrice</span>[<span style="color:#a6e22e">cur</span>] <span style="color:#f92672">*</span> <span style="color:#a6e22e">goodsAmount</span>[<span style="color:#a6e22e">cur</span>]
-    }, <span style="color:#ae81ff">0</span>);
-    <span style="color:#75715e">// 需求2：调用七夕打77折活动的函数
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">tanabata</span>(<span style="color:#a6e22e">totalPrice</span>);
-    <span style="color:#75715e">// 需求3：调用中秋节国庆节活动的函数
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">moonFestival</span>(<span style="color:#a6e22e">totalPrice</span>);
-    <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">nationalDay</span>(<span style="color:#a6e22e">totalPrice</span>);
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">totalPrice</span>;
-}
-<span style="color:#75715e">// 需求2：处理七夕打77折活动的函数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">tanabata</span>(<span style="color:#a6e22e">price</span>) {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">getCurrentDate</span>() <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;1/1&#39;</span>) {
-        <span style="color:#a6e22e">price</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">price</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.77</span>
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">price</span>;
-}
-<span style="color:#75715e">// 需求3：处理中秋节满减的函数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">moonFestival</span>(<span style="color:#a6e22e">price</span>) {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">getCurrentDate</span>() <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;1/2&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">price</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">399</span>) {
-        <span style="color:#a6e22e">price</span> <span style="color:#f92672">-=</span> <span style="color:#ae81ff">100</span>;
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">price</span>;
-}
-<span style="color:#75715e">// 处理国庆节随机免单的函数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">nationalDay</span>(<span style="color:#a6e22e">price</span>) {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">getCurrentDate</span>() <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;1/3&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">price</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">randomNum</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">9</span>) <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
-        <span style="color:#a6e22e">price</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">price</span>;
-}
-<span style="color:#75715e">// 以下均为辅助方法
-</span><span style="color:#75715e">// 获取当前日期方法
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getCurrentDate</span>() {
-    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date();
-    <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMonth</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getDate</span>()
-}
-<span style="color:#75715e">//生成从minNum到maxNum的随机数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">randomNum</span>(<span style="color:#a6e22e">minNum</span>, <span style="color:#a6e22e">maxNum</span>) {
-    <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">arguments</span>.<span style="color:#a6e22e">length</span>) {
-        <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
-            <span style="color:#66d9ef">return</span> parseInt(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> <span style="color:#a6e22e">minNum</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>);
-            <span style="color:#66d9ef">break</span>;
-        <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>
-            <span style="color:#66d9ef">return</span> parseInt(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> (<span style="color:#a6e22e">maxNum</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">minNum</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">minNum</span>, <span style="color:#ae81ff">10</span>);
-            <span style="color:#66d9ef">break</span>;
-        <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
-            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-            <span style="color:#66d9ef">break</span>;
-    }
-}
-</code></pre></div><p>「面向对象」让阿对最喜欢的一点是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="c1">// 面向对象思想 JS阿对
+</span><span class="c1"></span>
+<span class="c1">// 1.需求1
+</span><span class="c1">// 根据客人购买的商品单价和数量生成所购商品的价格
+</span><span class="c1">// 客人购买商品的数量
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">goodsAmount</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;方便面&#39;</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;火腿肠&#39;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s1">&#39;牙刷&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">&#39;纸巾&#39;</span><span class="o">:</span> <span class="mi">10</span>
+<span class="p">}</span>
+<span class="c1">// 客人购买商品的单价，所有商品单价都是存在的
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">goodsPrice</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;方便面&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;火腿肠&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">&#39;牙刷&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;纸巾&#39;</span><span class="o">:</span> <span class="mi">6</span>
+<span class="p">}</span>
+<span class="c1">// 求客人购买商品总价的函数
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">totalPrice</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">totalPrice</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">goodsAmount</span><span class="p">).</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">acc</span> <span class="o">+=</span> <span class="nx">goodsPrice</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span> <span class="o">*</span> <span class="nx">goodsAmount</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span>
+    <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="c1">// 需求2：调用七夕打77折活动的函数
+</span><span class="c1"></span>    <span class="nx">totalPrice</span> <span class="o">=</span> <span class="nx">tanabata</span><span class="p">(</span><span class="nx">totalPrice</span><span class="p">);</span>
+    <span class="c1">// 需求3：调用中秋节国庆节活动的函数
+</span><span class="c1"></span>    <span class="nx">totalPrice</span> <span class="o">=</span> <span class="nx">moonFestival</span><span class="p">(</span><span class="nx">totalPrice</span><span class="p">);</span>
+    <span class="nx">totalPrice</span> <span class="o">=</span> <span class="nx">nationalDay</span><span class="p">(</span><span class="nx">totalPrice</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">totalPrice</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// 需求2：处理七夕打77折活动的函数
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">tanabata</span><span class="p">(</span><span class="nx">price</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">getCurrentDate</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;1/1&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">price</span> <span class="o">=</span> <span class="nx">price</span> <span class="o">*</span> <span class="mf">0.77</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">price</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// 需求3：处理中秋节满减的函数
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">moonFestival</span><span class="p">(</span><span class="nx">price</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">getCurrentDate</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;1/2&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">price</span> <span class="o">&gt;=</span> <span class="mi">399</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">price</span> <span class="o">-=</span> <span class="mi">100</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">price</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// 处理国庆节随机免单的函数
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">nationalDay</span><span class="p">(</span><span class="nx">price</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">getCurrentDate</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;1/3&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">price</span> <span class="o">&lt;=</span> <span class="mi">100</span> <span class="o">&amp;&amp;</span> <span class="nx">randomNum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">price</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">price</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// 以下均为辅助方法
+</span><span class="c1">// 获取当前日期方法
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">getCurrentDate</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="c1">//生成从minNum到maxNum的随机数
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">randomNum</span><span class="p">(</span><span class="nx">minNum</span><span class="p">,</span> <span class="nx">maxNum</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+            <span class="k">return</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">minNum</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+            <span class="k">return</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="nx">maxNum</span> <span class="o">-</span> <span class="nx">minNum</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nx">minNum</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">default</span><span class="o">:</span>
+            <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>「面向对象」让阿对最喜欢的一点是</p>
 <p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b90e7bd81b7b4b89be89e505031361ba~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
 <blockquote>
 <p>第三回合结束，老过开始有点疲于应对新的需求了，而阿对却慢慢的开始胸有成竹了。</p>
@@ -822,168 +1130,336 @@
 <p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/01313468b26245768566ef438697ab5c~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/05591942ab3a4a70a9dbb1cbd1a5e855~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
 <h3 id="老过-3">老过</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#75715e">// 面向过程思想 JS老过
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 1.需求1
-</span><span style="color:#75715e">// 根据客人购买的商品单价和数量生成所购商品的价格
-</span><span style="color:#75715e">// 客人购买商品的数量
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">goodsAmount</span> <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#39;方便面&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>,
-    <span style="color:#e6db74">&#39;火腿肠&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
-    <span style="color:#e6db74">&#39;牙刷&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
-    <span style="color:#e6db74">&#39;纸巾&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>
-}
-<span style="color:#75715e">// 客人购买商品的单价，假设所有商品单价都是存在的
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">goodsPrice</span> <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#39;方便面&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>,
-    <span style="color:#e6db74">&#39;火腿肠&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
-    <span style="color:#e6db74">&#39;牙刷&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>,
-    <span style="color:#e6db74">&#39;纸巾&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">6</span>
-}
-<span style="color:#75715e">// 客人是否为情侣
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">customerCouple</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-<span style="color:#75715e">// 客人获得的礼品
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">gifts</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;鲜花&#39;</span>, <span style="color:#e6db74">&#39;巧克力&#39;</span>, <span style="color:#e6db74">&#39;9.9元抵扣券&#39;</span>];
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">prize</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;无礼品&#39;</span>;
-<span style="color:#75715e">// 求客人购买商品总价的函数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">totalPrice</span>() {
-    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">goodsAmount</span>).<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">cur</span>) =&gt; {
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">acc</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">goodsPrice</span>[<span style="color:#a6e22e">cur</span>] <span style="color:#f92672">*</span> <span style="color:#a6e22e">goodsAmount</span>[<span style="color:#a6e22e">cur</span>]
-    }, <span style="color:#ae81ff">0</span>);
-    <span style="color:#75715e">// 假设七夕节是阳历的1月1日啊
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 因为农历不好算，这里重新定义一下七夕节
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">getCurrentDate</span>() <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;1/1&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">customerCouple</span>) {
-        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">99</span>) {
-            <span style="color:#a6e22e">prize</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gifts</span>[<span style="color:#a6e22e">randomNum</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>)];
-        }
-        <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.77</span>
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">getCurrentDate</span>() <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;1/2&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">399</span>) {
-        <span style="color:#75715e">// 处理中秋节满减的判断
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 假设中秋节为阳历的1月2日啊
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 因为农历不好算，这里重新定义一下中秋节
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">-=</span> <span style="color:#ae81ff">100</span>;
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">getCurrentDate</span>() <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;1/3&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">randomNum</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">9</span>) <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
-        <span style="color:#75715e">// 处理国庆节随机免单
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 假设国庆节为阳历的1月3日啊
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 因为农历不好算，这里重新定义一下国庆节
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">totalPrice</span>;
-}
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="c1">// 面向过程思想 JS老过
+</span><span class="c1"></span>
+<span class="c1">// 1.需求1
+</span><span class="c1">// 根据客人购买的商品单价和数量生成所购商品的价格
+</span><span class="c1">// 客人购买商品的数量
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">goodsAmount</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;方便面&#39;</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;火腿肠&#39;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s1">&#39;牙刷&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">&#39;纸巾&#39;</span><span class="o">:</span> <span class="mi">10</span>
+<span class="p">}</span>
+<span class="c1">// 客人购买商品的单价，假设所有商品单价都是存在的
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">goodsPrice</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;方便面&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;火腿肠&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">&#39;牙刷&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;纸巾&#39;</span><span class="o">:</span> <span class="mi">6</span>
+<span class="p">}</span>
+<span class="c1">// 客人是否为情侣
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">customerCouple</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="c1">// 客人获得的礼品
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">gifts</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;鲜花&#39;</span><span class="p">,</span> <span class="s1">&#39;巧克力&#39;</span><span class="p">,</span> <span class="s1">&#39;9.9元抵扣券&#39;</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">prize</span> <span class="o">=</span> <span class="s1">&#39;无礼品&#39;</span><span class="p">;</span>
+<span class="c1">// 求客人购买商品总价的函数
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">totalPrice</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">totalPrice</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">goodsAmount</span><span class="p">).</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">acc</span> <span class="o">+=</span> <span class="nx">goodsPrice</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span> <span class="o">*</span> <span class="nx">goodsAmount</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span>
+    <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="c1">// 假设七夕节是阳历的1月1日啊
+</span><span class="c1"></span>    <span class="c1">// 因为农历不好算，这里重新定义一下七夕节
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">getCurrentDate</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;1/1&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">customerCouple</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">totalPrice</span> <span class="o">&gt;=</span> <span class="mi">99</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">prize</span> <span class="o">=</span> <span class="nx">gifts</span><span class="p">[</span><span class="nx">randomNum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)];</span>
+        <span class="p">}</span>
+        <span class="nx">totalPrice</span> <span class="o">=</span> <span class="nx">totalPrice</span> <span class="o">*</span> <span class="mf">0.77</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">getCurrentDate</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;1/2&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">totalPrice</span> <span class="o">&gt;=</span> <span class="mi">399</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 处理中秋节满减的判断
+</span><span class="c1"></span>        <span class="c1">// 假设中秋节为阳历的1月2日啊
+</span><span class="c1"></span>        <span class="c1">// 因为农历不好算，这里重新定义一下中秋节
+</span><span class="c1"></span>        <span class="nx">totalPrice</span> <span class="o">-=</span> <span class="mi">100</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">getCurrentDate</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;1/3&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">totalPrice</span> <span class="o">&lt;=</span> <span class="mi">100</span> <span class="o">&amp;&amp;</span> <span class="nx">randomNum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 处理国庆节随机免单
+</span><span class="c1"></span>        <span class="c1">// 假设国庆节为阳历的1月3日啊
+</span><span class="c1"></span>        <span class="c1">// 因为农历不好算，这里重新定义一下国庆节
+</span><span class="c1"></span>        <span class="nx">totalPrice</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">totalPrice</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span style="color:#75715e">// 以下均为辅助方法
-</span><span style="color:#75715e">// 获取当前日期方法
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getCurrentDate</span>() {
-    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date();
-    <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMonth</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getDate</span>()
-}
-<span style="color:#75715e">//生成从minNum到maxNum的随机数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">randomNum</span>(<span style="color:#a6e22e">minNum</span>, <span style="color:#a6e22e">maxNum</span>) {
-    <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">arguments</span>.<span style="color:#a6e22e">length</span>) {
-        <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
-            <span style="color:#66d9ef">return</span> parseInt(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> <span style="color:#a6e22e">minNum</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>);
-            <span style="color:#66d9ef">break</span>;
-        <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>
-            <span style="color:#66d9ef">return</span> parseInt(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> (<span style="color:#a6e22e">maxNum</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">minNum</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">minNum</span>, <span style="color:#ae81ff">10</span>);
-            <span style="color:#66d9ef">break</span>;
-        <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
-            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-            <span style="color:#66d9ef">break</span>;
-    }
-}
-</code></pre></div><p>老过又修改了一下七夕节判断相关的代码，完成了需求，但是这什么时候是个头啊，迟早写出好几百行的 <strong>totalPrice</strong> 函数。</p>
+<span class="c1">// 以下均为辅助方法
+</span><span class="c1">// 获取当前日期方法
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">getCurrentDate</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="c1">//生成从minNum到maxNum的随机数
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">randomNum</span><span class="p">(</span><span class="nx">minNum</span><span class="p">,</span> <span class="nx">maxNum</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+            <span class="k">return</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">minNum</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+            <span class="k">return</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="nx">maxNum</span> <span class="o">-</span> <span class="nx">minNum</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nx">minNum</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">default</span><span class="o">:</span>
+            <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>老过又修改了一下七夕节判断相关的代码，完成了需求，但是这什么时候是个头啊，迟早写出好几百行的 <strong>totalPrice</strong> 函数。</p>
 <h3 id="阿对-3">阿对</h3>
 <blockquote>
 <p>活力满满，干就完了，按摩椅岂不是非我阿对莫属了。</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#75715e">// 面向对象思想 JS阿对
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 1.需求1
-</span><span style="color:#75715e">// 根据客人购买的商品单价和数量生成所购商品的价格
-</span><span style="color:#75715e">// 客人购买商品的数量
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">goodsAmount</span> <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#39;方便面&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>,
-    <span style="color:#e6db74">&#39;火腿肠&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
-    <span style="color:#e6db74">&#39;牙刷&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
-    <span style="color:#e6db74">&#39;纸巾&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>
-}
-<span style="color:#75715e">// 客人购买商品的单价，所有商品单价都是存在的
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">goodsPrice</span> <span style="color:#f92672">=</span> {
-    <span style="color:#e6db74">&#39;方便面&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>,
-    <span style="color:#e6db74">&#39;火腿肠&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
-    <span style="color:#e6db74">&#39;牙刷&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>,
-    <span style="color:#e6db74">&#39;纸巾&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">6</span>
-}
-<span style="color:#75715e">// 客人是否为情侣
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">customerCouple</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-<span style="color:#75715e">// 客人获得的礼品
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">gifts</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;鲜花&#39;</span>, <span style="color:#e6db74">&#39;巧克力&#39;</span>, <span style="color:#e6db74">&#39;9.9元抵扣券&#39;</span>];
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">prize</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;无礼品&#39;</span>;
-<span style="color:#75715e">// 求客人购买商品总价的函数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">totalPrice</span>() {
-    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">goodsAmount</span>).<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">acc</span>, <span style="color:#a6e22e">cur</span>) =&gt; {
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">acc</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">goodsPrice</span>[<span style="color:#a6e22e">cur</span>] <span style="color:#f92672">*</span> <span style="color:#a6e22e">goodsAmount</span>[<span style="color:#a6e22e">cur</span>]
-    }, <span style="color:#ae81ff">0</span>);
-    <span style="color:#75715e">// 需求2：调用七夕打77折活动的函数
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">tanabata</span>(<span style="color:#a6e22e">totalPrice</span>);
-    <span style="color:#75715e">// 需求3：调用中秋节国庆节活动的函数
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">moonFestival</span>(<span style="color:#a6e22e">totalPrice</span>);
-    <span style="color:#a6e22e">totalPrice</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">nationalDay</span>(<span style="color:#a6e22e">totalPrice</span>);
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">totalPrice</span>;
-}
-<span style="color:#75715e">// 需求2：处理七夕打77折活动的函数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">tanabata</span>(<span style="color:#a6e22e">price</span>) {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">getCurrentDate</span>() <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;1/1&#39;</span>) {
-        <span style="color:#a6e22e">price</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">price</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.77</span>
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">price</span>;
-}
-<span style="color:#75715e">// 需求3：处理中秋节满减的函数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">moonFestival</span>(<span style="color:#a6e22e">price</span>) {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">getCurrentDate</span>() <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;1/2&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">price</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">399</span>) {
-        <span style="color:#a6e22e">price</span> <span style="color:#f92672">-=</span> <span style="color:#ae81ff">100</span>;
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">price</span>;
-}
-<span style="color:#75715e">// 处理国庆节随机免单的函数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">nationalDay</span>(<span style="color:#a6e22e">price</span>) {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">getCurrentDate</span>() <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;1/3&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">price</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">randomNum</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">9</span>) <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
-        <span style="color:#a6e22e">price</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">price</span>;
-}
-<span style="color:#75715e">// 需求4：七夕节活动更改
-</span><span style="color:#75715e">// 不动以前的代码，重写七夕节活动的函数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">tanabata</span>(<span style="color:#a6e22e">price</span>) {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">getCurrentDate</span>() <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;1/1&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">customerCouple</span>) {
-        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">price</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">99</span>) {
-            <span style="color:#a6e22e">prize</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gifts</span>[<span style="color:#a6e22e">randomNum</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>)]
-        }
-        <span style="color:#a6e22e">price</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">price</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.77</span>
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">price</span>;
-}
-<span style="color:#75715e">// 以下均为辅助方法
-</span><span style="color:#75715e">// 获取当前日期方法
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getCurrentDate</span>() {
-    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date();
-    <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMonth</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getDate</span>()
-}
-<span style="color:#75715e">//生成从minNum到maxNum的随机数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">randomNum</span>(<span style="color:#a6e22e">minNum</span>, <span style="color:#a6e22e">maxNum</span>) {
-    <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">arguments</span>.<span style="color:#a6e22e">length</span>) {
-        <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
-            <span style="color:#66d9ef">return</span> parseInt(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> <span style="color:#a6e22e">minNum</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>);
-            <span style="color:#66d9ef">break</span>;
-        <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>
-            <span style="color:#66d9ef">return</span> parseInt(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> (<span style="color:#a6e22e">maxNum</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">minNum</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">minNum</span>, <span style="color:#ae81ff">10</span>);
-            <span style="color:#66d9ef">break</span>;
-        <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
-            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-            <span style="color:#66d9ef">break</span>;
-    }
-}
-</code></pre></div><p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bc164e134c6e4b29a152de153d0c12d4~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="c1">// 面向对象思想 JS阿对
+</span><span class="c1"></span>
+<span class="c1">// 1.需求1
+</span><span class="c1">// 根据客人购买的商品单价和数量生成所购商品的价格
+</span><span class="c1">// 客人购买商品的数量
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">goodsAmount</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;方便面&#39;</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s1">&#39;火腿肠&#39;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s1">&#39;牙刷&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">&#39;纸巾&#39;</span><span class="o">:</span> <span class="mi">10</span>
+<span class="p">}</span>
+<span class="c1">// 客人购买商品的单价，所有商品单价都是存在的
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">goodsPrice</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;方便面&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;火腿肠&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">&#39;牙刷&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;纸巾&#39;</span><span class="o">:</span> <span class="mi">6</span>
+<span class="p">}</span>
+<span class="c1">// 客人是否为情侣
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">customerCouple</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="c1">// 客人获得的礼品
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">gifts</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;鲜花&#39;</span><span class="p">,</span> <span class="s1">&#39;巧克力&#39;</span><span class="p">,</span> <span class="s1">&#39;9.9元抵扣券&#39;</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">prize</span> <span class="o">=</span> <span class="s1">&#39;无礼品&#39;</span><span class="p">;</span>
+<span class="c1">// 求客人购买商品总价的函数
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">totalPrice</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">totalPrice</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">goodsAmount</span><span class="p">).</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">acc</span> <span class="o">+=</span> <span class="nx">goodsPrice</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span> <span class="o">*</span> <span class="nx">goodsAmount</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span>
+    <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="c1">// 需求2：调用七夕打77折活动的函数
+</span><span class="c1"></span>    <span class="nx">totalPrice</span> <span class="o">=</span> <span class="nx">tanabata</span><span class="p">(</span><span class="nx">totalPrice</span><span class="p">);</span>
+    <span class="c1">// 需求3：调用中秋节国庆节活动的函数
+</span><span class="c1"></span>    <span class="nx">totalPrice</span> <span class="o">=</span> <span class="nx">moonFestival</span><span class="p">(</span><span class="nx">totalPrice</span><span class="p">);</span>
+    <span class="nx">totalPrice</span> <span class="o">=</span> <span class="nx">nationalDay</span><span class="p">(</span><span class="nx">totalPrice</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">totalPrice</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// 需求2：处理七夕打77折活动的函数
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">tanabata</span><span class="p">(</span><span class="nx">price</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">getCurrentDate</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;1/1&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">price</span> <span class="o">=</span> <span class="nx">price</span> <span class="o">*</span> <span class="mf">0.77</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">price</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// 需求3：处理中秋节满减的函数
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">moonFestival</span><span class="p">(</span><span class="nx">price</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">getCurrentDate</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;1/2&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">price</span> <span class="o">&gt;=</span> <span class="mi">399</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">price</span> <span class="o">-=</span> <span class="mi">100</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">price</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// 处理国庆节随机免单的函数
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">nationalDay</span><span class="p">(</span><span class="nx">price</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">getCurrentDate</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;1/3&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">price</span> <span class="o">&lt;=</span> <span class="mi">100</span> <span class="o">&amp;&amp;</span> <span class="nx">randomNum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">price</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">price</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// 需求4：七夕节活动更改
+</span><span class="c1">// 不动以前的代码，重写七夕节活动的函数
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">tanabata</span><span class="p">(</span><span class="nx">price</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">getCurrentDate</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;1/1&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">customerCouple</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">price</span> <span class="o">&gt;=</span> <span class="mi">99</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">prize</span> <span class="o">=</span> <span class="nx">gifts</span><span class="p">[</span><span class="nx">randomNum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
+        <span class="p">}</span>
+        <span class="nx">price</span> <span class="o">=</span> <span class="nx">price</span> <span class="o">*</span> <span class="mf">0.77</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">price</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// 以下均为辅助方法
+</span><span class="c1">// 获取当前日期方法
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">getCurrentDate</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="c1">//生成从minNum到maxNum的随机数
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">randomNum</span><span class="p">(</span><span class="nx">minNum</span><span class="p">,</span> <span class="nx">maxNum</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+            <span class="k">return</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">minNum</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+            <span class="k">return</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="nx">maxNum</span> <span class="o">-</span> <span class="nx">minNum</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nx">minNum</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">default</span><span class="o">:</span>
+            <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bc164e134c6e4b29a152de153d0c12d4~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
 <p>当老板看完老过和阿对的代码后</p>
 <p>再次兴奋地提出新需求时</p>
 <p><strong>老过顿时晕了过去&hellip;&hellip;</strong></p>
@@ -1007,24 +1483,6 @@
 
     
     
-<div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">文章作者</span>
-    <span class="item-content">XKHM</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">上次更新</span>
-    <span class="item-content">
-      2021-01-14
-      
-    </span>
-  </p>
-  
-  <p class="copyright-item">
-    <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">原创文章，转载请注明文章作者和出处，谢谢！</a></span>
-  </p>
-</div>
 
 
     
@@ -1052,13 +1510,13 @@
 </svg>
 
             </i>
-            <span class="prev-text nav-default">JS基础之Proxy</span>
-            <span class="prev-text nav-mobile">Prev</span>
+            <span class="prev-text nav-default" style="position: relative;top: -2px;">JS基础之Proxy</span>
+            <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
           <a class="next" href="/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E7%BB%A7%E6%89%BF/">
-            <span class="next-text nav-default">JS基础之继承</span>
-            <span class="prev-text nav-mobile">Next</span>
+            <span class="next-text nav-default" style="position: relative;top: -3px;">JS基础之继承</span>
+            <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
               <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -1079,20 +1537,19 @@
   
   
 
-  
 
-  
-  
 
-  
 
-  
 
-  
 
-    
 
-  
+
+
+
+
+
+
+
 
         </div>
       </div>
@@ -1146,23 +1603,17 @@
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
-  </span>
-
+  
+  
   <span class="copyright-year">
     &copy;
     
-      2019 -
-    2022
+    2019 -
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -1175,16 +1626,18 @@
 
       </i>
     </span><span class="author">
-        星空海绵
-        
-      </span></span>
-
+      星空海绵
+      
+    </span></span>
   
-  
-
-  
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
 </div>
-
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -1227,6 +1680,8 @@
 
 
 
+
+  <script async src="//changkun.de/urlstat/client.js"></script>
 
 
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -25,7 +25,7 @@
 <meta name="author" content="XKHM" />
   <meta name="description" content="文章类型：个人学习笔记 手写 Promise 的前提是了解 Promise/A&#43; 规范，不说倒背如流，但是基本的点还是需要掌握的。 1.Promise/A&#43;规范 原文地址：Promis" />
 
-  <meta name="keywords" content="Hugo" />
+  <meta name="keywords" content="Hugo, 星空海绵, 前端, 工程师" />
 
 
 
@@ -41,7 +41,8 @@
 
 
 
-<link rel="icon" href="/favicon.png"  type="image/x-icon"/>
+<link rel="icon" href="/favicon.png" type="image/x-icon"/>
+
 
 
 
@@ -68,7 +69,7 @@
 <meta itemprop="description" content="文章类型：个人学习笔记 手写 Promise 的前提是了解 Promise/A&#43; 规范，不说倒背如流，但是基本的点还是需要掌握的。 1.Promise/A&#43;规范 原文地址：Promis">
 <meta itemprop="datePublished" content="2021-01-07T21:50:29+08:00" />
 <meta itemprop="dateModified" content="2021-01-07T21:50:29+08:00" />
-<meta itemprop="wordCount" content="6088">
+<meta itemprop="wordCount" content="6646">
 
 
 
@@ -86,6 +87,17 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-K0V0BST0TH', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -149,7 +161,21 @@
         
           
           
-            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
         
       </li><li class="mobile-menu-item">
@@ -171,20 +197,6 @@
           
           
             <a class="menu-item-link" href="https://xkhm.net/tags/">标签</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
         
       </li>
@@ -342,7 +354,29 @@
         
           
           
-            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
 
         
@@ -382,28 +416,6 @@
 
       </li>
     
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
-          
-
-        
-
-      </li>
-    
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
-          
-
-        
-
-      </li>
-    
 
     
     
@@ -431,7 +443,8 @@
             <a href="https://xkhm.net/categories/javascript/"> JavaScript </a>
             
           </div>
-        
+        <span class="more-meta"> 约 6646 字 </span>
+          <span class="more-meta"> 预计阅读 14 分钟 </span>
 
         
         
@@ -530,8 +543,15 @@
 <h3 id="22-then方法">2.2. then方法</h3>
 <p>一个 <strong>Promise</strong> 必须提供一个 <strong>then</strong> 方法用来访问 <strong>当前值</strong>、最终的 <strong>value值</strong> 或 <strong>reason</strong>。</p>
 <p>一个 <strong>Promise</strong> 的 <strong>then</strong> 方法接收两个参数：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">promise</span>.<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">onFulfilled</span>, <span style="color:#a6e22e">onRejected</span>)
-</code></pre></div><p><strong>2.2.1.</strong> <strong>onFulfilled</strong> 和 <strong>onRejected</strong> 都是可选参数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">onFulfilled</span><span class="p">,</span> <span class="nx">onRejected</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>2.2.1.</strong> <strong>onFulfilled</strong> 和 <strong>onRejected</strong> 都是可选参数：</p>
 <ul>
 <li>
 <p>2.2.1.1. 如果 <strong>onFulfilled</strong> 不是函数，则必须将其忽略。</p>
@@ -576,12 +596,26 @@
 </li>
 </ul>
 <p><strong>2.2.7.</strong> <strong>then</strong> 必须返回一个 <strong>promise</strong> <strong>[3.3]</strong> 。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">promise2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">promise1</span>.<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">onFulfilled</span>, <span style="color:#a6e22e">onRejected</span>);
-</code></pre></div><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">promise2</span> <span class="o">=</span> <span class="nx">promise1</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">onFulfilled</span><span class="p">,</span> <span class="nx">onRejected</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>2.2.7.1. 如果 <strong>onFulfilled</strong> 或 <strong>onRejected</strong> 返回一个 value <strong>x</strong>，运行 promise 解决程序：</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">[[<span style="color:#a6e22e">Resolve</span>]](<span style="color:#a6e22e">promise2</span>, <span style="color:#a6e22e">x</span>)
-</code></pre></div><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="p">[[</span><span class="nx">Resolve</span><span class="p">]](</span><span class="nx">promise2</span><span class="p">,</span> <span class="nx">x</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>
 <p>2.2.7.2. 如果 <strong>onFulfilled</strong> 或 <strong>onRejected</strong> 抛出异常 <strong>e</strong> ，<strong>promise2</strong> 必须执行 <strong>rejected</strong> 将 <strong>e</strong> 作为 <strong>reason</strong> 的值。</p>
 </li>
@@ -676,86 +710,183 @@
 <p>2.fulFilled：已解决</p>
 <p>3.rejected：拒绝</p>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">        <span style="color:#75715e">// 1.首先 Promise 有三个状态,初始状态为pending
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 2.当 Promise 为 fulFilled 或 rejected状态时，不能转变成其它状态
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 3.当 Promise 为 fulFilled 或 rejected状态时，
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 必须有一个值（fulFilled是value,rejected是reason）
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 4.Promise 接收一个回调函数
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">MyPromise</span>(<span style="color:#a6e22e">exector</span>) {
-            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PENDING</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;pending&#39;</span>;
-            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">FULFILLED</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;fulFilled&#39;</span>;
-            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">REJECTED</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;rejected&#39;</span>;
-            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">that</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
-            <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">PENDING</span>;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript">        <span class="c1">// 1.首先 Promise 有三个状态,初始状态为pending
+</span><span class="c1"></span>        <span class="c1">// 2.当 Promise 为 fulFilled 或 rejected状态时，不能转变成其它状态
+</span><span class="c1"></span>        <span class="c1">// 3.当 Promise 为 fulFilled 或 rejected状态时，
+</span><span class="c1"></span>        <span class="c1">// 必须有一个值（fulFilled是value,rejected是reason）
+</span><span class="c1"></span>        <span class="c1">// 4.Promise 接收一个回调函数
+</span><span class="c1"></span>        <span class="kd">function</span> <span class="nx">MyPromise</span><span class="p">(</span><span class="nx">exector</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kr">const</span> <span class="nx">PENDING</span> <span class="o">=</span> <span class="s1">&#39;pending&#39;</span><span class="p">;</span>
+            <span class="kr">const</span> <span class="nx">FULFILLED</span> <span class="o">=</span> <span class="s1">&#39;fulFilled&#39;</span><span class="p">;</span>
+            <span class="kr">const</span> <span class="nx">REJECTED</span> <span class="o">=</span> <span class="s1">&#39;rejected&#39;</span><span class="p">;</span>
+            <span class="kr">const</span> <span class="nx">that</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+            <span class="nx">that</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">PENDING</span><span class="p">;</span>
 
-            <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">value</span>) {
-                <span style="color:#75715e">// 这里判断的原因就是Promise状态改为FULFILLED，不能再进行改变
-</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">PENDING</span>) {
-                    <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">FULFILLED</span>;
-                    <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>;
-                }
-            }
+            <span class="kd">function</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// 这里判断的原因就是Promise状态改为FULFILLED，不能再进行改变
+</span><span class="c1"></span>                <span class="k">if</span> <span class="p">(</span><span class="nx">that</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">PENDING</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">that</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">FULFILLED</span><span class="p">;</span>
+                    <span class="nx">that</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
 
-            <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">reason</span>) {
-                <span style="color:#75715e">// 这里判断的原因跟上面一样
-</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">PENDING</span>) {
-                    <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">REJECTED</span>;
-                    <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">reason</span>;
-                }
-            }
-            <span style="color:#66d9ef">try</span> {
-                <span style="color:#a6e22e">exector</span>(<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>);
-            } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
-                <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">error</span>);
-            }
-        }
-</code></pre></div><p>上述resolve和reject方法中如果不进行判断，下面这种情况就会再次改变promise的状态：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MyPromise</span>((<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">rejrect</span>) =&gt; {
-            <span style="color:#a6e22e">reject</span>(<span style="color:#e6db74">&#39;拒绝&#39;</span>);
-            <span style="color:#a6e22e">resolve</span>(<span style="color:#e6db74">&#39;解决&#39;</span>);
-        })
-        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">p</span>);
-</code></pre></div><p>上面这个例子，如果不进行判断，最终状态会是 fulfilled ，进行判断后状态是 rejected ，不会再被更改，这样才是满足Promise/A+规范的。</p>
+            <span class="kd">function</span> <span class="nx">reject</span><span class="p">(</span><span class="nx">reason</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// 这里判断的原因跟上面一样
+</span><span class="c1"></span>                <span class="k">if</span> <span class="p">(</span><span class="nx">that</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">PENDING</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">that</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">REJECTED</span><span class="p">;</span>
+                    <span class="nx">that</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">reason</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">try</span> <span class="p">{</span>
+                <span class="nx">exector</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>上述resolve和reject方法中如果不进行判断，下面这种情况就会再次改变promise的状态：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript">        <span class="kd">let</span> <span class="nx">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyPromise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">rejrect</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">reject</span><span class="p">(</span><span class="s1">&#39;拒绝&#39;</span><span class="p">);</span>
+            <span class="nx">resolve</span><span class="p">(</span><span class="s1">&#39;解决&#39;</span><span class="p">);</span>
+        <span class="p">})</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">p</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>上面这个例子，如果不进行判断，最终状态会是 fulfilled ，进行判断后状态是 rejected ，不会再被更改，这样才是满足Promise/A+规范的。</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">        <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyPromise</span> {
-            <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">PENDING</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;pending&#39;</span>;
-            <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">FULFILLED</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;fulFilled&#39;</span>;
-            <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">REJECTED</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;rejected&#39;</span>;
-            <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">executor</span>) {
-                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">MyPromise</span>.<span style="color:#a6e22e">PENDING</span>;
-                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
-                <span style="color:#66d9ef">try</span> {
-                    <span style="color:#75715e">// 这个地方this.resolve只是拿到resolve方法，并不是this调用的
-</span><span style="color:#75715e"></span>                    <span style="color:#75715e">// 事实上是全局对象调用的，但是class里面默认是严格模式
-</span><span style="color:#75715e"></span>                    <span style="color:#75715e">// 如果不改变resolve的内部this指向，他的this是undefined
-</span><span style="color:#75715e"></span>                    <span style="color:#a6e22e">executor</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">resolve</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>), <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">reject</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>));
-                } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
-                    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">error</span>)
-                }
-            }
-            <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">value</span>) {
-                <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">MyPromise</span>.<span style="color:#a6e22e">PENDING</span>) {
-                    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">MyPromise</span>.<span style="color:#a6e22e">FULFILLED</span>;
-                    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>;
-                }
-            }
-            <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">reason</span>) {
-                <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">MyPromise</span>.<span style="color:#a6e22e">PENDING</span>) {
-                    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">MyPromise</span>.<span style="color:#a6e22e">REJECTED</span>;
-                    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">reason</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">reason</span>;
-                }
-            }
-        }
-        <span style="color:#75715e">// 测试
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MyPromise</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) {
-            <span style="color:#a6e22e">reject</span>(<span style="color:#e6db74">&#39;XKHM&#39;</span>)
-        });
-        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">p</span>);
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript">        <span class="kr">class</span> <span class="nx">MyPromise</span> <span class="p">{</span>
+            <span class="kr">static</span> <span class="nx">PENDING</span> <span class="o">=</span> <span class="s1">&#39;pending&#39;</span><span class="p">;</span>
+            <span class="kr">static</span> <span class="nx">FULFILLED</span> <span class="o">=</span> <span class="s1">&#39;fulFilled&#39;</span><span class="p">;</span>
+            <span class="kr">static</span> <span class="nx">REJECTED</span> <span class="o">=</span> <span class="s1">&#39;rejected&#39;</span><span class="p">;</span>
+            <span class="nx">constructor</span><span class="p">(</span><span class="nx">executor</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">MyPromise</span><span class="p">.</span><span class="nx">PENDING</span><span class="p">;</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+                <span class="k">try</span> <span class="p">{</span>
+                    <span class="c1">// 这个地方this.resolve只是拿到resolve方法，并不是this调用的
+</span><span class="c1"></span>                    <span class="c1">// 事实上是全局对象调用的，但是class里面默认是严格模式
+</span><span class="c1"></span>                    <span class="c1">// 如果不改变resolve的内部this指向，他的this是undefined
+</span><span class="c1"></span>                    <span class="nx">executor</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">resolve</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">),</span> <span class="k">this</span><span class="p">.</span><span class="nx">reject</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+                <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="nx">resolve</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">MyPromise</span><span class="p">.</span><span class="nx">PENDING</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">MyPromise</span><span class="p">.</span><span class="nx">FULFILLED</span><span class="p">;</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="nx">reject</span><span class="p">(</span><span class="nx">reason</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">MyPromise</span><span class="p">.</span><span class="nx">PENDING</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">MyPromise</span><span class="p">.</span><span class="nx">REJECTED</span><span class="p">;</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">reason</span> <span class="o">=</span> <span class="nx">reason</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="c1">// 测试
+</span><span class="c1"></span>        <span class="kd">let</span> <span class="nx">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyPromise</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">reject</span><span class="p">(</span><span class="s1">&#39;XKHM&#39;</span><span class="p">)</span>
+        <span class="p">});</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">p</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <h2 id="2then方法">2.then方法</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">promise</span>.<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">onFulfilled</span>, <span style="color:#a6e22e">onRejected</span>)
-</code></pre></div><p>1.then方法的两个参数onFulfilled和onRejected都是可选参数，如果这两个不是函数，将被忽略。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">onFulfilled</span><span class="p">,</span> <span class="nx">onRejected</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>1.then方法的两个参数onFulfilled和onRejected都是可选参数，如果这两个不是函数，将被忽略。</p>
 <p>2.onFulfilled一定是在Promise执行完状态为fulFilled时调用，并接受一个参数value，并且最多被调用一次</p>
 <p>3.onRejected一定是在Promise执行完状态为rejected时调用，并接受一个参数reason，并且最多被调用一次</p>
 <p>4.onFulfilled和onRejected需要在下一轮事件循环中调用（异步调用）</p>
@@ -771,322 +902,659 @@
 <p>2.如果 x 为 promise ，接受其状态</p>
 <p>3.抑或 x 为对象或者函数</p>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">
-        <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyPromise</span> {
-            <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">PENDING</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;pending&#39;</span>;
-            <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">FULFILLED</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;fulFilled&#39;</span>;
-            <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">REJECTED</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;rejected&#39;</span>;
-            <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">executor</span>) {
-                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">MyPromise</span>.<span style="color:#a6e22e">PENDING</span>;
-                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
-                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">callback</span> <span style="color:#f92672">=</span> [];
-                <span style="color:#66d9ef">try</span> {
-                    <span style="color:#75715e">// 这个地方this.resolve只是拿到resolve方法，并不是this调用的
-</span><span style="color:#75715e"></span>                    <span style="color:#75715e">// 事实上是全局对象调用的，但是class里面默认是严格模式
-</span><span style="color:#75715e"></span>                    <span style="color:#75715e">// 如果不改变resolve的内部this指向，他的this是undefined
-</span><span style="color:#75715e"></span>                    <span style="color:#a6e22e">executor</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">resolve</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>), <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">reject</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>));
-                } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
-                    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">error</span>)
-                }
-            }
-            <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">value</span>) {
-                <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">MyPromise</span>.<span style="color:#a6e22e">PENDING</span>) {
-                    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">MyPromise</span>.<span style="color:#a6e22e">FULFILLED</span>;
-                    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>;
-                    <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">_</span> =&gt; {
-                        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">callback</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">callFn</span> =&gt; {
-                            <span style="color:#a6e22e">callFn</span>.<span style="color:#a6e22e">onFulfilled</span>(<span style="color:#a6e22e">value</span>)
-                        });
-                    })
-                }
-            }
-            <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">value</span>) {
-                <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">MyPromise</span>.<span style="color:#a6e22e">PENDING</span>) {
-                    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">MyPromise</span>.<span style="color:#a6e22e">REJECTED</span>;
-                    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>;
-                    <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">_</span> =&gt; {
-                        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">callback</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">callFn</span> =&gt; {
-                            <span style="color:#a6e22e">callFn</span>.<span style="color:#a6e22e">onRejected</span>(<span style="color:#a6e22e">value</span>)
-                        });
-                    })
-                }
-            }
-            <span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">onFulfilled</span>, <span style="color:#a6e22e">onRejected</span>) {
-                <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">onFulfilled</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;function&#39;</span>) {
-                    <span style="color:#a6e22e">onFulfilled</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span> =&gt; <span style="color:#a6e22e">value</span>;
-                }
-                <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">onRejected</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;function&#39;</span>) {
-                    <span style="color:#a6e22e">onRejected</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span> =&gt; <span style="color:#a6e22e">value</span>;
-                }
-                <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">promise</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MyPromise</span>((<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) =&gt; {
-                    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">MyPromise</span>.<span style="color:#a6e22e">PENDING</span>) {
-                        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">callback</span>.<span style="color:#a6e22e">push</span>({
-                            <span style="color:#a6e22e">onFulfilled</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">value</span> =&gt; {
-                                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">promise</span>, <span style="color:#a6e22e">onFulfilled</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span>), <span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>)
-                            },
-                            <span style="color:#a6e22e">onRejected</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">value</span> =&gt; {
-                                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">promise</span>, <span style="color:#a6e22e">onRejected</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span>), <span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>)
-                            }
-                        })
-                    }
-                    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">MyPromise</span>.<span style="color:#a6e22e">FULFILLED</span>) {
-                        <span style="color:#a6e22e">setTimeout</span>(() =&gt; {
-                            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">promise</span>, <span style="color:#a6e22e">onFulfilled</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span>), <span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>)
-                        })
-                    }
-                    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">MyPromise</span>.<span style="color:#a6e22e">REJECTED</span>) {
-                        <span style="color:#a6e22e">setTimeout</span>(() =&gt; {
-                            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">promise</span>, <span style="color:#a6e22e">onRejected</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span>), <span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>)
-                        })
-                    }
-                });
-                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">promise</span>;
-            }
-            <span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">promise</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) {
-                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">promise</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">res</span>) {
-                    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TypeError</span>(<span style="color:#e6db74">&#39;then返回的promise不能是跟then是相同的Promise&#39;</span>);
-                }
-                <span style="color:#66d9ef">try</span> {
-                    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">res</span> <span style="color:#66d9ef">instanceof</span> <span style="color:#a6e22e">MyPromise</span>) {
-                        <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>)
-                    } <span style="color:#66d9ef">else</span> {
-                        <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">res</span>)
-                    }
-                } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
-                    <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">error</span>)
-                }
-            }
-        }
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript">
+        <span class="kr">class</span> <span class="nx">MyPromise</span> <span class="p">{</span>
+            <span class="kr">static</span> <span class="nx">PENDING</span> <span class="o">=</span> <span class="s1">&#39;pending&#39;</span><span class="p">;</span>
+            <span class="kr">static</span> <span class="nx">FULFILLED</span> <span class="o">=</span> <span class="s1">&#39;fulFilled&#39;</span><span class="p">;</span>
+            <span class="kr">static</span> <span class="nx">REJECTED</span> <span class="o">=</span> <span class="s1">&#39;rejected&#39;</span><span class="p">;</span>
+            <span class="nx">constructor</span><span class="p">(</span><span class="nx">executor</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">MyPromise</span><span class="p">.</span><span class="nx">PENDING</span><span class="p">;</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">callback</span> <span class="o">=</span> <span class="p">[];</span>
+                <span class="k">try</span> <span class="p">{</span>
+                    <span class="c1">// 这个地方this.resolve只是拿到resolve方法，并不是this调用的
+</span><span class="c1"></span>                    <span class="c1">// 事实上是全局对象调用的，但是class里面默认是严格模式
+</span><span class="c1"></span>                    <span class="c1">// 如果不改变resolve的内部this指向，他的this是undefined
+</span><span class="c1"></span>                    <span class="nx">executor</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">resolve</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">),</span> <span class="k">this</span><span class="p">.</span><span class="nx">reject</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+                <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="nx">resolve</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">MyPromise</span><span class="p">.</span><span class="nx">PENDING</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">MyPromise</span><span class="p">.</span><span class="nx">FULFILLED</span><span class="p">;</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+                    <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">_</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                        <span class="k">this</span><span class="p">.</span><span class="nx">callback</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">callFn</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                            <span class="nx">callFn</span><span class="p">.</span><span class="nx">onFulfilled</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+                        <span class="p">});</span>
+                    <span class="p">})</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="nx">reject</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">MyPromise</span><span class="p">.</span><span class="nx">PENDING</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">MyPromise</span><span class="p">.</span><span class="nx">REJECTED</span><span class="p">;</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+                    <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">_</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                        <span class="k">this</span><span class="p">.</span><span class="nx">callback</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">callFn</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                            <span class="nx">callFn</span><span class="p">.</span><span class="nx">onRejected</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+                        <span class="p">});</span>
+                    <span class="p">})</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="nx">then</span><span class="p">(</span><span class="nx">onFulfilled</span><span class="p">,</span> <span class="nx">onRejected</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">onFulfilled</span> <span class="o">!==</span> <span class="s1">&#39;function&#39;</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">onFulfilled</span> <span class="o">=</span> <span class="nx">value</span> <span class="p">=&gt;</span> <span class="nx">value</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">onRejected</span> <span class="o">!==</span> <span class="s1">&#39;function&#39;</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">onRejected</span> <span class="o">=</span> <span class="nx">value</span> <span class="p">=&gt;</span> <span class="nx">value</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="kd">let</span> <span class="nx">promise</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyPromise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">MyPromise</span><span class="p">.</span><span class="nx">PENDING</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="k">this</span><span class="p">.</span><span class="nx">callback</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+                            <span class="nx">onFulfilled</span><span class="o">:</span> <span class="nx">value</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                                <span class="k">this</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">promise</span><span class="p">,</span> <span class="nx">onFulfilled</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">),</span> <span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span>
+                            <span class="p">},</span>
+                            <span class="nx">onRejected</span><span class="o">:</span> <span class="nx">value</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                                <span class="k">this</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">promise</span><span class="p">,</span> <span class="nx">onRejected</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">),</span> <span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span>
+                            <span class="p">}</span>
+                        <span class="p">})</span>
+                    <span class="p">}</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">MyPromise</span><span class="p">.</span><span class="nx">FULFILLED</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                            <span class="k">this</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">promise</span><span class="p">,</span> <span class="nx">onFulfilled</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">),</span> <span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span>
+                        <span class="p">})</span>
+                    <span class="p">}</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">MyPromise</span><span class="p">.</span><span class="nx">REJECTED</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                            <span class="k">this</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">promise</span><span class="p">,</span> <span class="nx">onRejected</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">),</span> <span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span>
+                        <span class="p">})</span>
+                    <span class="p">}</span>
+                <span class="p">});</span>
+                <span class="k">return</span> <span class="nx">promise</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="nx">parse</span><span class="p">(</span><span class="nx">promise</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">promise</span> <span class="o">==</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">throw</span> <span class="k">new</span> <span class="nx">TypeError</span><span class="p">(</span><span class="s1">&#39;then返回的promise不能是跟then是相同的Promise&#39;</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">try</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="nx">res</span> <span class="k">instanceof</span> <span class="nx">MyPromise</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">res</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span>
+                    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                        <span class="nx">resolve</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span>
+                    <span class="p">}</span>
+                <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">        <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyPromise</span> {
-            <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">PENDING</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;pending&#39;</span>;
-            <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">FULFILLED</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;fulFilled&#39;</span>;
-            <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">REJECTED</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;rejected&#39;</span>;
-            <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">executor</span>) {
-                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">MyPromise</span>.<span style="color:#a6e22e">PENDING</span>;
-                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
-                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">callback</span> <span style="color:#f92672">=</span> [];
-                <span style="color:#66d9ef">try</span> {
-                    <span style="color:#75715e">// 这个地方this.resolve只是拿到resolve方法，并不是this调用的
-</span><span style="color:#75715e"></span>                    <span style="color:#75715e">// 事实上是全局对象调用的，但是class里面默认是严格模式
-</span><span style="color:#75715e"></span>                    <span style="color:#75715e">// 如果不改变resolve的内部this指向，他的this是undefined
-</span><span style="color:#75715e"></span>                    <span style="color:#a6e22e">executor</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">resolve</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>), <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">reject</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>));
-                } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
-                    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">error</span>)
-                }
-            }
-            <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">value</span>) {
-                <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">MyPromise</span>.<span style="color:#a6e22e">PENDING</span>) {
-                    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">MyPromise</span>.<span style="color:#a6e22e">FULFILLED</span>;
-                    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>;
-                    <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">_</span> =&gt; {
-                        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">callback</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">callFn</span> =&gt; {
-                            <span style="color:#a6e22e">callFn</span>.<span style="color:#a6e22e">onFulfilled</span>(<span style="color:#a6e22e">value</span>)
-                        });
-                    })
-                }
-            }
-            <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">value</span>) {
-                <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">MyPromise</span>.<span style="color:#a6e22e">PENDING</span>) {
-                    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">MyPromise</span>.<span style="color:#a6e22e">REJECTED</span>;
-                    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>;
-                    <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">_</span> =&gt; {
-                        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">callback</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">callFn</span> =&gt; {
-                            <span style="color:#a6e22e">callFn</span>.<span style="color:#a6e22e">onRejected</span>(<span style="color:#a6e22e">value</span>)
-                        });
-                    })
-                }
-            }
-            <span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">onFulfilled</span>, <span style="color:#a6e22e">onRejected</span>) {
-                <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">onFulfilled</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;function&#39;</span>) {
-                    <span style="color:#a6e22e">onFulfilled</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span> =&gt; <span style="color:#a6e22e">value</span>;
-                }
-                <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">onRejected</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;function&#39;</span>) {
-                    <span style="color:#a6e22e">onRejected</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span> =&gt; <span style="color:#a6e22e">value</span>;
-                }
-                <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">promise</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MyPromise</span>((<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) =&gt; {
-                    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">MyPromise</span>.<span style="color:#a6e22e">PENDING</span>) {
-                        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">callback</span>.<span style="color:#a6e22e">push</span>({
-                            <span style="color:#a6e22e">onFulfilled</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">value</span> =&gt; {
-                                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">promise</span>, <span style="color:#a6e22e">onFulfilled</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span>), <span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>)
-                            },
-                            <span style="color:#a6e22e">onRejected</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">value</span> =&gt; {
-                                <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">promise</span>, <span style="color:#a6e22e">onRejected</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span>), <span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>)
-                            }
-                        })
-                    }
-                    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">MyPromise</span>.<span style="color:#a6e22e">FULFILLED</span>) {
-                        <span style="color:#a6e22e">setTimeout</span>(() =&gt; {
-                            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">promise</span>, <span style="color:#a6e22e">onFulfilled</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span>), <span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>)
-                        })
-                    }
-                    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">MyPromise</span>.<span style="color:#a6e22e">REJECTED</span>) {
-                        <span style="color:#a6e22e">setTimeout</span>(() =&gt; {
-                            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">promise</span>, <span style="color:#a6e22e">onRejected</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">value</span>), <span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>)
-                        })
-                    }
-                });
-                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">promise</span>;
-            }
-            <span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">promise</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) {
-                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">promise</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">res</span>) {
-                    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TypeError</span>(<span style="color:#e6db74">&#39;then返回的promise不能是跟then相同的Promise&#39;</span>);
-                }
-                <span style="color:#66d9ef">try</span> {
-                    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">res</span> <span style="color:#66d9ef">instanceof</span> <span style="color:#a6e22e">MyPromise</span>) {
-                        <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>)
-                    } <span style="color:#66d9ef">else</span> {
-                        <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">res</span>)
-                    }
-                } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
-                    <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">error</span>)
-                }
-            }
-            <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">value</span>) {
-                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MyPromise</span>((<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) =&gt; {
-                    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">value</span> <span style="color:#66d9ef">instanceof</span> <span style="color:#a6e22e">MyPromise</span>) {
-                        <span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>);
-                    } <span style="color:#66d9ef">else</span> {
-                        <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">value</span>);
-                    }
-                })
-            }
-            <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">reason</span>) {
-                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MyPromise</span>((<span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">reject</span>) =&gt; {
-                    <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">reason</span>);
-                })
-            }
-            <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">all</span>(<span style="color:#a6e22e">promises</span>) {
-                <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">resolves</span> <span style="color:#f92672">=</span> [];
-                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MyPromise</span>((<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) =&gt; {
-                    <span style="color:#a6e22e">promises</span>.<span style="color:#a6e22e">forEach</span>((<span style="color:#a6e22e">promise</span>, <span style="color:#a6e22e">index</span>) =&gt; {
-                        <span style="color:#a6e22e">promise</span>.<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">value</span> =&gt; {
-                            <span style="color:#a6e22e">resolves</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">value</span>)
-                            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">resolves</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">promises</span>.<span style="color:#a6e22e">length</span>) {
-                                <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">resolves</span>);
-                            }
-                        }, <span style="color:#a6e22e">reason</span> =&gt; {
-                            <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">reason</span>);
-                        })
-                    })
-                })
-            }
-            <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">race</span>(<span style="color:#a6e22e">promises</span>) {
-                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MyPromise</span>((<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) =&gt; {
-                    <span style="color:#a6e22e">promises</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">promise</span> =&gt; {
-                        <span style="color:#a6e22e">promise</span>.<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">value</span> =&gt; {
-                            <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">value</span>)
-                        })
-                    })
-                })
-            }
-        } 
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript">        <span class="kr">class</span> <span class="nx">MyPromise</span> <span class="p">{</span>
+            <span class="kr">static</span> <span class="nx">PENDING</span> <span class="o">=</span> <span class="s1">&#39;pending&#39;</span><span class="p">;</span>
+            <span class="kr">static</span> <span class="nx">FULFILLED</span> <span class="o">=</span> <span class="s1">&#39;fulFilled&#39;</span><span class="p">;</span>
+            <span class="kr">static</span> <span class="nx">REJECTED</span> <span class="o">=</span> <span class="s1">&#39;rejected&#39;</span><span class="p">;</span>
+            <span class="nx">constructor</span><span class="p">(</span><span class="nx">executor</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">MyPromise</span><span class="p">.</span><span class="nx">PENDING</span><span class="p">;</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">callback</span> <span class="o">=</span> <span class="p">[];</span>
+                <span class="k">try</span> <span class="p">{</span>
+                    <span class="c1">// 这个地方this.resolve只是拿到resolve方法，并不是this调用的
+</span><span class="c1"></span>                    <span class="c1">// 事实上是全局对象调用的，但是class里面默认是严格模式
+</span><span class="c1"></span>                    <span class="c1">// 如果不改变resolve的内部this指向，他的this是undefined
+</span><span class="c1"></span>                    <span class="nx">executor</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">resolve</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">),</span> <span class="k">this</span><span class="p">.</span><span class="nx">reject</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+                <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="nx">resolve</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">MyPromise</span><span class="p">.</span><span class="nx">PENDING</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">MyPromise</span><span class="p">.</span><span class="nx">FULFILLED</span><span class="p">;</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+                    <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">_</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                        <span class="k">this</span><span class="p">.</span><span class="nx">callback</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">callFn</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                            <span class="nx">callFn</span><span class="p">.</span><span class="nx">onFulfilled</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+                        <span class="p">});</span>
+                    <span class="p">})</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="nx">reject</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">MyPromise</span><span class="p">.</span><span class="nx">PENDING</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">MyPromise</span><span class="p">.</span><span class="nx">REJECTED</span><span class="p">;</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+                    <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">_</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                        <span class="k">this</span><span class="p">.</span><span class="nx">callback</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">callFn</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                            <span class="nx">callFn</span><span class="p">.</span><span class="nx">onRejected</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+                        <span class="p">});</span>
+                    <span class="p">})</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="nx">then</span><span class="p">(</span><span class="nx">onFulfilled</span><span class="p">,</span> <span class="nx">onRejected</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">onFulfilled</span> <span class="o">!==</span> <span class="s1">&#39;function&#39;</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">onFulfilled</span> <span class="o">=</span> <span class="nx">value</span> <span class="p">=&gt;</span> <span class="nx">value</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">onRejected</span> <span class="o">!==</span> <span class="s1">&#39;function&#39;</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">onRejected</span> <span class="o">=</span> <span class="nx">value</span> <span class="p">=&gt;</span> <span class="nx">value</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="kd">let</span> <span class="nx">promise</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyPromise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">MyPromise</span><span class="p">.</span><span class="nx">PENDING</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="k">this</span><span class="p">.</span><span class="nx">callback</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+                            <span class="nx">onFulfilled</span><span class="o">:</span> <span class="nx">value</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                                <span class="k">this</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">promise</span><span class="p">,</span> <span class="nx">onFulfilled</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">),</span> <span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span>
+                            <span class="p">},</span>
+                            <span class="nx">onRejected</span><span class="o">:</span> <span class="nx">value</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                                <span class="k">this</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">promise</span><span class="p">,</span> <span class="nx">onRejected</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">),</span> <span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span>
+                            <span class="p">}</span>
+                        <span class="p">})</span>
+                    <span class="p">}</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">MyPromise</span><span class="p">.</span><span class="nx">FULFILLED</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                            <span class="k">this</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">promise</span><span class="p">,</span> <span class="nx">onFulfilled</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">),</span> <span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span>
+                        <span class="p">})</span>
+                    <span class="p">}</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">MyPromise</span><span class="p">.</span><span class="nx">REJECTED</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                            <span class="k">this</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">promise</span><span class="p">,</span> <span class="nx">onRejected</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">),</span> <span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span>
+                        <span class="p">})</span>
+                    <span class="p">}</span>
+                <span class="p">});</span>
+                <span class="k">return</span> <span class="nx">promise</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="nx">parse</span><span class="p">(</span><span class="nx">promise</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">promise</span> <span class="o">==</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">throw</span> <span class="k">new</span> <span class="nx">TypeError</span><span class="p">(</span><span class="s1">&#39;then返回的promise不能是跟then相同的Promise&#39;</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">try</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="nx">res</span> <span class="k">instanceof</span> <span class="nx">MyPromise</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">res</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span>
+                    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                        <span class="nx">resolve</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span>
+                    <span class="p">}</span>
+                <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="kr">static</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="k">new</span> <span class="nx">MyPromise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="nx">value</span> <span class="k">instanceof</span> <span class="nx">MyPromise</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">value</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">);</span>
+                    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                        <span class="nx">resolve</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+                    <span class="p">}</span>
+                <span class="p">})</span>
+            <span class="p">}</span>
+            <span class="kr">static</span> <span class="nx">reject</span><span class="p">(</span><span class="nx">reason</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="k">new</span> <span class="nx">MyPromise</span><span class="p">((</span><span class="nx">_</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">reject</span><span class="p">(</span><span class="nx">reason</span><span class="p">);</span>
+                <span class="p">})</span>
+            <span class="p">}</span>
+            <span class="kr">static</span> <span class="nx">all</span><span class="p">(</span><span class="nx">promises</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">let</span> <span class="nx">resolves</span> <span class="o">=</span> <span class="p">[];</span>
+                <span class="k">return</span> <span class="k">new</span> <span class="nx">MyPromise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">promises</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">promise</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                        <span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">value</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                            <span class="nx">resolves</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="nx">resolves</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="nx">promises</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="nx">resolve</span><span class="p">(</span><span class="nx">resolves</span><span class="p">);</span>
+                            <span class="p">}</span>
+                        <span class="p">},</span> <span class="nx">reason</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                            <span class="nx">reject</span><span class="p">(</span><span class="nx">reason</span><span class="p">);</span>
+                        <span class="p">})</span>
+                    <span class="p">})</span>
+                <span class="p">})</span>
+            <span class="p">}</span>
+            <span class="kr">static</span> <span class="nx">race</span><span class="p">(</span><span class="nx">promises</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="k">new</span> <span class="nx">MyPromise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">promises</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">promise</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                        <span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">value</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                            <span class="nx">resolve</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+                        <span class="p">})</span>
+                    <span class="p">})</span>
+                <span class="p">})</span>
+            <span class="p">}</span>
+        <span class="p">}</span> 
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 <h1 id="4测试">4.测试</h1>
 <p>使用 <a href="https://github.com/promises-aplus/promises-tests">Promise/A+ 测试工具</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">npm install promises-aplus-tests -g
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">npx promises-aplus-tests promise.js
-</code></pre></div><h1 id="5提醒">5.提醒</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cmd" data-lang="cmd">npm install promises-aplus-tests -g
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cmd" data-lang="cmd">npx promises-aplus-tests promise.js
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="5提醒">5.提醒</h1>
 <h2 id="1promise内部错误被吞掉了那是被谁吞掉的呢是被reject吞掉的">（1）Promise内部错误被吞掉了，那是被谁吞掉的呢，是被reject吞掉的</h2>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pending</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;pending&#39;</span>;
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fulFilled</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;fulFilled&#39;</span>;
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">rejected</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;rejected&#39;</span>;
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">resolveFn</span> <span style="color:#f92672">=</span> [];
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">rejectFn</span> <span style="color:#f92672">=</span> [];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span><span class="lnt">94
+</span><span class="lnt">95
+</span><span class="lnt">96
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kr">const</span> <span class="nx">pending</span> <span class="o">=</span> <span class="s1">&#39;pending&#39;</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">fulFilled</span> <span class="o">=</span> <span class="s1">&#39;fulFilled&#39;</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">rejected</span> <span class="o">=</span> <span class="s1">&#39;rejected&#39;</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">resolveFn</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="kr">const</span> <span class="nx">rejectFn</span> <span class="o">=</span> <span class="p">[];</span>
 
-<span style="color:#75715e">// Promise/A+规范
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 1. Promise状态
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// （1） 当Promise为pending状态时，可以被转换成另外两种状态
-</span><span style="color:#75715e">// （2） 当Promise为fulFilled状态时，不能被更改，且必须有一个不能被更改的value值
-</span><span style="color:#75715e">// （3） 当Promise为rejected状态时，不能被更改，且必须有一个不能被更改的reason值
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">MyPromise</span>(<span style="color:#a6e22e">execute</span>){
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">that</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
-    <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">pending</span>;
+<span class="c1">// Promise/A+规范
+</span><span class="c1"></span>
+<span class="c1">// 1. Promise状态
+</span><span class="c1"></span>
+<span class="c1">// （1） 当Promise为pending状态时，可以被转换成另外两种状态
+</span><span class="c1">// （2） 当Promise为fulFilled状态时，不能被更改，且必须有一个不能被更改的value值
+</span><span class="c1">// （3） 当Promise为rejected状态时，不能被更改，且必须有一个不能被更改的reason值
+</span><span class="c1"></span>
+<span class="kd">function</span> <span class="nx">MyPromise</span><span class="p">(</span><span class="nx">execute</span><span class="p">){</span>
+    <span class="kr">const</span> <span class="nx">that</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+    <span class="nx">that</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">pending</span><span class="p">;</span>
 
-    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">value</span>){
-        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">pending</span>){
-            <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fulFilled</span>;
-            <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>;
-        }
-    }
+    <span class="kd">function</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">value</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">that</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">pending</span><span class="p">){</span>
+            <span class="nx">that</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">fulFilled</span><span class="p">;</span>
+            <span class="nx">that</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">reason</span>){
-        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">pending</span>){
-            <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">rejected</span>;
-            <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">reason</span>;
-        }
-    }
+    <span class="kd">function</span> <span class="nx">reject</span><span class="p">(</span><span class="nx">reason</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">that</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">pending</span><span class="p">){</span>
+            <span class="nx">that</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">rejected</span><span class="p">;</span>
+            <span class="nx">that</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">reason</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-    <span style="color:#75715e">// 如果执行中有错误，会立马执行reject
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 也就是说Promise中的错误是被reject吞掉的
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// try...catch是捕获不到的
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">try</span> {
-        <span style="color:#a6e22e">execute</span>(<span style="color:#a6e22e">resolve</span>,<span style="color:#a6e22e">reject</span>);   
-    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
-        <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">error</span>)
-    }
-}
+    <span class="c1">// 如果执行中有错误，会立马执行reject
+</span><span class="c1"></span>    <span class="c1">// 也就是说Promise中的错误是被reject吞掉的
+</span><span class="c1"></span>    <span class="c1">// try...catch是捕获不到的
+</span><span class="c1"></span>    <span class="k">try</span> <span class="p">{</span>
+        <span class="nx">execute</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span><span class="nx">reject</span><span class="p">);</span>   
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-<span style="color:#75715e">// 2.then方法
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 首先，then方法是挂在Promise原型上的一个方法
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// （1）then方法接收两个回调函数,如果不是函数忽略
-</span><span style="color:#75715e">// （2）then方法返回一个Promise
-</span><span style="color:#75715e">// （3）then方法需要异步执行
-</span><span style="color:#75715e">// （4）then可以被链式调用
-</span><span style="color:#75715e">// （5）如果onResolve是函数，必须在Promise状态为fulFilled后调用
-</span><span style="color:#75715e">// （6）如果onRejected是函数，必须在Promise状态为rejected后调用
-</span><span style="color:#75715e">// （7）then没有自己的this（也可以理解为then方法是挂在Promise原型上的）
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">MyPromise</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">then</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">onResolve</span>,<span style="color:#a6e22e">onRejected</span>){
-    <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">onResolve</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;function&#39;</span>){
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">onResolve</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span> =&gt; <span style="color:#a6e22e">value</span>
-    }
-    <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">onRejected</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;function&#39;</span>){
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">onRejected</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">reason</span> =&gt; <span style="color:#a6e22e">reason</span>
-    }
-    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">that</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
-    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MyPromise</span>((<span style="color:#a6e22e">resolve</span>,<span style="color:#a6e22e">reject</span>) =&gt; {
-        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">fulFilled</span>){
-            <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">_</span> =&gt; {
-                <span style="color:#a6e22e">onResolve</span>(<span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">value</span>)
-            })
-        }
-        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">rejected</span>){
-            <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">_</span> =&gt; {
-                <span style="color:#a6e22e">onRejected</span>(<span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">value</span>)
-            })
-        }
-    })
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">p</span>;
-}
+<span class="c1">// 2.then方法
+</span><span class="c1"></span>
+<span class="c1">// 首先，then方法是挂在Promise原型上的一个方法
+</span><span class="c1"></span>
+<span class="c1">// （1）then方法接收两个回调函数,如果不是函数忽略
+</span><span class="c1">// （2）then方法返回一个Promise
+</span><span class="c1">// （3）then方法需要异步执行
+</span><span class="c1">// （4）then可以被链式调用
+</span><span class="c1">// （5）如果onResolve是函数，必须在Promise状态为fulFilled后调用
+</span><span class="c1">// （6）如果onRejected是函数，必须在Promise状态为rejected后调用
+</span><span class="c1">// （7）then没有自己的this（也可以理解为then方法是挂在Promise原型上的）
+</span><span class="c1"></span><span class="nx">MyPromise</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">then</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">onResolve</span><span class="p">,</span><span class="nx">onRejected</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">onResolve</span> <span class="o">!==</span> <span class="s1">&#39;function&#39;</span><span class="p">){</span>
+        <span class="k">return</span> <span class="nx">onResolve</span> <span class="o">=</span> <span class="nx">value</span> <span class="p">=&gt;</span> <span class="nx">value</span>
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">onRejected</span> <span class="o">!==</span> <span class="s1">&#39;function&#39;</span><span class="p">){</span>
+        <span class="k">return</span> <span class="nx">onRejected</span> <span class="o">=</span> <span class="nx">reason</span> <span class="p">=&gt;</span> <span class="nx">reason</span>
+    <span class="p">}</span>
+    <span class="kd">let</span> <span class="nx">that</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyPromise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span><span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">that</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">fulFilled</span><span class="p">){</span>
+            <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">_</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="nx">onResolve</span><span class="p">(</span><span class="nx">that</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+            <span class="p">})</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">that</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">rejected</span><span class="p">){</span>
+            <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">_</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="nx">onRejected</span><span class="p">(</span><span class="nx">that</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+            <span class="p">})</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
+    <span class="k">return</span> <span class="nx">p</span><span class="p">;</span>
+<span class="p">}</span>
 
 
-<span style="color:#75715e">// 测试
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">try</span> {
-    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MyPromise</span>((<span style="color:#a6e22e">resolve</span>,<span style="color:#a6e22e">reject</span>) =&gt; {
-        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TypeError</span>(<span style="color:#e6db74">&#39;抛出错误&#39;</span>)
-    })
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">p</span>); 
-} <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">error</span>);
-}
-<span style="color:#75715e">// p.then();
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">try</span> {
-    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">p1</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Promise(<span style="color:#a6e22e">resolve</span> =&gt; {
-        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TypeError</span>(<span style="color:#e6db74">&#39;抛出错误&#39;</span>)
-    })
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">p1</span>);
-} <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">error</span>);
-}
-</code></pre></div><p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b80e64a53f0346c1b6feffde5015e649~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
+<span class="c1">// 测试
+</span><span class="c1"></span><span class="k">try</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyPromise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span><span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nx">TypeError</span><span class="p">(</span><span class="s1">&#39;抛出错误&#39;</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">p</span><span class="p">);</span> 
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// p.then();
+</span><span class="c1"></span>
+<span class="k">try</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nx">TypeError</span><span class="p">(</span><span class="s1">&#39;抛出错误&#39;</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">p1</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b80e64a53f0346c1b6feffde5015e649~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
 <!-- raw HTML omitted -->
 <blockquote>
 <p>Promise实例调用then时，如果then回调函数里面抛出了错误，也会被reject吞掉</p>
@@ -1094,205 +1562,368 @@
 <h1 id="6手写promise的意义">6.手写Promise的意义</h1>
 <p>相当于照着一个规范然后用代码区实现，相当于深入了解源码，只是Promise源码才100多行，算阅读一个小型项目的源码把。</p>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pending</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;pending&#39;</span>;
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fulFilled</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;fulFilled&#39;</span>;
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">rejected</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;rejected&#39;</span>;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kr">const</span> <span class="nx">pending</span> <span class="o">=</span> <span class="s1">&#39;pending&#39;</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">fulFilled</span> <span class="o">=</span> <span class="s1">&#39;fulFilled&#39;</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">rejected</span> <span class="o">=</span> <span class="s1">&#39;rejected&#39;</span><span class="p">;</span>
 
-<span style="color:#75715e">// Promise/A+规范
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 1. Promise状态
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// （1） 当Promise为pending状态时，可以被转换成另外两种状态
-</span><span style="color:#75715e">// （2） 当Promise为fulFilled状态时，不能被更改，且必须有一个不能被更改的value值
-</span><span style="color:#75715e">// （3） 当Promise为rejected状态时，不能被更改，且必须有一个不能被更改的reason值
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">MyPromise</span>(<span style="color:#a6e22e">execute</span>){
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">that</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
-    <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">pending</span>;
-    <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">resolveFn</span> <span style="color:#f92672">=</span> [];
-    <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">rejectFn</span> <span style="color:#f92672">=</span> [];
-    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">value</span>){
-        <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">_</span> =&gt; {
-            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">pending</span>){
-                <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fulFilled</span>;
-                <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>;
-                <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">resolveFn</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">f</span> =&gt; {
-                    <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">value</span>)
-                })
-            }
-        })
-    }
+<span class="c1">// Promise/A+规范
+</span><span class="c1"></span>
+<span class="c1">// 1. Promise状态
+</span><span class="c1"></span>
+<span class="c1">// （1） 当Promise为pending状态时，可以被转换成另外两种状态
+</span><span class="c1">// （2） 当Promise为fulFilled状态时，不能被更改，且必须有一个不能被更改的value值
+</span><span class="c1">// （3） 当Promise为rejected状态时，不能被更改，且必须有一个不能被更改的reason值
+</span><span class="c1"></span>
+<span class="kd">function</span> <span class="nx">MyPromise</span><span class="p">(</span><span class="nx">execute</span><span class="p">){</span>
+    <span class="kr">const</span> <span class="nx">that</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+    <span class="nx">that</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">pending</span><span class="p">;</span>
+    <span class="nx">that</span><span class="p">.</span><span class="nx">resolveFn</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="nx">that</span><span class="p">.</span><span class="nx">rejectFn</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="kd">function</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">value</span><span class="p">){</span>
+        <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">_</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">that</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">pending</span><span class="p">){</span>
+                <span class="nx">that</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">fulFilled</span><span class="p">;</span>
+                <span class="nx">that</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+                <span class="nx">that</span><span class="p">.</span><span class="nx">resolveFn</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">f</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">f</span><span class="p">(</span><span class="nx">that</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+                <span class="p">})</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
+    <span class="p">}</span>
 
-    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">reason</span>){
-        <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">_</span> =&gt; {
-            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">pending</span>){
-                <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">rejected</span>;
-                <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">reason</span>;
-                <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">rejectFn</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">f</span> =&gt; {
-                    <span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">value</span>)
-                })
-            }
-        })
-    }
+    <span class="kd">function</span> <span class="nx">reject</span><span class="p">(</span><span class="nx">reason</span><span class="p">){</span>
+        <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">_</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">that</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">pending</span><span class="p">){</span>
+                <span class="nx">that</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">rejected</span><span class="p">;</span>
+                <span class="nx">that</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">reason</span><span class="p">;</span>
+                <span class="nx">that</span><span class="p">.</span><span class="nx">rejectFn</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">f</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">f</span><span class="p">(</span><span class="nx">that</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+                <span class="p">})</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
+    <span class="p">}</span>
 
-    <span style="color:#75715e">// 如果执行中有错误，会立马执行reject
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 也就是说Promise中的错误是被reject吞掉的
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// try...catch是捕获不到的
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">try</span> {
-        <span style="color:#a6e22e">execute</span>(<span style="color:#a6e22e">resolve</span>,<span style="color:#a6e22e">reject</span>);   
-    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
-        <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">error</span>)
-    }
-}
+    <span class="c1">// 如果执行中有错误，会立马执行reject
+</span><span class="c1"></span>    <span class="c1">// 也就是说Promise中的错误是被reject吞掉的
+</span><span class="c1"></span>    <span class="c1">// try...catch是捕获不到的
+</span><span class="c1"></span>    <span class="k">try</span> <span class="p">{</span>
+        <span class="nx">execute</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span><span class="nx">reject</span><span class="p">);</span>   
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-<span style="color:#75715e">// 2.then方法
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 首先，then方法是挂在Promise原型上的一个方法
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// （1）then方法接收两个回调函数,如果不是函数忽略
-</span><span style="color:#75715e">// （2）then方法返回一个Promise
-</span><span style="color:#75715e">// （3）then方法需要异步执行
-</span><span style="color:#75715e">// （4）then可以被链式调用
-</span><span style="color:#75715e">// （5）如果onResolve是函数，必须在Promise状态为fulFilled后调用
-</span><span style="color:#75715e">// （6）如果onRejected是函数，必须在Promise状态为rejected后调用
-</span><span style="color:#75715e">// （7）then没有自己的this（也可以理解为then方法是挂在Promise原型上的）
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">MyPromise</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">then</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">onResolve</span>,<span style="color:#a6e22e">onRejected</span>){
-    <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">onResolve</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;function&#39;</span>){
-        <span style="color:#a6e22e">onResolve</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span> =&gt; <span style="color:#a6e22e">value</span>
-    }
-    <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">onRejected</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;function&#39;</span>){
-        <span style="color:#a6e22e">onRejected</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">reason</span> =&gt; {
-            <span style="color:#66d9ef">throw</span> <span style="color:#a6e22e">reason</span>
-        }
-    }
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">that</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
-    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">promise</span>;
-    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">fulFilled</span>){
-        <span style="color:#a6e22e">promise</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MyPromise</span>((<span style="color:#a6e22e">resolve</span>,<span style="color:#a6e22e">reject</span>) =&gt; {
-            <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">_</span> =&gt; {
-                <span style="color:#66d9ef">try</span> {
-                    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">onResolve</span>(<span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">value</span>);
-                    <span style="color:#a6e22e">resolvePromise</span>(<span style="color:#a6e22e">promise</span>,<span style="color:#a6e22e">x</span>,<span style="color:#a6e22e">resolve</span>,<span style="color:#a6e22e">reject</span>)
-                } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
-                    <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">error</span>)
-                }
-            })
-        })
-    }
+<span class="c1">// 2.then方法
+</span><span class="c1"></span>
+<span class="c1">// 首先，then方法是挂在Promise原型上的一个方法
+</span><span class="c1"></span>
+<span class="c1">// （1）then方法接收两个回调函数,如果不是函数忽略
+</span><span class="c1">// （2）then方法返回一个Promise
+</span><span class="c1">// （3）then方法需要异步执行
+</span><span class="c1">// （4）then可以被链式调用
+</span><span class="c1">// （5）如果onResolve是函数，必须在Promise状态为fulFilled后调用
+</span><span class="c1">// （6）如果onRejected是函数，必须在Promise状态为rejected后调用
+</span><span class="c1">// （7）then没有自己的this（也可以理解为then方法是挂在Promise原型上的）
+</span><span class="c1"></span><span class="nx">MyPromise</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">then</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">onResolve</span><span class="p">,</span><span class="nx">onRejected</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">onResolve</span> <span class="o">!==</span> <span class="s1">&#39;function&#39;</span><span class="p">){</span>
+        <span class="nx">onResolve</span> <span class="o">=</span> <span class="nx">value</span> <span class="p">=&gt;</span> <span class="nx">value</span>
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">onRejected</span> <span class="o">!==</span> <span class="s1">&#39;function&#39;</span><span class="p">){</span>
+        <span class="nx">onRejected</span> <span class="o">=</span> <span class="nx">reason</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="nx">reason</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kr">const</span> <span class="nx">that</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">promise</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">that</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">fulFilled</span><span class="p">){</span>
+        <span class="nx">promise</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyPromise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span><span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">_</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="k">try</span> <span class="p">{</span>
+                    <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">onResolve</span><span class="p">(</span><span class="nx">that</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+                    <span class="nx">resolvePromise</span><span class="p">(</span><span class="nx">promise</span><span class="p">,</span><span class="nx">x</span><span class="p">,</span><span class="nx">resolve</span><span class="p">,</span><span class="nx">reject</span><span class="p">)</span>
+                <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">})</span>
+        <span class="p">})</span>
+    <span class="p">}</span>
 
-    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">rejected</span>){
-        <span style="color:#a6e22e">promise</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MyPromise</span>((<span style="color:#a6e22e">resolve</span>,<span style="color:#a6e22e">reject</span>) =&gt; {
-            <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">_</span> =&gt; {
-                <span style="color:#66d9ef">try</span> {
-                    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">onRejected</span>(<span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">value</span>);
-                    <span style="color:#a6e22e">resolvePromise</span>(<span style="color:#a6e22e">promise</span>,<span style="color:#a6e22e">x</span>,<span style="color:#a6e22e">resolve</span>,<span style="color:#a6e22e">reject</span>)
-                } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
-                    <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">error</span>)
-                }   
-            })
-        })
-    }
+    <span class="k">if</span><span class="p">(</span><span class="nx">that</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">rejected</span><span class="p">){</span>
+        <span class="nx">promise</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyPromise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span><span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">_</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="k">try</span> <span class="p">{</span>
+                    <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">onRejected</span><span class="p">(</span><span class="nx">that</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+                    <span class="nx">resolvePromise</span><span class="p">(</span><span class="nx">promise</span><span class="p">,</span><span class="nx">x</span><span class="p">,</span><span class="nx">resolve</span><span class="p">,</span><span class="nx">reject</span><span class="p">)</span>
+                <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+                <span class="p">}</span>   
+            <span class="p">})</span>
+        <span class="p">})</span>
+    <span class="p">}</span>
 
-    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">pending</span>){
-        <span style="color:#a6e22e">promise</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MyPromise</span>((<span style="color:#a6e22e">resolve</span>,<span style="color:#a6e22e">reject</span>) =&gt; {
-            <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">resolveFn</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">_</span> =&gt; {
-                <span style="color:#66d9ef">try</span> {
-                    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">onResolve</span>(<span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">value</span>);
-                    <span style="color:#a6e22e">resolvePromise</span>(<span style="color:#a6e22e">promise</span>,<span style="color:#a6e22e">x</span>,<span style="color:#a6e22e">resolve</span>,<span style="color:#a6e22e">reject</span>)
-                } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
-                    <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">error</span>)
-                }
-            })
+    <span class="k">if</span><span class="p">(</span><span class="nx">that</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">pending</span><span class="p">){</span>
+        <span class="nx">promise</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyPromise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span><span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">that</span><span class="p">.</span><span class="nx">resolveFn</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">_</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="k">try</span> <span class="p">{</span>
+                    <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">onResolve</span><span class="p">(</span><span class="nx">that</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+                    <span class="nx">resolvePromise</span><span class="p">(</span><span class="nx">promise</span><span class="p">,</span><span class="nx">x</span><span class="p">,</span><span class="nx">resolve</span><span class="p">,</span><span class="nx">reject</span><span class="p">)</span>
+                <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">})</span>
 
-            <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">rejectFn</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">_</span> =&gt; {
-                <span style="color:#66d9ef">try</span> {
-                    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">onRejected</span>(<span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">value</span>);
-                    <span style="color:#a6e22e">resolvePromise</span>(<span style="color:#a6e22e">promise</span>,<span style="color:#a6e22e">x</span>,<span style="color:#a6e22e">resolve</span>,<span style="color:#a6e22e">reject</span>)
-                } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
-                    <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">error</span>)
-                }   
-            })
-        })
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">promise</span>;
-}
+            <span class="nx">that</span><span class="p">.</span><span class="nx">rejectFn</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">_</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="k">try</span> <span class="p">{</span>
+                    <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">onRejected</span><span class="p">(</span><span class="nx">that</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+                    <span class="nx">resolvePromise</span><span class="p">(</span><span class="nx">promise</span><span class="p">,</span><span class="nx">x</span><span class="p">,</span><span class="nx">resolve</span><span class="p">,</span><span class="nx">reject</span><span class="p">)</span>
+                <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+                <span class="p">}</span>   
+            <span class="p">})</span>
+        <span class="p">})</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">promise</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span style="color:#75715e">// 3.Promise执行程序
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// 1.promise和x指向同一个对象，执行reject()
-</span><span style="color:#75715e">// 2.x是promise，采用它的状态
-</span><span style="color:#75715e">// 3.x是对象或函数，处理
-</span><span style="color:#75715e">// 4.then不是函数
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">resolvePromise</span>(<span style="color:#a6e22e">promise</span>,<span style="color:#a6e22e">x</span>,<span style="color:#a6e22e">resolve</span>,<span style="color:#a6e22e">reject</span>){
-    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">promise</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">x</span>){
-        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">reject</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TypeError</span>(<span style="color:#e6db74">&#39;promise不能和x相等&#39;</span>))
-    }
-    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">instanceof</span> <span style="color:#a6e22e">MyPromise</span>){
-        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">x</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">fulFilled</span>){
-            <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">x</span>.<span style="color:#a6e22e">value</span>)
-        }<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">x</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">rejected</span>){
-            <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">x</span>.<span style="color:#a6e22e">value</span>)
-        }<span style="color:#66d9ef">else</span>{
-            <span style="color:#a6e22e">x</span>.<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">y</span> =&gt; {
-                <span style="color:#a6e22e">resolvePromise</span>(<span style="color:#a6e22e">promise</span>,<span style="color:#a6e22e">y</span>,<span style="color:#a6e22e">resolve</span>,<span style="color:#a6e22e">reject</span>)
-            },<span style="color:#a6e22e">reject</span>)
-        }
-    }<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">x</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;object&#39;</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;function&#39;</span>)){
-        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">executed</span>;
-        <span style="color:#66d9ef">try</span> {
-            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">then</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">x</span>.<span style="color:#a6e22e">then</span>;
-            <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">then</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;function&#39;</span>){
-                <span style="color:#a6e22e">then</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">x</span>,<span style="color:#a6e22e">y</span> =&gt; {
-                    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">executed</span>){
-                        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-                    }
-                    <span style="color:#a6e22e">executed</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-                    <span style="color:#a6e22e">resolvePromise</span>(<span style="color:#a6e22e">promise</span>,<span style="color:#a6e22e">y</span>,<span style="color:#a6e22e">resolve</span>,<span style="color:#a6e22e">reject</span>)
-                },<span style="color:#a6e22e">e</span> =&gt; {
-                    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">executed</span>){
-                        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-                    }
-                    <span style="color:#a6e22e">executed</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-                    <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">e</span>);
-                })
-            }<span style="color:#66d9ef">else</span>{
-                <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">x</span>)
-            }
-        } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
-            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">executed</span>){
-                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
-            }
-            <span style="color:#a6e22e">executed</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-            <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">error</span>);
-        }
-    }<span style="color:#66d9ef">else</span>{
-        <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">x</span>)
-    }
-}
-</code></pre></div><!-- raw HTML omitted -->
+<span class="c1">// 3.Promise执行程序
+</span><span class="c1"></span>
+<span class="c1">// 1.promise和x指向同一个对象，执行reject()
+</span><span class="c1">// 2.x是promise，采用它的状态
+</span><span class="c1">// 3.x是对象或函数，处理
+</span><span class="c1">// 4.then不是函数
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">resolvePromise</span><span class="p">(</span><span class="nx">promise</span><span class="p">,</span><span class="nx">x</span><span class="p">,</span><span class="nx">resolve</span><span class="p">,</span><span class="nx">reject</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">promise</span> <span class="o">===</span> <span class="nx">x</span><span class="p">){</span>
+        <span class="k">return</span> <span class="nx">reject</span><span class="p">(</span><span class="k">new</span> <span class="nx">TypeError</span><span class="p">(</span><span class="s1">&#39;promise不能和x相等&#39;</span><span class="p">))</span>
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">x</span> <span class="k">instanceof</span> <span class="nx">MyPromise</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">x</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">fulFilled</span><span class="p">){</span>
+            <span class="nx">resolve</span><span class="p">(</span><span class="nx">x</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">x</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">rejected</span><span class="p">){</span>
+            <span class="nx">reject</span><span class="p">(</span><span class="nx">x</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="nx">x</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">y</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="nx">resolvePromise</span><span class="p">(</span><span class="nx">promise</span><span class="p">,</span><span class="nx">y</span><span class="p">,</span><span class="nx">resolve</span><span class="p">,</span><span class="nx">reject</span><span class="p">)</span>
+            <span class="p">},</span><span class="nx">reject</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">x</span> <span class="o">!==</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">x</span> <span class="o">===</span> <span class="s1">&#39;object&#39;</span> <span class="o">||</span> <span class="k">typeof</span> <span class="nx">x</span> <span class="o">===</span> <span class="s1">&#39;function&#39;</span><span class="p">)){</span>
+        <span class="kd">let</span> <span class="nx">executed</span><span class="p">;</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">then</span> <span class="o">=</span> <span class="nx">x</span><span class="p">.</span><span class="nx">then</span><span class="p">;</span>
+            <span class="k">if</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">then</span> <span class="o">===</span> <span class="s1">&#39;function&#39;</span><span class="p">){</span>
+                <span class="nx">then</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                    <span class="k">if</span><span class="p">(</span><span class="nx">executed</span><span class="p">){</span>
+                        <span class="k">return</span> <span class="kc">false</span>
+                    <span class="p">}</span>
+                    <span class="nx">executed</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+                    <span class="nx">resolvePromise</span><span class="p">(</span><span class="nx">promise</span><span class="p">,</span><span class="nx">y</span><span class="p">,</span><span class="nx">resolve</span><span class="p">,</span><span class="nx">reject</span><span class="p">)</span>
+                <span class="p">},</span><span class="nx">e</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                    <span class="k">if</span><span class="p">(</span><span class="nx">executed</span><span class="p">){</span>
+                        <span class="k">return</span> <span class="kc">false</span>
+                    <span class="p">}</span>
+                    <span class="nx">executed</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+                    <span class="nx">reject</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+                <span class="p">})</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                <span class="nx">resolve</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">executed</span><span class="p">){</span>
+                <span class="k">return</span> <span class="kc">false</span>
+            <span class="p">}</span>
+            <span class="nx">executed</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+            <span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="nx">resolve</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
 
     </div>
 
     
     
-<div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">文章作者</span>
-    <span class="item-content">XKHM</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">上次更新</span>
-    <span class="item-content">
-      2021-01-07
-      
-    </span>
-  </p>
-  
-  <p class="copyright-item">
-    <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">原创文章，转载请注明文章作者和出处，谢谢！</a></span>
-  </p>
-</div>
 
 
     
@@ -1320,13 +1951,13 @@
 </svg>
 
             </i>
-            <span class="prev-text nav-default">Node文件夹读取</span>
-            <span class="prev-text nav-mobile">Prev</span>
+            <span class="prev-text nav-default" style="position: relative;top: -2px;">Node文件夹读取</span>
+            <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
           <a class="next" href="/post/javascript%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/">
-            <span class="next-text nav-default">JavaScript异步编程</span>
-            <span class="prev-text nav-mobile">Next</span>
+            <span class="next-text nav-default" style="position: relative;top: -3px;">JavaScript异步编程</span>
+            <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
               <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -1347,20 +1978,19 @@
   
   
 
-  
 
-  
-  
 
-  
 
-  
 
-  
 
-    
 
-  
+
+
+
+
+
+
+
 
         </div>
       </div>
@@ -1414,23 +2044,17 @@
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
-  </span>
-
+  
+  
   <span class="copyright-year">
     &copy;
     
-      2019 -
-    2022
+    2019 -
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -1443,16 +2067,18 @@
 
       </i>
     </span><span class="author">
-        星空海绵
-        
-      </span></span>
-
+      星空海绵
+      
+    </span></span>
   
-  
-
-  
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
 </div>
-
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -1495,6 +2121,8 @@
 
 
 
+
+  <script async src="//changkun.de/urlstat/client.js"></script>
 
 
 

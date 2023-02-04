@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -23,9 +23,9 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="XKHM" />
-  <meta name="description" content="文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;); bind在第一个参数之" />
+  <meta name="description" content="文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 1 2 3 4 5 6 7 8 9 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &amp;#39;星空海绵&amp;#39;)(&amp;#39" />
 
-  <meta name="keywords" content="Hugo" />
+  <meta name="keywords" content="Hugo, 星空海绵, 前端, 工程师" />
 
 
 
@@ -41,7 +41,8 @@
 
 
 
-<link rel="icon" href="/favicon.png"  type="image/x-icon"/>
+<link rel="icon" href="/favicon.png" type="image/x-icon"/>
+
 
 
 
@@ -59,23 +60,23 @@
 
 
 <meta property="og:title" content="JS基础之手写bind" />
-<meta property="og:description" content="文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;); bind在第一个参数之" />
+<meta property="og:description" content="文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 1 2 3 4 5 6 7 8 9 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &#39;星空海绵&#39;)(&#39" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99bind/" />
 <meta property="article:published_time" content="2020-12-25T08:24:35+08:00" />
 <meta property="article:modified_time" content="2020-12-25T08:24:35+08:00" />
 <meta itemprop="name" content="JS基础之手写bind">
-<meta itemprop="description" content="文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;); bind在第一个参数之">
+<meta itemprop="description" content="文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 1 2 3 4 5 6 7 8 9 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &#39;星空海绵&#39;)(&#39">
 <meta itemprop="datePublished" content="2020-12-25T08:24:35+08:00" />
 <meta itemprop="dateModified" content="2020-12-25T08:24:35+08:00" />
-<meta itemprop="wordCount" content="2103">
+<meta itemprop="wordCount" content="2339">
 
 
 
 <meta itemprop="keywords" content="JavaScript,bind()," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="JS基础之手写bind"/>
-<meta name="twitter:description" content="文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;); bind在第一个参数之"/>
+<meta name="twitter:description" content="文章类型：学习笔记 1.bind()的使用 😏😏😏😏😏 1 2 3 4 5 6 7 8 9 let obj = { age: 18 } function getInfo(name, job) { console.log(name); console.log(job); console.log(this.age); } getInfo.bind(obj, &#39;星空海绵&#39;)(&#39"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -86,6 +87,17 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-K0V0BST0TH', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -149,7 +161,21 @@
         
           
           
-            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
         
       </li><li class="mobile-menu-item">
@@ -171,20 +197,6 @@
           
           
             <a class="menu-item-link" href="https://xkhm.net/tags/">标签</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
         
       </li>
@@ -342,7 +354,29 @@
         
           
           
-            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
 
         
@@ -382,28 +416,6 @@
 
       </li>
     
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
-          
-
-        
-
-      </li>
-    
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
-          
-
-        
-
-      </li>
-    
 
     
     
@@ -431,7 +443,8 @@
             <a href="https://xkhm.net/categories/javascript/"> JavaScript </a>
             
           </div>
-        
+        <span class="more-meta"> 约 2339 字 </span>
+          <span class="more-meta"> 预计阅读 5 分钟 </span>
 
         
         
@@ -467,7 +480,20 @@
 </blockquote>
 <h1 id="1bind的使用">1.bind()的使用</h1>
 <p>😏😏😏😏😏</p>
-<pre><code>        let obj = {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let obj = {
             age: 18
         }
         function getInfo(name, job) {
@@ -475,8 +501,10 @@
             console.log(job);
             console.log(this.age);
         }
-        getInfo.bind(obj, '星空海绵')('Software Engineer');
-</code></pre><p>bind在第一个参数之后的参数，可以直接从bind()传,也可以从bind()返回的函数上传，如上代码。</p>
+        getInfo.bind(obj, &#39;星空海绵&#39;)(&#39;Software Engineer&#39;);
+</code></pre></td></tr></table>
+</div>
+</div><p>bind在第一个参数之后的参数，可以直接从bind()传,也可以从bind()返回的函数上传，如上代码。</p>
 <h1 id="2bind参数">2.bind()参数</h1>
 <p>🤔🤔🤔🤔🤔</p>
 <h2 id="1thisarg">（1）thisArg</h2>
@@ -484,18 +512,44 @@
 <ul>
 <li>1.bind的第一个参数是bind被函数调用时作为this参数传给调用函数</li>
 </ul>
-<pre><code>        let obj = {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let obj = {
             age: 18
         }
         function getInfo() {
             console.log(this); // {age: 18}
         }
         getInfo.bind(obj)();
-</code></pre><p>此时调用函数 getInfo 中的 this 就是 bind() 中传入的 obj</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>此时调用函数 getInfo 中的 this 就是 bind() 中传入的 obj</p>
 <ul>
 <li>2.bind()参数列表为空，或者thisArg为null或undefined,执行作用域的this就是新函数的this</li>
 </ul>
-<pre><code>        let obj = {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let obj = {
             age: 18
         }
         function getInfo() {
@@ -504,11 +558,25 @@
         getInfo.bind()();
         getInfo.bind(null)();
         getInfo.bind(undefined)();
-</code></pre><p>此时bind的参数为 空 或 null 或 undefined，因为实际上 getInfo 是全局对象调用的，在这里也就是 window 对象，所以此时this就是指向 window 对象的。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>此时bind的参数为 空 或 null 或 undefined，因为实际上 getInfo 是全局对象调用的，在这里也就是 window 对象，所以此时this就是指向 window 对象的。</p>
 <ul>
 <li><strong>3.如果使用new操作符操作绑定函数，则会忽略这个thisArg参数</strong></li>
 </ul>
-<pre><code>        let obj = {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let obj = {
             age: 18
         }
         function getInfo() {
@@ -516,12 +584,29 @@
         }
         let a = getInfo.bind(obj)
         let b = new a();
-</code></pre><p>此时不管调用的时候传不传参数 obj，getInfo 中的 this 都是指向创建对象 b 的，这里就涉及到 new 构造函数创建对象的过程了，建议精读 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new">MDN</a> 这部分。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>此时不管调用的时候传不传参数 obj，getInfo 中的 this 都是指向创建对象 b 的，这里就涉及到 new 构造函数创建对象的过程了，建议精读 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new">MDN</a> 这部分。</p>
 <ul>
 <li>4.当使用bind在setTimeout中创建一个函数时，作为thisArg传递的任何原始值都会被转换为object。</li>
 </ul>
-<pre><code>        function A() {
-            this.name = '星空海绵';
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        function A() {
+            this.name = &#39;星空海绵&#39;;
         }
         A.prototype.say = function () {
             setTimeout(this.read.bind(this), 1000)
@@ -531,13 +616,42 @@
         }
         let b = new A();
         b.say();
-</code></pre><p>在默认情况下，使用 <strong>setTimeout()</strong> 时，this 关键字会指向 window （或 global）对象。当类的方法中需要 this 指向类的实例时，你可能需要显式地把 this 绑定到回调函数，就不会丢失该实例的引用。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>在默认情况下，使用 <strong>setTimeout()</strong> 时，this 关键字会指向 window （或 global）对象。当类的方法中需要 this 指向类的实例时，你可能需要显式地把 this 绑定到回调函数，就不会丢失该实例的引用。</p>
 <h2 id="2arg1-arg2-">（2）arg1, arg2, &hellip;</h2>
 <p>当bind被函数调用时，传给调用函数的参数列表</p>
 <h1 id="3手写-bind">3.手写 bind()</h1>
 <p>😎😎😎😎😎</p>
 <h2 id="1不支持-new-调用-bind-返回的函数">(1)不支持 new 调用 bind() 返回的函数</h2>
-<pre><code>        let obj = {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let obj = {
             age: 18
         }
         function getInfo(name, job) {
@@ -546,7 +660,7 @@
             console.log(this);
             console.log(this.age);
         }
-        // getInfo.call(obj, '星空海绵', 'Software Engineer');
+        // getInfo.call(obj, &#39;星空海绵&#39;, &#39;Software Engineer&#39;);
         Function.prototype.myBind = function (context) {
             var _that = this,
                 slice = Array.prototype.slice,
@@ -556,11 +670,13 @@
                 return _that.apply(context, args.concat(slice.call(arguments)))
             }
         }
-        var a = getInfo.myBind(obj, '星空海绵', 'Software Engineer'),
+        var a = getInfo.myBind(obj, &#39;星空海绵&#39;, &#39;Software Engineer&#39;),
             b = new a(), // 上面getInfo中的this打印结果为 obj 对象
-            c = getInfo.bind(obj, '星空海绵', 'Software Engineer'),
+            c = getInfo.bind(obj, &#39;星空海绵&#39;, &#39;Software Engineer&#39;),
             d = new c(); // 上面getInfo中的this打印结果为新创建的 d 对象
-</code></pre><p>从上面的代码中我们可以看出来，此时当使用 new 调用时，并不会忽略掉传入的第一个参数 obj，调用函数的 this 一直是传入的第一个参数，不符合上面列举的原生的 bind() 第一个参数的第3条，当使用 new 调用时，会忽略第一个参数。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>从上面的代码中我们可以看出来，此时当使用 new 调用时，并不会忽略掉传入的第一个参数 obj，调用函数的 this 一直是传入的第一个参数，不符合上面列举的原生的 bind() 第一个参数的第3条，当使用 new 调用时，会忽略第一个参数。</p>
 <h2 id="2支持-new-调用">(2)支持 new 调用</h2>
 <blockquote>
 <p>上面第一种其实已完成了原生bind的基本功能，可以改变this指向了，但是不支持new调用的时候，那我们来思考一下为什么。</p>
@@ -574,7 +690,41 @@
 </ul>
 <p>看了上面new创建对象的过程，主要是第3步，将新创建的对象作为this的上下文，我们再看上面的代码，返回的函数中的this如果你去打印的话发现确实是空对象，符合上面new的创建过程，但是，下面一行用apply将调用函数getInfo中的this指向改到了传入的obj，这就不对了，所以说当用new调用的时候，此时就应该忽略obj，那么我们就需要判断new调用和不调用的时候就行了，ES6中有 new.target 可以判断一个函数是否被new调用过，那么ES5中是否有方法可以判断，没有的话那么模拟一个new.target就行了</p>
 <p>用new.target的话是下面这两种写法都行：</p>
-<pre><code>        let obj = {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let obj = {
             age: 18
         }
         function getInfo(name, job) {
@@ -583,7 +733,7 @@
             console.log(this);
             console.log(this.age);
         }
-        // getInfo.call(obj, '星空海绵', 'Software Engineer');
+        // getInfo.call(obj, &#39;星空海绵&#39;, &#39;Software Engineer&#39;);
         Function.prototype.myBind = function (context) {
             var _that = this,
                 slice = Array.prototype.slice,
@@ -600,11 +750,30 @@
 
             }
         }
-        var a = getInfo.myBind(obj, '星空海绵', 'Software Engineer'),
+        var a = getInfo.myBind(obj, &#39;星空海绵&#39;, &#39;Software Engineer&#39;),
             b = new a(), // 上面getInfo中的this打印结果为 b 对象
-            c = getInfo.bind(obj, '星空海绵', 'Software Engineer'),
+            c = getInfo.bind(obj, &#39;星空海绵&#39;, &#39;Software Engineer&#39;),
             d = new c(); // 上面getInfo中的this打印结果为新创建的 d 对象
-</code></pre><pre><code>        Function.prototype.myBind = function (context) {
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        Function.prototype.myBind = function (context) {
             var _that = this,
                 args = [].slice.call(arguments, 1);
             context = context || window;
@@ -617,8 +786,40 @@
 
             }
         }
-</code></pre><p>不使用 ES6 的new.target:</p>
-<pre><code>        let obj = {
+</code></pre></td></tr></table>
+</div>
+</div><p>不使用 ES6 的new.target:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">        let obj = {
             age: 18
         }
         function getInfo(name, job) {
@@ -627,7 +828,7 @@
             console.log(this);
             console.log(this.age);
         }
-        // getInfo.call(obj, '星空海绵', 'Software Engineer');
+        // getInfo.call(obj, &#39;星空海绵&#39;, &#39;Software Engineer&#39;);
         Function.prototype.myBind = function (context) {
             var _that = this,
                 args = [].slice.call(arguments, 1);
@@ -639,12 +840,14 @@
                 return _that.apply(context, [...args, ...arguments])
             }
         }
-        // getInfo.myBind(obj, '星空海绵', 'Software Engineer')()
-        var a = getInfo.myBind(obj, '星空海绵', 'Software Engineer'),
+        // getInfo.myBind(obj, &#39;星空海绵&#39;, &#39;Software Engineer&#39;)()
+        var a = getInfo.myBind(obj, &#39;星空海绵&#39;, &#39;Software Engineer&#39;),
             b = new a(), // 上面getInfo中的this打印结果为 b 对象
-            c = getInfo.bind(obj, '星空海绵', 'Software Engineer'),
+            c = getInfo.bind(obj, &#39;星空海绵&#39;, &#39;Software Engineer&#39;),
             d = new c(); // 上面getInfo中的this打印结果为新创建的 d 对象
-</code></pre><p>上面代码中this如果在F构造函数的原型链上，那就证明使用new调用了myBind返回的构造函数。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>上面代码中this如果在F构造函数的原型链上，那就证明使用new调用了myBind返回的构造函数。</p>
 <blockquote>
 <p>总结：手写bind遇到new调用的问题，关键是需要理解new调用构造函数创建对象的过程。</p>
 </blockquote>
@@ -653,24 +856,6 @@
 
     
     
-<div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">文章作者</span>
-    <span class="item-content">XKHM</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">上次更新</span>
-    <span class="item-content">
-      2020-12-25
-      
-    </span>
-  </p>
-  
-  <p class="copyright-item">
-    <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">原创文章，转载请注明文章作者和出处，谢谢！</a></span>
-  </p>
-</div>
 
 
     
@@ -696,13 +881,13 @@
 </svg>
 
             </i>
-            <span class="prev-text nav-default">JS基础之Promise</span>
-            <span class="prev-text nav-mobile">Prev</span>
+            <span class="prev-text nav-default" style="position: relative;top: -2px;">JS基础之Promise</span>
+            <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
           <a class="next" href="/post/vue%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%87%BA%E9%97%A8/">
-            <span class="next-text nav-default">Vue从入门到出门</span>
-            <span class="prev-text nav-mobile">Next</span>
+            <span class="next-text nav-default" style="position: relative;top: -3px;">Vue从入门到出门</span>
+            <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
               <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -723,20 +908,19 @@
   
   
 
-  
 
-  
-  
 
-  
 
-  
 
-  
 
-    
 
-  
+
+
+
+
+
+
+
 
         </div>
       </div>
@@ -790,23 +974,17 @@
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
-  </span>
-
+  
+  
   <span class="copyright-year">
     &copy;
     
-      2019 -
-    2022
+    2019 -
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -819,16 +997,18 @@
 
       </i>
     </span><span class="author">
-        星空海绵
-        
-      </span></span>
-
+      星空海绵
+      
+    </span></span>
   
-  
-
-  
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
 </div>
-
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -871,6 +1051,8 @@
 
 
 
+
+  <script async src="//changkun.de/urlstat/client.js"></script>
 
 
 

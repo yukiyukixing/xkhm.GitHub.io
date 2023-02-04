@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -22,10 +22,10 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="xkhm" />
-  <meta name="description" content="页面结构待完善 待完善" />
+<meta name="author" content="星空海绵" />
+  <meta name="description" content="JS 1.一文详解 JavaScript 中的数组 2.JS 基础之深浅拷贝 3.JS 数组去重 4.js 基础 5.JS 基础之手写 bind 6.JS 基础之 Promise 7.JS 之日常解题 8.JS 面试题复习 9.JavaScript 异步编程 10.手写 Promise 11.定型数组" />
 
-  <meta name="keywords" content="Hugo" />
+  <meta name="keywords" content="Hugo, 星空海绵, 前端, 工程师" />
 
 
 
@@ -41,7 +41,8 @@
 
 
 
-<link rel="icon" href="/favicon.png"  type="image/x-icon"/>
+<link rel="icon" href="/favicon.png" type="image/x-icon"/>
+
 
 
 
@@ -59,23 +60,23 @@
 
 
 <meta property="og:title" content="技术" />
-<meta property="og:description" content="页面结构待完善 待完善" />
+<meta property="og:description" content="JS 1.一文详解 JavaScript 中的数组 2.JS 基础之深浅拷贝 3.JS 数组去重 4.js 基础 5.JS 基础之手写 bind 6.JS 基础之 Promise 7.JS 之日常解题 8.JS 面试题复习 9.JavaScript 异步编程 10.手写 Promise 11.定型数组" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xkhm.net/technology/" />
 <meta property="article:published_time" content="2020-12-19T22:19:35+08:00" />
 <meta property="article:modified_time" content="2020-12-19T22:19:35+08:00" />
 <meta itemprop="name" content="技术">
-<meta itemprop="description" content="页面结构待完善 待完善">
+<meta itemprop="description" content="JS 1.一文详解 JavaScript 中的数组 2.JS 基础之深浅拷贝 3.JS 数组去重 4.js 基础 5.JS 基础之手写 bind 6.JS 基础之 Promise 7.JS 之日常解题 8.JS 面试题复习 9.JavaScript 异步编程 10.手写 Promise 11.定型数组">
 <meta itemprop="datePublished" content="2020-12-19T22:19:35+08:00" />
 <meta itemprop="dateModified" content="2020-12-19T22:19:35+08:00" />
-<meta itemprop="wordCount" content="10">
+<meta itemprop="wordCount" content="155">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="技术"/>
-<meta name="twitter:description" content="页面结构待完善 待完善"/>
+<meta name="twitter:description" content="JS 1.一文详解 JavaScript 中的数组 2.JS 基础之深浅拷贝 3.JS 数组去重 4.js 基础 5.JS 基础之手写 bind 6.JS 基础之 Promise 7.JS 之日常解题 8.JS 面试题复习 9.JavaScript 异步编程 10.手写 Promise 11.定型数组"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -86,6 +87,17 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-K0V0BST0TH', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -149,7 +161,21 @@
         
           
           
-            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
         
       </li><li class="mobile-menu-item">
@@ -171,20 +197,6 @@
           
           
             <a class="menu-item-link" href="https://xkhm.net/tags/">标签</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
         
       </li>
@@ -342,7 +354,29 @@
         
           
           
-            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
 
         
@@ -382,28 +416,6 @@
 
       </li>
     
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
-          
-
-        
-
-      </li>
-    
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
-          
-
-        
-
-      </li>
-    
 
     
     
@@ -427,6 +439,8 @@
       <time datetime="2020-12-19" class="post-time">
         2020-12-19
       </time>
+      
+      
     </div>
   </header>
 
@@ -435,43 +449,82 @@
 <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">目录</h2>
   <div class="post-toc-content">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1一文详解-javascript-中的数组httpsxkhmnetposte4b880e69687e8afa6e8a7a3javascripte4b8ade79a84e695b0e7bb84"><a href="https://xkhm.net/post/%E4%B8%80%E6%96%87%E8%AF%A6%E8%A7%A3javascript%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84/">1.一文详解 JavaScript 中的数组</a></a></li>
+    <li><a href="#2js-基础之深浅拷贝httpsxkhmnetpostjse59fbae7a180e4b98be6b7b1e6b585e68bb7e8b49d"><a href="https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/">2.JS 基础之深浅拷贝</a></a></li>
+    <li><a href="#3js-数组去重httpsxkhmnetpostjse695b0e7bb84e58ebbe9878d"><a href="https://xkhm.net/post/js%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/">3.JS 数组去重</a></a></li>
+    <li><a href="#4js-基础httpsxkhmnetpostjse59fbae7a180"><a href="https://xkhm.net/post/js%E5%9F%BA%E7%A1%80/">4.js 基础</a></a></li>
+    <li><a href="#5js-基础之手写-bindhttpsxkhmnetpostjse59fbae7a180e4b98be6898be58699bind"><a href="https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99bind/">5.JS 基础之手写 bind</a></a></li>
+    <li><a href="#6js-基础之-promisehttpsxkhmnetpostjse59fbae7a180e4b98bpromise"><a href="https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8Bpromise/">6.JS 基础之 Promise</a></a></li>
+    <li><a href="#7js-之日常解题httpsxkhmnetpostjse4b98be697a5e5b8b8e8a7a3e9a298"><a href="https://xkhm.net/post/js%E4%B9%8B%E6%97%A5%E5%B8%B8%E8%A7%A3%E9%A2%98/">7.JS 之日常解题</a></a></li>
+    <li><a href="#8js-面试题复习httpsxkhmnetpostjse99da2e8af95e9a298e5a48de4b9a0"><a href="https://xkhm.net/post/js%E9%9D%A2%E8%AF%95%E9%A2%98%E5%A4%8D%E4%B9%A0/">8.JS 面试题复习</a></a></li>
+    <li><a href="#9javascript-异步编程httpsxkhmnetpostjavascripte5bc82e6ada5e7bc96e7a88b"><a href="https://xkhm.net/post/javascript%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/">9.JavaScript 异步编程</a></a></li>
+    <li><a href="#10手写-promisehttpsxkhmnetpostjse59fbae7a180e4b98be6898be58699promise"><a href="https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99promise/">10.手写 Promise</a></a></li>
+    <li><a href="#11定型数组httpsxkhmnetposte5ae9ae59e8be695b0e7bb84"><a href="https://xkhm.net/post/%E5%AE%9A%E5%9E%8B%E6%95%B0%E7%BB%84/">11.定型数组</a></a></li>
+    <li><a href="#12编程思想httpsxkhmnetposte7bc96e7a88be6809de683b3"><a href="https://xkhm.net/post/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/">12.编程思想</a></a></li>
+    <li><a href="#13js-基础之继承httpsxkhmnetpostjse59fbae7a180e4b98be7bba7e689bf"><a href="https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E7%BB%A7%E6%89%BF/">13.JS 基础之继承</a></a></li>
+    <li><a href="#14从一场比赛开始大话-js-面向对象httpsxkhmnetposte4bb8ee4b880e59cbae6af94e8b59be5bc80e5a78be5a4a7e8af9djse99da2e59091e5afb9e8b1a1"><a href="https://xkhm.net/post/%E4%BB%8E%E4%B8%80%E5%9C%BA%E6%AF%94%E8%B5%9B%E5%BC%80%E5%A7%8B%E5%A4%A7%E8%AF%9Djs%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">14.从一场比赛开始大话 JS 面向对象</a></a></li>
+    <li><a href="#15js-基础之-proxyhttpsxkhmnetpostjse59fbae7a180e4b98bproxy"><a href="https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8Bproxy/">15.JS 基础之 Proxy</a></a></li>
+    <li><a href="#16js-过滤树形结构数据httpsxkhmnetpostjse8bf87e6bba4e6a091e5bda2e7bb93e69e84e695b0e68dae"><a href="https://xkhm.net/post/js%E8%BF%87%E6%BB%A4%E6%A0%91%E5%BD%A2%E7%BB%93%E6%9E%84%E6%95%B0%E6%8D%AE/">16.JS 过滤树形结构数据</a></a></li>
+    <li><a href="#17后生可畏httpsxkhmnetposte5908ee7949fe58fafe7958f"><a href="https://xkhm.net/post/%E5%90%8E%E7%94%9F%E5%8F%AF%E7%95%8F/">17.后生可畏</a></a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1vue-从入门到出门httpsxkhmnetpostvuee4bb8ee585a5e997a8e588b0e587bae997a8"><a href="https://xkhm.net/post/vue%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%87%BA%E9%97%A8/">1.Vue 从入门到出门</a></a></li>
+    <li><a href="#2vue2-从入门到-cvhttpsxkhmnetpostvue2e4bb8ee585a5e997a8e588b0cv"><a href="https://xkhm.net/post/vue2%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0cv/">2.Vue2 从入门到 CV</a></a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1css-弹性盒子布局之-flexhttpsxkhmnetpostcsse5bcb9e680a7e79b92e5ad90e5b883e5b180e4b98bflex"><a href="https://xkhm.net/post/css%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90%E5%B8%83%E5%B1%80%E4%B9%8Bflex/">1.CSS 弹性盒子布局之 Flex</a></a></li>
+    <li><a href="#2css-基础httpsxkhmnetpostcsse59fbae7a180"><a href="https://xkhm.net/post/css%E5%9F%BA%E7%A1%80/">2.CSS 基础</a></a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1node-文件夹读取httpsxkhmnetpostnodee69687e4bbb6e5a4b9e8afbbe58f96"><a href="https://xkhm.net/post/node%E6%96%87%E4%BB%B6%E5%A4%B9%E8%AF%BB%E5%8F%96/">1.Node 文件夹读取</a></a></li>
+  </ul>
+</nav>
   </div>
 </div>
 
   
   <div class="post-content">
-      <h1 id="页面结构待完善">页面结构待完善</h1>
-<p>待完善</p>
+      <h1 id="js">JS</h1>
+<h2 id="1一文详解-javascript-中的数组httpsxkhmnetposte4b880e69687e8afa6e8a7a3javascripte4b8ade79a84e695b0e7bb84"><a href="https://xkhm.net/post/%E4%B8%80%E6%96%87%E8%AF%A6%E8%A7%A3javascript%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84/">1.一文详解 JavaScript 中的数组</a></h2>
+<h2 id="2js-基础之深浅拷贝httpsxkhmnetpostjse59fbae7a180e4b98be6b7b1e6b585e68bb7e8b49d"><a href="https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/">2.JS 基础之深浅拷贝</a></h2>
+<h2 id="3js-数组去重httpsxkhmnetpostjse695b0e7bb84e58ebbe9878d"><a href="https://xkhm.net/post/js%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/">3.JS 数组去重</a></h2>
+<h2 id="4js-基础httpsxkhmnetpostjse59fbae7a180"><a href="https://xkhm.net/post/js%E5%9F%BA%E7%A1%80/">4.js 基础</a></h2>
+<h2 id="5js-基础之手写-bindhttpsxkhmnetpostjse59fbae7a180e4b98be6898be58699bind"><a href="https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99bind/">5.JS 基础之手写 bind</a></h2>
+<h2 id="6js-基础之-promisehttpsxkhmnetpostjse59fbae7a180e4b98bpromise"><a href="https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8Bpromise/">6.JS 基础之 Promise</a></h2>
+<h2 id="7js-之日常解题httpsxkhmnetpostjse4b98be697a5e5b8b8e8a7a3e9a298"><a href="https://xkhm.net/post/js%E4%B9%8B%E6%97%A5%E5%B8%B8%E8%A7%A3%E9%A2%98/">7.JS 之日常解题</a></h2>
+<h2 id="8js-面试题复习httpsxkhmnetpostjse99da2e8af95e9a298e5a48de4b9a0"><a href="https://xkhm.net/post/js%E9%9D%A2%E8%AF%95%E9%A2%98%E5%A4%8D%E4%B9%A0/">8.JS 面试题复习</a></h2>
+<h2 id="9javascript-异步编程httpsxkhmnetpostjavascripte5bc82e6ada5e7bc96e7a88b"><a href="https://xkhm.net/post/javascript%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/">9.JavaScript 异步编程</a></h2>
+<h2 id="10手写-promisehttpsxkhmnetpostjse59fbae7a180e4b98be6898be58699promise"><a href="https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%89%8B%E5%86%99promise/">10.手写 Promise</a></h2>
+<h2 id="11定型数组httpsxkhmnetposte5ae9ae59e8be695b0e7bb84"><a href="https://xkhm.net/post/%E5%AE%9A%E5%9E%8B%E6%95%B0%E7%BB%84/">11.定型数组</a></h2>
+<h2 id="12编程思想httpsxkhmnetposte7bc96e7a88be6809de683b3"><a href="https://xkhm.net/post/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/">12.编程思想</a></h2>
+<h2 id="13js-基础之继承httpsxkhmnetpostjse59fbae7a180e4b98be7bba7e689bf"><a href="https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E7%BB%A7%E6%89%BF/">13.JS 基础之继承</a></h2>
+<h2 id="14从一场比赛开始大话-js-面向对象httpsxkhmnetposte4bb8ee4b880e59cbae6af94e8b59be5bc80e5a78be5a4a7e8af9djse99da2e59091e5afb9e8b1a1"><a href="https://xkhm.net/post/%E4%BB%8E%E4%B8%80%E5%9C%BA%E6%AF%94%E8%B5%9B%E5%BC%80%E5%A7%8B%E5%A4%A7%E8%AF%9Djs%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">14.从一场比赛开始大话 JS 面向对象</a></h2>
+<h2 id="15js-基础之-proxyhttpsxkhmnetpostjse59fbae7a180e4b98bproxy"><a href="https://xkhm.net/post/js%E5%9F%BA%E7%A1%80%E4%B9%8Bproxy/">15.JS 基础之 Proxy</a></h2>
+<h2 id="16js-过滤树形结构数据httpsxkhmnetpostjse8bf87e6bba4e6a091e5bda2e7bb93e69e84e695b0e68dae"><a href="https://xkhm.net/post/js%E8%BF%87%E6%BB%A4%E6%A0%91%E5%BD%A2%E7%BB%93%E6%9E%84%E6%95%B0%E6%8D%AE/">16.JS 过滤树形结构数据</a></h2>
+<h2 id="17后生可畏httpsxkhmnetposte5908ee7949fe58fafe7958f"><a href="https://xkhm.net/post/%E5%90%8E%E7%94%9F%E5%8F%AF%E7%95%8F/">17.后生可畏</a></h2>
+<h1 id="vue">Vue</h1>
+<h2 id="1vue-从入门到出门httpsxkhmnetpostvuee4bb8ee585a5e997a8e588b0e587bae997a8"><a href="https://xkhm.net/post/vue%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%87%BA%E9%97%A8/">1.Vue 从入门到出门</a></h2>
+<h2 id="2vue2-从入门到-cvhttpsxkhmnetpostvue2e4bb8ee585a5e997a8e588b0cv"><a href="https://xkhm.net/post/vue2%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0cv/">2.Vue2 从入门到 CV</a></h2>
+<h1 id="css">CSS</h1>
+<h2 id="1css-弹性盒子布局之-flexhttpsxkhmnetpostcsse5bcb9e680a7e79b92e5ad90e5b883e5b180e4b98bflex"><a href="https://xkhm.net/post/css%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90%E5%B8%83%E5%B1%80%E4%B9%8Bflex/">1.CSS 弹性盒子布局之 Flex</a></h2>
+<h2 id="2css-基础httpsxkhmnetpostcsse59fbae7a180"><a href="https://xkhm.net/post/css%E5%9F%BA%E7%A1%80/">2.CSS 基础</a></h2>
+<h1 id="node">Node</h1>
+<h2 id="1node-文件夹读取httpsxkhmnetpostnodee69687e4bbb6e5a4b9e8afbbe58f96"><a href="https://xkhm.net/post/node%E6%96%87%E4%BB%B6%E5%A4%B9%E8%AF%BB%E5%8F%96/">1.Node 文件夹读取</a></h2>
 
   </div>
 
   
   
-<div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">文章作者</span>
-    <span class="item-content">xkhm</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">上次更新</span>
-    <span class="item-content">
-      2020-12-19
-      
-    </span>
-  </p>
-  
-  <p class="copyright-item">
-    <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">原创文章，转载请注明文章作者和出处，谢谢！</a></span>
-  </p>
-</div>
 
 
   
   
 </article>
-
 
 
 
@@ -527,23 +580,17 @@
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
-  </span>
-
+  
+  
   <span class="copyright-year">
     &copy;
     
-      2019 -
-    2022
+    2019 -
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -556,16 +603,18 @@
 
       </i>
     </span><span class="author">
-        星空海绵
-        
-      </span></span>
-
+      星空海绵
+      
+    </span></span>
   
-  
-
-  
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
 </div>
-
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -608,6 +657,8 @@
 
 
 
+
+  <script async src="//changkun.de/urlstat/client.js"></script>
 
 
 

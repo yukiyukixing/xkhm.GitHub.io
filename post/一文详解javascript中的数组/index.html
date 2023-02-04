@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -25,7 +25,7 @@
 <meta name="author" content="XKHM" />
   <meta name="description" content="前言 最近在重学JS基础，然后正好学到数组这，前期是通过看视频学习的，后来发现通过看视频学习进度实在是太慢了，所以又开始看书看文档学，然后就开" />
 
-  <meta name="keywords" content="Hugo" />
+  <meta name="keywords" content="Hugo, 星空海绵, 前端, 工程师" />
 
 
 
@@ -41,7 +41,8 @@
 
 
 
-<link rel="icon" href="/favicon.png"  type="image/x-icon"/>
+<link rel="icon" href="/favicon.png" type="image/x-icon"/>
+
 
 
 
@@ -68,7 +69,7 @@
 <meta itemprop="description" content="前言 最近在重学JS基础，然后正好学到数组这，前期是通过看视频学习的，后来发现通过看视频学习进度实在是太慢了，所以又开始看书看文档学，然后就开">
 <meta itemprop="datePublished" content="2020-12-19T12:23:51+08:00" />
 <meta itemprop="dateModified" content="2020-12-19T12:23:51+08:00" />
-<meta itemprop="wordCount" content="10274">
+<meta itemprop="wordCount" content="10667">
 
 
 
@@ -86,6 +87,17 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-K0V0BST0TH', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -149,7 +161,21 @@
         
           
           
-            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
         
       </li><li class="mobile-menu-item">
@@ -171,20 +197,6 @@
           
           
             <a class="menu-item-link" href="https://xkhm.net/tags/">标签</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
         
       </li>
@@ -342,7 +354,29 @@
         
           
           
-            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
 
         
@@ -382,28 +416,6 @@
 
       </li>
     
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
-          
-
-        
-
-      </li>
-    
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
-          
-
-        
-
-      </li>
-    
 
     
     
@@ -431,7 +443,8 @@
             <a href="https://xkhm.net/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
             
           </div>
-        
+        <span class="more-meta"> 约 10667 字 </span>
+          <span class="more-meta"> 预计阅读 22 分钟 </span>
 
         
         
@@ -562,24 +575,55 @@
 创建数组可以通过上面这两种方式，当然也可以通过Array.of()这个函数创建数组。</li>
 </ol>
 <h3 id="对象方式创建数组">对象方式创建数组</h3>
-<pre><code class="language-code" data-lang="code">let array = new Array();
-</code></pre><p><strong>Tips：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let array = new Array();
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Tips：</strong></p>
 <blockquote>
 <p>也可以通过下面这种方式创建数组对象</p>
 </blockquote>
-<pre><code class="language-code" data-lang="code">let array = Array();
-</code></pre><p>这种方式创建数组，对象也可以通过这两种方式创建，那么这种方式与上面那种方式有什么区别呢，这两种方式创建数组的区别就是内部this指向不同，一个指向调用者，一个指向全局的window对象。</p>
-<pre><code class="language-code" data-lang="code">console.log(new Array(1)); // [empty]
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let array = Array();
+</code></pre></td></tr></table>
+</div>
+</div><p>这种方式创建数组，对象也可以通过这两种方式创建，那么这种方式与上面那种方式有什么区别呢，这两种方式创建数组的区别就是内部this指向不同，一个指向调用者，一个指向全局的window对象。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">console.log(new Array(1)); // [empty]
 console.log(new Array(1,2,3)); //  [1, 2, 3]
 console.log(Array.of(1)); // [1]
 console.log(Array.of(1,2,3)); // [1, 2, 3]
-</code></pre><p><strong>Tips：</strong></p>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Tips：</strong></p>
 <blockquote>
 <p>第一行代码是创建了一个长度为1的数组，因为没有值，这个位置会默认被undefined填充，也就是说打印结果 <strong>[empty] =&gt; [undefined]</strong></p>
 </blockquote>
 <h3 id="字面量的方式创建数组">字面量的方式创建数组</h3>
-<pre><code class="language-Code" data-lang="Code">let arr = [];
-</code></pre><p>这种方式创建数组非常的简单便捷,所以推荐使用这种方法创建数组</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let arr = [];
+</code></pre></td></tr></table>
+</div>
+</div><p>这种方式创建数组非常的简单便捷,所以推荐使用这种方法创建数组</p>
 <p><strong>Tips：</strong></p>
 <blockquote>
 <p>使用字面量的方式创建数组不会调用Array构造函数</p>
@@ -658,16 +702,57 @@ console.log(Array.of(1,2,3)); // [1, 2, 3]
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">//  1.类数组对象
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">//  1.类数组对象
 let obj = {
-    1: 'techerM',
+    1: &#39;techerM&#39;,
     2: 15,
     length: 2
 };
-console.log(Array.from(obj)); // [&quot;techerM&quot;, 15]
+console.log(Array.from(obj)); // [&#34;techerM&#34;, 15]
 // 2.字符串
-let str = '阿星';
-console.log(Array.from(str)); // [&quot;阿&quot;, &quot;星&quot;]
+let str = &#39;阿星&#39;;
+console.log(Array.from(str)); // [&#34;阿&#34;, &#34;星&#34;]
 // 3.集合
 let s = new Set().add(1)
                  .add(2)
@@ -686,28 +771,41 @@ console.log(Array.from(numbersObj,item =&gt; item*3));//[3, 6, 9]
 console.log(numbersObj); // {0: 1, 1: 2, 2: 3, 3: 2, length: 3}
 // 5.第三个参数，指定第二个参数（函数）中this的指向
 let numArray = [1,2,3];
-var name = '小花';
+var name = &#39;小花&#39;;
 let res1 = Array.from(numArray,function(item){
     return this.name;
 })
 let res2 = Array.from(numArray,function(item){
     return this.name;
-},{name:'小丽'})
-console.log(res1); // [&quot;小花&quot;, &quot;小花&quot;, &quot;小花&quot;]
-console.log(res2); // [&quot;小丽&quot;, &quot;小丽&quot;, &quot;小丽&quot;]
-</code></pre><p><strong>Tips：</strong></p>
+},{name:&#39;小丽&#39;})
+console.log(res1); // [&#34;小花&#34;, &#34;小花&#34;, &#34;小花&#34;]
+console.log(res2); // [&#34;小丽&#34;, &#34;小丽&#34;, &#34;小丽&#34;]
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Tips：</strong></p>
 <blockquote>
 <p>1.Array.from()是Array对象的私有方法，并不是Array原型prototype下的方法，所以数组继承不到这个方法，数组是没有这个方法的。</p>
 </blockquote>
 <blockquote>
 <p>2.Array.from()第一个参数类数组对象的条件为：存在length属性，数据为可索引结构，例如下面这个对象就不可进行迭代，因为没有可索引结构</p>
 </blockquote>
-<pre><code class="language-Code" data-lang="Code">let obj = {
-    name: '小丽',
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let obj = {
+    name: &#39;小丽&#39;,
     value: 100,
     length: 2
 }
-</code></pre><blockquote>
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
 <p>3.Array.from()方法不会改变原数组</p>
 </blockquote>
 <blockquote>
@@ -747,7 +845,19 @@ console.log(res2); // [&quot;小丽&quot;, &quot;小丽&quot;, &quot;小丽&quot
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">// 一组参数
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">// 一组参数
 console.log(Array.of(1,2,3)); //  [1, 2, 3]
 // 通过 Array.of() 创建数组对象
 let arr = Array.of(1);
@@ -755,7 +865,9 @@ console.log(arr); // [1]
 // new Array() 创建数组对象
 let arr1 = new Array(1);
 console.log(arr1); // [empty]
-</code></pre><p><strong>Tips：</strong></p>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Tips：</strong></p>
 <blockquote>
 <p>通过Array.of()创建对象的方式弥补了通过 <strong>new Array</strong> 创建对象传一个参数创建对象的缺陷。</p>
 </blockquote>
@@ -786,13 +898,25 @@ console.log(arr1); // [empty]
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let colors = ['red','green'];
-let name = '小王';
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let colors = [&#39;red&#39;,&#39;green&#39;];
+let name = &#39;小王&#39;;
 let age = 18;
 console.log(Array.isArray(colors)); // true
 console.log(Array.isArray(name)); // false
 console.log(Array.isArray(age)); // false
-</code></pre><h1 id="3检测数组">3.检测数组</h1>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="3检测数组">3.检测数组</h1>
 <p>一般我们在js中检测数据类型通常用 <strong>typeof</strong> 关键字，但是 <strong>typeof</strong> 并不能分开对象与数组，检测数组时返回的也是 <strong>object</strong>，所以我们就需要用其它的办法来区分<strong>对象</strong>与<strong>数组</strong>了。</p>
 <table>
 <thead>
@@ -816,15 +940,29 @@ console.log(Array.isArray(age)); // false
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let array = [1,2];
-let obj = {name: '小明'};
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let array = [1,2];
+let obj = {name: &#39;小明&#39;};
 console.log(Array.isArray(array)); // true
 console.log(Array.isArray(obj)); // false
 console.log(array instanceof Array); // true
 console.log(obj instanceof Array); // false
 console.log(Object.prototype.toString.call(array)); // [object Array]
 console.log(Object.prototype.toString.call(obj)); // [object Object]
-</code></pre><p>上面这个三个方法都可以用来区分<strong>对象</strong>和<strong>数组</strong>，平常我们使用还是最好使用  <strong>Array.isArray()</strong> 这个方法。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>上面这个三个方法都可以用来区分<strong>对象</strong>和<strong>数组</strong>，平常我们使用还是最好使用  <strong>Array.isArray()</strong> 这个方法。</p>
 <p><strong>Tips：</strong></p>
 <blockquote>
 <p>通常我们使用instanceof是假定只有一个全局上下文，如果在多个框架页面中检测数组可能会有问题，因为我们并不能保证所有框架里的<strong>Array构造函数</strong>相同，所以最好使用<strong>Array.isArray()</strong> 这个方法判断。</p>
@@ -832,8 +970,15 @@ console.log(Object.prototype.toString.call(obj)); // [object Object]
 <h1 id="4数组中的方法">4.数组中的方法</h1>
 <h2 id="数组中的方法总览">数组中的方法总览</h2>
 <p>首先我们从控制台打印看一下数组：</p>
-<pre><code class="language-Code" data-lang="Code">console.log([]);
-</code></pre><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7ada2a185e1648348f0a25f1577e132c~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">console.log([]);
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7ada2a185e1648348f0a25f1577e132c~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
 <blockquote>
 <p>从上图中我们可以看到数组中有32个方法，全部是挂在数组原型 **_<em>proto</em>_** 上的,然后下面我们就来看一下这些数组方法。</p>
 </blockquote>
@@ -1066,22 +1211,45 @@ console.log(Object.prototype.toString.call(obj)); // [object Object]
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let arr = ['js','css','html'];
-console.log(arr.push('go','node.js')); // 5
-console.log(arr); //  [&quot;js&quot;, &quot;css&quot;, &quot;html&quot;, &quot;go&quot;, &quot;node.js&quot;]
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let arr = [&#39;js&#39;,&#39;css&#39;,&#39;html&#39;];
+console.log(arr.push(&#39;go&#39;,&#39;node.js&#39;)); // 5
+console.log(arr); //  [&#34;js&#34;, &#34;css&#34;, &#34;html&#34;, &#34;go&#34;, &#34;node.js&#34;]
 
-let arr1 = ['js','css','html'];
-let array = ['go','node.js'];
+let arr1 = [&#39;js&#39;,&#39;css&#39;,&#39;html&#39;];
+let array = [&#39;go&#39;,&#39;node.js&#39;];
 console.log(arr1.push(...array)); // 5
-console.log(arr1); // [&quot;js&quot;, &quot;css&quot;, &quot;html&quot;, &quot;go&quot;, &quot;node.js&quot;]
-</code></pre><p><strong>小知识点：</strong></p>
+console.log(arr1); // [&#34;js&#34;, &#34;css&#34;, &#34;html&#34;, &#34;go&#34;, &#34;node.js&#34;]
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>小知识点：</strong></p>
 <blockquote>
 <p>我们也可以通过  <strong>array[array.length] = &lsquo;XXX&rsquo;</strong> 这种方式往数组后面添加元素</p>
 </blockquote>
-<pre><code class="language-Code" data-lang="Code">let arr = ['js','css','html'];
-arr[arr.length] = 'go';
-console.log(arr); // [&quot;js&quot;, &quot;css&quot;, &quot;html&quot;, &quot;go&quot;]
-</code></pre><h3 id="pop">pop()</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let arr = [&#39;js&#39;,&#39;css&#39;,&#39;html&#39;];
+arr[arr.length] = &#39;go&#39;;
+console.log(arr); // [&#34;js&#34;, &#34;css&#34;, &#34;html&#34;, &#34;go&#34;]
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="pop">pop()</h3>
 <table>
 <thead>
 <tr>
@@ -1112,26 +1280,55 @@ console.log(arr); // [&quot;js&quot;, &quot;css&quot;, &quot;html&quot;, &quot;g
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let colors = ['red','green','blue']
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let colors = [&#39;red&#39;,&#39;green&#39;,&#39;blue&#39;]
 console.log(colors.pop()); // blue
-console.log(colors); // [&quot;red&quot;, &quot;green&quot;]
-</code></pre><p><strong>小知识点：</strong></p>
+console.log(colors); // [&#34;red&#34;, &#34;green&#34;]
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>小知识点：</strong></p>
 <blockquote>
 <p>我们也可以通过  <strong>array.length = array.length - 1</strong> 这种方式从数组末尾删除元素</p>
 </blockquote>
-<pre><code class="language-Code" data-lang="Code">let colors = ['red','green','blue'];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let colors = [&#39;red&#39;,&#39;green&#39;,&#39;blue&#39;];
 colors.length = colors.length - 1;
-console.log(colors); //  [&quot;red&quot;, &quot;green&quot;]
-</code></pre><p><strong>Tips：</strong></p>
+console.log(colors); //  [&#34;red&#34;, &#34;green&#34;]
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Tips：</strong></p>
 <blockquote>
 <p>push()和pop()一起使用就构成了后进先出的栈结构</p>
 </blockquote>
-<pre><code class="language-Code" data-lang="Code">let array = [];
-console.log(array.push('red','green')); // 2
-console.log(array); // [&quot;red&quot;, &quot;green&quot;]
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let array = [];
+console.log(array.push(&#39;red&#39;,&#39;green&#39;)); // 2
+console.log(array); // [&#34;red&#34;, &#34;green&#34;]
 console.log(array.pop()); // green
-console.log(array); // [&quot;red&quot;]
-</code></pre><h3 id="unshift">unshift()</h3>
+console.log(array); // [&#34;red&#34;]
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="unshift">unshift()</h3>
 <table>
 <thead>
 <tr>
@@ -1170,10 +1367,19 @@ console.log(array); // [&quot;red&quot;]
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let colors = ['white'];
-console.log(colors.unshift('red','blue')); // 3
-console.log(colors); // [&quot;red&quot;, &quot;blue&quot;, &quot;white&quot;]
-</code></pre><h3 id="shift">shift()</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let colors = [&#39;white&#39;];
+console.log(colors.unshift(&#39;red&#39;,&#39;blue&#39;)); // 3
+console.log(colors); // [&#34;red&#34;, &#34;blue&#34;, &#34;white&#34;]
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="shift">shift()</h3>
 <table>
 <thead>
 <tr>
@@ -1204,10 +1410,19 @@ console.log(colors); // [&quot;red&quot;, &quot;blue&quot;, &quot;white&quot;]
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let colors = ['red','black'];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let colors = [&#39;red&#39;,&#39;black&#39;];
 console.log(colors.shift()); // red
-console.log(colors); // [&quot;black&quot;]
-</code></pre><p><strong>Tips：</strong></p>
+console.log(colors); // [&#34;black&#34;]
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Tips：</strong></p>
 <blockquote>
 <p>unshift()和shift()一起使用也构成了后进先出的栈结构</p>
 </blockquote>
@@ -1260,12 +1475,23 @@ console.log(colors); // [&quot;black&quot;]
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let ints = [0,1,2];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let ints = [0,1,2];
 let copyRes = ints.copyWithin(1);
 console.log(copyRes); //  [0, 0, 1]
 console.log(ints); //  [0, 0, 1]
 console.log(copyRes === ints); // true
-</code></pre><h3 id="fill">fill()</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="fill">fill()</h3>
 <table>
 <thead>
 <tr>
@@ -1306,7 +1532,19 @@ console.log(copyRes === ints); // true
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let zeroes = [0,0,0,0,0];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let zeroes = [0,0,0,0,0];
 let zeroesRes = zeroes.fill(5);
 console.log(zeroes); // [5, 5, 5, 5, 5]
 console.log(zeroesRes === zeroes); // true
@@ -1314,11 +1552,30 @@ console.log(zeroes.fill(3,1)); // [5, 3, 3, 3, 3]
 console.log(zeroes); // [5, 3, 3, 3, 3]
 console.log(zeroes.fill(1,3,5)); // [5, 3, 3, 1, 1]
 console.log(zeroes); // [5, 3, 3, 1, 1]
-</code></pre><p><strong>Tips：</strong></p>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Tips：</strong></p>
 <blockquote>
 <p>copyWithin()和fill()会忽略超出数组边界，零长度以及方向相反的索引范围</p>
 </blockquote>
-<pre><code class="language-Code" data-lang="Code">let ints = [0,1,2,3];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let ints = [0,1,2,3];
 // 索引超出边界，忽略
 ints.copyWithin(1,10,13);
 console.log(ints); // [0,1,2,3]
@@ -1331,7 +1588,30 @@ console.log(ints); // [0,1,2,3]
 // 部分索引可用，填充可用索引部分
 ints.copyWithin(1,2,6);
 console.log(ints); // [0,2,3,3]
-</code></pre><pre><code class="language-Code" data-lang="Code">let zeroes = [0,0,0,0,0];
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let zeroes = [0,0,0,0,0];
 // 当开始索引和结束索引取负值时，相当于：将开始索引和结束索引都加上 zeroes.length
 // zeroes.fill(8,1,4);
 zeroes.fill(8,-4,-1);
@@ -1348,7 +1628,9 @@ console.log(zeroes); // [0,8,8,8,0]
 // 部分索引可用，填充可用索引部分
 zeroes.fill(1,3,10);
 console.log(zeroes); // [0, 8, 8, 1, 1]
-</code></pre><h2 id="3排序方法">（3）排序方法</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="3排序方法">（3）排序方法</h2>
 <blockquote>
 <p>数组中有两个方法可以用来对元素重新排序：<strong>reverse()</strong> 和 <strong>sort()</strong>，顾名思义，reverse()方法就是将数组元素反向排列。</p>
 </blockquote>
@@ -1385,11 +1667,21 @@ console.log(zeroes); // [0, 8, 8, 1, 1]
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let value = [1,2,3,4,5,6];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let value = [1,2,3,4,5,6];
 console.log(value.reverse()); // [6, 5, 4, 3, 2, 1]
 console.log(value); // [6, 5, 4, 3, 2, 1]
 console.log(value.reverse() === value); // true
-</code></pre><h3 id="sort">sort()</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="sort">sort()</h3>
 <table>
 <thead>
 <tr>
@@ -1428,13 +1720,33 @@ console.log(value.reverse() === value); // true
 <blockquote>
 <p>默认情况下，<strong>sort()</strong> 会按照升序重新排列数组元素，既最小的值在前面，最大的值在后面。为此，<strong>sort()</strong> 会在每一项上调用<strong>String()</strong> 转型函数，然后比较字符串来决定顺序。即使数组的元素都是数值，也会把数组转换为字符串再比较排序。</p>
 </blockquote>
-<pre><code class="language-Code" data-lang="Code">let value = [1,2,3,5,8,9,10,16,20,50];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let value = [1,2,3,5,8,9,10,16,20,50];
 console.log(value.sort()); //  [1, 10, 16, 2, 20, 3, 5, 50, 8, 9]
-</code></pre><ul>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li><strong>传入比较函数</strong></li>
 </ul>
 <p>这时候排序的结果就是我们结果就是我们想要的</p>
-<pre><code class="language-Code" data-lang="Code">let value = [1,2,3,5,8,9,10,16,20,50];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let value = [1,2,3,5,8,9,10,16,20,50];
 function compare(a,b) {
     if(a &lt; b) return -1
     else if(a &gt; b) return 1
@@ -1442,8 +1754,22 @@ function compare(a,b) {
 }
 value.sort(compare);
 console.log(value); // [1, 2, 3, 5, 8, 9, 10, 16, 20, 50]
-</code></pre><p>当想要结果按降序排列的话将if条件反过来即可</p>
-<pre><code class="language-Code" data-lang="Code">let value = [1,2,3,5,8,9,10,16,20,50];
+</code></pre></td></tr></table>
+</div>
+</div><p>当想要结果按降序排列的话将if条件反过来即可</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let value = [1,2,3,5,8,9,10,16,20,50];
 function compare(a,b) {
     if(a &gt; b) return -1
     else if(a &lt; b) return 1
@@ -1451,31 +1777,88 @@ function compare(a,b) {
 }
 value.sort(compare);
 console.log(value); // [50, 20, 16, 10, 9, 8, 5, 3, 2, 1]
-</code></pre><p>上面的代码也可简写为：</p>
-<pre><code class="language-Code" data-lang="Code">let value = [1,2,3,5,8,9,10,16,20,50];
+</code></pre></td></tr></table>
+</div>
+</div><p>上面的代码也可简写为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let value = [1,2,3,5,8,9,10,16,20,50];
 value.sort((a,b) =&gt; a &gt; b ? -1 : a &gt; b ? 1 : 0);
 console.log(value); // [50, 20, 16, 10, 9, 8, 5, 3, 2, 1]
-</code></pre><p>上面的代码还可简写为：</p>
-<pre><code class="language-Code" data-lang="Code">let value = [1,2,3,5,8,9,10,16,20,50];
+</code></pre></td></tr></table>
+</div>
+</div><p>上面的代码还可简写为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let value = [1,2,3,5,8,9,10,16,20,50];
 value.sort((a,b) =&gt; b - a); // a - b 升序，b - a 降序
 console.log(value); // [50, 20, 16, 10, 9, 8, 5, 3, 2, 1]
-</code></pre><ul>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li><strong>数组对象按某个属性排序</strong></li>
 </ul>
-<pre><code class="language-Code" data-lang="Code">let array = [
-    {'name':'js','grade':80},
-    {'name':'java','grade':50},
-    {'name':'go','grade':100},
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let array = [
+    {&#39;name&#39;:&#39;js&#39;,&#39;grade&#39;:80},
+    {&#39;name&#39;:&#39;java&#39;,&#39;grade&#39;:50},
+    {&#39;name&#39;:&#39;go&#39;,&#39;grade&#39;:100},
 ]
 array.sort(function(a,b) {
     return b.grade - a.grade;
 })
 console.log(array);
-// [{'name':'go','grade':100},{'name':'js','grade':80},{'name':'java','grade':50}]
-</code></pre><ul>
+// [{&#39;name&#39;:&#39;go&#39;,&#39;grade&#39;:100},{&#39;name&#39;:&#39;js&#39;,&#39;grade&#39;:80},{&#39;name&#39;:&#39;java&#39;,&#39;grade&#39;:50}]
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li><strong>手写一个sort函数</strong></li>
 </ul>
-<pre><code class="language-Code" data-lang="Code">function sort(array,callback) {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">function sort(array,callback) {
     for (const n in array) {
         for (const m in array) {
             if(callback(array[n],array[m]) &lt; 0){
@@ -1492,7 +1875,9 @@ sort(arr,function(a,b){
     return a - b
 })
 console.log(arr); // [2, 3, 7, 10, 52] 
-</code></pre><p><strong>Tips：</strong></p>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Tips：</strong></p>
 <blockquote>
 <p>如果只是想反转数组的顺序，reverse()更简单也更快。</p>
 </blockquote>
@@ -1541,22 +1926,45 @@ console.log(arr); // [2, 3, 7, 10, 52]
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let nums = [1,2,3,4,5,6,7,8,9,10];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let nums = [1,2,3,4,5,6,7,8,9,10];
 console.log(nums.splice(0,2)); // [1, 2]
 console.log(nums); // [3, 4, 5, 6, 7, 8, 9, 10]
-let colors = ['red','green'];
-console.log(colors.splice(0,1,'black','white')); // [&quot;red&quot;]
-console.log(colors); // [&quot;black&quot;, &quot;white&quot;, &quot;green&quot;]
-</code></pre><p><strong>Tips：</strong></p>
+let colors = [&#39;red&#39;,&#39;green&#39;];
+console.log(colors.splice(0,1,&#39;black&#39;,&#39;white&#39;)); // [&#34;red&#34;]
+console.log(colors); // [&#34;black&#34;, &#34;white&#34;, &#34;green&#34;]
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Tips：</strong></p>
 <blockquote>
 <p>如果<strong>splice()</strong> 不传参数时，不会删除任何元素，返回一个空数组，当传一个参数时，从当前下标对应的元素（包含当前下标对应的元素）往后删除，返回被删除元素的组成的数组</p>
 </blockquote>
-<pre><code class="language-Code" data-lang="Code">let nums = [1,2,3,4,5,6,7,8,9,10];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let nums = [1,2,3,4,5,6,7,8,9,10];
 console.log(nums.splice()); // []
 console.log(nums); // [1,2,3,4,5,6,7,8,9,10]
 console.log(nums.splice(3)); // [4, 5, 6, 7, 8, 9, 10]
 console.log(nums); // [1, 2, 3]
-</code></pre><h3 id="slice">slice()</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="slice">slice()</h3>
 <table>
 <thead>
 <tr>
@@ -1593,39 +2001,79 @@ console.log(nums); // [1, 2, 3]
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let colors = ['red','blue'];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let colors = [&#39;red&#39;,&#39;blue&#39;];
 let colors2 = colors.slice();
 let colors3 = colors.slice(1);
 let colors4 = colors.slice(0,1);
-console.log(colors); //  [&quot;red&quot;, &quot;blue&quot;]
-console.log(colors2); // [&quot;red&quot;, &quot;blue&quot;]
-console.log(colors3); // [&quot;blue&quot;]
-console.log(colors4); // [&quot;red&quot;]
-</code></pre><p><strong>Tips：</strong></p>
+console.log(colors); //  [&#34;red&#34;, &#34;blue&#34;]
+console.log(colors2); // [&#34;red&#34;, &#34;blue&#34;]
+console.log(colors3); // [&#34;blue&#34;]
+console.log(colors4); // [&#34;red&#34;]
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Tips：</strong></p>
 <blockquote>
 <p>如果<strong>slice()</strong> 的参数有负值，那么就以当前数组长度加上这个负值的结果确定位置。当数组长度加上这个负值仍然为负值，那么返回空数组。</p>
 </blockquote>
-<pre><code class="language-Code" data-lang="Code"> let colors = ['red','blue','green'];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"> let colors = [&#39;red&#39;,&#39;blue&#39;,&#39;green&#39;];
 // 这个数组的长度为3，所以colors.slice(-3,-1) 相当于 colors.slice(0,2)
-console.log(colors.slice(-3,-1)); //  [&quot;red&quot;, &quot;blue&quot;]
-console.log(colors.slice(0,2)); //  [&quot;red&quot;, &quot;blue&quot;]
+console.log(colors.slice(-3,-1)); //  [&#34;red&#34;, &#34;blue&#34;]
+console.log(colors.slice(0,2)); //  [&#34;red&#34;, &#34;blue&#34;]
 
 // 因为colors.slice(-6,-4) 加上数组长度分别为 -3，-1，所以返回空值
 // 但是colors.slice(-6,-4) 结果并不等于 colors.slice(-3,-1)的结果
 // 因为 colors.slice(-3,-1) 相当于 colors.slice(0,2)
 console.log(colors.slice(-6,-4)); // []
-console.log(colors.slice(-3,-1)); // [&quot;red&quot;, &quot;blue&quot;]
+console.log(colors.slice(-3,-1)); // [&#34;red&#34;, &#34;blue&#34;]
 
 // colors.slice(-8,-1) 加上数组长度分别为 -5，2，有一部分是在数组索引范围内的
 // 所以这部分是生效的
-console.log(colors.slice(-8,-1)); // [&quot;red&quot;, &quot;blue&quot;]
+console.log(colors.slice(-8,-1)); // [&#34;red&#34;, &#34;blue&#34;]
 
 // colors.slice(-5,2) 加上数组长度为 -2，2
 // 但是 colors.slice(-2,2) 加上数组长度为 1，2
 // 所以他们结果是不同的
-console.log(colors.slice(-5,2)); // [&quot;red&quot;, &quot;blue&quot;]
-console.log(colors.slice(-2,2)); // [&quot;blue&quot;]
-</code></pre><h3 id="concat">concat()</h3>
+console.log(colors.slice(-5,2)); // [&#34;red&#34;, &#34;blue&#34;]
+console.log(colors.slice(-2,2)); // [&#34;blue&#34;]
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="concat">concat()</h3>
 <table>
 <thead>
 <tr>
@@ -1659,23 +2107,47 @@ console.log(colors.slice(-2,2)); // [&quot;blue&quot;]
 </tbody>
 </table>
 <p><strong>concat不仅可以合并数组，也可以将字符串合并到数组中去</strong></p>
-<pre><code class="language-Code" data-lang="Code">let colors = ['red','green'];
-let newColors = ['brown','blue'];
-console.log(colors.concat(newColors)); // [&quot;red&quot;, &quot;green&quot;, &quot;brown&quot;, &quot;blue&quot;]
-console.log(colors.concat(['yellow'],newColors)); // [&quot;red&quot;, &quot;green&quot;, &quot;yellow&quot;, &quot;brown&quot;, &quot;blue&quot;]
-console.log(colors.concat('white',newColors)); // [&quot;red&quot;, &quot;green&quot;, &quot;white&quot;, &quot;brown&quot;, &quot;blue&quot;]
-</code></pre><p><strong>Tips：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let colors = [&#39;red&#39;,&#39;green&#39;];
+let newColors = [&#39;brown&#39;,&#39;blue&#39;];
+console.log(colors.concat(newColors)); // [&#34;red&#34;, &#34;green&#34;, &#34;brown&#34;, &#34;blue&#34;]
+console.log(colors.concat([&#39;yellow&#39;],newColors)); // [&#34;red&#34;, &#34;green&#34;, &#34;yellow&#34;, &#34;brown&#34;, &#34;blue&#34;]
+console.log(colors.concat(&#39;white&#39;,newColors)); // [&#34;red&#34;, &#34;green&#34;, &#34;white&#34;, &#34;brown&#34;, &#34;blue&#34;]
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Tips：</strong></p>
 <blockquote>
 <p><strong>concat()</strong> 将字符串合并到数组中有点类似于<strong>push()</strong> ，但是<strong>concat()</strong> 不会改变原数组，而<strong>push()</strong> 会改变原数组，同时，<strong>concat()</strong> 的返回值是合并后的新数组，而<strong>push()</strong> 的返回值是添加元素后的原数组的长度</p>
 </blockquote>
-<pre><code class="language-Code" data-lang="Code">let colors = ['red'];
-console.log(colors.concat('green','blue')); // [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;]
-console.log(colors); // [&quot;red&quot;]
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let colors = [&#39;red&#39;];
+console.log(colors.concat(&#39;green&#39;,&#39;blue&#39;)); // [&#34;red&#34;, &#34;green&#34;, &#34;blue&#34;]
+console.log(colors); // [&#34;red&#34;]
 
-let newColors = ['red'];
-console.log(colors.push('green','blue')); // 3
-console.log(colors); // [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;]
-</code></pre><h3 id="join">join()</h3>
+let newColors = [&#39;red&#39;];
+console.log(colors.push(&#39;green&#39;,&#39;blue&#39;)); // 3
+console.log(colors); // [&#34;red&#34;, &#34;green&#34;, &#34;blue&#34;]
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="join">join()</h3>
 <table>
 <thead>
 <tr>
@@ -1708,21 +2180,43 @@ console.log(colors); // [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;]
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let colors = ['red','green','blue'];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let colors = [&#39;red&#39;,&#39;green&#39;,&#39;blue&#39;];
 console.log(colors.join()); // red,green,blue
-console.log(colors.join(',')); // red,green,blue
-console.log(colors.join('||')); // red||green||blue
+console.log(colors.join(&#39;,&#39;)); // red,green,blue
+console.log(colors.join(&#39;||&#39;)); // red||green||blue
 console.log(colors.join(undefined)); // red,green,blue
 console.log(colors.join(null)); // rednullgreennullblue
-</code></pre><p><strong>Tips：</strong></p>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Tips：</strong></p>
 <blockquote>
 <p>当不给<strong>join()</strong> 传入任何参数，或者传入<strong>undefined</strong> ，则仍然使用逗号作为分隔符。如果数组中某一项是<strong>null</strong> 或<strong>undefined</strong> ，则在join() 返回的结果中会以空字符串表示。</p>
 </blockquote>
-<pre><code class="language-Code" data-lang="Code">let colors = ['red','green','blue']; 
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let colors = [&#39;red&#39;,&#39;green&#39;,&#39;blue&#39;]; 
 console.log(colors.join(undefined)); // red,green,blue
-let colors1 = ['red',null,undefined,'blue']; 
+let colors1 = [&#39;red&#39;,null,undefined,&#39;blue&#39;]; 
 console.log(colors1.join()); // red,,,blue
-</code></pre><h2 id="5迭代方法">（5）迭代方法</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="5迭代方法">（5）迭代方法</h2>
 <blockquote>
 <p><strong>JavaScript</strong> 为数组定义了5个迭代方法。</p>
 </blockquote>
@@ -1786,17 +2280,35 @@ console.log(colors1.join()); // red,,,blue
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,4,5,4,3,2,1];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let numbers = [1,2,3,4,5,4,3,2,1];
 let everyResult = numbers.every((item,index,numbers) =&gt; item &gt; 2);
 console.log(everyResult); // false
-</code></pre><p><strong>Tips：</strong></p>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Tips：</strong></p>
 <blockquote>
 <p>若收到一个空数组，此方法在一切情况下都会返回 true</p>
 </blockquote>
-<pre><code class="language-Code" data-lang="Code">let numbers = [];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let numbers = [];
 let everyResult = numbers.every((item,index,numbers) =&gt; item &gt; 5);
 console.log(everyResult); // true
-</code></pre><h3 id="some">some()</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="some">some()</h3>
 <table>
 <thead>
 <tr>
@@ -1857,12 +2369,23 @@ console.log(everyResult); // true
 </tbody>
 </table>
 <p><strong>注：</strong> <strong>every()</strong> 和 <strong>some()</strong> 接收的参数是一样的，只是 <strong>every()</strong> 需要函数 <strong>每一项</strong> 都返回 <strong>true</strong> ，这个方法才会返回 <strong>true</strong> ，而 <strong>some()</strong> 只需要函数 <strong>某一项</strong> 返回 <strong>true</strong> ，这个方法就会返回 <strong>true</strong> 。</p>
-<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,4,5,4,3,2,1];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let numbers = [1,2,3,4,5,4,3,2,1];
 let everyResult = numbers.every((item,index,numbers) =&gt; item &gt; 2);
 console.log(everyResult); // false
 let someResult = numbers.some((item,index,numbers) =&gt; item &gt; 2);
 console.log(someResult); // true
-</code></pre><h3 id="filter">filter()</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="filter">filter()</h3>
 <table>
 <thead>
 <tr>
@@ -1922,10 +2445,19 @@ console.log(someResult); // true
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,4,5,4,3,2,1];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let numbers = [1,2,3,4,5,4,3,2,1];
 let filterResult = numbers.filter((item,index,numbers) =&gt; item &gt; 2);
 console.log(filterResult); // [3, 4, 5, 4, 3]
-</code></pre><h3 id="map">map()</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="map">map()</h3>
 <table>
 <thead>
 <tr>
@@ -1985,14 +2517,37 @@ console.log(filterResult); // [3, 4, 5, 4, 3]
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,4,5,4,3,2,1];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let numbers = [1,2,3,4,5,4,3,2,1];
 let mapResult = numbers.map((item,index,number) =&gt; item*2);
 console.log(mapResult); //  [2, 4, 6, 8, 10, 8, 6, 4, 2]
-</code></pre><p><strong>Tips：</strong></p>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Tips：</strong></p>
 <blockquote>
 <p>从上面的代码以及描述看，<strong>fliter()</strong> 和 <strong>map()</strong> 好像没什么区别，事实上，这两个方法还是有区别的，<strong>fliter()</strong> 返回的数组元素个数可能会变化，但是元素本省不会变化，也就是说 <strong>fliter()</strong> 返回的新数组一定是跟原数组一样的内容或者原数组内容的一部分，元素不会改变，而 <strong>map()</strong> 返回的新数组元素个数不变，但是按照一定的条件转换，数组元素可能会变化</p>
 </blockquote>
-<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,4,5,4,3,2,1];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let numbers = [1,2,3,4,5,4,3,2,1];
 let filterResult = numbers.filter((item,index,number) =&gt; item * 2);
 let mapResult = numbers.map((item,index,number) =&gt; item * 2);
 let filterResult1 = numbers.filter((item,index,number) =&gt; item &gt; 2);
@@ -2002,7 +2557,9 @@ console.log(mapResult); // [2, 4, 6, 8, 10, 8, 6, 4, 2]
 console.log(filterResult1); //  [3, 4, 5, 4, 3]
 console.log(mapResult1); //  [false, false, true, true, true, true, true, false, false]
 console.log(numbers); //  [1, 2, 3, 4, 5, 4, 3, 2, 1]
-</code></pre><h3 id="foreach">forEach()</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="foreach">forEach()</h3>
 <table>
 <thead>
 <tr>
@@ -2062,13 +2619,25 @@ console.log(numbers); //  [1, 2, 3, 4, 5, 4, 3, 2, 1]
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,4,5,4,3,2,1];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let numbers = [1,2,3,4,5,4,3,2,1];
 let forEachResult = numbers.forEach((item,index,numbers) =&gt; {
     return item*5
 });
 console.log(forEachResult); // undefined
 console.log(numbers); // [1, 2, 3, 4, 5, 4, 3, 2, 1]
-</code></pre><p>forEach()本质上就是循环遍历数组，没有返回值，也不会改变原数组。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>forEach()本质上就是循环遍历数组，没有返回值，也不会改变原数组。</p>
 <p><strong>总结</strong></p>
 <blockquote>
 <p>这5个迭代方法传的参数都是一样的，也都不会改变原数组。</p>
@@ -2110,11 +2679,21 @@ console.log(numbers); // [1, 2, 3, 4, 5, 4, 3, 2, 1]
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let colors = ['red','green'];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let colors = [&#39;red&#39;,&#39;green&#39;];
 console.log(colors.keys()); // Array Iterator {}
 console.log(Array.from(colors.keys())); // [0, 1]
 console.log(Array.of(...colors.keys())); // [0, 1]
-</code></pre><h3 id="values">values()</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="values">values()</h3>
 <table>
 <thead>
 <tr>
@@ -2147,11 +2726,21 @@ console.log(Array.of(...colors.keys())); // [0, 1]
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let colors = ['red','green'];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let colors = [&#39;red&#39;,&#39;green&#39;];
 console.log(colors.values()); // Array Iterator {}
-console.log(Array.from(colors.values())); //  [&quot;red&quot;, &quot;green&quot;]
-console.log(Array.of(...colors.values())); //  [&quot;red&quot;, &quot;green&quot;]
-</code></pre><h3 id="entries">entries()</h3>
+console.log(Array.from(colors.values())); //  [&#34;red&#34;, &#34;green&#34;]
+console.log(Array.of(...colors.values())); //  [&#34;red&#34;, &#34;green&#34;]
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="entries">entries()</h3>
 <table>
 <thead>
 <tr>
@@ -2184,11 +2773,21 @@ console.log(Array.of(...colors.values())); //  [&quot;red&quot;, &quot;green&qu
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let colors = ['red','green'];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let colors = [&#39;red&#39;,&#39;green&#39;];
 console.log(colors.entries(colors)); // Array Iterator {}
 console.log(Array.from(colors.entries())); // [Array(2), Array(2)]
 console.log(Array.of(...colors.entries())); // [Array(2), Array(2)]
-</code></pre><p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/000f722d46ac461faa31e0c5db37ca4d~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/000f722d46ac461faa31e0c5db37ca4d~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
 <p><strong>Tips：</strong></p>
 <blockquote>
 <p>这三个方法返回的都是一个类数组对象，都可以通过 <strong>Array.from()</strong> 或者 <strong>Array.of()加展开语法</strong> 转换成数组。</p>
@@ -2261,11 +2860,21 @@ console.log(Array.of(...colors.entries())); // [Array(2), Array(2)]
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,2,1];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let numbers = [1,2,3,2,1];
 let sum = numbers.reduce((prev,cur,index,array) =&gt; prev + cur);
 console.log(sum); // 9
 console.log(numbers); //  [1, 2, 3, 2, 1]
-</code></pre><h3 id="reduceright">reduceRight()</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="reduceright">reduceRight()</h3>
 <table>
 <thead>
 <tr>
@@ -2329,11 +2938,21 @@ console.log(numbers); //  [1, 2, 3, 2, 1]
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,4,5];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let numbers = [1,2,3,4,5];
 let sum = numbers.reduceRight((prev,cur,index,array) =&gt; prev + cur);
 console.log(sum); // 15
 console.log(numbers); // [1, 2, 3, 4, 5]
-</code></pre><p><strong>Tips：</strong></p>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Tips：</strong></p>
 <blockquote>
 <p>究竟是使用 <strong>reduce()</strong> 还是 <strong>reduceRight()</strong> ，只取决于遍历数组元素的方向。除此之外，这两个方法没什么区别。</p>
 </blockquote>
@@ -2379,12 +2998,23 @@ console.log(numbers); // [1, 2, 3, 4, 5]
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,4,5];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let numbers = [1,2,3,4,5];
 console.log(numbers.indexOf(4)); // 3
 console.log(numbers.indexOf(4,3)); // 3
 // 如果没找到就返回 -1
 console.log(numbers.indexOf(40)); // -1
-</code></pre><h3 id="lastindexof">lastIndexOf()</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="lastindexof">lastIndexOf()</h3>
 <table>
 <thead>
 <tr>
@@ -2421,12 +3051,23 @@ console.log(numbers.indexOf(40)); // -1
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,4,5,4,3,2,1];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let numbers = [1,2,3,4,5,4,3,2,1];
 console.log(numbers.lastIndexOf(4)); // 5
 console.log(numbers.lastIndexOf(4,4)); // 3
 // 如果没找到就返回 -1
 console.log(numbers.lastIndexOf(40)); // -1
-</code></pre><h3 id="includes">includes()</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="includes">includes()</h3>
 <table>
 <thead>
 <tr>
@@ -2463,11 +3104,21 @@ console.log(numbers.lastIndexOf(40)); // -1
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,4,5,4,3,2,1];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let numbers = [1,2,3,4,5,4,3,2,1];
 console.log(numbers.includes(4)); // true
 console.log(numbers.includes(4,7)); // false
 console.log(numbers.includes(40)); // false
-</code></pre><p><strong>JavaScript</strong> 也允许按照定义的断言函数搜索数组，<strong>find()</strong> 和 <strong>findIndex()</strong> 使用了断言函数。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>JavaScript</strong> 也允许按照定义的断言函数搜索数组，<strong>find()</strong> 和 <strong>findIndex()</strong> 使用了断言函数。</p>
 <h3 id="find">find()</h3>
 <table>
 <thead>
@@ -2528,18 +3179,35 @@ console.log(numbers.includes(40)); // false
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">const people = [
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">const people = [
     {
-        name: 'Matt',
+        name: &#39;Matt&#39;,
         age: 27
     },
     {
-        name: 'xiaoming',
+        name: &#39;xiaoming&#39;,
         age: 29
     }
 ];
-console.log(people.find((element, index, array) =&gt; element.age &gt; 28)); // {name: &quot;xiaoming&quot;, age: 29}
-</code></pre><h3 id="findindex">findIndex()</h3>
+console.log(people.find((element, index, array) =&gt; element.age &gt; 28)); // {name: &#34;xiaoming&#34;, age: 29}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="findindex">findIndex()</h3>
 <table>
 <thead>
 <tr>
@@ -2599,18 +3267,35 @@ console.log(people.find((element, index, array) =&gt; element.age &gt; 28)); // 
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">const people = [
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">const people = [
     {
-        name: 'Matt',
+        name: &#39;Matt&#39;,
         age: 27
     },
     {
-        name: 'xiaoming',
+        name: &#39;xiaoming&#39;,
         age: 29
     }
 ];
 console.log(people.findIndex((element, index, array) =&gt; element.age &gt; 28)); // 1
-</code></pre><h2 id="9转换方法">（9）转换方法</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="9转换方法">（9）转换方法</h2>
 <blockquote>
 <p><strong>JavaScript</strong> 中所有对象都有 <strong>toSting()</strong>、<strong>toLocaleString()</strong> 和 <strong>valueOf()</strong> 方法，其中，<strong>valueOf()</strong> 返回的是数组本身。</p>
 </blockquote>
@@ -2647,10 +3332,19 @@ console.log(people.findIndex((element, index, array) =&gt; element.age &gt; 28))
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let numbers = [1,2,3,4,5];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let numbers = [1,2,3,4,5];
 let stringNumbers = numbers.toString();
 console.log(stringNumbers); // 1,2,3,4,5
-</code></pre><h3 id="tolocalestring">toLocaleString()</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="tolocalestring">toLocaleString()</h3>
 <table>
 <thead>
 <tr>
@@ -2683,10 +3377,19 @@ console.log(stringNumbers); // 1,2,3,4,5
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let numbers = [15000000];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let numbers = [15000000];
 let stringNumbers = numbers.toLocaleString();
 console.log(stringNumbers); // 15,000,000
-</code></pre><h2 id="10扁平化方法">（10）扁平化方法</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="10扁平化方法">（10）扁平化方法</h2>
 <blockquote>
 <p><strong>JavaScript</strong> 中提供了两个数组扁平化的方法：<strong>flat()</strong> 和 <strong>flatMap()</strong></p>
 </blockquote>
@@ -2723,11 +3426,21 @@ console.log(stringNumbers); // 15,000,000
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let array = [1,5,9,8,[1],[2,[1,[1,3,[1,9]]]]];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let array = [1,5,9,8,[1],[2,[1,[1,3,[1,9]]]]];
 console.log(array.flat(2));// [1, 5, 9, 8, 1, 2, 1, Array(3)]
 //使用 Infinity，可展开任意深度的嵌套数组
 console.log(array.flat(Infinity)); //  [1, 5, 9, 8, 1, 2, 1, 1, 3, 1, 9]
-</code></pre><h3 id="flatmap">flatMap()</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="flatmap">flatMap()</h3>
 <table>
 <thead>
 <tr>
@@ -2787,10 +3500,19 @@ console.log(array.flat(Infinity)); //  [1, 5, 9, 8, 1, 2, 1, 1, 3, 1, 9]
 </tr>
 </tbody>
 </table>
-<pre><code class="language-Code" data-lang="Code">let array = [1,5,9,8];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">let array = [1,5,9,8];
 let flatMapRes = array.flatMap((item,index,array) =&gt; item * 3);
 console.log(flatMapRes); // [3, 15, 27, 24]
-</code></pre><h1 id="5总结">5.总结</h1>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="5总结">5.总结</h1>
 <p>这篇文章断断续续的也写了好几天，感叹总结文档也是件麻烦细致活，不比学习技术知识花的时间少，但是写文档也算把学到的知识输出出来了，可能以后自己忘了，也能回头来看看，毕竟，人的记忆力是敌不过时间的，好记性不如烂笔头嘛，写文档这种东西可能还是多多益善，然后大佬们看这篇文章如果发现有不妥或者错误的地方希望能指出来，我及时改正，谢谢了，然后后续有新的东西我也会补充进来的。</p>
 <p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/60854fc6591d4c978418308db0d1ffe2~tplv-k3u1fbpfcp-watermark.image" alt=""></p>
 
@@ -2798,37 +3520,10 @@ console.log(flatMapRes); // [3, 15, 27, 24]
 
     
     
-<div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">文章作者</span>
-    <span class="item-content">XKHM</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">上次更新</span>
-    <span class="item-content">
-      2020-12-19
-      
-    </span>
-  </p>
-  
-  <p class="copyright-item">
-    <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">原创文章，转载请注明文章作者和出处，谢谢！</a></span>
-  </p>
-</div>
 
 
     
     
-<div class="post-reward">
-  <input type="checkbox" name="reward" id="reward" hidden />
-  <label class="reward-button" for="reward">汤言汤语</label>
-  <div class="qr-code">
-    
-    
-    
-  </div>
-</div>
 
     <footer class="post-footer">
       <div class="post-tags">
@@ -2849,13 +3544,13 @@ console.log(flatMapRes); // [3, 15, 27, 24]
 </svg>
 
             </i>
-            <span class="prev-text nav-default">JS基础之深浅拷贝</span>
-            <span class="prev-text nav-mobile">Prev</span>
+            <span class="prev-text nav-default" style="position: relative;top: -2px;">JS基础之深浅拷贝</span>
+            <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
           <a class="next" href="/post/%E5%B9%B3%E5%87%A1%E7%9A%84%E5%B0%8F%E6%91%B8%E9%B1%BC%E5%88%87%E5%9B%BE%E4%BB%94%E7%9A%842020/">
-            <span class="next-text nav-default">平凡的小摸鱼切图仔的2020</span>
-            <span class="prev-text nav-mobile">Next</span>
+            <span class="next-text nav-default" style="position: relative;top: -3px;">平凡的小摸鱼切图仔的2020</span>
+            <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
               <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -2876,20 +3571,19 @@ console.log(flatMapRes); // [3, 15, 27, 24]
   
   
 
-  
 
-  
-  
 
-  
 
-  
 
-  
 
-    
 
-  
+
+
+
+
+
+
+
 
         </div>
       </div>
@@ -2943,23 +3637,17 @@ console.log(flatMapRes); // [3, 15, 27, 24]
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
-  </span>
-
+  
+  
   <span class="copyright-year">
     &copy;
     
-      2019 -
-    2022
+    2019 -
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -2972,16 +3660,18 @@ console.log(flatMapRes); // [3, 15, 27, 24]
 
       </i>
     </span><span class="author">
-        星空海绵
-        
-      </span></span>
-
+      星空海绵
+      
+    </span></span>
   
-  
-
-  
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
 </div>
-
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -3007,13 +3697,6 @@ console.log(flatMapRes); // [3, 15, 27, 24]
 
 
 
-  <script type="text/javascript">
-    window.MathJax = {
-      showProcessingMessages: false,
-      messageStyle: 'none'
-    };
-  </script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 
 
@@ -3031,6 +3714,8 @@ console.log(flatMapRes); // [3, 15, 27, 24]
 
 
 
+
+  <script async src="//changkun.de/urlstat/client.js"></script>
 
 
 

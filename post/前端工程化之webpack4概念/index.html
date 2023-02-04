@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -22,10 +22,10 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="XKHM" />
+<meta name="author" content="星空海绵" />
   <meta name="description" content="下定决心，就勇往直前。 webpack概念学习掌握。 webpack4官方文档 1.webpack是什么？ webpack是一个现代的JavaScr" />
 
-  <meta name="keywords" content="Hugo" />
+  <meta name="keywords" content="Hugo, 星空海绵, 前端, 工程师" />
 
 
 
@@ -41,7 +41,8 @@
 
 
 
-<link rel="icon" href="/favicon.png"  type="image/x-icon"/>
+<link rel="icon" href="/favicon.png" type="image/x-icon"/>
+
 
 
 
@@ -62,13 +63,13 @@
 <meta property="og:description" content="下定决心，就勇往直前。 webpack概念学习掌握。 webpack4官方文档 1.webpack是什么？ webpack是一个现代的JavaScr" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xkhm.net/post/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%B9%8Bwebpack4%E6%A6%82%E5%BF%B5/" />
-<meta property="article:published_time" content="2021-02-19T16:06:51+08:00" />
-<meta property="article:modified_time" content="2021-02-19T16:06:51+08:00" />
+<meta property="article:published_time" content="2021-02-19T16:00:46+08:00" />
+<meta property="article:modified_time" content="2021-02-19T16:00:46+08:00" />
 <meta itemprop="name" content="前端工程化之webpack4概念">
 <meta itemprop="description" content="下定决心，就勇往直前。 webpack概念学习掌握。 webpack4官方文档 1.webpack是什么？ webpack是一个现代的JavaScr">
-<meta itemprop="datePublished" content="2021-02-19T16:06:51+08:00" />
-<meta itemprop="dateModified" content="2021-02-19T16:06:51+08:00" />
-<meta itemprop="wordCount" content="2218">
+<meta itemprop="datePublished" content="2021-02-19T16:00:46+08:00" />
+<meta itemprop="dateModified" content="2021-02-19T16:00:46+08:00" />
+<meta itemprop="wordCount" content="2292">
 
 
 
@@ -86,6 +87,17 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-K0V0BST0TH', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -149,7 +161,21 @@
         
           
           
-            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
         
       </li><li class="mobile-menu-item">
@@ -171,20 +197,6 @@
           
           
             <a class="menu-item-link" href="https://xkhm.net/tags/">标签</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
         
       </li>
@@ -342,7 +354,29 @@
         
           
           
-            <a class="menu-item-link" href="https://xkhm.net/essay/">随笔</a>
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
           
 
         
@@ -382,28 +416,6 @@
 
       </li>
     
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/tobedone/">待做</a>
-          
-
-        
-
-      </li>
-    
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
-          
-
-        
-
-      </li>
-    
 
     
     
@@ -431,7 +443,8 @@
             <a href="https://xkhm.net/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"> 前端工程化 </a>
             
           </div>
-        
+        <span class="more-meta"> 约 2292 字 </span>
+          <span class="more-meta"> 预计阅读 5 分钟 </span>
 
         
         
@@ -504,12 +517,23 @@
 <h2 id="3loader">3.loader</h2>
 <p>webpack本身只能解析JS和JSON文件。loader能让webpack去处理其他类型的文件，并转换成有效的模块。</p>
 <p>配置的时候注意 <strong>rules</strong> 是定义在 <strong>module</strong> 中的，而且 <strong>test</strong> 和 <strong>use</strong> 这两个属性是必须的。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
-  <span style="color:#a6e22e">module</span><span style="color:#f92672">:</span> {
-    <span style="color:#a6e22e">rules</span><span style="color:#f92672">:</span> [{ <span style="color:#a6e22e">test</span><span style="color:#f92672">:</span> <span style="color:#e6db74">/\.txt$/</span>, <span style="color:#a6e22e">use</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;raw-loader&#39;</span>}]
-  }
-};
-</code></pre></div><h2 id="4插件plugin">4.插件（plugin）</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">module</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">rules</span><span class="o">:</span> <span class="p">[{</span> <span class="nx">test</span><span class="o">:</span> <span class="sr">/\.txt$/</span><span class="p">,</span> <span class="nx">use</span><span class="o">:</span> <span class="s1">&#39;raw-loader&#39;</span><span class="p">}]</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="4插件plugin">4.插件（plugin）</h2>
 <p>插件用于执行范围更广的任务。包括：打包优化，资源管理，注入环境变量。</p>
 <h2 id="5模式mode">5.模式（mode）</h2>
 <p>webpack对不同的模式内置了优化，webpack有<strong>development</strong>，<strong>production</strong>和<strong>none</strong>这三个模式，可以通过设置 <strong>mode</strong> 参数进行配置。默认值为 <strong>production</strong>。</p>
@@ -519,63 +543,149 @@
 <hr>
 <h2 id="1配置语法">1.配置语法</h2>
 <p>用法： entry: string|Array<!-- raw HTML omitted --></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">entry</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./path/to/my/entry/file.js&#39;</span>
-};
-</code></pre></div><p>上面这只是简写，完整的写法如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">entry</span><span style="color:#f92672">:</span> {
-        <span style="color:#a6e22e">main</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./path/to/my/entry/file.js&#39;</span>
-    }
-};
-</code></pre></div><h2 id="2对象语法">2.对象语法</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">entry</span><span class="o">:</span> <span class="s1">&#39;./path/to/my/entry/file.js&#39;</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>上面这只是简写，完整的写法如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">entry</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">main</span><span class="o">:</span> <span class="s1">&#39;./path/to/my/entry/file.js&#39;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2对象语法">2.对象语法</h2>
 <p>用法：entry: {[entryChunkName: string]: string|Array<!-- raw HTML omitted -->}</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">entry</span><span style="color:#f92672">:</span> {
-        <span style="color:#a6e22e">app</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./src/app.js&#39;</span>,
-        <span style="color:#a6e22e">adminApp</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./src/adminApp.js&#39;</span>
-    }
-};
-</code></pre></div><p>以上这种定义方法非常方便的可以扩展。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">entry</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">app</span><span class="o">:</span> <span class="s1">&#39;./src/app.js&#39;</span><span class="p">,</span>
+        <span class="nx">adminApp</span><span class="o">:</span> <span class="s1">&#39;./src/adminApp.js&#39;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>以上这种定义方法非常方便的可以扩展。</p>
 <h2 id="3常见场景">3.常见场景</h2>
 <p>多页面应用程序配置多入口</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">entry</span><span style="color:#f92672">:</span> {
-        <span style="color:#a6e22e">pageOne</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./src/pageOne/index.js&#39;</span>,
-        <span style="color:#a6e22e">pageTwo</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./src/pageTwo/index.js&#39;</span>,
-        <span style="color:#a6e22e">pageThree</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./src/pageThree/index.js&#39;</span>
-    }
-};
-</code></pre></div><h1 id="3输出output">3.输出（output）</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">entry</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">pageOne</span><span class="o">:</span> <span class="s1">&#39;./src/pageOne/index.js&#39;</span><span class="p">,</span>
+        <span class="nx">pageTwo</span><span class="o">:</span> <span class="s1">&#39;./src/pageTwo/index.js&#39;</span><span class="p">,</span>
+        <span class="nx">pageThree</span><span class="o">:</span> <span class="s1">&#39;./src/pageThree/index.js&#39;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="3输出output">3.输出（output）</h1>
 <p>配置 <strong>output</strong> 选项可以控制 <strong>webpack</strong> 如何向硬盘写入编译文件，注意可以配置多入口，但是只能配置一个 <strong>output</strong> 。</p>
 <h2 id="1用法">1.用法</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">output</span><span style="color:#f92672">:</span> {
-        <span style="color:#a6e22e">filename</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bundle.js&#39;</span>
-    }
-};
-</code></pre></div><p>以上配置的含义是将一个单独的 <strong>bundle.js</strong> 文件输出到 <strong>dist</strong> 目录中。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">output</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">filename</span><span class="o">:</span> <span class="s1">&#39;bundle.js&#39;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>以上配置的含义是将一个单独的 <strong>bundle.js</strong> 文件输出到 <strong>dist</strong> 目录中。</p>
 <h2 id="2多入口起点配置">2.多入口起点配置</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">entry</span><span style="color:#f92672">:</span> {
-        <span style="color:#a6e22e">app</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./src/app.js&#39;</span>,
-        <span style="color:#a6e22e">search</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./src/search.js&#39;</span>
-    },
-    <span style="color:#a6e22e">output</span><span style="color:#f92672">:</span> {
-        <span style="color:#a6e22e">filename</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;[name].js&#39;</span>,
-        <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">_dirname</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/dist&#39;</span>
-    }
-};
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">entry</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">app</span><span class="o">:</span> <span class="s1">&#39;./src/app.js&#39;</span><span class="p">,</span>
+        <span class="nx">search</span><span class="o">:</span> <span class="s1">&#39;./src/search.js&#39;</span>
+    <span class="p">},</span>
+    <span class="nx">output</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">filename</span><span class="o">:</span> <span class="s1">&#39;[name].js&#39;</span><span class="p">,</span>
+        <span class="nx">path</span><span class="o">:</span> <span class="nx">_dirname</span> <span class="o">+</span> <span class="s1">&#39;/dist&#39;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
 
-<span style="color:#75715e">// 写入到硬盘：./dist/app.js，./dist/search.js
-</span></code></pre></div><h2 id="3高级进阶">3.高级进阶</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">output</span><span style="color:#f92672">:</span> {
-        <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/home/proj/cdn/assets/[hash]&#39;</span>,
-        <span style="color:#a6e22e">publicPath</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;http://cdn.example.com/assets/[hash]/&#39;</span>
-    }
-};
-</code></pre></div><h1 id="4模式mode">4.模式（mode）</h1>
+<span class="c1">// 写入到硬盘：./dist/app.js，./dist/search.js
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="3高级进阶">3.高级进阶</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">output</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/home/proj/cdn/assets/[hash]&#39;</span><span class="p">,</span>
+        <span class="nx">publicPath</span><span class="o">:</span> <span class="s1">&#39;http://cdn.example.com/assets/[hash]/&#39;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="4模式mode">4.模式（mode）</h1>
 <blockquote>
 <p>提供mode配置选项，告知webpack使用相应配置环境内置优化。</p>
 </blockquote>
@@ -583,12 +693,28 @@
 <p>string: 可能的值有 none、development或production(默认)</p>
 </blockquote>
 <h2 id="1用法-1">1.用法</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">mode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;production&#39;</span>
-};
-</code></pre></div><p>或者通过CLI参数传递</p>
-<pre><code class="language-code" data-lang="code">webpack --mode=production
-</code></pre><blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">mode</span><span class="o">:</span> <span class="s1">&#39;production&#39;</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>或者通过CLI参数传递</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">webpack --mode=production
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
 <p>不同模式下的webpack全量基本<a href="https://v4.webpack.docschina.org/concepts/mode/">配置参考</a>。</p>
 </blockquote>
 <h1 id="5loader">5.loader</h1>
@@ -597,20 +723,43 @@
 </blockquote>
 <h2 id="1使用示例">1.使用示例</h2>
 <p>要使用对应的loader，及必须先安装相对应的loader。例如，让loader告诉webpack加载css文件，或者将TypeScript转换为JavaScript。</p>
-<pre><code class="language-code" data-lang="code">npm install --save-dev css-loader
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">npm install --save-dev css-loader
 
 npm install --save-dev ts-loader
-</code></pre><p>然后需要配置webpack对每个css文件使用css-loader，对每个ts文件使用ts-loader。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>然后需要配置webpack对每个css文件使用css-loader，对每个ts文件使用ts-loader。</p>
 <p>webpack.config.js配置：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">module</span><span style="color:#f92672">:</span> {
-        <span style="color:#a6e22e">rules</span><span style="color:#f92672">:</span> [
-            { <span style="color:#a6e22e">test</span><span style="color:#f92672">:</span> <span style="color:#e6db74">/\.css$/</span>, <span style="color:#a6e22e">use</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;css-loader&#39;</span> },
-            { <span style="color:#a6e22e">test</span><span style="color:#f92672">:</span> <span style="color:#e6db74">/\.ts$/</span>, <span style="color:#a6e22e">use</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ts-loader&#39;</span> }
-        ]
-    }
-};
-</code></pre></div><h2 id="2使用loader的方式">2.使用loader的方式</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">module</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">rules</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span> <span class="nx">test</span><span class="o">:</span> <span class="sr">/\.css$/</span><span class="p">,</span> <span class="nx">use</span><span class="o">:</span> <span class="s1">&#39;css-loader&#39;</span> <span class="p">},</span>
+            <span class="p">{</span> <span class="nx">test</span><span class="o">:</span> <span class="sr">/\.ts$/</span><span class="p">,</span> <span class="nx">use</span><span class="o">:</span> <span class="s1">&#39;ts-loader&#39;</span> <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2使用loader的方式">2.使用loader的方式</h2>
 <p>使用loader有3种方式：</p>
 <ul>
 <li>
@@ -632,17 +781,33 @@ npm install --save-dev ts-loader
 </blockquote>
 <h1 id="7配置">7.配置</h1>
 <p>基本配置：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;path&#39;</span>)
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">)</span>
 
-<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">mode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;development&#39;</span>,
-    <span style="color:#a6e22e">entry</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./foo.js&#39;</span>,
-    <span style="color:#a6e22e">output</span><span style="color:#f92672">:</span> {
-        <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">__dirname</span>, <span style="color:#e6db74">&#39;dist&#39;</span>),
-        <span style="color:#a6e22e">filename</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;foo.bundle.js&#39;</span>
-    }
-};
-</code></pre></div><h1 id="8模块">8.模块</h1>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">mode</span><span class="o">:</span> <span class="s1">&#39;development&#39;</span><span class="p">,</span>
+    <span class="nx">entry</span><span class="o">:</span> <span class="s1">&#39;./foo.js&#39;</span><span class="p">,</span>
+    <span class="nx">output</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">path</span><span class="o">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;dist&#39;</span><span class="p">),</span>
+        <span class="nx">filename</span><span class="o">:</span> <span class="s1">&#39;foo.bundle.js&#39;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="8模块">8.模块</h1>
 <blockquote>
 <p>在模块化编程中，开发者将程序的功能拆分成一个个的chunk，并称之为模块。</p>
 </blockquote>
@@ -698,24 +863,6 @@ npm install --save-dev ts-loader
 
     
     
-<div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">文章作者</span>
-    <span class="item-content">XKHM</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">上次更新</span>
-    <span class="item-content">
-      2021-02-19
-      
-    </span>
-  </p>
-  
-  <p class="copyright-item">
-    <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">原创文章，转载请注明文章作者和出处，谢谢！</a></span>
-  </p>
-</div>
 
 
     
@@ -744,13 +891,13 @@ npm install --save-dev ts-loader
 </svg>
 
             </i>
-            <span class="prev-text nav-default">进一寸有一寸的欢喜，怕什么真理无穷</span>
-            <span class="prev-text nav-mobile">Prev</span>
+            <span class="prev-text nav-default" style="position: relative;top: -2px;">进一寸有一寸的欢喜，怕什么真理无穷</span>
+            <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
           <a class="next" href="/post/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E8%AE%BA/">
-            <span class="next-text nav-default">学习方法论</span>
-            <span class="prev-text nav-mobile">Next</span>
+            <span class="next-text nav-default" style="position: relative;top: -3px;">学习方法论</span>
+            <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
               <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -771,20 +918,19 @@ npm install --save-dev ts-loader
   
   
 
-  
 
-  
-  
 
-  
 
-  
 
-  
 
-    
 
-  
+
+
+
+
+
+
+
 
         </div>
       </div>
@@ -838,23 +984,17 @@ npm install --save-dev ts-loader
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
-  </span>
-
+  
+  
   <span class="copyright-year">
     &copy;
     
-      2019 -
-    2022
+    2019 -
+    2023
     <span class="heart">
       
       <i class="iconfont">
@@ -867,16 +1007,18 @@ npm install --save-dev ts-loader
 
       </i>
     </span><span class="author">
-        星空海绵
-        
-      </span></span>
-
+      星空海绵
+      
+    </span></span>
   
-  
-
-  
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
 </div>
-
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -919,6 +1061,8 @@ npm install --save-dev ts-loader
 
 
 
+
+  <script async src="//changkun.de/urlstat/client.js"></script>
 
 
 
