@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Sat, 04 Feb 2023 20:29:42 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 Mar 2023 21:55:10 +0800</lastBuildDate>
     
         <atom:link href="https://xkhm.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -202,10 +202,10 @@
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;序号&lt;/th&gt;
-&lt;th&gt;书籍名称&lt;/th&gt;
+&lt;th&gt;名称&lt;/th&gt;
 &lt;th&gt;作者&lt;/th&gt;
-&lt;th&gt;是否已读&lt;/th&gt;
-&lt;th&gt;个人评价&lt;/th&gt;
+&lt;th&gt;状态&lt;/th&gt;
+&lt;th&gt;评价&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
@@ -218,35 +218,35 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;霍乱时期的爱情&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;皮囊&lt;/td&gt;
+&lt;td&gt;蔡崇达&lt;/td&gt;
+&lt;td&gt;2023.01✅&lt;/td&gt;
+&lt;td&gt;⭐⭐⭐⭐&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;病隙碎笔&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;工作、消费主义和新穷人&lt;/td&gt;
+&lt;td&gt;齐格蒙特·鲍曼&lt;/td&gt;
+&lt;td&gt;2023.02✅&lt;/td&gt;
+&lt;td&gt;⭐⭐⭐⭐&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;4&lt;/td&gt;
-&lt;td&gt;斑马&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;人生海海&lt;/td&gt;
+&lt;td&gt;麦家&lt;/td&gt;
+&lt;td&gt;2023.03✅&lt;/td&gt;
+&lt;td&gt;⭐⭐⭐⭐&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;5&lt;/td&gt;
-&lt;td&gt;蛤蟆先生去看心理医生&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;我本芬芳&lt;/td&gt;
+&lt;td&gt;杨本芬&lt;/td&gt;
+&lt;td&gt;2023.03✅&lt;/td&gt;
+&lt;td&gt;⭐⭐⭐⭐⭐&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;6&lt;/td&gt;
-&lt;td&gt;被讨厌的勇气&lt;/td&gt;
+&lt;td&gt;柴犬绅士&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
@@ -616,6 +616,17 @@
 &lt;h2 id=&#34;2021-前瞻总结httpsxkhmnetpost2021e5b9b4e5898de79ebbe680bbe7bb93&#34;&gt;&lt;a href=&#34;https://xkhm.net/post/2021%E5%B9%B4%E5%89%8D%E7%9E%BB%E6%80%BB%E7%BB%93/&#34;&gt;2021 前瞻总结&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;2020-年终总结httpsxkhmnetposte5b9b3e587a1e79a84e5b08fe691b8e9b1bce58887e59bbee4bb94e79a842020&#34;&gt;&lt;a href=&#34;https://xkhm.net/post/%E5%B9%B3%E5%87%A1%E7%9A%84%E5%B0%8F%E6%91%B8%E9%B1%BC%E5%88%87%E5%9B%BE%E4%BB%94%E7%9A%842020/&#34;&gt;2020 年终总结&lt;/a&gt;&lt;/h2&gt;
 </description>
+      
+    </item>
+    
+    <item>
+      <title>2023年中前具体规划</title>
+      <link>https://xkhm.net/post/2023%E5%B9%B4%E4%B8%AD%E5%89%8D%E5%85%B7%E4%BD%93%E8%A7%84%E5%88%92/</link>
+      <pubDate>Tue, 07 Mar 2023 21:55:10 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/2023%E5%B9%B4%E4%B8%AD%E5%89%8D%E5%85%B7%E4%BD%93%E8%A7%84%E5%88%92/</guid>
+      
+        <description></description>
       
     </item>
     
@@ -1717,19 +1728,6 @@ npm install --save-dev ts-loader
 &lt;p&gt;本质就是webpack中有模块专门对页面更新做了监听，只要代码修改就对页面中修改的那块做出更新，当然实现中肯定加入了很多小细节。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;完！&lt;/strong&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>学习方法论</title>
-      <link>https://xkhm.net/post/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E8%AE%BA/</link>
-      <pubDate>Wed, 10 Feb 2021 20:04:58 +0800</pubDate>
-      
-      <guid>https://xkhm.net/post/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E8%AE%BA/</guid>
-      
-        <description>&lt;h1 id=&#34;待更新&#34;&gt;待更新&lt;/h1&gt;
-&lt;h2 id=&#34;待思考总结&#34;&gt;待思考总结&lt;/h2&gt;
 </description>
       
     </item>
