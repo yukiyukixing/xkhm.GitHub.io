@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Sat, 20 May 2023 22:41:39 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 May 2023 20:58:08 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>手机充电与人类睡眠</title>
+      <link>https://xkhm.net/post/%E6%89%8B%E6%9C%BA%E5%85%85%E7%94%B5%E4%B8%8E%E4%BA%BA%E7%B1%BB%E7%9D%A1%E7%9C%A0/</link>
+      <pubDate>Sat, 27 May 2023 20:58:08 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/%E6%89%8B%E6%9C%BA%E5%85%85%E7%94%B5%E4%B8%8E%E4%BA%BA%E7%B1%BB%E7%9D%A1%E7%9C%A0/</guid>
+      <description>奇思妙想 最近看完《最重要的事只有一件》这本书，书中有一个点很触动我，那就是我们要明白，我们不能拿健康去换取我们未来的成功。即使你未来成功了，</description>
+    </item>
+    
     <item>
       <title>生气情绪思考</title>
       <link>https://xkhm.net/post/%E7%94%9F%E6%B0%94%E6%83%85%E7%BB%AA%E6%80%9D%E8%80%83/</link>
@@ -177,15 +186,6 @@
       
       <guid>https://xkhm.net/post/%E4%BB%80%E4%B9%88%E6%98%AF%E5%89%8D%E7%AB%AF/</guid>
       <description>前言：做前端的你是否再某一刻思考过这个问题，什么是前端？并且你自己能给出一个自己觉得OK的答案吗？ 我是看见大漠老师前端路上的旅行这篇文章，我</description>
-    </item>
-    
-    <item>
-      <title>JS过滤树形结构数据</title>
-      <link>https://xkhm.net/post/js%E8%BF%87%E6%BB%A4%E6%A0%91%E5%BD%A2%E7%BB%93%E6%9E%84%E6%95%B0%E6%8D%AE/</link>
-      <pubDate>Tue, 02 Feb 2021 21:16:30 +0800</pubDate>
-      
-      <guid>https://xkhm.net/post/js%E8%BF%87%E6%BB%A4%E6%A0%91%E5%BD%A2%E7%BB%93%E6%9E%84%E6%95%B0%E6%8D%AE/</guid>
-      <description>JS过滤树形结构数据在业务中有时候我们会遇到，比如说做一个完善的文档功能时就会遇到，之前我有遇到过，但是没有仔细研究，昨天看见沸点上有一位掘</description>
     </item>
     
   </channel>
