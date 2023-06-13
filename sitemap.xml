@@ -65,14 +65,28 @@
   </url>
   
   <url>
-    <loc>https://xkhm.net/categories/</loc>
-    <lastmod>2023-05-27T20:58:08+08:00</lastmod>
+    <loc>https://xkhm.net/post/</loc>
+    <lastmod>2023-06-13T23:20:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xkhm.net/post/</loc>
+    <loc>https://xkhm.net/post/%E6%83%85%E7%BB%AA%E4%BB%B7%E5%80%BC%E4%B8%8E%E7%A4%BE%E4%BA%A4%E4%BB%B7%E5%80%BC/</loc>
+    <lastmod>2023-06-13T23:20:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/</loc>
+    <lastmod>2023-06-13T23:20:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xkhm.net/categories/</loc>
     <lastmod>2023-05-27T20:58:08+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -115,13 +129,6 @@
   
   <url>
     <loc>https://xkhm.net/post/%E6%89%8B%E6%9C%BA%E5%85%85%E7%94%B5%E4%B8%8E%E4%BA%BA%E7%B1%BB%E7%9D%A1%E7%9C%A0/</loc>
-    <lastmod>2023-05-27T20:58:08+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xkhm.net/</loc>
     <lastmod>2023-05-27T20:58:08+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
