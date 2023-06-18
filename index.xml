@@ -1774,11 +1774,11 @@
     </item>
     
     <item>
-      <title>基于dumi开发一套React组件库</title>
-      <link>https://xkhm.net/post/%E5%9F%BA%E4%BA%8Edumi%E5%BC%80%E5%8F%91%E4%B8%80%E5%A5%97react%E7%BB%84%E4%BB%B6%E5%BA%93/</link>
+      <title>基于dumi开发一套React组件库并发布到npm上</title>
+      <link>https://xkhm.net/post/%E5%9F%BA%E4%BA%8Edumi%E5%BC%80%E5%8F%91%E4%B8%80%E5%A5%97react%E7%BB%84%E4%BB%B6%E5%BA%93%E5%B9%B6%E5%8F%91%E5%B8%83%E5%88%B0npm%E4%B8%8A/</link>
       <pubDate>Sun, 18 Jun 2023 18:44:37 +0800</pubDate>
       
-      <guid>https://xkhm.net/post/%E5%9F%BA%E4%BA%8Edumi%E5%BC%80%E5%8F%91%E4%B8%80%E5%A5%97react%E7%BB%84%E4%BB%B6%E5%BA%93/</guid>
+      <guid>https://xkhm.net/post/%E5%9F%BA%E4%BA%8Edumi%E5%BC%80%E5%8F%91%E4%B8%80%E5%A5%97react%E7%BB%84%E4%BB%B6%E5%BA%93%E5%B9%B6%E5%8F%91%E5%B8%83%E5%88%B0npm%E4%B8%8A/</guid>
       
         <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;下面涉及到的项目demo github 地址：&lt;/p&gt;
