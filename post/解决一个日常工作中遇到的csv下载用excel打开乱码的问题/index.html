@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>解决csv下载用Excel打开乱码的问题 - 星空海绵 - 星空浩瀚 | 海绵吸水</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="星空海绵" />
+  <meta name="description" content="前言 下面所涉及到的完整代码 github 地址： 1.csv下载测试代码：csv-download 1.业务背景 最近在维护代码的时候，发现一个奇怪的问题，关于" />
+
+  <meta name="keywords" content="Hugo, 星空海绵, 前端, 工程师" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.0" />
+
+
+<link rel="canonical" href="https://xkhm.net/post/%E8%A7%A3%E5%86%B3%E4%B8%80%E4%B8%AA%E6%97%A5%E5%B8%B8%E5%B7%A5%E4%BD%9C%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84csv%E4%B8%8B%E8%BD%BD%E7%94%A8excel%E6%89%93%E5%BC%80%E4%B9%B1%E7%A0%81%E7%9A%84%E9%97%AE%E9%A2%98/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.png" type="image/x-icon"/>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.0641ef12056ea8363eef819d9ebb3aefc16e47a59a884ef4c8142767fb1f18ee.css" integrity="sha256-BkHvEgVuqDY&#43;74Gdnrs678FuR6WaiE70yBQnZ/sfGO4=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="解决csv下载用Excel打开乱码的问题" />
+<meta property="og:description" content="前言 下面所涉及到的完整代码 github 地址： 1.csv下载测试代码：csv-download 1.业务背景 最近在维护代码的时候，发现一个奇怪的问题，关于" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xkhm.net/post/%E8%A7%A3%E5%86%B3%E4%B8%80%E4%B8%AA%E6%97%A5%E5%B8%B8%E5%B7%A5%E4%BD%9C%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84csv%E4%B8%8B%E8%BD%BD%E7%94%A8excel%E6%89%93%E5%BC%80%E4%B9%B1%E7%A0%81%E7%9A%84%E9%97%AE%E9%A2%98/" />
+<meta property="article:published_time" content="2023-06-23T14:11:06+08:00" />
+<meta property="article:modified_time" content="2023-06-23T14:11:06+08:00" />
+<meta itemprop="name" content="解决csv下载用Excel打开乱码的问题">
+<meta itemprop="description" content="前言 下面所涉及到的完整代码 github 地址： 1.csv下载测试代码：csv-download 1.业务背景 最近在维护代码的时候，发现一个奇怪的问题，关于">
+<meta itemprop="datePublished" content="2023-06-23T14:11:06+08:00" />
+<meta itemprop="dateModified" content="2023-06-23T14:11:06+08:00" />
+<meta itemprop="wordCount" content="2846">
+
+
+
+<meta itemprop="keywords" content="前端,CSV,Excel,解决问题," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="解决csv下载用Excel打开乱码的问题"/>
+<meta name="twitter:description" content="前言 下面所涉及到的完整代码 github 地址： 1.csv下载测试代码：csv-download 1.业务背景 最近在维护代码的时候，发现一个奇怪的问题，关于"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-K0V0BST0TH', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">星空海绵</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/">首页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/treasury/">细品</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/interview/">提桶</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/life/">生活</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/readbook/">读书</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/technology/">技术</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/links/">友情链接</a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      星空海绵
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/">首页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/treasury/">细品</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/interview/">提桶</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/life/">生活</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/readbook/">读书</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/technology/">技术</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/essay/">思考</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tobedone/">Flag</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/about/">关于</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://xkhm.net/links/">友情链接</a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">解决csv下载用Excel打开乱码的问题</h1>
+      
+      <div class="post-meta">
+        <time datetime="2023-06-23" class="post-time">
+          2023-06-23
+        </time>
+        <div class="post-category">
+            <a href="https://xkhm.net/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/"> 解决问题 </a>
+            
+          </div>
+        <span class="more-meta"> 约 2846 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1从请求入手">1.从请求入手</a></li>
+    <li><a href="#2自己写接口测试">2.自己写接口测试</a></li>
+    <li><a href="#3解决编码问题">3.解决编码问题</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <h1 id="前言">前言</h1>
+<blockquote>
+<p>下面所涉及到的完整代码 github 地址：</p>
+</blockquote>
+<ul>
+<li>1.csv下载测试代码：<a href="https://github.com/yukiyukixing/csv-download">csv-download</a></li>
+</ul>
+<h1 id="1业务背景">1.业务背景</h1>
+<blockquote>
+<p>最近在维护代码的时候，发现一个奇怪的问题，关于CSV下载的问题，我们有很多平台，然后有很多CSV下载的需求，然后有的是下载模板，下载完然后填好内容再次上传到平台上的，然后发现这很多的CSV文件下载分为三种情况：</p>
+</blockquote>
+<ul>
+<li>
+<p>1.一种是下载下来中文不乱码，文件格式也是对的，但是通过网页请求看数据，发现回来的数据是乱码的，这种属于好的，起码不影响使用。</p>
+</li>
+<li>
+<p>2.第二种是回来的数据网页请求看没问题，不乱码，但是打开csv文件发现里面的中文乱码了，这种就影响使用了。</p>
+</li>
+<li>
+<p>3.第三种是回来的数据网页请求看也没问题，不乱码，但是填完存的时候发现默认存的时候不是csv，是txt，也就是说虽然你下载的文件是以csv做后缀的，但是本质上是txt文件，这种也是有问题的，这种如果你只是下载下来看，不修改，也勉强能接受，但终归还是有问题的。</p>
+</li>
+</ul>
+<h1 id="2如何解决">2.如何解决</h1>
+<blockquote>
+<p>面对上面的问题，我该如何解决呢！</p>
+</blockquote>
+<h2 id="1从请求入手">1.从请求入手</h2>
+<p>首先，因为前端代码都是一样的，然后就需要对比他们请求的接口了，对比之后发现两个东西，一个返回的数据，上面的第一种中文是乱码的，然后后面两种都是正常的，再一个就是返回数据里的Response Headers中的Content-Type字段是不一样的，第一个的Content-Type: application/octet-stream，第二个和第三个都是Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet，类似这种的，然后去查发现第二个和第三个都不是标准的Content-Type，后来才知道是自定义的一个告诉excel客户端，这是一个特殊文件。当然上面都是我的怀疑，怎么能知道真的就是接口返回的Content-Type的问题呢，你说直接找后端，后端不认说第一种不就可以用吗，你都是同一个代码下载的，怼的你都没话说，你还得自己回来找原因，那么不如直接先把原因找到。</p>
+<h2 id="2自己写接口测试">2.自己写接口测试</h2>
+<p>既然我们怀疑是接口的问题，那我们就可以写一个接口进行测试了，这就是会一门后端语言的好处啊，直接拿起我们的Node，写一个接口还是非常简单的。然后刚开始写了如下的接口代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">cors</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cors&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+
+
+<span class="c1">// 配置CORS，允许跨域请求
+</span><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cors</span><span class="p">());</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/api/csv-data&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">,</span><span class="s1">&#39;text/csv&#39;</span><span class="p">)</span>
+    <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="s1">&#39;数据1,数据2,数据3&#39;</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+<span class="p">});</span>
+
+<span class="kr">const</span> <span class="nx">port</span> <span class="o">=</span> <span class="mi">3001</span><span class="p">;</span>
+
+<span class="c1">// 启动服务
+</span><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Server listening at http://localhost:</span><span class="si">${</span><span class="nx">port</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>启动起来我们的Node接口就写好了，我们就能前端调用下载测试了，前端页面代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s1">&#39;axios&#39;</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="kr">const</span> <span class="nx">downloadFile</span> <span class="o">=</span> <span class="p">(</span><span class="nx">content</span><span class="p">,</span> <span class="nx">filename</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 创建一个 Blob 对象
+</span><span class="c1"></span>    <span class="kr">const</span> <span class="nx">blob</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Blob</span><span class="p">([</span><span class="nx">content</span><span class="p">],</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;application/octet-stream&#39;</span> <span class="p">});</span>
+  
+    <span class="c1">// 创建一个 a 标签
+</span><span class="c1"></span>    <span class="kr">const</span> <span class="nx">link</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span>
+  
+    <span class="c1">// 设置 href 为 Blob 对象
+</span><span class="c1"></span>    <span class="nx">link</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">URL</span><span class="p">.</span><span class="nx">createObjectURL</span><span class="p">(</span><span class="nx">blob</span><span class="p">);</span>
+  
+    <span class="c1">// 设置下载的文件名
+</span><span class="c1"></span>    <span class="nx">link</span><span class="p">.</span><span class="nx">download</span> <span class="o">=</span> <span class="nx">filename</span><span class="p">;</span>
+  
+    <span class="c1">// 将 a 标签添加到 DOM
+</span><span class="c1"></span>    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">link</span><span class="p">);</span>
+  
+    <span class="c1">// 触发下载
+</span><span class="c1"></span>    <span class="nx">link</span><span class="p">.</span><span class="nx">click</span><span class="p">();</span>
+  
+    <span class="c1">// 从 DOM 移除 a 标签
+</span><span class="c1"></span>    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">link</span><span class="p">);</span>
+    <span class="c1">// 释放 Blob URL
+</span><span class="c1"></span>    <span class="nx">URL</span><span class="p">.</span><span class="nx">revokeObjectURL</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">href</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kr">const</span> <span class="nx">csvDownLoad</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39; http://localhost:3001/api/csv-data&#39;</span><span class="p">)</span> 
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">downloadFile</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">,</span><span class="s1">&#39;测试CSV下载.csv&#39;</span><span class="p">)</span>
+    <span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick </span><span class="o">=</span> <span class="p">{</span><span class="nx">csvDownLoad</span><span class="p">}&gt;</span><span class="nx">下载CSV文件</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>结果下载下来发现文件格式是对的，真的是csv文件，但是内容乱码了，咱也不知道这是啥字：</p>
+<p><img src="../../images/2023/CSV/%E4%B9%B1%E7%A0%81.png" alt="乱码.png"></p>
+<p>但是乱码了，大概能猜到是编码的问题，例如我们熟知的UTF-8，然后就开始沿着这个方向找问题。</p>
+<h2 id="3解决编码问题">3.解决编码问题</h2>
+<blockquote>
+<p>首先，我们要明白我们是用Excel打开的csv文件，那么Excel打开csv文件默认使用的编码是什么呢？根据搜索我们发现Excel打开csv文件使用的默认编码是跟操作系统的地区设置和Excel的版本有关系的，当然你在国内，Excel打开csv文件默认使用的编码一般是<strong>GBK</strong>编码。</p>
+</blockquote>
+<p>既然知道了是GBK编码，那么我们就改一下接口，将编码格式变成GBK编码格式，下面是Node代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">cors</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cors&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+<span class="kr">const</span> <span class="nx">iconv</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;iconv-lite&#39;</span><span class="p">);</span>
+
+<span class="c1">// 配置CORS，允许跨域请求
+</span><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cors</span><span class="p">());</span>
+
+<span class="c1">// 读取CSV文件的接口
+</span><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/api/csv-data&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="s1">&#39;text/csv; charset=GBK&#39;</span><span class="p">);</span>
+    <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="s1">&#39;数据1,数据2,数据3&#39;</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">gbkBuffer</span> <span class="o">=</span> <span class="nx">iconv</span><span class="p">.</span><span class="nx">encode</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="s1">&#39;GBK&#39;</span><span class="p">);</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="nx">gbkBuffer</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="kr">const</span> <span class="nx">port</span> <span class="o">=</span> <span class="mi">3001</span><span class="p">;</span>
+
+<span class="c1">// 启动服务
+</span><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Server listening at http://localhost:</span><span class="si">${</span><span class="nx">port</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>然后我们继续使用前面的前端代码进行下载，你会发现下载下来的文件打开依然是乱码，这是为什么呢，我们的数据已经采用GBK编码了，为什么打开还是乱码呢。此时我就在想是不是前端代码下载有问题，看了一下前端下载的代码，发现axios获取到的响应数据是作为一个UTF-8字符串处理的，而不是原始的字节流。因此，当你将其传递给<code>Blob</code>对象并下载时，它是以UTF-8编码的。也就是说前端下载的时候还是以UTF-8编码的，这是不行的，所以还是得以后端接口给的原来得编码格式进行编码，这样才不会乱码。为了解决这个问题，我们就需要告诉axios将响应数据作为原始的字节流（ArrayBuffer）处理，而不是将其作为UTF-8字符串处理。可以通过设置<code>responseType</code>为<code>'arraybuffer'</code>来实现这一点。这样，当数据从服务器返回时，它将保持其原始的GBK编码。</p>
+<p>前端修改后的代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s1">&#39;axios&#39;</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="kr">const</span> <span class="nx">downloadFile</span> <span class="o">=</span> <span class="p">(</span><span class="nx">content</span><span class="p">,</span> <span class="nx">filename</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 创建一个 Blob 对象
+</span><span class="c1"></span>    <span class="kr">const</span> <span class="nx">blob</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Blob</span><span class="p">([</span><span class="nx">content</span><span class="p">],</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;application/octet-stream&#39;</span> <span class="p">});</span>
+  
+    <span class="c1">// 创建一个 a 标签
+</span><span class="c1"></span>    <span class="kr">const</span> <span class="nx">link</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span>
+  
+    <span class="c1">// 设置 href 为 Blob 对象
+</span><span class="c1"></span>    <span class="nx">link</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">URL</span><span class="p">.</span><span class="nx">createObjectURL</span><span class="p">(</span><span class="nx">blob</span><span class="p">);</span>
+  
+    <span class="c1">// 设置下载的文件名
+</span><span class="c1"></span>    <span class="nx">link</span><span class="p">.</span><span class="nx">download</span> <span class="o">=</span> <span class="nx">filename</span><span class="p">;</span>
+  
+    <span class="c1">// 将 a 标签添加到 DOM
+</span><span class="c1"></span>    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">link</span><span class="p">);</span>
+  
+    <span class="c1">// 触发下载
+</span><span class="c1"></span>    <span class="nx">link</span><span class="p">.</span><span class="nx">click</span><span class="p">();</span>
+  
+    <span class="c1">// 从 DOM 移除 a 标签
+</span><span class="c1"></span>    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">link</span><span class="p">);</span>
+    <span class="c1">// 释放 Blob URL
+</span><span class="c1"></span>    <span class="nx">URL</span><span class="p">.</span><span class="nx">revokeObjectURL</span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">href</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kr">const</span> <span class="nx">csvDownLoad</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39; http://localhost:3001/api/csv-data&#39;</span><span class="p">,{</span>
+      <span class="nx">responseType</span><span class="o">:</span> <span class="s1">&#39;arraybuffer&#39;</span>
+    <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">downloadFile</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">,</span><span class="s1">&#39;测试CSV下载.csv&#39;</span><span class="p">)</span>
+    <span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span> <span class="o">=</span> <span class="p">{</span><span class="nx">csvDownLoad</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">下载CSV文件</span><span class="o">&lt;</span><span class="err">/button&gt;;</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="../../images/2023/CSV/%E6%AD%A3%E7%A1%AE.png" alt="正确.png"></p>
+<blockquote>
+<p>用上面的代码再进行下载的时候，CSV文件不管格式和编码都是正确的了，也是解决了问题。当然我这是专门写了一个例子进行测试，探究这个问题背后的原因，既然问题已经找到了，原理也明白了，此时就可以找后端了，告诉他数据编码相关的问题需要改一下。上面刚开始说的业务背景中的第1项的原因应该是后端设置的响应头中的Content-Type设置有问题，第2项应该是编码问题，第3种就是接口返回数据的时候返回的本质上还是txt的数据。</p>
+</blockquote>
+<h1 id="3总结思考">3.总结思考</h1>
+<blockquote>
+<p>解决了上面的问题，我们再来反思一下解决问题的过程。首先是定位是哪里的问题，然后就是做一个简单的例子进行测试，把怀疑的点进行测试，然后发现最终的问题在哪。这里面最主要的点就是分析为什么会出现这个问题，例如Excel为什么打开csv会乱码，这是为什么，你知道是编码问题，那又是什么编码问题呢，一探究发现原来是Excel打开csv文件默认编码的问题。所以说代码这东西是比较诚实的，对就是对，错就是错，错了我们就去找寻背后的原因，然后解决它就行了，不要怕出现问题，出现问题咱们就解决问题。</p>
+</blockquote>
+
+    </div>
+
+    
+    
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://xkhm.net/tags/%E5%89%8D%E7%AB%AF/">前端</a>
+          <a href="https://xkhm.net/tags/csv/">CSV</a>
+          <a href="https://xkhm.net/tags/excel/">Excel</a>
+          <a href="https://xkhm.net/tags/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/">解决问题</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/%E5%9F%BA%E4%BA%8Edumi%E5%BC%80%E5%8F%91%E4%B8%80%E5%A5%97react%E7%BB%84%E4%BB%B6%E5%BA%93%E5%B9%B6%E5%8F%91%E5%B8%83%E5%88%B0npm%E4%B8%8A/">
+            <span class="next-text nav-default" style="position: relative;top: -3px;">基于dumi开发一套React组件库并发布到npm上</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="im.xkhm@gmail.com" rel="me noopener" class="iconfont"
+      title="email"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/yukiyukixing" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.zhihu.com/people/yuki-42-63" rel="me noopener" class="iconfont"
+      title="zhihu"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M351.791182 562.469462l192.945407 0c0-45.367257-21.3871-71.939449-21.3871-71.939449L355.897709 490.530013c3.977591-82.182744 7.541767-187.659007 8.816806-226.835262l159.282726 0c0 0-0.86367-67.402109-18.578124-67.402109s-279.979646 0-279.979646 0 16.850783-88.141456 39.318494-127.053698c0 0-83.60514-4.510734-112.121614 106.962104S81.344656 355.077018 76.80834 367.390461c-4.536316 12.313443 24.62791 5.832845 36.941354 0 12.313443-5.832845 68.050885-25.924439 84.252893-103.69571l86.570681 0c1.165546 49.28652 4.596691 200.335724 3.515057 226.835262L109.86113 490.530013c-25.275663 18.147312-33.701566 71.939449-33.701566 71.939449L279.868105 562.469462c-8.497535 56.255235-23.417339 128.763642-44.275389 167.210279-33.05279 60.921511-50.55235 116.65793-169.802314 212.576513 0 0-19.442818 14.257725 40.829917 9.073656 60.273758-5.185093 117.305683-20.739347 156.840094-99.807147 20.553105-41.107233 41.805128-93.250824 58.386782-146.138358l-0.055259 0.185218 167.855986 193.263655c0 0 22.035876-51.847855 5.832845-108.880803L371.045711 650.610918l-42.1244 31.157627-0.045025 0.151449c11.69946-41.020252 20.11206-81.5749 22.726607-116.858498C351.665315 564.212152 351.72876 563.345412 351.791182 562.469462z"></path>
+  <path d="M584.918753 182.033893l0 668.840094 70.318532 0 28.807093 80.512708 121.875768-80.512708 153.600307 0L959.520453 182.033893 584.918753 182.033893zM887.150192 778.934538l-79.837326 0-99.578949 65.782216-23.537066-65.782216-24.855084 0L659.341766 256.673847l227.807403 0L887.149169 778.934538z"></path>
+</svg>
+
+    </a>
+
+
+<a href="https://xkhm.net/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+  
+</div>
+
+<div class="copyright">
+  
+  
+  <span class="copyright-year">
+    &copy;
+    
+    2019 -
+    2023
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+      星空海绵
+      
+    </span></span>
+  
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+  <script async src="//changkun.de/urlstat/client.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
