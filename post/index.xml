@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Fri, 23 Jun 2023 14:11:06 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Aug 2023 21:33:51 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>重新出发</title>
+      <link>https://xkhm.net/post/%E9%87%8D%E6%96%B0%E5%87%BA%E5%8F%91/</link>
+      <pubDate>Fri, 11 Aug 2023 21:33:51 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/%E9%87%8D%E6%96%B0%E5%87%BA%E5%8F%91/</guid>
+      <description>1.即将到来的裁员 现在是2023年8月11号的晚上22:03:05，这周收到一个不知道是好还是不好的消息，公司即将裁员，裁员的人中有我，是个</description>
+    </item>
+    
     <item>
       <title>解决csv下载用Excel打开乱码的问题</title>
       <link>https://xkhm.net/post/%E8%A7%A3%E5%86%B3%E4%B8%80%E4%B8%AA%E6%97%A5%E5%B8%B8%E5%B7%A5%E4%BD%9C%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84csv%E4%B8%8B%E8%BD%BD%E7%94%A8excel%E6%89%93%E5%BC%80%E4%B9%B1%E7%A0%81%E7%9A%84%E9%97%AE%E9%A2%98/</link>
@@ -177,15 +186,6 @@
       
       <guid>https://xkhm.net/post/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%B9%8Bwebpack4%E6%A6%82%E5%BF%B5/</guid>
       <description>下定决心，就勇往直前。 webpack概念学习掌握。 webpack4官方文档 1.webpack是什么？ webpack是一个现代的JavaScr</description>
-    </item>
-    
-    <item>
-      <title>学习方法论</title>
-      <link>https://xkhm.net/post/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E8%AE%BA/</link>
-      <pubDate>Wed, 10 Feb 2021 20:04:58 +0800</pubDate>
-      
-      <guid>https://xkhm.net/post/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E8%AE%BA/</guid>
-      <description>待更新 待思考总结</description>
     </item>
     
   </channel>
