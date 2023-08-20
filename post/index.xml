@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Fri, 11 Aug 2023 21:33:51 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Aug 2023 11:10:59 +0800</lastBuildDate><atom:link href="https://xkhm.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>成年人终究是需要学会告别的</title>
+      <link>https://xkhm.net/post/%E6%88%90%E5%B9%B4%E4%BA%BA%E7%BB%88%E7%A9%B6%E6%98%AF%E9%9C%80%E8%A6%81%E5%AD%A6%E4%BC%9A%E5%91%8A%E5%88%AB%E7%9A%84/</link>
+      <pubDate>Sun, 20 Aug 2023 11:10:59 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/%E6%88%90%E5%B9%B4%E4%BA%BA%E7%BB%88%E7%A9%B6%E6%98%AF%E9%9C%80%E8%A6%81%E5%AD%A6%E4%BC%9A%E5%91%8A%E5%88%AB%E7%9A%84/</guid>
+      <description>学会告别 有些人终究是要告别的，抓不住的沙子不如趁早杨了。可是告别真的好不体面，其实我觉得我是一个非常有分寸感的人，但是终究在喝的有点醉之后还</description>
+    </item>
+    
     <item>
       <title>重新出发</title>
       <link>https://xkhm.net/post/%E9%87%8D%E6%96%B0%E5%87%BA%E5%8F%91/</link>
@@ -177,15 +186,6 @@
       
       <guid>https://xkhm.net/post/%E8%BF%9B%E4%B8%80%E5%AF%B8%E6%9C%89%E4%B8%80%E5%AF%B8%E7%9A%84%E6%AC%A2%E5%96%9C%E6%80%95%E4%BB%80%E4%B9%88%E7%9C%9F%E7%90%86%E6%97%A0%E7%A9%B7/</guid>
       <description>不忘初心，方得始终。</description>
-    </item>
-    
-    <item>
-      <title>前端工程化之webpack4概念</title>
-      <link>https://xkhm.net/post/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%B9%8Bwebpack4%E6%A6%82%E5%BF%B5/</link>
-      <pubDate>Fri, 19 Feb 2021 16:00:46 +0800</pubDate>
-      
-      <guid>https://xkhm.net/post/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%B9%8Bwebpack4%E6%A6%82%E5%BF%B5/</guid>
-      <description>下定决心，就勇往直前。 webpack概念学习掌握。 webpack4官方文档 1.webpack是什么？ webpack是一个现代的JavaScr</description>
     </item>
     
   </channel>
