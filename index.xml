@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>星空海绵</copyright>
-    <lastBuildDate>Mon, 27 Nov 2023 09:00:31 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 17 Dec 2023 00:55:46 +0800</lastBuildDate>
     
         <atom:link href="https://xkhm.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -1848,6 +1848,135 @@
     </item>
     
     <item>
+      <title>5年前端2023面试之路</title>
+      <link>https://xkhm.net/post/5%E5%B9%B4%E5%89%8D%E7%AB%AF2023%E9%9D%A2%E8%AF%95%E4%B9%8B%E8%B7%AF/</link>
+      <pubDate>Sun, 17 Dec 2023 00:55:46 +0800</pubDate>
+      
+      <guid>https://xkhm.net/post/5%E5%B9%B4%E5%89%8D%E7%AB%AF2023%E9%9D%A2%E8%AF%95%E4%B9%8B%E8%B7%AF/</guid>
+      
+        <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;由于公司要进行裁员，然后给我两个选择，一个是转去运维部门开发运维相关的后台管理系统，一个是拿补偿走人。最终仔细思考了一番，还是选择了拿补偿走人，觉得这也是一个好的机会，然后投入热火朝天的找工作的大潮之中。坊间都在传闻行情不好，什么“前端已死”都出来了，但是前端人还得继续往前走啊，在时代的大潮里你不走也会被时代推着向前的，而且这个世界唯一不变的就是变化。对于找工作我还是稍微有那么一点底气的，因为在4月中旬到6月中旬也准备了差不多两个月，不过是一边上班一边准备，不能说全身心的投入，但至少简历是已经写好了，项目部分的内容是稍微整理了一下的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;1面试实战&#34;&gt;1.面试实战&lt;/h1&gt;
+&lt;h2 id=&#34;1投简历&#34;&gt;1.投简历&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2023.08.28，投简历的第一天，Boss上约面试的很少，还有一些不是很匹配的，一天约了一个面试，薪资区间的最大值还没我之前的高，想着先练下手，找下面试的感觉。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;一边好好准备面试，一边投简历吧，后续看简历是否要修改，先把面试要准备的东西一步步的准备好！&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2023.08.29，面试国内某家安全厂商，招人偏一些3D的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2023.08.30，下午去现场二面昨天的那个，约了明晚一家车企的面试和周五下午另一家大厂的面试。去现场面完回来18:00多了，睡了一觉，一觉直接睡到差不多21:00了，起来准备明晚的面试的东西。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;2心路历程&#34;&gt;2.心路历程&lt;/h1&gt;
+&lt;h2 id=&#34;离职第9天&#34;&gt;离职第9天&lt;/h2&gt;
+&lt;p&gt;今天是2023.09.01，离职的第9天，已经面试了3家公司了，虽然面的总体来说都不怎么好。下午面完也收到了滴滴面试没过的通知，但是我对未来充满着希望，觉得肯定有一家无比合适的公司在那等着我，不知道哪里来的想法，莫名就有这种感觉。&lt;/p&gt;
+&lt;p&gt;说一下今天面试滴滴的体验，总体来说今天的面试官还是很nice的，虽然没过。不得不说，面试官的专业水平还是不错的，问的其实也不难，整个流程面下来也很正规，该问的点，该有的反问环节，补充环节都是有的，面试体验而言还是不错的！当然我开始面的时候我也没有抱着过的心态，就想练练手，下周目前就约了一家，也没有投了，想着还再准备准备，准备充分一点，再去面这样效果和反馈也会更好，复盘也会更有价值。&lt;/p&gt;
+&lt;h2 id=&#34;离职第11天&#34;&gt;离职第11天&lt;/h2&gt;
+&lt;p&gt;今天是2023.09.03，离职的第11天，已经一周多没有上班了，除了离职的那周去深圳了，这周一整周都在准备面试和面试中。昨天是周六，今天是周天，两天都在准备面试相关的东西，更多的是在准备项目相关的东西，因为明天上午得面一家车企，还是得好好准备准备的，每一场面试都全力以赴，然后昨晚猎头也给我整理了一些面试相关的资料以及注意事项发我了，猎头还是比较专业的。准备明天面完就先不约面试了，好好准备一下面试相关的东西，按自己的节奏好好走一遍。加油！刚去超市买了6瓶红牛，梳理项目梳理的有点犯困，还得是红牛啊，1瓶提神醒脑，2瓶永不疲劳，3瓶直接起飞。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第13天&#34;&gt;离职的第13天&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://xkhm.net/post/%E6%80%9D%E8%80%83%E4%B8%8E%E8%A7%84%E5%88%92/&#34;&gt;第13天&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;离职第14天&#34;&gt;离职第14天&lt;/h2&gt;
+&lt;p&gt;今天是2023.09.06，离职的第14天，今天开始规划和实施后续该做的事情了。每天主要还是准备面试和读书，每天依然还是读书1小时，然后准备面试。要有耐心，要加油。船到桥头自然直。不过作息有点炸裂了，12:00到凌晨3点4点变成了白天了。&lt;/p&gt;
+&lt;h2 id=&#34;离职第16天&#34;&gt;离职第16天&lt;/h2&gt;
+&lt;p&gt;今天是2023.09.08，离职的第16天，正式离职已经过去了半个月了，这周慢慢找到了复习的状态和方法，按照步骤在一步步的复习巩固了，状态总体来说还可以吧。&lt;/p&gt;
+&lt;h2 id=&#34;离职第19天&#34;&gt;离职第19天&lt;/h2&gt;
+&lt;p&gt;今天是2023.09.11，离职的第19天，又是开始投简历约面试的一周，上周休息好好准备了一周。这周又开始约面试了，一边面试一边查缺补漏。开始好好复习，好好找工作。然后补偿按理说是应该昨天到账的，但是昨天是星期天，没到账，等今天了。补偿到账了，找工作就得开始着急一点了，因为下个月没有工资了，得快点找工作了。加油呀！&lt;/p&gt;
+&lt;p&gt;今天下午补偿已经到账了，期待的补偿到账后反而没有之前等待的那种焦急的感觉了。这就宣告与上份工作彻底结束了，不过好歹是拿了份补偿，后面就得全力以赴的找工作了。每天的事情就是学习，找工作，保持好自己的状态，基本上是这样，加油。&lt;/p&gt;
+&lt;h2 id=&#34;离职第20天&#34;&gt;离职第20天&lt;/h2&gt;
+&lt;p&gt;今天是2023.09.12，离职的第20天，昨天没人约面试，但是这周应该还是会有一些面试机会的。然后后面就是好好找工作，好好复习学习了。耐心点，好好学，先把一些必问的知识点都复习到，然后再把一些点复习深一点，然后再把项目好好过一遍，加油。&lt;/p&gt;
+&lt;p&gt;之前openai的创始人谈到openai的成功时说过：我们努力做到每个细节都完美。也就是说，我们自己只有足够的强大，足够的优秀，我们才能找到足够匹配我们的工作，拿到足够的薪水和发展机会。所以我们必须让我们自己满身才华，这样我们才能在这个竞争激烈丛林法则的时代活下去。所以我们需要在找工作这件事情上做得更好，准备的更充分。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第21天&#34;&gt;离职的第21天&lt;/h2&gt;
+&lt;p&gt;今天是2023.09.13，离职的第21天，今天又是没人约面试的一天。今天好好把家里收拾了一下，然后晚上继续复习面试相关内容，加油呀！&lt;/p&gt;
+&lt;h2 id=&#34;离职的第24天&#34;&gt;离职的第24天&lt;/h2&gt;
+&lt;p&gt;今天是2023.09.16，离职的第24天。然后今天是周六，这周的复习怎么说呢，感觉好像也没复习啥东西，还是得专心复习啊，不过好像有点开始享受离职不用上班的生活了，开始思考上班的意义了。不过学习还是得努力学的，面试还是得面的。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第25天&#34;&gt;离职的第25天&lt;/h2&gt;
+&lt;p&gt;今天是2023.09.17，离职的第25天。昨天还感觉状态很好，思考的东西也很全面。可是今天竟然有点开始急了，内心开始有点躁动了，复习的时候也不是那么安心了。不知道咋回事，还是先调整好作息，然后继续学习，思考。明天就是新的一个周一了，开始规律作息，好好复习。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第28天&#34;&gt;离职的第28天&lt;/h2&gt;
+&lt;p&gt;今天是2023.09.20，离职的第28天。昨天又狠狠的休息了一天，去看了《长安三万里》的电影，感觉还不错，感叹朝如青丝暮成雪的时光易逝，也感受到了李白轻舟已过万重山的潇洒豪迈，更加感受到了高适不忘初心，暮年得志的坎坷人生历程，总的来说还是一部不错的电影。然后我的日常还是要围绕规律作息，运动，读书，学习，准备面试来做的，今天还是得学习，读书，运动啊，不过运动好像一直也没开始，要开始的啊。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第30天&#34;&gt;离职的第30天&lt;/h2&gt;
+&lt;p&gt;今天是2023.09.22，离职的第30天，今天好懒，提不起精神，睡了很长时间，早上睡到11:00，中午吃完饭又睡到下午15:30，然后下午到晚上加起来做了2小时的事吧，无精打采，好懒。又是周五，又过了一周了。人好像有点混沌了，不知道是不是今天睡多了，脑子有点不清醒了。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第34天&#34;&gt;离职的第34天&lt;/h2&gt;
+&lt;p&gt;今天是2023.09.26，离职的第34天，最近这几天看书时间多一点，然后准备复习的就是算法。然后之前买的苹果手表到了，还是很喜欢的。然后这周还是没怎么投简历，主打一个随缘，不是很急，想着还gap一段时间，学学想学的东西，看看书，做点自己想做的事情。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第35天&#34;&gt;离职的第35天&lt;/h2&gt;
+&lt;p&gt;今天是2023.09.27，离职的第35天，今天在刷算法，学了那么久，终于一下AC了一道滑动窗口中等难度的题目，算法其实不难，就是套路，掌握某种算法，这类的题型其实你都会解析了，要对自己有信心，第一次一下AC一道中等难度的题目，还是很开心的。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第43天&#34;&gt;离职的第43天&lt;/h2&gt;
+&lt;p&gt;今天是2023.10.05，离职的第43天，这几天是国庆节假期，当然我并没有休息，我在好好调整状态。前几天买了一个苹果手表，然后使用手表进行起床睡眠的管理，成功规律了作息，晚上基本11:40左右睡觉，早晨7:00左右起来，然后中午11:40去吃饭，中午休息到14:00，然后晚上18:50左右去吃饭，大概20:10左右到家，中间的时间都在刷算法。然后规律作息了几天发现，去商场吃饭长胖了，因为商场好吃的太多了，之前都是62左右，昨天一上秤67了，这，一下多了10斤，好家伙，不敢吃那么多了，还得锻炼啊，今天就没去商场吃了，这个后面还得再想想怎么整。然后在家学习感觉椅子不行，坐的腰疼，又买了一个人体工学座椅，今天到了，坐着感觉还可以。算法刷了40多题了，估计100题刷完得到下周了，不过每天的状态还不错。还有最近在看的书是《瓦尔登湖》，很不错的一本书，感觉也很适合gap期间看，思考思考，收获颇多，还没看完，正在阅读中。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第46天&#34;&gt;离职的第46天&lt;/h2&gt;
+&lt;p&gt;今天是2023.10.08，离职的第46天。最近记录都是同时记录标准的日历阳历日期和从上一份工作离职的日期。到今天为止已经半学半躺了一个半月了，还是得努力面试找工作啊，躺太长时间钱包撑不住了，得挣面包啊。其实不上班的日子过的真的挺快乐挺轻松的，也能规律的生活，看自己想看的书，做自己想做的事，可是就是不挣钱，所以还是得努力面试找工作啊。今天正式决定开始努力学习复习面试找工作，后面的重心就放在面试找工作上了，直到找到工作为止。正式离职的1.5个月，开始下决心好好准备找工作，看什么时候能拿下自己满意的工作吧。前路漫漫看不清，唯有脚下的路才是真实的，加油吧，少年。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第48天&#34;&gt;离职的第48天&lt;/h2&gt;
+&lt;p&gt;今天是2023.10.09，离职的第48天，算法刷的人有点麻了，主要心态开始稍微有那么一点变化了，好像有点着急了，又感觉刷算法好慢，浪费时间，可是想要找到一份好的满意的工作，或许该学的东西，该复习的东西，该刷的算法一个都跑不掉，加油吧，行则将至。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第54天&#34;&gt;离职的第54天&lt;/h2&gt;
+&lt;p&gt;今天是2023.10.16，离职的第54天又是一个周一，我的算法热题100还没有刷完，啊啊啊啊啊，要好好刷啊，继续刷算法，热题100肯定是要拿下的，不管多少天，热题100必须拿下。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第58天&#34;&gt;离职的第58天&lt;/h2&gt;
+&lt;p&gt;今天是2023.10.20，离职的第58天，今天是周五，然后热题100在今天已经刷完了，面试算法应该基本没问题了，下周其实可以开始投了，好好面试，多约面试，正式开始面试，找工作，上班！晚上22:57，马上2个月了，2个月没有上班了，还有有点焦虑的，下周得开始正式投简历面试了，一直到找到工作为止了。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第59天&#34;&gt;离职的第59天&lt;/h2&gt;
+&lt;p&gt;今天是2023.10.21，离职的第59天，昨天把算法leetcode上的热题100刷完了，然后昨晚开始有点焦虑并且怀疑自己刷算法花那么久的时间有没有意义。哎，最怕的就是怀疑自己的决策和选择，然后犹豫不决，做了一半就停下怀疑一下选择是否正确，这种内耗还是很可怕的，所以选择了，就坚定的去做，不要怀疑自己，加油。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第61天&#34;&gt;离职的第61天&lt;/h2&gt;
+&lt;p&gt;今天是2023.10.23，离职的第61天，正好2个月了，2023.08.23-2023.10.23，2个月，也从今天开始，正式开始努力找工作，投简历，找工作，面试，加油。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第62天&#34;&gt;离职的第62天&lt;/h2&gt;
+&lt;p&gt;今天是2023.10.24，离职的第62天，现在时间是凌晨0:07，不知道是不是很久没面试了，约了一个明天上午10:00的面试，结果今天复习状态有点心不在焉的，而且好像有点着急了，BOSS上投了很多简历都是已读不回，约面试的比较少，所有还需要很久的耐心。然后我又开始怀疑我前面花了大概1个多月的时间学习算法值不值得，可是不学吧，就像水桶，你知道你的短板就在那，就是算法，学了至少有一个好处就是面试的时候我不担心问算法。学都学了，也没什么好纠结的了，继续准备，好好面试吧，耐心，积累面试经验，工作肯定是会找到的，就是时间的问题，只要一直找，肯定会有一个合适的岗位在前面等着我的。今天的面试就面了半个小时，个人觉得答得还不错，但是好像没结果，业务不是很匹配，既然刷了算法，还是一边面一边好好复习，后面面面大厂吧。进入完全复习阶段，一边复习一边面。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第63天&#34;&gt;离职的第63天&lt;/h2&gt;
+&lt;p&gt;今天是2023.10.25，离职的第63天，然后昨晚看见掘金上的找工作面试的文章有提到去图书馆复习，我觉得是个好的方案，然后今天就找了个自习室，下午过来了，刚来对在自习室学习还有点不习惯。不过这个自习室就在我住的地方旁边，挺近的，我之前也来过这个自习室学习过，总体来说还不错，买了一个连续7天的卡，后面每天就来这上班了，时间就早上8:30 - 晚上22:00吧，昨晚看了《当幸福来敲门》的电影，对我来说还是有一定的鼓励作用的，加油！&lt;/p&gt;
+&lt;h2 id=&#34;离职的第66天&#34;&gt;离职的第66天&lt;/h2&gt;
+&lt;p&gt;今天是2023.10.28，离职的第66天，读完《埃隆·马斯克传》，满满的能量，满满的自信，满满的希望，好像充满了电一样，大干一场。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第67天&#34;&gt;离职的第67天&lt;/h2&gt;
+&lt;p&gt;今天是2023.10.29，离职的第67天，昨天读完书信心满满，能量满满，今天复习的时候就蔫了，间歇性励志，斗志满满，间歇性颓废。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第69天&#34;&gt;离职的第69天&lt;/h2&gt;
+&lt;p&gt;今天是2023.10.31，离职的第69天，情绪跌到谷底的一天，昨天的面试又无了，可是那也不全是我的问题，只是不匹配，哎，今年确实有点难啊。幸好明天是11月了，新的一个月，新的希望。实话实说，搁前年这时候，就凭我现在的这表现，大厂肯定是进不了，但是进中厂，拿一个自己满意的薪资还是没问题的，可是现在一个offer都没有，要不面试过不了，要不给不起钱，哎，确实自己还是不够强，还得是加强自己啊。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第71天&#34;&gt;离职的第71天&lt;/h2&gt;
+&lt;p&gt;今天是2023.11.02，离职的第71天，昨天的面试又挂了，然后今天上午的面试一面倒是过了，不过这两家面试不管是挂还是过，面试体验其实都还是不错的，而我今天的心情也好多了，心情真的是神一天鬼一天啊，就是这么不稳定。然后怎么做，目标也清晰多了，知道了后续到底该怎么做。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第75天&#34;&gt;离职的第75天&lt;/h2&gt;
+&lt;p&gt;今天是2023.11.06，离职的第75天，正好2个半月了，好好复习，要开始上班了，马上3个月了，休息的时间够了，上周还去了一家二面，线下的，感觉二面聊的不太好，这周先好好复习复习，把该复习的点都复习了，到达可以冲想去的公司的水平，然后再继续好好面。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第79天&#34;&gt;离职的第79天&lt;/h2&gt;
+&lt;p&gt;今天是2023.11.10，离职的第79天，啊啊啊啊，还没有offer，快3个月了呀，而今天又是一个周五，明天后天又是周末了。昨天面了地平线，一面过了，然后又把Boss关了，准备再好好准备一下，全力开冲啊。这行情，靠运气指定是不大行了，还得靠实力啊，所以说还是实力更重要啊，这行情。所以还是得做好万全的准备，要不然指定拿不下offer的，所以还是好好准备吧！&lt;/p&gt;
+&lt;h2 id=&#34;离职的第82天&#34;&gt;离职的第82天&lt;/h2&gt;
+&lt;p&gt;今天是2023.11.13，离职的第82天，晚上突然有种感觉，gap的生活马上就要结束了，在大概一个月之内会有差不多满意的offer，也就是说在12月15号之前能有班上了，最近目标思路也很清晰了，面试状态也在慢慢变好，一路面过来，在变好，加油吧！一般情况下，我的预感都是很准的，好像有一个合适的offer在前面等着我，就在眼前，加油！&lt;/p&gt;
+&lt;h2 id=&#34;离职的第83天&#34;&gt;离职的第83天&lt;/h2&gt;
+&lt;p&gt;今天是2023.11.14，离职的第83天，昨天面试又被虐了，一方面还是准备的不够充分，另一方面是面试也看运气，一面就过了，二面以为问项目，还是问基础，往深了问，好不会的，自然就寄了，好好准备，好好复习吧！昨天还斗志昂扬，今天被虐了一点又有点泄气，还是得好好准备啊，这行情，没点硬实力，面试指定拿不下来。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第84天&#34;&gt;离职的第84天&lt;/h2&gt;
+&lt;p&gt;今天是2023.11.15，离职的第84天，刚才在复习的时候想到一句话，在面试的时候，做好准备之后的表现一定是&lt;strong&gt;多年老前端的从容与淡定&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第86天&#34;&gt;离职的第86天&lt;/h2&gt;
+&lt;p&gt;今天是2023.11.17，离职的第86天，昨天又休息了一天，调整一下作息，真的是不知道怎么说了，加油吧！&lt;/p&gt;
+&lt;h2 id=&#34;离职的第89天&#34;&gt;离职的第89天&lt;/h2&gt;
+&lt;p&gt;今天是2023.11.20，离职的第89天了，继续投简历面试，现在感觉准备的已经差不多了，都可以面了，可是今天还没约到一个面试，耐心，等待，继续复习。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第93天&#34;&gt;离职的第93天&lt;/h2&gt;
+&lt;p&gt;今天是2023.11.24，离职的第93天，又是一个周五，本以为这周能有3个面试，结果只有一个，我以为能过得，现在看来应该是挂了，还是好好复习吧，主要是感觉现在面试机会好像没之前多了，项目整理整理复盘复盘吧，基础再巩固巩固，算法再写写，加油！&lt;/p&gt;
+&lt;h2 id=&#34;离职的第99天&#34;&gt;离职的第99天&lt;/h2&gt;
+&lt;p&gt;今天是2023.11.30，离职的第99天，11月的最后一天了，昨天面了百度，其实我觉得我整体答的还可以，code题目也都code出来了，算法题3分钟内写出来了，最长回文子串，用例也是一次性过，可是今天没有消息反馈，唉，感叹人生不如意事十之八九，再熬熬也就过去了。现在主要的问题是没啥面试机会，一周只有一两个面试，感觉现在的面试掌握的已经还行了，已经有拿offer的水平了，可是还是没有offer，轻舟已过万重山，已经过了80%了，剩下的20%还是看不清，唉。乐观者也有悲观时刻，人生啊。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第100天&#34;&gt;离职的第100天&lt;/h2&gt;
+&lt;p&gt;今天是2023.12.01，离职的第100天，真的没想到我能gap到100天还在持续gap，可是没办法，被迫gap啊，没有offer，现在主要的问题是约不上面试，没有太多的面试机会，感慨刚开始浪费了集度和滴滴的机会，唉，搁现在去面真说不定能拿offer，现在的准备算比较充分的了，一天给我2个面试，估计2周就能拿offer了，基本上也没什么不自信的地方了，之前还不自信算法，现在算法都刷了100多题了，有些题尤其熟练，嘎嘎能写。再熬熬吧，希望12月能上岸吧，再好好学学，积累积累，走过的每一步都算数，加油！&lt;/p&gt;
+&lt;h2 id=&#34;离职的第104天&#34;&gt;离职的第104天&lt;/h2&gt;
+&lt;p&gt;今天已经是2023.12.05，离职的第104天了，真没想到gap能如此之久，这周目前一个面试都没有，唉，真的是寒冬啊，开始感受到寒冬的凛冽了，没有面试机会，真的难。熬着吧。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第105天&#34;&gt;离职的第105天&lt;/h2&gt;
+&lt;p&gt;今天已经是2023.12.06，离职的第105天，人真的是有点疲了，唉，心累，疲惫，还得熬着，没啥办法。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第110天&#34;&gt;离职的第110天&lt;/h2&gt;
+&lt;p&gt;今天是2023.12.11，离职的第110天，收到一个offer，已经确认接了，周四去上班，真的是疲了，先去干着吧，苟住吧，也算勉强找到一个工作吧，待遇什么的其实也没有涨薪，相对于之前总的来说还是有点降薪的。不过也还行吧，先去干着吧。之前说12.15号之前有班上，前几天都快要放弃了，结果真的拿到一个offer，属实有点万万没想到啊。&lt;/p&gt;
+&lt;h2 id=&#34;离职的第112天&#34;&gt;离职的第112天&lt;/h2&gt;
+&lt;p&gt;今天是2023.12.13，离职的第112天，明天去上班了，gap结束，没想到这次gap一下gap了112天，3个多月，快4个月了，真的是没想到啊。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;上面的每一个记录都是过程中那一天的真实记录，面对的未来都是未知的。前路漆黑一片，也只能在漆黑这自己努力发光一往无前。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;3面试经验&#34;&gt;3.面试经验&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;滴滴和集度的面试相对正规，然后问的东西分布也比较均匀，基本一个知识点问你几个题目就知道你的深度了。如果一个知识大类你回答的不好，面试官也不会为难你，可能立马换一个大类问，不会一直追问下去。然后就是准备的时候一定要准备充分，不要做面试官不会追问细节的侥幸心理，以为背了八股文就行了，里面的细节也是需要知道的，每个知识点知道的深度尽量的深，这样才会找到你满意的工作。然后针对项目的点也要了解的比较清楚，这里也不要抱侥幸心理，一定要准备充分，全面，这样才能找到满意的工作。大厂面试可能偏原理性的东西多点，细节也需要知道！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;还有一个重要的点就是面试官问什么是取决于你的，你说到某个点，可能面试官就会问你这个点相关的知识，当然可能深一点，因为这个点是你引出来的。也就是说从自我介绍，项目介绍等等方面你自己准备的时候就要留意，这里面有哪些可以问的点，准备充分，这样才能面的比较好。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;4gap感悟&#34;&gt;4.gap感悟&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;其实说是gap了三个多月，找工作的时间其实也就是1个多月，刚开始面试随便面面找感觉的，然后中间刷了一个月的算法，刷算法这个呢，说浪费时间吧，也不是，说对后面的面试有多大作用吧，其实感觉也没有，不过就是自信了很多，问到算法不怵了。然后是时间的问题，越到后面心态越差，越绷不住，所以还是尽早找到就尽早找到吧，当然待遇你接受不了的，还是不要强行接了，继续找，当然行情也确实不同以往了。找肯定是能找到的，只不过是拉长多久时间罢了。这行情，找个待遇还行的苟着吧。一个字，熬，熬住总有一天会出头。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>永远相信美好的事情即将发生</title>
       <link>https://xkhm.net/post/%E6%B0%B8%E8%BF%9C%E7%9B%B8%E4%BF%A1%E7%BE%8E%E5%A5%BD%E7%9A%84%E4%BA%8B%E6%83%85%E5%8D%B3%E5%B0%86%E5%8F%91%E7%94%9F/</link>
       <pubDate>Mon, 27 Nov 2023 09:00:31 +0800</pubDate>
@@ -2397,329 +2526,6 @@
 &lt;h1 id=&#34;3总结思考&#34;&gt;3.总结思考&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;解决了上面的问题，我们再来反思一下解决问题的过程。首先是定位是哪里的问题，然后就是做一个简单的例子进行测试，把怀疑的点进行测试，然后发现最终的问题在哪。这里面最主要的点就是分析为什么会出现这个问题，例如Excel为什么打开csv会乱码，这是为什么，你知道是编码问题，那又是什么编码问题呢，一探究发现原来是Excel打开csv文件默认编码的问题。所以说代码这东西是比较诚实的，对就是对，错就是错，错了我们就去找寻背后的原因，然后解决它就行了，不要怕出现问题，出现问题咱们就解决问题。&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>基于dumi开发一套React组件库并发布到npm上</title>
-      <link>https://xkhm.net/post/%E5%9F%BA%E4%BA%8Edumi%E5%BC%80%E5%8F%91%E4%B8%80%E5%A5%97react%E7%BB%84%E4%BB%B6%E5%BA%93%E5%B9%B6%E5%8F%91%E5%B8%83%E5%88%B0npm%E4%B8%8A/</link>
-      <pubDate>Sun, 18 Jun 2023 18:44:37 +0800</pubDate>
-      
-      <guid>https://xkhm.net/post/%E5%9F%BA%E4%BA%8Edumi%E5%BC%80%E5%8F%91%E4%B8%80%E5%A5%97react%E7%BB%84%E4%BB%B6%E5%BA%93%E5%B9%B6%E5%8F%91%E5%B8%83%E5%88%B0npm%E4%B8%8A/</guid>
-      
-        <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
-&lt;p&gt;下面涉及到的项目demo github 地址：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;1.dumi组件库项目：&lt;a href=&#34;https://github.com/yukiyukixing/ui-test/tree/1.0.0&#34;&gt;sparx-ui&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;2.使用组件库npm包的地址：&lt;a href=&#34;https://github.com/yukiyukixing/ui-test/tree/1.0.0&#34;&gt;ui-test&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;3.npm包发布地址：&lt;a href=&#34;https://www.npmjs.com/package/sparx-ui&#34;&gt;sparx-ui&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;1搭建项目&#34;&gt;1.搭建项目&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;1.&lt;a href=&#34;https://d.umijs.org/guide&#34;&gt;dumi介绍&lt;/a&gt;：dumi，中文发音&lt;strong&gt;嘟米&lt;/strong&gt;，是一款由&lt;strong&gt;阿里&lt;/strong&gt;开源的为组件开发场景而生的静态站点框架，&lt;strong&gt;antd组件库&lt;/strong&gt;也是用dumi搭建的，与 &lt;a href=&#34;https://github.com/umijs/father&#34;&gt;father&lt;/a&gt; 一起为开发者提供一站式的组件开发体验，&lt;strong&gt;father 负责组件源码构建，而 dumi 负责组件开发及组件文档生成&lt;/strong&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://d.umijs.org/guide/initialize&#34;&gt;dumi官网&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;2.项目初始化&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://d.umijs.org/guide/initialize&#34;&gt;文档&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;../../images/2023/%E5%9F%BA%E4%BA%8Edumi%E5%BC%80%E5%8F%91%E4%B8%80%E5%A5%97React%E7%BB%84%E4%BB%B6%E5%BA%93/dumi%E5%88%9D%E5%A7%8B%E5%8C%96.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;npx create-dumi
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;../../images/2023/%E5%9F%BA%E4%BA%8Edumi%E5%BC%80%E5%8F%91%E4%B8%80%E5%A5%97React%E7%BB%84%E4%BB%B6%E5%BA%93/%E5%88%9D%E5%A7%8B%E5%8C%96%E6%9E%84%E5%BB%BA.png&#34; alt=&#34;初始化构建.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../images/2023/%E5%9F%BA%E4%BA%8Edumi%E5%BC%80%E5%8F%91%E4%B8%80%E5%A5%97React%E7%BB%84%E4%BB%B6%E5%BA%93/%E6%9E%84%E5%BB%BA%E5%AE%8C%E6%88%90.png&#34; alt=&#34;构建完成.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;上面依赖安装工具我选择的是pnpm，然后启动命令就是：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;pnpm start
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;启动起来浏览器访问就可以看见了：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../images/2023/%E5%9F%BA%E4%BA%8Edumi%E5%BC%80%E5%8F%91%E4%B8%80%E5%A5%97React%E7%BB%84%E4%BB%B6%E5%BA%93/%E5%90%AF%E5%8A%A8%E8%B5%B7%E6%9D%A5.png&#34; alt=&#34;启动起来.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;然后点击上面页面中的Foo就可以看见一个与antd文档上一样的一个组件了：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../images/2023/%E5%9F%BA%E4%BA%8Edumi%E5%BC%80%E5%8F%91%E4%B8%80%E5%A5%97React%E7%BB%84%E4%BB%B6%E5%BA%93/%E7%BB%84%E4%BB%B6.png&#34; alt=&#34;组件.png&#34;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;到这使用dumi搭建一个组件库初始化的部分就完成了，然后就是将你的组件库发布到npm上，别人可以当依赖使用。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;2npm发布组件库&#34;&gt;2.npm发布组件库&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;1.首先注册一个npm账号，这个自己去注册就行，&lt;a href=&#34;https://www.npmjs.com/&#34;&gt;npm官网&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;2.修改项目中的package.json，将private字段设置为false，表示非私有包，我的package.json如下，仅供参考：&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;44
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;45
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;46
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;47
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;48
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;49
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;50
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;51
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;52
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;53
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;54
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;55
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;56
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;57
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;58
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;59
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;60
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;61
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;62
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;63
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;64
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;65
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;66
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;67
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;68
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;69
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;70
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;71
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;72
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;73
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;74
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;75
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;76
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;77
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;78
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;79
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;80
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;81
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-  &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;sparx-ui&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-  &lt;span class=&#34;nt&#34;&gt;&amp;#34;version&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;1.0.0&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-  &lt;span class=&#34;nt&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;A react library developed with dumi&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-  &lt;span class=&#34;nt&#34;&gt;&amp;#34;private&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-  &lt;span class=&#34;nt&#34;&gt;&amp;#34;module&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;dist/index.js&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-  &lt;span class=&#34;nt&#34;&gt;&amp;#34;types&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;dist/index.d.ts&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-  &lt;span class=&#34;nt&#34;&gt;&amp;#34;scripts&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;start&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;npm run dev&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;dev&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;dumi dev&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;build&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;father build&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;build:watch&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;father dev&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;docs:build&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;dumi build&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;prepare&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;husky install &amp;amp;&amp;amp; dumi setup&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;doctor&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;father doctor&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;lint&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;npm run lint:es &amp;amp;&amp;amp; npm run lint:css&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;lint:css&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;stylelint \&amp;#34;{src,test}/**/*.{css,less}\&amp;#34;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;lint:es&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;eslint \&amp;#34;{src,test}/**/*.{js,jsx,ts,tsx}\&amp;#34;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;prepublishOnly&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;father doctor &amp;amp;&amp;amp; npm run build&amp;#34;&lt;/span&gt;
-  &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
-  &lt;span class=&#34;nt&#34;&gt;&amp;#34;authors&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
-    &lt;span class=&#34;s2&#34;&gt;&amp;#34;imxkhm@gmail.com&amp;#34;&lt;/span&gt;
-  &lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
-  &lt;span class=&#34;nt&#34;&gt;&amp;#34;license&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;MIT&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-  &lt;span class=&#34;nt&#34;&gt;&amp;#34;keywords&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;React&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;dumi&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;sparx-ui&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;sparx&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;ui&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
-  &lt;span class=&#34;nt&#34;&gt;&amp;#34;homepage&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;https://github.com/yukiyukixing/sparx-ui&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-  &lt;span class=&#34;nt&#34;&gt;&amp;#34;repository&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;git&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;url&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;https://github.com/yukiyukixing/sparx-ui.git&amp;#34;&lt;/span&gt;
-  &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
-  &lt;span class=&#34;nt&#34;&gt;&amp;#34;files&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
-    &lt;span class=&#34;s2&#34;&gt;&amp;#34;dist&amp;#34;&lt;/span&gt;
-  &lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
-  &lt;span class=&#34;nt&#34;&gt;&amp;#34;commitlint&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;extends&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
-      &lt;span class=&#34;s2&#34;&gt;&amp;#34;@commitlint/config-conventional&amp;#34;&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
-  &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
-  &lt;span class=&#34;nt&#34;&gt;&amp;#34;lint-staged&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;*.{md,json}&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
-      &lt;span class=&#34;s2&#34;&gt;&amp;#34;prettier --write --no-error-on-unmatched-pattern&amp;#34;&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;*.{css,less}&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
-      &lt;span class=&#34;s2&#34;&gt;&amp;#34;stylelint --fix&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-      &lt;span class=&#34;s2&#34;&gt;&amp;#34;prettier --write&amp;#34;&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;*.{js,jsx}&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
-      &lt;span class=&#34;s2&#34;&gt;&amp;#34;eslint --fix&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-      &lt;span class=&#34;s2&#34;&gt;&amp;#34;prettier --write&amp;#34;&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;*.{ts,tsx}&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
-      &lt;span class=&#34;s2&#34;&gt;&amp;#34;eslint --fix&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-      &lt;span class=&#34;s2&#34;&gt;&amp;#34;prettier --parser=typescript --write&amp;#34;&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
-  &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
-  &lt;span class=&#34;nt&#34;&gt;&amp;#34;publishConfig&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;access&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;public&amp;#34;&lt;/span&gt;
-  &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
-  &lt;span class=&#34;nt&#34;&gt;&amp;#34;peerDependencies&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;react&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;gt;=16.9.0&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;react-dom&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;gt;=16.9.0&amp;#34;&lt;/span&gt;
-  &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
-  &lt;span class=&#34;nt&#34;&gt;&amp;#34;devDependencies&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;@commitlint/cli&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;^17.6.5&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;@commitlint/config-conventional&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;^17.6.5&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;@types/react&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;^18.2.12&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;@types/react-dom&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;^18.2.5&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;@umijs/lint&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;^4.0.71&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;dumi&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;^2.2.1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;eslint&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;^8.43.0&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;father&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;^4.2.3&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;husky&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;^8.0.3&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;lint-staged&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;^13.2.2&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;prettier&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;^2.8.8&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;prettier-plugin-organize-imports&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;^3.2.2&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;prettier-plugin-packagejson&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;^2.4.3&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;react&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;^18.2.0&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;react-dom&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;^18.2.0&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nt&#34;&gt;&amp;#34;stylelint&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;^15.8.0&amp;#34;&lt;/span&gt;
-  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;3.npm发布&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;执行登录npm命令：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;npm login
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;然后执行npm publish命令进行发布：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;npm publish
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;发布成功就能在你的npm上看见这个包了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../images/2023/%E5%9F%BA%E4%BA%8Edumi%E5%BC%80%E5%8F%91%E4%B8%80%E5%A5%97React%E7%BB%84%E4%BB%B6%E5%BA%93/%E5%8F%91%E5%B8%83%E6%88%90%E5%8A%9F.png&#34; alt=&#34;发布成功.png&#34;&gt;&lt;/p&gt;
-&lt;h1 id=&#34;3在一个react项目中使用你刚发布的包&#34;&gt;3.在一个React项目中使用你刚发布的包&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;1.创建一个React项目&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;这里你可以使用React官方脚手架创建，也可以&lt;a href=&#34;https://juejin.cn/post/7238115960350425147&#34;&gt;不使用React脚手架创建一个React项目&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;2.在你的项目中使用你刚发布的npm包&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;首先，安装你刚发布的包的依赖&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;npm i sparx-ui
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;使用刚才发布包里面的组件：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span class=&#34;kr&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;React&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;react&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;kr&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;createRoot&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;react-dom/client&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;kr&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Foo&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;sparx-ui&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-
-&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;App&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
-        &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;div&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Foo&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Hello dumi!&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&amp;gt;&lt;/span&gt;
-        &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;root&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;document&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getElementById&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;root&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;createRoot&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;root&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;render&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;App&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;启动你的项目可以看到：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../images/2023/%E5%9F%BA%E4%BA%8Edumi%E5%BC%80%E5%8F%91%E4%B8%80%E5%A5%97React%E7%BB%84%E4%BB%B6%E5%BA%93/%E4%BD%BF%E7%94%A8%E6%88%90%E5%8A%9F.png&#34; alt=&#34;使用成功.png&#34;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;然后你在搭建组件库的过程中还会遇到一些组件库相关的构建配置啊，组件库需要的功能相关的问题啊，后续我还会出一篇我们搭建组件库遇到的实践的相关的文章，完结，撒花！&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
       
